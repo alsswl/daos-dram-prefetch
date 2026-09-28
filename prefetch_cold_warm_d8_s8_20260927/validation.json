@@ -1,0 +1,72 @@
+{
+  "partial": false,
+  "phases": {
+    "c8_off/cold": {
+      "input_validated": true,
+      "hit_attribution_validated": true,
+      "requests": 256,
+      "started_drained": true,
+      "finally_drained": true,
+      "same_worker_pid": 641449
+    },
+    "c8_off/warm": {
+      "input_validated": true,
+      "hit_attribution_validated": true,
+      "requests": 256,
+      "started_drained": true,
+      "finally_drained": true,
+      "same_worker_pid": 641449
+    },
+    "c8_on/cold": {
+      "input_validated": true,
+      "hit_attribution_validated": true,
+      "requests": 256,
+      "started_drained": true,
+      "finally_drained": true,
+      "same_worker_pid": 642855
+    },
+    "c8_on/warm": {
+      "input_validated": true,
+      "hit_attribution_validated": true,
+      "requests": 256,
+      "started_drained": true,
+      "finally_drained": true,
+      "same_worker_pid": 642855
+    },
+    "c16_on/cold": {
+      "input_validated": true,
+      "hit_attribution_validated": true,
+      "requests": 256,
+      "started_drained": true,
+      "finally_drained": true,
+      "same_worker_pid": 644402
+    },
+    "c16_on/warm": {
+      "input_validated": true,
+      "hit_attribution_validated": true,
+      "requests": 256,
+      "started_drained": true,
+      "finally_drained": true,
+      "same_worker_pid": 644402
+    },
+    "c16_off/cold": {
+      "input_validated": true,
+      "hit_attribution_validated": true,
+      "requests": 256,
+      "started_drained": true,
+      "finally_drained": true,
+      "same_worker_pid": 645757
+    },
+    "c16_off/warm": {
+      "input_validated": true,
+      "hit_attribution_validated": true,
+      "requests": 256,
+      "started_drained": true,
+      "finally_drained": true,
+      "same_worker_pid": 645757
+    }
+  },
+  "same_native_and_config": true,
+  "unique_namespaces": true,
+  "runtime_source_hashes_match": true
+}

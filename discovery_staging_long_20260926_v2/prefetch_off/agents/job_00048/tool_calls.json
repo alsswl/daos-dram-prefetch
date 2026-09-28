@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/meta-regression_study_data_heterogeneity_in_replication_projects.csv')\ndf.head()",
+    "output": "      id                                              title  ... us_lab.r   drop\n0   ee.1              Reference points and effort provision  ...        0  False\n1  ee.10  The lure of authority: Motivation and incentiv...  ...        0  False\n2  ee.11                               A continuous dilemma  ...        0  False\n3  ee.12  Slow to anger and fast to forgive: cooperation...  ...        1  False\n4  ee.13  Deferred compensation in multiperiod labor con...  ...        0  False\n\n[5 rows x 57 columns]",
+    "elapsed_seconds": 0.15221065329387784
+  },
+  {
+    "code": "# Check the relevant columns\ncitation_columns = ['author_citations_avg.o', 'author_citations_max.o', 'author_citations_avg.r', 'author_citations_max.r']\ndf[citation_columns].describe()",
+    "output": "       author_citations_avg.o  ...  author_citations_max.r\ncount              927.000000  ...              927.000000\nmean              9284.683494  ...             2132.776699\nstd              12178.302233  ...             3576.290900\nmin                  0.000000  ...                5.000000\n25%               1045.000000  ...              167.000000\n50%               2739.000000  ...              359.000000\n75%              14852.333333  ...             1189.500000\nmax              44075.000000  ...            18185.000000\n\n[8 rows x 4 columns]",
+    "elapsed_seconds": 0.00766490213572979
+  },
+  {
+    "code": "from scipy.stats import ttest_ind\n\n# Extract the citation metrics for original and replication study authors\noriginal_citations_avg = df['author_citations_avg.o']\nreplication_citations_avg = df['author_citations_avg.r']\n\n# Perform a t-test to compare the means\nt_stat, p_value = ttest_ind(original_citations_avg, replication_citations_avg)\nt_stat, p_value",
+    "output": "(22.097535037275005, 3.1433897542074693e-96)",
+    "elapsed_seconds": 0.4762696740217507
+  }
+]

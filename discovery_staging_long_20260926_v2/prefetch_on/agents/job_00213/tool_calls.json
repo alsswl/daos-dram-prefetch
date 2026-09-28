@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.13817112613469362
+  },
+  {
+    "code": "# Drop the 'group' and 'color' columns\ncapital_df = capital_df.drop(columns=['group', 'color'])\n\n# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_df = capital_df[(capital_df['BCE'] >= 500) & (capital_df['BCE'] <= 1100)]\n\n# Extract the 'ZMW' column for the Younger Bronze Age\nz_mw_values = young_bronze_age_df['ZMW'].values\n\n# Display the first few values of 'ZMW' for the Younger Bronze Age\nz_mw_values[:5]",
+    "output": "['0,56778811030531' '0,56778811030531' '0,56778811030531'\n '0,56778811030531' '0,56778811030531']",
+    "elapsed_seconds": 0.0026211021468043327
+  },
+  {
+    "code": "# Calculate the mean and standard deviation of 'ZMW' for the entire Younger Bronze Age period\nmean_zmw = young_bronze_age_df['ZMW'].mean()\nstd_zmw = young_bronze_age_df['ZMW'].std()\n\n# Extract the 'ZMW' value at the beginning of the Younger Bronze Age (1100 BCE)\nz_mw_1100_bce = young_bronze_age_df[young_bronze_age_df['BCE'] == 1100]['ZMW'].values[0]\n\n# Display the results\nmean_zmw, std_zmw, z_mw_1100_bce",
+    "output": "TypeError: Could not convert string '0,567788110305310,567788110305310,567788110305310,567788110305310,567788110305310,5962049191209330' to numeric",
+    "elapsed_seconds": 0.0021257391199469566
+  },
+  {
+    "code": "# Convert the 'ZMW' column to numeric values\nyoung_bronze_age_df['ZMW'] = pd.to_numeric(young_bronze_age_df['ZMW'], errors='coerce')\n\n# Drop any rows with missing values in the 'ZMW' column\nyoung_bronze_age_df = young_bronze_age_df.dropna(subset=['ZMW'])\n\n# Recalculate the mean and standard deviation of 'ZMW' for the entire Younger Bronze Age period\nmean_zmw = young_bronze_age_df['ZMW'].mean()\nstd_zmw = young_bronze_age_df['ZMW'].std()\n\n# Extract the 'ZMW' value at the beginning of the Younger Bronze Age (1100 BCE)\nz_mw_1100_bce = young_bronze_age_df[young_bronze_age_df['BCE'] == 1100]['ZMW'].values[0]\n\n# Display the results\nmean_zmw, std_zmw, z_mw_1100_bce",
+    "output": "<string>:1: SettingWithCopyWarning: \nA value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead\n\nSee the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\nIndexError: index 0 is out of bounds for axis 0 with size 0",
+    "elapsed_seconds": 0.003195251803845167
+  },
+  {
+    "code": "# Check the unique 'BCE' values in the dataset\nunique_bce_values = young_bronze_age_df['BCE'].unique()\nunique_bce_values",
+    "output": "[500]",
+    "elapsed_seconds": 0.001413647085428238
+  },
+  {
+    "code": "# Load the pollen openness score dataset\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\npollen_df.head()",
+    "output": "   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns]",
+    "elapsed_seconds": 0.017022721003741026
+  }
+]

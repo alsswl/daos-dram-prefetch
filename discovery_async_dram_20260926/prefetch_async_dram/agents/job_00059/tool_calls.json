@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of each dataset to understand their structure\npollen_df.head(), time_series_df.head(), capital_df.head()",
+    "output": "(   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns],    Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns],     BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns])",
+    "elapsed_seconds": 0.17111340910196304
+  },
+  {
+    "code": "# Check the columns related to daggers in the time_series_df and capital_df\ntime_series_df[['CE', 'Dagger', 'Dagger_inter']].head(), capital_df[['BCE', 'ZDolch']].head()",
+    "output": "(     CE  Dagger  Dagger_inter\n0 -4100   -0.58         -0.58\n1 -4099     NaN         -0.58\n2 -4098     NaN         -0.58\n3 -4097     NaN         -0.58\n4 -4096     NaN         -0.58,     BCE ZDolch\n0  4300  -0,58\n1  4200  -0,58\n2  4100  -0,58\n3  4000  -0,58\n4  3900  -0,58)",
+    "elapsed_seconds": 0.00555085064843297
+  },
+  {
+    "code": "# Analyze the Dagger column in time_series_df and ZDolch column in capital_df\ntime_series_dagger = time_series_df[['CE', 'Dagger', 'Dagger_inter']].dropna()\ncapital_dagger = capital_df[['BCE', 'ZDolch']].dropna()\n\ntime_series_dagger.head(), capital_dagger.head()",
+    "output": "(       CE  Dagger  Dagger_inter\n0   -4100   -0.58         -0.58\n100 -4000   -0.58         -0.58\n200 -3900   -0.58         -0.58\n300 -3800   -0.58         -0.58\n400 -3700   -0.58         -0.58,     BCE ZDolch\n0  4300  -0,58\n1  4200  -0,58\n2  4100  -0,58\n3  4000  -0,58\n4  3900  -0,58)",
+    "elapsed_seconds": 0.005682942923158407
+  },
+  {
+    "code": "# Check the last few rows of the Dagger and ZDolch columns\ntime_series_dagger.tail(), capital_dagger.tail()",
+    "output": "(       CE  Dagger  Dagger_inter\n3200 -900   -0.44         -0.44\n3300 -800   -0.43         -0.43\n3400 -700   -0.43         -0.43\n3500 -600   -0.55         -0.55\n3600 -500   -0.55         -0.55,     BCE ZDolch\n34  900  -0,44\n35  800  -0,43\n36  700  -0,43\n37  600  -0,55\n38  500  -0,55)",
+    "elapsed_seconds": 0.0050063468515872955
+  }
+]

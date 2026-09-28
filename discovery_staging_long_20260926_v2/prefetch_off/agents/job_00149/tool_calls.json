@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\n\n# Display the first few rows of each dataset\ntime_series_df.head(), capital_df.head(), pollen_df.head()",
+    "output": "(   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns],     BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns],    Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns])",
+    "elapsed_seconds": 0.17347612418234348
+  },
+  {
+    "code": "# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_capital = capital_df[(capital_df['BCE'] >= 500) & (capital_df['BCE'] <= 1100)]\n\n# Filter the data for the Younger Bronze Age (1100-500 BCE) in the pollen dataset\nyoung_bronze_age_pollen = pollen_df[(pollen_df['CE'] >= -1100) & (pollen_df['CE'] <= -500)]\n\n# Display the filtered data\nyoung_bronze_age_capital.head(), young_bronze_age_pollen.head()",
+    "output": "(     BCE group     color ZAxtSchwert  ...  ZBeil               ZMW ZKeform Zkeverz\n32  1100   YBA  moccasin       -0,39  ...  -1,05  0,56778811030531   -1,13    0,97\n33  1000   YBA  moccasin       -0,39  ...  -0,94  0,56778811030531   -1,13    1,53\n34   900   YBA  moccasin       -0,39  ...  -0,99  0,56778811030531   -1,13    1,53\n35   800   YBA  moccasin       -0,39  ...  -0,77  0,56778811030531   -1,13    1,53\n36   700   YBA  moccasin       -0,39  ...  -0,82  0,56778811030531   -1,13    1,53\n\n[5 rows x 15 columns],    Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns])",
+    "elapsed_seconds": 0.012232162058353424
+  },
+  {
+    "code": "# Check the range of CE values in the pollen dataset\npollen_ce_range = pollen_df['CE'].min(), pollen_df['CE'].max()\npollen_ce_range",
+    "output": "(-4785, -702)",
+    "elapsed_seconds": 0.001777498982846737
+  },
+  {
+    "code": "# Filter the data for the Younger Bronze Age (1100-500 BCE) in the time series dataset\nyoung_bronze_age_time_series = time_series_df[(time_series_df['CE'] >= -1100) & (time_series_df['CE'] <= -500)]\n\n# Check the columns for PC1 values\nyoung_bronze_age_time_series.columns",
+    "output": "Index(['Unnamed: 0', 'CE', 'calBP', 'kde_all_mean', 'kde_all_std',\n       'kde_all_detrend', 'g_all_mean', 'g_all_std', 'pollen', 'pollen_inter',\n       'pollen_detrend', 'pollen_inter_100', 'pollen_grate_100',\n       'HatchetSword', 'HatchetSword_inter', 'Dagger', 'Dagger_inter',\n       'HouseSize', 'HouseSize_inter', 'CopperGold', 'CopperGold_inter',\n       'Amber', 'Amber_inter', 'MonumentCount', 'MonumentCount_inter', 'Depot',\n       'Depot_inter', 'Sickle', 'Sickle_inter', 'AxesCelts', 'AxesCelts_inter',\n       'MonumentSize', 'MonumentSize_inter', 'PotteryForm',\n       'PotteryForm_inter', 'PotteryDecoration', 'PotteryDecoration_inter'],\n      dtype='object')",
+    "elapsed_seconds": 0.00239607784897089
+  },
+  {
+    "code": "# Check the columns for PC1 values in the pollen dataset\npollen_df.columns",
+    "output": "Index(['Unnamed: 0', 'calBP', 'CE', 'Belau_PC1', 'Woserin_PC1',\n       'Belau_PC1_inter', 'Woserin_PC1_inter', 'MEAN', 'SMOOTH_MEAN_50y',\n       'SMOOTH_MEAN_100y', 'SMOOTH_MEAN_150y', 'SMOOTH_MEAN_200y',\n       'SMOOTH_MEAN_250y'],\n      dtype='object')",
+    "elapsed_seconds": 0.0017020138911902905
+  }
+]

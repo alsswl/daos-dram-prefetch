@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 86.15994424372911,
+  "llm_calls": 14,
+  "python_calls": 13,
+  "final_answer": "The proportion of respondents who mentioned that requirements in ML-enabled system projects are not documented at all is approximately 29.71%, with a 95% confidence interval of [24.28%, 35.14%]. This suggests that a significant proportion of respondents believe that requirements in ML-enabled system projects are not documented at all. The context of the hypothesis is the documentation practices in ML-enabled system projects. The variable chosen is the `Q10_ML_Documentation_Not_Documented` column, which indicates whether requirements are not documented at all. The relationship between the variable and the proportion of respondents is that a higher proportion of respondents indicated that requirements are not documented at all, which is statistically significant with a 95% confidence interval of [24.28%, 35.14%].",
+  "grading": "not run, as in supplied document",
+  "query": "What proportion of respondents mentioned that requirements in ML-enabled system projects are not documented at all, with a confidence interval of 16.917% (95% CI [16.632, 17.201]) after bootstrapping for statistical significance?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/requirements_engineering_for_ML_enabled_systems/metadata_7.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

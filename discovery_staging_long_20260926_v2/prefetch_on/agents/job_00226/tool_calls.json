@@ -1,0 +1,12 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/Users/bodhi/projects/datavoyager/DiscoveryBench/evolution_freshwater_fish/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: '/Users/bodhi/projects/datavoyager/DiscoveryBench/evolution_freshwater_fish/body-size-evolution-in-south-american-freshwater-fishes.csv'",
+    "elapsed_seconds": 0.13023243099451065
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('requirements_ml_projects.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: 'requirements_ml_projects.csv'",
+    "elapsed_seconds": 0.0016053789295256138
+  }
+]

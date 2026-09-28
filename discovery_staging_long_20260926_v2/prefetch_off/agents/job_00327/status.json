@@ -1,0 +1,18 @@
+{
+  "status": "incomplete",
+  "workflow_seconds": 88.9673584238626,
+  "llm_calls": 25,
+  "python_calls": 25,
+  "final_answer": "Agent stopped due to iteration limit or time limit.",
+  "grading": "not run, as in supplied document",
+  "query": "What relationship exists between education expenditure and per capita GDP in developing countries and how does it affect economic output?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/worldbank_education_gdp_indicators/metadata_1.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

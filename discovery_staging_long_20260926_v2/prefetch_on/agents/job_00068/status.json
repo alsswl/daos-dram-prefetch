@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 22.16818618774414,
+  "llm_calls": 8,
+  "python_calls": 7,
+  "final_answer": "Scientific Hypothesis: In the domain of Economics, all original and replication studies use cash compensation for participants. This hypothesis is derived from the dataset, where it was found that all studies in the Economics discipline use cash compensation for both original and replication studies, as confirmed by the absence of any non-cash compensation cases in this domain. The relationship between the domain (Economics) and the use of cash compensation is statistically significant, as no exceptions were found in the dataset.",
+  "grading": "not run, as in supplied document",
+  "query": "In which domain do all original and replication studies use cash compensation for participants?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/meta_regression/metadata_11.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

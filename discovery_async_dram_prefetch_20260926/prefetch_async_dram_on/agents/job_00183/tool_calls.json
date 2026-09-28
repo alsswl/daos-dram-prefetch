@@ -1,0 +1,52 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_bmi_processed.csv')\ndf.head()",
+    "output": "   GENDER  AGE  AGE_2     INCOME  ...  SAMESAVE        BMI  BLACK  HISPANIC\n0  FEMALE   30    900  47.279064  ...         0  25.158946      0         0\n1  FEMALE   30    900  19.000000  ...         0  21.948044      0         0\n2  FEMALE   27    729  16.443000  ...         1  23.674773      0         0\n3  FEMALE   26    676  22.110000  ...         0  17.541486      0         0\n4    MALE   29    841  52.200000  ...         0  25.158946      0         0\n\n[5 rows x 9 columns]",
+    "elapsed_seconds": 0.13992318138480186
+  },
+  {
+    "code": "from sklearn.linear_model import LogisticRegression\nimport numpy as np\n\n# Prepare the data for logistic regression\nX = df[['INCOME']].values.reshape(-1, 1)  # Predictor\ny = df['SAMESAVE'].values  # Response\n\n# Create a logistic regression model\nmodel = LogisticRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0][0]\np_value = model.pvalues[0]\n\ncoefficient, p_value",
+    "output": "AttributeError: 'LogisticRegression' object has no attribute 'pvalues'",
+    "elapsed_seconds": 0.5669228588230908
+  },
+  {
+    "code": "import statsmodels.api as sm\n\n# Prepare the data for logistic regression\nX = df[['INCOME']]  # Predictor\nX = sm.add_constant(X)  # Adding a constant term for the intercept\ny = df['SAMESAVE']  # Response\n\n# Create a logistic regression model\nmodel = sm.Logit(y, X)\nresult = model.fit()\n\n# Get the coefficient and p-value\ncoefficient = result.params['INCOME']\np_value = result.pvalues['INCOME']\n\ncoefficient, p_value",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.011776364874094725
+  },
+  {
+    "code": "!pip install --upgrade scipy statsmodels",
+    "output": "SyntaxError: invalid syntax (<unknown>, line 1)",
+    "elapsed_seconds": 0.0012724963016808033
+  },
+  {
+    "code": "import statsmodels.api as sm\n\n# Prepare the data for logistic regression\nX = df[['INCOME']]  # Predictor\nX = sm.add_constant(X)  # Adding a constant term for the intercept\ny = df['SAMESAVE']  # Response\n\n# Create a logistic regression model\nmodel = sm.Logit(y, X)\nresult = model.fit()\n\n# Get the coefficient and p-value\ncoefficient = result.params['INCOME']\np_value = result.pvalues['INCOME']\n\ncoefficient, p_value",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.0020475508645176888
+  },
+  {
+    "code": "from sklearn.linear_model import LogisticRegression\nimport numpy as np\n\n# Prepare the data for logistic regression\nX = df[['INCOME']].values.reshape(-1, 1)  # Predictor\ny = df['SAMESAVE'].values  # Response\n\n# Create a logistic regression model\nmodel = LogisticRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0][0]\ncoefficient",
+    "output": "-0.005552182360038377",
+    "elapsed_seconds": 0.007984409108757973
+  },
+  {
+    "code": "# Check for multicollinearity using Variance Inflation Factor (VIF)\nfrom statsmodels.stats.outliers_influence import variance_inflation_factor\n\n# Since we only have one predictor (INCOME), VIF is not applicable here.\n# However, we can check the distribution of INCOME and SAMESAVE to understand the data better.\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Plot the distribution of INCOME\nsns.histplot(df['INCOME'], kde=True)\nplt.title('Distribution of Income')\nplt.xlabel('Income')\nplt.ylabel('Frequency')\nplt.show()\n\n# Plot the distribution of SAMESAVE\nsns.countplot(x='SAMESAVE', data=df)\nplt.title('Distribution of Savings Behavior (SAMESAVE)')\nplt.xlabel('Savings Behavior')\nplt.ylabel('Count')\nplt.show()\n",
+    "output": "",
+    "elapsed_seconds": 0.6017738711088896
+  },
+  {
+    "code": "from sklearn.linear_model import LogisticRegression\nimport numpy as np\n\n# Prepare the data for logistic regression with additional variables\nX = df[['INCOME', 'AGE', 'GENDER']].values\ny = df['SAMESAVE'].values\n\n# Encode categorical variable 'GENDER' using one-hot encoding\nfrom sklearn.preprocessing import OneHotEncoder\nfrom sklearn.compose import ColumnTransformer\n\n# Define the column transformer\npreprocessor = ColumnTransformer(\n    transformers=[\n        ('cat', OneHotEncoder(), ['GENDER'])\n    ],\n    remainder='passthrough'\n)\n\n# Apply the preprocessor to the data\nX_encoded = preprocessor.fit_transform(X)\n\n# Create a logistic regression model\nmodel = LogisticRegression()\nmodel.fit(X_encoded, y)\n\n# Get the coefficients\ncoefficients = model.coef_[0]\ncoefficients",
+    "output": "ValueError: Specifying the columns using strings is only supported for dataframes.",
+    "elapsed_seconds": 0.005091547966003418
+  },
+  {
+    "code": "import pandas as pd\nfrom sklearn.linear_model import LogisticRegression\n\n# One-hot encode the 'GENDER' variable\ndf_encoded = pd.get_dummies(df, columns=['GENDER'])\n\n# Prepare the data for logistic regression\nX = df_encoded[['INCOME', 'AGE', 'GENDER_FEMALE', 'GENDER_MALE']].values\ny = df['SAMESAVE'].values\n\n# Create a logistic regression model\nmodel = LogisticRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_[0]\ncoefficients",
+    "output": "[-0.00441842 -0.09938644  0.8423601   0.77668908]",
+    "elapsed_seconds": 0.017446874175220728
+  },
+  {
+    "code": "# Check for multicollinearity using Variance Inflation Factor (VIF)\nfrom statsmodels.stats.outliers_influence import variance_inflation_factor\n\n# Prepare the data for VIF calculation\nX = df_encoded[['INCOME', 'AGE', 'GENDER_FEMALE', 'GENDER_MALE']].values\n\n# Calculate VIF for each variable\nvif_data = pd.DataFrame()\nvif_data[\"Feature\"] = [\"INCOME\", \"AGE\", \"GENDER_FEMALE\", \"GENDER_MALE\"]\nvif_data[\"VIF\"] = [variance_inflation_factor(X, i) for i in range(X.shape[1])]\n\nvif_data",
+    "output": "TypeError: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''",
+    "elapsed_seconds": 0.0039275530725717545
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\ndf.head()",
+    "output": "   ID  ...                           Origin\n0  31  ...  https://ww2.unipark.de/uc/seml/\n1  34  ...                              -99\n2  36  ...                              -99\n3  57  ...                              -99\n4  46  ...                              -99\n\n[5 rows x 202 columns]",
+    "elapsed_seconds": 0.16371019696816802
+  },
+  {
+    "code": "import numpy as np\nimport pandas as pd\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Identify the column for 'Not Documented' responses\nnot_documented_column = 'Q10_ML_Documentation_Not_Documented'\n\n# Extract the values for the 'Not Documented' column\nnot_documented_values = df[not_documented_column].values\n\n# Calculate the proportion of respondents who mentioned that requirements are not documented at all\nproportion_not_documented = np.mean(not_documented_values)\n\n# Perform bootstrapping to calculate the 95% confidence interval\nbootstrap_result = bootstrap((not_documented_values,), np.mean, confidence_level=0.95, random_state=42)\n\n# Extract the confidence interval\nconfidence_interval = bootstrap_result.confidence_interval\n\nproportion_not_documented, confidence_interval",
+    "output": "TypeError: ufunc 'divide' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''",
+    "elapsed_seconds": 0.49315972719341516
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Check the data type of the 'Q10_ML_Documentation_Not_Documented' column\ncolumn_type = df['Q10_ML_Documentation_Not_Documented'].dtype\ncolumn_type",
+    "output": "object",
+    "elapsed_seconds": 0.012253449764102697
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Check the unique values in the 'Q10_ML_Documentation_Not_Documented' column\nunique_values = df['Q10_ML_Documentation_Not_Documented'].unique()\nunique_values",
+    "output": "['quoted' 'not quoted' '-77']",
+    "elapsed_seconds": 0.012332857120782137
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Identify the column for 'Not Documented' responses\nnot_documented_column = 'Q10_ML_Documentation_Not_Documented'\n\n# Count the number of respondents who selected 'not quoted'\nnot_quoted_count = df[not_documented_column].value_counts().get('not quoted', 0)\n\n# Count the total number of respondents\ntotal_respondents = len(df)\n\n# Calculate the proportion of respondents who mentioned that requirements are not documented at all\nproportion_not_documented = not_quoted_count / total_respondents\n\n# Extract the values for the 'Not Documented' column\nnot_documented_values = df[not_documented_column].values\n\n# Perform bootstrapping to calculate the 95% confidence interval\nbootstrap_result = bootstrap((not_documented_values,), np.mean, confidence_level=0.95, random_state=42)\n\n# Extract the confidence interval\nconfidence_interval = bootstrap_result.confidence_interval\n\nproportion_not_documented, confidence_interval",
+    "output": "TypeError: unsupported operand type(s) for /: 'str' and 'int'",
+    "elapsed_seconds": 0.2820211793296039
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Identify the column for 'Not Documented' responses\nnot_documented_column = 'Q10_ML_Documentation_Not_Documented'\n\n# Encode the categorical values as numeric (1 for 'not quoted', 0 for 'quoted', and NaN for '-77')\ndf[not_documented_column] = df[not_documented_column].replace({'not quoted': 1, 'quoted': 0, '-77': np.nan})\n\n# Drop rows with missing values\ndf_clean = df.dropna(subset=[not_documented_column])\n\n# Count the number of respondents who selected 'not quoted'\nnot_quoted_count = df_clean[not_documented_column].sum()\n\n# Count the total number of respondents\ntotal_respondents = len(df_clean)\n\n# Calculate the proportion of respondents who mentioned that requirements are not documented at all\nproportion_not_documented = not_quoted_count / total_respondents\n\n# Extract the values for the 'Not Documented' column\nnot_documented_values = df_clean[not_documented_column].values\n\n# Perform bootstrapping to calculate the 95% confidence interval\nbootstrap_result = bootstrap((not_documented_values,), np.mean, confidence_level=0.95, random_state=42)\n\n# Extract the confidence interval\nconfidence_interval = bootstrap_result.confidence_interval\n\nproportion_not_documented, confidence_interval",
+    "output": "<string>:6: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`\n(0.845360824742268, ConfidenceInterval(low=0.788659793814433, high=0.8917525773195877))",
+    "elapsed_seconds": 0.033170627895742655
+  }
+]

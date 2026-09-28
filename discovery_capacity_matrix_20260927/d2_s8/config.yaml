@@ -1,0 +1,30 @@
+chunk_size: 128
+local_cpu: true
+max_local_cpu_size: 2
+cache_policy: LRU
+enable_async_loading: true
+use_layerwise: false
+save_decode_cache: true
+storage_plugins:
+- daosgds
+extra_config:
+  storage_plugin.daosgds.module_path: lmcache_daos.capacity_probe_backend
+  storage_plugin.daosgds.class_name: CapacityProbeBackend
+  daosgds.pool: discospool
+  daosgds.container: kvcache
+  daosgds.transport: object
+  daosgds.object_namespace: 'minji-fixed-replay-87955396d9a6488c8b04c39942d83ba5:'
+  daosgds.root: /minji-fixed-replay-87955396d9a6488c8b04c39942d83ba5
+  daosgds.object_library: /root/discos_minji/libdaosgdr.so
+  daosgds.gpu_buffer_gb: 8
+  daosgds.io_workers: 16
+  daosgds.meta_workers: 16
+  daosgds.store: true
+  daosgds.store_path: gpu_direct
+  daosgds.async_dram: true
+  daosgds.dram_promote_on_read: true
+  daosgds.dram_mirror_max_pending_gb: 1
+  daosgds.dram_mirror_max_age_ms: 100
+  daosgds.dram_prefetch: true
+  daosgds.dram_prefetch_policy: capacity
+  daosgds.probe_interval_ms: 20

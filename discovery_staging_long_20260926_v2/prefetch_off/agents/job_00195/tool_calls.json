@@ -1,0 +1,57 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\n\n# Display the first few rows of each dataset to understand their structure\ntime_series_df.head(), capital_df.head(), pollen_df.head()",
+    "output": "(   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns],     BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns],    Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns])",
+    "elapsed_seconds": 0.17263729218393564
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Identify the column for Axes & Celts in each dataset\naxes_celts_time_series = time_series_df['AxesCelts']\naxes_celts_capital = capital_df['ZBeil']\n\n# Determine the peak values and their corresponding years\npeak_time_series = time_series_df.loc[axes_celts_time_series.idxmax(), 'CE']\npeak_capital = capital_df.loc[axes_celts_capital.idxmax(), 'BCE']\n\npeak_time_series, peak_capital",
+    "output": "(-3200, 3200)",
+    "elapsed_seconds": 0.012659392319619656
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Identify the column for Axes & Celts in each dataset\naxes_celts_time_series = time_series_df['AxesCelts']\naxes_celts_capital = capital_df['ZBeil']\n\n# Determine the peak values and their corresponding years\npeak_time_series = time_series_df.loc[axes_celts_time_series.idxmax(), 'CE']\npeak_capital = capital_df.loc[axes_celts_capital.idxmax(), 'BCE']\n\n# Check the surrounding data points for the time_series dataset\ntime_series_peak_row = time_series_df[time_series_df['CE'] == peak_time_series]\ntime_series_peak_row[['CE', 'AxesCelts', 'AxesCelts_inter']]\n\n# Check the surrounding data points for the capital dataset\ncapital_peak_row = capital_df[capital_df['BCE'] == peak_capital]\ncapital_peak_row[['BCE', 'ZBeil']]",
+    "output": "     BCE ZBeil\n11  3200   2,6",
+    "elapsed_seconds": 0.01494595780968666
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import zscore\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Identify the column for Axes & Celts in each dataset\naxes_celts_time_series = time_series_df['AxesCelts']\naxes_celts_capital = capital_df['ZBeil']\n\n# Determine the peak values and their corresponding years\npeak_time_series = time_series_df.loc[axes_celts_time_series.idxmax(), 'CE']\npeak_capital = capital_df.loc[axes_celts_capital.idxmax(), 'BCE']\n\n# Calculate the z-scores for the peak values\nz_score_time_series = zscore(axes_celts_time_series)[axes_celts_time_series.idxmax()]\nz_score_capital = zscore(axes_celts_capital)[axes_celts_capital.idxmax()]\n\nz_score_time_series, z_score_capital",
+    "output": "TypeError: unsupported operand type(s) for /: 'str' and 'int'",
+    "elapsed_seconds": 0.5051849214360118
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import zscore\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Convert the relevant columns to numerical values\ntime_series_df['AxesCelts'] = pd.to_numeric(time_series_df['AxesCelts'], errors='coerce')\ncapital_df['ZBeil'] = pd.to_numeric(capital_df['ZBeil'], errors='coerce')\n\n# Identify the column for Axes & Celts in each dataset\naxes_celts_time_series = time_series_df['AxesCelts']\naxes_celts_capital = capital_df['ZBeil']\n\n# Determine the peak values and their corresponding years\npeak_time_series = time_series_df.loc[axes_celts_time_series.idxmax(), 'CE']\npeak_capital = capital_df.loc[axes_celts_capital.idxmax(), 'BCE']\n\n# Calculate the z-scores for the peak values\nz_score_time_series = zscore(axes_celts_time_series)[axes_celts_time_series.idxmax()]\nz_score_capital = zscore(axes_celts_capital)[axes_celts_capital.idxmax()]\n\nz_score_time_series, z_score_capital",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.013571843039244413
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import zscore\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Convert the relevant columns to numerical values\ntime_series_df['AxesCelts'] = pd.to_numeric(time_series_df['AxesCelts'], errors='coerce')\ncapital_df['ZBeil'] = pd.to_numeric(capital_df['ZBeil'], errors='coerce')\n\n# Drop rows with missing values in the relevant columns\ntime_series_df = time_series_df.dropna(subset=['AxesCelts'])\ncapital_df = capital_df.dropna(subset=['ZBeil'])\n\n# Identify the column for Axes & Celts in each dataset\naxes_celts_time_series = time_series_df['AxesCelts']\naxes_celts_capital = capital_df['ZBeil']\n\n# Determine the peak values and their corresponding years\npeak_time_series = time_series_df.loc[axes_celts_time_series.idxmax(), 'CE']\npeak_capital = capital_df.loc[axes_celts_capital.idxmax(), 'BCE']\n\n# Calculate the z-scores for the peak values\nz_score_time_series = zscore(axes_celts_time_series)[axes_celts_time_series.idxmax()]\nz_score_capital = zscore(axes_celts_capital)[axes_celts_capital.idxmax()]\n\nz_score_time_series, z_score_capital",
+    "output": "IndexError: index 900 is out of bounds for axis 0 with size 37",
+    "elapsed_seconds": 0.014107984956353903
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import zscore\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Convert the relevant columns to numerical values\ntime_series_df['AxesCelts'] = pd.to_numeric(time_series_df['AxesCelts'], errors='coerce')\ncapital_df['ZBeil'] = pd.to_numeric(capital_df['ZBeil'], errors='coerce')\n\n# Drop rows with missing values in the relevant columns\ntime_series_df = time_series_df.dropna(subset=['AxesCelts'])\ncapital_df = capital_df.dropna(subset=['ZBeil'])\n\n# Check the size of the datasets\ntime_series_df.shape, capital_df.shape",
+    "output": "((37, 37), (3, 15))",
+    "elapsed_seconds": 0.013081677258014679
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import zscore\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\n\n# Convert the relevant column to numerical values\ntime_series_df['AxesCelts'] = pd.to_numeric(time_series_df['AxesCelts'], errors='coerce')\n\n# Drop rows with missing values in the relevant column\ntime_series_df = time_series_df.dropna(subset=['AxesCelts'])\n\n# Identify the peak value and its corresponding year\npeak_time_series = time_series_df.loc[time_series_df['AxesCelts'].idxmax(), 'CE']\n\n# Calculate the z-score for the peak value\nz_score_time_series = zscore(time_series_df['AxesCelts'])[time_series_df['AxesCelts'].idxmax()]\n\npeak_time_series, z_score_time_series",
+    "output": "IndexError: index 900 is out of bounds for axis 0 with size 37",
+    "elapsed_seconds": 0.011895837262272835
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import zscore\n\n# Load the dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\n\n# Convert the relevant column to numerical values\ntime_series_df['AxesCelts'] = pd.to_numeric(time_series_df['AxesCelts'], errors='coerce')\n\n# Drop rows with missing values in the relevant column\ntime_series_df = time_series_df.dropna(subset=['AxesCelts'])\n\n# Identify the peak value and its corresponding year\npeak_time_series = time_series_df.loc[time_series_df['AxesCelts'].idxmax(), 'CE']\n\n# Calculate the z-score for the peak value\nz_score_time_series = zscore(time_series_df['AxesCelts'])[time_series_df['AxesCelts'].idxmax()]\n\npeak_time_series, z_score_time_series",
+    "output": "IndexError: index 900 is out of bounds for axis 0 with size 37",
+    "elapsed_seconds": 0.011962591670453548
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\n\n# Display the first few rows of the dataset to understand its structure\ntime_series_df.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.021871687844395638
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\n\n# Convert the relevant column to numerical values\ntime_series_df['AxesCelts'] = pd.to_numeric(time_series_df['AxesCelts'], errors='coerce')\n\n# Drop rows with missing values in the relevant column\ntime_series_df = time_series_df.dropna(subset=['AxesCelts'])\n\n# Find the peak value and its corresponding year\npeak_value = time_series_df['AxesCelts'].max()\npeak_row = time_series_df[time_series_df['AxesCelts'] == peak_value]\npeak_year = peak_row['CE'].values[0]\n\npeak_year",
+    "output": "-3200",
+    "elapsed_seconds": 0.012437691912055016
+  }
+]

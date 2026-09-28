@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_raw.csv')\ndf.head()",
+    "output": "   ID# (range 1-12686) 1979  ...  Total market value of items over $500, 1996\n0                         1  ...                                          NaN\n1                         2  ...                                      15000.0\n2                         3  ...                                       2000.0\n3                         4  ...                                      15000.0\n4                         5  ...                                          NaN\n\n[5 rows x 61 columns]",
+    "elapsed_seconds": 0.19527878472581506
+  },
+  {
+    "code": "# Find the columns related to gender and degree completion rates\ngender_column = 'Sex of respondent, 1979'\ndegree_completion_column = 'Highest grade completed, 1979'\n\n# Check if these columns exist in the dataset\nif gender_column in df.columns and degree_completion_column in df.columns:\n    print(f\"Columns found: {gender_column} and {degree_completion_column}\")\nelse:\n    print(\"One or both of the columns are not present in the dataset.\")",
+    "output": "Columns found: Sex of respondent, 1979 and Highest grade completed, 1979\n",
+    "elapsed_seconds": 0.0020966785959899426
+  },
+  {
+    "code": "import pandas as pd\nimport scipy.stats as stats\n\n# Filter the dataset to include only the relevant columns\ngender_degree_df = df[[gender_column, degree_completion_column]]\n\n# Convert the gender column to a categorical variable\ngender_degree_df[gender_column] = pd.Categorical(gender_degree_df[gender_column])\n\n# Calculate descriptive statistics\ndescriptive_stats = gender_degree_df.groupby(gender_column)[degree_completion_column].describe()\nprint(\"Descriptive Statistics:\")\nprint(descriptive_stats)\n\n# Perform a t-test to compare the means of degree completion rates between genders\nt_statistic, p_value = stats.ttest_ind(\n    gender_degree_df[gender_degree_df[gender_column] == 1][degree_completion_column],\n    gender_degree_df[gender_degree_df[gender_column] == 2][degree_completion_column]\n)\nprint(f\"T-statistic: {t_statistic}, P-value: {p_value}\")",
+    "output": "<string>:4: SettingWithCopyWarning: \nA value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead\n\nSee the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n<string>:5: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.\nDescriptive Statistics:\n                          count       mean       std  ...   50%   75%   max\nSex of respondent, 1979                               ...                  \n1                        6327.0  10.379801  2.280460  ...  10.0  12.0  95.0\n2                        6207.0  10.612534  2.297526  ...  11.0  12.0  95.0\n\n[2 rows x 8 columns]\nT-statistic: nan, P-value: nan\n",
+    "elapsed_seconds": 0.48652276396751404
+  },
+  {
+    "code": "# Check for missing values in the relevant columns\nmissing_values = gender_degree_df.isnull().sum()\nprint(\"Missing values in the relevant columns:\")\nprint(missing_values)\n\n# Drop rows with missing values in the relevant columns\ngender_degree_df_clean = gender_degree_df.dropna(subset=[gender_column, degree_completion_column])\n\n# Perform the t-test again on the cleaned data\nt_statistic, p_value = stats.ttest_ind(\n    gender_degree_df_clean[gender_degree_df_clean[gender_column] == 1][degree_completion_column],\n    gender_degree_df_clean[gender_degree_df_clean[gender_column] == 2][degree_completion_column]\n)\nprint(f\"T-statistic: {t_statistic}, P-value: {p_value}\")",
+    "output": "Missing values in the relevant columns:\nSex of respondent, 1979            0\nHighest grade completed, 1979    152\ndtype: int64\nT-statistic: -5.691433978032243, P-value: 1.2880103410018152e-08\n",
+    "elapsed_seconds": 0.004137082025408745
+  }
+]

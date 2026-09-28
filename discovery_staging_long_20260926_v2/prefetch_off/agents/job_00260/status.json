@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 20.178202006034553,
+  "llm_calls": 5,
+  "python_calls": 4,
+  "final_answer": "Scientific Hypothesis: There is a statistically significant relationship between the discipline of the study and the type of compensation used in both original and replication studies. Economics studies are more likely to use cash compensation for participants compared to Cognitive and Social disciplines.\n\nWORKFLOW_SUMMARY:\n1. Data Loading: The dataset was loaded using Python from the specified path.\n2. Data Inspection: The first few rows of the dataset were examined to understand its structure and the relevant columns.\n3. Filtering and Analysis: The dataset was filtered to find rows where both original and replication studies used cash compensation. The unique disciplines for these studies were identified.\n4. Frequency Analysis: The frequency of cash compensation in each discipline for both original and replication studies was analyzed.\n5. Statistical Test: A chi-squared test was performed to determine if there is a statistically significant relationship between the type of compensation and the discipline. The results confirmed a significant relationship, with Economics showing a higher frequency of cash compensation.",
+  "grading": "not run, as in supplied document",
+  "query": "In which domain do all original and replication studies use cash compensation for participants?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/meta_regression/metadata_11.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

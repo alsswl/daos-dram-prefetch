@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Load the capital.csv dataset\ndf_capital = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of the time_series_data.csv dataset\ndf_time_series.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15100041404366493
+  },
+  {
+    "code": "# Find the maximum value in the 'Depot_inter' column\nmax_depot_value = df_time_series['Depot_inter'].max()\n\n# Find the index of the maximum value\nmax_depot_index = df_time_series['Depot_inter'].idxmax()\n\n# Find the corresponding CE value\npeak_ce = df_time_series.loc[max_depot_index, 'CE']\n\n# Convert the CE value to a century\npeak_century = (peak_ce // 100) + 1\n\npeak_century",
+    "output": "-10",
+    "elapsed_seconds": 0.002190429251641035
+  },
+  {
+    "code": "import matplotlib.pyplot as plt\n\n# Plot the 'Depot_inter' values over time\nplt.figure(figsize=(12, 6))\nplt.plot(df_time_series['CE'], df_time_series['Depot_inter'], label='Depot Interpolated')\nplt.xlabel('CE (Common Era)')\nplt.ylabel('Depot Interpolated Z Values')\nplt.title('Depot Interpolated Z Values Over Time')\nplt.legend()\nplt.grid(True)\nplt.show()\n\n# Plot the 'Depot' values over time\nplt.figure(figsize=(12, 6))\nplt.plot(df_time_series['CE'], df_time_series['Depot'], label='Depot Original')\nplt.xlabel('CE (Common Era)')\nplt.ylabel('Depot Original Z Values')\nplt.title('Depot Original Z Values Over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.3645767546258867
+  },
+  {
+    "code": "# Calculate a rolling mean of the 'Depot_inter' values with a window size of 100 years\ndf_time_series['Depot_inter_rolling'] = df_time_series['Depot_inter'].rolling(window=100).mean()\n\n# Find the maximum value in the rolling mean\nmax_rolling_depot_value = df_time_series['Depot_inter_rolling'].max()\n\n# Find the index of the maximum value in the rolling mean\nmax_rolling_depot_index = df_time_series['Depot_inter_rolling'].idxmax()\n\n# Find the corresponding CE value\npeak_rolling_ce = df_time_series.loc[max_rolling_depot_index, 'CE']\n\n# Convert the CE value to a century\npeak_rolling_century = (peak_rolling_ce // 100) + 1\n\npeak_rolling_century",
+    "output": "-10",
+    "elapsed_seconds": 0.002578499261289835
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\nadjusted_savings_df = pd.read_csv('/data/Adjusted_savings_education_expenditure_percentage_of_GNI.csv')\nexports_df = pd.read_csv('/data/Exports_of_goods_and_services_annual_percentage_growth.csv')\ngni_df = pd.read_csv('/data/GNI_per_capita_constant_2015_USdollar.csv')\nlabor_force_df = pd.read_csv('/data/Labor_force_participation_rate_total_percentage_of_total_population_ages_15+_modeled_ILO_estimate.csv')\nschool_primary_df = pd.read_csv('/data/School_enrollment_primary_percentage_gross.csv')\nschool_secondary_df = pd.read_csv('/data/School_enrollment_secondary_percentage_gross.csv')\n\n# Display the first few rows of each dataset\nadjusted_savings_df.head()\nexports_df.head()\ngni_df.head()\nlabor_force_df.head()\nschool_primary_df.head()\nschool_secondary_df.head()",
+    "output": "         Country Group Country Code  ...  2014 [YR2014]  2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...      42.847160      43.372971\n1  Lower middle income          LMC  ...      64.281197      64.532967\n\n[2 rows x 43 columns]",
+    "elapsed_seconds": 0.15022659907117486
+  },
+  {
+    "code": "import numpy as np\n\n# Extract the relevant columns for analysis\neducation_expenditure = adjusted_savings_df.filter(regex='YR').values\nschool_primary_enrollment = school_primary_df.filter(regex='YR').values\nschool_secondary_enrollment = school_secondary_df.filter(regex='YR').values\n\n# Calculate the correlation between education expenditure and school enrollment\ncorrelation_primary = np.corrcoef(education_expenditure, school_primary_enrollment)[0, 1]\ncorrelation_secondary = np.corrcoef(education_expenditure, school_secondary_enrollment)[0, 1]\ncorrelation_primary, correlation_secondary",
+    "output": "(0.5858935384174062, 0.5858935384174062)",
+    "elapsed_seconds": 0.003404086921364069
+  },
+  {
+    "code": "# Extract economic output data\ngni_per_capita = gni_df.filter(regex='YR').values\nexports_growth = exports_df.filter(regex='YR').values\n\n# Calculate the correlation between education expenditure and economic output\ncorrelation_gni = np.corrcoef(education_expenditure, gni_per_capita)[0, 1]\ncorrelation_exports = np.corrcoef(education_expenditure, exports_growth)[0, 1]\ncorrelation_gni, correlation_exports",
+    "output": "(0.5858935384174062, 0.5858935384174062)",
+    "elapsed_seconds": 0.0024501080624759197
+  },
+  {
+    "code": "# Extract labor force participation data\nlabor_force_participation = labor_force_df.filter(regex='YR').values\n\n# Combine all predictor variables\npredictors = np.hstack((education_expenditure, school_primary_enrollment, school_secondary_enrollment, labor_force_participation))\n\n# Perform multiple linear regression\nfrom sklearn.linear_model import LinearRegression\n\nmodel = LinearRegression()\nmodel.fit(predictors, gni_per_capita)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "ValueError: Input X contains NaN.\nLinearRegression does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values",
+    "elapsed_seconds": 0.569545934908092
+  },
+  {
+    "code": "from sklearn.impute import SimpleImputer\n\n# Impute missing values with the mean\nimputer = SimpleImputer(strategy='mean')\npredictors_imputed = imputer.fit_transform(predictors)\n\n# Perform multiple linear regression with imputed data\nmodel = LinearRegression()\nmodel.fit(predictors_imputed, gni_per_capita)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "/opt/site/sklearn/impute/_base.py:577: UserWarning: Skipping features without any observed values: [123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138]. At least one non-missing value is needed for imputation with strategy='mean'.\n  warnings.warn(\nValueError: Input y contains NaN.",
+    "elapsed_seconds": 0.013499139342457056
+  },
+  {
+    "code": "# Impute missing values in the target variable (GNI per capita)\nimputer_y = SimpleImputer(strategy='mean')\ngni_per_capita_imputed = imputer_y.fit_transform(gni_per_capita)\n\n# Perform multiple linear regression with imputed data\nmodel = LinearRegression()\nmodel.fit(predictors_imputed, gni_per_capita_imputed)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[[ 0.          0.          0.         ...  0.          0.\n   0.        ]\n [ 0.          0.          0.         ...  0.          0.\n   0.        ]\n [ 0.          0.          0.         ...  0.          0.\n   0.        ]\n ...\n [ 0.80240545 -0.006127    0.00670067 ... -0.11435395  0.12437554\n  -0.3948507 ]\n [ 0.84734869 -0.00688892  0.0065242  ... -0.12969122  0.12278517\n  -0.42637193]\n [ 0.02192188 -0.00817734 -0.01037176 ... -0.17398607 -0.16028098\n  -0.19070029]]",
+    "elapsed_seconds": 0.003554458264261484
+  }
+]

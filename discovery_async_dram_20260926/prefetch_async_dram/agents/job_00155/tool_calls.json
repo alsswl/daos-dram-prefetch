@@ -1,0 +1,52 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\n\n# Display the first few rows of the dataset to understand its structure\ntime_series_df.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15341165009886026
+  },
+  {
+    "code": "import matplotlib.pyplot as plt\n\n# Plot the 'Dagger' column over time to visualize any trends\nplt.figure(figsize=(12, 6))\nplt.plot(time_series_df['CE'], time_series_df['Dagger'], label='Dagger Z values')\nplt.xlabel('CE (Common Era)')\nplt.ylabel('Z values')\nplt.title('Z values for Daggers over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.36387940496206284
+  },
+  {
+    "code": "from scipy.stats import linregress\n\n# Perform linear regression on the 'Dagger' column to determine the trend over time\nslope, intercept, r_value, p_value, std_err = linregress(time_series_df['CE'], time_series_df['Dagger'])\n\nslope, p_value",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.45460633002221584
+  },
+  {
+    "code": "# Check for missing values in the 'Dagger' and 'CE' columns\nmissing_values = time_series_df[['CE', 'Dagger']].isnull().sum()\nmissing_values",
+    "output": "CE           0\nDagger    3564\ndtype: int64",
+    "elapsed_seconds": 0.002777892630547285
+  },
+  {
+    "code": "# Impute missing values in the 'Dagger' column using forward fill\ntime_series_df['Dagger'] = time_series_df['Dagger'].ffill()\n\n# Check for missing values again\nmissing_values = time_series_df[['CE', 'Dagger']].isnull().sum()\nmissing_values",
+    "output": "CE        0\nDagger    0\ndtype: int64",
+    "elapsed_seconds": 0.0028932560235261917
+  },
+  {
+    "code": "from scipy.stats import linregress\n\n# Perform linear regression on the 'Dagger' column to determine the trend over time\nslope, intercept, r_value, p_value, std_err = linregress(time_series_df['CE'], time_series_df['Dagger'])\n\nslope, p_value",
+    "output": "(0.00037433408769429474, 4.480992022075614e-127)",
+    "elapsed_seconds": 0.0027960888110101223
+  },
+  {
+    "code": "# Identify the earliest time period where the Z values for daggers show a significant increase\ntime_series_df[['CE', 'Dagger']].head(20)",
+    "output": "      CE  Dagger\n0  -4100   -0.58\n1  -4099   -0.58\n2  -4098   -0.58\n3  -4097   -0.58\n4  -4096   -0.58\n5  -4095   -0.58\n6  -4094   -0.58\n7  -4093   -0.58\n8  -4092   -0.58\n9  -4091   -0.58\n10 -4090   -0.58\n11 -4089   -0.58\n12 -4088   -0.58\n13 -4087   -0.58\n14 -4086   -0.58\n15 -4085   -0.58\n16 -4084   -0.58\n17 -4083   -0.58\n18 -4082   -0.58\n19 -4081   -0.58",
+    "elapsed_seconds": 0.0040574390441179276
+  },
+  {
+    "code": "# Find the first occurrence where the 'Dagger' Z values exceed the initial baseline of -0.58\nbaseline = -0.58\ntime_series_df[time_series_df['Dagger'] > baseline].head(20)",
+    "output": "      Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n1800        1800 -2300  ...              -0.58                  -0.5800\n1801        1801 -2299  ...                NaN                  -0.5799\n1802        1802 -2298  ...                NaN                  -0.5798\n1803        1803 -2297  ...                NaN                  -0.5797\n1804        1804 -2296  ...                NaN                  -0.5796\n1805        1805 -2295  ...                NaN                  -0.5795\n1806        1806 -2294  ...                NaN                  -0.5794\n1807        1807 -2293  ...                NaN                  -0.5793\n1808        1808 -2292  ...                NaN                  -0.5792\n1809        1809 -2291  ...                NaN                  -0.5791\n1810        1810 -2290  ...                NaN                  -0.5790\n1811        1811 -2289  ...                NaN                  -0.5789\n1812        1812 -2288  ...                NaN                  -0.5788\n1813        1813 -2287  ...                NaN                  -0.5787\n1814        1814 -2286  ...                NaN                  -0.5786\n1815        1815 -2285  ...                NaN                  -0.5785\n1816        1816 -2284  ...                NaN                  -0.5784\n1817        1817 -2283  ...                NaN                  -0.5783\n1818        1818 -2282  ...                NaN                  -0.5782\n1819        1819 -2281  ...                NaN                  -0.5781\n\n[20 rows x 37 columns]",
+    "elapsed_seconds": 0.01779782073572278
+  },
+  {
+    "code": "# Identify the first century where the 'Dagger' Z values show a significant increase\ntime_series_df[time_series_df['Dagger'] > baseline]['CE'].min()",
+    "output": "-2300",
+    "elapsed_seconds": 0.002516058273613453
+  },
+  {
+    "code": "# Identify the first century where the 'Dagger' Z values show a consistent increase\ntime_series_df[time_series_df['Dagger'] > baseline]['CE'].value_counts().idxmax()",
+    "output": "-500",
+    "elapsed_seconds": 0.00253418181091547
+  }
+]

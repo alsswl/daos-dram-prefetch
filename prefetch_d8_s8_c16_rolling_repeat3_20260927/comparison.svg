@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="950" height="470"><rect width="950" height="470" fill="white"/>
+<g font-family="sans-serif" fill="#222"><text x="30" y="30" font-size="21">D8/S8, concurrency16: DRAM prefetch OFF vs ON</text>
+<text x="30" y="55" font-size="14">Mean TTFT (ms), each bar = 256 requests in one fresh process. Blue=OFF, orange=ON.</text>
+<line x1="70" x2="910" y1="360.0" y2="360.0" stroke="#ddd"/>
+<text x="15" y="364.0">0</text>
+<line x1="70" x2="910" y1="295.0" y2="295.0" stroke="#ddd"/>
+<text x="15" y="299.0">121</text>
+<line x1="70" x2="910" y1="230.0" y2="230.0" stroke="#ddd"/>
+<text x="15" y="234.0">241</text>
+<line x1="70" x2="910" y1="165.0" y2="165.0" stroke="#ddd"/>
+<text x="15" y="169.0">362</text>
+<line x1="70" x2="910" y1="100.0" y2="100.0" stroke="#ddd"/>
+<text x="15" y="104.0">483</text>
+<rect x="120" y="166.7943810144074" width="70" height="193.2056189855926" fill="#0072b2"/>
+<text x="120" y="156.7943810144074">358.6</text>
+<rect x="210" y="159.87154226507042" width="70" height="200.12845773492958" fill="#d55e00"/>
+<text x="210" y="149.87154226507042">371.5</text>
+<text x="145" y="390">Repeat 1</text>
+<rect x="395" y="145.04205346226473" width="70" height="214.95794653773527" fill="#0072b2"/>
+<text x="395" y="135.04205346226473">399.0</text>
+<rect x="485" y="154.93487669294805" width="70" height="205.06512330705195" fill="#d55e00"/>
+<text x="485" y="144.93487669294805">380.6</text>
+<text x="420" y="390">Repeat 2</text>
+<rect x="670" y="145.78429240565373" width="70" height="214.21570759434627" fill="#0072b2"/>
+<text x="670" y="135.78429240565373">397.6</text>
+<rect x="760" y="133.91304347826085" width="70" height="226.08695652173915" fill="#d55e00"/>
+<text x="760" y="123.91304347826085">419.7</text>
+<text x="695" y="390">Repeat 3</text>
+<text x="30" y="440" font-size="13">Order: OFF/ON, ON/OFF, OFF/ON. DAOS prefetch and DRAM storage enabled in all cases.</text></g></svg>

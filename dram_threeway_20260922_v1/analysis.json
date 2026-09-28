@@ -1,0 +1,316 @@
+{
+  "summary": [
+    {
+      "condition": "daos_only",
+      "concurrency": 1,
+      "phase": "cold",
+      "requests": 12,
+      "processes": 3,
+      "ttft_mean_ms": 358.09687468766543,
+      "ttft_p95_ms": 457.9282766673713,
+      "e2e_mean_ms": 1030.864185381991,
+      "per_process_ttft_mean_ms": [
+        375.2398877986707,
+        349.11098127486184,
+        349.93975498946384
+      ],
+      "process_mean_ttft_sd_ms": 14.852066871670644,
+      "retrieve_ms_mean": null,
+      "cpu_copy_ms_mean": null,
+      "daos_batch_ms_mean": null,
+      "daos_prefetch_calls": 0,
+      "cpu_gpu_prefetch_calls": 0,
+      "cpu_gpu_fallback_calls": 0
+    },
+    {
+      "condition": "daos_only",
+      "concurrency": 1,
+      "phase": "warm",
+      "requests": 36,
+      "processes": 3,
+      "ttft_mean_ms": 65.48113596444536,
+      "ttft_p95_ms": 74.2845952627249,
+      "e2e_mean_ms": 737.0807723232751,
+      "per_process_ttft_mean_ms": [
+        68.51702375570312,
+        64.75390848936513,
+        63.17247564826781
+      ],
+      "process_mean_ttft_sd_ms": 2.745486016820383,
+      "retrieve_ms_mean": 1.1750972222222222,
+      "cpu_copy_ms_mean": null,
+      "daos_batch_ms_mean": 29.997222222222224,
+      "daos_prefetch_calls": 36,
+      "cpu_gpu_prefetch_calls": 0,
+      "cpu_gpu_fallback_calls": 0
+    },
+    {
+      "condition": "daos_only",
+      "concurrency": 4,
+      "phase": "cold",
+      "requests": 12,
+      "processes": 3,
+      "ttft_mean_ms": 1288.8007434667088,
+      "ttft_p95_ms": 1326.2334535364062,
+      "e2e_mean_ms": 2021.3585876044817,
+      "per_process_ttft_mean_ms": [
+        1288.6278167716227,
+        1291.0701179644093,
+        1286.7042956640944
+      ],
+      "process_mean_ttft_sd_ms": 2.188042234712751,
+      "retrieve_ms_mean": null,
+      "cpu_copy_ms_mean": null,
+      "daos_batch_ms_mean": null,
+      "daos_prefetch_calls": 0,
+      "cpu_gpu_prefetch_calls": 0,
+      "cpu_gpu_fallback_calls": 0
+    },
+    {
+      "condition": "daos_only",
+      "concurrency": 4,
+      "phase": "warm",
+      "requests": 36,
+      "processes": 3,
+      "ttft_mean_ms": 135.8996189147648,
+      "ttft_p95_ms": 151.79946756688878,
+      "e2e_mean_ms": 844.5664555054261,
+      "per_process_ttft_mean_ms": [
+        130.08011980370307,
+        142.19305018195882,
+        135.42568675863245
+      ],
+      "process_mean_ttft_sd_ms": 6.07035660843578,
+      "retrieve_ms_mean": 1.2772138888888889,
+      "cpu_copy_ms_mean": null,
+      "daos_batch_ms_mean": 42.51388888888889,
+      "daos_prefetch_calls": 36,
+      "cpu_gpu_prefetch_calls": 0,
+      "cpu_gpu_fallback_calls": 0
+    },
+    {
+      "condition": "dram",
+      "concurrency": 1,
+      "phase": "cold",
+      "requests": 12,
+      "processes": 3,
+      "ttft_mean_ms": 345.79637142208713,
+      "ttft_p95_ms": 393.32261155359447,
+      "e2e_mean_ms": 1015.3202937993532,
+      "per_process_ttft_mean_ms": [
+        342.0591621543281,
+        347.43655211059377,
+        347.8934000013396
+      ],
+      "process_mean_ttft_sd_ms": 3.2445688977255474,
+      "retrieve_ms_mean": null,
+      "cpu_copy_ms_mean": null,
+      "daos_batch_ms_mean": null,
+      "daos_prefetch_calls": 0,
+      "cpu_gpu_prefetch_calls": 0,
+      "cpu_gpu_fallback_calls": 0
+    },
+    {
+      "condition": "dram",
+      "concurrency": 1,
+      "phase": "warm",
+      "requests": 36,
+      "processes": 3,
+      "ttft_mean_ms": 52.49029733628655,
+      "ttft_p95_ms": 52.98239184776321,
+      "e2e_mean_ms": 722.4985627884356,
+      "per_process_ttft_mean_ms": [
+        52.58835927816108,
+        52.43505603478601,
+        52.44747669591258
+      ],
+      "process_mean_ttft_sd_ms": 0.08515090450991789,
+      "retrieve_ms_mean": 13.615475,
+      "cpu_copy_ms_mean": null,
+      "daos_batch_ms_mean": null,
+      "daos_prefetch_calls": 0,
+      "cpu_gpu_prefetch_calls": 0,
+      "cpu_gpu_fallback_calls": 0
+    },
+    {
+      "condition": "dram",
+      "concurrency": 4,
+      "phase": "cold",
+      "requests": 12,
+      "processes": 3,
+      "ttft_mean_ms": 1295.142839779146,
+      "ttft_p95_ms": 1341.2616290035658,
+      "e2e_mean_ms": 2027.2708484553732,
+      "per_process_ttft_mean_ms": [
+        1286.4837711676955,
+        1288.6956016882323,
+        1310.2491464815103
+      ],
+      "process_mean_ttft_sd_ms": 13.129106032107268,
+      "retrieve_ms_mean": null,
+      "cpu_copy_ms_mean": null,
+      "daos_batch_ms_mean": null,
+      "daos_prefetch_calls": 0,
+      "cpu_gpu_prefetch_calls": 0,
+      "cpu_gpu_fallback_calls": 0
+    },
+    {
+      "condition": "dram",
+      "concurrency": 4,
+      "phase": "warm",
+      "requests": 36,
+      "processes": 3,
+      "ttft_mean_ms": 134.3455073139113,
+      "ttft_p95_ms": 139.46315663633868,
+      "e2e_mean_ms": 841.9823444629502,
+      "per_process_ttft_mean_ms": [
+        135.96353183190027,
+        134.61769746694094,
+        132.45529264289266
+      ],
+      "process_mean_ttft_sd_ms": 1.7698873301362783,
+      "retrieve_ms_mean": 13.608888888888888,
+      "cpu_copy_ms_mean": null,
+      "daos_batch_ms_mean": null,
+      "daos_prefetch_calls": 0,
+      "cpu_gpu_prefetch_calls": 0,
+      "cpu_gpu_fallback_calls": 0
+    },
+    {
+      "condition": "dram_prefetch",
+      "concurrency": 1,
+      "phase": "cold",
+      "requests": 12,
+      "processes": 3,
+      "ttft_mean_ms": 350.5708135586853,
+      "ttft_p95_ms": 400.38439655909315,
+      "e2e_mean_ms": 1022.5162077307081,
+      "per_process_ttft_mean_ms": [
+        349.443576997146,
+        351.2528744759038,
+        351.01598920300603
+      ],
+      "process_mean_ttft_sd_ms": 0.9833744746443877,
+      "retrieve_ms_mean": null,
+      "cpu_copy_ms_mean": null,
+      "daos_batch_ms_mean": null,
+      "daos_prefetch_calls": 0,
+      "cpu_gpu_prefetch_calls": 0,
+      "cpu_gpu_fallback_calls": 0
+    },
+    {
+      "condition": "dram_prefetch",
+      "concurrency": 1,
+      "phase": "warm",
+      "requests": 36,
+      "processes": 3,
+      "ttft_mean_ms": 51.5713981908953,
+      "ttft_p95_ms": 52.212343318387866,
+      "e2e_mean_ms": 724.4176650290481,
+      "per_process_ttft_mean_ms": [
+        51.8939071528924,
+        51.57021237149214,
+        51.25007504830137
+      ],
+      "process_mean_ttft_sd_ms": 0.3219176903360125,
+      "retrieve_ms_mean": 1.2481361111111111,
+      "cpu_copy_ms_mean": 12.577222222222222,
+      "daos_batch_ms_mean": null,
+      "daos_prefetch_calls": 0,
+      "cpu_gpu_prefetch_calls": 36,
+      "cpu_gpu_fallback_calls": 0
+    },
+    {
+      "condition": "dram_prefetch",
+      "concurrency": 4,
+      "phase": "cold",
+      "requests": 12,
+      "processes": 3,
+      "ttft_mean_ms": 1300.8036825146216,
+      "ttft_p95_ms": 1337.742333416827,
+      "e2e_mean_ms": 2030.1726459874772,
+      "per_process_ttft_mean_ms": [
+        1303.2864712295122,
+        1301.0310245444998,
+        1298.0935517698526
+      ],
+      "process_mean_ttft_sd_ms": 2.603913675132055,
+      "retrieve_ms_mean": null,
+      "cpu_copy_ms_mean": null,
+      "daos_batch_ms_mean": null,
+      "daos_prefetch_calls": 0,
+      "cpu_gpu_prefetch_calls": 0,
+      "cpu_gpu_fallback_calls": 0
+    },
+    {
+      "condition": "dram_prefetch",
+      "concurrency": 4,
+      "phase": "warm",
+      "requests": 36,
+      "processes": 3,
+      "ttft_mean_ms": 101.99476346477039,
+      "ttft_p95_ms": 108.80375339183956,
+      "e2e_mean_ms": 809.133614672141,
+      "per_process_ttft_mean_ms": [
+        101.51702012323464,
+        102.23785071866587,
+        102.22941955241065
+      ],
+      "process_mean_ttft_sd_ms": 0.4137593460302841,
+      "retrieve_ms_mean": 1.2276444444444445,
+      "cpu_copy_ms_mean": 12.553055555555556,
+      "daos_batch_ms_mean": null,
+      "daos_prefetch_calls": 0,
+      "cpu_gpu_prefetch_calls": 36,
+      "cpu_gpu_fallback_calls": 0
+    }
+  ],
+  "validation": {
+    "configs_match_except_intended_fields": true,
+    "native_library_paths": [
+      "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+      "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+      "/opt/ofi-cuda/lib64/libfabric.so.1.25.0"
+    ],
+    "source_snapshot_hashes_valid": true,
+    "all_cold_requests_miss": true,
+    "all_warm_requests_full_hit": true,
+    "output_tokens_match_within_phase_concurrency_input": true,
+    "differing_output_groups": [],
+    "log_findings": [
+      {
+        "case": "r3_c1_daos_only",
+        "line": "(APIServer pid=2940374) ERROR 09-22 15:56:02 [async_llm.py:704] AsyncLLM output_handler failed."
+      },
+      {
+        "case": "r3_c1_daos_only",
+        "line": "(APIServer pid=2940374) ERROR 09-22 15:56:02 [async_llm.py:704] Traceback (most recent call last):"
+      },
+      {
+        "case": "r3_c1_daos_only",
+        "line": "(APIServer pid=2940374) ERROR 09-22 15:56:02 [async_llm.py:704]   File \"/root/discos_minji/venv/lib64/python3.12/site-packages/vllm/v1/engine/async_llm.py\", line 660, in output_handler"
+      },
+      {
+        "case": "r3_c1_daos_only",
+        "line": "(APIServer pid=2940374) ERROR 09-22 15:56:02 [async_llm.py:704]     outputs = await engine_core.get_output_async()"
+      },
+      {
+        "case": "r3_c1_daos_only",
+        "line": "(APIServer pid=2940374) ERROR 09-22 15:56:02 [async_llm.py:704]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+      },
+      {
+        "case": "r3_c1_daos_only",
+        "line": "(APIServer pid=2940374) ERROR 09-22 15:56:02 [async_llm.py:704]   File \"/root/discos_minji/venv/lib64/python3.12/site-packages/vllm/v1/engine/core_client.py\", line 1061, in get_output_async"
+      },
+      {
+        "case": "r3_c1_daos_only",
+        "line": "(APIServer pid=2940374) ERROR 09-22 15:56:02 [async_llm.py:704]     raise self._format_exception(outputs) from None"
+      },
+      {
+        "case": "r3_c1_daos_only",
+        "line": "(APIServer pid=2940374) ERROR 09-22 15:56:02 [async_llm.py:704] vllm.v1.engine.exceptions.EngineDeadError: EngineCore encountered an issue. See stack trace (above) for the root cause."
+      }
+    ]
+  },
+  "analyzer_sha256": "2f757645e214f9662a650d08093bf76bf75088bc8f29ad4ab5c8a5077acab83d"
+}

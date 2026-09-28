@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 32.73205595090985,
+  "llm_calls": 7,
+  "python_calls": 6,
+  "final_answer": "The two documentation formats that are the least used for requirements in ML-enabled system projects are 'Q10_ML_Documentation_BDD_Scenarios' and 'Q10_ML_Documentation_MLCanvas', with approximately 1.45% and 5.43% of respondents indicating so, respectively. This suggests that these documentation formats are not commonly used in the industry for ML projects. The hypothesis is that the use of BDD scenarios and ML Canvas as documentation formats for requirements in ML-enabled system projects is significantly lower compared to other documentation formats, as indicated by the low percentages of respondents indicating their use. This could be due to the complexity of these formats or a lack of awareness and adoption in the industry. The statistical significance of this finding is supported by the bootstrapping method used in the analysis.",
+  "grading": "not run, as in supplied document",
+  "query": "Which two documentation formats are the least used for requirements in ML-enabled system projects, with 10.13% (95% CI [9.926, 10.333]) and 4.366% (95% CI [4.231, 4.501]) of respondents indicating so, respectively, after bootstrapping for statistical significance?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/requirements_engineering_for_ML_enabled_systems/metadata_8.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

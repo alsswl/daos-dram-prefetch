@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_bmi_processed.csv')\ndf.head()",
+    "output": "   GENDER  AGE  AGE_2     INCOME  ...  SAMESAVE        BMI  BLACK  HISPANIC\n0  FEMALE   30    900  47.279064  ...         0  25.158946      0         0\n1  FEMALE   30    900  19.000000  ...         0  21.948044      0         0\n2  FEMALE   27    729  16.443000  ...         1  23.674773      0         0\n3  FEMALE   26    676  22.110000  ...         0  17.541486      0         0\n4    MALE   29    841  52.200000  ...         0  25.158946      0         0\n\n[5 rows x 9 columns]",
+    "elapsed_seconds": 0.14205580670386553
+  },
+  {
+    "code": "# Filter the data to include only Hispanic men\nhispanic_men = df[(df['GENDER'] == 'MALE') & (df['HISPANIC'] == 1)]\n\n# Display the first few rows of the filtered data\nhispanic_men.head()",
+    "output": "    GENDER  AGE  AGE_2     INCOME  ...  SAMESAVE        BMI  BLACK  HISPANIC\n30    MALE   25    625  47.279064  ...         1  28.796147      0         1\n32    MALE   26    676  47.279064  ...         0  25.158946      0         1\n52    MALE   25    625  47.279064  ...         0  30.409559      0         1\n224   MALE   27    729  14.300000  ...         0  29.759535      0         1\n225   MALE   25    625  47.279064  ...         1  24.327647      0         1\n\n[5 rows x 9 columns]",
+    "elapsed_seconds": 0.006119734141975641
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = hispanic_men[['DISSAVED', 'SAMESAVE']].values  # Predictor variables\ny = hispanic_men['BMI'].values  # Response variable\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[0.98264788 1.57990786]",
+    "elapsed_seconds": 0.5684830793179572
+  },
+  {
+    "code": "import statsmodels.api as sm\n\n# Add a constant to the predictor variables\nX = sm.add_constant(hispanic_men[['DISSAVED', 'SAMESAVE']])\n\n# Fit the model using statsmodels for detailed statistics\nmodel = sm.OLS(y, X).fit()\n\n# Display the summary of the model\nmodel.summary()",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.012159914243966341
+  },
+  {
+    "code": "!pip install statsmodels",
+    "output": "SyntaxError: invalid syntax (<unknown>, line 1)",
+    "elapsed_seconds": 0.0014058290980756283
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\nimport scipy.stats as stats\n\n# Prepare the data for regression\nX = hispanic_men[['DISSAVED', 'SAMESAVE']].values  # Predictor variables\ny = hispanic_men['BMI'].values  # Response variable\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients and standard errors\ncoefficients = model.coef_\nstd_errors = np.sqrt(np.diag(model.score(X, y) * np.linalg.inv(X.T @ X)))\n\n# Calculate t-statistics and p-values\nt_statistics = coefficients / std_errors\np_values = 2 * (1 - stats.t.cdf(np.abs(t_statistics), len(hispanic_men) - X.shape[1] - 1))\n\np_values",
+    "output": "[0. 0.]",
+    "elapsed_seconds": 0.004372959025204182
+  }
+]

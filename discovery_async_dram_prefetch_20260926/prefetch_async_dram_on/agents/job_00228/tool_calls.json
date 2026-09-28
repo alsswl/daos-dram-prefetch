@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\ndf.head()",
+    "output": "                                               study  ... us_lab.r\n0                                          A Roelofs  ...        0\n1                                AL Morris, ML Still  ...        0\n2  B Liefooghe, P Barrouillet, A Vandierendonck, ...  ...        0\n3                       BC Storm, EL Bjork, RA Bjork  ...        1\n4                         C Mitchell, S Nash, G Hall  ...        0\n\n[5 rows x 60 columns]",
+    "elapsed_seconds": 0.15077865682542324
+  },
+  {
+    "code": "# Filter the dataset to find rows where both 'compensation.o' and 'compensation.r' are 'cash'\ncash_compensation_studies = df[(df['compensation.o'] == 'cash') & (df['compensation.r'] == 'cash')]\n\n# Check the 'discipline' column for these studies\ncash_compensation_studies['discipline'].unique()",
+    "output": "['Cognitive' 'Social' 'Economics']",
+    "elapsed_seconds": 0.002879550214856863
+  },
+  {
+    "code": "# Count the frequency of cash compensation in each discipline for original and replication studies\ncash_compensation_counts = df.groupby(['discipline', 'compensation.o']).size().unstack(fill_value=0)\ncash_compensation_counts['cash_ratio_o'] = cash_compensation_counts['cash'] / cash_compensation_counts.sum(axis=1)\n\ncash_compensation_counts_r = df.groupby(['discipline', 'compensation.r']).size().unstack(fill_value=0)\ncash_compensation_counts_r['cash_ratio_r'] = cash_compensation_counts_r['cash'] / cash_compensation_counts_r.sum(axis=1)\n\ncash_compensation_counts, cash_compensation_counts_r",
+    "output": "(compensation.o  cash  credit  mixed  nothing  cash_ratio_o\ndiscipline                                                \nCognitive          9      18      4        3      0.264706\nEconomics         18       0      0        0      1.000000\nSocial             5      21      7        1      0.147059, compensation.r  cash  credit  mixed  nothing  cash_ratio_r\ndiscipline                                                \nCognitive         14       9      8        3      0.411765\nEconomics         18       0      0        0      1.000000\nSocial            11      17      5        1      0.323529)",
+    "elapsed_seconds": 0.009432233404368162
+  },
+  {
+    "code": "from scipy.stats import chi2_contingency\n\n# Create contingency tables for original and replication compensation\ncontingency_table_o = pd.crosstab(df['discipline'], df['compensation.o'])\ncontingency_table_r = pd.crosstab(df['discipline'], df['compensation.r'])\n\n# Perform chi-squared test for original compensation\nchi2_o, p_o, dof_o, expected_o = chi2_contingency(contingency_table_o)\n\n# Perform chi-squared test for replication compensation\nchi2_r, p_r, dof_r, expected_r = chi2_contingency(contingency_table_r)\n\nchi2_o, p_o, chi2_r, p_r",
+    "output": "(41.63911456190868, 2.1664779781462091e-07, 28.28280542986425, 8.31111430006157e-05)",
+    "elapsed_seconds": 0.48338191537186503
+  }
+]

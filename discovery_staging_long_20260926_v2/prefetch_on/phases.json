@@ -1,0 +1,26 @@
+[
+  {
+    "index": 0,
+    "concurrency": 4,
+    "requested_seconds": 300.0,
+    "start_ns": 1790416686047420678,
+    "admission_end_ns": 1790416986167961142,
+    "end_ns": 1790417043291681457
+  },
+  {
+    "index": 1,
+    "concurrency": 8,
+    "requested_seconds": 300.0,
+    "start_ns": 1790417043291796102,
+    "admission_end_ns": 1790417343323384709,
+    "end_ns": 1790417385448165628
+  },
+  {
+    "index": 2,
+    "concurrency": 16,
+    "requested_seconds": 600.0,
+    "start_ns": 1790417385448321263,
+    "admission_end_ns": 1790417985539933742,
+    "end_ns": 1790418058729383931
+  }
+]

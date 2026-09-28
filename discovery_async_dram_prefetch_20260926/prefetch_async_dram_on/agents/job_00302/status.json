@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 50.70316735189408,
+  "llm_calls": 7,
+  "python_calls": 6,
+  "final_answer": "Scientific Hypothesis: In the context of ML-enabled system projects, the use of notebooks (Q10_ML_Documentation_Notebooks) as a documentation format for requirements is the most frequently used method, and this usage is statistically significant compared to other documentation methods. The variables chosen are the documentation methods (Q10_ML_Documentation_*), and the relationship is that the frequency of notebook usage is significantly higher than the mean frequency of other methods, as indicated by the bootstrap analysis.\n\nWORKFLOW_SUMMARY:\n1. Data Loading: The dataset was loaded from the specified path using Python.\n2. Data Inspection: The first few rows of the dataset were examined to understand the structure and the relevant columns.\n3. Data Preprocessing: The documentation columns were identified and converted to binary values (1 for 'quoted', 0 for 'not quoted').\n4. Data Cleaning: Rows with missing values were dropped to ensure data quality.\n5. Frequency Calculation: The frequency of each documentation method was calculated.\n6. Bootstrap Analysis: A bootstrap analysis was performed to determine the statistical significance of the most frequently used documentation method.\n7. Conclusion: Based on the analysis, it was determined that notebooks are the most frequently used documentation format for requirements in ML-enabled system projects, and this usage is statistically significant.",
+  "grading": "not run, as in supplied document",
+  "query": "Which documentation format is the most frequently used for requirements in ML-enabled system projects after bootstrapping for statistical significance?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/requirements_engineering_for_ML_enabled_systems/metadata_5.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

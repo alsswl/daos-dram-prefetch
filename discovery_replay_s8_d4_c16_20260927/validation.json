@@ -1,0 +1,30 @@
+{
+  "c16_off": {
+    "input_sequence_equal": true,
+    "started_empty": true,
+    "native_maps": [
+      "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+      "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+      "/opt/ofi-cuda/lib64/libfabric.so.1.25.0"
+    ]
+  },
+  "c16_on": {
+    "input_sequence_equal": true,
+    "started_empty": true,
+    "native_maps": [
+      "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+      "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+      "/opt/ofi-cuda/lib64/libfabric.so.1.25.0"
+    ]
+  },
+  "archive_hash_mismatches": [],
+  "current_hash_mismatches": [],
+  "current_measurement_hash_mismatches": [],
+  "postprocessing_source_sha256": {
+    "report_fixed_replay.py": "8f30986e0e7384bc5d2fac104c8f65f24eb3cf69cf2332ceb782b2becaf6cda1",
+    "analyze_discovery_staging.py": "95965f046b068e2385e426fe6ee4a8785da9fda57f63ed5d71bfc9b64ccece6f"
+  },
+  "postprocessing_note": "Archived and current source hashes are recorded separately; see mismatch lists.",
+  "requests_hash_matches": true,
+  "native_maps_equal": true
+}

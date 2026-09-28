@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/meta-regression_study_data_heterogeneity_in_replication_projects.csv')\ndf.head()",
+    "output": "      id                                              title  ... us_lab.r   drop\n0   ee.1              Reference points and effort provision  ...        0  False\n1  ee.10  The lure of authority: Motivation and incentiv...  ...        0  False\n2  ee.11                               A continuous dilemma  ...        0  False\n3  ee.12  Slow to anger and fast to forgive: cooperation...  ...        1  False\n4  ee.13  Deferred compensation in multiperiod labor con...  ...        0  False\n\n[5 rows x 57 columns]",
+    "elapsed_seconds": 0.15504918107762933
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport scipy.stats as stats\n\n# Load the dataset\ndf = pd.read_csv('/data/meta-regression_study_data_heterogeneity_in_replication_projects.csv')\n\n# Filter relevant columns\ncitation_columns = ['author_citations_avg.o', 'author_citations_max.o', 'author_citations_avg.r', 'author_citations_max.r', 'discipline']\n\n# Subset the data\ncitation_data = df[citation_columns]\n\n# Group by discipline and calculate mean citation metrics\ngrouped_data = citation_data.groupby('discipline').mean().reset_index()\n\n# Display grouped data\ngrouped_data",
+    "output": "  discipline  ...  author_citations_max.r\n0  Cognitive  ...             2148.091286\n1  Economics  ...             7548.944444\n2     Social  ...             1981.306886\n\n[3 rows x 5 columns]",
+    "elapsed_seconds": 0.49718385515734553
+  },
+  {
+    "code": "import scipy.stats as stats\n\n# Extract original and replication citation data for each discipline\ndisciplines = grouped_data['discipline'].unique()\n\n# Initialize a dictionary to store results\nresults = {}\n\nfor discipline in disciplines:\n    # Filter data for the current discipline\n    discipline_data = grouped_data[grouped_data['discipline'] == discipline]\n    \n    # Extract original and replication citation metrics\n    original_avg = discipline_data['author_citations_avg.o'].values[0]\n    replication_avg = discipline_data['author_citations_avg.r'].values[0]\n    \n    # Perform t-test for average citations\n    t_stat, p_value = stats.ttest_ind(\n        [original_avg] * len(grouped_data),  # Simulate original data\n        [replication_avg] * len(grouped_data)  # Simulate replication data\n    )\n    \n    # Store results\n    results[discipline] = {\n        'original_avg': original_avg,\n        'replication_avg': replication_avg,\n        't_stat': t_stat,\n        'p_value': p_value\n    }\n\nresults",
+    "output": "/opt/site/scipy/stats/_axis_nan_policy.py:592: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.\n  res = hypotest_fun_out(*samples, **kwds)\n{'Cognitive': {'original_avg': 12763.56737798854, 'replication_avg': 413.8267704011065, 't_stat': 3.072505315313054e+17, 'p_value': 6.732566920251814e-70}, 'Economics': {'original_avg': 1713.3055555555552, 'replication_avg': 2575.949074074075, 't_stat': -5365450336341692.0, 'p_value': 7.239799403257814e-63}, 'Social': {'original_avg': 8233.596348968726, 'replication_avg': 383.0181100299401, 't_stat': inf, 'p_value': 0.0}}",
+    "elapsed_seconds": 0.0056221927516162395
+  }
+]

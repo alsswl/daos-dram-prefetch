@@ -1,0 +1,37 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "     HYBAS_ID       long       lat  ...  soil_div     area  diversity\n0  6050000010 -76.477422  7.742693  ...  0.482402  72363.7         68\n1  6050000740 -74.628725  9.803586  ...  0.457436  17944.3         35\n2  6050068100 -75.295995  8.448815  ...  0.378793  17105.5         44\n3  6050068110 -74.608408  8.922863  ...  0.468328    610.1         48\n4  6050070260 -75.591588  5.770093  ...  0.158870  61901.9         81\n\n[5 rows x 21 columns]",
+    "elapsed_seconds": 0.14404021529480815
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = df[['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']].values  # Predictor (evolutionary traits)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.5676503670401871
+  },
+  {
+    "code": "# Recheck the regression analysis\nX = df[['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']].values  # Predictor (evolutionary traits)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.0025896872393786907
+  },
+  {
+    "code": "# Perform regression analysis with all variables in the dataset\nX = df.drop(columns=['HYBAS_ID', 'long', 'lat', 'BAMM_speciation', 'BAMM_extinction', 'BAMM_NetDiv', 'DR', 'diversity']).values  # Predictor (all variables except response and identifiers)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 1.47454061e-02  5.28730479e-01 -7.23211380e+00  1.02301639e+01\n -4.12680838e+00  6.27916750e-04 -1.11242119e-05  4.96039600e-06\n  1.82943678e-05  9.42658462e-06 -4.44738441e-05 -5.30011317e-03\n  9.01799485e-09]",
+    "elapsed_seconds": 0.002996266819536686
+  },
+  {
+    "code": "# Check for missing values in the dataset\ndf.isnull().sum()",
+    "output": "HYBAS_ID           0\nlong               0\nlat                0\nBAMM_speciation    0\nBAMM_extinction    0\nBAMM_NetDiv        0\nDR                 0\nBEL_evol           0\nMBL_evol           0\nOGP_evol           0\nRES_evol           0\nRML_evol           0\nbio1               0\nbio12              0\nrunoff             0\naet                0\nElevation          0\nsgr                0\nsoil_div           0\narea               0\ndiversity          0\ndtype: int64",
+    "elapsed_seconds": 0.0024227327667176723
+  },
+  {
+    "code": "# Check the data types of the variables\ndf.dtypes",
+    "output": "HYBAS_ID             int64\nlong               float64\nlat                float64\nBAMM_speciation    float64\nBAMM_extinction    float64\nBAMM_NetDiv        float64\nDR                 float64\nBEL_evol           float64\nMBL_evol           float64\nOGP_evol           float64\nRES_evol           float64\nRML_evol           float64\nbio1               float64\nbio12              float64\nrunoff               int64\naet                  int64\nElevation          float64\nsgr                  int64\nsoil_div           float64\narea               float64\ndiversity            int64\ndtype: object",
+    "elapsed_seconds": 0.002293079160153866
+  },
+  {
+    "code": "# Calculate the correlation matrix\ncorrelation_matrix = df.corr()\ncorrelation_matrix['BAMM_speciation']",
+    "output": "HYBAS_ID           0.022397\nlong               0.108283\nlat                0.161789\nBAMM_speciation    1.000000\nBAMM_extinction    0.903175\nBAMM_NetDiv        0.914270\nDR                 0.801457\nBEL_evol           0.421486\nMBL_evol           0.882864\nOGP_evol           0.587297\nRES_evol           0.867942\nRML_evol          -0.131759\nbio1               0.040913\nbio12              0.001621\nrunoff            -0.063529\naet                0.051360\nElevation          0.472757\nsgr               -0.013700\nsoil_div          -0.212643\narea               0.101126\ndiversity          0.044884\nName: BAMM_speciation, dtype: float64",
+    "elapsed_seconds": 0.002573871985077858
+  }
+]

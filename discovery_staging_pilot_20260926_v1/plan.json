@@ -1,0 +1,47 @@
+{
+  "args": {
+    "output": "/root/discos_minji/discovery_staging_pilot_20260926_v1",
+    "cpu_gb": 8.0,
+    "conditions": "off",
+    "phases": [
+      [
+        8,
+        180.0
+      ]
+    ],
+    "tasks": 32,
+    "port": 8017,
+    "task_timeout": 300,
+    "drain_seconds": 90,
+    "dry_run": false,
+    "model": "Qwen/Qwen3-14B",
+    "max_model_len": 32768
+  },
+  "source_sha256": {
+    "discovery_staging_bench.py": "417880a7d715c8c6f07c5ab724728bbb0061e66b5182a88b13b391dddfe26706",
+    "run_full_agent.py": "cdf8c9e8d62b5481297b387ceced23cce2cc4c02607b3ee4445200dc20317728",
+    "agent_python_worker.py": "c950ce851ee4f1cb0f4e619a342c8a5f69cc4203cba626157bdf7a0a3e567190",
+    "compare_e2e.py": "bf4de2266ed3c7578f8f4399a2d88c79be02fef10996ce15dcb0699f513c081c",
+    "staging_mixed_pressure.py": "828e69c8a30d524bb1ff700a051125dbeeedc380f41ef8a4254651a07f27235c",
+    "run_vllm.sh": "5f303713631354a1b56837a6f7463a3ed1c45752fd847b05da54a8023e6af32e",
+    "lmcache_daos/gds_backend.py": "3fc43aa3a9c9c292b026e60bf4e49cf975ff2d5ac932a4e8c9b7ba8aa56d2983",
+    "lmcache_daos/staging_probe_backend.py": "b60a7b700a7d7cd8283284d99519907fa32070289c67e64b15046e093a8c86c8",
+    "lmcache_daos/staging_trace.py": "ffa54417176287c1f2ba01f81bcf8c56cbfdcd049900e142969529e481485a7d",
+    "lmcache_daos/dram_prefetch_backend.py": "a87bfed6e2a79780f871a45ae8fcd4534439b9e044db98bfd2270f090886a193",
+    "discoverybench/agents/react_agent.py": "9d4cbc1b3a4ba12ffeef1e83cd34fb9d1dd546a6055ac7a61c04e5fd33ae8fb3",
+    "discoverybench/agents/react_utils.py": "d01a92e883a883bb4bd7195d25ac2c9672dc052529dbc0eabf858a319569a392",
+    "discoverybench/utils/autonomous_single_agent.py": "93617028a7547ef26d737fd2a87d289b8b9bb194aaf0d3fd2295a34571cf7d0f",
+    "libdaosgdr.so": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c"
+  },
+  "notes": [
+    "Real-data DiscoveryBench subset; scientific-answer grading not run.",
+    "25 agent steps, 2048 output tokens/call; original prompts, no padding.",
+    "One live vLLM process per condition. Closed-loop agent arrivals, Python tool pauses included.",
+    "No artificial tier ratios; CPU LRU and async DAOS stores remain active.",
+    "New DAOS namespace per condition; no cache deletion or server cache flush.",
+    "OFF/ON have same task catalogue, but actual model calls and arrival timing can diverge.",
+    "Each phase admits new workflows for requested duration, then drains for at most drain_seconds.",
+    "20ms nominal allocator sampling plus allocation/free events; instrumentation has overhead.",
+    "Failures, context overflows and forced timeout stops are retained, never silently discarded."
+  ]
+}

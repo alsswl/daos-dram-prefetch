@@ -1,0 +1,130 @@
+{
+  "args": {
+    "output": "/root/discos_minji/dram_threeway_plan_20260922",
+    "repeats": 3,
+    "reuse_passes": 3,
+    "transport": "object",
+    "port": 8017,
+    "dry_run": true,
+    "profile": true,
+    "cpu_gb": 4,
+    "model": "Qwen/Qwen3-14B",
+    "max_tokens": 64,
+    "max_model_len": 8192,
+    "context_tokens": [
+      4096,
+      4096,
+      4096,
+      4096
+    ],
+    "chunk_size": 128,
+    "startup_timeout": 360,
+    "request_timeout": 180,
+    "drain_timeout": 180
+  },
+  "cases": [
+    [
+      1,
+      1,
+      "daos_only"
+    ],
+    [
+      1,
+      1,
+      "dram"
+    ],
+    [
+      1,
+      1,
+      "dram_prefetch"
+    ],
+    [
+      1,
+      4,
+      "dram"
+    ],
+    [
+      1,
+      4,
+      "dram_prefetch"
+    ],
+    [
+      1,
+      4,
+      "daos_only"
+    ],
+    [
+      2,
+      4,
+      "dram_prefetch"
+    ],
+    [
+      2,
+      4,
+      "daos_only"
+    ],
+    [
+      2,
+      4,
+      "dram"
+    ],
+    [
+      2,
+      1,
+      "dram"
+    ],
+    [
+      2,
+      1,
+      "dram_prefetch"
+    ],
+    [
+      2,
+      1,
+      "daos_only"
+    ],
+    [
+      3,
+      1,
+      "dram_prefetch"
+    ],
+    [
+      3,
+      1,
+      "daos_only"
+    ],
+    [
+      3,
+      1,
+      "dram"
+    ],
+    [
+      3,
+      4,
+      "daos_only"
+    ],
+    [
+      3,
+      4,
+      "dram"
+    ],
+    [
+      3,
+      4,
+      "dram_prefetch"
+    ]
+  ],
+  "notes": [
+    "Fresh vLLM process and UUID namespace for each repeat/concurrency/mode.",
+    "No warmup inference before cold measurement. Model load is outside HTTP timings.",
+    "Four distinct first-chunk hashes; all four cold requests must report zero cached tokens.",
+    "At concurrency 1, only the first request is process-first; later distinct prompts are KV-cold.",
+    "OS/model file caches, GPU clocks and DAOS server internal caches are not reset.",
+    "DRAM off disables KV retention, not temporary host buffers or the CPU allocator.",
+    "Cold latency includes inference and store submission, not proof of DAOS commit latency.",
+    "Optional warm reuse passes are reported separately, never called cold.",
+    "Readiness requests between cold and warm are recorded separately (max_tokens=1).",
+    "Three conditions rotate order; each occupies each order position over three repeats.",
+    "No DAOS deletion. CPU/GPU pool sizes remain equal across conditions."
+  ]
+}

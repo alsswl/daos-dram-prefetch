@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('requirements_dataset.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: 'requirements_dataset.csv'",
+    "elapsed_seconds": 0.1330763315781951
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/Users/bodhi/projects/datavoyager/DiscoveryBench/evolution_freshwater_fish/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: '/Users/bodhi/projects/datavoyager/DiscoveryBench/evolution_freshwater_fish/body-size-evolution-in-south-american-freshwater-fishes.csv'",
+    "elapsed_seconds": 0.001536813098937273
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/Users/bodhi/projects/datavoyager/DiscoveryBench/requirements_dataset.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: '/Users/bodhi/projects/datavoyager/DiscoveryBench/requirements_dataset.csv'",
+    "elapsed_seconds": 0.0016546663828194141
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('requirements_dataset.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: 'requirements_dataset.csv'",
+    "elapsed_seconds": 0.0015301951207220554
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/Users/bodhi/projects/datavoyager/DiscoveryBench/requirements_dataset.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: '/Users/bodhi/projects/datavoyager/DiscoveryBench/requirements_dataset.csv'",
+    "elapsed_seconds": 0.001543580088764429
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/Users/bodhi/projects/datavoyager/DiscoveryBench/requirements_dataset.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: '/Users/bodhi/projects/datavoyager/DiscoveryBench/requirements_dataset.csv'",
+    "elapsed_seconds": 0.0013526519760489464
+  }
+]

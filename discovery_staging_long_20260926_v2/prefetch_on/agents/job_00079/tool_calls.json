@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Load the capital.csv dataset\ndf_capital = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of the time_series_data dataset\ndf_time_series.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15026235673576593
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Load the capital.csv dataset\ndf_capital = pd.read_csv('/data/capital.csv')\n\n# Identify the column for Depot in the time_series_data dataset\ndepot_column = 'Depot'\n\n# Extract the 'CE' and 'Depot' columns\ndf_depot = df_time_series[['CE', depot_column]]\n\n# Find the row with the maximum 'Depot' value\nmax_depot_row = df_depot.loc[df_depot[depot_column].idxmax()]\n\n# Determine the century based on the 'CE' value\nce_value = max_depot_row['CE']\ncentury = (ce_value // 100) + 1 if ce_value >= 0 else (ce_value // 100) - 1\n\ncentury",
+    "output": "-12.0",
+    "elapsed_seconds": 0.01244373107329011
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Load the capital.csv dataset\ndf_capital = pd.read_csv('/data/capital.csv')\n\n# Identify the column for Depot in the time_series_data dataset\ndepot_column = 'Depot'\n\n# Extract the 'CE' and 'Depot' columns\ndf_depot = df_time_series[['CE', depot_column]]\n\n# Find the row with the maximum 'Depot' value\nmax_depot_row = df_depot.loc[df_depot[depot_column].idxmax()]\n\n# Display the row with the maximum 'Depot' value\nmax_depot_row",
+    "output": "CE      -1100.00\nDepot       3.38\nName: 3000, dtype: float64",
+    "elapsed_seconds": 0.012067010626196861
+  }
+]

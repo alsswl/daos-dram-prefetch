@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 45.374621839262545,
+  "llm_calls": 8,
+  "python_calls": 7,
+  "final_answer": "The two documentation formats that are the least used for requirements in ML-enabled system projects are 'Q10_ML_Documentation_BDD_Scenarios' and 'Q10_ML_Documentation_MLCanvas', with 2.062% and 7.732% of respondents indicating so, respectively. This suggests that these documentation formats are not commonly used in the industry for ML projects, which could be due to various factors such as lack of awareness, complexity, or preference for other methods.\n\nHypothesis: In the context of ML-enabled system projects, the use of BDD scenarios and ML Canvas as documentation formats is significantly lower compared to other formats, indicating a potential preference for alternative methods in the industry.\n\nWORKFLOW_SUMMARY:\n1. Data Loading: Loaded the dataset from the specified path using Python.\n2. Data Inspection: Displayed the first few rows of the dataset to understand its structure and the relevant columns.\n3. Documentation Format Analysis: Identified the columns related to documentation formats for requirements in ML-enabled system projects and calculated the percentage of respondents indicating that they use each format.\n4. Filtering and Recalculation: Filtered out the '-77' values, which represent missing or invalid data, and recalculated the percentages to ensure accuracy.\n5. Final Analysis: Determined the two documentation formats with the lowest usage based on the recalculated percentages.",
+  "grading": "not run, as in supplied document",
+  "query": "Which two documentation formats are the least used for requirements in ML-enabled system projects, with 10.13% (95% CI [9.926, 10.333]) and 4.366% (95% CI [4.231, 4.501]) of respondents indicating so, respectively, after bootstrapping for statistical significance?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/requirements_engineering_for_ML_enabled_systems/metadata_8.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

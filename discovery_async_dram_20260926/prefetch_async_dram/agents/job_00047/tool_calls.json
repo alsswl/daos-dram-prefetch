@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Display the first few rows of the dataset to understand its structure\ndf_time_series.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15263742487877607
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Extract the 'CE' and 'Depot' columns\nce_values = df_time_series['CE'].values\ndepot_values = df_time_series['Depot'].values\n\n# Identify the index of the maximum Depot value\nmax_index = depot_values.argmax()\n\n# Find the corresponding CE value\npeak_ce = ce_values[max_index]\n\n# Determine the century\npeak_century = peak_ce // 100 if peak_ce >= 0 else (peak_ce - 99) // 100\n\npeak_century",
+    "output": "-42",
+    "elapsed_seconds": 0.011252100113779306
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Check for missing values in the 'Depot' column\nmissing_depots = df_time_series['Depot'].isnull().sum()\nprint(\"Number of missing values in 'Depot' column:\", missing_depots)\n\n# Check for any inconsistencies in the 'CE' column\nce_unique = df_time_series['CE'].nunique()\nprint(\"Number of unique CE values:\", ce_unique)\n\n# Check the range of CE values\nce_min = df_time_series['CE'].min()\nce_max = df_time_series['CE'].max()\nprint(\"Minimum CE value:\", ce_min)\nprint(\"Maximum CE value:\", ce_max)\n\n# Check the maximum Depot value and its corresponding CE value\nmax_depot_value = df_time_series['Depot'].max()\nmax_depot_row = df_time_series[df_time_series['Depot'] == max_depot_value]\nprint(\"Maximum Depot value:\", max_depot_value)\nprint(\"Corresponding CE value:\", max_depot_row['CE'].values[0])",
+    "output": "Number of missing values in 'Depot' column: 3564\nNumber of unique CE values: 3601\nMinimum CE value: -4100\nMaximum CE value: -500\nMaximum Depot value: 3.38\nCorresponding CE value: -1100\n",
+    "elapsed_seconds": 0.01187932025641203
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Extract the 'CE' and 'Depot_inter' columns\nce_values = df_time_series['CE'].values\ndepot_inter_values = df_time_series['Depot_inter'].values\n\n# Identify the index of the maximum Depot_inter value\nmax_index_inter = depot_inter_values.argmax()\n\n# Find the corresponding CE value\npeak_ce_inter = ce_values[max_index_inter]\n\n# Determine the century\npeak_century_inter = peak_ce_inter // 100 if peak_ce_inter >= 0 else (peak_ce_inter - 99) // 100\n\npeak_century_inter",
+    "output": "-12",
+    "elapsed_seconds": 0.011447421740740538
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Extract the 'CE' and 'Depot_inter_100' columns\nce_values = df_time_series['CE'].values\ndepot_inter_100_values = df_time_series['Depot_inter_100'].values\n\n# Identify the index of the maximum Depot_inter_100 value\nmax_index_inter_100 = depot_inter_100_values.argmax()\n\n# Find the corresponding CE value\npeak_ce_inter_100 = ce_values[max_index_inter_100]\n\n# Determine the century\npeak_century_inter_100 = peak_ce_inter_100 // 100 if peak_ce_inter_100 >= 0 else (peak_ce_inter_100 - 99) // 100\n\npeak_century_inter_100",
+    "output": "KeyError: 'Depot_inter_100'",
+    "elapsed_seconds": 0.010775223840028048
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Extract the 'CE' and 'Depot_inter' columns\nce_values = df_time_series['CE'].values\ndepot_inter_values = df_time_series['Depot_inter'].values\n\n# Identify the index of the maximum Depot_inter value\nmax_index_inter = depot_inter_values.argmax()\n\n# Find the corresponding CE value\npeak_ce_inter = ce_values[max_index_inter]\n\n# Determine the century\npeak_century_inter = peak_ce_inter // 100 if peak_ce_inter >= 0 else (peak_ce_inter - 99) // 100\n\npeak_century_inter",
+    "output": "-12",
+    "elapsed_seconds": 0.01105512399226427
+  }
+]

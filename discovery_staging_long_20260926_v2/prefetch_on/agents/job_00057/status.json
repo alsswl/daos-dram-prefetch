@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 58.194829798769206,
+  "llm_calls": 20,
+  "python_calls": 19,
+  "final_answer": "Hypothesis: Increased education spending does not positively impact per capita GDP in Sub-Saharan Africa, as indicated by a strong negative correlation of approximately -0.966 between education expenditure and GDP. This relationship is statistically significant, suggesting that other factors may be influencing GDP growth in this region.",
+  "grading": "not run, as in supplied document",
+  "query": "In what regions does increased education spending positively impact per capita GDP?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/worldbank_education_gdp/metadata_0.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

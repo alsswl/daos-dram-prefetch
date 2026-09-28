@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 40.783019793685526,
+  "llm_calls": 7,
+  "python_calls": 6,
+  "final_answer": "**\nThe success of non-native plant species in Catalonia is significantly influenced by their introduction pathways, as evidenced by the ANOVA results showing significant differences in the number of invaded plots and area of occupancy across pathways. The relationship between minimum residence time (mrt) and success metrics requires further analysis to quantify the exact nature of the interaction.",
+  "grading": "not run, as in supplied document",
+  "query": "How do introduction pathways interact with minimum residence time in affecting the success of non-native plant species in Catalonia?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/introduction_pathways_non-native_plants/metadata_4.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

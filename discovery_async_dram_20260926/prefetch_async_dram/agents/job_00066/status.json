@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 34.208272797986865,
+  "llm_calls": 7,
+  "python_calls": 6,
+  "final_answer": "The two documentation formats that are the least used for requirements in ML-enabled system projects are 'Q10_ML_Documentation_BDD_Scenarios' and 'Q10_ML_Documentation_MLCanvas', with approximately 1.62% and 6.07% of respondents indicating so, respectively. However, this does not match the percentages provided in the query (10.13% and 4.366%), suggesting a discrepancy in the data or analysis.\n\nHypothesis: The use of BDD scenarios and ML Canvas as documentation formats for requirements in ML-enabled system projects is significantly lower compared to other documentation formats, as indicated by the low percentages of respondents indicating their use.\n\nWORKFLOW_SUMMARY:\n1. Data Loading: Loaded the dataset from the specified path using Python.\n2. Data Inspection: Displayed the first few rows of the dataset to understand its structure and the relevant columns.\n3. Documentation Format Analysis: Identified the columns related to documentation formats for requirements in ML-enabled system projects and calculated the percentage of respondents indicating that they use each format.\n4. Missing Value Check: Checked for missing or invalid values in the documentation columns and found none.\n5. Unique Value Check: Checked the unique values in the documentation columns and found that they are not binary but represent whether the documentation format is used ('quoted') or not ('not quoted').\n6. Recalculating Percentages: Recalculated the percentages using the correct values ('quoted' and 'not quoted') and treated '-77' as missing data.\n7. Distribution Check: Checked the distribution of responses for each documentation format to ensure that the percentages are calculated correctly.",
+  "grading": "not run, as in supplied document",
+  "query": "Which two documentation formats are the least used for requirements in ML-enabled system projects, with 10.13% (95% CI [9.926, 10.333]) and 4.366% (95% CI [4.231, 4.501]) of respondents indicating so, respectively, after bootstrapping for statistical significance?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/requirements_engineering_for_ML_enabled_systems/metadata_8.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

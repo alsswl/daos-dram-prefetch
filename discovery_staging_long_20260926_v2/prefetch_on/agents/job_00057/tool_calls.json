@@ -1,0 +1,97 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/worldbank_education_gdp.csv')\ndf.head()",
+    "output": "        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n2  Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n3  Sub-Saharan Africa          SSF  ...     97.963791     96.974968\n4  Sub-Saharan Africa          SSF  ...     42.847160     43.372971\n\n[5 rows x 45 columns]",
+    "elapsed_seconds": 0.1439273152500391
+  },
+  {
+    "code": "# Identify the relevant columns\neducation_expenditure_col = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_col = 'GNI per capita (constant 2015 US dollar)'\n\n# Filter the dataset to include only the relevant columns\ndf_filtered = df[[education_expenditure_col, gdp_col, 'Country Group']]\n\n# Display the first few rows of the filtered dataset\ndf_filtered.head()",
+    "output": "KeyError: \"['Adjusted savings: education expenditure (percentage of GNI)', 'GNI per capita (constant 2015 US dollar)'] not in index\"",
+    "elapsed_seconds": 0.0015164017677307129
+  },
+  {
+    "code": "# Display the actual column names\ndf.columns.tolist()",
+    "output": "['Country Group', 'Country Code', 'Series Name', 'Series Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]']",
+    "elapsed_seconds": 0.0014561130665242672
+  },
+  {
+    "code": "# Filter the dataset to include only the relevant series names\neducation_expenditure_series = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_series = 'GNI per capita (constant 2015 US dollar)'\n\n# Filter the dataset to include only the relevant series\ndf_education = df[df['Series Name'] == education_expenditure_series]\ndf_gdp = df[df['Series Name'] == gdp_series]\n\n# Display the first few rows of the filtered datasets\ndf_education.head(), df_gdp.head()",
+    "output": "(         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n1   Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n7  Lower middle income          LMC  ...      3.106096      3.060663\n\n[2 rows x 45 columns], Empty DataFrame\nColumns: [Country Group, Country Code, Series Name, Series Code, 1975 [YR1975], 1976 [YR1976], 1977 [YR1977], 1978 [YR1978], 1979 [YR1979], 1980 [YR1980], 1981 [YR1981], 1982 [YR1982], 1983 [YR1983], 1984 [YR1984], 1985 [YR1985], 1986 [YR1986], 1987 [YR1987], 1988 [YR1988], 1989 [YR1989], 1990 [YR1990], 1991 [YR1991], 1992 [YR1992], 1993 [YR1993], 1994 [YR1994], 1995 [YR1995], 1996 [YR1996], 1997 [YR1997], 1998 [YR1998], 1999 [YR1999], 2000 [YR2000], 2001 [YR2001], 2002 [YR2002], 2003 [YR2003], 2004 [YR2004], 2005 [YR2005], 2006 [YR2006], 2007 [YR2007], 2008 [YR2008], 2009 [YR2009], 2010 [YR2010], 2011 [YR2011], 2012 [YR2012], 2013 [YR2013], 2014 [YR2014], 2015 [YR2015]]\nIndex: [])",
+    "elapsed_seconds": 0.014564144890755415
+  },
+  {
+    "code": "# Check the unique values in the 'Series Name' column\nunique_series_names = df['Series Name'].unique()\nunique_series_names",
+    "output": "['GNI per capita (constant 2015 USdollar)'\n 'Adjusted savings: education expenditure (percentage of GNI)'\n 'Exports of goods and services (annual percentage growth)'\n 'School enrollment, primary (percentage gross)'\n 'School enrollment, secondary (percentage gross)'\n 'Labor force participation rate, total (percentage of total population ages 15+) (modeled ILO estimate)']",
+    "elapsed_seconds": 0.001593329943716526
+  },
+  {
+    "code": "# Correct the series name for GNI per capita\ngdp_series_corrected = 'GNI per capita (constant 2015 USdollar)'\n\n# Filter the dataset for the corrected GDP series\ndf_gdp_corrected = df[df['Series Name'] == gdp_series_corrected]\n\n# Display the first few rows of the corrected GDP dataset\ndf_gdp_corrected.head()",
+    "output": "         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n6  Lower middle income          LMC  ...   1894.302198   1965.288164\n\n[2 rows x 45 columns]",
+    "elapsed_seconds": 0.015574525110423565
+  },
+  {
+    "code": "# Merge the education expenditure and GDP datasets on 'Country Group' and years\ndf_merged = pd.merge(df_education, df_gdp_corrected, on='Country Group', how='inner')\n\n# Display the first few rows of the merged dataset\ndf_merged.head()",
+    "output": "         Country Group Country Code_x  ... 2014 [YR2014]_y 2015 [YR2015]_y\n0   Sub-Saharan Africa            SSF  ...     1620.904978     1634.258291\n1  Lower middle income            LMC  ...     1894.302198     1965.288164\n\n[2 rows x 89 columns]",
+    "elapsed_seconds": 0.02276621200144291
+  },
+  {
+    "code": "# Rename the columns to remove the suffixes and clarify the data\ndf_merged.columns = [col.replace('_x', '') if '_x' in col else col for col in df_merged.columns]\ndf_merged.columns = [col.replace('_y', '') if '_y' in col else col for col in df_merged.columns]\n\n# Display the first few rows of the renamed dataset\ndf_merged.head()",
+    "output": "         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Lower middle income          LMC  ...   1894.302198   1965.288164\n\n[2 rows x 89 columns]",
+    "elapsed_seconds": 0.023108421824872494
+  },
+  {
+    "code": "# Extract the relevant columns for analysis\nyears = [str(year) for year in range(1975, 2016)]\ndf_analysis = df_merged[[col for col in df_merged.columns if col in years or col in ['Country Group', 'Country Code']]]\ndf_analysis = df_analysis.dropna()\n\n# Perform correlation analysis\ncorrelation_results = df_analysis.corr()\n\n# Display the correlation results\ncorrelation_results",
+    "output": "ValueError: could not convert string to float: 'Sub-Saharan Africa'",
+    "elapsed_seconds": 0.0030102389864623547
+  },
+  {
+    "code": "# Extract only the year columns for correlation analysis\nyear_columns = [col for col in df_merged.columns if col.startswith('19') or col.startswith('20')]\ndf_year_data = df_merged[year_columns]\n\n# Perform correlation analysis on the year columns\ncorrelation_results = df_year_data.corr()\n\n# Display the correlation results\ncorrelation_results",
+    "output": "               1975 [YR1975]  1975 [YR1975]  ...  2015 [YR2015]  2015 [YR2015]\n1975 [YR1975]            1.0            NaN  ...            1.0           -1.0\n1975 [YR1975]            NaN            NaN  ...            NaN            NaN\n1976 [YR1976]            1.0            NaN  ...            1.0           -1.0\n1976 [YR1976]            NaN            NaN  ...            NaN            NaN\n1977 [YR1977]            1.0            NaN  ...            1.0           -1.0\n...                      ...            ...  ...            ...            ...\n2013 [YR2013]           -1.0            NaN  ...           -1.0            1.0\n2014 [YR2014]            1.0            NaN  ...            1.0           -1.0\n2014 [YR2014]           -1.0            NaN  ...           -1.0            1.0\n2015 [YR2015]            1.0            NaN  ...            1.0           -1.0\n2015 [YR2015]           -1.0            NaN  ...           -1.0            1.0\n\n[164 rows x 164 columns]",
+    "elapsed_seconds": 0.030959751922637224
+  },
+  {
+    "code": "# Reshape the data into a long format\ndf_long = df_year_data.melt(var_name='Year', value_name='Value')\n\n# Add the 'Country Group' information back to the long format data\ndf_long = df_long.merge(df_merged[['Country Group'] + year_columns], on='Country Group', how='left')\n\n# Display the first few rows of the long format data\ndf_long.head()",
+    "output": "KeyError: 'Country Group'",
+    "elapsed_seconds": 0.005965535994619131
+  },
+  {
+    "code": "# Include 'Country Group' in the year data\ndf_year_data_with_group = df_merged[['Country Group'] + year_columns]\n\n# Reshape the data into a long format\ndf_long = df_year_data_with_group.melt(id_vars='Country Group', var_name='Year', value_name='Value')\n\n# Display the first few rows of the long format data\ndf_long.head()",
+    "output": "         Country Group           Year       Value\n0   Sub-Saharan Africa  1975 [YR1975]    4.300055\n1  Lower middle income  1975 [YR1975]    2.694685\n2   Sub-Saharan Africa  1975 [YR1975]         NaN\n3  Lower middle income  1975 [YR1975]  880.766431\n4   Sub-Saharan Africa  1976 [YR1976]    4.309288",
+    "elapsed_seconds": 0.007529202848672867
+  },
+  {
+    "code": "# Separate the data into education expenditure and GDP based on the 'Series Name'\ndf_education_long = df_long[df_long['Year'].str.contains('Adjusted savings: education expenditure (percentage of GNI)')]\ndf_gdp_long = df_long[df_long['Year'].str.contains('GNI per capita (constant 2015 USdollar)')]\n\n# Display the first few rows of the separated datasets\ndf_education_long.head(), df_gdp_long.head()",
+    "output": "<string>:1: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.\n<string>:2: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.\n(Empty DataFrame\nColumns: [Country Group, Year, Value]\nIndex: [], Empty DataFrame\nColumns: [Country Group, Year, Value]\nIndex: [])",
+    "elapsed_seconds": 0.0026053939945995808
+  },
+  {
+    "code": "# Identify the correct year columns for education expenditure and GDP\neducation_expenditure_years = [col for col in df_merged.columns if 'Adjusted savings: education expenditure (percentage of GNI)' in col]\ngdp_years = [col for col in df_merged.columns if 'GNI per capita (constant 2015 USdollar)' in col]\n\n# Extract the data for education expenditure and GDP\ndf_education_long = df_merged[education_expenditure_years + ['Country Group']]\ndf_gdp_long = df_merged[gdp_years + ['Country Group']]\n\n# Reshape the data into a long format\ndf_education_long = df_education_long.melt(id_vars='Country Group', var_name='Year', value_name='Education_Expenditure')\ndf_gdp_long = df_gdp_long.melt(id_vars='Country Group', var_name='Year', value_name='GDP')\n\n# Merge the education expenditure and GDP data\ndf_analysis = pd.merge(df_education_long, df_gdp_long, on=['Country Group', 'Year'])\n\n# Display the first few rows of the merged dataset\ndf_analysis.head()",
+    "output": "Empty DataFrame\nColumns: [Country Group, Year, Education_Expenditure, GDP]\nIndex: []",
+    "elapsed_seconds": 0.004406374879181385
+  },
+  {
+    "code": "# Identify the correct columns for education expenditure and GDP\neducation_expenditure_col = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_col = 'GNI per capita (constant 2015 USdollar)'\n\n# Filter the dataset to include only the relevant series\ndf_education = df[df['Series Name'] == education_expenditure_col]\ndf_gdp = df[df['Series Name'] == gdp_col]\n\n# Reshape the data into a long format\ndf_education_long = df_education.melt(id_vars='Country Group', var_name='Year', value_name='Education_Expenditure')\ndf_gdp_long = df_gdp.melt(id_vars='Country Group', var_name='Year', value_name='GDP')\n\n# Merge the education expenditure and GDP data\ndf_analysis = pd.merge(df_education_long, df_gdp_long, on=['Country Group', 'Year'])\n\n# Display the first few rows of the merged dataset\ndf_analysis.head()",
+    "output": "         Country Group  ...                                      GDP\n0   Sub-Saharan Africa  ...                                      SSF\n1  Lower middle income  ...                                      LMC\n2   Sub-Saharan Africa  ...  GNI per capita (constant 2015 USdollar)\n3  Lower middle income  ...  GNI per capita (constant 2015 USdollar)\n4   Sub-Saharan Africa  ...                           NY.GNP.PCAP.KD\n\n[5 rows x 4 columns]",
+    "elapsed_seconds": 0.008634631987661123
+  },
+  {
+    "code": "# Ensure the 'Year' column is properly extracted and the data is aligned\ndf_education_long = df_education.melt(id_vars=['Country Group', 'Series Name', 'Series Code'], var_name='Year', value_name='Education_Expenditure')\ndf_gdp_long = df_gdp.melt(id_vars=['Country Group', 'Series Name', 'Series Code'], var_name='Year', value_name='GDP')\n\n# Merge the education expenditure and GDP data\ndf_analysis = pd.merge(df_education_long, df_gdp_long, on=['Country Group', 'Year'])\n\n# Display the first few rows of the merged dataset\ndf_analysis.head()",
+    "output": "         Country Group  ...         GDP\n0   Sub-Saharan Africa  ...         SSF\n1  Lower middle income  ...         LMC\n2   Sub-Saharan Africa  ...         NaN\n3  Lower middle income  ...  880.766431\n4   Sub-Saharan Africa  ...         NaN\n\n[5 rows x 8 columns]",
+    "elapsed_seconds": 0.00953454989939928
+  },
+  {
+    "code": "# Analyze the data for each country group separately\ncountry_groups = df_education['Country Group'].unique()\n\n# Initialize a dictionary to store the correlation results\ncorrelation_results = {}\n\n# Loop through each country group\nfor group in country_groups:\n    # Filter the data for the current country group\n    df_education_group = df_education[df_education['Country Group'] == group]\n    df_gdp_group = df_gdp[df_gdp['Country Group'] == group]\n    \n    # Reshape the data into a long format\n    df_education_long_group = df_education_group.melt(id_vars='Country Group', var_name='Year', value_name='Education_Expenditure')\n    df_gdp_long_group = df_gdp_group.melt(id_vars='Country Group', var_name='Year', value_name='GDP')\n    \n    # Merge the education expenditure and GDP data\n    df_analysis_group = pd.merge(df_education_long_group, df_gdp_long_group, on=['Country Group', 'Year'])\n    \n    # Calculate the correlation between education expenditure and GDP\n    correlation = df_analysis_group[['Education_Expenditure', 'GDP']].corr().iloc[0, 1]\n    correlation_results[group] = correlation\n\n# Display the correlation results\ncorrelation_results",
+    "output": "ValueError: could not convert string to float: 'SSF'",
+    "elapsed_seconds": 0.006614005658775568
+  },
+  {
+    "code": "# Check the data types of the 'Education_Expenditure' and 'GDP' columns\ndf_analysis_group.dtypes",
+    "output": "Country Group            object\nYear                     object\nEducation_Expenditure    object\nGDP                      object\ndtype: object",
+    "elapsed_seconds": 0.002365544904023409
+  },
+  {
+    "code": "# Convert the 'Education_Expenditure' and 'GDP' columns to numeric types\ndf_analysis_group['Education_Expenditure'] = pd.to_numeric(df_analysis_group['Education_Expenditure'], errors='coerce')\ndf_analysis_group['GDP'] = pd.to_numeric(df_analysis_group['GDP'], errors='coerce')\n\n# Drop rows with missing values\ndf_analysis_group = df_analysis_group.dropna()\n\n# Calculate the correlation between education expenditure and GDP\ncorrelation = df_analysis_group[['Education_Expenditure', 'GDP']].corr().iloc[0, 1]\ncorrelation",
+    "output": "-0.9664207841515772",
+    "elapsed_seconds": 0.0027025341987609863
+  }
+]

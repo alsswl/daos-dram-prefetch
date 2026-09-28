@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 19.130935341119766,
+  "llm_calls": 4,
+  "python_calls": 3,
+  "final_answer": "Scientific Hypothesis: In the context of replication studies in Psychology, the proportion of junior professors (Assistant Professors or Assistants) among the authors of replicated studies is not significantly different from that in original studies. This hypothesis is based on the analysis of the dataset, where the proportion of junior professors in original studies was approximately 4.07%, and in replication studies, it was approximately 4.18%. The similarity in proportions suggests that the role of junior professors in authorship does not significantly differ between original and replication studies in Psychology.",
+  "grading": "not run, as in supplied document",
+  "query": "What is the proportion of junior professors in replicated studies in Psychology?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/meta_regression_raw/metadata_10.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

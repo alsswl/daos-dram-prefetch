@@ -1,0 +1,42 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_bmi_processed.csv')\ndf.head()",
+    "output": "   GENDER  AGE  AGE_2     INCOME  ...  SAMESAVE        BMI  BLACK  HISPANIC\n0  FEMALE   30    900  47.279064  ...         0  25.158946      0         0\n1  FEMALE   30    900  19.000000  ...         0  21.948044      0         0\n2  FEMALE   27    729  16.443000  ...         1  23.674773      0         0\n3  FEMALE   26    676  22.110000  ...         0  17.541486      0         0\n4    MALE   29    841  52.200000  ...         0  25.158946      0         0\n\n[5 rows x 9 columns]",
+    "elapsed_seconds": 0.13972211722284555
+  },
+  {
+    "code": "# Filter the data to include only Hispanic men\nhispanic_men = df[(df['GENDER'] == 'MALE') & (df['HISPANIC'] == 1)]\n\n# Create a composite measure of time preference\n# For simplicity, we will use DISSAVED as a proxy for time preference\n# DISSAVED = 1 indicates that the respondent took more money out of than put into savings\n# This could indicate a higher time preference for immediate rewards\n\n# Perform a linear regression analysis to determine the relationship between time preference (DISSAVED) and BMI\nfrom sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = hispanic_men[['DISSAVED']].values.reshape(-1, 1)  # Predictor (time preference)\ny = hispanic_men['BMI'].values  # Response (BMI)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "0.05353108368417941",
+    "elapsed_seconds": 0.601744594052434
+  },
+  {
+    "code": "# Get the p-value for the coefficient\nfrom sklearn.linear_model import LinearRegression\nimport statsmodels.api as sm\n\n# Prepare the data for regression with intercept\nX = sm.add_constant(hispanic_men[['DISSAVED']])\ny = hispanic_men['BMI']\n\n# Create a linear regression model\nmodel = sm.OLS(y, X).fit()\n\n# Get the p-value for the coefficient\np_value = model.pvalues[1]\np_value",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.011352865025401115
+  },
+  {
+    "code": "# Check if statsmodels is installed\nimport importlib\nimport statsmodels\n\nprint(importlib.util.find_spec(\"statsmodels\"))",
+    "output": "ModuleSpec(name='statsmodels', loader=<_frozen_importlib_external.SourceFileLoader object at 0x7f22762f7800>, origin='/opt/site/statsmodels/__init__.py', submodule_search_locations=['/opt/site/statsmodels'])\n",
+    "elapsed_seconds": 0.0014167600311338902
+  },
+  {
+    "code": "import numpy as np\nfrom scipy.stats import t\n\n# Calculate the t-statistic\nt_statistic = model.params[1] / model.bse[1]\n\n# Calculate the p-value using the t-distribution\np_value = 2 * (1 - t.cdf(np.abs(t_statistic), model.df_resid))\np_value",
+    "output": "AttributeError: 'LinearRegression' object has no attribute 'params'",
+    "elapsed_seconds": 0.0016791378147900105
+  },
+  {
+    "code": "import statsmodels.api as sm\n\n# Prepare the data for regression with intercept\nX = sm.add_constant(hispanic_men[['DISSAVED']])\ny = hispanic_men['BMI']\n\n# Create a linear regression model\nmodel = sm.OLS(y, X).fit()\n\n# Get the p-value for the coefficient\np_value = model.pvalues[1]\np_value",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.002015970181673765
+  },
+  {
+    "code": "import scipy\nprint(scipy.__version__)",
+    "output": "1.17.1\n",
+    "elapsed_seconds": 0.0013807681389153004
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = hispanic_men[['DISSAVED']].values.reshape(-1, 1)  # Predictor (time preference)\ny = hispanic_men['BMI'].values  # Response (BMI)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the R-squared value\nr_squared = model.score(X, y)\nr_squared",
+    "output": "1.6784988562057457e-05",
+    "elapsed_seconds": 0.002843197900801897
+  }
+]

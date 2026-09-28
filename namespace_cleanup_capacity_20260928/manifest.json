@@ -1,0 +1,304 @@
+{
+  "pool": "f973c142-2353-41da-b154-5079ba6969f2",
+  "container": "a2d875e3-195b-4598-98b4-b381ef49867a",
+  "oid": "281543696187392.1000",
+  "namespaces": [
+    {
+      "namespace": "minji-cold-warm-0201fe4b35c647debcbceeeea9f59717:",
+      "case": "c16_d4_s4_wait",
+      "config": "prefetch_capacity_sweep_20260927/c16_d4_s4_wait/config.yaml",
+      "config_sha256": "c12e9843cab6eb92be937be1d762cf143160d7144be3a66790ae5fd5977ec78e",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-3dcf2eda8e9849b9a98bf4a0c0a575f8:",
+      "case": "c8_d8_s8_cancel",
+      "config": "prefetch_capacity_sweep_20260927/c8_d8_s8_cancel/config.yaml",
+      "config_sha256": "209c2719e0c98882c09b4005244b0ace142b8cce2610418b2493ae4c21582d9e",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-4296eeb911894d63bd36b516062d531c:",
+      "case": "c8_d2_s8_wait",
+      "config": "prefetch_capacity_sweep_20260927/c8_d2_s8_wait/config.yaml",
+      "config_sha256": "da98caed0c7e56e08e0259fffef4f56a75b8d7116b1dff68e2727383d6e6ccc6",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-45382a8ae0384689a079a7e77a881db6:",
+      "case": "c8_d8_s4_cancel",
+      "config": "prefetch_capacity_sweep_20260927/c8_d8_s4_cancel/config.yaml",
+      "config_sha256": "53c59ff9a7880f2708c28d0f99248c0620c71b1a70a3f334ea0cf016915d64b1",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-45d736e04623426db14e568b868eb886:",
+      "case": "c16_d2_s4_cancel",
+      "config": "prefetch_capacity_sweep_20260927/c16_d2_s4_cancel/config.yaml",
+      "config_sha256": "39758bd64741ffe2d319b1767c6a1abdd540af399c90eb6eb4e90d80ab4893bd",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-49b549da1e274c038711cccb3f8b4d9a:",
+      "case": "c8_d2_s4_cancel",
+      "config": "prefetch_capacity_sweep_20260927/c8_d2_s4_cancel/config.yaml",
+      "config_sha256": "7822436b1a54e8625fc3dd3dda6142182920e22e10de38b184ce49f07c5abbb3",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-4c4e7a123a9640cc96fb94b65f00e9bc:",
+      "case": "c16_d2_s4_wait",
+      "config": "prefetch_capacity_sweep_20260927/c16_d2_s4_wait/config.yaml",
+      "config_sha256": "e435746b89a5646db66d88f58f455523d461352220ca09de010a3a34c0a1b4c1",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-5b077734e6594bbb9da222497a56eeb8:",
+      "case": "c8_d8_s8_off",
+      "config": "prefetch_capacity_sweep_20260927/c8_d8_s8_off/config.yaml",
+      "config_sha256": "57d6b2241f2fd612ced82c7db44ccdac1e94f4ac8d1b63bce68ac6b5633ef242",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-5d4833491bd04e79b08e51b0a77015ce:",
+      "case": "c16_d8_s4_cancel",
+      "config": "prefetch_capacity_sweep_20260927/c16_d8_s4_cancel/config.yaml",
+      "config_sha256": "c1f709b10e09510cae6bbcaf0516513b1899cfa1a21e0e91864a8a7be98b3a05",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-5d4c1a64b0404547a43e3f819f7ba157:",
+      "case": "c8_d4_s4_off",
+      "config": "prefetch_capacity_sweep_20260927/c8_d4_s4_off/config.yaml",
+      "config_sha256": "31a5445e5656c30a64dcfc5e7170f64c2b16cbb04aeb8b1f28c9dd935e8f70b4",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-668ea135ac934c7781109da694c0426d:",
+      "case": "c8_d8_s4_off",
+      "config": "prefetch_capacity_sweep_20260927/c8_d8_s4_off/config.yaml",
+      "config_sha256": "002cbc088d95babedaa241642b6657e30140aeb5286ea299074f475e84dbf418",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-685fc380388f4f138a7cffefb28710e7:",
+      "case": "c16_d2_s8_wait",
+      "config": "prefetch_capacity_sweep_20260927/c16_d2_s8_wait/config.yaml",
+      "config_sha256": "1bb4af147900d060b53c4339824ee5c8e4bd2fb6f0640b2316e684c088a47ecb",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-689e6d6d21f348f3b766b56951cd3e93:",
+      "case": "c8_d4_s4_cancel",
+      "config": "prefetch_capacity_sweep_20260927/c8_d4_s4_cancel/config.yaml",
+      "config_sha256": "c0169f9b6048271d94d30d9169d0ee48d3f74d4a642ad69c16a9c48b5b1e0b6b",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-6fec3751ac5e4a8890034d7e04e1bc5a:",
+      "case": "c16_d4_s8_off",
+      "config": "prefetch_capacity_sweep_20260927/c16_d4_s8_off/config.yaml",
+      "config_sha256": "cc5296123c1afe0e48dd98f5d421dd2c9663534948c6e799e38b35565af0f2da",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-74775fc4b4234476a3974982b3cfd1f3:",
+      "case": "c8_d4_s8_off",
+      "config": "prefetch_capacity_sweep_20260927/c8_d4_s8_off/config.yaml",
+      "config_sha256": "298f371b1b2a4ce3715c2add3d184b9d308816ac86b40721a420026cdb1ce125",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-7b697b11bf134af397e62f4cc3fb428e:",
+      "case": "c8_d2_s4_off",
+      "config": "prefetch_capacity_sweep_20260927/c8_d2_s4_off/config.yaml",
+      "config_sha256": "e375fd5cd6f65258137fbf4d638e175733567cb430b1448944b212a70371975a",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-82f76c3614d1450c9fa7c16dfc80d713:",
+      "case": "c8_d4_s4_wait",
+      "config": "prefetch_capacity_sweep_20260927/c8_d4_s4_wait/config.yaml",
+      "config_sha256": "56f72081463aff155c9e967e29437e94dea22c5180b482c125eaff137c93d0ce",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-8779076f9e784cabb4aa77eccbea7f55:",
+      "case": "c16_d8_s8_wait",
+      "config": "prefetch_capacity_sweep_20260927/c16_d8_s8_wait/config.yaml",
+      "config_sha256": "bb6f96f4de88165141877bccad0a0bdf1ad41b002613237e67b5c8ffa46ca178",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-8debb833e11443a393acd3fab3034349:",
+      "case": "c8_d4_s8_cancel",
+      "config": "prefetch_capacity_sweep_20260927/c8_d4_s8_cancel/config.yaml",
+      "config_sha256": "cd6e00b6cc2a62b8f3585be360f4481e6da5c2aac5e2ba4dadc93918f96483b6",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-90693455323646c7a22d4b0a07003372:",
+      "case": "c16_d4_s4_off",
+      "config": "prefetch_capacity_sweep_20260927/c16_d4_s4_off/config.yaml",
+      "config_sha256": "9b3d06b1510809176143a9ff3cd756bbb980adeb660e861f719cb81ced5e3838",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-953b9dcb41d745a5b5a4b8285516de7e:",
+      "case": "c8_d4_s8_wait",
+      "config": "prefetch_capacity_sweep_20260927/c8_d4_s8_wait/config.yaml",
+      "config_sha256": "76d588de0516ef03252ddac71672a448eeb488dff04f8e376a81b402fe5b09f1",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-97c7a8b9c8244e9c8c7c52e172b6078b:",
+      "case": "c16_d8_s8_off",
+      "config": "prefetch_capacity_sweep_20260927/c16_d8_s8_off/config.yaml",
+      "config_sha256": "0d55a83e476697e5a0e54115f6ed5ab05e47748a3b643c7c1ffcecf9f664f83b",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-a4c2479b54d54aca835e57c5ee9f9143:",
+      "case": "c16_d8_s4_wait",
+      "config": "prefetch_capacity_sweep_20260927/c16_d8_s4_wait/config.yaml",
+      "config_sha256": "33ed42f19b407d4afa2ddc588cc15f547e548b60919ffe12e3b8ba8849a0a09b",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-b8b0cde092584bf091c2691bc74095c5:",
+      "case": "c8_d2_s8_off",
+      "config": "prefetch_capacity_sweep_20260927/c8_d2_s8_off/config.yaml",
+      "config_sha256": "bc9b9005d69e41bb588d89be69b3e3f7b196f987c703cbb07fccc9b8c7473744",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-bb14d497ce0440cdb4902e5a7317a88c:",
+      "case": "c8_d8_s8_wait",
+      "config": "prefetch_capacity_sweep_20260927/c8_d8_s8_wait/config.yaml",
+      "config_sha256": "744ae7474c804655a4fbedc65820a929990530f096724b52edd6fa35d9326d62",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-bca772ecee06439a93f37894f8710214:",
+      "case": "c16_d4_s8_cancel",
+      "config": "prefetch_capacity_sweep_20260927/c16_d4_s8_cancel/config.yaml",
+      "config_sha256": "d908bb076d209199b7f72aa403a9bd8cf46bf66aa66650e58531622629a37ce5",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-c69dd141df824cd3af65a90f83d8fb5d:",
+      "case": "c16_d2_s4_off",
+      "config": "prefetch_capacity_sweep_20260927/c16_d2_s4_off/config.yaml",
+      "config_sha256": "e9fdc995d3841d6233736e2cfc0ad8078a024b355c749eea5cdbe8f57c5f9a18",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-d023421fa91145279b6044137bf410de:",
+      "case": "c16_d4_s8_wait",
+      "config": "prefetch_capacity_sweep_20260927/c16_d4_s8_wait/config.yaml",
+      "config_sha256": "d9d47aab18eea3c19fdcbb813f36fbe0c29954edc9200e8bec079e3c06e1c43e",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-d877cc2fdcb0414682aa6ea49deff424:",
+      "case": "c8_d2_s4_wait",
+      "config": "prefetch_capacity_sweep_20260927/c8_d2_s4_wait/config.yaml",
+      "config_sha256": "782fabc74afdd91bab2097e1e8e803cb757c34ae325e0281ba0acde632552730",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-db36cc666d1840a2a0b7671d9e4643cc:",
+      "case": "c16_d2_s8_off",
+      "config": "prefetch_capacity_sweep_20260927/c16_d2_s8_off/config.yaml",
+      "config_sha256": "3372d485e2fa84a8ded09b0a3fe66abca724a479e29826ff5a45399ee184c081",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-ded9633f2d5c4408b9647719355c824b:",
+      "case": "c16_d8_s4_off",
+      "config": "prefetch_capacity_sweep_20260927/c16_d8_s4_off/config.yaml",
+      "config_sha256": "5e1baa1250cc6c38138bade0c4cf3f458985921cb4e55a1043e3fb88ad4e9211",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-e7212b6efdf444899ebc76d275bb11e5:",
+      "case": "c8_d8_s4_wait",
+      "config": "prefetch_capacity_sweep_20260927/c8_d8_s4_wait/config.yaml",
+      "config_sha256": "cf2971f939306bc475ae95c9ca0c9cf772a24501605fe4e8c11657954c15f924",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-ee6eca0ae8a044168afef2ccf59557dd:",
+      "case": "c8_d2_s8_cancel",
+      "config": "prefetch_capacity_sweep_20260927/c8_d2_s8_cancel/config.yaml",
+      "config_sha256": "bda87cd888472b57b70d9fbffc2061b0253ecfae7ce9ce772b9051e70f8f0236",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-f6b7c73a0b724eb385be56df6de2a4a2:",
+      "case": "c16_d2_s8_cancel",
+      "config": "prefetch_capacity_sweep_20260927/c16_d2_s8_cancel/config.yaml",
+      "config_sha256": "c57e256c94c7d5a10a64f4aedf1324431d6c4dd9e160efec2833278e66dd5cdf",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-f765f00e18d849ba810c2e09bbada464:",
+      "case": "c16_d8_s8_cancel",
+      "config": "prefetch_capacity_sweep_20260927/c16_d8_s8_cancel/config.yaml",
+      "config_sha256": "2468220f14899de13ec290ec744d9989022ad0d73b8ef2ca1c48e14b7c280b38",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    },
+    {
+      "namespace": "minji-cold-warm-fc8eef3f4e44484cb45468cc8eac1a13:",
+      "case": "c16_d4_s4_cancel",
+      "config": "prefetch_capacity_sweep_20260927/c16_d4_s4_cancel/config.yaml",
+      "config_sha256": "9b2d91588930bcebdab6041a82d5137804abd7b99b8a04bf2d665c4b30fcbdf5",
+      "status_sha256": "8e1a5061508c98c91c56bfda8290b71cf79770268f1ecb3a3ff4c10c0c7ac418"
+    }
+  ],
+  "target_count": 59638,
+  "total_count": 78069,
+  "preserved_count": 18431,
+  "per_namespace": {
+    "minji-cold-warm-0201fe4b35c647debcbceeeea9f59717:": 1673,
+    "minji-cold-warm-3dcf2eda8e9849b9a98bf4a0c0a575f8:": 1642,
+    "minji-cold-warm-4296eeb911894d63bd36b516062d531c:": 1664,
+    "minji-cold-warm-45382a8ae0384689a079a7e77a881db6:": 1638,
+    "minji-cold-warm-45d736e04623426db14e568b868eb886:": 1654,
+    "minji-cold-warm-49b549da1e274c038711cccb3f8b4d9a:": 1667,
+    "minji-cold-warm-4c4e7a123a9640cc96fb94b65f00e9bc:": 1663,
+    "minji-cold-warm-5b077734e6594bbb9da222497a56eeb8:": 1649,
+    "minji-cold-warm-5d4833491bd04e79b08e51b0a77015ce:": 1668,
+    "minji-cold-warm-5d4c1a64b0404547a43e3f819f7ba157:": 1638,
+    "minji-cold-warm-668ea135ac934c7781109da694c0426d:": 1659,
+    "minji-cold-warm-685fc380388f4f138a7cffefb28710e7:": 1659,
+    "minji-cold-warm-689e6d6d21f348f3b766b56951cd3e93:": 1637,
+    "minji-cold-warm-6fec3751ac5e4a8890034d7e04e1bc5a:": 1670,
+    "minji-cold-warm-74775fc4b4234476a3974982b3cfd1f3:": 1634,
+    "minji-cold-warm-7b697b11bf134af397e62f4cc3fb428e:": 1649,
+    "minji-cold-warm-82f76c3614d1450c9fa7c16dfc80d713:": 1643,
+    "minji-cold-warm-8779076f9e784cabb4aa77eccbea7f55:": 1666,
+    "minji-cold-warm-8debb833e11443a393acd3fab3034349:": 1659,
+    "minji-cold-warm-90693455323646c7a22d4b0a07003372:": 1646,
+    "minji-cold-warm-953b9dcb41d745a5b5a4b8285516de7e:": 1648,
+    "minji-cold-warm-97c7a8b9c8244e9c8c7c52e172b6078b:": 1677,
+    "minji-cold-warm-a4c2479b54d54aca835e57c5ee9f9143:": 1669,
+    "minji-cold-warm-b8b0cde092584bf091c2691bc74095c5:": 1625,
+    "minji-cold-warm-bb14d497ce0440cdb4902e5a7317a88c:": 1639,
+    "minji-cold-warm-bca772ecee06439a93f37894f8710214:": 1674,
+    "minji-cold-warm-c69dd141df824cd3af65a90f83d8fb5d:": 1666,
+    "minji-cold-warm-d023421fa91145279b6044137bf410de:": 1670,
+    "minji-cold-warm-d877cc2fdcb0414682aa6ea49deff424:": 1647,
+    "minji-cold-warm-db36cc666d1840a2a0b7671d9e4643cc:": 1650,
+    "minji-cold-warm-ded9633f2d5c4408b9647719355c824b:": 1661,
+    "minji-cold-warm-e7212b6efdf444899ebc76d275bb11e5:": 1659,
+    "minji-cold-warm-ee6eca0ae8a044168afef2ccf59557dd:": 1678,
+    "minji-cold-warm-f6b7c73a0b724eb385be56df6de2a4a2:": 1671,
+    "minji-cold-warm-f765f00e18d849ba810c2e09bbada464:": 1654,
+    "minji-cold-warm-fc8eef3f4e44484cb45468cc8eac1a13:": 1672
+  },
+  "target_sha256": "0d4bf1d974b993924a945848d4e254c584559feb32731e47441b2972ca253e5e",
+  "binding_sha256": "ce38ed41c12390524fab993ea16e436122412b8f81267d77e857629266aaa13b",
+  "library_sha256": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c",
+  "source_sha256": "ff383e783859281626cf1ec9b2a0e52b97fae2c0c21fdd328663bbb9370d4657"
+}

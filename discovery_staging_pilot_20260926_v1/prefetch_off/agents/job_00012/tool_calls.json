@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "     HYBAS_ID       long       lat  ...  soil_div     area  diversity\n0  6050000010 -76.477422  7.742693  ...  0.482402  72363.7         68\n1  6050000740 -74.628725  9.803586  ...  0.457436  17944.3         35\n2  6050068100 -75.295995  8.448815  ...  0.378793  17105.5         44\n3  6050068110 -74.608408  8.922863  ...  0.468328    610.1         48\n4  6050070260 -75.591588  5.770093  ...  0.158870  61901.9         81\n\n[5 rows x 21 columns]",
+    "elapsed_seconds": 0.1402529226616025
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# List of evolutionary traits\nevolutionary_traits = ['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']\n\n# Dictionary to store coefficients\ncoefficients = {}\n\n# Perform linear regression for each trait\nfor trait in evolutionary_traits:\n    X = df[[trait]].values.reshape(-1, 1)\n    y = df['BAMM_speciation'].values\n    model = LinearRegression()\n    model.fit(X, y)\n    coefficients[trait] = model.coef_[0]\n\ncoefficients",
+    "output": "{'BEL_evol': 0.3619600056225023, 'MBL_evol': 0.7491222198060198, 'OGP_evol': 19.395837679773148, 'RES_evol': 19.492162102981588, 'RML_evol': -2.688838383966561}",
+    "elapsed_seconds": 0.5779858590103686
+  },
+  {
+    "code": "# No further action needed as the analysis has been completed and the results do not support the hypothesis.",
+    "output": "",
+    "elapsed_seconds": 0.0014601768925786018
+  }
+]

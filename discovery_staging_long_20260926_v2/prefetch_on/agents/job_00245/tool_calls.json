@@ -1,0 +1,42 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.13729100720956922
+  },
+  {
+    "code": "# Drop the 'group' and 'color' columns\ncapital_df = capital_df.drop(columns=['group', 'color'])\n\n# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_df = capital_df[(capital_df['BCE'] >= 1100) & (capital_df['BCE'] <= 500)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_df = young_bronze_age_df[young_bronze_age_df['BCE'] == 1100]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_horizons_df = young_bronze_age_df[young_bronze_age_df['BCE'] < 1100]\n\n# Display the beginning period and subsequent horizons data\nbeginning_period_df[['BCE', 'ZKeform', 'Zkeverz']]\nsubsequent_horizons_df[['BCE', 'ZKeform', 'Zkeverz']]",
+    "output": "Empty DataFrame\nColumns: [BCE, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0036691157147288322
+  },
+  {
+    "code": "# Check the range of BCE values in the dataset\nbce_range = capital_df['BCE'].min(), capital_df['BCE'].max()\nbce_range\n\n# Check if there are any data points close to 1100 BCE\nclose_to_1100_df = capital_df[(capital_df['BCE'] >= 1000) & (capital_df['BCE'] <= 1200)]\nclose_to_1100_df[['BCE', 'ZKeform', 'Zkeverz']]",
+    "output": "     BCE ZKeform Zkeverz\n31  1200   -1,13    0,97\n32  1100   -1,13    0,97\n33  1000   -1,13    1,53",
+    "elapsed_seconds": 0.0041853440925478935
+  },
+  {
+    "code": "from scipy.stats import ttest_ind\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_values = capital_df[capital_df['BCE'] == 1100][['ZKeform', 'Zkeverz']].values\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_horizons_values = capital_df[(capital_df['BCE'] < 1100) & (capital_df['BCE'] >= 500)][['ZKeform', 'Zkeverz']].values\n\n# Perform a t-test to compare the means of the PC1 values\nt_statistic, p_value = ttest_ind(beginning_period_values, subsequent_horizons_values)\n\nt_statistic, p_value",
+    "output": "TypeError: unsupported operand type(s) for /: 'str' and 'int'",
+    "elapsed_seconds": 0.47360862884670496
+  },
+  {
+    "code": "# Convert 'ZKeform' and 'Zkeverz' columns to numerical values\ncapital_df['ZKeform'] = pd.to_numeric(capital_df['ZKeform'], errors='coerce')\ncapital_df['Zkeverz'] = pd.to_numeric(capital_df['Zkeverz'], errors='coerce')\n\n# Re-extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_values = capital_df[capital_df['BCE'] == 1100][['ZKeform', 'Zkeverz']].values\n\n# Re-extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_horizons_values = capital_df[(capital_df['BCE'] < 1100) & (capital_df['BCE'] >= 500)][['ZKeform', 'Zkeverz']].values\n\n# Perform a t-test to compare the means of the PC1 values\nt_statistic, p_value = ttest_ind(beginning_period_values, subsequent_horizons_values)\n\nt_statistic, p_value",
+    "output": "(array([nan, nan]), array([nan, nan]))",
+    "elapsed_seconds": 0.0038994979113340378
+  },
+  {
+    "code": "# Re-extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_values = capital_df[capital_df['BCE'] == 1100][['ZKeform', 'Zkeverz']].values\n\n# Re-extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_horizons_values = capital_df[(capital_df['BCE'] >= 500) & (capital_df['BCE'] <= 1000)][['ZKeform', 'Zkeverz']].values\n\n# Perform a t-test to compare the means of the PC1 values\nt_statistic, p_value = ttest_ind(beginning_period_values, subsequent_horizons_values)\n\nt_statistic, p_value",
+    "output": "(array([nan, nan]), array([nan, nan]))",
+    "elapsed_seconds": 0.003290115389972925
+  },
+  {
+    "code": "# Check the available data points in the 'capital.csv' dataset for the time range 500 to 1000 BCE\navailable_data_points = capital_df[(capital_df['BCE'] >= 500) & (capital_df['BCE'] <= 1000)]\navailable_data_points[['BCE', 'ZKeform', 'Zkeverz']]",
+    "output": "     BCE  ZKeform  Zkeverz\n33  1000      NaN      NaN\n34   900      NaN      NaN\n35   800      NaN      NaN\n36   700      NaN      NaN\n37   600      NaN      NaN\n38   500      NaN      NaN",
+    "elapsed_seconds": 0.003924182150512934
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the pollen_openness_score dataset\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\npollen_df.head()",
+    "output": "   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns]",
+    "elapsed_seconds": 0.017817439045757055
+  }
+]

@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820">
+<rect width="1200" height="820" fill="white"/>
+<g font-family="sans-serif" fill="#222">
+<text x="35" y="30" font-size="22">Warm mean TTFT: 36-condition capacity sweep</text>
+<text x="35" y="55" font-size="14">Qwen3-14B / chunk128 / 256 fixed replay requests per phase / one trial per condition</text>
+<rect x="35" y="73" width="14" height="14" fill="#777777"/>
+<text x="56" y="85" font-size="14">OFF</text>
+<rect x="365" y="73" width="14" height="14" fill="#0072b2"/>
+<text x="386" y="85" font-size="14">ON / wait</text>
+<rect x="695" y="73" width="14" height="14" fill="#d55e00"/>
+<text x="716" y="85" font-size="14">ON / cancel + early readiness</text>
+<text x="35" y="120" font-size="18">Concurrency 8 (lower is better)</text>
+<line x1="75" x2="1170" y1="360.0" y2="360.0" stroke="#ddd"/>
+<text x="30" y="364.0" font-size="12">0</text>
+<line x1="75" x2="1170" y1="315.0" y2="315.0" stroke="#ddd"/>
+<text x="30" y="319.0" font-size="12">50</text>
+<line x1="75" x2="1170" y1="270.0" y2="270.0" stroke="#ddd"/>
+<text x="30" y="274.0" font-size="12">100</text>
+<line x1="75" x2="1170" y1="225.0" y2="225.0" stroke="#ddd"/>
+<text x="30" y="229.0" font-size="12">150</text>
+<line x1="75" x2="1170" y1="180.0" y2="180.0" stroke="#ddd"/>
+<text x="30" y="184.0" font-size="12">200</text>
+<line x1="75" x2="1170" y1="135.0" y2="135.0" stroke="#ddd"/>
+<text x="30" y="139.0" font-size="12">250</text>
+<text x="5" y="155" font-size="12">ms</text>
+<rect x="98" y="241.49209921521106" width="40" height="118.50790078478894" fill="#777777"/>
+<text x="118" y="234.49209921521106" text-anchor="middle" font-size="12">131.7</text>
+<rect x="146" y="251.60319523525686" width="40" height="108.39680476474314" fill="#0072b2"/>
+<text x="166" y="244.60319523525686" text-anchor="middle" font-size="12">120.4</text>
+<rect x="194" y="257.4946851922141" width="40" height="102.50531480778591" fill="#d55e00"/>
+<text x="214" y="250.4946851922141" text-anchor="middle" font-size="12">113.9</text>
+<text x="165" y="385" text-anchor="middle" font-size="13">D8 / S8 GiB</text>
+<rect x="276" y="241.40502746155107" width="40" height="118.59497253844893" fill="#777777"/>
+<text x="296" y="234.40502746155107" text-anchor="middle" font-size="12">131.8</text>
+<rect x="324" y="250.97397303612524" width="40" height="109.02602696387476" fill="#0072b2"/>
+<text x="344" y="243.97397303612524" text-anchor="middle" font-size="12">121.1</text>
+<rect x="372" y="257.57272951337654" width="40" height="102.42727048662346" fill="#d55e00"/>
+<text x="392" y="250.57272951337654" text-anchor="middle" font-size="12">113.8</text>
+<text x="343" y="385" text-anchor="middle" font-size="13">D8 / S4 GiB</text>
+<rect x="454" y="243.47844892668945" width="40" height="116.52155107331055" fill="#777777"/>
+<text x="474" y="236.47844892668945" text-anchor="middle" font-size="12">129.5</text>
+<rect x="502" y="251.3576274027946" width="40" height="108.6423725972054" fill="#0072b2"/>
+<text x="522" y="244.3576274027946" text-anchor="middle" font-size="12">120.7</text>
+<rect x="550" y="257.3134062705867" width="40" height="102.68659372941329" fill="#d55e00"/>
+<text x="570" y="250.3134062705867" text-anchor="middle" font-size="12">114.1</text>
+<text x="521" y="385" text-anchor="middle" font-size="13">D4 / S8 GiB</text>
+<rect x="632" y="241.56752840222907" width="40" height="118.43247159777093" fill="#777777"/>
+<text x="652" y="234.56752840222907" text-anchor="middle" font-size="12">131.6</text>
+<rect x="680" y="251.24137200360565" width="40" height="108.75862799639435" fill="#0072b2"/>
+<text x="700" y="244.24137200360565" text-anchor="middle" font-size="12">120.8</text>
+<rect x="728" y="255.38124132959638" width="40" height="104.61875867040362" fill="#d55e00"/>
+<text x="748" y="248.38124132959638" text-anchor="middle" font-size="12">116.2</text>
+<text x="699" y="385" text-anchor="middle" font-size="13">D4 / S4 GiB</text>
+<rect x="810" y="237.10092336055823" width="40" height="122.89907663944177" fill="#777777"/>
+<text x="830" y="230.10092336055823" text-anchor="middle" font-size="12">136.6</text>
+<rect x="858" y="243.46564463317918" width="40" height="116.53435536682082" fill="#0072b2"/>
+<text x="878" y="236.46564463317918" text-anchor="middle" font-size="12">129.5</text>
+<rect x="906" y="245.07006790568994" width="40" height="114.92993209431006" fill="#d55e00"/>
+<text x="926" y="238.07006790568994" text-anchor="middle" font-size="12">127.7</text>
+<text x="877" y="385" text-anchor="middle" font-size="13">D2 / S8 GiB</text>
+<rect x="988" y="237.55775958357845" width="40" height="122.44224041642155" fill="#777777"/>
+<text x="1008" y="230.55775958357845" text-anchor="middle" font-size="12">136.0</text>
+<rect x="1036" y="241.40334823892772" width="40" height="118.59665176107228" fill="#0072b2"/>
+<text x="1056" y="234.40334823892772" text-anchor="middle" font-size="12">131.8</text>
+<rect x="1084" y="245.69838938255998" width="40" height="114.30161061744002" fill="#d55e00"/>
+<text x="1104" y="238.69838938255998" text-anchor="middle" font-size="12">127.0</text>
+<text x="1055" y="385" text-anchor="middle" font-size="13">D2 / S4 GiB</text>
+<text x="35" y="450" font-size="18">Concurrency 16 (lower is better)</text>
+<line x1="75" x2="1170" y1="690.0" y2="690.0" stroke="#ddd"/>
+<text x="30" y="694.0" font-size="12">0</text>
+<line x1="75" x2="1170" y1="645.0" y2="645.0" stroke="#ddd"/>
+<text x="30" y="649.0" font-size="12">50</text>
+<line x1="75" x2="1170" y1="600.0" y2="600.0" stroke="#ddd"/>
+<text x="30" y="604.0" font-size="12">100</text>
+<line x1="75" x2="1170" y1="555.0" y2="555.0" stroke="#ddd"/>
+<text x="30" y="559.0" font-size="12">150</text>
+<line x1="75" x2="1170" y1="510.0" y2="510.0" stroke="#ddd"/>
+<text x="30" y="514.0" font-size="12">200</text>
+<line x1="75" x2="1170" y1="465.0" y2="465.0" stroke="#ddd"/>
+<text x="30" y="469.0" font-size="12">250</text>
+<text x="5" y="485" font-size="12">ms</text>
+<rect x="98" y="525.8953622071567" width="40" height="164.10463779284328" fill="#777777"/>
+<text x="118" y="518.8953622071567" text-anchor="middle" font-size="12">182.3</text>
+<rect x="146" y="542.0227236225764" width="40" height="147.97727637742355" fill="#0072b2"/>
+<text x="166" y="535.0227236225764" text-anchor="middle" font-size="12">164.4</text>
+<rect x="194" y="551.8294180088924" width="40" height="138.1705819911076" fill="#d55e00"/>
+<text x="214" y="544.8294180088924" text-anchor="middle" font-size="12">153.5</text>
+<text x="165" y="715" text-anchor="middle" font-size="13">D8 / S8 GiB</text>
+<rect x="276" y="526.8162816466793" width="40" height="163.18371835332073" fill="#777777"/>
+<text x="296" y="519.8162816466793" text-anchor="middle" font-size="12">181.3</text>
+<rect x="324" y="533.3249384977898" width="40" height="156.67506150221016" fill="#0072b2"/>
+<text x="344" y="526.3249384977898" text-anchor="middle" font-size="12">174.1</text>
+<rect x="372" y="547.3283596191686" width="40" height="142.67164038083138" fill="#d55e00"/>
+<text x="392" y="540.3283596191686" text-anchor="middle" font-size="12">158.5</text>
+<text x="343" y="715" text-anchor="middle" font-size="13">D8 / S4 GiB</text>
+<rect x="454" y="527.8188799528289" width="40" height="162.18112004717113" fill="#777777"/>
+<text x="474" y="520.8188799528289" text-anchor="middle" font-size="12">180.2</text>
+<rect x="502" y="539.059509638937" width="40" height="150.94049036106298" fill="#0072b2"/>
+<text x="522" y="532.059509638937" text-anchor="middle" font-size="12">167.7</text>
+<rect x="550" y="548.6138579146791" width="40" height="141.3861420853209" fill="#d55e00"/>
+<text x="570" y="541.6138579146791" text-anchor="middle" font-size="12">157.1</text>
+<text x="521" y="715" text-anchor="middle" font-size="13">D4 / S8 GiB</text>
+<rect x="632" y="528.9891123688358" width="40" height="161.01088763116422" fill="#777777"/>
+<text x="652" y="521.9891123688358" text-anchor="middle" font-size="12">178.9</text>
+<rect x="680" y="521.1228361153553" width="40" height="168.8771638846447" fill="#0072b2"/>
+<text x="700" y="514.1228361153553" text-anchor="middle" font-size="12">187.6</text>
+<rect x="728" y="546.0391655068088" width="40" height="143.96083449319121" fill="#d55e00"/>
+<text x="748" y="539.0391655068088" text-anchor="middle" font-size="12">160.0</text>
+<text x="699" y="715" text-anchor="middle" font-size="13">D4 / S4 GiB</text>
+<rect x="810" y="521.0703033312166" width="40" height="168.92969666878344" fill="#777777"/>
+<text x="830" y="514.0703033312166" text-anchor="middle" font-size="12">187.7</text>
+<rect x="858" y="496.05749588994513" width="40" height="193.94250411005487" fill="#0072b2"/>
+<text x="878" y="489.05749588994513" text-anchor="middle" font-size="12">215.5</text>
+<rect x="906" y="525.1087096161791" width="40" height="164.8912903838209" fill="#d55e00"/>
+<text x="926" y="518.1087096161791" text-anchor="middle" font-size="12">183.2</text>
+<text x="877" y="715" text-anchor="middle" font-size="13">D2 / S8 GiB</text>
+<rect x="988" y="526.3686436881835" width="40" height="163.6313563118165" fill="#777777"/>
+<text x="1008" y="519.3686436881835" text-anchor="middle" font-size="12">181.8</text>
+<rect x="1036" y="476.61723315817653" width="40" height="213.38276684182347" fill="#0072b2"/>
+<text x="1056" y="469.61723315817653" text-anchor="middle" font-size="12">237.1</text>
+<rect x="1084" y="504.6719726259107" width="40" height="185.3280273740893" fill="#d55e00"/>
+<text x="1104" y="497.6719726259107" text-anchor="middle" font-size="12">205.9</text>
+<text x="1055" y="715" text-anchor="middle" font-size="13">D2 / S4 GiB</text>
+<text x="35" y="755" font-size="13">D = DRAM, S = GPU staging. Queued cancellations: 0 in every case.</text>
+<text x="35" y="780" font-size="13">Some C16 ON cases lost reusable prefix after staging allocation failures; compute work then differs.</text>
+<text x="35" y="803" font-size="13">No error bars: one trial. ON/cancel also changes readiness timing, not just cancellation.</text></g></svg>

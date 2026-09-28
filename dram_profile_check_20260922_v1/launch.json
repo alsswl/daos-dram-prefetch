@@ -1,0 +1,19 @@
+{
+  "dram": "on",
+  "source_config": "/root/discos_minji/lmcache_config_daosgds_unified.yaml",
+  "effective_config": "/root/discos_minji/dram_profile_check_20260922_v1/lmcache_effective.yaml",
+  "source_sha256": "99c21ed6167f8b0e5bd0bb8a8f2bf6f1b740c9ca186702bd6341b51f80ebaa9c",
+  "effective_sha256": "82c75b29a3e0927d758caed982c63ba9c102a504393748cb77df104ad0758ade",
+  "command": [
+    "/root/discos_minji/run_vllm.sh"
+  ],
+  "transport": "dfs",
+  "local_cpu": true,
+  "max_local_cpu_size": 4.0,
+  "notes": [
+    "CPU cache retention uses native LocalCPUBackend references.",
+    "DAOS put remains asynchronous; CPU hit alone does not prove DAOS commit.",
+    "New process required to change modes; DRAM cache is process-local.",
+    "Existing source config and run_vllm.sh are unchanged."
+  ]
+}

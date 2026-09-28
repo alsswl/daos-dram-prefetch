@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "dram": "off",
+  "transport": "dfs",
+  "bytes": 1048576,
+  "cpu_entries_after_put": 0,
+  "cpu_payload": "not retained",
+  "daos_payload": "match",
+  "daos_survives_cpu_removal": true,
+  "namespace": "minji-dram-bytes-290d07323cad494fbb3dd5495847e143",
+  "cleanup": "only test DAOS entry removed; DFS directory retained"
+}

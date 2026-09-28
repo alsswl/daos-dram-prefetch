@@ -1,0 +1,139 @@
+{
+  "identical_inputs_and_warmup": true,
+  "argument_differences": {
+    "chunk_size": [
+      256,
+      128
+    ],
+    "output": [
+      "/root/discos_minji/gluesys_reference_20260916_v1",
+      "/root/discos_minji/chunk128_20260917_v2"
+    ]
+  },
+  "identical_backend_and_runtime_hashes": true,
+  "full_prefix_hits_and_output_tokens_checked": true,
+  "baseline_log_audit": [
+    {
+      "log": "r1_dfs_fill_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r1_dfs_restart_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r1_object_fill_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r1_object_restart_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r2_dfs_fill_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r2_dfs_restart_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r2_object_fill_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r2_object_restart_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 8
+    },
+    {
+      "log": "r3_dfs_fill_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r3_dfs_restart_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r3_object_fill_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r3_object_restart_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 8
+    }
+  ],
+  "current_log_audit": [
+    {
+      "log": "r1_dfs_fill_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r1_dfs_restart_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r1_object_fill_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r1_object_restart_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r2_dfs_fill_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r2_dfs_restart_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r2_object_fill_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r2_object_restart_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r3_dfs_fill_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r3_dfs_restart_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 8
+    },
+    {
+      "log": "r3_object_fill_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    },
+    {
+      "log": "r3_object_restart_server.log",
+      "errors_before_shutdown": [],
+      "errors_after_shutdown": 0
+    }
+  ]
+}

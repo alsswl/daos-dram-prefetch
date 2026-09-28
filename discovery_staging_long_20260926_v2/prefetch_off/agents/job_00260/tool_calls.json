@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\ndf.head()",
+    "output": "                                               study  ... us_lab.r\n0                                          A Roelofs  ...        0\n1                                AL Morris, ML Still  ...        0\n2  B Liefooghe, P Barrouillet, A Vandierendonck, ...  ...        0\n3                       BC Storm, EL Bjork, RA Bjork  ...        1\n4                         C Mitchell, S Nash, G Hall  ...        0\n\n[5 rows x 60 columns]",
+    "elapsed_seconds": 0.1519497879780829
+  },
+  {
+    "code": "# Filter the dataset to find rows where both 'compensation.o' and 'compensation.r' are 'cash'\ncash_compensation_studies = df[(df['compensation.o'] == 'cash') & (df['compensation.r'] == 'cash')]\n\n# Check the 'discipline' column for these studies\ncash_compensation_studies['discipline'].unique()",
+    "output": "['Cognitive' 'Social' 'Economics']",
+    "elapsed_seconds": 0.0023486600257456303
+  },
+  {
+    "code": "# Count the frequency of cash compensation in each discipline for original and replication studies\ncash_compensation_counts = df.groupby(['discipline', 'compensation.o', 'compensation.r']).size().reset_index(name='count')\n\ncash_compensation_counts",
+    "output": "   discipline compensation.o compensation.r  count\n0   Cognitive           cash           cash      6\n1   Cognitive           cash         credit      2\n2   Cognitive           cash          mixed      1\n3   Cognitive         credit           cash      7\n4   Cognitive         credit         credit      6\n5   Cognitive         credit          mixed      5\n6   Cognitive          mixed           cash      1\n7   Cognitive          mixed         credit      1\n8   Cognitive          mixed          mixed      2\n9   Cognitive        nothing        nothing      3\n10  Economics           cash           cash     18\n11     Social           cash           cash      4\n12     Social           cash          mixed      1\n13     Social         credit           cash      6\n14     Social         credit         credit     13\n15     Social         credit          mixed      2\n16     Social          mixed           cash      1\n17     Social          mixed         credit      4\n18     Social          mixed          mixed      2\n19     Social        nothing        nothing      1",
+    "elapsed_seconds": 0.005126084201037884
+  },
+  {
+    "code": "from scipy.stats import chi2_contingency\n\n# Create a contingency table for the 'discipline' and 'compensation' variables\ncontingency_table = df.groupby(['discipline', 'compensation.o', 'compensation.r']).size().unstack(fill_value=0)\n\n# Perform chi-squared test\nchi2, p, dof, expected = chi2_contingency(contingency_table)\n\nchi2, p, dof, expected",
+    "output": "(126.052442002442, 8.002983967883191e-16, 24, array([[ 4.5       ,  2.72093023,  1.36046512,  0.41860465],\n       [ 9.        ,  5.44186047,  2.72093023,  0.8372093 ],\n       [ 2.        ,  1.20930233,  0.60465116,  0.18604651],\n       [ 1.5       ,  0.90697674,  0.45348837,  0.13953488],\n       [ 9.        ,  5.44186047,  2.72093023,  0.8372093 ],\n       [ 2.5       ,  1.51162791,  0.75581395,  0.23255814],\n       [10.5       ,  6.34883721,  3.1744186 ,  0.97674419],\n       [ 3.5       ,  2.11627907,  1.05813953,  0.3255814 ],\n       [ 0.5       ,  0.30232558,  0.15116279,  0.04651163]]))",
+    "elapsed_seconds": 0.4815045930445194
+  }
+]

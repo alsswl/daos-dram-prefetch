@@ -1,0 +1,23 @@
+chunk_size: 128
+local_cpu: false
+enable_async_loading: true
+storage_plugins:
+- daosgds
+extra_config:
+  storage_plugin.daosgds.module_path: lmcache_daos.store_probe_backend
+  storage_plugin.daosgds.class_name: StoreProbeBackend
+  daosgds.pool: discospool
+  daosgds.container: kvcache
+  daosgds.transport: object
+  daosgds.root: /minji-v2
+  daosgds.object_namespace: 'minji-store-ab-2c17728c94d5487d943fb92c04182bde:'
+  daosgds.object_library: /root/discos_minji/libdaosgdr.so
+  daosgds.gpu_buffer_gb: 10
+  daosgds.io_workers: 16
+  daosgds.meta_workers: 16
+  daosgds.store: true
+  daosgds.probe_interval_ms: 5
+  daosgds.store_path: host_staged
+max_local_cpu_size: 8
+use_layerwise: false
+store_location: null

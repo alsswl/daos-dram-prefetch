@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_raw.csv')\ndf.head()",
+    "output": "   ID# (range 1-12686) 1979  ...  Total market value of items over $500, 1996\n0                         1  ...                                          NaN\n1                         2  ...                                      15000.0\n2                         3  ...                                       2000.0\n3                         4  ...                                      15000.0\n4                         5  ...                                          NaN\n\n[5 rows x 61 columns]",
+    "elapsed_seconds": 0.1914116069674492
+  },
+  {
+    "code": "# Inspect the columns for gender and degree completion rates\ngender_column = \"Sex of respondent, 1979: Sex of the respondent, 1:MALE or 2:FEMALE\"\ndegree_completion_column = \"Highest grade completed, 1979: Highest grade or year of regular school that respondent have completed and got credit for till 1979\"\n\n# Check if these columns exist in the dataset\nif gender_column in df.columns and degree_completion_column in df.columns:\n    print(\"Columns for gender and degree completion rates found.\")\nelse:\n    print(\"Columns for gender and degree completion rates not found.\")",
+    "output": "Columns for gender and degree completion rates not found.\n",
+    "elapsed_seconds": 0.0019092727452516556
+  },
+  {
+    "code": "# Search for columns related to gender and degree completion rates\ngender_columns = [col for col in df.columns if \"Sex\" in col]\ndegree_completion_columns = [col for col in df.columns if \"Highest grade\" in col]\n\nprint(\"Gender-related columns:\", gender_columns)\nprint(\"Degree completion-related columns:\", degree_completion_columns)",
+    "output": "Gender-related columns: ['Sex of respondent, 1979']\nDegree completion-related columns: [\"Highest grade completed by respondent's mother, 1979\", \"Highest grade completed by respondent's father, 1979\", 'Highest grade completed, 1979']\n",
+    "elapsed_seconds": 0.0018025129102170467
+  },
+  {
+    "code": "import pandas as pd\nfrom scipy.stats import ttest_ind\n\n# Extract the gender and degree completion columns\ngender = df[\"Sex of respondent, 1979\"]\ndegree_completion = df[\"Highest grade completed, 1979\"]\n\n# Convert gender to a categorical variable (1: Male, 2: Female)\ngender = pd.Categorical(gender, categories=[1, 2], ordered=False)\n\n# Split the data by gender\nmale_degrees = degree_completion[gender == 1]\nfemale_degrees = degree_completion[gender == 2]\n\n# Perform an independent t-test to compare the means of degree completion between genders\nt_statistic, p_value = ttest_ind(male_degrees, female_degrees)\n\nt_statistic, p_value",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.47673426615074277
+  },
+  {
+    "code": "# Check for missing values in the degree completion column\nmissing_values = degree_completion.isnull().sum()\nprint(\"Missing values in degree completion column:\", missing_values)\n\n# Check the data type of the degree completion column\nprint(\"Data type of degree completion column:\", degree_completion.dtype)",
+    "output": "Missing values in degree completion column: 152\nData type of degree completion column: float64\n",
+    "elapsed_seconds": 0.0016759168356657028
+  },
+  {
+    "code": "# Drop rows with missing values in the degree completion column\ndf_clean = df.dropna(subset=[\"Highest grade completed, 1979\"])\n\n# Extract the gender and degree completion columns from the cleaned data\ngender_clean = df_clean[\"Sex of respondent, 1979\"]\ndegree_completion_clean = df_clean[\"Highest grade completed, 1979\"]\n\n# Convert gender to a categorical variable (1: Male, 2: Female)\ngender_clean = pd.Categorical(gender_clean, categories=[1, 2], ordered=False)\n\n# Split the data by gender\nmale_degrees_clean = degree_completion_clean[gender_clean == 1]\nfemale_degrees_clean = degree_completion_clean[gender_clean == 2]\n\n# Perform an independent t-test to compare the means of degree completion between genders\nt_statistic_clean, p_value_clean = ttest_ind(male_degrees_clean, female_degrees_clean)\n\nt_statistic_clean, p_value_clean",
+    "output": "(-5.691433978032243, 1.2880103410018152e-08)",
+    "elapsed_seconds": 0.006810151040554047
+  }
+]

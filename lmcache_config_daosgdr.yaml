@@ -1,0 +1,13 @@
+chunk_size: 2048
+local_cpu: false
+
+storage_plugins:
+  - daos_gdr
+
+extra_config:
+  storage_plugin.daos_gdr.module_path: "daosgdr_backend"
+  storage_plugin.daos_gdr.class_name: "DaosGdrBackend"
+  daos_gdr_pool: "discospool"
+  daos_gdr_cont: "gdrcont"
+  daos_gdr_buffer_size_mb: 8192
+  daos_gdr_io_workers: 8

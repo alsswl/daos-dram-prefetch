@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Filter the dataset to find the number of respondents who indicated that NFRs were not at all considered\nnot_considered = df['Q11_ML_NFRs_Not_Considered'].value_counts()\n\n# Calculate the proportion of respondents who indicated that NFRs were not at all considered\nproportion = not_considered['Not Relevant at All'] / len(df)\n\n# Perform bootstrapping to calculate the 95% confidence interval\nbootstrap_result = bootstrap((df['Q11_ML_NFRs_Not_Considered'],), np.mean, confidence_level=0.95, method='basic')\n\nproportion, bootstrap_result",
+    "output": "KeyError: 'Not Relevant at All'",
+    "elapsed_seconds": 0.6193527369759977
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\ndf['Q11_ML_NFRs_Not_Considered'].unique()",
+    "output": "['quoted' 'not quoted' '-77']",
+    "elapsed_seconds": 0.013152306899428368
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Filter the dataset to find the number of respondents who indicated that NFRs were not at all considered\nnot_considered = df['Q11_ML_NFRs_Not_Considered'] == 'not quoted'\n\n# Calculate the proportion of respondents who indicated that NFRs were not at all considered\nproportion = not_considered.sum() / len(df)\n\n# Perform bootstrapping to calculate the 95% confidence interval\nbootstrap_result = bootstrap((not_considered.values,), np.mean, confidence_level=0.95, method='basic')\n\nproportion, bootstrap_result",
+    "output": "(0.6340579710144928, BootstrapResult(confidence_interval=ConfidenceInterval(low=0.5797101449275364, high=0.6920289855072465), bootstrap_distribution=array([0.64130435, 0.6557971 , 0.63405797, ..., 0.61594203, 0.62681159,\n       0.58695652]), standard_error=0.028724328097903797))",
+    "elapsed_seconds": 0.05929821124300361
+  }
+]

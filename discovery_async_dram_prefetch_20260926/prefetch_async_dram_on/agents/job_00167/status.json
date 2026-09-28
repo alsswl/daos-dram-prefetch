@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 52.00432852981612,
+  "llm_calls": 8,
+  "python_calls": 7,
+  "final_answer": "Scientific Hypothesis: In developing countries, higher education expenditure (as a percentage of GNI) is associated with lower GNI per capita (in constant 2015 USD), and this relationship may have a negative impact on economic output, as indicated by exports growth. However, the effect of GNI per capita on exports growth is minimal. This hypothesis is derived from the dataset, which includes variables such as education expenditure, GNI per capita, and exports growth for Sub-Saharan Africa and Lower Middle Income Countries from 1975 to 2015.\n\nWORKFLOW_SUMMARY:\n1. Data Loading: Loaded the datasets for education expenditure, GNI per capita, and exports growth from the specified paths.\n2. Data Inspection: Displayed the first few rows of each dataset to understand their structure and the relevant columns.\n3. Data Merging: Melted the datasets to long format and merged them on 'Country Group', 'Country Code', and 'Year' to create a unified dataset for analysis.\n4. Correlation Analysis: Calculated the correlation between education expenditure and GNI per capita, GNI per capita and exports growth, and education expenditure and exports growth.\n5. Linear Regression Analysis: Performed a multiple linear regression analysis to examine the relationship between education expenditure, GNI per capita, and exports growth.\n6. Time-Series Analysis: Conducted a time-series analysis to examine how the relationship between education expenditure and GNI per capita has changed over time.\n7. Hypothesis Formulation: Based on the results of the correlation and regression analyses, formulated a scientific hypothesis about the relationship between education expenditure, GNI per capita, and economic output.",
+  "grading": "not run, as in supplied document",
+  "query": "What relationship exists between education expenditure and per capita GDP in developing countries and how does it affect economic output?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/worldbank_education_gdp_indicators/metadata_1.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

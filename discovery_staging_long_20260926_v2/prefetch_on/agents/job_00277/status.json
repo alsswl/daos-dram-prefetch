@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 51.730966524221,
+  "llm_calls": 8,
+  "python_calls": 7,
+  "final_answer": "Hypothesis: During the Younger Bronze Age (1100-500 BCE), the principal component value of PC1 for Pottery Decoration (Zkeverz) at the beginning of the period (1100 BCE) differs significantly from the subsequent time horizons (1000 to 500 BCE), while the principal component value for Pottery Form (ZKeform) does not show a significant difference. This suggests that the forms of capital related to pottery decoration underwent a significant change during the Younger Bronze Age, while the forms related to pottery form remained relatively stable. The statistical significance for Zkeverz is supported by a Wilcoxon signed-rank test with a p-value of 0.03125, indicating a significant difference.",
+  "grading": "not run, as in supplied document",
+  "query": "In the PCA on the forms of capital analyzed in hundred-year time slices, during the Younger Bronze Age (1100-500 BCE), how does the principal component value of PC1 in the beginning of the period at 1100 BCE differ from the subsequent time horizons between 1000 to 500 BCE?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/archaeology/metadata_19.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

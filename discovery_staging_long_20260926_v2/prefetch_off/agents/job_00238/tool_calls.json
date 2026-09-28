@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\ndf.head()",
+    "output": "   ID  ...                           Origin\n0  31  ...  https://ww2.unipark.de/uc/seml/\n1  34  ...                              -99\n2  36  ...                              -99\n3  57  ...                              -99\n4  46  ...                              -99\n\n[5 rows x 202 columns]",
+    "elapsed_seconds": 0.16477744281291962
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Define the columns related to documentation formats\ndocumentation_columns = [\n    'Q10_ML_Documentation_Vision_Document',\n    'Q10_ML_Documentation_Requirements_Lists',\n    'Q10_ML_Documentation_Goal_Models',\n    'Q10_ML_Documentation_Use_Case_Models',\n    'Q10_ML_Documentation_Prototypes',\n    'Q10_ML_Documentation_User_Stories',\n    'Q10_ML_Documentation_BDD_Scenarios',\n    'Q10_ML_Documentation_MLCanvas',\n    'Q10_ML_Documentation_Notebooks',\n    'Q10_ML_Documentation_Data_Models',\n    'Q10_ML_Documentation_Others'\n]\n\n# Count the frequency of each documentation format\ndocumentation_counts = df[documentation_columns].sum()\n\n# Perform a bootstrap analysis to determine the most frequently used documentation format\nbootstrap_result = bootstrap((documentation_counts,), np.mean, confidence_level=0.95)\n\n# Determine the most frequently used documentation format\nmost_frequent_documentation = documentation_counts.idxmax()\nmost_frequent_count = documentation_counts.max()\n\n# Print the results\nmost_frequent_documentation, most_frequent_count, bootstrap_result",
+    "output": "TypeError: unsupported operand type(s) for /: 'str' and 'int'",
+    "elapsed_seconds": 0.6025753109715879
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Convert the documentation columns to numerical values using one-hot encoding\ndocumentation_df = pd.get_dummies(df[documentation_columns], prefix='Documentation')\n\n# Count the frequency of each documentation format\ndocumentation_counts = documentation_df.sum()\n\n# Perform a bootstrap analysis to determine the most frequently used documentation format\nbootstrap_result = bootstrap((documentation_counts,), np.mean, confidence_level=0.95)\n\n# Determine the most frequently used documentation format\nmost_frequent_documentation = documentation_counts.idxmax()\nmost_frequent_count = documentation_counts.max()\n\n# Print the results\nmost_frequent_documentation, most_frequent_count, bootstrap_result",
+    "output": "('Documentation_not quoted', 190, BootstrapResult(confidence_interval=ConfidenceInterval(low=74.867311735022, high=110.75757575757575), bootstrap_distribution=array([ 83.84848485,  86.90909091,  99.42424242, ...,  87.33333333,\n        80.12121212, 102.87878788]), standard_error=9.192840710914982))",
+    "elapsed_seconds": 0.023381600622087717
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Convert the documentation columns to numerical values using one-hot encoding\ndocumentation_df = pd.get_dummies(df[documentation_columns], prefix='Documentation')\n\n# Count the frequency of each documentation format\ndocumentation_counts = documentation_df.sum()\n\n# Perform a bootstrap analysis to determine the most frequently used documentation format\nbootstrap_result = bootstrap((documentation_counts,), np.mean, confidence_level=0.95)\n\n# Determine the most frequently used documentation format\nmost_frequent_documentation = documentation_counts.idxmax()\nmost_frequent_count = documentation_counts.max()\n\n# Print the results\nmost_frequent_documentation, most_frequent_count, bootstrap_result",
+    "output": "('Documentation_not quoted', 190, BootstrapResult(confidence_interval=ConfidenceInterval(low=74.60606060606061, high=110.63636363636364), bootstrap_distribution=array([ 91.90909091,  83.39393939,  99.09090909, ..., 104.03030303,\n        87.66666667,  94.09090909]), standard_error=9.262376074216725))",
+    "elapsed_seconds": 0.025126509834080935
+  }
+]

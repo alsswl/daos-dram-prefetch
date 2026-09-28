@@ -1,0 +1,37 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\nadjusted_savings_df = pd.read_csv('/data/Adjusted_savings_education_expenditure_percentage_of_GNI.csv')\nexports_df = pd.read_csv('/data/Exports_of_goods_and_services_annual_percentage_growth.csv')\ngni_df = pd.read_csv('/data/GNI_per_capita_constant_2015_USdollar.csv')\nlabor_force_df = pd.read_csv('/data/Labor_force_participation_rate_total_percentage_of_total_population_ages_15+_modeled_ILO_estimate.csv')\nschool_primary_df = pd.read_csv('/data/School_enrollment_primary_percentage_gross.csv')\nschool_secondary_df = pd.read_csv('/data/School_enrollment_secondary_percentage_gross.csv')\n\n# Display the first few rows of each dataset\nadjusted_savings_df.head()\nexports_df.head()\ngni_df.head()\nlabor_force_df.head()\nschool_primary_df.head()\nschool_secondary_df.head()",
+    "output": "         Country Group Country Code  ...  2014 [YR2014]  2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...      42.847160      43.372971\n1  Lower middle income          LMC  ...      64.281197      64.532967\n\n[2 rows x 43 columns]",
+    "elapsed_seconds": 0.14741909597069025
+  },
+  {
+    "code": "import numpy as np\n\n# Extract the relevant columns for analysis\neducation_expenditure = adjusted_savings_df.filter(regex='YR').values\nprimary_enrollment = school_primary_df.filter(regex='YR').values\nsecondary_enrollment = school_secondary_df.filter(regex='YR').values\n\n# Calculate the correlation between education expenditure and primary enrollment\ncorrelation_primary = np.corrcoef(education_expenditure, primary_enrollment)[0, 1]\n\n# Calculate the correlation between education expenditure and secondary enrollment\ncorrelation_secondary = np.corrcoef(education_expenditure, secondary_enrollment)[0, 1]\n\ncorrelation_primary, correlation_secondary",
+    "output": "(0.5858935384174062, 0.5858935384174062)",
+    "elapsed_seconds": 0.0029009860008955
+  },
+  {
+    "code": "# Extract economic output data\ngni_per_capita = gni_df.filter(regex='YR').values\nexports_growth = exports_df.filter(regex='YR').values\n\n# Calculate the correlation between education expenditure and GNI per capita\ncorrelation_gni = np.corrcoef(education_expenditure, gni_per_capita)[0, 1]\n\n# Calculate the correlation between education expenditure and exports growth\ncorrelation_exports = np.corrcoef(education_expenditure, exports_growth)[0, 1]\n\ncorrelation_gni, correlation_exports",
+    "output": "(0.5858935384174062, 0.5858935384174062)",
+    "elapsed_seconds": 0.0025763101875782013
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\n\n# Prepare the data for regression\nX = np.hstack((education_expenditure, primary_enrollment, secondary_enrollment))\ny = gni_per_capita\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "ValueError: Input y contains NaN.",
+    "elapsed_seconds": 0.6039108107797801
+  },
+  {
+    "code": "# Check for missing values in the datasets\nprint(\"Missing values in education expenditure:\", adjusted_savings_df.isnull().sum().sum())\nprint(\"Missing values in primary enrollment:\", school_primary_df.isnull().sum().sum())\nprint(\"Missing values in secondary enrollment:\", school_secondary_df.isnull().sum().sum())\nprint(\"Missing values in GNI per capita:\", gni_df.isnull().sum().sum())",
+    "output": "Missing values in education expenditure: 0\nMissing values in primary enrollment: 0\nMissing values in secondary enrollment: 0\nMissing values in GNI per capita: 36\n",
+    "elapsed_seconds": 0.0025530741550028324
+  },
+  {
+    "code": "from sklearn.impute import SimpleImputer\n\n# Impute missing values in GNI per capita\nimputer = SimpleImputer(strategy='mean')\ngni_per_capita_imputed = imputer.fit_transform(gni_per_capita)\n\n# Prepare the data for regression with imputed values\nX = np.hstack((education_expenditure, primary_enrollment, secondary_enrollment))\ny = gni_per_capita_imputed\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[[ 0.          0.          0.         ...  0.          0.\n   0.        ]\n [ 0.          0.          0.         ...  0.          0.\n   0.        ]\n [ 0.          0.          0.         ...  0.          0.\n   0.        ]\n ...\n [ 0.94952042 -0.00791669  0.00717748 ... -0.09744422  0.27078703\n   0.28446889]\n [ 1.00269742 -0.00885873  0.00692253 ... -0.08658492  0.30575754\n   0.31997865]\n [ 0.02582182 -0.00975417 -0.01237063 ...  0.30946481  0.38621425\n   0.38224422]]",
+    "elapsed_seconds": 0.01325270812958479
+  },
+  {
+    "code": "# Calculate the correlation between education expenditure and GNI per capita\ncorrelation_gni = np.corrcoef(education_expenditure, gni_per_capita_imputed)[0, 1]\ncorrelation_gni",
+    "output": "0.5858935384174062",
+    "elapsed_seconds": 0.0017234887927770615
+  }
+]

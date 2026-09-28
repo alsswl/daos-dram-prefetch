@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "     HYBAS_ID       long       lat  ...  soil_div     area  diversity\n0  6050000010 -76.477422  7.742693  ...  0.482402  72363.7         68\n1  6050000740 -74.628725  9.803586  ...  0.457436  17944.3         35\n2  6050068100 -75.295995  8.448815  ...  0.378793  17105.5         44\n3  6050068110 -74.608408  8.922863  ...  0.468328    610.1         48\n4  6050070260 -75.591588  5.770093  ...  0.158870  61901.9         81\n\n[5 rows x 21 columns]",
+    "elapsed_seconds": 0.14177565183490515
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = df[['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']].values  # Predictor (evolutionary traits)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.5689438073895872
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import r2_score\n\n# Reload the dataset\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\n\n# Prepare the data for regression\nX = df[['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']].values  # Predictor (evolutionary traits)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Split the data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n\n# Predict on the test set\ny_pred = model.predict(X_test)\n\n# Calculate R-squared for the model\nr2 = r2_score(y_test, y_pred)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02537566  0.50630314 -7.17454234 11.67512499 -6.10127328]",
+    "elapsed_seconds": 0.007353871129453182
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Reload the dataset\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\n\n# Calculate the correlation matrix\ncorrelation_matrix = df[['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol', 'BAMM_speciation']].corr()\n\n# Display the correlation matrix\ncorrelation_matrix",
+    "output": "                 BEL_evol  MBL_evol  ...  RML_evol  BAMM_speciation\nBEL_evol         1.000000  0.449569  ...  0.043208         0.421486\nMBL_evol         0.449569  1.000000  ...  0.184240         0.882864\nOGP_evol         0.484413  0.764583  ...  0.286735         0.587297\nRES_evol         0.458897  0.913270  ...  0.184364         0.867942\nRML_evol         0.043208  0.184240  ...  1.000000        -0.131759\nBAMM_speciation  0.421486  0.882864  ... -0.131759         1.000000\n\n[6 rows x 6 columns]",
+    "elapsed_seconds": 0.4981418498791754
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf[['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol', 'BAMM_speciation']].head()",
+    "output": "   BEL_evol  MBL_evol  OGP_evol  RES_evol  RML_evol  BAMM_speciation\n0  0.228050  0.058183  0.001714  0.001874  0.004036         0.137392\n1  0.104729  0.036492  0.001571  0.001485  0.005703         0.117235\n2  0.276341  0.052935  0.001429  0.001563  0.004258         0.119381\n3  0.186214  0.053261  0.001663  0.001467  0.003962         0.132477\n4  0.245061  0.053373  0.001786  0.001334  0.003462         0.120127",
+    "elapsed_seconds": 0.00744009530171752
+  }
+]

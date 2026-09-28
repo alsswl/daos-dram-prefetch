@@ -1,0 +1,37 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.14031773572787642
+  },
+  {
+    "code": "# Drop the 'group' and 'color' columns\ncapital_df = capital_df.drop(columns=['group', 'color'])\n\n# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_df = capital_df[(capital_df['BCE'] >= 500) & (capital_df['BCE'] <= 1100)]\n\n# Extract the PC1 values for Pottery Form (ZKeform) and Pottery Decoration (Zkeverz)\npc1_values = young_bronze_age_df[['ZKeform', 'Zkeverz']]\n\n# Display the first few rows of the filtered data\npc1_values.head()",
+    "output": "   ZKeform Zkeverz\n32   -1,13    0,97\n33   -1,13    1,53\n34   -1,13    1,53\n35   -1,13    1,53\n36   -1,13    1,53",
+    "elapsed_seconds": 0.00449830899015069
+  },
+  {
+    "code": "# Extract data for the beginning of the Younger Bronze Age (1100 BCE)\nbeginning_period_df = young_bronze_age_df[young_bronze_age_df['BCE'] == 1100]\n\n# Extract data for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_horizons_df = young_bronze_age_df[(young_bronze_age_df['BCE'] >= 500) & (young_bronze_age_df['BCE'] < 1100)]\n\n# Display the first few rows of the beginning period data\nbeginning_period_df.head()",
+    "output": "     BCE ZAxtSchwert ZDolch Zhausgr  ...  ZBeil               ZMW ZKeform Zkeverz\n32  1100       -0,39    1,1    1,65  ...  -1,05  0,56778811030531   -1,13    0,97\n\n[1 rows x 13 columns]",
+    "elapsed_seconds": 0.006913828197866678
+  },
+  {
+    "code": "# Calculate the mean PC1 values for Pottery Form and Pottery Decoration in the subsequent time horizons\nsubsequent_mean = subsequent_horizons_df[['ZKeform', 'Zkeverz']].mean()\n\n# Display the mean values\nsubsequent_mean",
+    "output": "TypeError: Could not convert ['-1,13-1,13-1,13-1,13-1,13-1,13' '1,531,531,531,531,531,53'] to numeric",
+    "elapsed_seconds": 0.0020445259287953377
+  },
+  {
+    "code": "# Replace commas with periods and convert to numeric\nyoung_bronze_age_df['ZKeform'] = young_bronze_age_df['ZKeform'].str.replace(',', '.').astype(float)\nyoung_bronze_age_df['Zkeverz'] = young_bronze_age_df['Zkeverz'].str.replace(',', '.').astype(float)\n\n# Extract data for the beginning of the Younger Bronze Age (1100 BCE)\nbeginning_period_df = young_bronze_age_df[young_bronze_age_df['BCE'] == 1100]\n\n# Extract data for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_horizons_df = young_bronze_age_df[(young_bronze_age_df['BCE'] >= 500) & (young_bronze_age_df['BCE'] < 1100)]\n\n# Calculate the mean PC1 values for Pottery Form and Pottery Decoration in the subsequent time horizons\nsubsequent_mean = subsequent_horizons_df[['ZKeform', 'Zkeverz']].mean()\n\n# Display the mean values\nsubsequent_mean",
+    "output": "<string>:1: SettingWithCopyWarning: \nA value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead\n\nSee the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n<string>:2: SettingWithCopyWarning: \nA value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead\n\nSee the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\nZKeform   -1.13\nZkeverz    1.53\ndtype: float64",
+    "elapsed_seconds": 0.00392175791785121
+  },
+  {
+    "code": "# Extract the beginning period values\nbeginning_period_values = beginning_period_df[['ZKeform', 'Zkeverz']].values[0]\n\n# Perform a t-test to compare the beginning period values with the subsequent time horizons\nfrom scipy.stats import ttest_1samp\n\n# For ZKeform\nt_stat_zkeform, p_value_zkeform = ttest_1samp(subsequent_horizons_df['ZKeform'], beginning_period_values[0])\n\n# For Zkeverz\nt_stat_zkeverz, p_value_zkeverz = ttest_1samp(subsequent_horizons_df['Zkeverz'], beginning_period_values[1])\n\n# Display the results\nt_stat_zkeform, p_value_zkeform, t_stat_zkeverz, p_value_zkeverz",
+    "output": "/opt/site/scipy/stats/_axis_nan_policy.py:592: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.\n  res = hypotest_fun_out(*samples, **kwds)\n(nan, nan, inf, 0.0)",
+    "elapsed_seconds": 0.4816045258194208
+  },
+  {
+    "code": "# Check the data for the beginning period and subsequent time horizons\nbeginning_period_df[['ZKeform', 'Zkeverz']]",
+    "output": "    ZKeform  Zkeverz\n32    -1.13     0.97",
+    "elapsed_seconds": 0.0036807009018957615
+  }
+]

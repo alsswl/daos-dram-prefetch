@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="1150">
+<rect width="930" height="1150" fill="white"/>
+<g font-family="sans-serif" font-size="12" fill="#222">
+<text x="45" y="26" font-size="20">DRAM 4GiB / staging 8GiB, prefetch ON</text>
+<text x="60" y="72" font-size="15">d4_s8: GPU staging (GiB)</text>
+<line x1="60" y1="260.0" x2="880" y2="260.0" stroke="#ddd"/>
+<text x="22" y="264.0">0.0</text>
+<text x="50.0" y="278">0.0</text>
+<line x1="60" y1="217.5" x2="880" y2="217.5" stroke="#ddd"/>
+<text x="22" y="221.5">2.0</text>
+<text x="255.0" y="278">0.7</text>
+<line x1="60" y1="175.0" x2="880" y2="175.0" stroke="#ddd"/>
+<text x="22" y="179.0">4.0</text>
+<text x="460.0" y="278">1.4</text>
+<line x1="60" y1="132.5" x2="880" y2="132.5" stroke="#ddd"/>
+<text x="22" y="136.5">6.0</text>
+<text x="665.0" y="278">2.1</text>
+<line x1="60" y1="90.0" x2="880" y2="90.0" stroke="#ddd"/>
+<text x="22" y="94.0">8.0</text>
+<text x="870.0" y="278">2.8</text>
+<line x1="60.0" y1="90" x2="60.0" y2="260" stroke="#777" stroke-dasharray="4 3"/>
+<text x="63.0" y="103">requests=16</text>
+<polyline points="60.00,137.15 84.78,259.58 109.57,100.21 134.35,259.58 159.13,90.25 183.92,258.75 208.70,90.25 233.49,179.48 258.27,94.81 283.05,254.60 307.84,90.25 332.62,259.17 357.40,90.25 382.19,237.17 406.97,90.25 431.76,259.17 456.54,90.25 481.32,259.58 506.11,259.58 530.89,90.25 555.67,259.17 580.46,90.25 605.24,247.55 630.03,259.58 654.81,90.25 679.59,259.58 704.38,90.25 729.16,115.15 753.94,90.25 778.73,90.25 803.51,259.58 828.30,104.78 853.08,259.17 877.86,259.58" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<text x="60" y="303" fill="#0072b2">5s peak</text>
+<polyline points="60.00,243.10 84.78,259.99 109.57,245.69 134.35,259.99 159.13,226.46 183.92,259.98 208.70,242.37 233.49,258.41 258.27,248.64 283.05,259.97 307.84,238.97 332.62,259.98 357.40,249.48 382.19,259.90 406.97,249.97 431.76,259.98 456.54,248.33 481.32,259.99 506.11,260.00 530.89,248.44 555.67,259.98 580.46,243.46 605.24,259.92 630.03,259.99 654.81,248.61 679.59,259.99 704.38,252.23 729.16,255.34 753.94,254.02 778.73,249.81 803.51,259.99 828.30,250.95 853.08,259.98 877.86,259.99" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<text x="250" y="303" fill="#009e73">time-weighted mean</text>
+<text x="60" y="327" font-size="15">d4_s8: Prefix-lookup chunk fractions (%)</text>
+<line x1="60" y1="515.0" x2="880" y2="515.0" stroke="#ddd"/>
+<text x="22" y="519.0">0.0</text>
+<text x="50.0" y="533">0.0</text>
+<line x1="60" y1="472.5" x2="880" y2="472.5" stroke="#ddd"/>
+<text x="22" y="476.5">25.0</text>
+<text x="255.0" y="533">0.7</text>
+<line x1="60" y1="430.0" x2="880" y2="430.0" stroke="#ddd"/>
+<text x="22" y="434.0">50.0</text>
+<text x="460.0" y="533">1.4</text>
+<line x1="60" y1="387.5" x2="880" y2="387.5" stroke="#ddd"/>
+<text x="22" y="391.5">75.0</text>
+<text x="665.0" y="533">2.1</text>
+<line x1="60" y1="345.0" x2="880" y2="345.0" stroke="#ddd"/>
+<text x="22" y="349.0">100.0</text>
+<text x="870.0" y="533">2.8</text>
+<line x1="60.0" y1="345" x2="60.0" y2="515" stroke="#777" stroke-dasharray="4 3"/>
+<text x="63.0" y="358">requests=16</text>
+<polyline points="60.00,443.83" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="60.00" cy="443.83" r="2.2" fill="#0072b2"/>
+<polyline points="109.57,387.26" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="109.57" cy="387.26" r="2.2" fill="#0072b2"/>
+<polyline points="159.13,416.97" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="159.13" cy="416.97" r="2.2" fill="#0072b2"/>
+<polyline points="208.70,431.62" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="208.70" cy="431.62" r="2.2" fill="#0072b2"/>
+<polyline points="258.27,414.98" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="258.27" cy="414.98" r="2.2" fill="#0072b2"/>
+<polyline points="307.84,413.80" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="307.84" cy="413.80" r="2.2" fill="#0072b2"/>
+<polyline points="357.40,389.42" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="357.40" cy="389.42" r="2.2" fill="#0072b2"/>
+<polyline points="406.97,403.01" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="406.97" cy="403.01" r="2.2" fill="#0072b2"/>
+<polyline points="456.54,376.55" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="456.54" cy="376.55" r="2.2" fill="#0072b2"/>
+<polyline points="530.89,386.53" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="530.89" cy="386.53" r="2.2" fill="#0072b2"/>
+<polyline points="580.46,390.09" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="580.46" cy="390.09" r="2.2" fill="#0072b2"/>
+<polyline points="654.81,379.90" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="654.81" cy="379.90" r="2.2" fill="#0072b2"/>
+<polyline points="704.38,381.26 729.16,384.25 753.94,358.41 778.73,381.56" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<polyline points="828.30,378.57" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<circle cx="828.30" cy="378.57" r="2.2" fill="#0072b2"/>
+<text x="60" y="558" fill="#0072b2">DRAM hit</text>
+<polyline points="60.00,515.00" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="60.00" cy="515.00" r="2.2" fill="#009e73"/>
+<polyline points="109.57,515.00" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="109.57" cy="515.00" r="2.2" fill="#009e73"/>
+<polyline points="159.13,496.83" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="159.13" cy="496.83" r="2.2" fill="#009e73"/>
+<polyline points="208.70,443.36" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="208.70" cy="443.36" r="2.2" fill="#009e73"/>
+<polyline points="258.27,472.33" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="258.27" cy="472.33" r="2.2" fill="#009e73"/>
+<polyline points="307.84,470.66" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="307.84" cy="470.66" r="2.2" fill="#009e73"/>
+<polyline points="357.40,486.37" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="357.40" cy="486.37" r="2.2" fill="#009e73"/>
+<polyline points="406.97,484.11" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="406.97" cy="484.11" r="2.2" fill="#009e73"/>
+<polyline points="456.54,504.66" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="456.54" cy="504.66" r="2.2" fill="#009e73"/>
+<polyline points="530.89,497.37" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="530.89" cy="497.37" r="2.2" fill="#009e73"/>
+<polyline points="580.46,494.82" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="580.46" cy="494.82" r="2.2" fill="#009e73"/>
+<polyline points="654.81,495.30" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="654.81" cy="495.30" r="2.2" fill="#009e73"/>
+<polyline points="704.38,500.45 729.16,494.39 753.94,515.00 778.73,489.43" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<polyline points="828.30,499.39" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<circle cx="828.30" cy="499.39" r="2.2" fill="#009e73"/>
+<text x="250" y="558" fill="#009e73">DAOS hit</text>
+<polyline points="60.00,416.17" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="60.00" cy="416.17" r="2.2" fill="#d55e00"/>
+<polyline points="109.57,472.74" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="109.57" cy="472.74" r="2.2" fill="#d55e00"/>
+<polyline points="159.13,461.21" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="159.13" cy="461.21" r="2.2" fill="#d55e00"/>
+<polyline points="208.70,500.02" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="208.70" cy="500.02" r="2.2" fill="#d55e00"/>
+<polyline points="258.27,487.69" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="258.27" cy="487.69" r="2.2" fill="#d55e00"/>
+<polyline points="307.84,490.54" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="307.84" cy="490.54" r="2.2" fill="#d55e00"/>
+<polyline points="357.40,499.22" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="357.40" cy="499.22" r="2.2" fill="#d55e00"/>
+<polyline points="406.97,487.88" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="406.97" cy="487.88" r="2.2" fill="#d55e00"/>
+<polyline points="456.54,493.78" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="456.54" cy="493.78" r="2.2" fill="#d55e00"/>
+<polyline points="530.89,491.09" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="530.89" cy="491.09" r="2.2" fill="#d55e00"/>
+<polyline points="580.46,490.09" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="580.46" cy="490.09" r="2.2" fill="#d55e00"/>
+<polyline points="654.81,499.80" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="654.81" cy="499.80" r="2.2" fill="#d55e00"/>
+<polyline points="704.38,493.29 729.16,496.36 753.94,501.59 778.73,504.01" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<polyline points="828.30,497.03" fill="none" stroke="#d55e00" stroke-width="1.7"/>
+<circle cx="828.30" cy="497.03" r="2.2" fill="#d55e00"/>
+<text x="440" y="558" fill="#d55e00">miss</text>
+<text x="60" y="582" font-size="15">d4_s8: DRAM cached KV (GiB)</text>
+<line x1="60" y1="770.0" x2="880" y2="770.0" stroke="#ddd"/>
+<text x="22" y="774.0">0.0</text>
+<text x="50.0" y="788">0.0</text>
+<line x1="60" y1="727.5" x2="880" y2="727.5" stroke="#ddd"/>
+<text x="22" y="731.5">1.0</text>
+<text x="255.0" y="788">0.7</text>
+<line x1="60" y1="685.0" x2="880" y2="685.0" stroke="#ddd"/>
+<text x="22" y="689.0">2.0</text>
+<text x="460.0" y="788">1.4</text>
+<line x1="60" y1="642.5" x2="880" y2="642.5" stroke="#ddd"/>
+<text x="22" y="646.5">3.0</text>
+<text x="665.0" y="788">2.1</text>
+<line x1="60" y1="600.0" x2="880" y2="600.0" stroke="#ddd"/>
+<text x="22" y="604.0">4.0</text>
+<text x="870.0" y="788">2.8</text>
+<line x1="60.0" y1="600" x2="60.0" y2="770" stroke="#777" stroke-dasharray="4 3"/>
+<text x="63.0" y="613">requests=16</text>
+<polyline points="60.00,689.46 84.78,633.56 109.57,609.93 134.35,600.66 159.13,600.68 183.92,600.66 208.70,600.68 233.49,600.67 258.27,600.67 283.05,600.67 307.84,600.68 332.62,600.67 357.40,600.67 382.19,600.68 406.97,600.68 431.76,600.66 456.54,600.68 481.32,600.66 506.11,600.66 530.89,600.67 555.67,600.66 580.46,600.69 605.24,600.66 630.03,600.67 654.81,600.69 679.59,600.66 704.38,600.68 729.16,600.67 753.94,600.67 778.73,600.68 803.51,600.66 828.30,600.67 853.08,600.66 877.86,600.66" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<text x="60" y="813" fill="#0072b2">time-weighted mean</text>
+<text x="60" y="837" font-size="15">d4_s8: In-flight LLM calls (client callbacks)</text>
+<line x1="60" y1="1025.0" x2="880" y2="1025.0" stroke="#ddd"/>
+<text x="22" y="1029.0">0.0</text>
+<text x="50.0" y="1043">0.0</text>
+<line x1="60" y1="982.5" x2="880" y2="982.5" stroke="#ddd"/>
+<text x="22" y="986.5">4.0</text>
+<text x="255.0" y="1043">0.7</text>
+<line x1="60" y1="940.0" x2="880" y2="940.0" stroke="#ddd"/>
+<text x="22" y="944.0">8.0</text>
+<text x="460.0" y="1043">1.4</text>
+<line x1="60" y1="897.5" x2="880" y2="897.5" stroke="#ddd"/>
+<text x="22" y="901.5">12.0</text>
+<text x="665.0" y="1043">2.1</text>
+<line x1="60" y1="855.0" x2="880" y2="855.0" stroke="#ddd"/>
+<text x="22" y="859.0">16.0</text>
+<text x="870.0" y="1043">2.8</text>
+<line x1="60.0" y1="855" x2="60.0" y2="1025" stroke="#777" stroke-dasharray="4 3"/>
+<text x="63.0" y="868">requests=16</text>
+<polyline points="60.00,855.00 84.78,886.88 109.57,855.00 134.35,897.50 159.13,855.00 183.92,855.00 208.70,855.00 233.49,855.00 258.27,855.00 283.05,855.00 307.84,855.00 332.62,855.00 357.40,855.00 382.19,855.00 406.97,855.00 431.76,855.00 456.54,855.00 481.32,876.25 506.11,1014.38 530.89,855.00 555.67,855.00 580.46,855.00 605.24,855.00 630.03,929.38 654.81,855.00 679.59,876.25 704.38,855.00 729.16,855.00 753.94,855.00 778.73,855.00 803.51,855.00 828.30,855.00 853.08,865.62 877.86,1014.38" fill="none" stroke="#0072b2" stroke-width="1.7"/>
+<text x="60" y="1068" fill="#0072b2">5s peak</text>
+<polyline points="60.00,856.85 84.78,966.43 109.57,902.08 134.35,964.18 159.13,897.20 183.92,891.18 208.70,971.52 233.49,866.41 258.27,951.22 283.05,892.20 307.84,891.97 332.62,922.62 357.40,982.48 382.19,879.46 406.97,938.69 431.76,899.61 456.54,911.30 481.32,955.65 506.11,1014.38 530.89,947.03 555.67,925.50 580.46,963.38 605.24,874.07 630.03,967.94 654.81,888.54 679.59,939.75 704.38,885.85 729.16,952.99 753.94,869.28 778.73,907.50 803.51,908.72 828.30,903.61 853.08,939.51 877.86,1014.54" fill="none" stroke="#009e73" stroke-width="1.7"/>
+<text x="250" y="1068" fill="#009e73">time-weighted mean</text>
+<text x="45" y="1132">X: elapsed minutes; 256 fixed inputs in waves of16, cold start; no Python execution. Nominal occupancy samples: 20ms.</text>
+</g></svg>

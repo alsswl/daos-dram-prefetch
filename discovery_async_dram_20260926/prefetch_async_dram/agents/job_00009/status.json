@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 25.98263114783913,
+  "llm_calls": 7,
+  "python_calls": 6,
+  "final_answer": "Hypothesis: The Middle Neolithic period (3400-3000 BCE) is characterized by a higher first principal component (PC1) value in the forms of capital compared to the Younger Neolithic period (2900-2300 BCE), indicating a greater diversity or intensity in the forms of capital during the Middle Neolithic period. The variables chosen are the first principal component (PC1) of the forms of capital, and the relationship between the PC1 values and the time periods is such that the Middle Neolithic period has a higher mean PC1 value than the Younger Neolithic period. The statistical significance of this difference can be further analyzed using a t-test.",
+  "grading": "not run, as in supplied document",
+  "query": "How were the phases of the Middle Neolithic (3400-3000 BCE) and Younger Neolithic (2900-2300 BCE) characterized in terms of the first principal component in a PCA on the forms of capital analyzed in hundred-year time slices?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/archaeology/metadata_16.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_incarceration_processed.csv')\ndf.head()",
+    "output": "    race     sex  ...  composite_wealth_1990  composite_wealth_1996\n0  white  female  ...                      0                      0\n1  white  female  ...                   2000                 209500\n2  white  female  ...                 -18800                 114500\n3  white  female  ...                   1620                  45000\n4  white    male  ...                      0                      0\n\n[5 rows x 6 columns]",
+    "elapsed_seconds": 0.14102968713268638
+  },
+  {
+    "code": "import numpy as np\nfrom sklearn.metrics import mean_squared_error\nfrom sklearn.linear_model import LinearRegression\n\n# Filter the data for white males and females\nwhite_males = df[(df['race'] == 'white') & (df['sex'] == 'male')]\nwhite_females = df[(df['race'] == 'white') & (df['sex'] == 'female')]\n\n# Calculate the standard deviation of wealth for 1990 and 1996 for white males\nstd_dev_1990_males = np.std(white_males['composite_wealth_1990'])\nstd_dev_1996_males = np.std(white_males['composite_wealth_1996'])\n\n# Calculate the standard deviation of wealth for 1990 and 1996 for white females\nstd_dev_1990_females = np.std(white_females['composite_wealth_1990'])\nstd_dev_1996_females = np.std(white_females['composite_wealth_1996'])\n\nstd_dev_1990_males, std_dev_1996_males, std_dev_1990_females, std_dev_1996_females",
+    "output": "(244682.02608739163, 317418.2543876771, 264781.45665532205, 299651.82758319785)",
+    "elapsed_seconds": 0.5756686390377581
+  },
+  {
+    "code": "from scipy.stats import ttest_rel\n\n# Perform a paired t-test to check if the change in standard deviation is statistically significant for white males\nt_stat_males, p_value_males = ttest_rel(white_males['composite_wealth_1990'], white_males['composite_wealth_1996'])\n\n# Perform a paired t-test to check if the change in standard deviation is statistically significant for white females\nt_stat_females, p_value_females = ttest_rel(white_females['composite_wealth_1990'], white_females['composite_wealth_1996'])\n\nt_stat_males, p_value_males, t_stat_females, p_value_females",
+    "output": "(-8.217980646509785, 2.8907362053591677e-16, -5.612534089858214, 2.1431967150673128e-08)",
+    "elapsed_seconds": 0.0029958258382976055
+  }
+]

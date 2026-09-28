@@ -1,0 +1,42 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\n\n# Display the first few rows of each dataset\ntime_series_df.head(), capital_df.head(), pollen_df.head()",
+    "output": "(   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns],     BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns],    Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns])",
+    "elapsed_seconds": 0.17290391866117716
+  },
+  {
+    "code": "# Check the relevant columns in the capital dataset\ncapital_df.columns",
+    "output": "Index(['BCE', 'group', 'color', 'ZAxtSchwert', 'ZDolch', 'Zhausgr', 'ZCU_AU',\n       'Zamber', 'ZMonument', 'ZHort', 'ZSichel', 'ZBeil', 'ZMW', 'ZKeform',\n       'Zkeverz'],\n      dtype='object')",
+    "elapsed_seconds": 0.0016703121364116669
+  },
+  {
+    "code": "# Filter the data for the Middle Neolithic (3400-3000 BCE) and Younger Neolithic (2900-2300 BCE) periods\nmiddle_neolithic_df = capital_df[(capital_df['BCE'] >= 3400) & (capital_df['BCE'] <= 3000)]\nyounger_neolithic_df = capital_df[(capital_df['BCE'] >= 2900) & (capital_df['BCE'] <= 2300)]\n\n# Display the first few rows of the filtered data\nmiddle_neolithic_df.head(), younger_neolithic_df.head()",
+    "output": "(Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: [], Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: [])",
+    "elapsed_seconds": 0.003106085117906332
+  },
+  {
+    "code": "# Check the range of 'BCE' values in the capital dataset\ncapital_df['BCE'].describe()",
+    "output": "count      39.000000\nmean     2400.000000\nstd      1140.175425\nmin       500.000000\n25%      1450.000000\n50%      2400.000000\n75%      3350.000000\nmax      4300.000000\nName: BCE, dtype: float64",
+    "elapsed_seconds": 0.0030166213400661945
+  },
+  {
+    "code": "# Check if there are any data points within the Middle Neolithic (3400-3000 BCE) and Younger Neolithic (2900-2300 BCE) periods\ncapital_df[(capital_df['BCE'] >= 3400) | (capital_df['BCE'] <= 3000) | (capital_df['BCE'] >= 2900) | (capital_df['BCE'] <= 2300)]",
+    "output": "     BCE group        color  ...                 ZMW ZKeform Zkeverz\n0   4300    EN   blueviolet  ...   -3,13448793268026   -1,13   -1,92\n1   4200    EN   blueviolet  ...   -3,13448793268026   -1,13   -1,92\n2   4100    EN   blueviolet  ...   -3,13448793268026   -1,13   -1,92\n3   4000    EN   blueviolet  ...   0,439715131684893    1,23   -0,11\n4   3900    EN   blueviolet  ...   0,439715131684893    1,02   -0,26\n5   3800    EN   blueviolet  ...   0,222139969237994    1,02   -0,27\n6   3700    EN   blueviolet  ...   0,222139969237994    0,91   -0,35\n7   3600    EN   blueviolet  ...   0,222139969237994    0,86   -0,39\n8   3500    EN   blueviolet  ...   0,380029647935948     1,1    -0,2\n9   3400    MN         aqua  ...    0,40877238430788    0,89   -0,37\n10  3300    MN         aqua  ...   0,427085438877949    0,96   -0,31\n11  3200    MN         aqua  ...  -0,202031134067949    0,85   -0,39\n12  3100    MN         aqua  ...   0,678100583415961    1,36       0\n13  3000    MN         aqua  ...  -0,217028894276195    1,37       0\n14  2900    SG        brown  ...  -0,217028894276195    1,27   -0,07\n15  2800    SG        brown  ...  -0,716999994307609    0,37   -0,76\n16  2700    SG        brown  ...  -0,716999994307609    0,18   -0,91\n17  2600    SG        brown  ...  -0,134935891031059    0,29   -0,83\n18  2500    SG        brown  ...  -0,134935891031059   -0,13   -1,15\n19  2400    SG        brown  ...  0,0454882919252836    0,49   -0,67\n20  2300    SG        brown  ...  0,0171944995980392    0,61   -0,58\n21  2200    LN       yellow  ...  0,0171944995980392    0,62   -0,57\n22  2100    LN       yellow  ...  0,0171944995980392    0,79   -0,44\n23  2000    LN       yellow  ...  0,0171944995980392    0,74   -0,48\n24  1900    LN       yellow  ...   0,420196515528706    0,59   -0,59\n25  1800    LN       yellow  ...   0,587072658423495    0,74   -0,48\n26  1700    LN       yellow  ...    0,60372243231776   -1,13    0,97\n27  1600   OBA  forestgreen  ...    0,60372243231776   -1,13    0,97\n28  1500   OBA  forestgreen  ...   0,665854981854969   -1,13    0,97\n29  1400   OBA  forestgreen  ...   0,665854981854969   -1,13    0,97\n30  1300   OBA  forestgreen  ...   0,603875251227175   -1,13    0,97\n31  1200   OBA  forestgreen  ...   0,603875251227175   -1,13    0,97\n32  1100   YBA     moccasin  ...    0,56778811030531   -1,13    0,97\n33  1000   YBA     moccasin  ...    0,56778811030531   -1,13    1,53\n34   900   YBA     moccasin  ...    0,56778811030531   -1,13    1,53\n35   800   YBA     moccasin  ...    0,56778811030531   -1,13    1,53\n36   700   YBA     moccasin  ...    0,56778811030531   -1,13    1,53\n37   600   YBA     moccasin  ...   0,596204919120933   -1,13    1,53\n38   500   YBA     moccasin  ...                   0   -1,13    1,53\n\n[39 rows x 15 columns]",
+    "elapsed_seconds": 0.008745158091187477
+  },
+  {
+    "code": "# Perform PCA on the forms of capital for the Middle Neolithic and Younger Neolithic periods\nfrom sklearn.decomposition import PCA\nimport numpy as np\n\n# Extract the relevant columns for PCA\nmiddle_neolithic_data = middle_neolithic_df[['ZAxtSchwert', 'ZDolch', 'Zhausgr', 'ZCU_AU', 'Zamber', 'ZMonument', 'ZHort', 'ZSichel', 'ZBeil', 'ZMW', 'ZKeform', 'Zkeverz']].values\nyounger_neolithic_data = younger_neolithic_df[['ZAxtSchwert', 'ZDolch', 'Zhausgr', 'ZCU_AU', 'Zamber', 'ZMonument', 'ZHort', 'ZSichel', 'ZBeil', 'ZMW', 'ZKeform', 'Zkeverz']].values\n\n# Perform PCA\npca = PCA(n_components=1)\nmiddle_neolithic_pc1 = pca.fit_transform(middle_neolithic_data)\nyounger_neolithic_pc1 = pca.fit_transform(younger_neolithic_data)\n\n# Display the PC1 values\nmiddle_neolithic_pc1, younger_neolithic_pc1",
+    "output": "ValueError: Found array with 0 sample(s) (shape=(0, 12)) while a minimum of 1 is required by PCA.",
+    "elapsed_seconds": 0.5732987537048757
+  },
+  {
+    "code": "# Check the data types of the 'BCE' column in the capital dataset\ncapital_df['BCE'].dtype",
+    "output": "int64",
+    "elapsed_seconds": 0.0015629720874130726
+  },
+  {
+    "code": "# Check the data points within the Middle Neolithic (3400-3000 BCE) and Younger Neolithic (2900-2300 BCE) periods\ncapital_df[(capital_df['BCE'] >= 3400) & (capital_df['BCE'] <= 3000)], capital_df[(capital_df['BCE'] >= 2900) & (capital_df['BCE'] <= 2300)]",
+    "output": "(Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: [], Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: [])",
+    "elapsed_seconds": 0.0026960200630128384
+  }
+]

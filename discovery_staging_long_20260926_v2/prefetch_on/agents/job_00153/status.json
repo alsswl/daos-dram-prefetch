@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 57.567429936956614,
+  "llm_calls": 15,
+  "python_calls": 14,
+  "final_answer": "The dataset does not contain sufficient data points to perform a meaningful correlation analysis between education spending and per capita GDP in the specified regions. Therefore, a scientific hypothesis cannot be formulated based on the provided dataset.",
+  "grading": "not run, as in supplied document",
+  "query": "In what regions does increased education spending positively impact per capita GDP?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/worldbank_education_gdp/metadata_0.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

@@ -1,0 +1,23 @@
+{
+  "archive": "/root/.cache/huggingface/hub/datasets--THUDM--LongBench/snapshots/5e628be450b7e67fb7ae6e201bd6d8f7056f7672/data.zip",
+  "archive_sha256": "cb45b11a4133c6bc1d6a44b0f8e701335ff1e543195db1103472e575857f7f64",
+  "member": "data/gov_report.jsonl",
+  "member_sha256": "d28112beb3a9b41d80aa390837fa1a31c9e3da84a5262009c97585cc49f597c4",
+  "prompt_template": "You are given a report by a government agency. Write a one-page summary of the report.\n\nReport:\n{context}\n\nNow, write a one-page summary of the report.\n\nSummary:",
+  "max_tokens": 512,
+  "max_model_len": 32768,
+  "truncation": "Head/tail of context only, preserving instructions and reserving output/chat tokens",
+  "truncated_ids": [
+    "864c2b03ab84ceb4179238296a7e923b7b82da0708259071",
+    "6b904be52b37799ba0fe353800ac1a5246d263927387b6f1",
+    "505345771a2e5b438ea4bfa7c0f238f8787f45b0ca52ef7d"
+  ],
+  "prompt_tokens": {
+    "n": 200,
+    "mean": 10417.915,
+    "p50": 8945.0,
+    "p95": 22233.35,
+    "maximum": 32248
+  },
+  "total_prompt_tokens": 2083583
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\nadjusted_savings_df = pd.read_csv('/data/Adjusted_savings_education_expenditure_percentage_of_GNI.csv')\nexports_df = pd.read_csv('/data/Exports_of_goods_and_services_annual_percentage_growth.csv')\ngni_per_capita_df = pd.read_csv('/data/GNI_per_capita_constant_2015_USdollar.csv')\n\n# Display the first few rows of each dataset\nadjusted_savings_df.head(), exports_df.head(), gni_per_capita_df.head()",
+    "output": "(         Country Group Country Code  ...  2014 [YR2014]  2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...       3.254963       3.153823\n1  Lower middle income          LMC  ...       3.106096       3.060663\n\n[2 rows x 43 columns],          Country Group Country Code  ...  2014 [YR2014]  2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...       6.513038      -1.549815\n1  Lower middle income          LMC  ...       2.921528       0.260326\n\n[2 rows x 43 columns],          Country Group Country Code  ...  2014 [YR2014]  2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...    1620.904978    1634.258291\n1  Lower middle income          LMC  ...    1894.302198    1965.288164\n\n[2 rows x 43 columns])",
+    "elapsed_seconds": 0.1679566609673202
+  },
+  {
+    "code": "import numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Extract the relevant variables for analysis\neducation_expenditure = adjusted_savings_df.iloc[:, 2:].values\ngni_per_capita = gni_per_capita_df.iloc[:, 2:].values\nexports_growth = exports_df.iloc[:, 2:].values\n\n# Calculate the correlation between education expenditure and per capita GDP\ncorrelation_matrix = np.corrcoef(education_expenditure, gni_per_capita)\ncorrelation_education_gni = correlation_matrix[:education_expenditure.shape[1], education_expenditure.shape[1]:]\n\n# Calculate the correlation between per capita GDP and economic output (exports growth)\ncorrelation_gni_exports = np.corrcoef(gni_per_capita, exports_growth)\ncorrelation_gni_exports = correlation_gni_exports[:gni_per_capita.shape[1], gni_per_capita.shape[1]:]\n\n# Display the correlation matrices\ncorrelation_education_gni, correlation_gni_exports",
+    "output": "(array([], shape=(4, 0), dtype=float64), array([], shape=(4, 0), dtype=float64))",
+    "elapsed_seconds": 0.8379033338278532
+  },
+  {
+    "code": "# Melt the datasets to have a long format suitable for analysis\nadjusted_savings_melted = adjusted_savings_df.melt(id_vars=['Country Group', 'Country Code'], var_name='Year', value_name='Education_Expenditure')\ngni_per_capita_melted = gni_per_capita_df.melt(id_vars=['Country Group', 'Country Code'], var_name='Year', value_name='GNI_per_capita')\nexports_melted = exports_df.melt(id_vars=['Country Group', 'Country Code'], var_name='Year', value_name='Exports_Growth')\n\n# Merge the datasets on 'Year' and 'Country Group'\nmerged_data = pd.merge(adjusted_savings_melted, gni_per_capita_melted, on=['Country Group', 'Year'])\nmerged_data = pd.merge(merged_data, exports_melted, on=['Country Group', 'Year'])\n\n# Display the first few rows of the merged dataset\nmerged_data.head()",
+    "output": "         Country Group Country Code_x  ... Country Code  Exports_Growth\n0   Sub-Saharan Africa            SSF  ...          SSF             NaN\n1  Lower middle income            LMC  ...          LMC       -5.569420\n2   Sub-Saharan Africa            SSF  ...          SSF             NaN\n3  Lower middle income            LMC  ...          LMC       10.458022\n4   Sub-Saharan Africa            SSF  ...          SSF             NaN\n\n[5 rows x 8 columns]",
+    "elapsed_seconds": 0.012675150763243437
+  },
+  {
+    "code": "# Drop rows with missing values\nmerged_data_clean = merged_data.dropna()\n\n# Display the first few rows of the cleaned dataset\nmerged_data_clean.head()",
+    "output": "         Country Group Country Code_x  ... Country Code  Exports_Growth\n1  Lower middle income            LMC  ...          LMC       -5.569420\n3  Lower middle income            LMC  ...          LMC       10.458022\n5  Lower middle income            LMC  ...          LMC       -3.623540\n7  Lower middle income            LMC  ...          LMC      -13.087271\n9  Lower middle income            LMC  ...          LMC       -6.300239\n\n[5 rows x 8 columns]",
+    "elapsed_seconds": 0.0055478340946137905
+  },
+  {
+    "code": "# Calculate the correlation between education expenditure and per capita GDP\ncorrelation_education_gni = merged_data_clean['Education_Expenditure'].corr(merged_data_clean['GNI_per_capita'])\n\n# Calculate the correlation between per capita GDP and economic output (exports growth)\ncorrelation_gni_exports = merged_data_clean['GNI_per_capita'].corr(merged_data_clean['Exports_Growth'])\n\n# Display the correlation coefficients\ncorrelation_education_gni, correlation_gni_exports",
+    "output": "(-0.4768707608926388, 0.01197902037657781)",
+    "elapsed_seconds": 0.0018571563996374607
+  }
+]

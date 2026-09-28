@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_raw.csv')\ndf.head()",
+    "output": "   ID# (range 1-12686) 1979  ...  Total market value of items over $500, 1996\n0                         1  ...                                          NaN\n1                         2  ...                                      15000.0\n2                         3  ...                                       2000.0\n3                         4  ...                                      15000.0\n4                         5  ...                                          NaN\n\n[5 rows x 61 columns]",
+    "elapsed_seconds": 0.1864366396330297
+  },
+  {
+    "code": "# Find the column for the sex of the respondent\nsex_column = [col for col in df.columns if 'Sex of respondent' in col]\nprint(sex_column)\n\n# Find the column for the highest grade completed by the respondent\nhighest_grade_column = [col for col in df.columns if 'Highest grade completed' in col]\nprint(highest_grade_column)",
+    "output": "['Sex of respondent, 1979']\n[\"Highest grade completed by respondent's mother, 1979\", \"Highest grade completed by respondent's father, 1979\", 'Highest grade completed, 1979']\n",
+    "elapsed_seconds": 0.0015531042590737343
+  },
+  {
+    "code": "# Convert the sex column to a categorical variable\ndf['Sex of respondent, 1979'] = df['Sex of respondent, 1979'].astype('category')\n\n# Convert the highest grade completed column to a numerical variable\ndf['Highest grade completed, 1979'] = pd.to_numeric(df['Highest grade completed, 1979'], errors='coerce')\n\n# Perform a t-test to compare the mean highest grade completed between males and females\nfrom scipy.stats import ttest_ind\n\nmale_grades = df[df['Sex of respondent, 1979'] == 1]['Highest grade completed, 1979']\nfemale_grades = df[df['Sex of respondent, 1979'] == 2]['Highest grade completed, 1979']\n\nt_stat, p_value = ttest_ind(male_grades, female_grades)\nt_stat, p_value",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.4702972178347409
+  },
+  {
+    "code": "# Check for missing values in the highest grade completed column\nmissing_values = df['Highest grade completed, 1979'].isnull().sum()\nprint(f\"Missing values in 'Highest grade completed, 1979': {missing_values}\")\n\n# Drop rows with missing values in the highest grade completed column\ndf_clean = df.dropna(subset=['Highest grade completed, 1979'])\n\n# Perform the t-test on the cleaned data\nmale_grades_clean = df_clean[df_clean['Sex of respondent, 1979'] == 1]['Highest grade completed, 1979']\nfemale_grades_clean = df_clean[df_clean['Sex of respondent, 1979'] == 2]['Highest grade completed, 1979']\n\nt_stat_clean, p_value_clean = ttest_ind(male_grades_clean, female_grades_clean)\nt_stat_clean, p_value_clean",
+    "output": "Missing values in 'Highest grade completed, 1979': 152\n(-5.691433978032243, 1.2880103410018152e-08)",
+    "elapsed_seconds": 0.00841123890131712
+  }
+]

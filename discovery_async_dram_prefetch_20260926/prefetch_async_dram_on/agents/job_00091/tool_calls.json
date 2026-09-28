@@ -1,0 +1,77 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\n\n# Display the first few rows of the dataset to understand its structure\ntime_series_df.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15884873270988464
+  },
+  {
+    "code": "# Inspect the 'Dagger' column in the time_series_data.csv dataset\ndagger_data = time_series_df['Dagger'].dropna()\ndagger_data.head()",
+    "output": "0     -0.58\n100   -0.58\n200   -0.58\n300   -0.58\n400   -0.58\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.0022468972019851208
+  },
+  {
+    "code": "# Calculate the rolling mean of the 'Dagger' column with a window size of 100\ndagger_rolling_mean = dagger_data.rolling(window=100).mean()\ndagger_rolling_mean.head()",
+    "output": "0     NaN\n100   NaN\n200   NaN\n300   NaN\n400   NaN\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.001922024879604578
+  },
+  {
+    "code": "import matplotlib.pyplot as plt\n\n# Plot the rolling mean of the 'Dagger' column over time\nplt.figure(figsize=(12, 6))\nplt.plot(dagger_rolling_mean.index, dagger_rolling_mean.values, label='Rolling Mean of Dagger Z Values')\nplt.xlabel('Index')\nplt.ylabel('Z Value')\nplt.title('Rolling Mean of Dagger Z Values Over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.36579719092696905
+  },
+  {
+    "code": "# Inspect the 'Dagger_inter' column in the time_series_data.csv dataset\ndagger_inter_data = time_series_df['Dagger_inter'].dropna()\ndagger_inter_data.head()",
+    "output": "0   -0.58\n1   -0.58\n2   -0.58\n3   -0.58\n4   -0.58\nName: Dagger_inter, dtype: float64",
+    "elapsed_seconds": 0.0021596141159534454
+  },
+  {
+    "code": "# Calculate the rolling mean of the 'Dagger_inter' column with a window size of 100\ndagger_inter_rolling_mean = dagger_inter_data.rolling(window=100).mean()\ndagger_inter_rolling_mean.head()",
+    "output": "0   NaN\n1   NaN\n2   NaN\n3   NaN\n4   NaN\nName: Dagger_inter, dtype: float64",
+    "elapsed_seconds": 0.0021001757122576237
+  },
+  {
+    "code": "# Plot the rolling mean of the 'Dagger_inter' column over time\nplt.figure(figsize=(12, 6))\nplt.plot(dagger_inter_rolling_mean.index, dagger_inter_rolling_mean.values, label='Rolling Mean of Interpolated Dagger Z Values')\nplt.xlabel('Index')\nplt.ylabel('Z Value')\nplt.title('Rolling Mean of Interpolated Dagger Z Values Over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.007686670869588852
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the capital.csv dataset\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of the dataset to understand its structure\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.008269297890365124
+  },
+  {
+    "code": "# Inspect the 'ZDolch' column in the capital.csv dataset\nz_dolch_data = capital_df['ZDolch'].dropna()\nz_dolch_data.head()",
+    "output": "0    -0,58\n1    -0,58\n2    -0,58\n3    -0,58\n4    -0,58\nName: ZDolch, dtype: object",
+    "elapsed_seconds": 0.0016006878577172756
+  },
+  {
+    "code": "# Calculate the rolling mean of the 'ZDolch' column with a window size of 100\nz_dolch_rolling_mean = z_dolch_data.rolling(window=100).mean()\nz_dolch_rolling_mean.head()",
+    "output": "DataError: No numeric types to aggregate",
+    "elapsed_seconds": 0.0015433384105563164
+  },
+  {
+    "code": "# Convert the 'ZDolch' column to numeric values\nz_dolch_data_numeric = pd.to_numeric(z_dolch_data.str.replace(',', '.'), errors='coerce')\n\n# Calculate the rolling mean of the 'ZDolch' column with a window size of 100\nz_dolch_rolling_mean = z_dolch_data_numeric.rolling(window=100).mean()\nz_dolch_rolling_mean.head()",
+    "output": "0   NaN\n1   NaN\n2   NaN\n3   NaN\n4   NaN\nName: ZDolch, dtype: float64",
+    "elapsed_seconds": 0.0024537499994039536
+  },
+  {
+    "code": "# Plot the rolling mean of the 'ZDolch' column over time\nplt.figure(figsize=(12, 6))\nplt.plot(z_dolch_rolling_mean.index, z_dolch_rolling_mean.values, label='Rolling Mean of ZDolch Values')\nplt.xlabel('Index')\nplt.ylabel('Z Value')\nplt.title('Rolling Mean of ZDolch Values Over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.0066070640459656715
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv dataset\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\n\n# Display the first few rows of the dataset to understand its structure\npollen_df.head()",
+    "output": "   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns]",
+    "elapsed_seconds": 0.018004063051193953
+  },
+  {
+    "code": "# Re-examine the 'Dagger' column in the time_series_data.csv dataset for any changes in trend\ndagger_data = time_series_df['Dagger'].dropna()\ndagger_data.tail()",
+    "output": "3200   -0.44\n3300   -0.43\n3400   -0.43\n3500   -0.55\n3600   -0.55\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.0021066670306026936
+  },
+  {
+    "code": "# Re-examine the 'ZDolch' column in the capital.csv dataset for any changes in trend\nz_dolch_data_numeric = pd.to_numeric(z_dolch_data.str.replace(',', '.'), errors='coerce')\nz_dolch_data_numeric.tail()",
+    "output": "34   -0.44\n35   -0.43\n36   -0.43\n37   -0.55\n38   -0.55\nName: ZDolch, dtype: float64",
+    "elapsed_seconds": 0.002232770901173353
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 48.95369535079226,
+  "llm_calls": 6,
+  "python_calls": 5,
+  "final_answer": "**\nThe most frequently used documentation format for requirements in ML-enabled system projects is **Q10_ML_Documentation_Notebooks**, with a count of **66**. This result is statistically significant, as confirmed by the bootstrap analysis with a 95% confidence interval ranging from **24.36 to 46.64**.",
+  "grading": "not run, as in supplied document",
+  "query": "Which documentation format is the most frequently used for requirements in ML-enabled system projects after bootstrapping for statistical significance?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/requirements_engineering_for_ML_enabled_systems/metadata_5.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

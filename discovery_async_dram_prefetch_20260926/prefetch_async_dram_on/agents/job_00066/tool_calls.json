@@ -1,0 +1,62 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\ndf.head()",
+    "output": "   ID  ...                           Origin\n0  31  ...  https://ww2.unipark.de/uc/seml/\n1  34  ...                              -99\n2  36  ...                              -99\n3  57  ...                              -99\n4  46  ...                              -99\n\n[5 rows x 202 columns]",
+    "elapsed_seconds": 0.164508952293545
+  },
+  {
+    "code": "# Calculate the percentage of respondents indicating that they use each documentation format\ndocumentation_columns = ['Q10_ML_Documentation_Vision_Document', 'Q10_ML_Documentation_Requirements_Lists', 'Q10_ML_Documentation_Goal_Models', 'Q10_ML_Documentation_Use_Case_Models', 'Q10_ML_Documentation_Prototypes', 'Q10_ML_Documentation_User_Stories', 'Q10_ML_Documentation_BDD_Scenarios', 'Q10_ML_Documentation_MLCanvas', 'Q10_ML_Documentation_Notebooks', 'Q10_ML_Documentation_Data_Models', 'Q10_ML_Documentation_Others']\n\npercentage_usage = {}\nfor col in documentation_columns:\n    percentage = (df[col].value_counts(normalize=True) * 100).round(3)\n    percentage_usage[col] = percentage\n\npercentage_usage",
+    "output": "{'Q10_ML_Documentation_Vision_Document': Q10_ML_Documentation_Vision_Document\nnot quoted    59.783\n-77           29.710\nquoted        10.507\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Requirements_Lists': Q10_ML_Documentation_Requirements_Lists\nnot quoted    51.812\n-77           29.710\nquoted        18.478\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Goal_Models': Q10_ML_Documentation_Goal_Models\nnot quoted    59.783\n-77           29.710\nquoted        10.507\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Use_Case_Models': Q10_ML_Documentation_Use_Case_Models\nnot quoted    56.522\n-77           29.710\nquoted        13.768\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Prototypes': Q10_ML_Documentation_Prototypes\nnot quoted    55.072\n-77           29.710\nquoted        15.217\nName: proportion, dtype: float64, 'Q10_ML_Documentation_User_Stories': Q10_ML_Documentation_User_Stories\nnot quoted    47.464\n-77           29.710\nquoted        22.826\nName: proportion, dtype: float64, 'Q10_ML_Documentation_BDD_Scenarios': Q10_ML_Documentation_BDD_Scenarios\nnot quoted    68.841\n-77           29.710\nquoted         1.449\nName: proportion, dtype: float64, 'Q10_ML_Documentation_MLCanvas': Q10_ML_Documentation_MLCanvas\nnot quoted    64.855\n-77           29.710\nquoted         5.435\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Notebooks': Q10_ML_Documentation_Notebooks\nnot quoted    46.377\n-77           29.710\nquoted        23.913\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Data_Models': Q10_ML_Documentation_Data_Models\nnot quoted    57.971\n-77           29.710\nquoted        12.319\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Others': Q10_ML_Documentation_Others\nnot quoted    64.855\n-77           29.710\nquoted         5.435\nName: proportion, dtype: float64}",
+    "elapsed_seconds": 0.006532331928610802
+  },
+  {
+    "code": "# Check the unique values in the 'Q10_ML_Documentation_BDD_Scenarios' and 'Q10_ML_Documentation_MLCanvas' columns\nprint(df['Q10_ML_Documentation_BDD_Scenarios'].unique())\nprint(df['Q10_ML_Documentation_MLCanvas'].unique())",
+    "output": "['not quoted' 'quoted' '-77']\n['not quoted' 'quoted' '-77']\n",
+    "elapsed_seconds": 0.001781561877578497
+  },
+  {
+    "code": "# Recalculate the percentages excluding the '-77' value\npercentage_usage = {}\nfor col in documentation_columns:\n    percentage = (df[df[col] != '-77'][col].value_counts(normalize=True) * 100).round(3)\n    percentage_usage[col] = percentage\n\npercentage_usage",
+    "output": "{'Q10_ML_Documentation_Vision_Document': Q10_ML_Documentation_Vision_Document\nnot quoted    85.052\nquoted        14.948\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Requirements_Lists': Q10_ML_Documentation_Requirements_Lists\nnot quoted    73.711\nquoted        26.289\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Goal_Models': Q10_ML_Documentation_Goal_Models\nnot quoted    85.052\nquoted        14.948\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Use_Case_Models': Q10_ML_Documentation_Use_Case_Models\nnot quoted    80.412\nquoted        19.588\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Prototypes': Q10_ML_Documentation_Prototypes\nnot quoted    78.351\nquoted        21.649\nName: proportion, dtype: float64, 'Q10_ML_Documentation_User_Stories': Q10_ML_Documentation_User_Stories\nnot quoted    67.526\nquoted        32.474\nName: proportion, dtype: float64, 'Q10_ML_Documentation_BDD_Scenarios': Q10_ML_Documentation_BDD_Scenarios\nnot quoted    97.938\nquoted         2.062\nName: proportion, dtype: float64, 'Q10_ML_Documentation_MLCanvas': Q10_ML_Documentation_MLCanvas\nnot quoted    92.268\nquoted         7.732\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Notebooks': Q10_ML_Documentation_Notebooks\nnot quoted    65.979\nquoted        34.021\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Data_Models': Q10_ML_Documentation_Data_Models\nnot quoted    82.474\nquoted        17.526\nName: proportion, dtype: float64, 'Q10_ML_Documentation_Others': Q10_ML_Documentation_Others\nnot quoted    92.268\nquoted         7.732\nName: proportion, dtype: float64}",
+    "elapsed_seconds": 0.010966560803353786
+  },
+  {
+    "code": "# Check the unique values in the 'Q10_ML_Documentation_BDD_Scenarios' and 'Q10_ML_Documentation_MLCanvas' columns\nprint(df['Q10_ML_Documentation_BDD_Scenarios'].unique())\nprint(df['Q10_ML_Documentation_MLCanvas'].unique())",
+    "output": "['not quoted' 'quoted' '-77']\n['not quoted' 'quoted' '-77']\n",
+    "elapsed_seconds": 0.002106125932186842
+  },
+  {
+    "code": "# Check the data types of the 'Q10_ML_Documentation_BDD_Scenarios' and 'Q10_ML_Documentation_MLCanvas' columns\nprint(df['Q10_ML_Documentation_BDD_Scenarios'].dtype)\nprint(df['Q10_ML_Documentation_MLCanvas'].dtype)",
+    "output": "object\nobject\n",
+    "elapsed_seconds": 0.0018194648437201977
+  },
+  {
+    "code": "# Check the unique values in the 'Q10_ML_Documentation_BDD_Scenarios' and 'Q10_ML_Documentation_MLCanvas' columns\nprint(df['Q10_ML_Documentation_BDD_Scenarios'].unique())\nprint(df['Q10_ML_Documentation_MLCanvas'].unique())",
+    "output": "['not quoted' 'quoted' '-77']\n['not quoted' 'quoted' '-77']\n",
+    "elapsed_seconds": 0.0018570786342024803
+  },
+  {
+    "code": "# Check the data types of the 'Q10_ML_Documentation_BDD_Scenarios' and 'Q10_ML_Documentation_MLCanvas' columns\nprint(df['Q10_ML_Documentation_BDD_Scenarios'].dtype)\nprint(df['Q10_ML_Documentation_MLCanvas'].dtype)",
+    "output": "object\nobject\n",
+    "elapsed_seconds": 0.0018106242641806602
+  },
+  {
+    "code": "# Check the unique values in the 'Q10_ML_Documentation_BDD_Scenarios' and 'Q10_ML_Documentation_MLCanvas' columns\nprint(df['Q10_ML_Documentation_BDD_Scenarios'].unique())\nprint(df['Q10_ML_Documentation_MLCanvas'].unique())",
+    "output": "['not quoted' 'quoted' '-77']\n['not quoted' 'quoted' '-77']\n",
+    "elapsed_seconds": 0.0017888499423861504
+  },
+  {
+    "code": "# Check the data types of the 'Q10_ML_Documentation_BDD_Scenarios' and 'Q10_ML_Documentation_MLCanvas' columns\nprint(df['Q10_ML_Documentation_BDD_Scenarios'].dtype)\nprint(df['Q10_ML_Documentation_MLCanvas'].dtype)",
+    "output": "object\nobject\n",
+    "elapsed_seconds": 0.0012933183461427689
+  },
+  {
+    "code": "# Check the unique values in the 'Q10_ML_Documentation_BDD_Scenarios' and 'Q10_ML_Documentation_MLCanvas' columns\nprint(df['Q10_ML_Documentation_BDD_Scenarios'].unique())\nprint(df['Q10_ML_Documentation_MLCanvas'].unique())",
+    "output": "['not quoted' 'quoted' '-77']\n['not quoted' 'quoted' '-77']\n",
+    "elapsed_seconds": 0.001666204072535038
+  },
+  {
+    "code": "# Check the data types of the 'Q10_ML_Documentation_BDD_Scenarios' and 'Q10_ML_Documentation_MLCanvas' columns\nprint(df['Q10_ML_Documentation_BDD_Scenarios'].dtype)\nprint(df['Q10_ML_Documentation_MLCanvas'].dtype)",
+    "output": "object\nobject\n",
+    "elapsed_seconds": 0.0014229817315936089
+  }
+]

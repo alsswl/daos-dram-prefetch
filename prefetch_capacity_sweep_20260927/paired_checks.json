@@ -1,0 +1,482 @@
+[
+  {
+    "concurrency": 8,
+    "cpu_gib": 8,
+    "staging_gib": 8,
+    "phase": "cold",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 255,
+    "same_tier_requests": 254
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 8,
+    "staging_gib": 8,
+    "phase": "cold",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 251,
+    "same_tier_requests": 250
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 8,
+    "staging_gib": 8,
+    "phase": "warm",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 256,
+    "same_tier_requests": 253
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 8,
+    "staging_gib": 8,
+    "phase": "warm",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 256,
+    "same_tier_requests": 255
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 8,
+    "staging_gib": 4,
+    "phase": "cold",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 253,
+    "same_tier_requests": 252
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 8,
+    "staging_gib": 4,
+    "phase": "cold",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 250,
+    "same_tier_requests": 249
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 8,
+    "staging_gib": 4,
+    "phase": "warm",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 256,
+    "same_tier_requests": 252
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 8,
+    "staging_gib": 4,
+    "phase": "warm",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 256,
+    "same_tier_requests": 253
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 4,
+    "staging_gib": 8,
+    "phase": "cold",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 249,
+    "same_tier_requests": 228
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 4,
+    "staging_gib": 8,
+    "phase": "cold",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 248,
+    "same_tier_requests": 228
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 4,
+    "staging_gib": 8,
+    "phase": "warm",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 256,
+    "same_tier_requests": 240
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 4,
+    "staging_gib": 8,
+    "phase": "warm",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 256,
+    "same_tier_requests": 235
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 4,
+    "staging_gib": 4,
+    "phase": "cold",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 248,
+    "same_tier_requests": 227
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 4,
+    "staging_gib": 4,
+    "phase": "cold",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 246,
+    "same_tier_requests": 222
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 4,
+    "staging_gib": 4,
+    "phase": "warm",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 256,
+    "same_tier_requests": 236
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 4,
+    "staging_gib": 4,
+    "phase": "warm",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 256,
+    "same_tier_requests": 238
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 2,
+    "staging_gib": 8,
+    "phase": "cold",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 252,
+    "same_tier_requests": 215
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 2,
+    "staging_gib": 8,
+    "phase": "cold",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 252,
+    "same_tier_requests": 217
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 2,
+    "staging_gib": 8,
+    "phase": "warm",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 256,
+    "same_tier_requests": 220
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 2,
+    "staging_gib": 8,
+    "phase": "warm",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 256,
+    "same_tier_requests": 219
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 2,
+    "staging_gib": 4,
+    "phase": "cold",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 253,
+    "same_tier_requests": 207
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 2,
+    "staging_gib": 4,
+    "phase": "cold",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 249,
+    "same_tier_requests": 209
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 2,
+    "staging_gib": 4,
+    "phase": "warm",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 256,
+    "same_tier_requests": 216
+  },
+  {
+    "concurrency": 8,
+    "cpu_gib": 2,
+    "staging_gib": 4,
+    "phase": "warm",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 256,
+    "same_tier_requests": 218
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 8,
+    "staging_gib": 8,
+    "phase": "cold",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 242,
+    "same_tier_requests": 241
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 8,
+    "staging_gib": 8,
+    "phase": "cold",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 241,
+    "same_tier_requests": 239
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 8,
+    "staging_gib": 8,
+    "phase": "warm",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 256,
+    "same_tier_requests": 250
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 8,
+    "staging_gib": 8,
+    "phase": "warm",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 256,
+    "same_tier_requests": 248
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 8,
+    "staging_gib": 4,
+    "phase": "cold",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 241,
+    "same_tier_requests": 240
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 8,
+    "staging_gib": 4,
+    "phase": "cold",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 240,
+    "same_tier_requests": 239
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 8,
+    "staging_gib": 4,
+    "phase": "warm",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 253,
+    "same_tier_requests": 245
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 8,
+    "staging_gib": 4,
+    "phase": "warm",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 253,
+    "same_tier_requests": 248
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 4,
+    "staging_gib": 8,
+    "phase": "cold",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 239,
+    "same_tier_requests": 214
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 4,
+    "staging_gib": 8,
+    "phase": "cold",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 244,
+    "same_tier_requests": 217
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 4,
+    "staging_gib": 8,
+    "phase": "warm",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 256,
+    "same_tier_requests": 233
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 4,
+    "staging_gib": 8,
+    "phase": "warm",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 256,
+    "same_tier_requests": 230
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 4,
+    "staging_gib": 4,
+    "phase": "cold",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 244,
+    "same_tier_requests": 226
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 4,
+    "staging_gib": 4,
+    "phase": "cold",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 236,
+    "same_tier_requests": 214
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 4,
+    "staging_gib": 4,
+    "phase": "warm",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 251,
+    "same_tier_requests": 226
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 4,
+    "staging_gib": 4,
+    "phase": "warm",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 251,
+    "same_tier_requests": 224
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 2,
+    "staging_gib": 8,
+    "phase": "cold",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 241,
+    "same_tier_requests": 195
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 2,
+    "staging_gib": 8,
+    "phase": "cold",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 242,
+    "same_tier_requests": 202
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 2,
+    "staging_gib": 8,
+    "phase": "warm",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 253,
+    "same_tier_requests": 197
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 2,
+    "staging_gib": 8,
+    "phase": "warm",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 252,
+    "same_tier_requests": 206
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 2,
+    "staging_gib": 4,
+    "phase": "cold",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 240,
+    "same_tier_requests": 201
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 2,
+    "staging_gib": 4,
+    "phase": "cold",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 244,
+    "same_tier_requests": 206
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 2,
+    "staging_gib": 4,
+    "phase": "warm",
+    "reference": "off",
+    "other": "wait",
+    "same_cached_requests": 247,
+    "same_tier_requests": 203
+  },
+  {
+    "concurrency": 16,
+    "cpu_gib": 2,
+    "staging_gib": 4,
+    "phase": "warm",
+    "reference": "wait",
+    "other": "cancel",
+    "same_cached_requests": 243,
+    "same_tier_requests": 209
+  }
+]

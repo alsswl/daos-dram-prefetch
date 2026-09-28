@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_incarceration_processed.csv')\ndf.head()",
+    "output": "    race     sex  ...  composite_wealth_1990  composite_wealth_1996\n0  white  female  ...                      0                      0\n1  white  female  ...                   2000                 209500\n2  white  female  ...                 -18800                 114500\n3  white  female  ...                   1620                  45000\n4  white    male  ...                      0                      0\n\n[5 rows x 6 columns]",
+    "elapsed_seconds": 0.14024654310196638
+  },
+  {
+    "code": "import numpy as np\nimport pandas as pd\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import mean_squared_error\n\n# Filter the data for white males and females\nwhite_males = df[(df['race'] == 'white') & (df['sex'] == 'male')]\nwhite_females = df[(df['race'] == 'white') & (df['sex'] == 'female')]\n\n# Calculate the standard deviation of wealth for 1990 and 1996 for white males\nstd_dev_1990_males = white_males['composite_wealth_1990'].std()\nstd_dev_1996_males = white_males['composite_wealth_1996'].std()\n\n# Calculate the standard deviation of wealth for 1990 and 1996 for white females\nstd_dev_1990_females = white_females['composite_wealth_1990'].std()\nstd_dev_1996_females = white_females['composite_wealth_1996'].std()\n\nstd_dev_1990_males, std_dev_1996_males, std_dev_1990_females, std_dev_1996_females",
+    "output": "(244717.30065343482, 317464.0149666487, 264817.9354674611, 299693.110469332)",
+    "elapsed_seconds": 0.5697819190099835
+  },
+  {
+    "code": "from scipy.stats import ttest_ind\n\n# Perform t-test for white males\nt_stat_males, p_value_males = ttest_ind(white_males['composite_wealth_1990'], white_males['composite_wealth_1996'])\n\n# Perform t-test for white females\nt_stat_females, p_value_females = ttest_ind(white_females['composite_wealth_1990'], white_females['composite_wealth_1996'])\n\nt_stat_males, p_value_males, t_stat_females, p_value_females",
+    "output": "(-6.410859147257284, 1.54198810149013e-10, -4.403814836132898, 1.0788941294508524e-05)",
+    "elapsed_seconds": 0.003888081293553114
+  }
+]

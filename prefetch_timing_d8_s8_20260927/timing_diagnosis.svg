@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860">
+<rect width="1200" height="860" fill="white"/>
+<g font-family="sans-serif" fill="#222" font-size="13">
+<text x="35" y="32" font-size="23">Prefetch diagnosis: identical rolling arrival rule, D8 / S8</text>
+<text x="35" y="60">Top: whole-run mean TTFT split into first16 contribution (orange) + remaining240 (blue).</text>
+<text x="35" y="82">Contributions are weighted by 16/256 and 240/256. They sum exactly to mean TTFT.</text>
+<line x1="75" x2="1160" y1="365.0" y2="365.0" stroke="#ddd"/>
+<text x="25" y="369.0">0</text>
+<line x1="75" x2="1160" y1="305.0" y2="305.0" stroke="#ddd"/>
+<text x="25" y="309.0">124</text>
+<line x1="75" x2="1160" y1="245.0" y2="245.0" stroke="#ddd"/>
+<text x="25" y="249.0">248</text>
+<line x1="75" x2="1160" y1="185.0" y2="185.0" stroke="#ddd"/>
+<text x="25" y="189.0">372</text>
+<line x1="75" x2="1160" y1="125.0" y2="125.0" stroke="#ddd"/>
+<text x="25" y="129.0">496</text>
+<rect x="100" y="289.6101799142764" width="75" height="75.38982008572364" fill="#0072b2"/>
+<rect x="100" y="263.8442014628322" width="75" height="25.765978451444187" fill="#d55e00"/>
+<text x="100" y="253.8442014628322">209.2</text>
+<text x="92" y="390">C8 R1 OFF</text>
+<rect x="230" y="293.11241697607613" width="75" height="71.88758302392388" fill="#0072b2"/>
+<rect x="230" y="266.3287809741649" width="75" height="26.783636001911265" fill="#d55e00"/>
+<text x="230" y="256.3287809741649">204.1</text>
+<text x="222" y="390">C8 R1 ON</text>
+<rect x="360" y="290.10546834334144" width="75" height="74.89453165665856" fill="#0072b2"/>
+<rect x="360" y="257.3897778324087" width="75" height="32.71569051093276" fill="#d55e00"/>
+<text x="360" y="247.3897778324087">222.6</text>
+<text x="352" y="390">C8 R2 OFF</text>
+<rect x="490" y="293.93498913395496" width="75" height="71.06501086604503" fill="#0072b2"/>
+<rect x="490" y="254.637264154592" width="75" height="39.29772497936294" fill="#d55e00"/>
+<text x="490" y="244.637264154592">228.3</text>
+<text x="482" y="390">C8 R2 ON</text>
+<rect x="620" y="277.20102598119297" width="75" height="87.79897401880706" fill="#0072b2"/>
+<rect x="620" y="187.5189887752791" width="75" height="89.68203720591387" fill="#d55e00"/>
+<text x="620" y="177.5189887752791">367.1</text>
+<text x="612" y="390">C16 R1 OFF</text>
+<rect x="750" y="278.3646719972631" width="75" height="86.63532800273693" fill="#0072b2"/>
+<rect x="750" y="210.97408134608384" width="75" height="67.39059065117927" fill="#d55e00"/>
+<text x="750" y="200.97408134608384">318.6</text>
+<text x="742" y="390">C16 R1 ON</text>
+<rect x="880" y="277.00116010552927" width="75" height="87.9988398944707" fill="#0072b2"/>
+<rect x="880" y="185.32793152948216" width="75" height="91.6732285760471" fill="#d55e00"/>
+<text x="880" y="175.32793152948216">371.6</text>
+<text x="872" y="390">C16 R2 OFF</text>
+<rect x="1010" y="278.72642098518094" width="75" height="86.27357901481908" fill="#0072b2"/>
+<rect x="1010" y="165.00000000000003" width="75" height="113.72642098518091" fill="#d55e00"/>
+<text x="1010" y="155.00000000000003">413.7</text>
+<text x="1002" y="390">C16 R2 ON</text>
+<text x="35" y="448" font-size="19">ON only: mean executor queue versus host copy interval (ms)</text>
+<text x="35" y="473">Blue=queue, orange=copy. Copy includes enqueue + stream wait, not pure DMA.</text>
+<line x1="75" x2="1160" y1="760.0" y2="760.0" stroke="#ddd"/>
+<text x="25" y="764.0">0.0</text>
+<line x1="75" x2="1160" y1="702.5" y2="702.5" stroke="#ddd"/>
+<text x="25" y="706.5">5.4</text>
+<line x1="75" x2="1160" y1="645.0" y2="645.0" stroke="#ddd"/>
+<text x="25" y="649.0">10.7</text>
+<line x1="75" x2="1160" y1="587.5" y2="587.5" stroke="#ddd"/>
+<text x="25" y="591.5">16.1</text>
+<line x1="75" x2="1160" y1="530.0" y2="530.0" stroke="#ddd"/>
+<text x="25" y="534.0">21.5</text>
+<rect x="150" y="752.5407668568031" width="60" height="7.459233143196925" fill="#0072b2"/>
+<text x="150" y="742.5407668568031">0.70</text>
+<rect x="225" y="577.7286374928397" width="60" height="182.2713625071604" fill="#d55e00"/>
+<text x="225" y="567.7286374928397">17.01</text>
+<text x="150" y="790">C8 R1 ON</text>
+<rect x="405" y="753.5475207441027" width="60" height="6.452479255897253" fill="#0072b2"/>
+<text x="405" y="743.5475207441027">0.60</text>
+<rect x="480" y="576.5070407723487" width="60" height="183.4929592276513" fill="#d55e00"/>
+<text x="480" y="566.5070407723487">17.13</text>
+<text x="405" y="790">C8 R2 ON</text>
+<rect x="660" y="733.6712089782795" width="60" height="26.328791021720455" fill="#0072b2"/>
+<text x="660" y="723.6712089782795">2.46</text>
+<rect x="735" y="576.0" width="60" height="183.99999999999997" fill="#d55e00"/>
+<text x="735" y="566.0">17.17</text>
+<text x="660" y="790">C16 R1 ON</text>
+<rect x="915" y="755.5229640563279" width="60" height="4.477035943672172" fill="#0072b2"/>
+<text x="915" y="745.5229640563279">0.42</text>
+<rect x="990" y="579.6954967616562" width="60" height="180.3045032383438" fill="#d55e00"/>
+<text x="990" y="569.6954967616562">16.83</text>
+<text x="915" y="790">C16 R2 ON</text>
+<text x="35" y="835">Two repetitions; fresh DRAM and namespace each case. First16/tail is a diagnostic split, not controlled cold/warm cohorts.</text>
+</g></svg>

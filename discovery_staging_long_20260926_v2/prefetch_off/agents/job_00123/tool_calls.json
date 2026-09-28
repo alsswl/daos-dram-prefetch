@@ -1,0 +1,82 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of each dataset to understand their structure\npollen_df.head(), time_series_df.head(), capital_df.head()",
+    "output": "(   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns],    Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns],     BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns])",
+    "elapsed_seconds": 0.16759783308953047
+  },
+  {
+    "code": "import matplotlib.pyplot as plt\n\n# Plot the Z values for Daggers from the time_series_data.csv dataset\nplt.figure(figsize=(12, 6))\nplt.plot(time_series_df['CE'], time_series_df['Dagger'], label='Dagger Z values (time_series_data)')\nplt.xlabel('CE')\nplt.ylabel('Z values')\nplt.title('Z values for Daggers over Time (time_series_data)')\nplt.legend()\nplt.grid(True)\nplt.show()\n\n# Plot the Z values for Daggers from the capital.csv dataset\nplt.figure(figsize=(12, 6))\nplt.plot(capital_df['BCE'], capital_df['ZDolch'], label='Dagger Z values (capital)')\nplt.xlabel('BCE')\nplt.ylabel('Z values')\nplt.title('Z values for Daggers over Time (capital)')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.36409382289275527
+  },
+  {
+    "code": "# Analyze the time_series_data.csv dataset for the first significant increase in Dagger Z values\ntime_series_dagger = time_series_df[['CE', 'Dagger']]\ntime_series_dagger.head()\n\n# Analyze the capital.csv dataset for the first significant increase in ZDolch Z values\ncapital_dagger = capital_df[['BCE', 'ZDolch']]\ncapital_dagger.head()",
+    "output": "    BCE ZDolch\n0  4300  -0,58\n1  4200  -0,58\n2  4100  -0,58\n3  4000  -0,58\n4  3900  -0,58",
+    "elapsed_seconds": 0.0036987210623919964
+  },
+  {
+    "code": "# Identify the first significant increase in Dagger Z values in time_series_data.csv\ntime_series_dagger['Dagger'].plot(title='Dagger Z values over Time (time_series_data)')\nplt.xlabel('CE')\nplt.ylabel('Z values')\nplt.grid(True)\nplt.show()\n\n# Identify the first significant increase in ZDolch Z values in capital.csv\ncapital_dagger['ZDolch'].plot(title='ZDolch Z values over Time (capital)')\nplt.xlabel('BCE')\nplt.ylabel('Z values')\nplt.grid(True)\nplt.show()",
+    "output": "TypeError: no numeric data to plot",
+    "elapsed_seconds": 0.012837697751820087
+  },
+  {
+    "code": "# Convert ZDolch column to numeric values in capital.csv dataset\ncapital_dagger['ZDolch'] = pd.to_numeric(capital_dagger['ZDolch'].str.replace(',', '.'), errors='coerce')\n\n# Plot the corrected ZDolch Z values over time\ncapital_dagger['ZDolch'].plot(title='ZDolch Z values over Time (capital)')\nplt.xlabel('BCE')\nplt.ylabel('Z values')\nplt.grid(True)\nplt.show()",
+    "output": "<string>:1: SettingWithCopyWarning: \nA value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead\n\nSee the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n",
+    "elapsed_seconds": 0.005184253677725792
+  },
+  {
+    "code": "# Replot the corrected ZDolch Z values over time\ncapital_dagger['ZDolch'].plot(title='ZDolch Z values over Time (capital)')\nplt.xlabel('BCE')\nplt.ylabel('Z values')\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.0050489590503275394
+  },
+  {
+    "code": "# Identify the first significant increase in ZDolch values in capital.csv\ncapital_dagger['ZDolch'].diff().plot(title='Change in ZDolch Z values over Time (capital)')\nplt.xlabel('BCE')\nplt.ylabel('Change in Z values')\nplt.grid(True)\nplt.show()\n\n# Identify the first significant increase in Dagger Z values in time_series_data.csv\ntime_series_dagger['Dagger'].diff().plot(title='Change in Dagger Z values over Time (time_series_data)')\nplt.xlabel('CE')\nplt.ylabel('Change in Z values')\nplt.grid(True)\nplt.show()",
+    "output": "ConversionError: Failed to convert value(s) to axis units: masked_array(data=[--, --, --, ..., --, --, --],\n             mask=[ True,  True,  True, ...,  True,  True,  True],\n       fill_value=1e+20,\n            dtype=float64)",
+    "elapsed_seconds": 0.009740592911839485
+  },
+  {
+    "code": "# Check for missing values in the ZDolch column of capital_dagger\ncapital_dagger['ZDolch'].isnull().sum()\n\n# Check for missing values in the Dagger column of time_series_dagger\ntime_series_dagger['Dagger'].isnull().sum()",
+    "output": "3564",
+    "elapsed_seconds": 0.0016789077781140804
+  },
+  {
+    "code": "# Analyze the time_series_data.csv dataset for the first significant increase in Dagger Z values\ntime_series_dagger['Dagger'].plot(title='Dagger Z values over Time (time_series_data)')\nplt.xlabel('CE')\nplt.ylabel('Z values')\nplt.grid(True)\nplt.show()\n\n# Calculate the rolling mean of the Dagger Z values to smooth out noise\ntime_series_dagger['Dagger_rolling_mean'] = time_series_dagger['Dagger'].rolling(window=50).mean()\n\n# Plot the rolling mean of the Dagger Z values\ntime_series_dagger['Dagger_rolling_mean'].plot(title='Rolling Mean of Dagger Z values over Time (time_series_data)')\nplt.xlabel('CE')\nplt.ylabel('Rolling Mean of Z values')\nplt.grid(True)\nplt.show()",
+    "output": "<string>:6: SettingWithCopyWarning: \nA value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead\n\nSee the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\nConversionError: Failed to convert value(s) to axis units: masked_array(data=[--, --, --, ..., --, --, --],\n             mask=[ True,  True,  True, ...,  True,  True,  True],\n       fill_value=1e+20,\n            dtype=float64)",
+    "elapsed_seconds": 0.009778736159205437
+  },
+  {
+    "code": "# Check for missing values in the Dagger column of time_series_dagger\ntime_series_dagger['Dagger'].isnull().sum()",
+    "output": "3564",
+    "elapsed_seconds": 0.0016323239542543888
+  },
+  {
+    "code": "# Convert the Dagger column to numeric values in time_series_data.csv dataset\ntime_series_dagger['Dagger'] = pd.to_numeric(time_series_dagger['Dagger'].str.replace(',', '.'), errors='coerce')\n\n# Check for missing values after conversion\ntime_series_dagger['Dagger'].isnull().sum()\n\n# Calculate the rolling mean of the cleaned Dagger Z values\ntime_series_dagger['Dagger_rolling_mean'] = time_series_dagger['Dagger'].rolling(window=50).mean()\n\n# Plot the rolling mean of the cleaned Dagger Z values\ntime_series_dagger['Dagger_rolling_mean'].plot(title='Rolling Mean of Cleaned Dagger Z values over Time (time_series_data)')\nplt.xlabel('CE')\nplt.ylabel('Rolling Mean of Z values')\nplt.grid(True)\nplt.show()",
+    "output": "AttributeError: Can only use .str accessor with string values!",
+    "elapsed_seconds": 0.0017026462592184544
+  },
+  {
+    "code": "# Check the data type of the Dagger column in time_series_data.csv dataset\ntime_series_dagger['Dagger'].dtype",
+    "output": "float64",
+    "elapsed_seconds": 0.0012462851591408253
+  },
+  {
+    "code": "# Plot the cleaned Dagger Z values over time\ntime_series_dagger['Dagger'].plot(title='Cleaned Dagger Z values over Time (time_series_data)')\nplt.xlabel('CE')\nplt.ylabel('Z values')\nplt.grid(True)\nplt.show()\n\n# Calculate the rolling mean of the cleaned Dagger Z values\ntime_series_dagger['Dagger_rolling_mean'] = time_series_dagger['Dagger'].rolling(window=50).mean()\n\n# Plot the rolling mean of the cleaned Dagger Z values\ntime_series_dagger['Dagger_rolling_mean'].plot(title='Rolling Mean of Cleaned Dagger Z values over Time (time_series_data)')\nplt.xlabel('CE')\nplt.ylabel('Rolling Mean of Z values')\nplt.grid(True)\nplt.show()",
+    "output": "<string>:6: SettingWithCopyWarning: \nA value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead\n\nSee the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\nConversionError: Failed to convert value(s) to axis units: masked_array(data=[--, --, --, ..., --, --, --],\n             mask=[ True,  True,  True, ...,  True,  True,  True],\n       fill_value=1e+20,\n            dtype=float64)",
+    "elapsed_seconds": 0.009703957010060549
+  },
+  {
+    "code": "# Check for missing values in the cleaned Dagger column\ntime_series_dagger['Dagger'].isnull().sum()\n\n# Drop rows with missing values in the cleaned Dagger column\ntime_series_dagger_clean = time_series_dagger.dropna(subset=['Dagger'])\n\n# Plot the cleaned Dagger Z values over time\ntime_series_dagger_clean['Dagger'].plot(title='Cleaned Dagger Z values over Time (time_series_data)')\nplt.xlabel('CE')\nplt.ylabel('Z values')\nplt.grid(True)\nplt.show()\n\n# Calculate the rolling mean of the cleaned Dagger Z values\ntime_series_dagger_clean['Dagger_rolling_mean'] = time_series_dagger_clean['Dagger'].rolling(window=50).mean()\n\n# Plot the rolling mean of the cleaned Dagger Z values\ntime_series_dagger_clean['Dagger_rolling_mean'].plot(title='Rolling Mean of Cleaned Dagger Z values over Time (time_series_data)')\nplt.xlabel('CE')\nplt.ylabel('Rolling Mean of Z values')\nplt.grid(True)\nplt.show()",
+    "output": "<string>:8: SettingWithCopyWarning: \nA value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead\n\nSee the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\nConversionError: Failed to convert value(s) to axis units: masked_array(data=[--, --, --, --, --, --, --, --, --, --, --, --, --, --,\n                   --, --, --, --, --, --, --, --, --, --, --, --, --, --,\n                   --, --, --, --, --, --, --, --, --],\n             mask=[ True,  True,  True,  True,  True,  True,  True,  True,\n                    True,  True,  True,  True,  True,  True,  True,  True,\n                    True,  True,  True,  True,  True,  True,  True,  True,\n                    True,  True,  True,  True,  True,  True,  True,  True,\n                    True,  True,  True,  True,  True],\n       fill_value=1e+20,\n            dtype=float64)",
+    "elapsed_seconds": 0.007474896032363176
+  },
+  {
+    "code": "# Check for missing values in the cleaned Dagger column\ntime_series_dagger_clean['Dagger'].isnull().sum()\n\n# Check the first few rows of the cleaned data\ntime_series_dagger_clean.head()",
+    "output": "       CE  Dagger  Dagger_rolling_mean\n0   -4100   -0.58                  NaN\n100 -4000   -0.58                  NaN\n200 -3900   -0.58                  NaN\n300 -3800   -0.58                  NaN\n400 -3700   -0.58                  NaN",
+    "elapsed_seconds": 0.003478864673525095
+  },
+  {
+    "code": "# Check the last few rows of the cleaned data\ntime_series_dagger_clean.tail()",
+    "output": "       CE  Dagger  Dagger_rolling_mean\n3200 -900   -0.44                  NaN\n3300 -800   -0.43                  NaN\n3400 -700   -0.43                  NaN\n3500 -600   -0.55                  NaN\n3600 -500   -0.55                  NaN",
+    "elapsed_seconds": 0.0037552230060100555
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "dram": "on",
+  "gpu_prefetch": "on",
+  "source_config": "/root/discos_minji/dram_gpu_prefetch_on_20260922_r1/base.yaml",
+  "effective_config": "/root/discos_minji/dram_gpu_prefetch_on_20260922_r1/restart_profile/lmcache_effective.yaml",
+  "source_sha256": "d3e20feecb19c2fe5ff4bb3fe34446a5e29e1b968810491fea7c5a5dc4c71711",
+  "effective_sha256": "d969d7974ac71b4bb8c92fa2295589fb6b4e870e547b11fca2d363213ce877cc",
+  "command": [
+    "/root/discos_minji/run_vllm.sh",
+    "/root/discos_minji/venv/bin/python3",
+    "-m",
+    "vllm.entrypoints.openai.api_server",
+    "--model",
+    "Qwen/Qwen3-14B",
+    "--served-model-name",
+    "comparison-model",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8017",
+    "--max-model-len",
+    "8192",
+    "--gpu-memory-utilization",
+    "0.75",
+    "--enforce-eager",
+    "--seed",
+    "0",
+    "--no-enable-prefix-caching",
+    "--enable-prompt-tokens-details",
+    "--kv-transfer-config",
+    "{\"kv_connector\": \"LMCacheConnectorV1\", \"kv_role\": \"kv_consumer\"}"
+  ],
+  "transport": "object",
+  "local_cpu": true,
+  "max_local_cpu_size": 4.0,
+  "notes": [
+    "CPU cache retention uses native LocalCPUBackend references.",
+    "DAOS put remains asynchronous; CPU hit alone does not prove DAOS commit.",
+    "New process required to change modes; DRAM cache is process-local.",
+    "Existing source config and run_vllm.sh are unchanged."
+  ]
+}

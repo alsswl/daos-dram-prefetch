@@ -1,0 +1,62 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of each dataset to understand their structure\npollen_df.head(), time_series_df.head(), capital_df.head()",
+    "output": "(   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns],    Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns],     BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns])",
+    "elapsed_seconds": 0.17254171567037702
+  },
+  {
+    "code": "# Check the columns related to daggers in the time_series_df and capital_df\ntime_series_df[['CE', 'Dagger', 'Dagger_inter']].head(), capital_df[['BCE', 'ZDolch']].head()",
+    "output": "(     CE  Dagger  Dagger_inter\n0 -4100   -0.58         -0.58\n1 -4099     NaN         -0.58\n2 -4098     NaN         -0.58\n3 -4097     NaN         -0.58\n4 -4096     NaN         -0.58,     BCE ZDolch\n0  4300  -0,58\n1  4200  -0,58\n2  4100  -0,58\n3  4000  -0,58\n4  3900  -0,58)",
+    "elapsed_seconds": 0.005789922084659338
+  },
+  {
+    "code": "# Check the range of years in the datasets\ntime_series_df[['CE', 'calBP']].describe(), capital_df[['BCE']].describe()",
+    "output": "(                CE        calBP\ncount  3601.000000  3601.000000\nmean  -2300.000000  4250.000000\nstd    1039.663487  1039.663487\nmin   -4100.000000  2450.000000\n25%   -3200.000000  3350.000000\n50%   -2300.000000  4250.000000\n75%   -1400.000000  5150.000000\nmax    -500.000000  6050.000000,                BCE\ncount    39.000000\nmean   2400.000000\nstd    1140.175425\nmin     500.000000\n25%    1450.000000\n50%    2400.000000\n75%    3350.000000\nmax    4300.000000)",
+    "elapsed_seconds": 0.008013031911104918
+  },
+  {
+    "code": "# Analyze the dagger-related Z values over time\nimport matplotlib.pyplot as plt\n\n# Plot the Dagger Z values from time_series_data.csv\nplt.figure(figsize=(12, 6))\nplt.plot(time_series_df['CE'], time_series_df['Dagger'], label='Dagger Z values (time_series_data)')\nplt.plot(time_series_df['CE'], time_series_df['Dagger_inter'], label='Interpolated Dagger Z values (time_series_data)')\nplt.xlabel('CE (Common Era)')\nplt.ylabel('Z values')\nplt.title('Dagger Z values over time')\nplt.legend()\nplt.grid(True)\nplt.show()\n\n# Plot the ZDolch Z values from capital.csv\nplt.figure(figsize=(12, 6))\nplt.plot(capital_df['BCE'], capital_df['ZDolch'], label='ZDolch Z values (capital)')\nplt.xlabel('BCE (Before Common Era)')\nplt.ylabel('Z values')\nplt.title('ZDolch Z values over time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.3761043408885598
+  },
+  {
+    "code": "# Perform a statistical analysis to determine if the increase in Z values for daggers is statistically significant\nfrom scipy.stats import ttest_ind\n\n# Filter the data for the time period of interest (CE -1000 to -500)\ntime_period_start = -1000\ntime_period_end = -500\nfiltered_data = time_series_df[(time_series_df['CE'] >= time_period_start) & (time_series_df['CE'] <= time_period_end)]\n\n# Split the data into two groups: before and after the time period of interest\nbefore_data = time_series_df[time_series_df['CE'] < time_period_start]\nafter_data = time_series_df[time_series_df['CE'] > time_period_end]\n\n# Perform a t-test to compare the mean Z values of daggers before and after the time period of interest\nt_statistic, p_value = ttest_ind(before_data['Dagger'], after_data['Dagger'])\n\nt_statistic, p_value",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.4624226661399007
+  },
+  {
+    "code": "# Check for missing values in the Dagger column\ntime_series_df['Dagger'].isnull().sum()\n\n# Check the number of data points in the before and after groups\nlen(before_data), len(after_data)",
+    "output": "(3100, 0)",
+    "elapsed_seconds": 0.0020135091617703438
+  },
+  {
+    "code": "# Adjust the time period of interest to ensure sufficient data points\ntime_period_start = -2000\ntime_period_end = -1000\nfiltered_data = time_series_df[(time_series_df['CE'] >= time_period_start) & (time_series_df['CE'] <= time_period_end)]\n\n# Split the data into two groups: before and after the time period of interest\nbefore_data = time_series_df[time_series_df['CE'] < time_period_start]\nafter_data = time_series_df[time_series_df['CE'] > time_period_end]\n\n# Perform a t-test to compare the mean Z values of daggers before and after the time period of interest\nt_statistic, p_value = ttest_ind(before_data['Dagger'], after_data['Dagger'])\n\nt_statistic, p_value",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.0038037439808249474
+  },
+  {
+    "code": "# Check for missing values in the Dagger column for the adjusted time period\ntime_series_df[(time_series_df['CE'] >= -2000) & (time_series_df['CE'] <= -1000)]['Dagger'].isnull().sum()\n\n# Check the number of data points in the before and after groups for the adjusted time period\nlen(before_data), len(after_data)",
+    "output": "(2100, 500)",
+    "elapsed_seconds": 0.0025927741080522537
+  },
+  {
+    "code": "# Check for missing values in the Dagger column for the after_data group\nafter_data['Dagger'].isnull().sum()\n\n# Check the number of non-missing data points in the after_data group\nnon_missing_after_data = after_data['Dagger'].dropna()\nlen(non_missing_after_data)",
+    "output": "5",
+    "elapsed_seconds": 0.0020300261676311493
+  },
+  {
+    "code": "# Analyze the trend in the Dagger Z values over time using a rolling mean\nimport pandas as pd\n\n# Calculate the rolling mean of the Dagger Z values with a window size of 100 years\ntime_series_df['Dagger_rolling_mean'] = time_series_df['Dagger'].rolling(window=100).mean()\n\n# Plot the rolling mean of the Dagger Z values over time\nplt.figure(figsize=(12, 6))\nplt.plot(time_series_df['CE'], time_series_df['Dagger_rolling_mean'], label='Rolling Mean of Dagger Z values')\nplt.xlabel('CE (Common Era)')\nplt.ylabel('Rolling Mean of Z values')\nplt.title('Rolling Mean of Dagger Z values over time')\nplt.legend()\nplt.grid(True)\nplt.show()\n\n# Perform a linear regression to determine the trend in the Dagger Z values over time\nfrom sklearn.linear_model import LinearRegression\n\n# Prepare the data for regression\nX = time_series_df['CE'].values.reshape(-1, 1)  # Predictor\ny = time_series_df['Dagger'].values  # Response\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "ValueError: Input y contains NaN.",
+    "elapsed_seconds": 0.08336457889527082
+  },
+  {
+    "code": "# Drop rows with missing values in the Dagger column\ntime_series_df_clean = time_series_df.dropna(subset=['Dagger'])\n\n# Perform a linear regression to determine the trend in the Dagger Z values over time\nfrom sklearn.linear_model import LinearRegression\n\n# Prepare the data for regression\nX = time_series_df_clean['CE'].values.reshape(-1, 1)  # Predictor\ny = time_series_df_clean['Dagger'].values  # Response\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "0.00032008060692271227",
+    "elapsed_seconds": 0.003806894179433584
+  },
+  {
+    "code": "# Plot the rolling mean of the Dagger Z values over time\nplt.figure(figsize=(12, 6))\nplt.plot(time_series_df_clean['CE'], time_series_df_clean['Dagger_rolling_mean'], label='Rolling Mean of Dagger Z values')\nplt.xlabel('CE (Common Era)')\nplt.ylabel('Rolling Mean of Z values')\nplt.title('Rolling Mean of Dagger Z values over time')\nplt.legend()\nplt.grid(True)\nplt.show()\n\n# Check for any significant changes in the rolling mean\ntime_series_df_clean['Dagger_rolling_mean'].describe()",
+    "output": "count    0.0\nmean     NaN\nstd      NaN\nmin      NaN\n25%      NaN\n50%      NaN\n75%      NaN\nmax      NaN\nName: Dagger_rolling_mean, dtype: float64",
+    "elapsed_seconds": 0.008346060756593943
+  }
+]

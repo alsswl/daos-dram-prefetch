@@ -1,0 +1,92 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\n\n# Display the first few rows of the dataset to understand its structure\ntime_series_df.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15294363535940647
+  },
+  {
+    "code": "# Inspect the 'Dagger' column in the time_series_data.csv dataset\ndagger_data = time_series_df['Dagger'].dropna()\ndagger_data.head()",
+    "output": "0     -0.58\n100   -0.58\n200   -0.58\n300   -0.58\n400   -0.58\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.0017386949621140957
+  },
+  {
+    "code": "# Calculate the rolling mean of the 'Dagger' column with a window size of 100\ndagger_rolling_mean = dagger_data.rolling(window=100).mean()\ndagger_rolling_mean.head()",
+    "output": "0     NaN\n100   NaN\n200   NaN\n300   NaN\n400   NaN\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.002013017889112234
+  },
+  {
+    "code": "import matplotlib.pyplot as plt\n\n# Plot the rolling mean of the 'Dagger' column over time\nplt.figure(figsize=(12, 6))\nplt.plot(dagger_rolling_mean.index, dagger_rolling_mean.values, label='Rolling Mean of Dagger Z Values')\nplt.xlabel('Index')\nplt.ylabel('Z Value')\nplt.title('Rolling Mean of Dagger Z Values Over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.3679945426993072
+  },
+  {
+    "code": "# Inspect the 'Dagger_inter' column in the time_series_data.csv dataset\ndagger_inter_data = time_series_df['Dagger_inter'].dropna()\ndagger_inter_data.head()",
+    "output": "0   -0.58\n1   -0.58\n2   -0.58\n3   -0.58\n4   -0.58\nName: Dagger_inter, dtype: float64",
+    "elapsed_seconds": 0.0018912828527390957
+  },
+  {
+    "code": "# Calculate the rolling mean of the 'Dagger_inter' column with a window size of 100\ndagger_inter_rolling_mean = dagger_inter_data.rolling(window=100).mean()\ndagger_inter_rolling_mean.head()",
+    "output": "0   NaN\n1   NaN\n2   NaN\n3   NaN\n4   NaN\nName: Dagger_inter, dtype: float64",
+    "elapsed_seconds": 0.0024372818879783154
+  },
+  {
+    "code": "# Plot the rolling mean of the 'Dagger_inter' column over time\nplt.figure(figsize=(12, 6))\nplt.plot(dagger_inter_rolling_mean.index, dagger_inter_rolling_mean.values, label='Rolling Mean of Interpolated Dagger Z Values')\nplt.xlabel('Index')\nplt.ylabel('Z Value')\nplt.title('Rolling Mean of Interpolated Dagger Z Values Over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.007483480032533407
+  },
+  {
+    "code": "# Load the capital.csv dataset\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of the dataset to understand its structure\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.00788091216236353
+  },
+  {
+    "code": "# Inspect the 'ZDolch' column in the capital.csv dataset\nz_dolch_data = capital_df['ZDolch'].dropna()\nz_dolch_data.head()",
+    "output": "0    -0,58\n1    -0,58\n2    -0,58\n3    -0,58\n4    -0,58\nName: ZDolch, dtype: object",
+    "elapsed_seconds": 0.002067883964627981
+  },
+  {
+    "code": "# Calculate the rolling mean of the 'ZDolch' column with a window size of 100\nz_dolch_rolling_mean = z_dolch_data.rolling(window=100).mean()\nz_dolch_rolling_mean.head()",
+    "output": "DataError: No numeric types to aggregate",
+    "elapsed_seconds": 0.0011182497255504131
+  },
+  {
+    "code": "# Convert the 'ZDolch' column to numeric values\nz_dolch_data_numeric = pd.to_numeric(z_dolch_data.str.replace(',', '.'), errors='coerce')\n\n# Calculate the rolling mean of the 'ZDolch' column with a window size of 100\nz_dolch_rolling_mean = z_dolch_data_numeric.rolling(window=100).mean()\nz_dolch_rolling_mean.head()",
+    "output": "0   NaN\n1   NaN\n2   NaN\n3   NaN\n4   NaN\nName: ZDolch, dtype: float64",
+    "elapsed_seconds": 0.002162385266274214
+  },
+  {
+    "code": "# Plot the rolling mean of the 'ZDolch' column over time\nplt.figure(figsize=(12, 6))\nplt.plot(z_dolch_rolling_mean.index, z_dolch_rolling_mean.values, label='Rolling Mean of ZDolch Z Values')\nplt.xlabel('Index')\nplt.ylabel('Z Value')\nplt.title('Rolling Mean of ZDolch Z Values Over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.005997492931783199
+  },
+  {
+    "code": "# Calculate the rolling mean of the 'Dagger' column with a window size of 500\ndagger_rolling_mean_500 = dagger_data.rolling(window=500).mean()\ndagger_rolling_mean_500.head()",
+    "output": "0     NaN\n100   NaN\n200   NaN\n300   NaN\n400   NaN\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.001797752920538187
+  },
+  {
+    "code": "# Plot the rolling mean of the 'Dagger' column over time with a window size of 500\nplt.figure(figsize=(12, 6))\nplt.plot(dagger_rolling_mean_500.index, dagger_rolling_mean_500.values, label='Rolling Mean of Dagger Z Values (500 window)')\nplt.xlabel('Index')\nplt.ylabel('Z Value')\nplt.title('Rolling Mean of Dagger Z Values Over Time (500 window)')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.006552019622176886
+  },
+  {
+    "code": "# Calculate the rolling mean of the 'Dagger_inter' column with a window size of 500\ndagger_inter_rolling_mean_500 = dagger_inter_data.rolling(window=500).mean()\ndagger_inter_rolling_mean_500.head()",
+    "output": "0   NaN\n1   NaN\n2   NaN\n3   NaN\n4   NaN\nName: Dagger_inter, dtype: float64",
+    "elapsed_seconds": 0.0023238863795995712
+  },
+  {
+    "code": "# Plot the rolling mean of the 'Dagger_inter' column over time with a window size of 500\nplt.figure(figsize=(12, 6))\nplt.plot(dagger_inter_rolling_mean_500.index, dagger_inter_rolling_mean_500.values, label='Rolling Mean of Interpolated Dagger Z Values (500 window)')\nplt.xlabel('Index')\nplt.ylabel('Z Value')\nplt.title('Rolling Mean of Interpolated Dagger Z Values Over Time (500 window)')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.006622818764299154
+  },
+  {
+    "code": "# Calculate the rolling mean of the 'Dagger' column with a window size of 1000\ndagger_rolling_mean_1000 = dagger_data.rolling(window=1000).mean()\ndagger_rolling_mean_1000.head()",
+    "output": "0     NaN\n100   NaN\n200   NaN\n300   NaN\n400   NaN\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.0021978840231895447
+  },
+  {
+    "code": "# Plot the rolling mean of the 'Dagger' column over time with a window size of 1000\nplt.figure(figsize=(12, 6))\nplt.plot(dagger_rolling_mean_1000.index, dagger_rolling_mean_1000.values, label='Rolling Mean of Dagger Z Values (1000 window)')\nplt.xlabel('Index')\nplt.ylabel('Z Value')\nplt.title('Rolling Mean of Dagger Z Values Over Time (1000 window)')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.006413211580365896
+  }
+]

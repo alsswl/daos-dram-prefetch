@@ -1,0 +1,57 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\n\n# Display the first few rows of each dataset\ntime_series_df.head(), capital_df.head(), pollen_df.head()",
+    "output": "(   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns],     BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns],    Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns])",
+    "elapsed_seconds": 0.17407342977821827
+  },
+  {
+    "code": "# Filter the pollen data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_data = pollen_df[(pollen_df['CE'] >= -1100) & (pollen_df['CE'] <= -500)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_pc1 = young_bronze_age_data[young_bronze_age_data['CE'] == -1100]['Belau_PC1'].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_pc1 = young_bronze_age_data[(young_bronze_age_data['CE'] >= -1000) & (young_bronze_age_data['CE'] <= -500)]['Belau_PC1'].values\n\n# Calculate the mean and standard deviation of the subsequent PC1 values\nmean_subsequent_pc1 = np.mean(subsequent_pc1)\nstd_subsequent_pc1 = np.std(subsequent_pc1)\n\nbeginning_pc1, mean_subsequent_pc1, std_subsequent_pc1",
+    "output": "NameError: name 'np' is not defined",
+    "elapsed_seconds": 0.003021043259650469
+  },
+  {
+    "code": "import numpy as np\n\n# Filter the pollen data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_data = pollen_df[(pollen_df['CE'] >= -1100) & (pollen_df['CE'] <= -500)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_pc1 = young_bronze_age_data[young_bronze_age_data['CE'] == -1100]['Belau_PC1'].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_pc1 = young_bronze_age_data[(young_bronze_age_data['CE'] >= -1000) & (young_bronze_age_data['CE'] <= -500)]['Belau_PC1'].values\n\n# Calculate the mean and standard deviation of the subsequent PC1 values\nmean_subsequent_pc1 = np.mean(subsequent_pc1)\nstd_subsequent_pc1 = np.std(subsequent_pc1)\n\nbeginning_pc1, mean_subsequent_pc1, std_subsequent_pc1",
+    "output": "TypeError: unsupported operand type(s) for +: 'float' and 'str'",
+    "elapsed_seconds": 0.003134655300527811
+  },
+  {
+    "code": "# Convert the 'CE' column to numeric values\npollen_df['CE'] = pd.to_numeric(pollen_df['CE'], errors='coerce')\n\n# Filter the pollen data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_data = pollen_df[(pollen_df['CE'] >= -1100) & (pollen_df['CE'] <= -500)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_pc1 = young_bronze_age_data[young_bronze_age_data['CE'] == -1100]['Belau_PC1'].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_pc1 = young_bronze_age_data[(young_bronze_age_data['CE'] >= -1000) & (young_bronze_age_data['CE'] <= -500)]['Belau_PC1'].values\n\n# Calculate the mean and standard deviation of the subsequent PC1 values\nmean_subsequent_pc1 = np.mean(subsequent_pc1)\nstd_subsequent_pc1 = np.std(subsequent_pc1)\n\nbeginning_pc1, mean_subsequent_pc1, std_subsequent_pc1",
+    "output": "TypeError: unsupported operand type(s) for +: 'float' and 'str'",
+    "elapsed_seconds": 0.0032930909655988216
+  },
+  {
+    "code": "# Inspect the 'CE' column for any non-numeric values\npollen_df['CE'].unique()",
+    "output": "[ -702  -703  -704 ... -4783 -4784 -4785]",
+    "elapsed_seconds": 0.0018400647677481174
+  },
+  {
+    "code": "# Remove leading/trailing spaces and convert 'CE' to numeric\npollen_df['CE'] = pollen_df['CE'].str.strip().astype(float)\n\n# Filter the pollen data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_data = pollen_df[(pollen_df['CE'] >= -1100) & (pollen_df['CE'] <= -500)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_pc1 = young_bronze_age_data[young_bronze_age_data['CE'] == -1100]['Belau_PC1'].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_pc1 = young_bronze_age_data[(young_bronze_age_data['CE'] >= -1000) & (young_bronze_age_data['CE'] <= -500)]['Belau_PC1'].values\n\n# Calculate the mean and standard deviation of the subsequent PC1 values\nmean_subsequent_pc1 = np.mean(subsequent_pc1)\nstd_subsequent_pc1 = np.std(subsequent_pc1)\n\nbeginning_pc1, mean_subsequent_pc1, std_subsequent_pc1",
+    "output": "AttributeError: Can only use .str accessor with string values!",
+    "elapsed_seconds": 0.0020677070133388042
+  },
+  {
+    "code": "# Check the data type of the 'CE' column\npollen_df['CE'].dtype",
+    "output": "int64",
+    "elapsed_seconds": 0.0013556182384490967
+  },
+  {
+    "code": "# Filter the pollen data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_data = pollen_df[(pollen_df['CE'] >= -1100) & (pollen_df['CE'] <= -500)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_pc1 = young_bronze_age_data[young_bronze_age_data['CE'] == -1100]['Belau_PC1'].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_pc1 = young_bronze_age_data[(young_bronze_age_data['CE'] >= -1000) & (young_bronze_age_data['CE'] <= -500)]['Belau_PC1'].values\n\n# Calculate the mean and standard deviation of the subsequent PC1 values\nmean_subsequent_pc1 = np.mean(subsequent_pc1)\nstd_subsequent_pc1 = np.std(subsequent_pc1)\n\nbeginning_pc1, mean_subsequent_pc1, std_subsequent_pc1",
+    "output": "TypeError: unsupported operand type(s) for +: 'float' and 'str'",
+    "elapsed_seconds": 0.0029603261500597
+  },
+  {
+    "code": "# Convert the 'Belau_PC1' column to numeric values\npollen_df['Belau_PC1'] = pd.to_numeric(pollen_df['Belau_PC1'], errors='coerce')\n\n# Filter the pollen data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_data = pollen_df[(pollen_df['CE'] >= -1100) & (pollen_df['CE'] <= -500)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_pc1 = young_bronze_age_data[young_bronze_age_data['CE'] == -1100]['Belau_PC1'].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_pc1 = young_bronze_age_data[(young_bronze_age_data['CE'] >= -1000) & (young_bronze_age_data['CE'] <= -500)]['Belau_PC1'].values\n\n# Calculate the mean and standard deviation of the subsequent PC1 values\nmean_subsequent_pc1 = np.mean(subsequent_pc1)\nstd_subsequent_pc1 = np.std(subsequent_pc1)\n\nbeginning_pc1, mean_subsequent_pc1, std_subsequent_pc1",
+    "output": "(nan, nan, nan)",
+    "elapsed_seconds": 0.003808450885117054
+  },
+  {
+    "code": "# Inspect the 'Belau_PC1' column for any non-numeric values\npollen_df['Belau_PC1'].unique()",
+    "output": "[nan]",
+    "elapsed_seconds": 0.002103374805301428
+  },
+  {
+    "code": "# Display the first few rows of the pollen_df to confirm column names\npollen_df.head()",
+    "output": "   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns]",
+    "elapsed_seconds": 0.006322064902633429
+  }
+]

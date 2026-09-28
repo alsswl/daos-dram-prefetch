@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\n\n# Filter the dataset for Experimental Economics\nexperimental_economics_data = df[df['discipline'] == 'Experimental Economics']\n\n# Calculate the average number of authors for original studies\naverage_original_authors = experimental_economics_data['n_authors.o'].mean()\n\n# Calculate the average number of authors for replication studies\naverage_replication_authors = experimental_economics_data['n_authors.r'].mean()\n\naverage_original_authors, average_replication_authors",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.1353047718293965
+  },
+  {
+    "code": "# Drop rows with missing values in 'n_authors.o' and 'n_authors.r' columns\nexperimental_economics_data_clean = experimental_economics_data.dropna(subset=['n_authors.o', 'n_authors.r'])\n\n# Calculate the average number of authors for original studies\naverage_original_authors = experimental_economics_data_clean['n_authors.o'].mean()\n\n# Calculate the average number of authors for replication studies\naverage_replication_authors = experimental_economics_data_clean['n_authors.r'].mean()\n\naverage_original_authors, average_replication_authors",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.0029781791381537914
+  },
+  {
+    "code": "# Check if there are any rows left after dropping missing values\nexperimental_economics_data_clean.shape",
+    "output": "(0, 60)",
+    "elapsed_seconds": 0.0012083952315151691
+  },
+  {
+    "code": "# Check the overall dataset for any entries related to Experimental Economics\nexperimental_economics_data.shape",
+    "output": "(0, 60)",
+    "elapsed_seconds": 0.0014005303382873535
+  },
+  {
+    "code": "# Check the unique values in the 'discipline' column\ndf['discipline'].unique()",
+    "output": "['Cognitive' 'Social' 'Economics']",
+    "elapsed_seconds": 0.0013662618584930897
+  },
+  {
+    "code": "# Filter the dataset for the 'Economics' discipline\neconomics_data = df[df['discipline'] == 'Economics']\n\n# Drop rows with missing values in 'n_authors.o' and 'n_authors.r' columns\neconomics_data_clean = economics_data.dropna(subset=['n_authors.o', 'n_authors.r'])\n\n# Calculate the average number of authors for original studies\naverage_original_authors = economics_data_clean['n_authors.o'].mean()\n\n# Calculate the average number of authors for replication studies\naverage_replication_authors = economics_data_clean['n_authors.r'].mean()\n\naverage_original_authors, average_replication_authors",
+    "output": "(2.6666666666666665, 3.2777777777777777)",
+    "elapsed_seconds": 0.002553202211856842
+  }
+]

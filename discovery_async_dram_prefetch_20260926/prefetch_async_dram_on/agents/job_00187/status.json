@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 52.49004013091326,
+  "llm_calls": 8,
+  "python_calls": 7,
+  "final_answer": "Hypothesis: The number of daggers began to increase in importance around the transition from the BCE to CE era, approximately 500 BCE to 500 CE. This hypothesis is based on the visual inspection of Z values for daggers in the provided datasets, which showed a potential upward trend during this period. However, the linear regression analysis did not find a statistically significant relationship between time and Z values for daggers, suggesting that the increase in importance may not be strongly supported by the data. The variables chosen were time (CE/BCE) and Z values for daggers (Dagger/ZDolch), and the relationship between these variables was not statistically significant.",
+  "grading": "not run, as in supplied document",
+  "query": "In which century did the number of daggers began to increase in importance for the first time?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/archaeology/metadata_1.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

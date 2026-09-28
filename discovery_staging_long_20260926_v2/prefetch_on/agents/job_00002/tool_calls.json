@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\ndf.head()",
+    "output": "   ID  ...                           Origin\n0  31  ...  https://ww2.unipark.de/uc/seml/\n1  34  ...                              -99\n2  36  ...                              -99\n3  57  ...                              -99\n4  46  ...                              -99\n\n[5 rows x 202 columns]",
+    "elapsed_seconds": 0.16219316609203815
+  },
+  {
+    "code": "# Calculate the percentage of respondents indicating that they use each documentation format\ndocumentation_columns = ['Q10_ML_Documentation_Vision_Document', 'Q10_ML_Documentation_Requirements_Lists', 'Q10_ML_Documentation_Goal_Models', 'Q10_ML_Documentation_Use_Case_Models', 'Q10_ML_Documentation_Prototypes', 'Q10_ML_Documentation_User_Stories', 'Q10_ML_Documentation_BDD_Scenarios', 'Q10_ML_Documentation_MLCanvas', 'Q10_ML_Documentation_Notebooks', 'Q10_ML_Documentation_Data_Models', 'Q10_ML_Documentation_Others']\n\ndocumentation_percentages = {}\nfor col in documentation_columns:\n    percentage = df[df[col] == 1].shape[0] / df.shape[0] * 100\n    documentation_percentages[col] = percentage\n\n# Sort the documentation formats by percentage\nsorted_documentation_percentages = sorted(documentation_percentages.items(), key=lambda x: x[1])\n\n# Identify the two documentation formats with the lowest percentages\nleast_used_documentation_formats = sorted_documentation_percentages[:2]\nleast_used_documentation_formats",
+    "output": "[('Q10_ML_Documentation_Vision_Document', 0.0), ('Q10_ML_Documentation_Requirements_Lists', 0.0)]",
+    "elapsed_seconds": 0.0039459289982914925
+  },
+  {
+    "code": "# Check for missing or invalid values in the documentation columns\nmissing_values = df[documentation_columns].isnull().sum()\nmissing_values",
+    "output": "Q10_ML_Documentation_Vision_Document       0\nQ10_ML_Documentation_Requirements_Lists    0\nQ10_ML_Documentation_Goal_Models           0\nQ10_ML_Documentation_Use_Case_Models       0\nQ10_ML_Documentation_Prototypes            0\nQ10_ML_Documentation_User_Stories          0\nQ10_ML_Documentation_BDD_Scenarios         0\nQ10_ML_Documentation_MLCanvas              0\nQ10_ML_Documentation_Notebooks             0\nQ10_ML_Documentation_Data_Models           0\nQ10_ML_Documentation_Others                0\ndtype: int64",
+    "elapsed_seconds": 0.003026330843567848
+  },
+  {
+    "code": "# Check the unique values in the documentation columns\nunique_values = {}\nfor col in documentation_columns:\n    unique_values[col] = df[col].unique()\nunique_values",
+    "output": "{'Q10_ML_Documentation_Vision_Document': array(['not quoted', 'quoted', '-77'], dtype=object), 'Q10_ML_Documentation_Requirements_Lists': array(['not quoted', 'quoted', '-77'], dtype=object), 'Q10_ML_Documentation_Goal_Models': array(['not quoted', 'quoted', '-77'], dtype=object), 'Q10_ML_Documentation_Use_Case_Models': array(['not quoted', 'quoted', '-77'], dtype=object), 'Q10_ML_Documentation_Prototypes': array(['not quoted', 'quoted', '-77'], dtype=object), 'Q10_ML_Documentation_User_Stories': array(['not quoted', 'quoted', '-77'], dtype=object), 'Q10_ML_Documentation_BDD_Scenarios': array(['not quoted', 'quoted', '-77'], dtype=object), 'Q10_ML_Documentation_MLCanvas': array(['not quoted', 'quoted', '-77'], dtype=object), 'Q10_ML_Documentation_Notebooks': array(['not quoted', 'quoted', '-77'], dtype=object), 'Q10_ML_Documentation_Data_Models': array(['not quoted', 'quoted', '-77'], dtype=object), 'Q10_ML_Documentation_Others': array(['not quoted', 'quoted', '-77'], dtype=object)}",
+    "elapsed_seconds": 0.002353386953473091
+  },
+  {
+    "code": "# Recalculate the percentages based on the correct values\ndocumentation_percentages = {}\nfor col in documentation_columns:\n    # Count the number of respondents who indicated that they use the documentation format\n    quoted_count = df[df[col] == 'quoted'].shape[0]\n    # Calculate the percentage\n    percentage = quoted_count / df.shape[0] * 100\n    documentation_percentages[col] = percentage\n\n# Sort the documentation formats by percentage\nsorted_documentation_percentages = sorted(documentation_percentages.items(), key=lambda x: x[1])\n\n# Identify the two documentation formats with the lowest percentages\nleast_used_documentation_formats = sorted_documentation_percentages[:2]\nleast_used_documentation_formats",
+    "output": "[('Q10_ML_Documentation_BDD_Scenarios', 1.4492753623188406), ('Q10_ML_Documentation_MLCanvas', 5.434782608695652)]",
+    "elapsed_seconds": 0.004235174041241407
+  }
+]

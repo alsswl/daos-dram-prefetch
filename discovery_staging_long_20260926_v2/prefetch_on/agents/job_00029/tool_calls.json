@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_raw.csv')\ndf.head()",
+    "output": "   ID# (range 1-12686) 1979  ...  Total market value of items over $500, 1996\n0                         1  ...                                          NaN\n1                         2  ...                                      15000.0\n2                         3  ...                                       2000.0\n3                         4  ...                                      15000.0\n4                         5  ...                                          NaN\n\n[5 rows x 61 columns]",
+    "elapsed_seconds": 0.1918942891061306
+  },
+  {
+    "code": "# Find the column for gender\ngender_column = \"Sex of respondent, 1979: Sex of the respondent, 1:MALE or 2:FEMALE\"\n\n# Find the column for degree completion rates\ndegree_completion_column = \"Highest grade completed, 1979: Highest grade or year of regular school that respondent have completed and got credit for till 1979\"\n\n# Check if these columns exist in the dataset\nif gender_column in df.columns and degree_completion_column in df.columns:\n    print(\"Columns for gender and degree completion rates found.\")\nelse:\n    print(\"Columns for gender and degree completion rates not found.\")",
+    "output": "Columns for gender and degree completion rates not found.\n",
+    "elapsed_seconds": 0.0016044247895479202
+  },
+  {
+    "code": "# Search for columns related to gender\ngender_columns = [col for col in df.columns if \"Sex\" in col or \"sex\" in col or \"gender\" in col]\nprint(\"Columns related to gender:\", gender_columns)\n\n# Search for columns related to degree completion rates\ndegree_completion_columns = [col for col in df.columns if \"grade\" in col or \"education\" in col or \"school\" in col or \"completion\" in col]\nprint(\"Columns related to degree completion rates:\", degree_completion_columns)",
+    "output": "Columns related to gender: ['Sex of respondent, 1979']\nColumns related to degree completion rates: [\"Highest grade completed by respondent's mother, 1979\", \"Highest grade completed by respondent's father, 1979\", 'Highest grade completed, 1979', 'Rank in class last year attended at this school, 1981', 'Number of students in class last year attended at this school, 1981']\n",
+    "elapsed_seconds": 0.001979321241378784
+  },
+  {
+    "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Filter out rows with missing values in the relevant columns\ndf_filtered = df.dropna(subset=[\"Sex of respondent, 1979\", \"Highest grade completed, 1979\"])\n\n# Convert the gender column to a categorical variable\ndf_filtered[\"Sex of respondent, 1979\"] = df_filtered[\"Sex of respondent, 1979\"].astype(int)\n\n# Create a boxplot to visualize the relationship between gender and degree completion rates\nsns.boxplot(x=\"Sex of respondent, 1979\", y=\"Highest grade completed, 1979\", data=df_filtered)\nplt.xlabel(\"Gender\")\nplt.ylabel(\"Highest Grade Completed\")\nplt.title(\"Relationship between Gender and Degree Completion Rates\")\nplt.show()",
+    "output": "<string>:4: SettingWithCopyWarning: \nA value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead\n\nSee the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n",
+    "elapsed_seconds": 0.869470379780978
+  },
+  {
+    "code": "from scipy.stats import ttest_ind\n\n# Separate the data by gender\nmale_data = df_filtered[df_filtered[\"Sex of respondent, 1979\"] == 1][\"Highest grade completed, 1979\"]\nfemale_data = df_filtered[df_filtered[\"Sex of respondent, 1979\"] == 2][\"Highest grade completed, 1979\"]\n\n# Perform an independent samples t-test\nt_statistic, p_value = ttest_ind(male_data, female_data)\nt_statistic, p_value",
+    "output": "(-5.691433978032243, 1.2880103410018152e-08)",
+    "elapsed_seconds": 0.006575361825525761
+  }
+]

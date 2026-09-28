@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "     HYBAS_ID       long       lat  ...  soil_div     area  diversity\n0  6050000010 -76.477422  7.742693  ...  0.482402  72363.7         68\n1  6050000740 -74.628725  9.803586  ...  0.457436  17944.3         35\n2  6050068100 -75.295995  8.448815  ...  0.378793  17105.5         44\n3  6050068110 -74.608408  8.922863  ...  0.468328    610.1         48\n4  6050070260 -75.591588  5.770093  ...  0.158870  61901.9         81\n\n[5 rows x 21 columns]",
+    "elapsed_seconds": 0.13961808383464813
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Select the relevant evolutionary traits\nevolutionary_traits = ['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']\n\n# Prepare the data for regression\nX = df[evolutionary_traits].values  # Predictor variables\ny = df['BAMM_speciation'].values  # Response variable\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.5614651362411678
+  },
+  {
+    "code": "# Check if there are other variables that might be relevant\nother_variables = ['DR', 'BAMM_extinction', 'BAMM_NetDiv', 'bio1', 'bio12', 'runoff', 'aet', 'Elevation', 'sgr', 'soil_div', 'area', 'diversity']\n\n# Prepare the data for regression with other variables\nX = df[other_variables].values  # Predictor variables\ny = df['BAMM_speciation'].values  # Response variable\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[-4.68397034e-14  1.00000000e+00  1.00000000e+00  3.73880285e-13\n -4.40769573e-15  2.34754441e-15  5.51982587e-15  3.44867346e-15\n  2.19236315e-15  1.05764371e-12 -1.81173705e-16  3.11491008e-17]",
+    "elapsed_seconds": 0.00299403490498662
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\nimport statsmodels.api as sm\n\n# Select the relevant evolutionary traits\nevolutionary_traits = ['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']\n\n# Prepare the data for regression\nX = df[evolutionary_traits].values  # Predictor variables\ny = df['BAMM_speciation'].values  # Response variable\n\n# Add a constant to the model (intercept)\nX = sm.add_constant(X)\n\n# Create a linear regression model\nmodel = sm.OLS(y, X).fit()\n\n# Get the summary of the model\nmodel.summary()",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.011688276194036007
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.13664022320881486
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the pollen_openness_score dataset\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\npollen_df.head()",
+    "output": "   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns]",
+    "elapsed_seconds": 0.016543725039809942
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ntime_series_df.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.021977498196065426
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.columns",
+    "output": "Index(['BCE', 'group', 'color', 'ZAxtSchwert', 'ZDolch', 'Zhausgr', 'ZCU_AU',\n       'Zamber', 'ZMonument', 'ZHort', 'ZSichel', 'ZBeil', 'ZMW', 'ZKeform',\n       'Zkeverz'],\n      dtype='object')",
+    "elapsed_seconds": 0.002753176260739565
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyounger_bronze_age_df = capital_df[(capital_df['BCE'] >= 1100) & (capital_df['BCE'] <= 500)]\n\n# Filter the data for the beginning of the period (1100 BCE)\nbeginning_period_df = younger_bronze_age_df[younger_bronze_age_df['BCE'] == 1100]\n\n# Filter the data for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_time_horizons_df = younger_bronze_age_df[younger_bronze_age_df['BCE'] < 1100]\n\n# Calculate the mean Z values for the beginning of the period\nbeginning_period_means = beginning_period_df[['ZAxtSchwert', 'ZDolch', 'Zhausgr', 'ZCU_AU', 'Zamber', 'ZMonument', 'ZHort', 'ZSichel', 'ZBeil', 'ZMW', 'ZKeform', 'Zkeverz']].mean()\n\n# Calculate the mean Z values for the subsequent time horizons\nsubsequent_time_horizons_means = subsequent_time_horizons_df[['ZAxtSchwert', 'ZDolch', 'Zhausgr', 'ZCU_AU', 'Zamber', 'ZMonument', 'ZHort', 'ZSichel', 'ZBeil', 'ZMW', 'ZKeform', 'Zkeverz']].mean()\n\nbeginning_period_means, subsequent_time_horizons_means",
+    "output": "(ZAxtSchwert    NaN\nZDolch         NaN\nZhausgr        NaN\nZCU_AU         NaN\nZamber         NaN\nZMonument      NaN\nZHort          NaN\nZSichel        NaN\nZBeil          NaN\nZMW            NaN\nZKeform        NaN\nZkeverz        NaN\ndtype: object, ZAxtSchwert    NaN\nZDolch         NaN\nZhausgr        NaN\nZCU_AU         NaN\nZamber         NaN\nZMonument      NaN\nZHort          NaN\nZSichel        NaN\nZBeil          NaN\nZMW            NaN\nZKeform        NaN\nZkeverz        NaN\ndtype: object)",
+    "elapsed_seconds": 0.004565292038023472
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyounger_bronze_age_df = capital_df[(capital_df['BCE'] >= 1100) & (capital_df['BCE'] <= 500)]\n\n# Check if there are any data points close to 1100 BCE\nclose_to_1100_df = younger_bronze_age_df[younger_bronze_age_df['BCE'].between(1000, 1100)]\n\n# Calculate the mean Z values for the time period close to 1100 BCE\nclose_to_1100_means = close_to_1100_df[['ZAxtSchwert', 'ZDolch', 'Zhausgr', 'ZCU_AU', 'Zamber', 'ZMonument', 'ZHort', 'ZSichel', 'ZBeil', 'ZMW', 'ZKeform', 'Zkeverz']].mean()\n\n# Calculate the mean Z values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_time_horizons_df = younger_bronze_age_df[younger_bronze_age_df['BCE'] < 1100]\nsubsequent_time_horizons_means = subsequent_time_horizons_df[['ZAxtSchwert', 'ZDolch', 'Zhausgr', 'ZCU_AU', 'Zamber', 'ZMonument', 'ZHort', 'ZSichel', 'ZBeil', 'ZMW', 'ZKeform', 'Zkeverz']].mean()\n\nclose_to_1100_means, subsequent_time_horizons_means",
+    "output": "(ZAxtSchwert    NaN\nZDolch         NaN\nZhausgr        NaN\nZCU_AU         NaN\nZamber         NaN\nZMonument      NaN\nZHort          NaN\nZSichel        NaN\nZBeil          NaN\nZMW            NaN\nZKeform        NaN\nZkeverz        NaN\ndtype: object, ZAxtSchwert    NaN\nZDolch         NaN\nZhausgr        NaN\nZCU_AU         NaN\nZamber         NaN\nZMonument      NaN\nZHort          NaN\nZSichel        NaN\nZBeil          NaN\nZMW            NaN\nZKeform        NaN\nZkeverz        NaN\ndtype: object)",
+    "elapsed_seconds": 0.00455615296959877
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\ndf.head()",
+    "output": "                                               study  ... us_lab.r\n0                                          A Roelofs  ...        0\n1                                AL Morris, ML Still  ...        0\n2  B Liefooghe, P Barrouillet, A Vandierendonck, ...  ...        0\n3                       BC Storm, EL Bjork, RA Bjork  ...        1\n4                         C Mitchell, S Nash, G Hall  ...        0\n\n[5 rows x 60 columns]",
+    "elapsed_seconds": 0.1525036538951099
+  },
+  {
+    "code": "df[['compensation.o', 'compensation.r']].nunique()",
+    "output": "compensation.o    4\ncompensation.r    4\ndtype: int64",
+    "elapsed_seconds": 0.0026664729230105877
+  },
+  {
+    "code": "cash_compensation_studies = df[(df['compensation.o'] == 'cash') & (df['compensation.r'] == 'cash')]\ncash_compensation_studies[['project.y', 'compensation.o', 'compensation.r']].head()",
+    "output": "   project.y compensation.o compensation.r\n5        rpp           cash           cash\n15       rpp           cash           cash\n26       rpp           cash           cash\n44       rpp           cash           cash\n46       rpp           cash           cash",
+    "elapsed_seconds": 0.0043171183206140995
+  },
+  {
+    "code": "domain_compensation = df.groupby('project.y')[['compensation.o', 'compensation.r']].apply(lambda x: x.value_counts()).unstack(fill_value=0)\ndomain_compensation",
+    "output": "compensation.r            cash  credit  mixed  nothing\nproject.y compensation.o                              \nee        cash              18       0      0        0\nrpp       cash              10       2      2        0\n          credit            13      19      7        0\n          mixed              2       5      4        0\n          nothing            0       0      0        4",
+    "elapsed_seconds": 0.007688506040722132
+  }
+]

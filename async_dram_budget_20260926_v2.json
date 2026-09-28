@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "bytes": 20971520,
+  "allocation_device": "cuda",
+  "dram_payload": "skipped_budget",
+  "daos_payload": "byte_equal",
+  "cpu_removal_does_not_remove_daos": null,
+  "daos_valid_without_cpu_copy": true,
+  "stats": {
+    "admitted": 0,
+    "copied": 0,
+    "copied_bytes": 0,
+    "skipped_budget": 1,
+    "skipped_present": 0,
+    "skipped_closed": 0,
+    "skipped_expired": 0,
+    "skipped_allocation": 0,
+    "errors": 0,
+    "peak_pending_bytes": 0,
+    "copy_ms": 0.0,
+    "cpu_hit_chunks": 0,
+    "pending_bytes": 0,
+    "pending_chunks": 0
+  },
+  "cleanup": "only own UUID test key removed"
+}

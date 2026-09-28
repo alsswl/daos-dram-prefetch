@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_bmi_processed.csv')\ndf.head()",
+    "output": "   GENDER  AGE  AGE_2     INCOME  ...  SAMESAVE        BMI  BLACK  HISPANIC\n0  FEMALE   30    900  47.279064  ...         0  25.158946      0         0\n1  FEMALE   30    900  19.000000  ...         0  21.948044      0         0\n2  FEMALE   27    729  16.443000  ...         1  23.674773      0         0\n3  FEMALE   26    676  22.110000  ...         0  17.541486      0         0\n4    MALE   29    841  52.200000  ...         0  25.158946      0         0\n\n[5 rows x 9 columns]",
+    "elapsed_seconds": 0.1459102970547974
+  },
+  {
+    "code": "from sklearn.linear_model import LogisticRegression\nimport numpy as np\n\n# Prepare the data for logistic regression\nX = df[['INCOME']].values.reshape(-1, 1)  # Predictor\ny = df['SAMESAVE'].values  # Response\n\n# Create a logistic regression model\nmodel = LogisticRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0][0]\np_value = model.pvalues[0]\n\ncoefficient, p_value",
+    "output": "AttributeError: 'LogisticRegression' object has no attribute 'pvalues'",
+    "elapsed_seconds": 0.5823181597515941
+  },
+  {
+    "code": "import statsmodels.api as sm\n\n# Prepare the data for logistic regression\nX = df[['INCOME']]  # Predictor\nX = sm.add_constant(X)  # Adding a constant term for the intercept\ny = df['SAMESAVE']  # Response\n\n# Create a logistic regression model\nmodel = sm.Logit(y, X)\nresult = model.fit()\n\n# Get the coefficient and p-value\ncoefficient = result.params['INCOME']\np_value = result.pvalues['INCOME']\n\ncoefficient, p_value",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.01257525384426117
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.model_selection import train_test_split\nfrom scipy.stats import norm\n\n# Load the dataset\ndf = pd.read_csv('/data/nls_bmi_processed.csv')\n\n# Check for missing values\nmissing_values = df.isnull().sum()\nmissing_values\n\n# Prepare the data for logistic regression\nX = df[['INCOME']].values.reshape(-1, 1)  # Predictor\ny = df['SAMESAVE'].values  # Response\n\n# Split the data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# Create a logistic regression model\nmodel = LogisticRegression()\nmodel.fit(X_train, y_train)\n\n# Get the coefficient and standard error\ncoefficient = model.coef_[0][0]\nstd_error = np.sqrt(model.score(X_train, y_train) * (1 - model.score(X_train, y_train)) / len(X_train))\n\n# Calculate the p-value\nz_score = coefficient / std_error\np_value = 2 * (1 - norm.cdf(abs(z_score)))\n\ncoefficient, p_value",
+    "output": "(-0.00465150803321829, 0.3345201549539403)",
+    "elapsed_seconds": 0.019329673144966364
+  }
+]

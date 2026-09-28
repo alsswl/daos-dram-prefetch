@@ -1,0 +1,23 @@
+chunk_size: 128
+local_cpu: true
+enable_async_loading: true
+storage_plugins:
+- daosgds
+extra_config:
+  storage_plugin.daosgds.module_path: lmcache_daos.dram_prefetch_backend
+  storage_plugin.daosgds.class_name: DaosDramPrefetchBackend
+  daosgds.pool: discospool
+  daosgds.container: kvcache
+  daosgds.transport: object
+  daosgds.root: /minji-cold-f61dec0115a24ecd94743de81150b0e3
+  daosgds.object_namespace: 'minji-cold-f61dec0115a24ecd94743de81150b0e3:'
+  daosgds.object_library: /root/discos_minji/libdaosgdr.so
+  daosgds.gpu_buffer_gb: 10
+  daosgds.io_workers: 16
+  daosgds.meta_workers: 16
+  daosgds.store: true
+  daosgds.dfs_oclass: 16842751
+  daosgds.cpu_prefetch_gpu_gb: 5.0
+max_local_cpu_size: 4.0
+use_layerwise: false
+store_location: null

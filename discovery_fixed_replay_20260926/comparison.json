@@ -1,0 +1,23 @@
+[
+  {
+    "concurrency": 4,
+    "completion_token_count_equal": false,
+    "equal_output_requests": 181,
+    "elapsed_on_minus_off_pct": -3.2800379780747457,
+    "ttft_on_minus_off_pct": -9.175819192398649
+  },
+  {
+    "concurrency": 8,
+    "completion_token_count_equal": false,
+    "equal_output_requests": 178,
+    "elapsed_on_minus_off_pct": -4.626284858935136,
+    "ttft_on_minus_off_pct": -8.409217568081962
+  },
+  {
+    "concurrency": 16,
+    "completion_token_count_equal": false,
+    "equal_output_requests": 172,
+    "elapsed_on_minus_off_pct": 0.2910954584586456,
+    "ttft_on_minus_off_pct": -6.860733361055904
+  }
+]

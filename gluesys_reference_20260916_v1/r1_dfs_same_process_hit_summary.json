@@ -1,0 +1,22 @@
+{
+  "repeat": 1,
+  "mode": "dfs",
+  "phase": "same_process_hit",
+  "cache_check_pass": true,
+  "requests": 3,
+  "wall_seconds": 2.575145929120481,
+  "requests_per_second": 1.1649825223786927,
+  "output_tokens_per_second": 74.55888143223633,
+  "ttft_ms_p50": 130.9863708447665,
+  "ttft_ms_p95": 207.2056906297803,
+  "ttft_ms_mean": 142.03144524556896,
+  "ttft_ms_stdev": 68.7888123164124,
+  "first_token_ms_p50": 130.98569680005312,
+  "first_token_ms_p95": 207.20509139355272,
+  "first_token_ms_mean": 142.03080224494138,
+  "first_token_ms_stdev": 68.78885225414155,
+  "e2e_ms_p50": 833.2349248230457,
+  "e2e_ms_p95": 947.1208052476868,
+  "e2e_ms_mean": 858.2115628911803,
+  "e2e_ms_stdev": 91.66359110826271
+}

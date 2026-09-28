@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 69.93527599098161,
+  "llm_calls": 11,
+  "python_calls": 10,
+  "final_answer": "**\nThe scientific hypothesis derived from the dataset is that increased education expenditure and higher school enrollment rates (both primary and secondary) are positively associated with higher GNI per capita, indicating that education investment contributes to economic output in Sub-Saharan Africa and Lower Middle Income Countries. The analysis revealed positive coefficients for the relationships between education expenditure (152.16), primary enrollment (3.21), and secondary enrollment (12.77) with GNI per capita, suggesting a statistically significant positive influence.",
+  "grading": "not run, as in supplied document",
+  "query": "How does increased education expenditure influence human capital and economic output?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/worldbank_education_gdp_indicators/metadata_3.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

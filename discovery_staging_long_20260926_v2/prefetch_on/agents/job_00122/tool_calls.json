@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('requirements_dataset.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: 'requirements_dataset.csv'",
+    "elapsed_seconds": 0.12955114291980863
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/Users/bodhi/projects/datavoyager/DiscoveryBench/evolution_freshwater_fish/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: '/Users/bodhi/projects/datavoyager/DiscoveryBench/evolution_freshwater_fish/body-size-evolution-in-south-american-freshwater-fishes.csv'",
+    "elapsed_seconds": 0.0016967011615633965
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/Users/bodhi/projects/datavoyager/DiscoveryBench/requirements_dataset.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: '/Users/bodhi/projects/datavoyager/DiscoveryBench/requirements_dataset.csv'",
+    "elapsed_seconds": 0.0015407083556056023
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('requirements_dataset.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: 'requirements_dataset.csv'",
+    "elapsed_seconds": 0.001519643235951662
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/Users/bodhi/projects/datavoyager/DiscoveryBench/requirements_dataset.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: '/Users/bodhi/projects/datavoyager/DiscoveryBench/requirements_dataset.csv'",
+    "elapsed_seconds": 0.0015705232508480549
+  }
+]

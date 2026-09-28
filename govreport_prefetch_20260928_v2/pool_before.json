@@ -1,0 +1,67 @@
+{
+  "response": {
+    "query_mask": "disabled_engines,rebuild,space",
+    "state": "Ready",
+    "uuid": "f973c142-2353-41da-b154-5079ba6969f2",
+    "label": "discospool",
+    "total_targets": 16,
+    "active_targets": 16,
+    "total_engines": 2,
+    "disabled_targets": 0,
+    "version": 1,
+    "svc_ldr": 0,
+    "svc_reps": [
+      0,
+      1
+    ],
+    "rebuild": {
+      "status": 0,
+      "state": "idle",
+      "derived_state": "idle",
+      "objects": 0,
+      "records": 0,
+      "total_objects": 0,
+      "degraded": false
+    },
+    "tier_stats": [
+      {
+        "total": 16106127360,
+        "free": 15255712640,
+        "min": 953155656,
+        "max": 953683144,
+        "mean": 953482040,
+        "media_type": "scm"
+      },
+      {
+        "total": 2000000000000,
+        "free": 1528361607168,
+        "min": 94209056768,
+        "max": 97707032576,
+        "mean": 95522600448,
+        "media_type": "nvme"
+      }
+    ],
+    "disabled_ranks": [],
+    "pool_layout_ver": 0,
+    "upgrade_layout_ver": 0,
+    "mem_file_bytes": 0,
+    "md_on_ssd_active": false,
+    "self_heal_policy": "",
+    "usage": [
+      {
+        "tier_name": "SCM",
+        "size": 16106127360,
+        "free": 15255712640,
+        "imbalance": 0
+      },
+      {
+        "tier_name": "NVME",
+        "size": 2000000000000,
+        "free": 1528361607168,
+        "imbalance": 2
+      }
+    ]
+  },
+  "error": null,
+  "status": 0
+}

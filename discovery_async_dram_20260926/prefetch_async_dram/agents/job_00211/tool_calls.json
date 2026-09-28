@@ -1,0 +1,52 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/worldbank_education_gdp.csv')\ndf.head()",
+    "output": "        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n2  Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n3  Sub-Saharan Africa          SSF  ...     97.963791     96.974968\n4  Sub-Saharan Africa          SSF  ...     42.847160     43.372971\n\n[5 rows x 45 columns]",
+    "elapsed_seconds": 0.1431898968294263
+  },
+  {
+    "code": "# Identify the relevant columns\neducation_expenditure_col = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_col = 'GNI per capita (constant 2015 US dollar)'\n\n# Extract the relevant columns\neducation_expenditure = df[education_expenditure_col]\ngdp = df[gdp_col]\n\n# Calculate the correlation coefficient\ncorrelation = education_expenditure.corr(gdp)\ncorrelation",
+    "output": "KeyError: 'Adjusted savings: education expenditure (percentage of GNI)'",
+    "elapsed_seconds": 0.0015634619630873203
+  },
+  {
+    "code": "df.columns.tolist()",
+    "output": "['Country Group', 'Country Code', 'Series Name', 'Series Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]']",
+    "elapsed_seconds": 0.0015680729411542416
+  },
+  {
+    "code": "# Filter the dataset for the relevant series names\neducation_expenditure_row = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\ngdp_row = df[df['Series Name'] == 'GNI per capita (constant 2015 US dollar)']\n\n# Extract the values for these rows\neducation_expenditure_values = education_expenditure_row.iloc[:, 4:].values.flatten()\ngdp_values = gdp_row.iloc[:, 4:].values.flatten()\n\n# Calculate the correlation coefficient\ncorrelation = np.corrcoef(education_expenditure_values, gdp_values)[0, 1]\ncorrelation",
+    "output": "NameError: name 'np' is not defined",
+    "elapsed_seconds": 0.0024166726507246494
+  },
+  {
+    "code": "import numpy as np\n\n# Recalculate the correlation coefficient\ncorrelation = np.corrcoef(education_expenditure_values, gdp_values)[0, 1]\ncorrelation",
+    "output": "ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 82 and the array at index 1 has size 0",
+    "elapsed_seconds": 0.0015521361492574215
+  },
+  {
+    "code": "# Inspect the data for the relevant rows\neducation_expenditure_row.head()\ngdp_row.head()",
+    "output": "Empty DataFrame\nColumns: [Country Group, Country Code, Series Name, Series Code, 1975 [YR1975], 1976 [YR1976], 1977 [YR1977], 1978 [YR1978], 1979 [YR1979], 1980 [YR1980], 1981 [YR1981], 1982 [YR1982], 1983 [YR1983], 1984 [YR1984], 1985 [YR1985], 1986 [YR1986], 1987 [YR1987], 1988 [YR1988], 1989 [YR1989], 1990 [YR1990], 1991 [YR1991], 1992 [YR1992], 1993 [YR1993], 1994 [YR1994], 1995 [YR1995], 1996 [YR1996], 1997 [YR1997], 1998 [YR1998], 1999 [YR1999], 2000 [YR2000], 2001 [YR2001], 2002 [YR2002], 2003 [YR2003], 2004 [YR2004], 2005 [YR2005], 2006 [YR2006], 2007 [YR2007], 2008 [YR2008], 2009 [YR2009], 2010 [YR2010], 2011 [YR2011], 2012 [YR2012], 2013 [YR2013], 2014 [YR2014], 2015 [YR2015]]\nIndex: []",
+    "elapsed_seconds": 0.001854411792010069
+  },
+  {
+    "code": "df['Series Name'].unique()",
+    "output": "['GNI per capita (constant 2015 USdollar)'\n 'Adjusted savings: education expenditure (percentage of GNI)'\n 'Exports of goods and services (annual percentage growth)'\n 'School enrollment, primary (percentage gross)'\n 'School enrollment, secondary (percentage gross)'\n 'Labor force participation rate, total (percentage of total population ages 15+) (modeled ILO estimate)']",
+    "elapsed_seconds": 0.0016070487909018993
+  },
+  {
+    "code": "# Filter the dataset for the relevant series names\neducation_expenditure_row = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\ngdp_row = df[df['Series Name'] == 'GNI per capita (constant 2015 USdollar)']\n\n# Extract the values for these rows\neducation_expenditure_values = education_expenditure_row.iloc[:, 4:].values.flatten()\ngdp_values = gdp_row.iloc[:, 4:].values.flatten()\n\n# Calculate the correlation coefficient\ncorrelation = np.corrcoef(education_expenditure_values, gdp_values)[0, 1]\ncorrelation",
+    "output": "nan",
+    "elapsed_seconds": 0.0027482490986585617
+  },
+  {
+    "code": "# Inspect the data for the relevant rows\neducation_expenditure_row\ngdp_row",
+    "output": "         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n6  Lower middle income          LMC  ...   1894.302198   1965.288164\n\n[2 rows x 45 columns]",
+    "elapsed_seconds": 0.013751485850661993
+  },
+  {
+    "code": "# Extract the values for education expenditure and GDP for each country group\neducation_expenditure_row = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\ngdp_row = df[df['Series Name'] == 'GNI per capita (constant 2015 USdollar)']\n\n# Extract the values for these rows\neducation_expenditure_values = education_expenditure_row.iloc[:, 4:].values\ngdp_values = gdp_row.iloc[:, 4:].values\n\n# Calculate the correlation coefficient for each country group\ncorrelation_sub_saharan = np.corrcoef(education_expenditure_values[0], gdp_values[0])[0, 1]\ncorrelation_lower_middle_income = np.corrcoef(education_expenditure_values[1], gdp_values[1])[0, 1]\n\ncorrelation_sub_saharan, correlation_lower_middle_income",
+    "output": "(nan, -0.4805381615837641)",
+    "elapsed_seconds": 0.0025269147008657455
+  }
+]

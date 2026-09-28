@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 35.43803276773542,
+  "llm_calls": 6,
+  "python_calls": 5,
+  "final_answer": "Hypothesis: In the context of ML-enabled system projects, the proportion of respondents who indicated that Non-Functional Requirements (NFRs) were not at all considered is 0.0, with a 95% confidence interval of (0.0, 0.0). This suggests that no respondents in the dataset indicated that NFRs were not at all considered in their projects. The variables chosen are the respondents' responses to the 'Q11_ML_NFRs_Not_Considered' question, and the relationship is that none of the respondents indicated that NFRs were not at all considered, which is statistically significant with a confidence interval of (0.0, 0.0).",
+  "grading": "not run, as in supplied document",
+  "query": "What is the proportion of respondents and their 95% Confidence Interval who informed that Non-Functional Requirements were not at all considered within their ML-enabled system projects, after bootstrapping for statistical significance?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/requirements_engineering_for_ML_enabled_systems/metadata_12.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

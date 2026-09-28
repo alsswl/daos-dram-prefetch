@@ -1,0 +1,195 @@
+{
+  "args": {
+    "repeats": 1,
+    "chunk_size": 128,
+    "pool": "discospool",
+    "container": "kvcache",
+    "gpu_buffer_gb": 10,
+    "io_workers": 16,
+    "meta_workers": 16,
+    "model": "Qwen/Qwen3-14B",
+    "port": 8017,
+    "max_model_len": 16384,
+    "restart_runs": 10,
+    "interleave_modes": true
+  },
+  "server_command": [
+    "/root/discos_minji/run_vllm.sh",
+    "/root/discos_minji/venv/bin/python3",
+    "-m",
+    "vllm.entrypoints.openai.api_server",
+    "--model",
+    "Qwen/Qwen3-14B",
+    "--served-model-name",
+    "comparison-model",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8017",
+    "--max-model-len",
+    "16384",
+    "--gpu-memory-utilization",
+    "0.75",
+    "--enforce-eager",
+    "--seed",
+    "0",
+    "--no-enable-prefix-caching",
+    "--enable-prompt-tokens-details",
+    "--kv-transfer-config",
+    "{\"kv_connector\":\"LMCacheConnectorV1\",\"kv_role\":\"kv_both\"}"
+  ],
+  "protocol": "adventure-travel_0_0, react; initial fill plus cache-preserving fresh-vLLM replays; no grading",
+  "schedule": [
+    {
+      "mode": "dfs",
+      "run": "run1",
+      "restart_index": 0,
+      "phase": "fill"
+    },
+    {
+      "mode": "object",
+      "run": "run1",
+      "restart_index": 0,
+      "phase": "fill"
+    },
+    {
+      "mode": "object",
+      "run": "run2",
+      "restart_index": 1,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "dfs",
+      "run": "run2",
+      "restart_index": 1,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "dfs",
+      "run": "run3",
+      "restart_index": 2,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "object",
+      "run": "run3",
+      "restart_index": 2,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "object",
+      "run": "run4",
+      "restart_index": 3,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "dfs",
+      "run": "run4",
+      "restart_index": 3,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "dfs",
+      "run": "run5",
+      "restart_index": 4,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "object",
+      "run": "run5",
+      "restart_index": 4,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "object",
+      "run": "run6",
+      "restart_index": 5,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "dfs",
+      "run": "run6",
+      "restart_index": 5,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "dfs",
+      "run": "run7",
+      "restart_index": 6,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "object",
+      "run": "run7",
+      "restart_index": 6,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "object",
+      "run": "run8",
+      "restart_index": 7,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "dfs",
+      "run": "run8",
+      "restart_index": 7,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "dfs",
+      "run": "run9",
+      "restart_index": 8,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "object",
+      "run": "run9",
+      "restart_index": 8,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "object",
+      "run": "run10",
+      "restart_index": 9,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "dfs",
+      "run": "run10",
+      "restart_index": 9,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "dfs",
+      "run": "run11",
+      "restart_index": 10,
+      "phase": "restart_hit"
+    },
+    {
+      "mode": "object",
+      "run": "run11",
+      "restart_index": 10,
+      "phase": "restart_hit"
+    }
+  ],
+  "cache_policy": "Fresh namespace per mode; all replay indices within a mode share and extend it. DAOS server cache is not reset.",
+  "differences_from_document": [
+    "unified DFS/object backends and common native stack",
+    "chunk 128, staging 10GiB, workers 16; eager, GPU utilization 0.75",
+    "temperature 0, max output 2048 tokens/call, max iterations 25",
+    "network-isolated Python tool with read-only task data at /data",
+    "fresh namespace instead of deleting shared container"
+  ],
+  "source_sha256": {
+    "full_agent_bench.py": "b8b24067a8314a61190e27166c75ae20bea12b3813f407b127d02eb003d02f52",
+    "run_full_agent.py": "b9e7a5dc4d65a26b9e63ad537bab53b9a52b70b17725b95ef4d87c3d2c890a28",
+    "agent_python_worker.py": "c950ce851ee4f1cb0f4e619a342c8a5f69cc4203cba626157bdf7a0a3e567190",
+    "run_vllm.sh": "5f303713631354a1b56837a6f7463a3ed1c45752fd847b05da54a8023e6af32e",
+    "lmcache_daos/gds_backend.py": "f89fc1e30ff0452a47af8cf699d65025bb8af82a687c733a921b175b5352447f",
+    "libdaosgdr.so": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c",
+    "compare_e2e.py": "bf4de2266ed3c7578f8f4399a2d88c79be02fef10996ce15dcb0699f513c081c",
+    "discoverybench/agents/react_agent.py": "9d4cbc1b3a4ba12ffeef1e83cd34fb9d1dd546a6055ac7a61c04e5fd33ae8fb3",
+    "discoverybench/agents/react_utils.py": "d01a92e883a883bb4bd7195d25ac2c9672dc052529dbc0eabf858a319569a392"
+  }
+}

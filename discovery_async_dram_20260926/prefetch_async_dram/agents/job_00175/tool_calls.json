@@ -1,0 +1,42 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Load the capital.csv dataset\ndf_capital = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of the time_series_data.csv dataset\ndf_time_series.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15004631783813238
+  },
+  {
+    "code": "# Find the maximum value in the 'Depot_inter' column\nmax_depot_value = df_time_series['Depot_inter'].max()\n\n# Find the index of the maximum value\nmax_depot_index = df_time_series['Depot_inter'].idxmax()\n\n# Find the corresponding CE value\npeak_ce = df_time_series.loc[max_depot_index, 'CE']\n\n# Convert the CE value to a century\npeak_century = (peak_ce // 100) + 1\n\npeak_century",
+    "output": "-10",
+    "elapsed_seconds": 0.001913128886371851
+  },
+  {
+    "code": "# Find the index of the maximum value\nmax_depot_index = df_time_series['Depot_inter'].idxmax()\n\n# Extract the surrounding data points\nsurrounding_data = df_time_series.iloc[max_depot_index - 5:max_depot_index + 5]\n\nsurrounding_data[['CE', 'Depot_inter']]",
+    "output": "        CE  Depot_inter\n2995 -1105       3.1945\n2996 -1104       3.2316\n2997 -1103       3.2687\n2998 -1102       3.3058\n2999 -1101       3.3429\n3000 -1100       3.3800\n3001 -1099       3.3800\n3002 -1098       3.3800\n3003 -1097       3.3800\n3004 -1096       3.3800",
+    "elapsed_seconds": 0.0038922270759940147
+  },
+  {
+    "code": "# Load the capital.csv dataset\ndf_capital = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of the capital.csv dataset\ndf_capital.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.007620672229677439
+  },
+  {
+    "code": "# Check if 'ZHort' is present in the capital.csv dataset\n'ZHort' in df_capital.columns",
+    "output": "True",
+    "elapsed_seconds": 0.0014223838225007057
+  },
+  {
+    "code": "# Find the maximum value in the 'ZHort' column\nmax_zhort_value = df_capital['ZHort'].max()\n\n# Find the index of the maximum value\nmax_zhort_index = df_capital['ZHort'].idxmax()\n\n# Find the corresponding BCE value\npeak_bce = df_capital.loc[max_zhort_index, 'BCE']\n\n# Convert the BCE value to a century\npeak_century_bce = (peak_bce // 100) + 1\n\npeak_century_bce",
+    "output": "12",
+    "elapsed_seconds": 0.0019763419404625893
+  },
+  {
+    "code": "# Convert the 'BCE' column to CE for consistency\ndf_capital['CE'] = -df_capital['BCE']\n\n# Merge the two datasets on the CE column\nmerged_df = pd.merge(df_time_series, df_capital, on='CE', how='inner')\n\n# Calculate the correlation between 'Depot_inter' and 'ZHort'\ncorrelation = merged_df['Depot_inter'].corr(merged_df['ZHort'])\n\ncorrelation",
+    "output": "ValueError: could not convert string to float: '-0,55'",
+    "elapsed_seconds": 0.003239703830331564
+  },
+  {
+    "code": "# Clean the 'ZHort' column by replacing commas with periods and converting to float\ndf_capital['ZHort'] = df_capital['ZHort'].str.replace(',', '.').astype(float)\n\n# Convert the 'BCE' column to CE for consistency\ndf_capital['CE'] = -df_capital['BCE']\n\n# Merge the two datasets on the CE column\nmerged_df = pd.merge(df_time_series, df_capital, on='CE', how='inner')\n\n# Calculate the correlation between 'Depot_inter' and 'ZHort'\ncorrelation = merged_df['Depot_inter'].corr(merged_df['ZHort'])\n\ncorrelation",
+    "output": "0.9999999999999998",
+    "elapsed_seconds": 0.003906309138983488
+  }
+]

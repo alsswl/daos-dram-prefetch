@@ -1,0 +1,607 @@
+[
+  {
+    "run": "dfs_run1",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2389372) WARNING 09-17 22:55:27 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2389372) WARNING 09-17 22:55:27 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2389372) WARNING 09-17 22:55:27 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2389586) WARNING 09-17 22:55:43 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2389586) \u001b[33;20m[2026-09-17 22:55:43,888] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2389586) \u001b[33;20m[2026-09-17 22:55:45,382] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2389586) \u001b[33;20m[2026-09-17 22:55:45,382] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2389586) WARNING 09-17 22:55:45 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2389586) WARNING 09-17 22:55:49 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2389586) \u001b[33;20m[2026-09-17 22:55:49,084] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2389586) WARNING 09-17 22:55:49 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2389586) WARNING 09-17 22:55:49 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2389372) WARNING 09-17 22:55:49 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2389586) \u001b[33;20m[2026-09-17 22:55:57,643] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-b5b91f5dd4f85bd5-8940573c: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2389586) \u001b[33;20m[2026-09-17 22:55:58,614] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-bc94329d43a50537-b69d8af8: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2389586) \u001b[33;20m[2026-09-17 22:56:02,132] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-96952824f222e173-89fcd738: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2389372) WARNING 09-17 22:56:06 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "dfs_run2",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2392797) WARNING 09-17 22:57:47 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2392797) WARNING 09-17 22:57:47 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2392797) WARNING 09-17 22:57:47 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2393008) WARNING 09-17 22:58:04 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2393008) \u001b[33;20m[2026-09-17 22:58:04,240] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2393008) \u001b[33;20m[2026-09-17 22:58:05,706] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2393008) \u001b[33;20m[2026-09-17 22:58:05,706] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2393008) WARNING 09-17 22:58:06 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2393008) WARNING 09-17 22:58:09 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2393008) \u001b[33;20m[2026-09-17 22:58:09,411] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2393008) WARNING 09-17 22:58:09 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2393008) WARNING 09-17 22:58:09 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2392797) WARNING 09-17 22:58:09 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2393008) \u001b[33;20m[2026-09-17 22:58:18,193] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-a02fa21296d50502-87e037ee: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2393008) \u001b[33;20m[2026-09-17 22:58:19,118] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-b5493ce28ed4dfcc-9d09cd47: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2392797) WARNING 09-17 22:58:25 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "dfs_run3",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2394101) WARNING 09-17 22:58:33 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2394101) WARNING 09-17 22:58:33 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2394101) WARNING 09-17 22:58:33 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2394308) WARNING 09-17 22:58:49 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2394308) \u001b[33;20m[2026-09-17 22:58:50,155] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2394308) \u001b[33;20m[2026-09-17 22:58:51,631] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2394308) \u001b[33;20m[2026-09-17 22:58:51,631] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2394308) WARNING 09-17 22:58:52 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2394308) WARNING 09-17 22:58:55 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2394308) \u001b[33;20m[2026-09-17 22:58:55,445] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2394308) WARNING 09-17 22:58:55 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2394308) WARNING 09-17 22:58:55 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2394101) WARNING 09-17 22:58:55 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2394308) \u001b[33;20m[2026-09-17 22:59:04,210] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-909c108b81f44279-aaf60b24: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2394308) \u001b[33;20m[2026-09-17 22:59:05,133] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-adc5aa8ecf5d49a7-ac6c907b: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2394101) WARNING 09-17 22:59:11 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "dfs_run4",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2397554) WARNING 09-17 23:00:51 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2397554) WARNING 09-17 23:00:51 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2397554) WARNING 09-17 23:00:51 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2397768) WARNING 09-17 23:01:07 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2397768) \u001b[33;20m[2026-09-17 23:01:08,196] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2397768) \u001b[33;20m[2026-09-17 23:01:09,671] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2397768) \u001b[33;20m[2026-09-17 23:01:09,671] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2397768) WARNING 09-17 23:01:10 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2397768) WARNING 09-17 23:01:13 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2397768) \u001b[33;20m[2026-09-17 23:01:13,357] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2397768) WARNING 09-17 23:01:13 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2397768) WARNING 09-17 23:01:13 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2397554) WARNING 09-17 23:01:13 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2397768) \u001b[33;20m[2026-09-17 23:01:22,154] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-b6a6a60601aca416-a84eae8b: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2397768) \u001b[33;20m[2026-09-17 23:01:23,108] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-a3cac4f513de3c4f-a2785393: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2397554) WARNING 09-17 23:01:29 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "dfs_run5",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2398687) WARNING 09-17 23:01:37 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2398687) WARNING 09-17 23:01:37 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2398687) WARNING 09-17 23:01:37 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2398894) WARNING 09-17 23:01:54 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2398894) \u001b[33;20m[2026-09-17 23:01:54,522] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2398894) \u001b[33;20m[2026-09-17 23:01:55,998] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2398894) \u001b[33;20m[2026-09-17 23:01:55,998] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2398894) WARNING 09-17 23:01:56 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2398894) WARNING 09-17 23:01:59 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2398894) \u001b[33;20m[2026-09-17 23:01:59,690] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2398894) WARNING 09-17 23:01:59 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2398894) WARNING 09-17 23:01:59 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2398687) WARNING 09-17 23:02:00 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2398894) \u001b[33;20m[2026-09-17 23:02:08,403] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-abe183eb4e2343d8-a4b30a62: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2398894) \u001b[33;20m[2026-09-17 23:02:09,335] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-9f4020879862d015-828ba499: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2398687) WARNING 09-17 23:02:15 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "dfs_run6",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2401998) WARNING 09-17 23:03:54 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2401998) WARNING 09-17 23:03:54 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2401998) WARNING 09-17 23:03:54 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2402211) WARNING 09-17 23:04:11 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2402211) \u001b[33;20m[2026-09-17 23:04:11,621] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2402211) \u001b[33;20m[2026-09-17 23:04:13,114] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2402211) \u001b[33;20m[2026-09-17 23:04:13,114] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2402211) WARNING 09-17 23:04:13 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2402211) WARNING 09-17 23:04:16 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2402211) \u001b[33;20m[2026-09-17 23:04:16,831] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2402211) WARNING 09-17 23:04:16 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2402211) WARNING 09-17 23:04:16 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2401998) WARNING 09-17 23:04:17 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2402211) \u001b[33;20m[2026-09-17 23:04:25,522] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-a03581548fa1fbd0-9bac1ada: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2402211) \u001b[33;20m[2026-09-17 23:04:26,456] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-b5e969a8123e1d40-9768dbc9: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2401998) WARNING 09-17 23:04:33 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "dfs_run7",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2403118) WARNING 09-17 23:04:40 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2403118) WARNING 09-17 23:04:40 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2403118) WARNING 09-17 23:04:40 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2403328) WARNING 09-17 23:04:57 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2403328) \u001b[33;20m[2026-09-17 23:04:57,404] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2403328) \u001b[33;20m[2026-09-17 23:04:58,881] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2403328) \u001b[33;20m[2026-09-17 23:04:58,882] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2403328) WARNING 09-17 23:04:59 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2403328) WARNING 09-17 23:05:02 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2403328) \u001b[33;20m[2026-09-17 23:05:02,616] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2403328) WARNING 09-17 23:05:02 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2403328) WARNING 09-17 23:05:02 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2403118) WARNING 09-17 23:05:03 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2403328) \u001b[33;20m[2026-09-17 23:05:11,499] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-a49a0b62c35341b1-ad6ca8eb: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2403328) \u001b[33;20m[2026-09-17 23:05:12,422] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-885b38c2aefcf847-abc42173: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2403118) WARNING 09-17 23:05:19 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "dfs_run8",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2406433) WARNING 09-17 23:06:58 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2406433) WARNING 09-17 23:06:58 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2406433) WARNING 09-17 23:06:58 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2406642) WARNING 09-17 23:07:15 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2406642) \u001b[33;20m[2026-09-17 23:07:15,550] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2406642) \u001b[33;20m[2026-09-17 23:07:17,036] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2406642) \u001b[33;20m[2026-09-17 23:07:17,036] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2406642) WARNING 09-17 23:07:17 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2406642) WARNING 09-17 23:07:20 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2406642) \u001b[33;20m[2026-09-17 23:07:20,742] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2406642) WARNING 09-17 23:07:20 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2406642) WARNING 09-17 23:07:20 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2406433) WARNING 09-17 23:07:21 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2406642) \u001b[33;20m[2026-09-17 23:07:29,495] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-986c2be59bf7ad8f-b8542517: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2406642) \u001b[33;20m[2026-09-17 23:07:30,426] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-a751455535a109d4-b4bef4a6: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2406433) WARNING 09-17 23:07:37 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "dfs_run9",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2407547) WARNING 09-17 23:07:44 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2407547) WARNING 09-17 23:07:44 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2407547) WARNING 09-17 23:07:44 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2407754) WARNING 09-17 23:08:01 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2407754) \u001b[33;20m[2026-09-17 23:08:01,504] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2407754) \u001b[33;20m[2026-09-17 23:08:02,983] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2407754) \u001b[33;20m[2026-09-17 23:08:02,983] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2407754) WARNING 09-17 23:08:03 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2407754) WARNING 09-17 23:08:06 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2407754) \u001b[33;20m[2026-09-17 23:08:06,784] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2407754) WARNING 09-17 23:08:06 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2407754) WARNING 09-17 23:08:06 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2407547) WARNING 09-17 23:08:07 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2407754) \u001b[33;20m[2026-09-17 23:08:15,517] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-be5995e49b8a3308-981b8770: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2407754) \u001b[33;20m[2026-09-17 23:08:16,422] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-9290fd558989c115-93f83ead: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2407547) WARNING 09-17 23:08:22 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "dfs_run10",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2410862) WARNING 09-17 23:10:02 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2410862) WARNING 09-17 23:10:02 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2410862) WARNING 09-17 23:10:02 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2411069) WARNING 09-17 23:10:19 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2411069) \u001b[33;20m[2026-09-17 23:10:19,674] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2411069) \u001b[33;20m[2026-09-17 23:10:21,183] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2411069) \u001b[33;20m[2026-09-17 23:10:21,184] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2411069) WARNING 09-17 23:10:21 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2411069) WARNING 09-17 23:10:24 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2411069) \u001b[33;20m[2026-09-17 23:10:24,964] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2411069) WARNING 09-17 23:10:24 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2411069) WARNING 09-17 23:10:24 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2410862) WARNING 09-17 23:10:25 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2411069) \u001b[33;20m[2026-09-17 23:10:33,566] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-9c4502fcdf6fb725-b06b138a: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2411069) \u001b[33;20m[2026-09-17 23:10:34,494] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-a955efb11c692647-a210b8af: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2410862) WARNING 09-17 23:10:41 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "dfs_run11",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2411988) WARNING 09-17 23:10:48 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2411988) WARNING 09-17 23:10:48 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2411988) WARNING 09-17 23:10:48 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2412199) WARNING 09-17 23:11:05 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2412199) \u001b[33;20m[2026-09-17 23:11:05,639] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2412199) \u001b[33;20m[2026-09-17 23:11:07,109] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2412199) \u001b[33;20m[2026-09-17 23:11:07,109] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2412199) WARNING 09-17 23:11:07 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2412199) WARNING 09-17 23:11:10 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2412199) \u001b[33;20m[2026-09-17 23:11:10,909] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2412199) WARNING 09-17 23:11:10 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2412199) WARNING 09-17 23:11:10 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2411988) WARNING 09-17 23:11:11 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2412199) \u001b[33;20m[2026-09-17 23:11:19,597] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-90e91a6e4a1b1974-b62ff2dd: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2412199) \u001b[33;20m[2026-09-17 23:11:20,595] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-a12aa693f58a7ec8-bbdfccc5: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2411988) WARNING 09-17 23:11:27 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "object_run1",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2390494) WARNING 09-17 22:56:13 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2390494) WARNING 09-17 22:56:13 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2390494) WARNING 09-17 22:56:13 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2390715) WARNING 09-17 22:56:30 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2390715) \u001b[33;20m[2026-09-17 22:56:30,772] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2390715) \u001b[33;20m[2026-09-17 22:56:32,247] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2390715) \u001b[33;20m[2026-09-17 22:56:32,247] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2390715) WARNING 09-17 22:56:32 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2390715) WARNING 09-17 22:56:36 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2390715) \u001b[33;20m[2026-09-17 22:56:36,077] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2390715) WARNING 09-17 22:56:36 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2390715) WARNING 09-17 22:56:36 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2390494) WARNING 09-17 22:56:36 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2390715) \u001b[33;20m[2026-09-17 22:56:44,751] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-92e2d66c69d07a8c-b9389d54: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2390715) \u001b[33;20m[2026-09-17 22:56:45,714] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-9501a97e5a3fff34-9b3ca3c6: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2390715) \u001b[33;20m[2026-09-17 22:56:49,320] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-8acef3bc3f16bced-86738182: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2390494) WARNING 09-17 22:56:53 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "object_run2",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2391630) WARNING 09-17 22:57:01 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2391630) WARNING 09-17 22:57:01 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2391630) WARNING 09-17 22:57:01 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2391885) WARNING 09-17 22:57:17 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2391885) \u001b[33;20m[2026-09-17 22:57:17,942] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2391885) \u001b[33;20m[2026-09-17 22:57:19,431] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2391885) \u001b[33;20m[2026-09-17 22:57:19,431] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2391885) WARNING 09-17 22:57:19 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2391885) WARNING 09-17 22:57:23 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2391885) \u001b[33;20m[2026-09-17 22:57:23,172] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2391885) WARNING 09-17 22:57:23 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2391885) WARNING 09-17 22:57:23 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2391630) WARNING 09-17 22:57:23 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2391885) \u001b[33;20m[2026-09-17 22:57:32,009] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-b74a4dced0bdd27f-8d1c163c: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2391885) \u001b[33;20m[2026-09-17 22:57:32,980] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-b772ae76ccad8f34-949fa51d: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2391630) WARNING 09-17 22:57:39 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "object_run3",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2395214) WARNING 09-17 22:59:19 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2395214) WARNING 09-17 22:59:19 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2395214) WARNING 09-17 22:59:19 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2395428) WARNING 09-17 22:59:35 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2395428) \u001b[33;20m[2026-09-17 22:59:36,222] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2395428) \u001b[33;20m[2026-09-17 22:59:37,724] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2395428) \u001b[33;20m[2026-09-17 22:59:37,725] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2395428) WARNING 09-17 22:59:38 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2395428) WARNING 09-17 22:59:41 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2395428) \u001b[33;20m[2026-09-17 22:59:41,546] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2395428) WARNING 09-17 22:59:41 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2395428) WARNING 09-17 22:59:41 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2395214) WARNING 09-17 22:59:41 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2395428) \u001b[33;20m[2026-09-17 22:59:50,150] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-a78f438d5bc48ea1-85f7f11d: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2395428) \u001b[33;20m[2026-09-17 22:59:51,081] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-b89bea6b4b37f668-adfd42cb: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2395214) WARNING 09-17 22:59:57 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "object_run4",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2396437) WARNING 09-17 23:00:05 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2396437) WARNING 09-17 23:00:05 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2396437) WARNING 09-17 23:00:05 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2396649) WARNING 09-17 23:00:21 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2396649) \u001b[33;20m[2026-09-17 23:00:22,168] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2396649) \u001b[33;20m[2026-09-17 23:00:23,649] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2396649) \u001b[33;20m[2026-09-17 23:00:23,649] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2396649) WARNING 09-17 23:00:24 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2396649) WARNING 09-17 23:00:27 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2396649) \u001b[33;20m[2026-09-17 23:00:27,359] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2396649) WARNING 09-17 23:00:27 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2396649) WARNING 09-17 23:00:27 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2396437) WARNING 09-17 23:00:27 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2396649) \u001b[33;20m[2026-09-17 23:00:36,086] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-837cba95cf507d51-be2a50fc: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2396649) \u001b[33;20m[2026-09-17 23:00:37,038] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-b326b44924dc9276-86db6080: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2396437) WARNING 09-17 23:00:43 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "object_run5",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2399772) WARNING 09-17 23:02:23 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2399772) WARNING 09-17 23:02:23 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2399772) WARNING 09-17 23:02:23 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2400008) WARNING 09-17 23:02:40 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2400008) \u001b[33;20m[2026-09-17 23:02:40,511] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2400008) \u001b[33;20m[2026-09-17 23:02:42,005] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2400008) \u001b[33;20m[2026-09-17 23:02:42,005] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2400008) WARNING 09-17 23:02:42 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2400008) WARNING 09-17 23:02:45 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2400008) \u001b[33;20m[2026-09-17 23:02:45,730] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2400008) WARNING 09-17 23:02:45 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2400008) WARNING 09-17 23:02:45 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2399772) WARNING 09-17 23:02:46 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2400008) \u001b[33;20m[2026-09-17 23:02:54,456] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-b291379217141ace-88d7e452: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2400008) \u001b[33;20m[2026-09-17 23:02:55,406] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-abb2f2528681f57f-9994872c: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2399772) WARNING 09-17 23:03:02 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "object_run6",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2400881) WARNING 09-17 23:03:09 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2400881) WARNING 09-17 23:03:09 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2400881) WARNING 09-17 23:03:09 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2401091) WARNING 09-17 23:03:26 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2401091) \u001b[33;20m[2026-09-17 23:03:26,442] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2401091) \u001b[33;20m[2026-09-17 23:03:27,934] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2401091) \u001b[33;20m[2026-09-17 23:03:27,934] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2401091) WARNING 09-17 23:03:28 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2401091) WARNING 09-17 23:03:31 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2401091) \u001b[33;20m[2026-09-17 23:03:31,618] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2401091) WARNING 09-17 23:03:31 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2401091) WARNING 09-17 23:03:31 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2400881) WARNING 09-17 23:03:32 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2401091) \u001b[33;20m[2026-09-17 23:03:39,507] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-aeea62300eb9ee77-a6c0eaf0: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2401091) \u001b[33;20m[2026-09-17 23:03:40,458] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-a6ca2270bb553d17-8311a4fa: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2400881) WARNING 09-17 23:03:47 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "object_run7",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2404200) WARNING 09-17 23:05:26 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2404200) WARNING 09-17 23:05:26 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2404200) WARNING 09-17 23:05:26 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2404445) WARNING 09-17 23:05:43 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2404445) \u001b[33;20m[2026-09-17 23:05:43,465] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2404445) \u001b[33;20m[2026-09-17 23:05:44,954] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2404445) \u001b[33;20m[2026-09-17 23:05:44,954] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2404445) WARNING 09-17 23:05:45 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2404445) WARNING 09-17 23:05:48 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2404445) \u001b[33;20m[2026-09-17 23:05:48,810] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2404445) WARNING 09-17 23:05:48 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2404445) WARNING 09-17 23:05:48 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2404200) WARNING 09-17 23:05:49 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2404445) \u001b[33;20m[2026-09-17 23:05:57,480] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-b7a928a520d1681d-b9574496: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2404445) \u001b[33;20m[2026-09-17 23:05:58,417] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-96d1329d7c1d45ad-8a14b7b5: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2404200) WARNING 09-17 23:06:04 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "object_run8",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [
+      "(APIServer pid=2405317) ERROR 09-17 23:06:51 [async_llm.py:704] AsyncLLM output_handler failed.",
+      "(APIServer pid=2405317) ERROR 09-17 23:06:51 [async_llm.py:704] Traceback (most recent call last):",
+      "(APIServer pid=2405317) ERROR 09-17 23:06:51 [async_llm.py:704]   File \"/root/discos_minji/venv/lib64/python3.12/site-packages/vllm/v1/engine/async_llm.py\", line 660, in output_handler",
+      "(APIServer pid=2405317) ERROR 09-17 23:06:51 [async_llm.py:704]     outputs = await engine_core.get_output_async()",
+      "(APIServer pid=2405317) ERROR 09-17 23:06:51 [async_llm.py:704]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+      "(APIServer pid=2405317) ERROR 09-17 23:06:51 [async_llm.py:704]   File \"/root/discos_minji/venv/lib64/python3.12/site-packages/vllm/v1/engine/core_client.py\", line 1061, in get_output_async",
+      "(APIServer pid=2405317) ERROR 09-17 23:06:51 [async_llm.py:704]     raise self._format_exception(outputs) from None",
+      "(APIServer pid=2405317) ERROR 09-17 23:06:51 [async_llm.py:704] vllm.v1.engine.exceptions.EngineDeadError: EngineCore encountered an issue. See stack trace (above) for the root cause."
+    ],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2405317) WARNING 09-17 23:06:12 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2405317) WARNING 09-17 23:06:12 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2405317) WARNING 09-17 23:06:12 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2405529) WARNING 09-17 23:06:29 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2405529) \u001b[33;20m[2026-09-17 23:06:29,548] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2405529) \u001b[33;20m[2026-09-17 23:06:31,044] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2405529) \u001b[33;20m[2026-09-17 23:06:31,044] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2405529) WARNING 09-17 23:06:31 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2405529) WARNING 09-17 23:06:34 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2405529) \u001b[33;20m[2026-09-17 23:06:34,804] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2405529) WARNING 09-17 23:06:34 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2405529) WARNING 09-17 23:06:34 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2405317) WARNING 09-17 23:06:35 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2405529) \u001b[33;20m[2026-09-17 23:06:43,430] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-8f99144c9cfa033c-803884f8: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2405529) \u001b[33;20m[2026-09-17 23:06:44,377] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-967a6ef27ba9210b-ab48307c: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2405317) WARNING 09-17 23:06:51 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "object_run9",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2408624) WARNING 09-17 23:08:30 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2408624) WARNING 09-17 23:08:30 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2408624) WARNING 09-17 23:08:30 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2408867) WARNING 09-17 23:08:47 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2408867) \u001b[33;20m[2026-09-17 23:08:47,303] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2408867) \u001b[33;20m[2026-09-17 23:08:48,780] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2408867) \u001b[33;20m[2026-09-17 23:08:48,780] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2408867) WARNING 09-17 23:08:49 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2408867) WARNING 09-17 23:08:52 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2408867) \u001b[33;20m[2026-09-17 23:08:52,435] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2408867) WARNING 09-17 23:08:52 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2408867) WARNING 09-17 23:08:52 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2408624) WARNING 09-17 23:08:52 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2408867) \u001b[33;20m[2026-09-17 23:09:01,309] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-97bc0cc2eac866e3-9d37b4c5: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2408867) \u001b[33;20m[2026-09-17 23:09:02,260] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-a3bcac623368b5cb-ad1a73d2: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2408624) WARNING 09-17 23:09:08 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "object_run10",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2409739) WARNING 09-17 23:09:16 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2409739) WARNING 09-17 23:09:16 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2409739) WARNING 09-17 23:09:16 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2409950) WARNING 09-17 23:09:33 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2409950) \u001b[33;20m[2026-09-17 23:09:33,389] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2409950) \u001b[33;20m[2026-09-17 23:09:34,880] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2409950) \u001b[33;20m[2026-09-17 23:09:34,880] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2409950) WARNING 09-17 23:09:35 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2409950) WARNING 09-17 23:09:38 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2409950) \u001b[33;20m[2026-09-17 23:09:38,586] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2409950) WARNING 09-17 23:09:38 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2409950) WARNING 09-17 23:09:38 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2409739) WARNING 09-17 23:09:39 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2409950) \u001b[33;20m[2026-09-17 23:09:47,407] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-af8983ae7e096e92-8b3907b4: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2409950) \u001b[33;20m[2026-09-17 23:09:48,372] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-942d8431a18cb687-bb29266b: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2409739) WARNING 09-17 23:09:55 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  },
+  {
+    "run": "object_run11",
+    "shutdown_marker_found": true,
+    "errors_before_shutdown": [],
+    "errors_after_shutdown": [],
+    "warnings_before_shutdown": [
+      "(APIServer pid=2413076) WARNING 09-17 23:11:35 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(APIServer pid=2413076) WARNING 09-17 23:11:35 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2413076) WARNING 09-17 23:11:35 [vllm.py:1539] Turning off hybrid kv cache manager because `--kv-transfer-config` selects a KV connector that does not support it. Impact: hybrid SSM models (e.g. Jamba, Bamba) require HMA and will fail at startup without it; models with sliding window attention will run with reduced performance. To add HMA support to a KV connector, subclass `SupportsHMA` defined in kv_connector/v1/base.py (for MultiConnector, all child connectors must support HMA).",
+      "(EngineCore pid=2413281) WARNING 09-17 23:11:51 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2413281) \u001b[33;20m[2026-09-17 23:11:51,904] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2413281) \u001b[33;20m[2026-09-17 23:11:53,410] LMCache WARNING:\u001b[0m Controller message sender is not initialized \u001b[3m(local_cpu_backend.py:105:lmcache.v1.storage_backend.local_cpu_backend)\u001b[0m",
+      "(EngineCore pid=2413281) \u001b[33;20m[2026-09-17 23:11:53,411] LMCache WARNING:\u001b[0m The 'memory_allocator' argument is deprecated and will be ignored. Storage backends now manage their own memory allocators since PR https://github.com/LMCache/LMCache/pull/1578 \u001b[3m(__init__.py:82:lmcache.v1.storage_backend)\u001b[0m",
+      "(EngineCore pid=2413281) WARNING 09-17 23:11:53 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.",
+      "(EngineCore pid=2413281) WARNING 09-17 23:11:57 [base.py:190] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.",
+      "(EngineCore pid=2413281) \u001b[33;20m[2026-09-17 23:11:57,174] LMCache WARNING:\u001b[0m Could not load 'builtin' from vLLM. Using builtin hash. This may cause inconsistencies in distributed caching. \u001b[3m(token_database.py:162:lmcache.v1.token_database)\u001b[0m",
+      "(EngineCore pid=2413281) WARNING 09-17 23:11:57 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+      "(EngineCore pid=2413281) WARNING 09-17 23:11:57 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.",
+      "(APIServer pid=2413076) WARNING 09-17 23:11:57 [model.py:1528] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.",
+      "(EngineCore pid=2413281) \u001b[33;20m[2026-09-17 23:12:05,956] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-9f842f5caf05b8a1-b57bc80f: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m",
+      "(EngineCore pid=2413281) \u001b[33;20m[2026-09-17 23:12:06,890] LMCache WARNING:\u001b[0m Skipping abort-time backend cleanup for request chatcmpl-8b7c17b28f0f86a0-beeb05fd: lmcache_engine is not initialized (Scheduler role without enable_scheduler_bypass_lookup). \u001b[3m(vllm_v1_adapter.py:1883:lmcache.integration.vllm.vllm_v1_adapter)\u001b[0m"
+    ],
+    "warnings_after_shutdown": [
+      "(APIServer pid=2413076) WARNING 09-17 23:12:13 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1",
+      "/usr/lib64/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+    ]
+  }
+]

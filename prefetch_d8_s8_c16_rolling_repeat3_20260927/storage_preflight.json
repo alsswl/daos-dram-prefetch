@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/root/discos_minji/run_vllm.sh",
+    "/root/discos_minji/venv/bin/python3",
+    "/root/discos_minji/tests/object_gpu_roundtrip.py",
+    "--size-mib",
+    "20"
+  ],
+  "returncode": 0,
+  "note": "Unique test key only; test script cleans its own key in finally. Does not clear benchmark caches."
+}

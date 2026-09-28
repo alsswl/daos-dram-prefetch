@@ -1,0 +1,19 @@
+chunk_size: 128
+local_cpu: false
+enable_async_loading: true
+storage_plugins:
+- daosgds
+extra_config:
+  storage_plugin.daosgds.module_path: lmcache_daos.gds_backend
+  storage_plugin.daosgds.class_name: DaosGdsBackend
+  daosgds.pool: discospool
+  daosgds.container: kvcache
+  daosgds.transport: dfs
+  daosgds.root: /minji-compare-20260917-143803-d0026824-r2-dfs
+  daosgds.object_namespace: 'minji-compare-20260917-143803-d0026824-r2-dfs:'
+  daosgds.object_library: /root/discos_minji/libdaosgdr.so
+  daosgds.gpu_buffer_gb: 10.0
+  daosgds.io_workers: 16
+  daosgds.meta_workers: 16
+  daosgds.store: true
+  daosgds.dfs_oclass: 16842751

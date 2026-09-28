@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/meta-regression_study_data_heterogeneity_in_replication_projects.csv')\ndf.head()",
+    "output": "      id                                              title  ... us_lab.r   drop\n0   ee.1              Reference points and effort provision  ...        0  False\n1  ee.10  The lure of authority: Motivation and incentiv...  ...        0  False\n2  ee.11                               A continuous dilemma  ...        0  False\n3  ee.12  Slow to anger and fast to forgive: cooperation...  ...        1  False\n4  ee.13  Deferred compensation in multiperiod labor con...  ...        0  False\n\n[5 rows x 57 columns]",
+    "elapsed_seconds": 0.15140903880819678
+  },
+  {
+    "code": "# Filter the dataset for Psychology studies that were replicated\npsychology_replicated = df[(df['project'] == 'ml3') | (df['project'] == 'ml1') | (df['project'] == 'rpp')]\n\n# Check the 'seniority.o' and 'seniority.r' columns for the original and replication studies\n# We will count the number of junior professors in both original and replication studies\njunior_professors_original = psychology_replicated['seniority.o'].value_counts()\njunior_professors_replication = psychology_replicated['seniority.r'].value_counts()\n\njunior_professors_original, junior_professors_replication",
+    "output": "(seniority.o\nProfessor              814\nAssociate Professor     53\nAssistant               37\nResearcher               5\nName: count, dtype: int64, seniority.r\nProfessor              831\nAssociate Professor     24\nAssistant Professor     23\nResearcher              16\nAssistant               15\nName: count, dtype: int64)",
+    "elapsed_seconds": 0.00328522315248847
+  },
+  {
+    "code": "# Define junior professors as 'Assistant' or 'Assistant Professor'\njunior_professors_original_count = junior_professors_original.get('Assistant', 0) + junior_professors_original.get('Assistant Professor', 0)\njunior_professors_replication_count = junior_professors_replication.get('Assistant', 0) + junior_professors_replication.get('Assistant Professor', 0)\n\n# Total number of authors in original and replication studies\ntotal_authors_original = len(psychology_replicated)\ntotal_authors_replication = len(psychology_replicated)\n\n# Calculate the proportion of junior professors\nproportion_junior_original = junior_professors_original_count / total_authors_original\nproportion_junior_replication = junior_professors_replication_count / total_authors_replication\n\nproportion_junior_original, proportion_junior_replication",
+    "output": "(0.0407040704070407, 0.041804180418041806)",
+    "elapsed_seconds": 0.0018892940133810043
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "     HYBAS_ID       long       lat  ...  soil_div     area  diversity\n0  6050000010 -76.477422  7.742693  ...  0.482402  72363.7         68\n1  6050000740 -74.628725  9.803586  ...  0.457436  17944.3         35\n2  6050068100 -75.295995  8.448815  ...  0.378793  17105.5         44\n3  6050068110 -74.608408  8.922863  ...  0.468328    610.1         48\n4  6050070260 -75.591588  5.770093  ...  0.158870  61901.9         81\n\n[5 rows x 21 columns]",
+    "elapsed_seconds": 0.14022504212334752
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = df[['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']].values  # Predictor (evolutionary traits)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.5779080623760819
+  },
+  {
+    "code": "# Check the column names to ensure they are correctly used\ndf.columns",
+    "output": "Index(['HYBAS_ID', 'long', 'lat', 'BAMM_speciation', 'BAMM_extinction',\n       'BAMM_NetDiv', 'DR', 'BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol',\n       'RML_evol', 'bio1', 'bio12', 'runoff', 'aet', 'Elevation', 'sgr',\n       'soil_div', 'area', 'diversity'],\n      dtype='object')",
+    "elapsed_seconds": 0.0016628042794764042
+  },
+  {
+    "code": "# Prepare the data for regression with environmental factors\nX = df[['bio1', 'bio12', 'runoff']].values  # Predictor (environmental factors)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[-6.33244307e-04  2.52853985e-05 -3.54537569e-05]",
+    "elapsed_seconds": 0.002812725957483053
+  },
+  {
+    "code": "# Prepare the data for regression with all variables\nX = df.drop(['HYBAS_ID', 'long', 'lat', 'BAMM_speciation', 'BAMM_extinction', 'BAMM_NetDiv', 'DR', 'diversity'], axis=1).values  # Predictor (all other variables)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 1.47454061e-02  5.28730479e-01 -7.23211380e+00  1.02301639e+01\n -4.12680838e+00  6.27916750e-04 -1.11242119e-05  4.96039600e-06\n  1.82943678e-05  9.42658462e-06 -4.44738441e-05 -5.30011317e-03\n  9.01799485e-09]",
+    "elapsed_seconds": 0.0030832760967314243
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "args": {
+    "mode": "object",
+    "context_length": 8192,
+    "chunk_size": 128,
+    "gpu_buffer_gb": 10,
+    "repeats": 3,
+    "output": "/root/discos_minji/staging_pressure_20260921_v1",
+    "dry_run": false,
+    "port": 8017,
+    "model": "Qwen/Qwen3-14B",
+    "max_tokens": 64,
+    "max_model_len": 16384,
+    "context_tokens": [
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192
+    ],
+    "startup_timeout": 360,
+    "request_timeout": 180,
+    "drain_timeout": 180,
+    "pool": "discospool",
+    "container": "kvcache",
+    "io_workers": 16,
+    "meta_workers": 16
+  },
+  "namespace": "minji-staging-9cd9107365744f0a8376f65297e0b05a",
+  "measurement_role": "kv_consumer",
+  "source_sha256": {
+    "staging_pressure.py": "b31244494700290a23bf78aed4216c4043a6a63d30949be5a4a085afbc0b727b",
+    "lmcache_daos/staging_trace.py": "ffa54417176287c1f2ba01f81bcf8c56cbfdcd049900e142969529e481485a7d",
+    "lmcache_daos/gds_backend.py": "3fc43aa3a9c9c292b026e60bf4e49cf975ff2d5ac932a4e8c9b7ba8aa56d2983",
+    "compare_e2e.py": "bf4de2266ed3c7578f8f4399a2d88c79be02fef10996ce15dcb0699f513c081c",
+    "run_vllm.sh": "5f303713631354a1b56837a6f7463a3ed1c45752fd847b05da54a8023e6af32e",
+    "libdaosgdr.so": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c"
+  },
+  "notes": [
+    "Synthetic fixed-token cache-hit diagnostic, not DiscoveryBench.",
+    "Tracing adds overhead; latency is diagnostic, not an uninstrumented benchmark.",
+    "Cache fill then process restart; storage server cache is not flushed.",
+    "Eight distinct equal-length prompts at every concurrency level.",
+    "No cache/container deletion; generated experiment namespace is retained."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 8.489546469412744,
+  "llm_calls": 3,
+  "python_calls": 2,
+  "final_answer": "Scientific Hypothesis: The majority of original studies in both Experimental Economics and Psychology were conducted in the United States. This hypothesis is based on the analysis of the 'experiment_country.o' column in the dataset, which shows that the United States is the most frequent country for original studies in both disciplines.\n\nWORKFLOW_SUMMARY:\n1. Data Loading: The dataset was loaded using Python from the specified path.\n2. Data Inspection: The first few rows of the dataset were displayed to understand its structure and the relevant columns.\n3. Data Filtering: The dataset was filtered to isolate original studies in Experimental Economics and Psychology based on the 'project.y' column.\n4. Country Analysis: The 'experiment_country.o' column was analyzed to count the occurrences of each country for both groups, revealing that the United States is the most frequent country for original studies in both disciplines.",
+  "grading": "not run, as in supplied document",
+  "query": "In which country's labs were the majority of original studies in both Experimental Economics and Psychology conducted?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/meta_regression/metadata_17.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

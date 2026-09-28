@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 22.670026252046227,
+  "llm_calls": 4,
+  "python_calls": 3,
+  "final_answer": "Scientific Hypothesis: In the context of ML-enabled system projects, a significant proportion of respondents indicated that Non-Functional Requirements (NFRs) were not at all considered. The variables chosen are the respondents' responses to the question regarding the consideration of NFRs in their projects, and the relationship is the proportion of respondents who indicated that NFRs were not considered. The statistical significance is supported by the 95% confidence interval, which ranges from 0.576 to 0.692, indicating that the proportion is likely between these values with high confidence.",
+  "grading": "not run, as in supplied document",
+  "query": "What is the proportion of respondents and their 95% Confidence Interval who informed that Non-Functional Requirements were not at all considered within their ML-enabled system projects, after bootstrapping for statistical significance?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/requirements_engineering_for_ML_enabled_systems/metadata_12.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

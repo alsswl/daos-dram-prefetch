@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 35.78802595986053,
+  "llm_calls": 10,
+  "python_calls": 9,
+  "final_answer": "Hypothesis: Increased education spending does not have a positive impact on per capita GDP in either Sub-Saharan Africa or Lower Middle Income countries, as indicated by the weak or negative correlation coefficients found in the analysis. The variables chosen are 'Adjusted savings: education expenditure (percentage of GNI)' and 'GNI per capita (constant 2015 US dollar)', and the relationship between these variables is weak or negative, with statistical significance indicated by the correlation coefficients of approximately -0.100 for Sub-Saharan Africa and -0.481 for Lower Middle Income countries.",
+  "grading": "not run, as in supplied document",
+  "query": "In what regions does increased education spending positively impact per capita GDP?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/worldbank_education_gdp/metadata_0.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

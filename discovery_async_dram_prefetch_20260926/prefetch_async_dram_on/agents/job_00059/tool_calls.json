@@ -1,0 +1,57 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\n\n# Display the first few rows of the dataset to understand its structure\ntime_series_df.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15314497938379645
+  },
+  {
+    "code": "# Inspect the 'Dagger' column\ndagger_data = time_series_df['Dagger']\ndagger_data.head()",
+    "output": "0   -0.58\n1     NaN\n2     NaN\n3     NaN\n4     NaN\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.0017188438214361668
+  },
+  {
+    "code": "# Check for missing values in the 'Dagger' column\nmissing_values = dagger_data.isnull().sum()\nmissing_values",
+    "output": "3564",
+    "elapsed_seconds": 0.00242891488596797
+  },
+  {
+    "code": "# Check if there is an interpolated version of the 'Dagger' column\ninterpolated_dagger_data = time_series_df['Dagger_inter']\ninterpolated_dagger_data.head()",
+    "output": "0   -0.58\n1   -0.58\n2   -0.58\n3   -0.58\n4   -0.58\nName: Dagger_inter, dtype: float64",
+    "elapsed_seconds": 0.0017985263839364052
+  },
+  {
+    "code": "# Analyze the 'Dagger_inter' column for trends over time\nimport matplotlib.pyplot as plt\n\n# Plot the 'Dagger_inter' values over time (CE)\nplt.figure(figsize=(12, 6))\nplt.plot(time_series_df['CE'], time_series_df['Dagger_inter'], label='Dagger Interpolated Z Values')\nplt.xlabel('Common Era (CE)')\nplt.ylabel('Z Values')\nplt.title('Trend in Dagger Interpolated Z Values Over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.3694193516857922
+  },
+  {
+    "code": "# Calculate the rolling mean of 'Dagger_inter' to smooth out short-term fluctuations\nrolling_mean = time_series_df['Dagger_inter'].rolling(window=50).mean()\n\n# Plot the rolling mean\nplt.figure(figsize=(12, 6))\nplt.plot(time_series_df['CE'], rolling_mean, label='Rolling Mean of Dagger Interpolated Z Values')\nplt.xlabel('Common Era (CE)')\nplt.ylabel('Rolling Mean of Z Values')\nplt.title('Rolling Mean Trend in Dagger Interpolated Z Values Over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.007149561308324337
+  },
+  {
+    "code": "# Perform linear regression to detect the point of significant increase\nfrom sklearn.linear_model import LinearRegression\n\n# Prepare the data for regression\nX = time_series_df[['CE']].values.reshape(-1, 1)  # Predictor (time in CE)\ny = time_series_df['Dagger_inter'].values  # Response (interpolated Z values for daggers)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient and intercept\ncoefficient = model.coef_[0]\nintercept = model.intercept_\n\n# Calculate the point where the Z values began to increase significantly\n# We can use the intercept and coefficient to find the CE value where the trend starts\n# For simplicity, we'll assume the increase starts when the Z values cross a threshold (e.g., 0)\nthreshold = 0\nce_threshold = (threshold - intercept) / coefficient\n\nce_threshold",
+    "output": "-2438.69433744715",
+    "elapsed_seconds": 0.5544080510735512
+  },
+  {
+    "code": "# Check for anomalies or inconsistencies in the 'Dagger_inter' column\nanomalies = time_series_df[(time_series_df['Dagger_inter'] > 3) | (time_series_df['Dagger_inter'] < -3)]\nanomalies.head()",
+    "output": "      Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n2282        2282 -1818  ...                NaN                  -0.4998\n2283        2283 -1817  ...                NaN                  -0.4987\n2284        2284 -1816  ...                NaN                  -0.4976\n2285        2285 -1815  ...                NaN                  -0.4965\n2286        2286 -1814  ...                NaN                  -0.4954\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.013715158216655254
+  },
+  {
+    "code": "# Segment the data into centuries and calculate the mean Z values for 'Dagger_inter'\ntime_series_df['Century'] = time_series_df['CE'] // 100\ncentury_data = time_series_df.groupby('Century')['Dagger_inter'].mean().reset_index()\n\n# Display the mean Z values for each century\ncentury_data.head()",
+    "output": "   Century  Dagger_inter\n0      -41         -0.58\n1      -40         -0.58\n2      -39         -0.58\n3      -38         -0.58\n4      -37         -0.58",
+    "elapsed_seconds": 0.004791238345205784
+  },
+  {
+    "code": "# Analyze the later centuries for significant increases in 'Dagger_inter' Z values\nlater_centuries = century_data[century_data['Century'] >= -10]  # Focus on more recent centuries\nlater_centuries.head()",
+    "output": "    Century  Dagger_inter\n31      -10      -0.46020\n32       -9      -0.43505\n33       -8      -0.43000\n34       -7      -0.48940\n35       -6      -0.55000",
+    "elapsed_seconds": 0.003677698317915201
+  },
+  {
+    "code": "# Calculate the standard deviation of 'Dagger_inter' Z values for each century\ncentury_std = time_series_df.groupby('Century')['Dagger_inter'].std().reset_index()\ncentury_std.head()",
+    "output": "   Century  Dagger_inter\n0      -41           0.0\n1      -40           0.0\n2      -39           0.0\n3      -38           0.0\n4      -37           0.0",
+    "elapsed_seconds": 0.004052011761814356
+  }
+]

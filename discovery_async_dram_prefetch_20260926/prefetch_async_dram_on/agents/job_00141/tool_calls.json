@@ -1,0 +1,57 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\nadjusted_savings_path = '/data/Adjusted_savings_education_expenditure_percentage_of_GNI.csv'\nexports_path = '/data/Exports_of_goods_and_services_annual_percentage_growth.csv'\ngni_path = '/data/GNI_per_capita_constant_2015_USdollar.csv'\nlabor_force_path = '/data/Labor_force_participation_rate_total_percentage_of_total_population_ages_15+_modeled_ILO_estimate.csv'\nprimary_enrollment_path = '/data/School_enrollment_primary_percentage_gross.csv'\nsecondary_enrollment_path = '/data/School_enrollment_secondary_percentage_gross.csv'\n\nadjusted_savings_df = pd.read_csv(adjusted_savings_path)\nexports_df = pd.read_csv(exports_path)\ngni_df = pd.read_csv(gni_path)\nlabor_force_df = pd.read_csv(labor_force_path)\nprimary_enrollment_df = pd.read_csv(primary_enrollment_path)\nsecondary_enrollment_df = pd.read_csv(secondary_enrollment_path)\n\n# Display the first few rows of each dataset\nadjusted_savings_df.head()\nexports_df.head()\ngni_df.head()\nlabor_force_df.head()\nprimary_enrollment_df.head()\nsecondary_enrollment_df.head()",
+    "output": "         Country Group Country Code  ...  2014 [YR2014]  2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...      42.847160      43.372971\n1  Lower middle income          LMC  ...      64.281197      64.532967\n\n[2 rows x 43 columns]",
+    "elapsed_seconds": 0.1477363589219749
+  },
+  {
+    "code": "import numpy as np\n\n# Extract the education expenditure data\neducation_expenditure = adjusted_savings_df.set_index('Country Group').loc['Sub-Saharan Africa', 1975:2015].values\neducation_expenditure_lmc = adjusted_savings_df.set_index('Country Group').loc['Lower middle income', 1975:2015].values\n\n# Extract the school enrollment data\nprimary_enrollment = primary_enrollment_df.set_index('Country Group').loc['Sub-Saharan Africa', 1975:2015].values\nprimary_enrollment_lmc = primary_enrollment_df.set_index('Country Group').loc['Lower middle income', 1975:2015].values\n\nsecondary_enrollment = secondary_enrollment_df.set_index('Country Group').loc['Sub-Saharan Africa', 1975:2015].values\nsecondary_enrollment_lmc = secondary_enrollment_df.set_index('Country Group').loc['Lower middle income', 1975:2015].values\n\n# Calculate the correlation between education expenditure and school enrollment\ncorrelation_primary = np.corrcoef(education_expenditure, primary_enrollment)[0, 1]\ncorrelation_secondary = np.corrcoef(education_expenditure, secondary_enrollment)[0, 1]\ncorrelation_primary_lmc = np.corrcoef(education_expenditure_lmc, primary_enrollment_lmc)[0, 1]\ncorrelation_secondary_lmc = np.corrcoef(education_expenditure_lmc, secondary_enrollment_lmc)[0, 1]\n\ncorrelation_primary, correlation_secondary, correlation_primary_lmc, correlation_secondary_lmc",
+    "output": "TypeError: cannot do slice indexing on Index with these indexers [1975] of type int",
+    "elapsed_seconds": 0.002606235910207033
+  },
+  {
+    "code": "# Extract the education expenditure data\neducation_expenditure = adjusted_savings_df.set_index('Country Group').loc['Sub-Saharan Africa', 'YR1975':'YR2015'].values\neducation_expenditure_lmc = adjusted_savings_df.set_index('Country Group').loc['Lower middle income', 'YR1975':'YR2015'].values\n\n# Extract the school enrollment data\nprimary_enrollment = primary_enrollment_df.set_index('Country Group').loc['Sub-Saharan Africa', 'YR1975':'YR2015'].values\nprimary_enrollment_lmc = primary_enrollment_df.set_index('Country Group').loc['Lower middle income', 'YR1975':'YR2015'].values\n\nsecondary_enrollment = secondary_enrollment_df.set_index('Country Group').loc['Sub-Saharan Africa', 'YR1975':'YR2015'].values\nsecondary_enrollment_lmc = secondary_enrollment_df.set_index('Country Group').loc['Lower middle income', 'YR1975':'YR2015'].values\n\n# Calculate the correlation between education expenditure and school enrollment\ncorrelation_primary = np.corrcoef(education_expenditure, primary_enrollment)[0, 1]\ncorrelation_secondary = np.corrcoef(education_expenditure, secondary_enrollment)[0, 1]\ncorrelation_primary_lmc = np.corrcoef(education_expenditure_lmc, primary_enrollment_lmc)[0, 1]\ncorrelation_secondary_lmc = np.corrcoef(education_expenditure_lmc, secondary_enrollment_lmc)[0, 1]\n\ncorrelation_primary, correlation_secondary, correlation_primary_lmc, correlation_secondary_lmc",
+    "output": "KeyError: 'YR1975'",
+    "elapsed_seconds": 0.0027776528149843216
+  },
+  {
+    "code": "# Extract the education expenditure data\neducation_expenditure = adjusted_savings_df.set_index('Country Group').loc['Sub-Saharan Africa', '1975 [YR1975]':'2015 [YR2015]'].values\neducation_expenditure_lmc = adjusted_savings_df.set_index('Country Group').loc['Lower middle income', '1975 [YR1975]':'2015 [YR2015]'].values\n\n# Extract the school enrollment data\nprimary_enrollment = primary_enrollment_df.set_index('Country Group').loc['Sub-Saharan Africa', '1975 [YR1975]':'2015 [YR2015]'].values\nprimary_enrollment_lmc = primary_enrollment_df.set_index('Country Group').loc['Lower middle income', '1975 [YR1975]':'2015 [YR2015]'].values\n\nsecondary_enrollment = secondary_enrollment_df.set_index('Country Group').loc['Sub-Saharan Africa', '1975 [YR1975]':'2015 [YR2015]'].values\nsecondary_enrollment_lmc = secondary_enrollment_df.set_index('Country Group').loc['Lower middle income', '1975 [YR1975]':'2015 [YR2015]'].values\n\n# Calculate the correlation between education expenditure and school enrollment\ncorrelation_primary = np.corrcoef(education_expenditure, primary_enrollment)[0, 1]\ncorrelation_secondary = np.corrcoef(education_expenditure, secondary_enrollment)[0, 1]\ncorrelation_primary_lmc = np.corrcoef(education_expenditure_lmc, primary_enrollment_lmc)[0, 1]\ncorrelation_secondary_lmc = np.corrcoef(education_expenditure_lmc, secondary_enrollment_lmc)[0, 1]\n\ncorrelation_primary, correlation_secondary, correlation_primary_lmc, correlation_secondary_lmc",
+    "output": "AttributeError: 'float' object has no attribute 'shape'",
+    "elapsed_seconds": 0.003977030981332064
+  },
+  {
+    "code": "# Check the data types of the extracted data\ntype(education_expenditure), type(primary_enrollment), type(secondary_enrollment)",
+    "output": "(<class 'numpy.ndarray'>, <class 'numpy.ndarray'>, <class 'numpy.ndarray'>)",
+    "elapsed_seconds": 0.0014203917235136032
+  },
+  {
+    "code": "# Calculate the correlation between education expenditure and school enrollment\ncorrelation_primary = np.corrcoef(education_expenditure, primary_enrollment)[0, 1]\ncorrelation_secondary = np.corrcoef(education_expenditure, secondary_enrollment)[0, 1]\ncorrelation_primary_lmc = np.corrcoef(education_expenditure_lmc, primary_enrollment_lmc)[0, 1]\ncorrelation_secondary_lmc = np.corrcoef(education_expenditure_lmc, secondary_enrollment_lmc)[0, 1]\n\ncorrelation_primary, correlation_secondary, correlation_primary_lmc, correlation_secondary_lmc",
+    "output": "AttributeError: 'float' object has no attribute 'shape'",
+    "elapsed_seconds": 0.0016644513234496117
+  },
+  {
+    "code": "# Check for missing values in the extracted data\nimport pandas as pd\n\n# Convert the numpy arrays to pandas Series for easier inspection\neducation_expenditure_series = pd.Series(education_expenditure)\nprimary_enrollment_series = pd.Series(primary_enrollment)\nsecondary_enrollment_series = pd.Series(secondary_enrollment)\neducation_expenditure_lmc_series = pd.Series(education_expenditure_lmc)\nprimary_enrollment_lmc_series = pd.Series(primary_enrollment_lmc)\nsecondary_enrollment_lmc_series = pd.Series(secondary_enrollment_lmc)\n\n# Check for missing values\neducation_expenditure_series.isnull().sum(), primary_enrollment_series.isnull().sum(), secondary_enrollment_series.isnull().sum(), education_expenditure_lmc_series.isnull().sum(), primary_enrollment_lmc_series.isnull().sum(), secondary_enrollment_lmc_series.isnull().sum()",
+    "output": "(0, 0, 0, 0, 0, 0)",
+    "elapsed_seconds": 0.002109633758664131
+  },
+  {
+    "code": "# Calculate the correlation between education expenditure and school enrollment\ncorrelation_primary = np.corrcoef(education_expenditure, primary_enrollment)[0, 1]\ncorrelation_secondary = np.corrcoef(education_expenditure, secondary_enrollment)[0, 1]\ncorrelation_primary_lmc = np.corrcoef(education_expenditure_lmc, primary_enrollment_lmc)[0, 1]\ncorrelation_secondary_lmc = np.corrcoef(education_expenditure_lmc, secondary_enrollment_lmc)[0, 1]\n\ncorrelation_primary, correlation_secondary, correlation_primary_lmc, correlation_secondary_lmc",
+    "output": "AttributeError: 'float' object has no attribute 'shape'",
+    "elapsed_seconds": 0.0016146679408848286
+  },
+  {
+    "code": "# Check the data types of the extracted data\ntype(education_expenditure), type(primary_enrollment), type(secondary_enrollment)",
+    "output": "(<class 'numpy.ndarray'>, <class 'numpy.ndarray'>, <class 'numpy.ndarray'>)",
+    "elapsed_seconds": 0.001378171145915985
+  },
+  {
+    "code": "# Check if the data is numeric\neducation_expenditure_series.dtype, primary_enrollment_series.dtype, secondary_enrollment_series.dtype, education_expenditure_lmc_series.dtype, primary_enrollment_lmc_series.dtype, secondary_enrollment_lmc_series.dtype",
+    "output": "(dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'))",
+    "elapsed_seconds": 0.001452476717531681
+  },
+  {
+    "code": "# Convert the data to numeric values\neducation_expenditure_series = pd.to_numeric(education_expenditure_series)\nprimary_enrollment_series = pd.to_numeric(primary_enrollment_series)\nsecondary_enrollment_series = pd.to_numeric(secondary_enrollment_series)\neducation_expenditure_lmc_series = pd.to_numeric(education_expenditure_lmc_series)\nprimary_enrollment_lmc_series = pd.to_numeric(primary_enrollment_lmc_series)\nsecondary_enrollment_lmc_series = pd.to_numeric(secondary_enrollment_lmc_series)\n\n# Convert the Series back to numpy arrays\neducation_expenditure = education_expenditure_series.values\nprimary_enrollment = primary_enrollment_series.values\nsecondary_enrollment = secondary_enrollment_series.values\neducation_expenditure_lmc = education_expenditure_lmc_series.values\nprimary_enrollment_lmc = primary_enrollment_lmc_series.values\nsecondary_enrollment_lmc = secondary_enrollment_lmc_series.values\n\n# Calculate the correlation between education expenditure and school enrollment\ncorrelation_primary = np.corrcoef(education_expenditure, primary_enrollment)[0, 1]\ncorrelation_secondary = np.corrcoef(education_expenditure, secondary_enrollment)[0, 1]\ncorrelation_primary_lmc = np.corrcoef(education_expenditure_lmc, primary_enrollment_lmc)[0, 1]\ncorrelation_secondary_lmc = np.corrcoef(education_expenditure_lmc, secondary_enrollment_lmc)[0, 1]\n\ncorrelation_primary, correlation_secondary, correlation_primary_lmc, correlation_secondary_lmc",
+    "output": "(-0.6394613048408283, -0.6104750719054359, -0.3196668027037844, -0.34824735741340396)",
+    "elapsed_seconds": 0.0027633891440927982
+  }
+]

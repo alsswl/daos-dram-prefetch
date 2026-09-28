@@ -1,0 +1,12 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\n\n# Filter the dataset for Experimental Economics\nexperimental_economics_data = df[df['discipline'] == 'Economics']\n\n# Calculate the average number of authors for original studies\naverage_n_authors_o = experimental_economics_data['n_authors.o'].mean()\n\n# Calculate the average number of authors for replication studies\naverage_n_authors_r = experimental_economics_data['n_authors.r'].mean()\n\naverage_n_authors_o, average_n_authors_r",
+    "output": "(2.6666666666666665, 3.2777777777777777)",
+    "elapsed_seconds": 0.1327309887856245
+  },
+  {
+    "code": "from scipy.stats import ttest_ind\n\n# Perform an independent t-test to compare the means\nt_statistic, p_value = ttest_ind(experimental_economics_data['n_authors.o'], experimental_economics_data['n_authors.r'])\n\nt_statistic, p_value",
+    "output": "(-2.299547289748398, 0.027741633893277252)",
+    "elapsed_seconds": 0.4748741667717695
+  }
+]

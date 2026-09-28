@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/worldbank_education_gdp.csv')\ndf.head()",
+    "output": "        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n2  Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n3  Sub-Saharan Africa          SSF  ...     97.963791     96.974968\n4  Sub-Saharan Africa          SSF  ...     42.847160     43.372971\n\n[5 rows x 45 columns]",
+    "elapsed_seconds": 0.23183196131139994
+  },
+  {
+    "code": "# Identify the columns for education expenditure and per capita GDP\neducation_expenditure_col = [col for col in df.columns if 'education expenditure' in col.lower()][0]\ngdp_col = [col for col in df.columns if 'gni per capita' in col.lower()][0]\n\neducation_expenditure_col, gdp_col",
+    "output": "IndexError: list index out of range",
+    "elapsed_seconds": 0.0018178001046180725
+  },
+  {
+    "code": "# Display the column names to identify the correct ones\ndf.columns.tolist()",
+    "output": "['Country Group', 'Country Code', 'Series Name', 'Series Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]']",
+    "elapsed_seconds": 0.0014778422191739082
+  },
+  {
+    "code": "# Extract the data for education expenditure and per capita GDP\neducation_expenditure_data = df[df['Series Code'] == 'SE.XPD.TOTL.GD.ZS'].set_index('Country Code').drop(columns=['Country Group', 'Series Name', 'Series Code']).T\ngdp_data = df[df['Series Code'] == 'NY.GNP.PCAP.CD'].set_index('Country Code').drop(columns=['Country Group', 'Series Name', 'Series Code']).T\n\n# Calculate the correlation between education expenditure and per capita GDP\ncorrelation = education_expenditure_data.corrwith(gdp_data)\ncorrelation",
+    "output": "Series([], dtype: float64)",
+    "elapsed_seconds": 0.004345026332885027
+  },
+  {
+    "code": "# Check the unique series codes in the dataset\nunique_series_codes = df['Series Code'].unique()\nunique_series_codes",
+    "output": "['NY.GNP.PCAP.KD' 'NY.ADJ.AEDU.GN.ZS' 'NE.EXP.GNFS.KD.ZG' 'SE.PRM.ENRR'\n 'SE.SEC.ENRR' 'SL.TLF.CACT.ZS']",
+    "elapsed_seconds": 0.0013263621367514133
+  },
+  {
+    "code": "# Extract the data for education expenditure and per capita GDP\neducation_expenditure_data = df[df['Series Code'] == 'NY.ADJ.AEDU.GN.ZS'].set_index('Country Code').drop(columns=['Country Group', 'Series Name', 'Series Code']).T\ngdp_data = df[df['Series Code'] == 'NY.GNP.PCAP.KD'].set_index('Country Code').drop(columns=['Country Group', 'Series Name', 'Series Code']).T\n\n# Calculate the correlation between education expenditure and per capita GDP\ncorrelation = education_expenditure_data.corrwith(gdp_data)\ncorrelation",
+    "output": "Country Code\nSSF   -0.966421\nLMC   -0.480538\ndtype: float64",
+    "elapsed_seconds": 0.004560320638120174
+  }
+]

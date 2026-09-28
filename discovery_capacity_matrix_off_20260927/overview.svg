@@ -1,0 +1,682 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1030">
+<rect width="1500" height="1030" fill="white"/>
+<g font-family="sans-serif" font-size="12" fill="#222">
+<text x="30" y="26" font-size="20">DRAM x GPU staging: 16 concurrent requests, DRAM prefetch OFF</text>
+<text x="30" y="50">Staging: blue=5s peak, green=time-weighted mean. Hits: blue=DRAM, green=DAOS, orange=miss.</text>
+<text x="60" y="80" font-size="17">DRAM 8GiB / staging 8GiB</text>
+<text x="60" y="105">GPU staging occupancy (%)</text>
+<line x1="60" x2="480" y1="247.0" y2="247.0" stroke="#ddd"/>
+<text x="28" y="251.0">0</text>
+<line x1="60" x2="480" y1="213.25" y2="213.25" stroke="#ddd"/>
+<text x="28" y="217.25">25</text>
+<line x1="60" x2="480" y1="179.5" y2="179.5" stroke="#ddd"/>
+<text x="28" y="183.5">50</text>
+<line x1="60" x2="480" y1="145.75" y2="145.75" stroke="#ddd"/>
+<text x="28" y="149.75">75</text>
+<line x1="60" x2="480" y1="112.0" y2="112.0" stroke="#ddd"/>
+<text x="28" y="116.0">100</text>
+<text x="50.0" y="264">0</text>
+<text x="155.0" y="264">42</text>
+<text x="260.0" y="264">83</text>
+<text x="365.0" y="264">125</text>
+<text x="470.0" y="264">167</text>
+<polyline points="60.00,226.24 72.61,246.67 85.22,229.20 97.83,246.34 110.45,221.95 123.06,246.34 135.67,235.46 148.28,246.67 160.89,240.41 173.50,239.75 186.12,239.09 198.73,246.67 211.34,236.45 223.95,246.34 236.56,235.79 249.17,234.81 261.79,246.34 274.40,246.67 287.01,246.67 299.62,235.79 312.23,246.34 324.84,235.13 337.46,246.34 350.07,241.73 362.68,239.75 375.29,241.07 387.90,237.77 400.51,238.10 413.13,244.03 425.74,236.78 438.35,238.10 450.96,237.77 463.57,246.67 476.18,246.67" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="60.00,246.39 72.61,246.99 85.22,246.80 97.83,246.99 110.45,245.78 123.06,246.99 135.67,246.90 148.28,246.99 160.89,246.83 173.50,246.93 186.12,246.93 198.73,247.00 211.34,246.68 223.95,246.99 236.56,246.92 249.17,246.42 261.79,246.98 274.40,247.00 287.01,247.00 299.62,246.91 312.23,246.99 324.84,246.83 337.46,246.99 350.07,246.84 362.68,246.93 375.29,246.79 387.90,246.89 400.51,246.48 413.13,246.98 425.74,246.10 438.35,246.96 450.96,246.38 463.57,246.99 476.18,246.99" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<text x="60" y="318">Lookup chunk fractions (%)</text>
+<line x1="60" x2="480" y1="460.0" y2="460.0" stroke="#ddd"/>
+<text x="28" y="464.0">0</text>
+<line x1="60" x2="480" y1="426.25" y2="426.25" stroke="#ddd"/>
+<text x="28" y="430.25">25</text>
+<line x1="60" x2="480" y1="392.5" y2="392.5" stroke="#ddd"/>
+<text x="28" y="396.5">50</text>
+<line x1="60" x2="480" y1="358.75" y2="358.75" stroke="#ddd"/>
+<text x="28" y="362.75">75</text>
+<line x1="60" x2="480" y1="325.0" y2="325.0" stroke="#ddd"/>
+<text x="28" y="329.0">100</text>
+<text x="50.0" y="477">0</text>
+<text x="155.0" y="477">42</text>
+<text x="260.0" y="477">83</text>
+<text x="365.0" y="477">125</text>
+<text x="470.0" y="477">167</text>
+<polyline points="60.00,382.89" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="60.00" cy="382.89" r="2.3" fill="#0072b2"/>
+<polyline points="85.22,361.63" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="85.22" cy="361.63" r="2.3" fill="#0072b2"/>
+<polyline points="110.45,357.07" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="110.45" cy="357.07" r="2.3" fill="#0072b2"/>
+<polyline points="135.67,339.79" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="135.67" cy="339.79" r="2.3" fill="#0072b2"/>
+<polyline points="160.89,343.43 173.50,344.58" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="211.34,339.50" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="211.34" cy="339.50" r="2.3" fill="#0072b2"/>
+<polyline points="236.56,340.75 249.17,345.52" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="299.62,343.98" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="299.62" cy="343.98" r="2.3" fill="#0072b2"/>
+<polyline points="324.84,346.73" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="324.84" cy="346.73" r="2.3" fill="#0072b2"/>
+<polyline points="350.07,339.45" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="350.07" cy="339.45" r="2.3" fill="#0072b2"/>
+<polyline points="375.29,343.62" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="375.29" cy="343.62" r="2.3" fill="#0072b2"/>
+<polyline points="400.51,343.08" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="400.51" cy="343.08" r="2.3" fill="#0072b2"/>
+<polyline points="425.74,339.01" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="425.74" cy="339.01" r="2.3" fill="#0072b2"/>
+<polyline points="450.96,343.96" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="450.96" cy="343.96" r="2.3" fill="#0072b2"/>
+<polyline points="60.00,458.63" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="60.00" cy="458.63" r="2.3" fill="#009e73"/>
+<polyline points="85.22,460.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="85.22" cy="460.00" r="2.3" fill="#009e73"/>
+<polyline points="110.45,457.08" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="110.45" cy="457.08" r="2.3" fill="#009e73"/>
+<polyline points="135.67,460.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="135.67" cy="460.00" r="2.3" fill="#009e73"/>
+<polyline points="160.89,458.37 173.50,460.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="211.34,457.85" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="211.34" cy="457.85" r="2.3" fill="#009e73"/>
+<polyline points="236.56,459.80 249.17,453.74" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="299.62,460.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="299.62" cy="460.00" r="2.3" fill="#009e73"/>
+<polyline points="324.84,460.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="324.84" cy="460.00" r="2.3" fill="#009e73"/>
+<polyline points="350.07,457.62" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="350.07" cy="457.62" r="2.3" fill="#009e73"/>
+<polyline points="375.29,458.45" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="375.29" cy="458.45" r="2.3" fill="#009e73"/>
+<polyline points="400.51,456.32" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="400.51" cy="456.32" r="2.3" fill="#009e73"/>
+<polyline points="425.74,454.71" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="425.74" cy="454.71" r="2.3" fill="#009e73"/>
+<polyline points="450.96,455.49" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="450.96" cy="455.49" r="2.3" fill="#009e73"/>
+<polyline points="60.00,403.48" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="60.00" cy="403.48" r="2.3" fill="#d55e00"/>
+<polyline points="85.22,423.37" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="85.22" cy="423.37" r="2.3" fill="#d55e00"/>
+<polyline points="110.45,430.84" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="110.45" cy="430.84" r="2.3" fill="#d55e00"/>
+<polyline points="135.67,445.21" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="135.67" cy="445.21" r="2.3" fill="#d55e00"/>
+<polyline points="160.89,443.19 173.50,440.42" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<polyline points="211.34,447.65" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="211.34" cy="447.65" r="2.3" fill="#d55e00"/>
+<polyline points="236.56,444.45 249.17,445.74" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<polyline points="299.62,441.02" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="299.62" cy="441.02" r="2.3" fill="#d55e00"/>
+<polyline points="324.84,438.27" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="324.84" cy="438.27" r="2.3" fill="#d55e00"/>
+<polyline points="350.07,447.93" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="350.07" cy="447.93" r="2.3" fill="#d55e00"/>
+<polyline points="375.29,442.93" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="375.29" cy="442.93" r="2.3" fill="#d55e00"/>
+<polyline points="400.51,445.60" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="400.51" cy="445.60" r="2.3" fill="#d55e00"/>
+<polyline points="425.74,451.28" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="425.74" cy="451.28" r="2.3" fill="#d55e00"/>
+<polyline points="450.96,445.54" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="450.96" cy="445.54" r="2.3" fill="#d55e00"/>
+<text x="60" y="530" font-size="17">DRAM 8GiB / staging 4GiB</text>
+<text x="60" y="555">GPU staging occupancy (%)</text>
+<line x1="60" x2="480" y1="697.0" y2="697.0" stroke="#ddd"/>
+<text x="28" y="701.0">0</text>
+<line x1="60" x2="480" y1="663.25" y2="663.25" stroke="#ddd"/>
+<text x="28" y="667.25">25</text>
+<line x1="60" x2="480" y1="629.5" y2="629.5" stroke="#ddd"/>
+<text x="28" y="633.5">50</text>
+<line x1="60" x2="480" y1="595.75" y2="595.75" stroke="#ddd"/>
+<text x="28" y="599.75">75</text>
+<line x1="60" x2="480" y1="562.0" y2="562.0" stroke="#ddd"/>
+<text x="28" y="566.0">100</text>
+<text x="50.0" y="714">0</text>
+<text x="155.0" y="714">42</text>
+<text x="260.0" y="714">83</text>
+<text x="365.0" y="714">125</text>
+<text x="470.0" y="714">166</text>
+<polyline points="60.00,655.47 72.64,696.34 85.28,673.93 97.92,695.68 110.56,657.45 123.20,669.31 135.83,695.68 148.47,679.20 161.11,696.34 173.75,679.86 186.39,673.93 199.03,695.68 211.67,696.34 224.31,677.88 236.95,686.45 249.59,679.20 262.23,677.88 274.87,696.34 287.50,696.34 300.14,692.39 312.78,676.57 325.42,673.27 338.06,695.68 350.70,684.48 363.34,677.88 375.98,685.79 388.62,664.04 401.26,676.57 413.90,685.79 426.54,664.04 439.17,695.68 451.81,674.59 464.45,695.68 477.09,696.34" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="60.00,696.20 72.64,696.98 85.28,696.60 97.92,696.97 110.56,696.38 123.20,696.77 135.83,696.98 148.47,696.82 161.11,696.98 173.75,696.79 186.39,696.74 199.03,696.97 211.67,696.99 224.31,696.51 236.95,696.91 249.59,696.92 262.23,696.03 274.87,696.98 287.50,697.00 300.14,696.99 312.78,696.76 325.42,696.72 338.06,696.98 350.70,696.49 363.34,696.84 375.98,696.66 388.62,696.56 401.26,696.24 413.90,696.95 426.54,694.33 439.17,696.98 451.81,695.90 464.45,696.98 477.09,696.99" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<text x="60" y="768">Lookup chunk fractions (%)</text>
+<line x1="60" x2="480" y1="910.0" y2="910.0" stroke="#ddd"/>
+<text x="28" y="914.0">0</text>
+<line x1="60" x2="480" y1="876.25" y2="876.25" stroke="#ddd"/>
+<text x="28" y="880.25">25</text>
+<line x1="60" x2="480" y1="842.5" y2="842.5" stroke="#ddd"/>
+<text x="28" y="846.5">50</text>
+<line x1="60" x2="480" y1="808.75" y2="808.75" stroke="#ddd"/>
+<text x="28" y="812.75">75</text>
+<line x1="60" x2="480" y1="775.0" y2="775.0" stroke="#ddd"/>
+<text x="28" y="779.0">100</text>
+<text x="50.0" y="927">0</text>
+<text x="155.0" y="927">42</text>
+<text x="260.0" y="927">83</text>
+<text x="365.0" y="927">125</text>
+<text x="470.0" y="927">166</text>
+<polyline points="60.00,867.90" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="60.00" cy="867.90" r="2.3" fill="#0072b2"/>
+<polyline points="85.28,813.43" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="85.28" cy="813.43" r="2.3" fill="#0072b2"/>
+<polyline points="110.56,838.56" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="110.56" cy="838.56" r="2.3" fill="#0072b2"/>
+<polyline points="148.47,789.79" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="148.47" cy="789.79" r="2.3" fill="#0072b2"/>
+<polyline points="173.75,796.96 186.39,793.95" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="224.31,788.61 236.95,792.35" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="262.23,798.11" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="262.23" cy="798.11" r="2.3" fill="#0072b2"/>
+<polyline points="300.14,801.46" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="300.14" cy="801.46" r="2.3" fill="#0072b2"/>
+<polyline points="325.42,793.81" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="325.42" cy="793.81" r="2.3" fill="#0072b2"/>
+<polyline points="350.70,788.26" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="350.70" cy="788.26" r="2.3" fill="#0072b2"/>
+<polyline points="375.98,792.76" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="375.98" cy="792.76" r="2.3" fill="#0072b2"/>
+<polyline points="401.26,793.39" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="401.26" cy="793.39" r="2.3" fill="#0072b2"/>
+<polyline points="426.54,790.73" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="426.54" cy="790.73" r="2.3" fill="#0072b2"/>
+<polyline points="451.81,791.71" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="451.81" cy="791.71" r="2.3" fill="#0072b2"/>
+<polyline points="60.00,910.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="60.00" cy="910.00" r="2.3" fill="#009e73"/>
+<polyline points="85.28,910.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="85.28" cy="910.00" r="2.3" fill="#009e73"/>
+<polyline points="110.56,910.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="110.56" cy="910.00" r="2.3" fill="#009e73"/>
+<polyline points="148.47,910.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="148.47" cy="910.00" r="2.3" fill="#009e73"/>
+<polyline points="173.75,908.92 186.39,910.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="224.31,907.85 236.95,910.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="262.23,903.74" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="262.23" cy="903.74" r="2.3" fill="#009e73"/>
+<polyline points="300.14,910.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="300.14" cy="910.00" r="2.3" fill="#009e73"/>
+<polyline points="325.42,910.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="325.42" cy="910.00" r="2.3" fill="#009e73"/>
+<polyline points="350.70,907.76" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="350.70" cy="907.76" r="2.3" fill="#009e73"/>
+<polyline points="375.98,908.45" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="375.98" cy="908.45" r="2.3" fill="#009e73"/>
+<polyline points="401.26,905.56" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="401.26" cy="905.56" r="2.3" fill="#009e73"/>
+<polyline points="426.54,902.99" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="426.54" cy="902.99" r="2.3" fill="#009e73"/>
+<polyline points="451.81,904.93" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="451.81" cy="904.93" r="2.3" fill="#009e73"/>
+<polyline points="60.00,817.10" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="60.00" cy="817.10" r="2.3" fill="#d55e00"/>
+<polyline points="85.28,871.57" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="85.28" cy="871.57" r="2.3" fill="#d55e00"/>
+<polyline points="110.56,846.44" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="110.56" cy="846.44" r="2.3" fill="#d55e00"/>
+<polyline points="148.47,895.21" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="148.47" cy="895.21" r="2.3" fill="#d55e00"/>
+<polyline points="173.75,889.13 186.39,891.05" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<polyline points="224.31,898.54 236.95,892.65" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<polyline points="262.23,893.15" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="262.23" cy="893.15" r="2.3" fill="#d55e00"/>
+<polyline points="300.14,883.54" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="300.14" cy="883.54" r="2.3" fill="#d55e00"/>
+<polyline points="325.42,891.19" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="325.42" cy="891.19" r="2.3" fill="#d55e00"/>
+<polyline points="350.70,898.97" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="350.70" cy="898.97" r="2.3" fill="#d55e00"/>
+<polyline points="375.98,893.79" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="375.98" cy="893.79" r="2.3" fill="#d55e00"/>
+<polyline points="401.26,896.06" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="401.26" cy="896.06" r="2.3" fill="#d55e00"/>
+<polyline points="426.54,901.28" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="426.54" cy="901.28" r="2.3" fill="#d55e00"/>
+<polyline points="451.81,898.36" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="451.81" cy="898.36" r="2.3" fill="#d55e00"/>
+<text x="555" y="80" font-size="17">DRAM 4GiB / staging 8GiB</text>
+<text x="555" y="105">GPU staging occupancy (%)</text>
+<line x1="555" x2="975" y1="247.0" y2="247.0" stroke="#ddd"/>
+<text x="523" y="251.0">0</text>
+<line x1="555" x2="975" y1="213.25" y2="213.25" stroke="#ddd"/>
+<text x="523" y="217.25">25</text>
+<line x1="555" x2="975" y1="179.5" y2="179.5" stroke="#ddd"/>
+<text x="523" y="183.5">50</text>
+<line x1="555" x2="975" y1="145.75" y2="145.75" stroke="#ddd"/>
+<text x="523" y="149.75">75</text>
+<line x1="555" x2="975" y1="112.0" y2="112.0" stroke="#ddd"/>
+<text x="523" y="116.0">100</text>
+<text x="545.0" y="264">0</text>
+<text x="650.0" y="264">41</text>
+<text x="755.0" y="264">82</text>
+<text x="860.0" y="264">123</text>
+<text x="965.0" y="264">164</text>
+<polyline points="555.00,228.54 567.78,246.67 580.56,233.16 593.35,246.34 606.13,220.30 618.91,229.53 631.69,198.88 644.48,195.91 657.26,223.93 670.04,243.70 682.82,194.92 695.61,246.67 708.39,246.67 721.17,212.72 733.95,199.87 746.74,246.34 759.52,237.44 772.30,246.67 785.08,246.67 797.87,227.55 810.65,246.34 823.43,215.36 836.21,246.34 848.99,246.67 861.78,215.36 874.56,228.54 887.34,230.52 900.12,231.18 912.91,246.34 925.69,216.68 938.47,246.67 951.25,230.52 964.04,246.34" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="555.00,246.63 567.78,246.99 580.56,246.82 593.35,246.99 606.13,244.77 618.91,246.93 631.69,243.61 644.48,245.44 657.26,245.03 670.04,246.98 682.82,244.33 695.61,246.99 708.39,247.00 721.17,243.72 733.95,243.91 746.74,246.99 759.52,246.14 772.30,246.99 785.08,247.00 797.87,245.38 810.65,246.99 823.43,244.21 836.21,246.99 848.99,246.99 861.78,244.38 874.56,245.90 887.34,246.78 900.12,246.20 912.91,246.98 925.69,244.24 938.47,246.99 951.25,246.08 964.04,246.99" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<text x="555" y="318">Lookup chunk fractions (%)</text>
+<line x1="555" x2="975" y1="460.0" y2="460.0" stroke="#ddd"/>
+<text x="523" y="464.0">0</text>
+<line x1="555" x2="975" y1="426.25" y2="426.25" stroke="#ddd"/>
+<text x="523" y="430.25">25</text>
+<line x1="555" x2="975" y1="392.5" y2="392.5" stroke="#ddd"/>
+<text x="523" y="396.5">50</text>
+<line x1="555" x2="975" y1="358.75" y2="358.75" stroke="#ddd"/>
+<text x="523" y="362.75">75</text>
+<line x1="555" x2="975" y1="325.0" y2="325.0" stroke="#ddd"/>
+<text x="523" y="329.0">100</text>
+<text x="545.0" y="477">0</text>
+<text x="650.0" y="477">41</text>
+<text x="755.0" y="477">82</text>
+<text x="860.0" y="477">123</text>
+<text x="965.0" y="477">164</text>
+<polyline points="555.00,389.75" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="555.00" cy="389.75" r="2.3" fill="#0072b2"/>
+<polyline points="580.56,358.56" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="580.56" cy="358.56" r="2.3" fill="#0072b2"/>
+<polyline points="606.13,391.92" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="606.13" cy="391.92" r="2.3" fill="#0072b2"/>
+<polyline points="631.69,364.70" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="631.69" cy="364.70" r="2.3" fill="#0072b2"/>
+<polyline points="657.26,365.66" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="657.26" cy="365.66" r="2.3" fill="#0072b2"/>
+<polyline points="682.82,366.84" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="682.82" cy="366.84" r="2.3" fill="#0072b2"/>
+<polyline points="721.17,361.35 733.95,373.26" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="759.52,350.06" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="759.52" cy="350.06" r="2.3" fill="#0072b2"/>
+<polyline points="797.87,361.63" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="797.87" cy="361.63" r="2.3" fill="#0072b2"/>
+<polyline points="823.43,354.26" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="823.43" cy="354.26" r="2.3" fill="#0072b2"/>
+<polyline points="861.78,349.74 874.56,352.93" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="900.12,347.37" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="900.12" cy="347.37" r="2.3" fill="#0072b2"/>
+<polyline points="925.69,348.45" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="925.69" cy="348.45" r="2.3" fill="#0072b2"/>
+<polyline points="951.25,350.16" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="951.25" cy="350.16" r="2.3" fill="#0072b2"/>
+<polyline points="555.00,460.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="555.00" cy="460.00" r="2.3" fill="#009e73"/>
+<polyline points="580.56,460.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="580.56" cy="460.00" r="2.3" fill="#009e73"/>
+<polyline points="606.13,457.08" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="606.13" cy="457.08" r="2.3" fill="#009e73"/>
+<polyline points="631.69,435.25" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="631.69" cy="435.25" r="2.3" fill="#009e73"/>
+<polyline points="657.26,438.58" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="657.26" cy="438.58" r="2.3" fill="#009e73"/>
+<polyline points="682.82,436.63" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="682.82" cy="436.63" r="2.3" fill="#009e73"/>
+<polyline points="721.17,435.83 733.95,433.28" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="759.52,451.79" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="759.52" cy="451.79" r="2.3" fill="#009e73"/>
+<polyline points="797.87,448.69" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="797.87" cy="448.69" r="2.3" fill="#009e73"/>
+<polyline points="823.43,448.58" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="823.43" cy="448.58" r="2.3" fill="#009e73"/>
+<polyline points="861.78,445.25 874.56,450.34" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="900.12,452.64" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="900.12" cy="452.64" r="2.3" fill="#009e73"/>
+<polyline points="925.69,443.27" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="925.69" cy="443.27" r="2.3" fill="#009e73"/>
+<polyline points="951.25,450.61" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="951.25" cy="450.61" r="2.3" fill="#009e73"/>
+<polyline points="555.00,395.25" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="555.00" cy="395.25" r="2.3" fill="#d55e00"/>
+<polyline points="580.56,426.44" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="580.56" cy="426.44" r="2.3" fill="#d55e00"/>
+<polyline points="606.13,396.00" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="606.13" cy="396.00" r="2.3" fill="#d55e00"/>
+<polyline points="631.69,445.05" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="631.69" cy="445.05" r="2.3" fill="#d55e00"/>
+<polyline points="657.26,440.75" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="657.26" cy="440.75" r="2.3" fill="#d55e00"/>
+<polyline points="682.82,441.53" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="682.82" cy="441.53" r="2.3" fill="#d55e00"/>
+<polyline points="721.17,447.82 733.95,438.46" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<polyline points="759.52,443.15" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="759.52" cy="443.15" r="2.3" fill="#d55e00"/>
+<polyline points="797.87,434.69" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="797.87" cy="434.69" r="2.3" fill="#d55e00"/>
+<polyline points="823.43,442.17" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="823.43" cy="442.17" r="2.3" fill="#d55e00"/>
+<polyline points="861.78,450.02 874.56,441.72" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<polyline points="900.12,444.98" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="900.12" cy="444.98" r="2.3" fill="#d55e00"/>
+<polyline points="925.69,453.28" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="925.69" cy="453.28" r="2.3" fill="#d55e00"/>
+<polyline points="951.25,444.23" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="951.25" cy="444.23" r="2.3" fill="#d55e00"/>
+<text x="555" y="530" font-size="17">DRAM 4GiB / staging 4GiB</text>
+<text x="555" y="555">GPU staging occupancy (%)</text>
+<line x1="555" x2="975" y1="697.0" y2="697.0" stroke="#ddd"/>
+<text x="523" y="701.0">0</text>
+<line x1="555" x2="975" y1="663.25" y2="663.25" stroke="#ddd"/>
+<text x="523" y="667.25">25</text>
+<line x1="555" x2="975" y1="629.5" y2="629.5" stroke="#ddd"/>
+<text x="523" y="633.5">50</text>
+<line x1="555" x2="975" y1="595.75" y2="595.75" stroke="#ddd"/>
+<text x="523" y="599.75">75</text>
+<line x1="555" x2="975" y1="562.0" y2="562.0" stroke="#ddd"/>
+<text x="523" y="566.0">100</text>
+<text x="545.0" y="714">0</text>
+<text x="650.0" y="714">41</text>
+<text x="755.0" y="714">82</text>
+<text x="860.0" y="714">122</text>
+<text x="965.0" y="714">163</text>
+<polyline points="555.00,654.81 567.86,695.68 580.72,672.61 593.58,696.34 606.43,604.06 619.29,681.84 632.15,562.53 645.01,671.29 657.87,640.97 670.73,695.68 683.59,623.83 696.44,696.34 709.30,689.09 722.16,632.40 735.02,627.79 747.88,695.68 760.74,651.52 773.59,696.34 786.45,673.93 799.31,674.59 812.17,696.34 825.03,628.45 837.89,695.68 850.75,608.01 863.60,695.68 876.46,660.09 889.32,695.68 902.18,650.20 915.04,695.68 927.90,650.20 940.76,671.95 953.61,675.25 966.47,696.34" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="555.00,696.23 567.86,696.98 580.72,696.61 593.58,696.98 606.43,679.93 619.29,696.92 632.15,687.28 645.01,696.93 657.87,691.84 670.73,696.97 683.59,691.81 696.44,696.98 709.30,696.98 722.16,691.84 735.02,690.07 747.88,696.97 760.74,694.53 773.59,696.98 786.45,696.66 799.31,696.87 812.17,696.99 825.03,690.85 837.89,696.98 850.75,689.51 863.60,696.97 876.46,696.15 889.32,696.97 902.18,693.99 915.04,696.98 927.90,693.28 940.76,695.90 953.61,696.04 966.47,696.98" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<text x="555" y="768">Lookup chunk fractions (%)</text>
+<line x1="555" x2="975" y1="910.0" y2="910.0" stroke="#ddd"/>
+<text x="523" y="914.0">0</text>
+<line x1="555" x2="975" y1="876.25" y2="876.25" stroke="#ddd"/>
+<text x="523" y="880.25">25</text>
+<line x1="555" x2="975" y1="842.5" y2="842.5" stroke="#ddd"/>
+<text x="523" y="846.5">50</text>
+<line x1="555" x2="975" y1="808.75" y2="808.75" stroke="#ddd"/>
+<text x="523" y="812.75">75</text>
+<line x1="555" x2="975" y1="775.0" y2="775.0" stroke="#ddd"/>
+<text x="523" y="779.0">100</text>
+<text x="545.0" y="927">0</text>
+<text x="650.0" y="927">41</text>
+<text x="755.0" y="927">82</text>
+<text x="860.0" y="927">122</text>
+<text x="965.0" y="927">163</text>
+<polyline points="555.00,862.18" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="555.00" cy="862.18" r="2.3" fill="#0072b2"/>
+<polyline points="580.72,813.43" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="580.72" cy="813.43" r="2.3" fill="#0072b2"/>
+<polyline points="606.43,827.34" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="606.43" cy="827.34" r="2.3" fill="#0072b2"/>
+<polyline points="632.15,836.07" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="632.15" cy="836.07" r="2.3" fill="#0072b2"/>
+<polyline points="657.87,820.81" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="657.87" cy="820.81" r="2.3" fill="#0072b2"/>
+<polyline points="683.59,811.63" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="683.59" cy="811.63" r="2.3" fill="#0072b2"/>
+<polyline points="709.30,829.00 722.16,802.81 735.02,821.06" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="760.74,806.32" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="760.74" cy="806.32" r="2.3" fill="#0072b2"/>
+<polyline points="786.45,805.11" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="786.45" cy="805.11" r="2.3" fill="#0072b2"/>
+<polyline points="825.03,807.18" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="825.03" cy="807.18" r="2.3" fill="#0072b2"/>
+<polyline points="850.75,811.51" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="850.75" cy="811.51" r="2.3" fill="#0072b2"/>
+<polyline points="876.46,793.10" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="876.46" cy="793.10" r="2.3" fill="#0072b2"/>
+<polyline points="902.18,803.04 915.04,781.43 927.90,794.31 940.76,800.06 953.61,785.38" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="555.00,910.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="555.00" cy="910.00" r="2.3" fill="#009e73"/>
+<polyline points="580.72,910.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="580.72" cy="910.00" r="2.3" fill="#009e73"/>
+<polyline points="606.43,895.86" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="606.43" cy="895.86" r="2.3" fill="#009e73"/>
+<polyline points="632.15,864.04" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="632.15" cy="864.04" r="2.3" fill="#009e73"/>
+<polyline points="657.87,885.87" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="657.87" cy="885.87" r="2.3" fill="#009e73"/>
+<polyline points="683.59,892.47" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="683.59" cy="892.47" r="2.3" fill="#009e73"/>
+<polyline points="709.30,880.55 722.16,893.58 735.02,883.28" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="760.74,895.53" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="760.74" cy="895.53" r="2.3" fill="#009e73"/>
+<polyline points="786.45,906.55" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="786.45" cy="906.55" r="2.3" fill="#009e73"/>
+<polyline points="825.03,897.18" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="825.03" cy="897.18" r="2.3" fill="#009e73"/>
+<polyline points="850.75,883.92" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="850.75" cy="883.92" r="2.3" fill="#009e73"/>
+<polyline points="876.46,907.93" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="876.46" cy="907.93" r="2.3" fill="#009e73"/>
+<polyline points="902.18,896.67 915.04,910.00 927.90,898.28 940.76,901.58 953.61,910.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="555.00,822.82" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="555.00" cy="822.82" r="2.3" fill="#d55e00"/>
+<polyline points="580.72,871.57" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="580.72" cy="871.57" r="2.3" fill="#d55e00"/>
+<polyline points="606.43,871.80" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="606.43" cy="871.80" r="2.3" fill="#d55e00"/>
+<polyline points="632.15,894.89" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="632.15" cy="894.89" r="2.3" fill="#d55e00"/>
+<polyline points="657.87,888.31" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="657.87" cy="888.31" r="2.3" fill="#d55e00"/>
+<polyline points="683.59,890.89" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="683.59" cy="890.89" r="2.3" fill="#d55e00"/>
+<polyline points="709.30,885.45 722.16,898.61 735.02,890.66" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<polyline points="760.74,893.15" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="760.74" cy="893.15" r="2.3" fill="#d55e00"/>
+<polyline points="786.45,883.35" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="786.45" cy="883.35" r="2.3" fill="#d55e00"/>
+<polyline points="825.03,890.63" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="825.03" cy="890.63" r="2.3" fill="#d55e00"/>
+<polyline points="850.75,899.57" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="850.75" cy="899.57" r="2.3" fill="#d55e00"/>
+<polyline points="876.46,893.97" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="876.46" cy="893.97" r="2.3" fill="#d55e00"/>
+<polyline points="902.18,895.29 915.04,903.57 927.90,902.41 940.76,893.36 953.61,899.62" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<text x="1050" y="80" font-size="17">DRAM 2GiB / staging 8GiB</text>
+<text x="1050" y="105">GPU staging occupancy (%)</text>
+<line x1="1050" x2="1470" y1="247.0" y2="247.0" stroke="#ddd"/>
+<text x="1018" y="251.0">0</text>
+<line x1="1050" x2="1470" y1="213.25" y2="213.25" stroke="#ddd"/>
+<text x="1018" y="217.25">25</text>
+<line x1="1050" x2="1470" y1="179.5" y2="179.5" stroke="#ddd"/>
+<text x="1018" y="183.5">50</text>
+<line x1="1050" x2="1470" y1="145.75" y2="145.75" stroke="#ddd"/>
+<text x="1018" y="149.75">75</text>
+<line x1="1050" x2="1470" y1="112.0" y2="112.0" stroke="#ddd"/>
+<text x="1018" y="116.0">100</text>
+<text x="1040.0" y="264">0</text>
+<text x="1145.0" y="264">42</text>
+<text x="1250.0" y="264">84</text>
+<text x="1355.0" y="264">127</text>
+<text x="1460.0" y="264">169</text>
+<polyline points="1050.00,196.57 1062.44,246.67 1074.88,214.04 1087.32,246.67 1099.76,119.12 1112.20,246.67 1124.64,134.94 1137.08,246.67 1149.52,191.63 1161.96,235.46 1174.40,149.11 1186.84,246.34 1199.28,153.07 1211.72,246.34 1224.16,164.60 1236.60,246.34 1249.04,178.77 1261.48,246.67 1273.92,246.67 1286.36,175.15 1298.80,246.34 1311.24,145.16 1323.68,178.77 1336.12,246.67 1348.55,160.65 1360.99,246.67 1373.43,164.27 1385.87,155.04 1398.31,176.14 1410.75,155.70 1423.19,164.60 1435.63,246.67 1448.07,213.05 1460.51,246.67" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="1050.00,244.47 1062.44,246.99 1074.88,244.70 1087.32,246.99 1099.76,234.83 1112.20,246.99 1124.64,234.04 1137.08,246.99 1149.52,242.69 1161.96,246.88 1174.40,232.44 1186.84,246.99 1199.28,239.28 1211.72,246.98 1224.16,241.41 1236.60,246.99 1249.04,242.35 1261.48,246.99 1273.92,247.00 1286.36,240.53 1298.80,246.98 1311.24,237.39 1323.68,246.54 1336.12,246.99 1348.55,241.68 1360.99,246.99 1373.43,240.32 1385.87,242.41 1398.31,242.67 1410.75,244.16 1423.19,239.32 1435.63,246.99 1448.07,242.90 1460.51,246.99" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<text x="1050" y="318">Lookup chunk fractions (%)</text>
+<line x1="1050" x2="1470" y1="460.0" y2="460.0" stroke="#ddd"/>
+<text x="1018" y="464.0">0</text>
+<line x1="1050" x2="1470" y1="426.25" y2="426.25" stroke="#ddd"/>
+<text x="1018" y="430.25">25</text>
+<line x1="1050" x2="1470" y1="392.5" y2="392.5" stroke="#ddd"/>
+<text x="1018" y="396.5">50</text>
+<line x1="1050" x2="1470" y1="358.75" y2="358.75" stroke="#ddd"/>
+<text x="1018" y="362.75">75</text>
+<line x1="1050" x2="1470" y1="325.0" y2="325.0" stroke="#ddd"/>
+<text x="1018" y="329.0">100</text>
+<text x="1040.0" y="477">0</text>
+<text x="1145.0" y="477">42</text>
+<text x="1250.0" y="477">84</text>
+<text x="1355.0" y="477">127</text>
+<text x="1460.0" y="477">169</text>
+<polyline points="1050.00,440.55" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1050.00" cy="440.55" r="2.3" fill="#0072b2"/>
+<polyline points="1074.88,400.06" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1074.88" cy="400.06" r="2.3" fill="#0072b2"/>
+<polyline points="1099.76,421.07" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1099.76" cy="421.07" r="2.3" fill="#0072b2"/>
+<polyline points="1124.64,419.18" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1124.64" cy="419.18" r="2.3" fill="#0072b2"/>
+<polyline points="1149.52,396.30 1161.96,406.00 1174.40,409.64" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="1199.28,391.96" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1199.28" cy="391.96" r="2.3" fill="#0072b2"/>
+<polyline points="1224.16,406.16" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1224.16" cy="406.16" r="2.3" fill="#0072b2"/>
+<polyline points="1249.04,390.45" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1249.04" cy="390.45" r="2.3" fill="#0072b2"/>
+<polyline points="1286.36,417.81" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1286.36" cy="417.81" r="2.3" fill="#0072b2"/>
+<polyline points="1311.24,417.09" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1311.24" cy="417.09" r="2.3" fill="#0072b2"/>
+<polyline points="1348.55,383.11" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1348.55" cy="383.11" r="2.3" fill="#0072b2"/>
+<polyline points="1373.43,413.97 1385.87,398.40" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="1410.75,390.64" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1410.75" cy="390.64" r="2.3" fill="#0072b2"/>
+<polyline points="1448.07,368.18" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1448.07" cy="368.18" r="2.3" fill="#0072b2"/>
+<polyline points="1050.00,429.80" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1050.00" cy="429.80" r="2.3" fill="#009e73"/>
+<polyline points="1074.88,414.40" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1074.88" cy="414.40" r="2.3" fill="#009e73"/>
+<polyline points="1099.76,391.77" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1099.76" cy="391.77" r="2.3" fill="#009e73"/>
+<polyline points="1124.64,380.93" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1124.64" cy="380.93" r="2.3" fill="#009e73"/>
+<polyline points="1149.52,409.04 1161.96,405.40 1174.40,394.00" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="1199.28,405.57" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1199.28" cy="405.57" r="2.3" fill="#009e73"/>
+<polyline points="1224.16,398.78" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1224.16" cy="398.78" r="2.3" fill="#009e73"/>
+<polyline points="1249.04,410.75" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1249.04" cy="410.75" r="2.3" fill="#009e73"/>
+<polyline points="1286.36,386.56" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1286.36" cy="386.56" r="2.3" fill="#009e73"/>
+<polyline points="1311.24,385.88" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1311.24" cy="385.88" r="2.3" fill="#009e73"/>
+<polyline points="1348.55,413.96" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1348.55" cy="413.96" r="2.3" fill="#009e73"/>
+<polyline points="1373.43,384.83 1385.87,402.23" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="1410.75,403.08" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1410.75" cy="403.08" r="2.3" fill="#009e73"/>
+<polyline points="1448.07,434.28" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1448.07" cy="434.28" r="2.3" fill="#009e73"/>
+<polyline points="1050.00,374.65" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1050.00" cy="374.65" r="2.3" fill="#d55e00"/>
+<polyline points="1074.88,430.54" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1074.88" cy="430.54" r="2.3" fill="#d55e00"/>
+<polyline points="1099.76,432.15" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1099.76" cy="432.15" r="2.3" fill="#d55e00"/>
+<polyline points="1124.64,444.89" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1124.64" cy="444.89" r="2.3" fill="#d55e00"/>
+<polyline points="1149.52,439.67 1161.96,433.60 1174.40,441.36" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<polyline points="1199.28,447.47" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1199.28" cy="447.47" r="2.3" fill="#d55e00"/>
+<polyline points="1224.16,440.06" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1224.16" cy="440.06" r="2.3" fill="#d55e00"/>
+<polyline points="1249.04,443.80" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1249.04" cy="443.80" r="2.3" fill="#d55e00"/>
+<polyline points="1286.36,440.63" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1286.36" cy="440.63" r="2.3" fill="#d55e00"/>
+<polyline points="1311.24,442.03" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1311.24" cy="442.03" r="2.3" fill="#d55e00"/>
+<polyline points="1348.55,447.93" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1348.55" cy="447.93" r="2.3" fill="#d55e00"/>
+<polyline points="1373.43,446.21 1385.87,444.37" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<polyline points="1410.75,451.28" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1410.75" cy="451.28" r="2.3" fill="#d55e00"/>
+<polyline points="1448.07,442.54" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1448.07" cy="442.54" r="2.3" fill="#d55e00"/>
+<text x="1050" y="530" font-size="17">DRAM 2GiB / staging 4GiB</text>
+<text x="1050" y="555">GPU staging occupancy (%)</text>
+<line x1="1050" x2="1470" y1="697.0" y2="697.0" stroke="#ddd"/>
+<text x="1018" y="701.0">0</text>
+<line x1="1050" x2="1470" y1="663.25" y2="663.25" stroke="#ddd"/>
+<text x="1018" y="667.25">25</text>
+<line x1="1050" x2="1470" y1="629.5" y2="629.5" stroke="#ddd"/>
+<text x="1018" y="633.5">50</text>
+<line x1="1050" x2="1470" y1="595.75" y2="595.75" stroke="#ddd"/>
+<text x="1018" y="599.75">75</text>
+<line x1="1050" x2="1470" y1="562.0" y2="562.0" stroke="#ddd"/>
+<text x="1018" y="566.0">100</text>
+<text x="1040.0" y="714">0</text>
+<text x="1145.0" y="714">45</text>
+<text x="1250.0" y="714">90</text>
+<text x="1355.0" y="714">135</text>
+<text x="1460.0" y="714">179</text>
+<polyline points="1050.00,642.29 1061.71,696.34 1073.41,600.76 1085.12,696.34 1096.82,562.53 1108.53,695.68 1120.24,562.53 1131.94,665.36 1143.65,696.34 1155.36,613.28 1167.06,562.53 1178.77,696.34 1190.47,696.34 1202.18,562.53 1213.89,696.34 1225.59,562.53 1237.30,695.68 1249.01,569.12 1260.71,695.68 1272.42,643.61 1284.12,596.80 1295.83,696.34 1307.54,562.53 1319.24,695.68 1330.95,562.53 1342.66,562.53 1354.36,696.34 1366.07,562.53 1377.77,695.68 1389.48,562.53 1401.19,696.34 1412.89,562.53 1424.60,655.47 1436.31,696.34 1448.01,610.65 1459.72,695.68" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="1050.00,693.71 1061.71,696.98 1073.41,687.16 1085.12,696.98 1096.82,653.87 1108.53,696.97 1120.24,685.57 1131.94,696.78 1143.65,696.98 1155.36,689.46 1167.06,678.96 1178.77,696.97 1190.47,696.99 1202.18,688.33 1213.89,696.97 1225.59,681.55 1237.30,696.98 1249.01,687.98 1260.71,696.99 1272.42,696.69 1284.12,689.40 1295.83,696.99 1307.54,679.43 1319.24,696.98 1330.95,692.39 1342.66,693.45 1354.36,696.98 1366.07,688.99 1377.77,696.98 1389.48,685.90 1401.19,696.97 1412.89,688.86 1424.60,696.83 1436.31,696.99 1448.01,688.85 1459.72,696.98" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<text x="1050" y="768">Lookup chunk fractions (%)</text>
+<line x1="1050" x2="1470" y1="910.0" y2="910.0" stroke="#ddd"/>
+<text x="1018" y="914.0">0</text>
+<line x1="1050" x2="1470" y1="876.25" y2="876.25" stroke="#ddd"/>
+<text x="1018" y="880.25">25</text>
+<line x1="1050" x2="1470" y1="842.5" y2="842.5" stroke="#ddd"/>
+<text x="1018" y="846.5">50</text>
+<line x1="1050" x2="1470" y1="808.75" y2="808.75" stroke="#ddd"/>
+<text x="1018" y="812.75">75</text>
+<line x1="1050" x2="1470" y1="775.0" y2="775.0" stroke="#ddd"/>
+<text x="1018" y="779.0">100</text>
+<text x="1040.0" y="927">0</text>
+<text x="1145.0" y="927">45</text>
+<text x="1250.0" y="927">90</text>
+<text x="1355.0" y="927">135</text>
+<text x="1460.0" y="927">179</text>
+<polyline points="1050.00,855.31" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1050.00" cy="855.31" r="2.3" fill="#0072b2"/>
+<polyline points="1073.41,850.83" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1073.41" cy="850.83" r="2.3" fill="#0072b2"/>
+<polyline points="1096.82,850.37" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1096.82" cy="850.37" r="2.3" fill="#0072b2"/>
+<polyline points="1120.24,853.75" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1120.24" cy="853.75" r="2.3" fill="#0072b2"/>
+<polyline points="1155.36,836.81 1167.06,841.95" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="1202.18,845.90" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1202.18" cy="845.90" r="2.3" fill="#0072b2"/>
+<polyline points="1225.59,858.35" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1225.59" cy="858.35" r="2.3" fill="#0072b2"/>
+<polyline points="1249.01,835.26" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1249.01" cy="835.26" r="2.3" fill="#0072b2"/>
+<polyline points="1272.42,881.26 1284.12,828.11" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="1307.54,862.07" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1307.54" cy="862.07" r="2.3" fill="#0072b2"/>
+<polyline points="1330.95,835.07 1342.66,872.41" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<polyline points="1366.07,843.79" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1366.07" cy="843.79" r="2.3" fill="#0072b2"/>
+<polyline points="1389.48,853.30" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1389.48" cy="853.30" r="2.3" fill="#0072b2"/>
+<polyline points="1412.89,848.94" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1412.89" cy="848.94" r="2.3" fill="#0072b2"/>
+<polyline points="1448.01,820.63" fill="none" stroke="#0072b2" stroke-width="1.6"/>
+<circle cx="1448.01" cy="820.63" r="2.3" fill="#0072b2"/>
+<polyline points="1050.00,896.50" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1050.00" cy="896.50" r="2.3" fill="#009e73"/>
+<polyline points="1073.41,872.60" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1073.41" cy="872.60" r="2.3" fill="#009e73"/>
+<polyline points="1096.82,870.78" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1096.82" cy="870.78" r="2.3" fill="#009e73"/>
+<polyline points="1120.24,848.61" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1120.24" cy="848.61" r="2.3" fill="#009e73"/>
+<polyline points="1155.36,869.34 1167.06,862.95" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="1202.18,851.45" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1202.18" cy="851.45" r="2.3" fill="#009e73"/>
+<polyline points="1225.59,848.18" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1225.59" cy="848.18" r="2.3" fill="#009e73"/>
+<polyline points="1249.01,868.10" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1249.01" cy="868.10" r="2.3" fill="#009e73"/>
+<polyline points="1272.42,828.13 1284.12,874.34" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="1307.54,841.59" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1307.54" cy="841.59" r="2.3" fill="#009e73"/>
+<polyline points="1330.95,860.37 1342.66,841.65" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<polyline points="1366.07,858.45" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1366.07" cy="858.45" r="2.3" fill="#009e73"/>
+<polyline points="1389.48,847.02" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1389.48" cy="847.02" r="2.3" fill="#009e73"/>
+<polyline points="1412.89,844.79" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1412.89" cy="844.79" r="2.3" fill="#009e73"/>
+<polyline points="1448.01,880.33" fill="none" stroke="#009e73" stroke-width="1.6"/>
+<circle cx="1448.01" cy="880.33" r="2.3" fill="#009e73"/>
+<polyline points="1050.00,843.19" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1050.00" cy="843.19" r="2.3" fill="#d55e00"/>
+<polyline points="1073.41,871.57" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1073.41" cy="871.57" r="2.3" fill="#d55e00"/>
+<polyline points="1096.82,873.84" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1096.82" cy="873.84" r="2.3" fill="#d55e00"/>
+<polyline points="1120.24,892.64" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1120.24" cy="892.64" r="2.3" fill="#d55e00"/>
+<polyline points="1155.36,888.86 1167.06,890.11" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<polyline points="1202.18,897.65" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1202.18" cy="897.65" r="2.3" fill="#d55e00"/>
+<polyline points="1225.59,888.46" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1225.59" cy="888.46" r="2.3" fill="#d55e00"/>
+<polyline points="1249.01,891.64" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1249.01" cy="891.64" r="2.3" fill="#d55e00"/>
+<polyline points="1272.42,885.61 1284.12,892.54" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<polyline points="1307.54,891.33" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1307.54" cy="891.33" r="2.3" fill="#d55e00"/>
+<polyline points="1330.95,899.55 1342.66,880.95" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<polyline points="1366.07,892.76" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1366.07" cy="892.76" r="2.3" fill="#d55e00"/>
+<polyline points="1389.48,894.68" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1389.48" cy="894.68" r="2.3" fill="#d55e00"/>
+<polyline points="1412.89,901.28" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1412.89" cy="901.28" r="2.3" fill="#d55e00"/>
+<polyline points="1448.01,894.04" fill="none" stroke="#d55e00" stroke-width="1.6"/>
+<circle cx="1448.01" cy="894.04" r="2.3" fill="#d55e00"/>
+<text x="30" y="1010">X: seconds since first replay wave; each case independently cold. Dots mark isolated lookup bins; gaps mean no lookups.</text>
+</g></svg>

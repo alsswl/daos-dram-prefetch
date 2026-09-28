@@ -1,0 +1,46 @@
+{
+  "changed_sources": [
+    "discovery_capacity_matrix.py",
+    "report_capacity_matrix.py"
+  ],
+  "same_backend_and_replay_code": true,
+  "cases": {
+    "d8_s8": {
+      "same_config_except_toggle_namespace": true,
+      "same_native_libraries": true,
+      "same_server_command": true,
+      "both_started_empty": true
+    },
+    "d8_s4": {
+      "same_config_except_toggle_namespace": true,
+      "same_native_libraries": true,
+      "same_server_command": true,
+      "both_started_empty": true
+    },
+    "d4_s8": {
+      "same_config_except_toggle_namespace": true,
+      "same_native_libraries": true,
+      "same_server_command": true,
+      "both_started_empty": true
+    },
+    "d4_s4": {
+      "same_config_except_toggle_namespace": true,
+      "same_native_libraries": true,
+      "same_server_command": true,
+      "both_started_empty": true
+    },
+    "d2_s8": {
+      "same_config_except_toggle_namespace": true,
+      "same_native_libraries": true,
+      "same_server_command": true,
+      "both_started_empty": true
+    },
+    "d2_s4": {
+      "same_config_except_toggle_namespace": true,
+      "same_native_libraries": true,
+      "same_server_command": true,
+      "both_started_empty": true
+    }
+  },
+  "all_namespaces_unique": true
+}

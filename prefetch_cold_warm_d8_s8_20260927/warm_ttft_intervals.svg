@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600">
+<rect width="1000" height="600" fill="white"/><g font-family="sans-serif" fill="#222">
+<text x="30" y="30" font-size="22">Warm TTFT: where the measured time goes</text>
+<text x="30" y="57" font-size="13">Qwen3-14B, DRAM8 / staging8 GiB. Same process after cold fill, 256 requests per phase.</text>
+<rect x="30" y="80" width="12" height="12" fill="#0072b2"/>
+<text x="48" y="91" font-size="12">HTTP start to retrieve start</text>
+<rect x="355" y="80" width="12" height="12" fill="#d55e00"/>
+<text x="373" y="91" font-size="12">retrieve API</text>
+<rect x="680" y="80" width="12" height="12" fill="#009e73"/>
+<text x="698" y="91" font-size="12">retrieve return to first text</text>
+<line x1="70" x2="970" y1="460.0" y2="460.0" stroke="#ddd"/>
+<text x="20" y="464.0" font-size="12">0</text>
+<line x1="70" x2="970" y1="382.5" y2="382.5" stroke="#ddd"/>
+<text x="20" y="386.5" font-size="12">54</text>
+<line x1="70" x2="970" y1="305.0" y2="305.0" stroke="#ddd"/>
+<text x="20" y="309.0" font-size="12">108</text>
+<line x1="70" x2="970" y1="227.5" y2="227.5" stroke="#ddd"/>
+<text x="20" y="231.5" font-size="12">162</text>
+<line x1="70" x2="970" y1="150.0" y2="150.0" stroke="#ddd"/>
+<text x="20" y="154.0" font-size="12">216</text>
+<text x="15" y="125" font-size="12">ms</text>
+<rect x="120" y="386.97932030922647" width="115" height="73.02067969077355" fill="#0072b2"/>
+<rect x="120" y="359.32254878583313" width="115" height="27.65677152339331" fill="#d55e00"/>
+<rect x="120" y="273.2786329462926" width="115" height="86.04391583954053" fill="#009e73"/>
+<text x="143" y="261.2786329462926" font-size="16">130.1</text>
+<text x="123" y="490" font-size="14">C8 OFF</text>
+<text x="123" y="511" font-size="12">n=256</text>
+<rect x="330" y="375.9176122424559" width="115" height="84.08238775754413" fill="#0072b2"/>
+<rect x="330" y="372.2785794962386" width="115" height="3.6390327462173353" fill="#d55e00"/>
+<rect x="330" y="287.9757050004938" width="115" height="84.3028744957448" fill="#009e73"/>
+<text x="353" y="275.9757050004938" font-size="16">119.8</text>
+<text x="333" y="490" font-size="14">C8 ON</text>
+<text x="333" y="511" font-size="12">n=256</text>
+<rect x="540" y="354.99275434371486" width="115" height="105.00724565628515" fill="#0072b2"/>
+<rect x="540" y="327.30574972301133" width="115" height="27.68700462070352" fill="#d55e00"/>
+<rect x="540" y="201.66666666666669" width="115" height="125.63908305634465" fill="#009e73"/>
+<text x="563" y="189.66666666666669" font-size="16">179.9</text>
+<text x="543" y="490" font-size="14">C16 OFF</text>
+<text x="543" y="511" font-size="12">n=256</text>
+<rect x="750" y="346.09462311129744" width="115" height="113.90537688870255" fill="#0072b2"/>
+<rect x="750" y="342.26072624661106" width="115" height="3.833896864686361" fill="#d55e00"/>
+<rect x="750" y="226.18706879569882" width="115" height="116.07365745091224" fill="#009e73"/>
+<text x="773" y="214.18706879569882" font-size="16">162.9</text>
+<text x="753" y="490" font-size="14">C16 ON</text>
+<text x="753" y="511" font-size="12">n=256</text>
+<text x="30" y="550" font-size="12">Host event boundaries, not pure compute/DMA or causal critical-path attribution.</text>
+<text x="30" y="573" font-size="12">One trial per condition; generation length and detailed tier placement may differ.</text></g></svg>

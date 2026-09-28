@@ -1,0 +1,47 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/worldbank_education_gdp.csv')\ndf.head()",
+    "output": "        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n2  Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n3  Sub-Saharan Africa          SSF  ...     97.963791     96.974968\n4  Sub-Saharan Africa          SSF  ...     42.847160     43.372971\n\n[5 rows x 45 columns]",
+    "elapsed_seconds": 0.1414715936407447
+  },
+  {
+    "code": "# Identify the relevant columns\neducation_expenditure_col = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_col = 'GNI per capita (constant 2015 US dollar)'\n\n# Filter the dataset to include only the relevant columns\ndf_filtered = df[[education_expenditure_col, gdp_col, 'Country Group']]\n\n# Display the first few rows of the filtered dataset\ndf_filtered.head()",
+    "output": "KeyError: \"['Adjusted savings: education expenditure (percentage of GNI)', 'GNI per capita (constant 2015 US dollar)'] not in index\"",
+    "elapsed_seconds": 0.001990003976970911
+  },
+  {
+    "code": "# Display the column names of the dataset\ndf.columns.tolist()",
+    "output": "['Country Group', 'Country Code', 'Series Name', 'Series Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]']",
+    "elapsed_seconds": 0.0014826590195298195
+  },
+  {
+    "code": "# Identify the rows with the relevant series names\neducation_expenditure_series = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\ngdp_series = df[df['Series Name'] == 'GNI per capita (constant 2015 US dollar)']\n\n# Display the first few rows of the identified series\neducation_expenditure_series.head()\ngdp_series.head()",
+    "output": "Empty DataFrame\nColumns: [Country Group, Country Code, Series Name, Series Code, 1975 [YR1975], 1976 [YR1976], 1977 [YR1977], 1978 [YR1978], 1979 [YR1979], 1980 [YR1980], 1981 [YR1981], 1982 [YR1982], 1983 [YR1983], 1984 [YR1984], 1985 [YR1985], 1986 [YR1986], 1987 [YR1987], 1988 [YR1988], 1989 [YR1989], 1990 [YR1990], 1991 [YR1991], 1992 [YR1992], 1993 [YR1993], 1994 [YR1994], 1995 [YR1995], 1996 [YR1996], 1997 [YR1997], 1998 [YR1998], 1999 [YR1999], 2000 [YR2000], 2001 [YR2001], 2002 [YR2002], 2003 [YR2003], 2004 [YR2004], 2005 [YR2005], 2006 [YR2006], 2007 [YR2007], 2008 [YR2008], 2009 [YR2009], 2010 [YR2010], 2011 [YR2011], 2012 [YR2012], 2013 [YR2013], 2014 [YR2014], 2015 [YR2015]]\nIndex: []",
+    "elapsed_seconds": 0.0025337766855955124
+  },
+  {
+    "code": "# Check unique values in the 'Series Name' column\nunique_series_names = df['Series Name'].unique()\nunique_series_names",
+    "output": "['GNI per capita (constant 2015 USdollar)'\n 'Adjusted savings: education expenditure (percentage of GNI)'\n 'Exports of goods and services (annual percentage growth)'\n 'School enrollment, primary (percentage gross)'\n 'School enrollment, secondary (percentage gross)'\n 'Labor force participation rate, total (percentage of total population ages 15+) (modeled ILO estimate)']",
+    "elapsed_seconds": 0.00140319112688303
+  },
+  {
+    "code": "# Correct the names of the series\neducation_expenditure_series = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\ngdp_series = df[df['Series Name'] == 'GNI per capita (constant 2015 USdollar)']\n\n# Display the first few rows of the identified series\neducation_expenditure_series.head()\ngdp_series.head()",
+    "output": "         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n6  Lower middle income          LMC  ...   1894.302198   1965.288164\n\n[2 rows x 45 columns]",
+    "elapsed_seconds": 0.014125108253210783
+  },
+  {
+    "code": "# Extract the data for each country group\nsub_saharan_africa_education = education_expenditure_series[education_expenditure_series['Country Group'] == 'Sub-Saharan Africa']\nlower_middle_income_education = education_expenditure_series[education_expenditure_series['Country Group'] == 'Lower middle income']\n\nsub_saharan_africa_gdp = gdp_series[gdp_series['Country Group'] == 'Sub-Saharan Africa']\nlower_middle_income_gdp = gdp_series[gdp_series['Country Group'] == 'Lower middle income']\n\n# Extract the values for the years 1975 to 2015\nsub_saharan_africa_education_values = sub_saharan_africa_education.iloc[:, 4:].values.flatten()\nlower_middle_income_education_values = lower_middle_income_education.iloc[:, 4:].values.flatten()\n\nsub_saharan_africa_gdp_values = sub_saharan_africa_gdp.iloc[:, 4:].values.flatten()\nlower_middle_income_gdp_values = lower_middle_income_gdp.iloc[:, 4:].values.flatten()\n\n# Calculate the correlation coefficients\nimport numpy as np\n\ncorrelation_sub_saharan = np.corrcoef(sub_saharan_africa_education_values, sub_saharan_africa_gdp_values)[0, 1]\ncorrelation_lower_middle = np.corrcoef(lower_middle_income_education_values, lower_middle_income_gdp_values)[0, 1]\n\ncorrelation_sub_saharan, correlation_lower_middle",
+    "output": "(nan, -0.4805381615837641)",
+    "elapsed_seconds": 0.003409747965633869
+  },
+  {
+    "code": "# Check for missing data in Sub-Saharan Africa education and GDP values\nimport numpy as np\n\nsub_saharan_africa_education_missing = np.isnan(sub_saharan_africa_education_values).sum()\nsub_saharan_africa_gdp_missing = np.isnan(sub_saharan_africa_gdp_values).sum()\n\nsub_saharan_africa_education_missing, sub_saharan_africa_gdp_missing",
+    "output": "(0, 36)",
+    "elapsed_seconds": 0.001343131996691227
+  },
+  {
+    "code": "# Impute missing values in Sub-Saharan Africa GDP data\nsub_saharan_africa_gdp_values_imputed = np.where(np.isnan(sub_saharan_africa_gdp_values), np.nanmean(sub_saharan_africa_gdp_values), sub_saharan_africa_gdp_values)\n\n# Recalculate the correlation coefficient for Sub-Saharan Africa\ncorrelation_sub_saharan_imputed = np.corrcoef(sub_saharan_africa_education_values, sub_saharan_africa_gdp_values_imputed)[0, 1]\ncorrelation_sub_saharan_imputed",
+    "output": "-0.09973344650637089",
+    "elapsed_seconds": 0.0015126019716262817
+  }
+]

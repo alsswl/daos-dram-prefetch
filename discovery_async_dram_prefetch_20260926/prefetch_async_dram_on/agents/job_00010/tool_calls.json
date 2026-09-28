@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\n\n# Filter the dataset for Experimental Economics\nexperimental_economics_data = df[df['discipline'] == 'Experimental Economics']\n\n# Calculate the average number of authors for original studies\naverage_n_authors_o = experimental_economics_data['n_authors.o'].mean()\n\n# Calculate the average number of authors for replication studies\naverage_n_authors_r = experimental_economics_data['n_authors.r'].mean()\n\naverage_n_authors_o, average_n_authors_r",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.13606694480404258
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\n\n# Check for missing values in 'n_authors.o' and 'n_authors.r'\nmissing_n_authors_o = df['n_authors.o'].isnull().sum()\nmissing_n_authors_r = df['n_authors.r'].isnull().sum()\n\n# Check the unique values in the 'discipline' column\nunique_disciplines = df['discipline'].unique()\n\nmissing_n_authors_o, missing_n_authors_r, unique_disciplines",
+    "output": "(0, 0, array(['Cognitive', 'Social', 'Economics'], dtype=object))",
+    "elapsed_seconds": 0.004236974753439426
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\n\n# Filter the dataset for Economics (Experimental Economics)\neconomics_data = df[df['discipline'] == 'Economics']\n\n# Calculate the average number of authors for original studies\naverage_n_authors_o = economics_data['n_authors.o'].mean()\n\n# Calculate the average number of authors for replication studies\naverage_n_authors_r = economics_data['n_authors.r'].mean()\n\naverage_n_authors_o, average_n_authors_r",
+    "output": "(2.6666666666666665, 3.2777777777777777)",
+    "elapsed_seconds": 0.0050985137932002544
+  }
+]

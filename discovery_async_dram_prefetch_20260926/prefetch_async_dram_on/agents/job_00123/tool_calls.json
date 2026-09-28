@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of each dataset to understand their structure\npollen_df.head(), time_series_df.head(), capital_df.head()",
+    "output": "(   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns],    Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns],     BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns])",
+    "elapsed_seconds": 0.17804783629253507
+  },
+  {
+    "code": "# Check the columns related to daggers in the time_series_df and capital_df\ntime_series_df[['CE', 'Dagger', 'Dagger_inter']].head(), capital_df[['BCE', 'ZDolch']].head()",
+    "output": "(     CE  Dagger  Dagger_inter\n0 -4100   -0.58         -0.58\n1 -4099     NaN         -0.58\n2 -4098     NaN         -0.58\n3 -4097     NaN         -0.58\n4 -4096     NaN         -0.58,     BCE ZDolch\n0  4300  -0,58\n1  4200  -0,58\n2  4100  -0,58\n3  4000  -0,58\n4  3900  -0,58)",
+    "elapsed_seconds": 0.005576780065894127
+  },
+  {
+    "code": "# Check the range of years in the datasets\ntime_series_df[['CE', 'calBP']].describe(), capital_df[['BCE']].describe()",
+    "output": "(                CE        calBP\ncount  3601.000000  3601.000000\nmean  -2300.000000  4250.000000\nstd    1039.663487  1039.663487\nmin   -4100.000000  2450.000000\n25%   -3200.000000  3350.000000\n50%   -2300.000000  4250.000000\n75%   -1400.000000  5150.000000\nmax    -500.000000  6050.000000,                BCE\ncount    39.000000\nmean   2400.000000\nstd    1140.175425\nmin     500.000000\n25%    1450.000000\n50%    2400.000000\n75%    3350.000000\nmax    4300.000000)",
+    "elapsed_seconds": 0.008080370724201202
+  },
+  {
+    "code": "# Analyze trends in dagger-related Z values over time\nimport matplotlib.pyplot as plt\n\n# Plot dagger Z values from time_series_data.csv\nplt.figure(figsize=(12, 6))\nplt.plot(time_series_df['CE'], time_series_df['Dagger'], label='Dagger (time_series_data)')\nplt.plot(time_series_df['CE'], time_series_df['Dagger_inter'], label='Dagger Interpolated (time_series_data)')\nplt.xlabel('CE')\nplt.ylabel('Z Value')\nplt.title('Trend in Dagger Z Values over Time (time_series_data)')\nplt.legend()\nplt.grid(True)\nplt.show()\n\n# Plot dagger Z values from capital.csv\nplt.figure(figsize=(12, 6))\nplt.plot(capital_df['BCE'], capital_df['ZDolch'], label='ZDolch (capital)')\nplt.xlabel('BCE')\nplt.ylabel('Z Value')\nplt.title('Trend in Dagger Z Values over Time (capital)')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.38735579419881105
+  },
+  {
+    "code": "# Perform statistical analysis to identify trends in dagger Z values over time\nfrom scipy.stats import linregress\n\n# Analyze trends in time_series_data.csv\nslope_time_series, intercept_time_series, r_value_time_series, p_value_time_series, std_err_time_series = linregress(time_series_df['CE'], time_series_df['Dagger_inter'])\nprint(f\"Trend in Dagger Z Values (time_series_data): Slope = {slope_time_series}, p-value = {p_value_time_series}\")\n\n# Analyze trends in capital.csv\nslope_capital, intercept_capital, r_value_capital, p_value_capital, std_err_capital = linregress(capital_df['BCE'], capital_df['ZDolch'])\nprint(f\"Trend in Dagger Z Values (capital): Slope = {slope_capital}, p-value = {p_value_capital}\")",
+    "output": "Trend in Dagger Z Values (time_series_data): Slope = 0.00034625898100466986, p-value = 3.2603409918111136e-125\nTypeError: ufunc 'divide' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''",
+    "elapsed_seconds": 0.4787531588226557
+  },
+  {
+    "code": "# Correct the data format in capital_df and re-run the analysis\ncapital_df['ZDolch'] = capital_df['ZDolch'].str.replace(',', '.').astype(float)\nslope_capital, intercept_capital, r_value_capital, p_value_capital, std_err_capital = linregress(capital_df['BCE'], capital_df['ZDolch'])\nprint(f\"Trend in Dagger Z Values (capital): Slope = {slope_capital}, p-value = {p_value_capital}\")",
+    "output": "Trend in Dagger Z Values (capital): Slope = -0.0003191093117408907, p-value = 0.022741043524978858\n",
+    "elapsed_seconds": 0.003117197658866644
+  }
+]

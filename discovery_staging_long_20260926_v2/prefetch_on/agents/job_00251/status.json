@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 22.074741592165083,
+  "llm_calls": 6,
+  "python_calls": 5,
+  "final_answer": "Scientific Hypothesis: The number of daggers began to increase in importance during the 1st century CE, as indicated by a significant positive trend in the Z values for daggers over time. This hypothesis is based on the 'time_series_data.csv' dataset, where the 'Dagger' column represents Z values for daggers, and the analysis shows a statistically significant increase in these values starting around the 1st century CE. The relationship between time (CE) and the Z values for daggers is statistically significant, with a p-value of 0.039.",
+  "grading": "not run, as in supplied document",
+  "query": "In which century did the number of daggers began to increase in importance for the first time?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/archaeology/metadata_1.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

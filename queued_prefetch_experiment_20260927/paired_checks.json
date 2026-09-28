@@ -1,0 +1,74 @@
+[
+  {
+    "repeat": 1,
+    "concurrency": 8,
+    "phase": "cold",
+    "reference": "wait",
+    "same_cached_requests": 253,
+    "same_tier_requests": 252,
+    "total_requests": 256
+  },
+  {
+    "repeat": 1,
+    "concurrency": 8,
+    "phase": "cold",
+    "reference": "early_wait",
+    "same_cached_requests": 252,
+    "same_tier_requests": 252,
+    "total_requests": 256
+  },
+  {
+    "repeat": 1,
+    "concurrency": 8,
+    "phase": "warm",
+    "reference": "wait",
+    "same_cached_requests": 256,
+    "same_tier_requests": 253,
+    "total_requests": 256
+  },
+  {
+    "repeat": 1,
+    "concurrency": 8,
+    "phase": "warm",
+    "reference": "early_wait",
+    "same_cached_requests": 256,
+    "same_tier_requests": 251,
+    "total_requests": 256
+  },
+  {
+    "repeat": 1,
+    "concurrency": 16,
+    "phase": "cold",
+    "reference": "wait",
+    "same_cached_requests": 238,
+    "same_tier_requests": 236,
+    "total_requests": 256
+  },
+  {
+    "repeat": 1,
+    "concurrency": 16,
+    "phase": "cold",
+    "reference": "early_wait",
+    "same_cached_requests": 241,
+    "same_tier_requests": 238,
+    "total_requests": 256
+  },
+  {
+    "repeat": 1,
+    "concurrency": 16,
+    "phase": "warm",
+    "reference": "wait",
+    "same_cached_requests": 256,
+    "same_tier_requests": 245,
+    "total_requests": 256
+  },
+  {
+    "repeat": 1,
+    "concurrency": 16,
+    "phase": "warm",
+    "reference": "early_wait",
+    "same_cached_requests": 256,
+    "same_tier_requests": 249,
+    "total_requests": 256
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "     HYBAS_ID       long       lat  ...  soil_div     area  diversity\n0  6050000010 -76.477422  7.742693  ...  0.482402  72363.7         68\n1  6050000740 -74.628725  9.803586  ...  0.457436  17944.3         35\n2  6050068100 -75.295995  8.448815  ...  0.378793  17105.5         44\n3  6050068110 -74.608408  8.922863  ...  0.468328    610.1         48\n4  6050070260 -75.591588  5.770093  ...  0.158870  61901.9         81\n\n[5 rows x 21 columns]",
+    "elapsed_seconds": 0.15476077608764172
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import pearsonr\n\n# List of evolutionary biology variables\nevolutionary_vars = ['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol', 'DR', 'BAMM_speciation', 'BAMM_extinction', 'BAMM_NetDiv']\n\n# Calculate the correlation matrix\ncorrelation_matrix = df[evolutionary_vars].corr()\n\n# Display the correlation matrix\ncorrelation_matrix",
+    "output": "                 BEL_evol  MBL_evol  ...  BAMM_extinction  BAMM_NetDiv\nBEL_evol         1.000000  0.449569  ...         0.346229     0.417860\nMBL_evol         0.449569  1.000000  ...         0.931791     0.680332\nOGP_evol         0.484413  0.764583  ...         0.663728     0.411156\nRES_evol         0.458897  0.913270  ...         0.893622     0.689992\nRML_evol         0.043208  0.184240  ...         0.142140    -0.366904\nDR               0.341478  0.570552  ...         0.518594     0.926455\nBAMM_speciation  0.421486  0.882864  ...         0.903175     0.914270\nBAMM_extinction  0.346229  0.931791  ...         1.000000     0.651845\nBAMM_NetDiv      0.417860  0.680332  ...         0.651845     1.000000\n\n[9 rows x 9 columns]",
+    "elapsed_seconds": 0.4854481089860201
+  },
+  {
+    "code": "from scipy.stats import pearsonr\n\n# Perform Pearson correlation test between RML_evol and BAMM_NetDiv\ncorr, p_value = pearsonr(df['RML_evol'], df['BAMM_NetDiv'])\ncorr, p_value",
+    "output": "(-0.36690413838686636, 4.181877892755704e-16)",
+    "elapsed_seconds": 0.002412952948361635
+  },
+  {
+    "code": "from scipy.stats import pearsonr\n\n# Perform Pearson correlation test between RML_evol and BEL_evol\ncorr, p_value = pearsonr(df['RML_evol'], df['BEL_evol'])\ncorr, p_value",
+    "output": "(0.04320787387216543, 0.3551656163206273)",
+    "elapsed_seconds": 0.002319673076272011
+  }
+]

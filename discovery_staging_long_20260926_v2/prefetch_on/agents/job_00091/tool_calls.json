@@ -1,0 +1,62 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of each dataset to understand their structure\npollen_df.head(), time_series_df.head(), capital_df.head()",
+    "output": "(   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns],    Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns],     BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns])",
+    "elapsed_seconds": 0.17226392170414329
+  },
+  {
+    "code": "# Check the columns related to daggers in the time_series_df and capital_df\ntime_series_df[['CE', 'Dagger', 'Dagger_inter']].head(), capital_df[['BCE', 'ZDolch']].head()",
+    "output": "(     CE  Dagger  Dagger_inter\n0 -4100   -0.58         -0.58\n1 -4099     NaN         -0.58\n2 -4098     NaN         -0.58\n3 -4097     NaN         -0.58\n4 -4096     NaN         -0.58,     BCE ZDolch\n0  4300  -0,58\n1  4200  -0,58\n2  4100  -0,58\n3  4000  -0,58\n4  3900  -0,58)",
+    "elapsed_seconds": 0.005980593618005514
+  },
+  {
+    "code": "# Analyze the Dagger column in time_series_df\ntime_series_dagger = time_series_df[['CE', 'Dagger', 'Dagger_inter']].dropna()\ntime_series_dagger.head()\n\n# Analyze the ZDolch column in capital_df\ncapital_dagger = capital_df[['BCE', 'ZDolch']].dropna()\ncapital_dagger.head()",
+    "output": "    BCE ZDolch\n0  4300  -0,58\n1  4200  -0,58\n2  4100  -0,58\n3  4000  -0,58\n4  3900  -0,58",
+    "elapsed_seconds": 0.00422624358907342
+  },
+  {
+    "code": "# Check for trends in the Dagger column in time_series_df\ntime_series_dagger.describe()\n\n# Check for trends in the ZDolch column in capital_df\ncapital_dagger.describe()",
+    "output": "               BCE\ncount    39.000000\nmean   2400.000000\nstd    1140.175425\nmin     500.000000\n25%    1450.000000\n50%    2400.000000\n75%    3350.000000\nmax    4300.000000",
+    "elapsed_seconds": 0.005884155165404081
+  },
+  {
+    "code": "# Check for changes in the Dagger column in time_series_df\ntime_series_dagger['Dagger'].value_counts()",
+    "output": "Dagger\n-0.58    18\n-0.41     2\n-0.55     2\n 1.68     2\n-0.43     2\n 2.23     1\n 1.26     1\n 0.80     1\n 3.33     1\n 1.54     1\n 0.86     1\n-0.26     1\n 1.10     1\n 1.09     1\n-0.44     1\n-0.48     1\nName: count, dtype: int64",
+    "elapsed_seconds": 0.00225628400221467
+  },
+  {
+    "code": "# Check for changes in the Dagger_inter column in time_series_df\ntime_series_dagger['Dagger_inter'].value_counts()",
+    "output": "Dagger_inter\n-0.58    18\n-0.41     2\n-0.55     2\n 1.68     2\n-0.43     2\n 2.23     1\n 1.26     1\n 0.80     1\n 3.33     1\n 1.54     1\n 0.86     1\n-0.26     1\n 1.10     1\n 1.09     1\n-0.44     1\n-0.48     1\nName: count, dtype: int64",
+    "elapsed_seconds": 0.0020812712609767914
+  },
+  {
+    "code": "# Check for changes in the ZDolch column in capital_df\ncapital_dagger['ZDolch'].value_counts()",
+    "output": "ZDolch\n-0,58    20\n-0,41     2\n-0,55     2\n1,68      2\n-0,43     2\n2,23      1\n1,26      1\n0,8       1\n3,33      1\n1,54      1\n0,86      1\n-0,26     1\n1,1       1\n1,09      1\n-0,44     1\n-0,48     1\nName: count, dtype: int64",
+    "elapsed_seconds": 0.0025067292153835297
+  },
+  {
+    "code": "# Check for trends in the ZDolch column in capital_df\ncapital_dagger.sort_values(by='BCE').plot(x='BCE', y='ZDolch', title='ZDolch over Time')",
+    "output": "TypeError: no numeric data to plot",
+    "elapsed_seconds": 0.3745489912107587
+  },
+  {
+    "code": "# Check the data type of the ZDolch column in capital_df\ncapital_dagger['ZDolch'].dtype\n\n# Convert the ZDolch column to numeric values if necessary\ncapital_dagger['ZDolch'] = pd.to_numeric(capital_dagger['ZDolch'], errors='coerce')\ncapital_dagger.head()",
+    "output": "    BCE  ZDolch\n0  4300     NaN\n1  4200     NaN\n2  4100     NaN\n3  4000     NaN\n4  3900     NaN",
+    "elapsed_seconds": 0.003193111624568701
+  },
+  {
+    "code": "# Check the data type of the Dagger and Dagger_inter columns in time_series_df\ntime_series_dagger['Dagger'].dtype, time_series_dagger['Dagger_inter'].dtype\n\n# Convert the Dagger and Dagger_inter columns to numeric values if necessary\ntime_series_dagger['Dagger'] = pd.to_numeric(time_series_dagger['Dagger'], errors='coerce')\ntime_series_dagger['Dagger_inter'] = pd.to_numeric(time_series_dagger['Dagger_inter'], errors='coerce')\n\ntime_series_dagger.head()",
+    "output": "       CE  Dagger  Dagger_inter\n0   -4100   -0.58         -0.58\n100 -4000   -0.58         -0.58\n200 -3900   -0.58         -0.58\n300 -3800   -0.58         -0.58\n400 -3700   -0.58         -0.58",
+    "elapsed_seconds": 0.004360344260931015
+  },
+  {
+    "code": "# Check for trends in the Dagger and Dagger_inter columns in time_series_df\ntime_series_dagger.sort_values(by='CE').plot(x='CE', y='Dagger', title='Dagger over Time')\ntime_series_dagger.sort_values(by='CE').plot(x='CE', y='Dagger_inter', title='Dagger_inter over Time')",
+    "output": "Axes(0.125,0.11;0.775x0.77)",
+    "elapsed_seconds": 0.026893573813140392
+  },
+  {
+    "code": "# Check for trends in the ZDolch column in capital_df after converting to numeric\ncapital_dagger.sort_values(by='BCE').plot(x='BCE', y='ZDolch', title='ZDolch over Time')",
+    "output": "Axes(0.125,0.11;0.775x0.77)",
+    "elapsed_seconds": 0.012260227929800749
+  }
+]

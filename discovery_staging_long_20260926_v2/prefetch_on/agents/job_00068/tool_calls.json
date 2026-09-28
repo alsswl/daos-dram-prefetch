@@ -1,0 +1,37 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\ndf.head()",
+    "output": "                                               study  ... us_lab.r\n0                                          A Roelofs  ...        0\n1                                AL Morris, ML Still  ...        0\n2  B Liefooghe, P Barrouillet, A Vandierendonck, ...  ...        0\n3                       BC Storm, EL Bjork, RA Bjork  ...        1\n4                         C Mitchell, S Nash, G Hall  ...        0\n\n[5 rows x 60 columns]",
+    "elapsed_seconds": 0.14825489418581128
+  },
+  {
+    "code": "df[['compensation.o', 'compensation.r']].nunique()",
+    "output": "compensation.o    4\ncompensation.r    4\ndtype: int64",
+    "elapsed_seconds": 0.0022235200740396976
+  },
+  {
+    "code": "cash_compensation_studies = df[(df['compensation.o'] == 'cash') & (df['compensation.r'] == 'cash')]\ncash_compensation_studies['discipline'].unique()",
+    "output": "['Cognitive' 'Social' 'Economics']",
+    "elapsed_seconds": 0.0020441305823624134
+  },
+  {
+    "code": "# Check if all studies in 'Cognitive' discipline use cash compensation for both original and replication studies\ncognitive_cash_studies = cash_compensation_studies[cash_compensation_studies['discipline'] == 'Cognitive']\ncognitive_cash_studies[['compensation.o', 'compensation.r']].value_counts()\n\n# Check if all studies in 'Social' discipline use cash compensation for both original and replication studies\nsocial_cash_studies = cash_compensation_studies[cash_compensation_studies['discipline'] == 'Social']\nsocial_cash_studies[['compensation.o', 'compensation.r']].value_counts()\n\n# Check if all studies in 'Economics' discipline use cash compensation for both original and replication studies\neconomics_cash_studies = cash_compensation_studies[cash_compensation_studies['discipline'] == 'Economics']\neconomics_cash_studies[['compensation.o', 'compensation.r']].value_counts()",
+    "output": "compensation.o  compensation.r\ncash            cash              18\nName: count, dtype: int64",
+    "elapsed_seconds": 0.004919736180454493
+  },
+  {
+    "code": "# Check if there is a domain where all studies use cash compensation for both original and replication studies\ndomain_cash_compensation = cash_compensation_studies.groupby('discipline').size()\ndomain_cash_compensation",
+    "output": "discipline\nCognitive     6\nEconomics    18\nSocial        4\ndtype: int64",
+    "elapsed_seconds": 0.002146208193153143
+  },
+  {
+    "code": "# Check if all studies in the Economics discipline use cash compensation for both original and replication studies\neconomics_studies = df[df['discipline'] == 'Economics']\neconomics_studies[['compensation.o', 'compensation.r']].value_counts()",
+    "output": "compensation.o  compensation.r\ncash            cash              18\nName: count, dtype: int64",
+    "elapsed_seconds": 0.002682889811694622
+  },
+  {
+    "code": "# Check if there are any studies in the Economics discipline that do not use cash compensation for both original and replication studies\nnon_cash_compensation_economics = economics_studies[(economics_studies['compensation.o'] != 'cash') | (economics_studies['compensation.r'] != 'cash')]\nnon_cash_compensation_economics.shape[0]",
+    "output": "0",
+    "elapsed_seconds": 0.001976129598915577
+  }
+]

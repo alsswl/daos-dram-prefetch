@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 38.564550729934126,
+  "llm_calls": 12,
+  "python_calls": 11,
+  "final_answer": "Hypothesis: The number of daggers did not begin to increase in importance for the first time in any specific century, as the Z values for daggers remained relatively constant across all centuries in the dataset. This suggests that the importance of daggers, as measured by Z values, did not show a significant increase over time. The variables chosen were the \"Dagger_inter\" column (interpolated Z values for daggers) and the \"CE\" column (Common Era). The analysis showed no significant relationship between these variables, as the Z values for daggers were constant across all centuries.",
+  "grading": "not run, as in supplied document",
+  "query": "In which century did the number of daggers began to increase in importance for the first time?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/archaeology/metadata_1.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

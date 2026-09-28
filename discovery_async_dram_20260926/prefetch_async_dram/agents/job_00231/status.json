@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 28.979758294299245,
+  "llm_calls": 3,
+  "python_calls": 2,
+  "final_answer": "Hypothesis: In developing countries, higher education expenditure is associated with lower GNI per capita, and higher GNI per capita is associated with higher exports growth. This suggests that while education expenditure may not directly contribute to higher GNI per capita, it may indirectly influence economic output through its effect on GNI per capita. The negative relationship between education expenditure and GNI per capita is statistically significant (coefficient = -3553.36), and the positive relationship between GNI per capita and exports growth is also statistically significant (coefficient = 0.0055).",
+  "grading": "not run, as in supplied document",
+  "query": "What relationship exists between education expenditure and per capita GDP in developing countries and how does it affect economic output?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/worldbank_education_gdp_indicators/metadata_1.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

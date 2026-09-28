@@ -1,0 +1,102 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\n\n# Display the first few rows of each dataset\ntime_series_df.head(), capital_df.head(), pollen_df.head()",
+    "output": "(   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns],     BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns],    Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns])",
+    "elapsed_seconds": 0.17320502595975995
+  },
+  {
+    "code": "from sklearn.decomposition import PCA\nimport numpy as np\n\n# Drop unnecessary columns\ncapital_df = capital_df.drop(['BCE', 'group', 'color'], axis=1)\n\n# Convert the column names to English for consistency\ncapital_df.columns = ['ZAxtSchwert', 'ZDolch', 'Zhausgr', 'ZCU_AU', 'Zamber', 'ZMonument', 'ZHort', 'ZSichel', 'ZBeil', 'ZMW', 'ZKeform', 'Zkeverz']\n\n# Convert the values to float\ncapital_df = capital_df.apply(pd.to_numeric, errors='coerce')\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Perform PCA\npca = PCA(n_components=1)\ncapital_pca = pca.fit_transform(capital_df)\n\n# Add the PC1 values to the original dataframe\ncapital_df['PC1'] = capital_pca\n\n# Display the first few rows of the dataframe with PC1 values\ncapital_df.head()",
+    "output": "ValueError: Found array with 0 sample(s) (shape=(0, 12)) while a minimum of 1 is required by PCA.",
+    "elapsed_seconds": 0.58112837607041
+  },
+  {
+    "code": "import pandas as pd\n\n# Check for missing values in the capital dataset\nmissing_values = capital_df.isnull().sum()\nmissing_values",
+    "output": "ZAxtSchwert    0\nZDolch         0\nZhausgr        0\nZCU_AU         0\nZamber         0\nZMonument      0\nZHort          0\nZSichel        0\nZBeil          0\nZMW            0\nZKeform        0\nZkeverz        0\ndtype: int64",
+    "elapsed_seconds": 0.002026707399636507
+  },
+  {
+    "code": "# Check the data types of the columns\ncapital_df.dtypes",
+    "output": "ZAxtSchwert    float64\nZDolch         float64\nZhausgr        float64\nZCU_AU         float64\nZamber         float64\nZMonument      float64\nZHort          float64\nZSichel        float64\nZBeil          float64\nZMW            float64\nZKeform        float64\nZkeverz        float64\ndtype: object",
+    "elapsed_seconds": 0.0021940204314887524
+  },
+  {
+    "code": "from sklearn.decomposition import PCA\nimport numpy as np\n\n# Perform PCA\npca = PCA(n_components=1)\ncapital_pca = pca.fit_transform(capital_df)\n\n# Add the PC1 values to the original dataframe\ncapital_df['PC1'] = capital_pca\n\n# Display the first few rows of the dataframe with PC1 values\ncapital_df.head()",
+    "output": "ValueError: Found array with 0 sample(s) (shape=(0, 12)) while a minimum of 1 is required by PCA.",
+    "elapsed_seconds": 0.0025212052278220654
+  },
+  {
+    "code": "# Check the shape of the dataset\ncapital_df.shape",
+    "output": "(0, 12)",
+    "elapsed_seconds": 0.0015934580005705357
+  },
+  {
+    "code": "# Re-load the capital dataset and inspect its contents\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.008046714123338461
+  },
+  {
+    "code": "# Check the data types of the columns\ncapital_df.dtypes",
+    "output": "BCE             int64\ngroup          object\ncolor          object\nZAxtSchwert    object\nZDolch         object\nZhausgr        object\nZCU_AU         object\nZamber         object\nZMonument      object\nZHort          object\nZSichel        object\nZBeil          object\nZMW            object\nZKeform        object\nZkeverz        object\ndtype: object",
+    "elapsed_seconds": 0.002116199117153883
+  },
+  {
+    "code": "# Convert the numeric columns to float\nnumeric_columns = ['ZAxtSchwert', 'ZDolch', 'Zhausgr', 'ZCU_AU', 'Zamber', 'ZMonument', 'ZHort', 'ZSichel', 'ZBeil', 'ZMW', 'ZKeform', 'Zkeverz']\ncapital_df[numeric_columns] = capital_df[numeric_columns].apply(pd.to_numeric, errors='coerce')\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Perform PCA\npca = PCA(n_components=1)\ncapital_pca = pca.fit_transform(capital_df[numeric_columns])\n\n# Add the PC1 values to the original dataframe\ncapital_df['PC1'] = capital_pca\n\n# Display the first few rows of the dataframe with PC1 values\ncapital_df.head()",
+    "output": "ValueError: Found array with 0 sample(s) (shape=(0, 12)) while a minimum of 1 is required by PCA.",
+    "elapsed_seconds": 0.005563353653997183
+  },
+  {
+    "code": "# Check the first few rows of the numeric columns after conversion\ncapital_df[numeric_columns].head()",
+    "output": "Empty DataFrame\nColumns: [ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0023793652653694153
+  },
+  {
+    "code": "# Check the first few rows of the original capital dataset\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0017248070798814297
+  },
+  {
+    "code": "import os\n\n# Check if the file exists\nfile_path = '/data/capital.csv'\nos.path.exists(file_path)",
+    "output": "True",
+    "elapsed_seconds": 0.0015625739470124245
+  },
+  {
+    "code": "# Open the file and read its contents\nwith open('/data/capital.csv', 'r') as file:\n    first_lines = [file.readline() for _ in range(5)]\nfirst_lines",
+    "output": "['BCE,group,color,ZAxtSchwert,ZDolch,Zhausgr,ZCU_AU,Zamber,ZMonument,ZHort,ZSichel,ZBeil,ZMW,ZKeform,Zkeverz\\n', '4300,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\\n', '4200,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\\n', '4100,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\\n', '4000,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,57\",\"1,46\",\"-0,923560777939055\",\"-0,45\",0,\"0,37\",\"0,439715131684893\",\"1,23\",\"-0,11\"\\n']",
+    "elapsed_seconds": 0.0017776400782167912
+  },
+  {
+    "code": "# Replace commas with periods in numeric columns\ncapital_df[numeric_columns] = capital_df[numeric_columns].apply(lambda x: x.str.replace(',', '.').astype(float))\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Perform PCA\npca = PCA(n_components=1)\ncapital_pca = pca.fit_transform(capital_df[numeric_columns])\n\n# Add the PC1 values to the original dataframe\ncapital_df['PC1'] = capital_pca\n\n# Display the first few rows of the dataframe with PC1 values\ncapital_df.head()",
+    "output": "ValueError: Found array with 0 sample(s) (shape=(0, 12)) while a minimum of 1 is required by PCA.",
+    "elapsed_seconds": 0.004221700131893158
+  },
+  {
+    "code": "# Check the first few rows of the numeric columns after replacing commas with periods\ncapital_df[numeric_columns].head()",
+    "output": "Empty DataFrame\nColumns: [ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0022239498794078827
+  },
+  {
+    "code": "# Check the first few rows of the original capital dataset after replacing commas with periods\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0018017278052866459
+  },
+  {
+    "code": "# Re-load the capital dataset and inspect its contents\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.008031936828047037
+  },
+  {
+    "code": "# Replace commas with periods in numeric columns\ncapital_df[numeric_columns] = capital_df[numeric_columns].apply(lambda x: x.str.replace(',', '.').astype(float))\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Perform PCA\npca = PCA(n_components=1)\ncapital_pca = pca.fit_transform(capital_df[numeric_columns])\n\n# Add the PC1 values to the original dataframe\ncapital_df['PC1'] = capital_pca\n\n# Display the first few rows of the dataframe with PC1 values\ncapital_df.head()",
+    "output": "    BCE group       color  ZAxtSchwert  ...       ZMW  ZKeform  Zkeverz       PC1\n0  4300    EN  blueviolet        -0.44  ... -3.134488    -1.13    -1.92 -1.706192\n1  4200    EN  blueviolet        -0.44  ... -3.134488    -1.13    -1.92 -1.706192\n2  4100    EN  blueviolet        -0.44  ... -3.134488    -1.13    -1.92 -1.706192\n3  4000    EN  blueviolet        -0.44  ...  0.439715     1.23    -0.11 -2.008096\n4  3900    EN  blueviolet        -0.44  ...  0.439715     1.02    -0.26 -1.990708\n\n[5 rows x 16 columns]",
+    "elapsed_seconds": 0.012893968727439642
+  },
+  {
+    "code": "# Filter the data for the Middle Neolithic (3400-3000 BCE) and Younger Neolithic (2900-2300 BCE) periods\nmiddle_neolithic = capital_df[(capital_df['BCE'] >= 3400) & (capital_df['BCE'] <= 3000)]\nyounger_neolithic = capital_df[(capital_df['BCE'] >= 2900) & (capital_df['BCE'] <= 2300)]\n\n# Calculate the mean PC1 values for the Middle Neolithic and Younger Neolithic periods\nmiddle_neolithic_mean = middle_neolithic['PC1'].mean()\nyounger_neolithic_mean = younger_neolithic['PC1'].mean()\n\nmiddle_neolithic_mean, younger_neolithic_mean",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.0026802490465343
+  },
+  {
+    "code": "# Check the range of the BCE values in the dataset\ncapital_df['BCE'].min(), capital_df['BCE'].max()",
+    "output": "(500, 4300)",
+    "elapsed_seconds": 0.001719858031719923
+  }
+]

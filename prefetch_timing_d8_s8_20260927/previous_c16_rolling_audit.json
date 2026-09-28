@@ -1,0 +1,74 @@
+[
+  {
+    "name": "r1_off",
+    "repeat": 1,
+    "prefetch": false,
+    "source": "/root/discos_minji/prefetch_d8_s8_c16_rolling_repeat3_20260927/r1_off/replay_calls.json",
+    "source_sha256": "6eac8eec728ab0f0c9105cc2b037d230d4ba0ffe9870d90d24c9ddd01b173c4f",
+    "mean_ttft_ms": 358.6204807725153,
+    "first16_ms": 2862.7070771472063,
+    "rest240_ms": 191.6813743475359,
+    "first16_computed_tokens": 36626,
+    "rest240_computed_tokens": 119732
+  },
+  {
+    "name": "r1_on",
+    "repeat": 1,
+    "prefetch": true,
+    "source": "/root/discos_minji/prefetch_d8_s8_c16_rolling_repeat3_20260927/r1_on/replay_calls.json",
+    "source_sha256": "9269dea213e6e3442d248700fa1c3d94c58a483d2c6c782e0f2fb69d98388bad",
+    "mean_ttft_ms": 371.4703749610635,
+    "first16_ms": 3094.7787147015333,
+    "rest240_ms": 189.91648564503217,
+    "first16_computed_tokens": 41362,
+    "rest240_computed_tokens": 119604
+  },
+  {
+    "name": "r2_on",
+    "repeat": 2,
+    "prefetch": true,
+    "source": "/root/discos_minji/prefetch_d8_s8_c16_rolling_repeat3_20260927/r2_on/replay_calls.json",
+    "source_sha256": "37ab3e12a494159f41bdaf45866bf03dd9eb6b6d1d96a20016eb14caa0e742df",
+    "mean_ttft_ms": 380.63361457170686,
+    "first16_ms": 3311.5467512689065,
+    "rest240_ms": 185.2394054585602,
+    "first16_computed_tokens": 44818,
+    "rest240_computed_tokens": 119860
+  },
+  {
+    "name": "r2_off",
+    "repeat": 2,
+    "prefetch": false,
+    "source": "/root/discos_minji/prefetch_d8_s8_c16_rolling_repeat3_20260927/r2_off/replay_calls.json",
+    "source_sha256": "2a9ba12fc41e0a2693084bf0184e2af133d141ee805ad4d957642eddff7710d2",
+    "mean_ttft_ms": 398.9962742180069,
+    "first16_ms": 3313.8319599383976,
+    "rest240_ms": 204.67389516998082,
+    "first16_computed_tokens": 46354,
+    "rest240_computed_tokens": 120244
+  },
+  {
+    "name": "r3_off",
+    "repeat": 3,
+    "prefetch": false,
+    "source": "/root/discos_minji/prefetch_d8_s8_c16_rolling_repeat3_20260927/r3_off/replay_calls.json",
+    "source_sha256": "bf2855542b49bdd57f578d9e15fc501971fff9279dc8752383da655208a4f667",
+    "mean_ttft_ms": 397.6185602150508,
+    "first16_ms": 3292.6109074032865,
+    "rest240_ms": 204.61907040250176,
+    "first16_computed_tokens": 43922,
+    "rest240_computed_tokens": 121140
+  },
+  {
+    "name": "r3_on",
+    "repeat": 3,
+    "prefetch": true,
+    "source": "/root/discos_minji/prefetch_d8_s8_c16_rolling_repeat3_20260927/r3_on/replay_calls.json",
+    "source_sha256": "6560bea5c8026a62df7a57295de9c20be045a550ab618ba23cc4e48ca4fe1168",
+    "mean_ttft_ms": 419.6534938782861,
+    "first16_ms": 3918.8139156613033,
+    "rest240_ms": 186.37613242608495,
+    "first16_computed_tokens": 59922,
+    "rest240_computed_tokens": 120756
+  }
+]

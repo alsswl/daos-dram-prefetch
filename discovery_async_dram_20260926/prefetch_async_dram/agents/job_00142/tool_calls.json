@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\ndf.head()",
+    "output": "   ID  ...                           Origin\n0  31  ...  https://ww2.unipark.de/uc/seml/\n1  34  ...                              -99\n2  36  ...                              -99\n3  57  ...                              -99\n4  46  ...                              -99\n\n[5 rows x 202 columns]",
+    "elapsed_seconds": 0.16724717011675239
+  },
+  {
+    "code": "# Inspect the columns related to documentation formats\ndocumentation_columns = [col for col in df.columns if 'Q10_ML_Documentation' in col]\ndocumentation_columns",
+    "output": "['Q10_ML_Documentation_Not_Documented', 'Q10_ML_Documentation_Vision_Document', 'Q10_ML_Documentation_Requirements_Lists', 'Q10_ML_Documentation_Goal_Models', 'Q10_ML_Documentation_Use_Case_Models', 'Q10_ML_Documentation_Prototypes', 'Q10_ML_Documentation_User_Stories', 'Q10_ML_Documentation_BDD_Scenarios', 'Q10_ML_Documentation_MLCanvas', 'Q10_ML_Documentation_Notebooks', 'Q10_ML_Documentation_Data_Models', 'Q10_ML_Documentation_Others', 'Q10_ML_Documentation_Others_Free']",
+    "elapsed_seconds": 0.0017733662389218807
+  },
+  {
+    "code": "import numpy as np\nfrom collections import Counter\n\n# Filter out the 'Not_Documented' and 'Others_Free' columns as they might not represent specific documentation formats\ndocumentation_columns_filtered = [col for col in documentation_columns if 'Not_Documented' not in col and 'Others_Free' not in col]\n\n# Count the frequency of each documentation format\ndocumentation_counts = Counter()\nfor col in documentation_columns_filtered:\n    counts = df[col].value_counts()\n    documentation_counts.update(counts)\n\n# Display the frequency of each documentation format\ndocumentation_counts.most_common()",
+    "output": "[(82, 11), (165, 2), (29, 2), (179, 2), (15, 2), (143, 1), (51, 1), (156, 1), (38, 1), (152, 1), (42, 1), (131, 1), (63, 1), (190, 1), (4, 1), (128, 1), (66, 1), (160, 1), (34, 1)]",
+    "elapsed_seconds": 0.0035174330696463585
+  },
+  {
+    "code": "# Check the unique values in the documentation columns to understand the meaning of the values\nfor col in documentation_columns_filtered:\n    print(f\"Unique values in {col}:\")\n    print(df[col].unique())\n    print(\"\\n\")",
+    "output": "Unique values in Q10_ML_Documentation_Vision_Document:\n['not quoted' 'quoted' '-77']\n\n\nUnique values in Q10_ML_Documentation_Requirements_Lists:\n['not quoted' 'quoted' '-77']\n\n\nUnique values in Q10_ML_Documentation_Goal_Models:\n['not quoted' 'quoted' '-77']\n\n\nUnique values in Q10_ML_Documentation_Use_Case_Models:\n['not quoted' 'quoted' '-77']\n\n\nUnique values in Q10_ML_Documentation_Prototypes:\n['not quoted' 'quoted' '-77']\n\n\nUnique values in Q10_ML_Documentation_User_Stories:\n['not quoted' 'quoted' '-77']\n\n\nUnique values in Q10_ML_Documentation_BDD_Scenarios:\n['not quoted' 'quoted' '-77']\n\n\nUnique values in Q10_ML_Documentation_MLCanvas:\n['not quoted' 'quoted' '-77']\n\n\nUnique values in Q10_ML_Documentation_Notebooks:\n['not quoted' 'quoted' '-77']\n\n\nUnique values in Q10_ML_Documentation_Data_Models:\n['not quoted' 'quoted' '-77']\n\n\nUnique values in Q10_ML_Documentation_Others:\n['not quoted' 'quoted' '-77']\n\n\n",
+    "elapsed_seconds": 0.0022773807868361473
+  },
+  {
+    "code": "# Count the number of respondents who indicated they use each documentation format\ndocumentation_usage = Counter()\n\nfor col in documentation_columns_filtered:\n    # Count the number of 'quoted' responses for each documentation format\n    count = df[df[col] == 'quoted'].shape[0]\n    documentation_usage[col] = count\n\n# Display the usage count for each documentation format\ndocumentation_usage.most_common()",
+    "output": "[('Q10_ML_Documentation_Notebooks', 66), ('Q10_ML_Documentation_User_Stories', 63), ('Q10_ML_Documentation_Requirements_Lists', 51), ('Q10_ML_Documentation_Prototypes', 42), ('Q10_ML_Documentation_Use_Case_Models', 38), ('Q10_ML_Documentation_Data_Models', 34), ('Q10_ML_Documentation_Vision_Document', 29), ('Q10_ML_Documentation_Goal_Models', 29), ('Q10_ML_Documentation_MLCanvas', 15), ('Q10_ML_Documentation_Others', 15), ('Q10_ML_Documentation_BDD_Scenarios', 4)]",
+    "elapsed_seconds": 0.004233608953654766
+  },
+  {
+    "code": "import numpy as np\nfrom sklearn.utils import resample\n\n# Extract the counts of 'quoted' responses for Notebooks\nnotebook_counts = []\nfor _ in range(1000):  # Perform 1000 bootstrap samples\n    bootstrap_sample = df.sample(n=len(df), replace=True)\n    count = bootstrap_sample[bootstrap_sample['Q10_ML_Documentation_Notebooks'] == 'quoted'].shape[0]\n    notebook_counts.append(count)\n\n# Calculate the 95% confidence interval\nconfidence_interval = np.percentile(notebook_counts, [2.5, 97.5])\nconfidence_interval",
+    "output": "[53. 81.]",
+    "elapsed_seconds": 1.1861054790206254
+  }
+]

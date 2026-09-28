@@ -1,0 +1,26 @@
+{
+  "model": "Qwen/Qwen3-14B",
+  "tokens": 8192,
+  "generation": 64,
+  "chunk": 128,
+  "staging_gib": 10,
+  "cpu_retention": false,
+  "cpu_allocator_gib": 8,
+  "repeats": 3,
+  "transport": "object",
+  "source_hashes": {
+    "compare_gpu_store.py": "43d8e924341e20cdc1cca2a5a76438c3e0283e60e51a1fd902100bcd6ea52c18",
+    "compare_e2e.py": "bf4de2266ed3c7578f8f4399a2d88c79be02fef10996ce15dcb0699f513c081c",
+    "staging_mixed_pressure.py": "a7a973345df40af4a5e2b60035c896470231e228e6c31143ed3413e2735a1c3d",
+    "lmcache_daos/gpu_store.py": "e26dbaaa85749e0b52f21b47a45e951bd7bb39fff645d96536217d5f389a2702",
+    "lmcache_daos/gds_backend.py": "93e47364a3e183073eb072ad175855c5a4fcba05afda15f298a478e6e72daf74",
+    "lmcache_daos/store_probe_backend.py": "e90836801a7c92bd5743a6a4386d1d9de11273ffbcd36b3156cb47e2388c00b1",
+    "lmcache_daos/staging_probe_backend.py": "b60a7b700a7d7cd8283284d99519907fa32070289c67e64b15046e093a8c86c8",
+    "lmcache_daos/staging_trace.py": "ffa54417176287c1f2ba01f81bcf8c56cbfdcd049900e142969529e481485a7d",
+    "run_vllm.sh": "5f303713631354a1b56837a6f7463a3ed1c45752fd847b05da54a8023e6af32e",
+    "libdaosgdr.so": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c"
+  },
+  "save_decode_cache": true,
+  "first": "gpu_direct",
+  "note": "Fixed-token micro-workload, not agentic DiscoveryBench. Each arm has its own new namespace."
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "     HYBAS_ID       long       lat  ...  soil_div     area  diversity\n0  6050000010 -76.477422  7.742693  ...  0.482402  72363.7         68\n1  6050000740 -74.628725  9.803586  ...  0.457436  17944.3         35\n2  6050068100 -75.295995  8.448815  ...  0.378793  17105.5         44\n3  6050068110 -74.608408  8.922863  ...  0.468328    610.1         48\n4  6050070260 -75.591588  5.770093  ...  0.158870  61901.9         81\n\n[5 rows x 21 columns]",
+    "elapsed_seconds": 0.138429359998554
+  },
+  {
+    "code": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Select relevant evolutionary biology variables\nevolutionary_vars = ['BAMM_speciation', 'BAMM_extinction', 'BAMM_NetDiv', 'DR', 'BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']\n\n# Calculate the correlation matrix\ncorrelation_matrix = df[evolutionary_vars].corr()\n\n# Display the correlation matrix\ncorrelation_matrix",
+    "output": "                 BAMM_speciation  BAMM_extinction  ...  RES_evol  RML_evol\nBAMM_speciation         1.000000         0.903175  ...  0.867942 -0.131759\nBAMM_extinction         0.903175         1.000000  ...  0.893622  0.142140\nBAMM_NetDiv             0.914270         0.651845  ...  0.689992 -0.366904\nDR                      0.801457         0.518594  ...  0.550775 -0.388522\nBEL_evol                0.421486         0.346229  ...  0.458897  0.043208\nMBL_evol                0.882864         0.931791  ...  0.913270  0.184240\nOGP_evol                0.587297         0.663728  ...  0.788677  0.286735\nRES_evol                0.867942         0.893622  ...  1.000000  0.184364\nRML_evol               -0.131759         0.142140  ...  0.184364  1.000000\n\n[9 rows x 9 columns]",
+    "elapsed_seconds": 0.8595087397843599
+  },
+  {
+    "code": "from scipy.stats import pearsonr\n\n# Test the correlation between 'RML_evol' and 'BAMM_speciation'\ncorr1, p_value1 = pearsonr(df['RML_evol'], df['BAMM_speciation'])\n\n# Test the correlation between 'RML_evol' and 'BAMM_extinction'\ncorr2, p_value2 = pearsonr(df['RML_evol'], df['BAMM_extinction'])\n\ncorr1, p_value1, corr2, p_value2",
+    "output": "(-0.13175927349439187, 0.004646325985705279, 0.1421400264267981, 0.002244617717577058)",
+    "elapsed_seconds": 0.003200442995876074
+  },
+  {
+    "code": "from scipy.stats import pearsonr\n\n# Test the correlation between 'BEL_evol' and 'RML_evol'\ncorr, p_value = pearsonr(df['BEL_evol'], df['RML_evol'])\n\ncorr, p_value",
+    "output": "(0.04320787387216543, 0.3551656163206273)",
+    "elapsed_seconds": 0.0022353557869791985
+  },
+  {
+    "code": "from scipy.stats import pearsonr\n\n# Test the correlation between 'BEL_evol' and 'soil_div'\ncorr, p_value = pearsonr(df['BEL_evol'], df['soil_div'])\n\ncorr, p_value",
+    "output": "(-0.03843315018294381, 0.4108718364051524)",
+    "elapsed_seconds": 0.002205836120992899
+  }
+]

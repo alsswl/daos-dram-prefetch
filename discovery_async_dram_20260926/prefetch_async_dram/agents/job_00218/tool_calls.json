@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Filter the dataset to find the number of respondents who indicated that NFRs were not at all considered\nnot_considered = df['Q11_ML_NFRs_Not_Considered'].value_counts()\n\n# Calculate the proportion of respondents who indicated that NFRs were not at all considered\nproportion = not_considered['Not Relevant at All'] / len(df)\n\n# Perform bootstrapping to calculate the 95% confidence interval\nbootstrap_result = bootstrap((df['Q11_ML_NFRs_Not_Considered'],), np.mean, confidence_level=0.95, method='basic')\n\nproportion, bootstrap_result.confidence_interval",
+    "output": "KeyError: 'Not Relevant at All'",
+    "elapsed_seconds": 0.615185019094497
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Display the unique values in the 'Q11_ML_NFRs_Not_Considered' column\ndf['Q11_ML_NFRs_Not_Considered'].unique()",
+    "output": "['quoted' 'not quoted' '-77']",
+    "elapsed_seconds": 0.013158122077584267
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Filter the dataset to find the number of respondents who indicated that NFRs were not at all considered\nnot_considered = df['Q11_ML_NFRs_Not_Considered'] == 'not quoted'\n\n# Calculate the proportion of respondents who indicated that NFRs were not at all considered\nproportion = not_considered.sum() / len(df)\n\n# Perform bootstrapping to calculate the 95% confidence interval\nbootstrap_result = bootstrap((df['Q11_ML_NFRs_Not_Considered'],), np.mean, confidence_level=0.95, method='basic')\n\nproportion, bootstrap_result.confidence_interval",
+    "output": "TypeError: unsupported operand type(s) for /: 'str' and 'int'",
+    "elapsed_seconds": 0.2864157669246197
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Check the data type of the 'Q11_ML_NFRs_Not_Considered' column\ndf['Q11_ML_NFRs_Not_Considered'].dtype",
+    "output": "object",
+    "elapsed_seconds": 0.010805307887494564
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Map the string values to numeric values\ndf['Q11_ML_NFRs_Not_Considered'] = df['Q11_ML_NFRs_Not_Considered'].map({'quoted': 1, 'not quoted': 0, '-77': np.nan})\n\n# Drop rows with missing values\ndf = df.dropna()\n\n# Filter the dataset to find the number of respondents who indicated that NFRs were not at all considered\nnot_considered = df['Q11_ML_NFRs_Not_Considered'] == 0\n\n# Calculate the proportion of respondents who indicated that NFRs were not at all considered\nproportion = not_considered.sum() / len(df)\n\n# Perform bootstrapping to calculate the 95% confidence interval\nbootstrap_result = bootstrap((df['Q11_ML_NFRs_Not_Considered'],), np.mean, confidence_level=0.95, method='basic')\n\nproportion, bootstrap_result.confidence_interval",
+    "output": "(0.898936170212766, ConfidenceInterval(low=0.058510638297872314, high=0.14361702127659573))",
+    "elapsed_seconds": 0.034817414823919535
+  }
+]

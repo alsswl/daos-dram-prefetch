@@ -1,0 +1,37 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_raw.csv')\ndf.head()",
+    "output": "   ID# (range 1-12686) 1979  ...  Total market value of items over $500, 1996\n0                         1  ...                                          NaN\n1                         2  ...                                      15000.0\n2                         3  ...                                       2000.0\n3                         4  ...                                      15000.0\n4                         5  ...                                          NaN\n\n[5 rows x 61 columns]",
+    "elapsed_seconds": 0.1942506399936974
+  },
+  {
+    "code": "# Check for columns related to education or degree completion\neducation_columns = [col for col in df.columns if 'education' in col.lower() or 'degree' in col.lower() or 'school' in col.lower() or 'grade' in col.lower()]\neducation_columns",
+    "output": "[\"Highest grade completed by respondent's mother, 1979\", \"Highest grade completed by respondent's father, 1979\", 'Highest grade completed, 1979', 'Rank in class last year attended at this school, 1981', 'Number of students in class last year attended at this school, 1981']",
+    "elapsed_seconds": 0.0017173951491713524
+  },
+  {
+    "code": "# Identify the gender and education columns\ngender_column = 'Sex of respondent, 1979'\neducation_column = 'Highest grade completed, 1979'\n\n# Convert gender to a categorical variable\ndf[gender_column] = df[gender_column].astype('category')\n\n# Check for missing values in the education column\nmissing_education = df[education_column].isnull().sum()\nmissing_education",
+    "output": "152",
+    "elapsed_seconds": 0.002763269003480673
+  },
+  {
+    "code": "# Drop rows with missing values in the education column\ndf_clean = df.dropna(subset=[education_column])\n\n# Convert gender to a numerical variable for analysis (1: Male, 2: Female)\ndf_clean[gender_column] = df_clean[gender_column].cat.codes\n\n# Perform a t-test to compare the mean highest grade completed between genders\nimport scipy.stats as stats\n\nmale_grades = df_clean[df_clean[gender_column] == 1][education_column]\nfemale_grades = df_clean[df_clean[gender_column] == 2][education_column]\n\nt_stat, p_value = stats.ttest_ind(male_grades, female_grades)\nt_stat, p_value",
+    "output": "<string>:2: SettingWithCopyWarning: \nA value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead\n\nSee the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n<string>:6: SmallSampleWarning: One or more sample arguments is too small; all returned values will be NaN. See documentation for sample size requirements.\n(nan, nan)",
+    "elapsed_seconds": 0.4855945911258459
+  },
+  {
+    "code": "# Check the distribution of gender and education after cleaning\ngender_distribution = df_clean[gender_column].value_counts()\neducation_distribution = df_clean[education_column].value_counts()\ngender_distribution, education_distribution",
+    "output": "(Sex of respondent, 1979\n0    6327\n1    6207\nName: count, dtype: int64, Highest grade completed, 1979\n12.0    3347\n10.0    1918\n9.0     1863\n8.0     1675\n11.0    1570\n13.0     711\n7.0      506\n14.0     459\n15.0     251\n6.0      120\n16.0      35\n5.0       31\n4.0       18\n3.0       17\n0.0        5\n1.0        3\n95.0       2\n2.0        1\n17.0       1\n18.0       1\nName: count, dtype: int64)",
+    "elapsed_seconds": 0.0027087838388979435
+  },
+  {
+    "code": "# Check the unique values in the gender column\ndf_clean[gender_column].unique()",
+    "output": "[1 0]",
+    "elapsed_seconds": 0.0017007142305374146
+  },
+  {
+    "code": "# Re-encode the gender column to match the dataset description (1: Male, 2: Female)\ndf_clean[gender_column] = df_clean[gender_column].replace({0: 1, 1: 2})\n\n# Perform the t-test again\nmale_grades = df_clean[df_clean[gender_column] == 1][education_column]\nfemale_grades = df_clean[df_clean[gender_column] == 2][education_column]\n\nt_stat, p_value = stats.ttest_ind(male_grades, female_grades)\nt_stat, p_value",
+    "output": "<string>:1: SettingWithCopyWarning: \nA value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead\n\nSee the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n(-5.691433978032243, 1.2880103410018152e-08)",
+    "elapsed_seconds": 0.006668601650744677
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "requests": 52,
+  "stories": 4,
+  "steps_per_story": 13,
+  "elapsed_seconds": 242.876958214,
+  "input_tokens": {
+    "n": 52,
+    "mean": 9446.942307692309,
+    "p50": 10151.5,
+    "p95": 16819.6,
+    "maximum": 17807
+  },
+  "output_tokens": {
+    "n": 52,
+    "mean": 1313.826923076923,
+    "p50": 1221.5,
+    "p95": 2001.1999999999996,
+    "maximum": 2406
+  },
+  "chapter_output_tokens": {
+    "n": 32,
+    "mean": 1089.875,
+    "p50": 1066.0,
+    "p95": 1352.35,
+    "maximum": 1409
+  },
+  "chapter_output_words": {
+    "n": 32,
+    "mean": 829.84375,
+    "p50": 820.5,
+    "p95": 1050.75,
+    "maximum": 1095
+  },
+  "ttft_ms": {
+    "n": 52,
+    "mean": 226.04120472589364,
+    "p50": 212.49607321806252,
+    "p95": 303.4298409242183,
+    "maximum": 377.4937973357737
+  },
+  "cached_tokens": 420352,
+  "total_input_tokens": 491241,
+  "hit_requests": 48,
+  "first_turn_cached": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "dram_lookup_chunks": 1882,
+  "daos_lookup_chunks": 1402,
+  "lookup_candidates": 3816,
+  "dram_hit_pct": 49.318658280922435,
+  "daos_hit_pct": 36.740041928721176,
+  "mean_staging_gib": 0.01641220974096739,
+  "peak_staging_gib": 2.9296875,
+  "dram_staged_chunks": 1882,
+  "capacity_recomputed_tokens": 0,
+  "attribution_issue_indices": [],
+  "length_capped_requests": 0,
+  "short_response_requests": 0
+}

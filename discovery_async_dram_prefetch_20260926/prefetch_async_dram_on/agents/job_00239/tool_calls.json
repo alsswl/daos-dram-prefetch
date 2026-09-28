@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Display the first few rows of the dataset to understand its structure\ndf_time_series.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15246745385229588
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Extract the 'CE' and 'Depot' columns\nce_values = df_time_series['CE']\ndepot_values = df_time_series['Depot']\n\n# Identify the row with the maximum 'Depot' value\nmax_depot_index = depot_values.idxmax()\nmax_depot_ce = ce_values[max_depot_index]\n\n# Determine the century\ncentury = (max_depot_ce // 100) * 100\n\ncentury",
+    "output": "-1100",
+    "elapsed_seconds": 0.011429155711084604
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Check for any missing or anomalous values in the 'Depot' column\ndepot_missing = df_time_series['Depot'].isnull().sum()\ndepot_extreme_values = df_time_series['Depot'].abs().sort_values(ascending=False).head(10)\n\ndepot_missing, depot_extreme_values",
+    "output": "(3564, 3000    3.38\n3100    3.38\n3200    1.73\n3300    1.73\n2600    1.04\n2700    1.04\n2200    0.55\n2000    0.55\n2100    0.55\n0       0.55\nName: Depot, dtype: float64)",
+    "elapsed_seconds": 0.016294844914227724
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Extract the 'CE' and 'Depot_inter' columns\nce_values = df_time_series['CE']\ndepot_inter_values = df_time_series['Depot_inter']\n\n# Identify the row with the maximum 'Depot_inter' value\nmax_depot_inter_index = depot_inter_values.idxmax()\nmax_depot_inter_ce = ce_values[max_depot_inter_index]\n\n# Determine the century\ncentury_inter = (max_depot_inter_ce // 100) * 100\n\ncentury_inter",
+    "output": "-1100",
+    "elapsed_seconds": 0.011255406774580479
+  },
+  {
+    "code": "import matplotlib.pyplot as plt\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Plot the 'Depot' and 'Depot_inter' values over time\nplt.figure(figsize=(14, 7))\nplt.plot(df_time_series['CE'], df_time_series['Depot'], label='Depot')\nplt.plot(df_time_series['CE'], df_time_series['Depot_inter'], label='Depot_inter')\nplt.xlabel('CE')\nplt.ylabel('Z values')\nplt.title('Depot and Depot_inter over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.37697096774354577
+  }
+]

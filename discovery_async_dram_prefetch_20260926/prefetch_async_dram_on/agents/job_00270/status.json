@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 42.999611175153404,
+  "llm_calls": 6,
+  "python_calls": 5,
+  "final_answer": "Hypothesis: In the context of ML-enabled system projects, the use of notebooks as a documentation format for requirements is the most frequent, but the difference in frequency compared to other methods is not statistically significant.\n\nContext: The hypothesis is derived from the dataset that contains survey responses detailing the roles, techniques, and documentation practices associated with requirements in ML-enabled system projects.\n\nVariables Chosen: The documentation methods used in ML-enabled system projects, specifically \"Q10_ML_Documentation_Notebooks\" and \"Q10_ML_Documentation_User_Stories\".\n\nRelationship: The frequency of \"Q10_ML_Documentation_Notebooks\" is higher than \"Q10_ML_Documentation_User_Stories\", but the difference is not statistically significant at the 0.05 level.",
+  "grading": "not run, as in supplied document",
+  "query": "Which documentation format is the most frequently used for requirements in ML-enabled system projects after bootstrapping for statistical significance?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/requirements_engineering_for_ML_enabled_systems/metadata_5.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

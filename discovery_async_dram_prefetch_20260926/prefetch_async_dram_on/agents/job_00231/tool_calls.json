@@ -1,0 +1,37 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\nadjusted_savings_df = pd.read_csv('/data/Adjusted_savings_education_expenditure_percentage_of_GNI.csv')\nexports_df = pd.read_csv('/data/Exports_of_goods_and_services_annual_percentage_growth.csv')\ngni_per_capita_df = pd.read_csv('/data/GNI_per_capita_constant_2015_USdollar.csv')\n\n# Display the first few rows of each dataset\nadjusted_savings_df.head(), exports_df.head(), gni_per_capita_df.head()",
+    "output": "(         Country Group Country Code  ...  2014 [YR2014]  2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...       3.254963       3.153823\n1  Lower middle income          LMC  ...       3.106096       3.060663\n\n[2 rows x 43 columns],          Country Group Country Code  ...  2014 [YR2014]  2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...       6.513038      -1.549815\n1  Lower middle income          LMC  ...       2.921528       0.260326\n\n[2 rows x 43 columns],          Country Group Country Code  ...  2014 [YR2014]  2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...    1620.904978    1634.258291\n1  Lower middle income          LMC  ...    1894.302198    1965.288164\n\n[2 rows x 43 columns])",
+    "elapsed_seconds": 0.17052372405305505
+  },
+  {
+    "code": "# Extract the relevant variables for analysis\neducation_expenditure = adjusted_savings_df.filter(regex='^YR').values\ngni_per_capita = gni_per_capita_df.filter(regex='^YR').values\neconomic_output = exports_df.filter(regex='^YR').values\n\n# Check the shape of the extracted data\neducation_expenditure.shape, gni_per_capita.shape, economic_output.shape",
+    "output": "((2, 0), (2, 0), (2, 0))",
+    "elapsed_seconds": 0.002558712847530842
+  },
+  {
+    "code": "# Correct the regex pattern to match the year columns\neducation_expenditure = adjusted_savings_df.filter(regex='^YR').values\ngni_per_capita = gni_per_capita_df.filter(regex='^YR').values\neconomic_output = exports_df.filter(regex='^YR').values\n\n# Check the shape of the extracted data\neducation_expenditure.shape, gni_per_capita.shape, economic_output.shape",
+    "output": "((2, 0), (2, 0), (2, 0))",
+    "elapsed_seconds": 0.002366401255130768
+  },
+  {
+    "code": "# Inspect the actual column names of the datasets\nadjusted_savings_df.columns.tolist(), exports_df.columns.tolist(), gni_per_capita_df.columns.tolist()",
+    "output": "(['Country Group', 'Country Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]'], ['Country Group', 'Country Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]'], ['Country Group', 'Country Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]'])",
+    "elapsed_seconds": 0.001534690149128437
+  },
+  {
+    "code": "# Adjust the regex pattern to match the year columns\neducation_expenditure = adjusted_savings_df.filter(regex='^\\d{4} \\[YR\\d{4}\\]').values\ngni_per_capita = gni_per_capita_df.filter(regex='^\\d{4} \\[YR\\d{4}\\]').values\neconomic_output = exports_df.filter(regex='^\\d{4} \\[YR\\d{4}\\]').values\n\n# Check the shape of the extracted data\neducation_expenditure.shape, gni_per_capita.shape, economic_output.shape",
+    "output": "<unknown>:2: SyntaxWarning: invalid escape sequence '\\d'\n<unknown>:3: SyntaxWarning: invalid escape sequence '\\d'\n<unknown>:4: SyntaxWarning: invalid escape sequence '\\d'\n((2, 41), (2, 41), (2, 41))",
+    "elapsed_seconds": 0.002541614230722189
+  },
+  {
+    "code": "# Convert the extracted data into DataFrames for easier manipulation\neducation_expenditure_df = pd.DataFrame(education_expenditure, columns=adjusted_savings_df.filter(regex='^\\d{4} \\[YR\\d{4}\\]').columns)\ngni_per_capita_df = pd.DataFrame(gni_per_capita, columns=gni_per_capita_df.filter(regex='^\\d{4} \\[YR\\d{4}\\]').columns)\neconomic_output_df = pd.DataFrame(economic_output, columns=exports_df.filter(regex='^\\d{4} \\[YR\\d{4}\\]').columns)\n\n# Display the first few rows of each DataFrame\neducation_expenditure_df.head(), gni_per_capita_df.head(), economic_output_df.head()",
+    "output": "<unknown>:2: SyntaxWarning: invalid escape sequence '\\d'\n<unknown>:3: SyntaxWarning: invalid escape sequence '\\d'\n<unknown>:4: SyntaxWarning: invalid escape sequence '\\d'\n(   1975 [YR1975]  1976 [YR1976]  ...  2014 [YR2014]  2015 [YR2015]\n0       4.300055       4.309288  ...       3.254963       3.153823\n1       2.694685       3.771469  ...       3.106096       3.060663\n\n[2 rows x 41 columns],    1975 [YR1975]  1976 [YR1976]  ...  2014 [YR2014]  2015 [YR2015]\n0            NaN            NaN  ...    1620.904978    1634.258291\n1     880.766431     934.500597  ...    1894.302198    1965.288164\n\n[2 rows x 41 columns],    1975 [YR1975]  1976 [YR1976]  ...  2014 [YR2014]  2015 [YR2015]\n0            NaN            NaN  ...       6.513038      -1.549815\n1       -5.56942      10.458022  ...       2.921528       0.260326\n\n[2 rows x 41 columns])",
+    "elapsed_seconds": 0.03474137932062149
+  },
+  {
+    "code": "# Calculate the correlation between education expenditure and per capita GDP\ncorrelation_education_gni = education_expenditure_df.corrwith(gni_per_capita_df, axis=1)\n\n# Calculate the correlation between per capita GDP and economic output\ncorrelation_gni_output = gni_per_capita_df.corrwith(economic_output_df, axis=1)\n\n# Display the correlations\ncorrelation_education_gni, correlation_gni_output",
+    "output": "(0   -0.966421\n1   -0.480538\ndtype: float64, 0    0.646335\n1    0.214542\ndtype: float64)",
+    "elapsed_seconds": 0.00569306081160903
+  }
+]

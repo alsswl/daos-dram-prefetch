@@ -1,0 +1,18 @@
+{
+  "status": "incomplete",
+  "workflow_seconds": 213.85904990090057,
+  "llm_calls": 25,
+  "python_calls": 25,
+  "final_answer": "Agent stopped due to iteration limit or time limit.",
+  "grading": "not run, as in supplied document",
+  "query": "How were the phases of the Middle Neolithic (3400-3000 BCE) and Younger Neolithic (2900-2300 BCE) characterized in terms of the first principal component in a PCA on the forms of capital analyzed in hundred-year time slices?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/archaeology/metadata_16.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

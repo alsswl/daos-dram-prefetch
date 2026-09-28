@@ -1,0 +1,12 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\ndf.head()",
+    "output": "                                               study  ... us_lab.r\n0                                          A Roelofs  ...        0\n1                                AL Morris, ML Still  ...        0\n2  B Liefooghe, P Barrouillet, A Vandierendonck, ...  ...        0\n3                       BC Storm, EL Bjork, RA Bjork  ...        1\n4                         C Mitchell, S Nash, G Hall  ...        0\n\n[5 rows x 60 columns]",
+    "elapsed_seconds": 0.15269690984860063
+  },
+  {
+    "code": "# Filter the data for original studies in Experimental Economics and Psychology\nexperimental_economics = df[df['project.y'] == 'ee']\npsychology = df[df['project.y'] == 'rpp']\n\n# Count the occurrences of each country in the 'experiment_country.o' column for both groups\nexperimental_economics_countries = experimental_economics['experiment_country.o'].value_counts()\npsychology_countries = psychology['experiment_country.o'].value_counts()\n\nexperimental_economics_countries, psychology_countries",
+    "output": "(experiment_country.o\nUnited States     11\nGermany            2\nSwitzerland        2\nAustralia          1\nAustria            1\nUnited Kingdom     1\nName: count, dtype: int64, experiment_country.o\nUnited States     47\nUnited Kingdom     6\nIsrael             4\nNetherlands        3\nGermany            3\nCanada             2\nAustralia          1\nFrance             1\nItaly              1\nName: count, dtype: int64)",
+    "elapsed_seconds": 0.0033083991147577763
+  }
+]

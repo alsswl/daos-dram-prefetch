@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\ndf.head()",
+    "output": "   ID  ...                           Origin\n0  31  ...  https://ww2.unipark.de/uc/seml/\n1  34  ...                              -99\n2  36  ...                              -99\n3  57  ...                              -99\n4  46  ...                              -99\n\n[5 rows x 202 columns]",
+    "elapsed_seconds": 0.15896953409537673
+  },
+  {
+    "code": "# Calculate the percentage of respondents indicating that they use each documentation format\ndocumentation_columns = ['Q10_ML_Documentation_Vision_Document', 'Q10_ML_Documentation_Requirements_Lists', 'Q10_ML_Documentation_Goal_Models', 'Q10_ML_Documentation_Use_Case_Models', 'Q10_ML_Documentation_Prototypes', 'Q10_ML_Documentation_User_Stories', 'Q10_ML_Documentation_BDD_Scenarios', 'Q10_ML_Documentation_MLCanvas', 'Q10_ML_Documentation_Notebooks', 'Q10_ML_Documentation_Data_Models', 'Q10_ML_Documentation_Others']\n\npercentage_used = {}\nfor col in documentation_columns:\n    percentage = df[df[col] == 1].shape[0] / df.shape[0] * 100\n    percentage_used[col] = percentage\n\npercentage_used",
+    "output": "{'Q10_ML_Documentation_Vision_Document': 0.0, 'Q10_ML_Documentation_Requirements_Lists': 0.0, 'Q10_ML_Documentation_Goal_Models': 0.0, 'Q10_ML_Documentation_Use_Case_Models': 0.0, 'Q10_ML_Documentation_Prototypes': 0.0, 'Q10_ML_Documentation_User_Stories': 0.0, 'Q10_ML_Documentation_BDD_Scenarios': 0.0, 'Q10_ML_Documentation_MLCanvas': 0.0, 'Q10_ML_Documentation_Notebooks': 0.0, 'Q10_ML_Documentation_Data_Models': 0.0, 'Q10_ML_Documentation_Others': 0.0}",
+    "elapsed_seconds": 0.0030384361743927
+  },
+  {
+    "code": "# Check the unique values in the documentation columns to understand the encoding\nfor col in documentation_columns:\n    print(f\"Unique values in {col}: {df[col].unique()}\")",
+    "output": "Unique values in Q10_ML_Documentation_Vision_Document: ['not quoted' 'quoted' '-77']\nUnique values in Q10_ML_Documentation_Requirements_Lists: ['not quoted' 'quoted' '-77']\nUnique values in Q10_ML_Documentation_Goal_Models: ['not quoted' 'quoted' '-77']\nUnique values in Q10_ML_Documentation_Use_Case_Models: ['not quoted' 'quoted' '-77']\nUnique values in Q10_ML_Documentation_Prototypes: ['not quoted' 'quoted' '-77']\nUnique values in Q10_ML_Documentation_User_Stories: ['not quoted' 'quoted' '-77']\nUnique values in Q10_ML_Documentation_BDD_Scenarios: ['not quoted' 'quoted' '-77']\nUnique values in Q10_ML_Documentation_MLCanvas: ['not quoted' 'quoted' '-77']\nUnique values in Q10_ML_Documentation_Notebooks: ['not quoted' 'quoted' '-77']\nUnique values in Q10_ML_Documentation_Data_Models: ['not quoted' 'quoted' '-77']\nUnique values in Q10_ML_Documentation_Others: ['not quoted' 'quoted' '-77']\n",
+    "elapsed_seconds": 0.002158339135348797
+  },
+  {
+    "code": "# Recalculate the percentage of respondents indicating that they use each documentation format, considering 'quoted' as usage and excluding '-77'\npercentage_used = {}\nfor col in documentation_columns:\n    # Filter out rows with '-77' and count the number of 'quoted' responses\n    quoted_count = df[(df[col] == 'quoted') & (df[col] != '-77')].shape[0]\n    total_valid = df[df[col] != '-77'].shape[0]\n    if total_valid == 0:\n        percentage = 0.0\n    else:\n        percentage = (quoted_count / total_valid) * 100\n    percentage_used[col] = percentage\n\npercentage_used",
+    "output": "{'Q10_ML_Documentation_Vision_Document': 14.948453608247423, 'Q10_ML_Documentation_Requirements_Lists': 26.288659793814436, 'Q10_ML_Documentation_Goal_Models': 14.948453608247423, 'Q10_ML_Documentation_Use_Case_Models': 19.587628865979383, 'Q10_ML_Documentation_Prototypes': 21.649484536082475, 'Q10_ML_Documentation_User_Stories': 32.47422680412371, 'Q10_ML_Documentation_BDD_Scenarios': 2.0618556701030926, 'Q10_ML_Documentation_MLCanvas': 7.731958762886598, 'Q10_ML_Documentation_Notebooks': 34.02061855670103, 'Q10_ML_Documentation_Data_Models': 17.525773195876287, 'Q10_ML_Documentation_Others': 7.731958762886598}",
+    "elapsed_seconds": 0.008717669639736414
+  }
+]

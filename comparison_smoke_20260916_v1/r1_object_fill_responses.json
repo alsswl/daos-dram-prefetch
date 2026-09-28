@@ -1,0 +1,32 @@
+[
+  {
+    "request_id": 1,
+    "prompt_tokens": 2684,
+    "completion_tokens": 8,
+    "cached_tokens": 0,
+    "ttft_ms": 212.042914936319,
+    "e2e_ms": 279.94416397996247,
+    "output_sha256": "1807199a11f0e194c200190426511f42aef99ce6f80b12b3cee58729b558f2f6",
+    "text": "I need to explore the relationship between stress",
+    "repeat": 1,
+    "mode": "object",
+    "phase": "fill",
+    "prompt_sha256": "3786245e7804cb57f9f7a4c2063211a529259da9c1b4c903cead1b9e4e3c4828",
+    "expected_cached_tokens": 2048
+  },
+  {
+    "request_id": 2,
+    "prompt_tokens": 2709,
+    "completion_tokens": 8,
+    "cached_tokens": 0,
+    "ttft_ms": 199.72563511691988,
+    "e2e_ms": 270.56336402893066,
+    "output_sha256": "f43fd1e47dc901097f6c5c27cd39b96c69b4656805f72f96af1962ab93dbabfa",
+    "text": "Okay, I need to figure out the",
+    "repeat": 1,
+    "mode": "object",
+    "phase": "fill",
+    "prompt_sha256": "699c64eea092d6c3b2acad9cf62f13ec3bf52af1bb391c5e4969ab2340aca646",
+    "expected_cached_tokens": 2048
+  }
+]

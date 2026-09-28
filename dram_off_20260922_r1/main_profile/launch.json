@@ -1,0 +1,41 @@
+{
+  "dram": "off",
+  "source_config": "/root/discos_minji/dram_off_20260922_r1/base.yaml",
+  "effective_config": "/root/discos_minji/dram_off_20260922_r1/main_profile/lmcache_effective.yaml",
+  "source_sha256": "0c4fac7602300cf4b125885a51ca76b4ba68fd8e1fe9c15a37bbd1f1bf23dbd9",
+  "effective_sha256": "dcd5d77adca12f745e90d7c2e5c917130069ab1b77f67fc2ecd142d7b0a09da8",
+  "command": [
+    "/root/discos_minji/run_vllm.sh",
+    "/root/discos_minji/venv/bin/python3",
+    "-m",
+    "vllm.entrypoints.openai.api_server",
+    "--model",
+    "Qwen/Qwen3-14B",
+    "--served-model-name",
+    "comparison-model",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8017",
+    "--max-model-len",
+    "8192",
+    "--gpu-memory-utilization",
+    "0.75",
+    "--enforce-eager",
+    "--seed",
+    "0",
+    "--no-enable-prefix-caching",
+    "--enable-prompt-tokens-details",
+    "--kv-transfer-config",
+    "{\"kv_connector\":\"LMCacheConnectorV1\",\"kv_role\":\"kv_both\"}"
+  ],
+  "transport": "object",
+  "local_cpu": false,
+  "max_local_cpu_size": 4.0,
+  "notes": [
+    "CPU cache retention uses native LocalCPUBackend references.",
+    "DAOS put remains asynchronous; CPU hit alone does not prove DAOS commit.",
+    "New process required to change modes; DRAM cache is process-local.",
+    "Existing source config and run_vllm.sh are unchanged."
+  ]
+}

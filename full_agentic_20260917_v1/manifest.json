@@ -1,0 +1,57 @@
+{
+  "args": {
+    "repeats": 1,
+    "chunk_size": 128,
+    "pool": "discospool",
+    "container": "kvcache",
+    "gpu_buffer_gb": 10,
+    "io_workers": 16,
+    "meta_workers": 16,
+    "model": "Qwen/Qwen3-14B",
+    "port": 8017,
+    "max_model_len": 16384
+  },
+  "server_command": [
+    "/root/discos_minji/run_vllm.sh",
+    "/root/discos_minji/venv/bin/python3",
+    "-m",
+    "vllm.entrypoints.openai.api_server",
+    "--model",
+    "Qwen/Qwen3-14B",
+    "--served-model-name",
+    "comparison-model",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8017",
+    "--max-model-len",
+    "16384",
+    "--gpu-memory-utilization",
+    "0.75",
+    "--enforce-eager",
+    "--seed",
+    "0",
+    "--no-enable-prefix-caching",
+    "--enable-prompt-tokens-details",
+    "--kv-transfer-config",
+    "{\"kv_connector\":\"LMCacheConnectorV1\",\"kv_role\":\"kv_both\"}"
+  ],
+  "protocol": "supplied document full agentic: adventure-travel_0_0, react, run1/restart/run2; no grading",
+  "differences_from_document": [
+    "unified DFS/object backends and common native stack",
+    "chunk 128, staging 10GiB, workers 16; eager, GPU utilization 0.75",
+    "temperature 0, max output 2048 tokens/call, max iterations 25",
+    "network-isolated Python tool with read-only task data at /data",
+    "fresh namespace instead of deleting shared container"
+  ],
+  "source_sha256": {
+    "full_agent_bench.py": "3cb9fdc1dd519a8a71f61130211f2a97485439793f79d2d3596a0ef90f243195",
+    "run_full_agent.py": "da032237878c20b9213c5a5d9a69349153c5e82a52e91197b997def99b91eebf",
+    "agent_python_worker.py": "c950ce851ee4f1cb0f4e619a342c8a5f69cc4203cba626157bdf7a0a3e567190",
+    "run_vllm.sh": "5f303713631354a1b56837a6f7463a3ed1c45752fd847b05da54a8023e6af32e",
+    "lmcache_daos/gds_backend.py": "f89fc1e30ff0452a47af8cf699d65025bb8af82a687c733a921b175b5352447f",
+    "libdaosgdr.so": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c",
+    "discoverybench/agents/react_agent.py": "9d4cbc1b3a4ba12ffeef1e83cd34fb9d1dd546a6055ac7a61c04e5fd33ae8fb3",
+    "discoverybench/agents/react_utils.py": "d01a92e883a883bb4bd7195d25ac2c9672dc052529dbc0eabf858a319569a392"
+  }
+}

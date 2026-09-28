@@ -1,0 +1,62 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/worldbank_education_gdp.csv')\ndf.head()",
+    "output": "        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n2  Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n3  Sub-Saharan Africa          SSF  ...     97.963791     96.974968\n4  Sub-Saharan Africa          SSF  ...     42.847160     43.372971\n\n[5 rows x 45 columns]",
+    "elapsed_seconds": 0.14616601821035147
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Identify the relevant columns\neducation_expenditure_col = 'Adjusted savings: education expenditure (percentage of GNI)'\ngni_per_capita_col = 'GNI per capita (constant 2015 US dollar)'\n\n# Filter the rows for the relevant series names\neducation_rows = df[df['Series Name'] == education_expenditure_col]\ngni_rows = df[df['Series Name'] == gni_per_capita_col]\n\n# Reshape the data to long format\neducation_long = education_rows.melt(id_vars=['Country Group', 'Country Code', 'Series Name', 'Series Code'], \n                                      var_name='Year', \n                                      value_name='Education_Expenditure')\ngni_long = gni_rows.melt(id_vars=['Country Group', 'Country Code', 'Series Name', 'Series Code'], \n                         var_name='Year', \n                         value_name='GNI_per_Capita')\n\n# Merge the two datasets on Country Code and Year\nmerged_data = pd.merge(education_long, gni_long, on=['Country Code', 'Year'])\n\n# Drop rows with missing values\nmerged_data = merged_data.dropna()\n\n# Calculate the correlation coefficient\ncorrelation = merged_data['Education_Expenditure'].corr(merged_data['GNI_per_Capita'])\ncorrelation",
+    "output": "nan",
+    "elapsed_seconds": 0.007614884991198778
+  },
+  {
+    "code": "# Check the data types of the relevant columns\nmerged_data.dtypes",
+    "output": "Country Group_x           object\nCountry Code              object\nSeries Name_x             object\nSeries Code_x             object\nYear                      object\nEducation_Expenditure    float64\nCountry Group_y           object\nSeries Name_y             object\nSeries Code_y             object\nGNI_per_Capita           float64\ndtype: object",
+    "elapsed_seconds": 0.0019078021869063377
+  },
+  {
+    "code": "# Convert 'Year' to integer\nmerged_data['Year'] = merged_data['Year'].astype(int)\n\n# Check for missing values\nmerged_data.isnull().sum()",
+    "output": "Country Group_x          0\nCountry Code             0\nSeries Name_x            0\nSeries Code_x            0\nYear                     0\nEducation_Expenditure    0\nCountry Group_y          0\nSeries Name_y            0\nSeries Code_y            0\nGNI_per_Capita           0\ndtype: int64",
+    "elapsed_seconds": 0.002259274013340473
+  },
+  {
+    "code": "# Recalculate the correlation\ncorrelation = merged_data['Education_Expenditure'].corr(merged_data['GNI_per_Capita'])\ncorrelation",
+    "output": "nan",
+    "elapsed_seconds": 0.001658508088439703
+  },
+  {
+    "code": "# Display the first few rows of the merged data\nmerged_data.head()",
+    "output": "Empty DataFrame\nColumns: [Country Group_x, Country Code, Series Name_x, Series Code_x, Year, Education_Expenditure, Country Group_y, Series Name_y, Series Code_y, GNI_per_Capita]\nIndex: []",
+    "elapsed_seconds": 0.0014928956516087055
+  },
+  {
+    "code": "# Check unique 'Country Code' values in education_long and gni_long\neducation_long['Country Code'].unique()",
+    "output": "['SSF' 'LMC']",
+    "elapsed_seconds": 0.0014846459962427616
+  },
+  {
+    "code": "# Check unique 'Country Code' values in gni_long\ngni_long['Country Code'].unique()",
+    "output": "[]",
+    "elapsed_seconds": 0.0013644308783113956
+  },
+  {
+    "code": "# Check unique 'Series Name' values in the original dataframe\ndf['Series Name'].unique()",
+    "output": "['GNI per capita (constant 2015 USdollar)'\n 'Adjusted savings: education expenditure (percentage of GNI)'\n 'Exports of goods and services (annual percentage growth)'\n 'School enrollment, primary (percentage gross)'\n 'School enrollment, secondary (percentage gross)'\n 'Labor force participation rate, total (percentage of total population ages 15+) (modeled ILO estimate)']",
+    "elapsed_seconds": 0.0014900392852723598
+  },
+  {
+    "code": "# Correct the 'Series Name' for GNI per capita and re-extract the data\ngni_rows = df[df['Series Name'] == 'GNI per capita (constant 2015 USdollar)']\n\n# Reshape the data to long format\ngni_long = gni_rows.melt(id_vars=['Country Group', 'Country Code', 'Series Name', 'Series Code'], \n                         var_name='Year', \n                         value_name='GNI_per_Capita')\n\n# Merge the education and GNI per capita data again\nmerged_data = pd.merge(education_long, gni_long, on=['Country Code', 'Year'])\n\n# Drop rows with missing values\nmerged_data = merged_data.dropna()\n\n# Check the first few rows of the merged data\nmerged_data.head()",
+    "output": "       Country Group_x Country Code  ...   Series Code_y GNI_per_Capita\n1  Lower middle income          LMC  ...  NY.GNP.PCAP.KD     880.766431\n3  Lower middle income          LMC  ...  NY.GNP.PCAP.KD     934.500597\n5  Lower middle income          LMC  ...  NY.GNP.PCAP.KD     939.069381\n7  Lower middle income          LMC  ...  NY.GNP.PCAP.KD     919.155717\n9  Lower middle income          LMC  ...  NY.GNP.PCAP.KD     878.047381\n\n[5 rows x 10 columns]",
+    "elapsed_seconds": 0.015236764680594206
+  },
+  {
+    "code": "# Check data types and missing values in the relevant columns\nmerged_data[['Education_Expenditure', 'GNI_per_Capita']].info()",
+    "output": "<class 'pandas.core.frame.DataFrame'>\nIndex: 46 entries, 1 to 81\nData columns (total 2 columns):\n #   Column                 Non-Null Count  Dtype  \n---  ------                 --------------  -----  \n 0   Education_Expenditure  46 non-null     float64\n 1   GNI_per_Capita         46 non-null     float64\ndtypes: float64(2)\nmemory usage: 1.1 KB\n",
+    "elapsed_seconds": 0.00380921782925725
+  },
+  {
+    "code": "# Recalculate the correlation\ncorrelation = merged_data['Education_Expenditure'].corr(merged_data['GNI_per_Capita'])\ncorrelation",
+    "output": "-0.4768707608926388",
+    "elapsed_seconds": 0.001964178867638111
+  }
+]

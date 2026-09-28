@@ -1,0 +1,47 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_raw.csv')\ndf.head()",
+    "output": "   ID# (range 1-12686) 1979  ...  Total market value of items over $500, 1996\n0                         1  ...                                          NaN\n1                         2  ...                                      15000.0\n2                         3  ...                                       2000.0\n3                         4  ...                                      15000.0\n4                         5  ...                                          NaN\n\n[5 rows x 61 columns]",
+    "elapsed_seconds": 0.19353733118623495
+  },
+  {
+    "code": "# Find the column for gender\ngender_column = 'Sex of respondent, 1979: Sex of the respondent, 1:MALE or 2:FEMALE'\n\n# Find the column for degree completion rates\ndegree_completion_column = 'Highest grade completed, 1979: Highest grade or year of regular school that respondent have completed and got credit for till 1979'\n\n# Check if these columns exist in the dataset\nif gender_column in df.columns and degree_completion_column in df.columns:\n    print(\"Columns for gender and degree completion rates found.\")\nelse:\n    print(\"Columns for gender and degree completion rates not found.\")",
+    "output": "Columns for gender and degree completion rates not found.\n",
+    "elapsed_seconds": 0.001941906288266182
+  },
+  {
+    "code": "# List all column names to search for relevant variables\nprint(df.columns)",
+    "output": "Index(['ID# (range 1-12686) 1979', 'Age of respondent, 1979',\n       'Occupation of adult male in household at age 14, 1979',\n       'Highest grade completed by respondent's mother, 1979',\n       'Highest grade completed by respondent's father, 1979',\n       'Highest grade completed, 1979', 'Sample ID, 1979 (interview)',\n       'Racial/ethnic cohort, 1979', 'Sex of respondent, 1979',\n       'Family size, 1979',\n       'Total net family income, previous calendar year, 1979',\n       'Ever convicted of an illegal act in adult court before 1980',\n       'Ever been sentenced in any correctional institution before 1980',\n       'Height of respondent, 1981', 'Weight of respondent, 1981',\n       'Type of residence respondent is living in, 1981',\n       'Age of respondent at interview date, 1981',\n       'Rank in class last year attended at this school, 1981',\n       'Number of students in class last year attended at this school, 1981',\n       'ASVAB - Arithmetic Reasoning Z Score (rounded), 1981',\n       'ASVAB - Word Knowledge Z Score (rounded), 1981',\n       'ASVAB - Paragraph Comprehension Z Score (rounded), 1981',\n       'ASVAB - Mathematics Knowledge Z Score (rounded), 1981',\n       'Type of residence respondent is living in, 1982',\n       'Type of residence respondent is living in, 1983',\n       'Type of residence respondent is living in, 1984',\n       'Height of respondent, 1985', 'Family net wealth, 1985',\n       'Market value of residential property respondent/spouse own, 1985',\n       'Total market value of farm, business, and other property, 1985',\n       'Market Value of vehicles respondent/spouse own, 1985',\n       'Total market value of items over $500, 1985',\n       'Type of residence respondent is living in, 1985',\n       'Total net family income, previous calendar year, 1985',\n       'Type of residence respondent is living in, 1986',\n       'Type of residence respondent is living in, 1987',\n       'Type of residence respondent is living in, 1988',\n       'Type of residence respondent is living in, 1989',\n       'Weight of respondent, 1989',\n       'Was more money put into or taken out of R/spouse savings since last interview, 1989',\n       'Net amount respondent/spouse put into savings since last interview, 1989',\n       'Net amount respondent/spouse took out of savings since last interview, 1989',\n       'Total net family income, previous calendar year, 1989',\n       'Age of respondent at interview date, 1989',\n       'Type of residence respondent is living in, 1990',\n       'Family net wealth, 1990',\n       'Market value of residential property respondent/spouse own, 1990',\n       'Total market value of farm, business, and other property, 1990',\n       'Market Value of vehicles respondent/spouse own, 1990',\n       'Total market value of items over $500, 1990',\n       'Type of residence respondent is living in, 1991',\n       'Type of residence respondent is living in, 1992',\n       'Weight of respondent, 1992',\n       'Type of residence respondent is living in, 1993',\n       'Type of residence respondent is living in, 1994',\n       'Type of residence respondent is living in, 1996',\n       'Family net wealth, 1996 (key data point)',\n       'Market value of residential property respondent/spouse own, 1996',\n       'Total market value of farm, business, and other property, 1996',\n       'Market Value of vehicles respondent/spouse own, 96',\n       'Total market value of items over $500, 1996'],\n      dtype='object')\n",
+    "elapsed_seconds": 0.0017728679813444614
+  },
+  {
+    "code": "# Correct column names\ngender_column = 'Sex of respondent, 1979'\ndegree_completion_column = 'Highest grade completed, 1979'\n\n# Check if these columns exist in the dataset\nif gender_column in df.columns and degree_completion_column in df.columns:\n    print(\"Columns for gender and degree completion rates found.\")\nelse:\n    print(\"Columns for gender and degree completion rates not found.\")",
+    "output": "Columns for gender and degree completion rates found.\n",
+    "elapsed_seconds": 0.0016495580784976482
+  },
+  {
+    "code": "# Check the distribution of gender\ngender_distribution = df[gender_column].value_counts()\nprint(\"Gender Distribution:\")\nprint(gender_distribution)\n\n# Check the distribution of degree completion rates\ndegree_completion_distribution = df[degree_completion_column].value_counts()\nprint(\"\\nDegree Completion Rates Distribution:\")\nprint(degree_completion_distribution)",
+    "output": "Gender Distribution:\nSex of respondent, 1979\n1    6403\n2    6283\nName: count, dtype: int64\n\nDegree Completion Rates Distribution:\nHighest grade completed, 1979\n12.0    3347\n10.0    1918\n9.0     1863\n8.0     1675\n11.0    1570\n13.0     711\n7.0      506\n14.0     459\n15.0     251\n6.0      120\n16.0      35\n5.0       31\n4.0       18\n3.0       17\n0.0        5\n1.0        3\n95.0       2\n2.0        1\n17.0       1\n18.0       1\nName: count, dtype: int64\n",
+    "elapsed_seconds": 0.002992988098412752
+  },
+  {
+    "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Create a boxplot to visualize the relationship between gender and degree completion rates\nsns.boxplot(x=gender_column, y=degree_completion_column, data=df)\nplt.title('Relationship between Gender and Degree Completion Rates')\nplt.xlabel('Gender')\nplt.ylabel('Highest Grade Completed')\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.862832766957581
+  },
+  {
+    "code": "from scipy.stats import ttest_ind\n\n# Convert gender to numerical values (1: Male, 2: Female)\ndf[gender_column] = df[gender_column].astype(int)\n\n# Separate the data by gender\nmale_degrees = df[df[gender_column] == 1][degree_completion_column]\nfemale_degrees = df[df[gender_column] == 2][degree_completion_column]\n\n# Perform an independent samples t-test\nt_statistic, p_value = ttest_ind(male_degrees, female_degrees)\nt_statistic, p_value",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.006686749868094921
+  },
+  {
+    "code": "# Check for missing values in the degree completion column\nmissing_values = df[degree_completion_column].isnull().sum()\nprint(\"Missing values in degree completion column:\", missing_values)\n\n# Check if the degree completion column is numeric\nis_numeric = pd.api.types.is_numeric_dtype(df[degree_completion_column])\nprint(\"Is degree completion column numeric?\", is_numeric)",
+    "output": "Missing values in degree completion column: 152\nIs degree completion column numeric? True\n",
+    "elapsed_seconds": 0.002094249241054058
+  },
+  {
+    "code": "# Drop rows with missing values in the degree completion column\ndf_clean = df.dropna(subset=[degree_completion_column])\n\n# Separate the data by gender\nmale_degrees = df_clean[df_clean[gender_column] == 1][degree_completion_column]\nfemale_degrees = df_clean[df_clean[gender_column] == 2][degree_completion_column]\n\n# Perform an independent samples t-test\nt_statistic, p_value = ttest_ind(male_degrees, female_degrees)\nt_statistic, p_value",
+    "output": "(-5.691433978032243, 1.2880103410018152e-08)",
+    "elapsed_seconds": 0.008870283141732216
+  }
+]

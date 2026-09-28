@@ -1,0 +1,12 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('data.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: 'data.csv'",
+    "elapsed_seconds": 0.1307024541310966
+  },
+  {
+    "code": "import os\n\n# List all files in the current directory\nos.listdir('.')",
+    "output": "[]",
+    "elapsed_seconds": 0.0017796210013329983
+  }
+]

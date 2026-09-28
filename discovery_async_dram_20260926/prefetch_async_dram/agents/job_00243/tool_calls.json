@@ -1,0 +1,127 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/worldbank_education_gdp.csv')\ndf.head()",
+    "output": "        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n2  Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n3  Sub-Saharan Africa          SSF  ...     97.963791     96.974968\n4  Sub-Saharan Africa          SSF  ...     42.847160     43.372971\n\n[5 rows x 45 columns]",
+    "elapsed_seconds": 0.14447504514828324
+  },
+  {
+    "code": "# Identify the relevant columns for education expenditure and per capita GDP\neducation_expenditure_series = 'Adjusted savings: education expenditure (% of GNI)'\ngdp_series = 'GNI per capita (constant 2015 US dollar)'\n\n# Filter the dataset to extract the relevant rows\neducation_expenditure_row = df[df['Series Name'] == education_expenditure_series]\ngdp_row = df[df['Series Name'] == gdp_series]\n\n# Extract the year columns for both variables\neducation_expenditure_data = education_expenditure_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\ngdp_data = gdp_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\n\n# Combine the data into a DataFrame\nimport pandas as pd\ndata = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': education_expenditure_data,\n    'GNI per Capita': gdp_data\n})\n\n# Convert the 'Year' column to numeric\ndata['Year'] = data['Year'].str.replace(' ', '').astype(int)\n\n# Display the first few rows of the combined data\ndata.head()",
+    "output": "IndexError: index 0 is out of bounds for axis 0 with size 0",
+    "elapsed_seconds": 0.002672489732503891
+  },
+  {
+    "code": "# Check the unique values in the 'Series Name' column\nunique_series_names = df['Series Name'].unique()\nunique_series_names",
+    "output": "['GNI per capita (constant 2015 USdollar)'\n 'Adjusted savings: education expenditure (percentage of GNI)'\n 'Exports of goods and services (annual percentage growth)'\n 'School enrollment, primary (percentage gross)'\n 'School enrollment, secondary (percentage gross)'\n 'Labor force participation rate, total (percentage of total population ages 15+) (modeled ILO estimate)']",
+    "elapsed_seconds": 0.0014537563547492027
+  },
+  {
+    "code": "# Identify the relevant columns for education expenditure and GNI per capita\neducation_expenditure_series = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_series = 'GNI per capita (constant 2015 USdollar)'\n\n# Filter the dataset to extract the relevant rows\neducation_expenditure_row = df[df['Series Name'] == education_expenditure_series]\ngdp_row = df[df['Series Name'] == gdp_series]\n\n# Extract the year columns for both variables\neducation_expenditure_data = education_expenditure_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\ngdp_data = gdp_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\n\n# Combine the data into a DataFrame\nimport pandas as pd\ndata = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': education_expenditure_data,\n    'GNI per Capita': gdp_data\n})\n\n# Convert the 'Year' column to numeric\ndata['Year'] = data['Year'].str.replace(' ', '').astype(int)\n\n# Display the first few rows of the combined data\ndata.head()",
+    "output": "ValueError: All arrays must be of the same length",
+    "elapsed_seconds": 0.0033591012470424175
+  },
+  {
+    "code": "# Check for missing values in the dataset\nmissing_values = data.isnull().sum()\nmissing_values",
+    "output": "NameError: name 'data' is not defined",
+    "elapsed_seconds": 0.0016126460395753384
+  },
+  {
+    "code": "# Identify the relevant columns for education expenditure and GNI per capita\neducation_expenditure_series = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_series = 'GNI per capita (constant 2015 USdollar)'\n\n# Filter the dataset to extract the relevant rows\neducation_expenditure_row = df[df['Series Name'] == education_expenditure_series]\ngdp_row = df[df['Series Name'] == gdp_series]\n\n# Extract the year columns for both variables\neducation_expenditure_data = education_expenditure_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\ngdp_data = gdp_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\n\n# Combine the data into a DataFrame\nimport pandas as pd\ndata = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': education_expenditure_data,\n    'GNI per Capita': gdp_data\n})\n\n# Convert the 'Year' column to numeric\ndata['Year'] = data['Year'].str.replace(' ', '').astype(int)\n\n# Check for missing values in the dataset\nmissing_values = data.isnull().sum()\nmissing_values",
+    "output": "ValueError: All arrays must be of the same length",
+    "elapsed_seconds": 0.0027829748578369617
+  },
+  {
+    "code": "# Check the first few rows of the education expenditure and GNI per capita data\neducation_expenditure_row.head()\ngdp_row.head()",
+    "output": "         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n6  Lower middle income          LMC  ...   1894.302198   1965.288164\n\n[2 rows x 45 columns]",
+    "elapsed_seconds": 0.013557643163949251
+  },
+  {
+    "code": "# Extract data for Sub-Saharan Africa for both education expenditure and GNI per capita\nsub_saharan_education_expenditure = education_expenditure_row[education_expenditure_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\nsub_saharan_gdp = gdp_row[gdp_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\n\n# Combine the data into a DataFrame for Sub-Saharan Africa\nsub_saharan_data = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': sub_saharan_education_expenditure,\n    'GNI per Capita': sub_saharan_gdp\n})\n\n# Convert the 'Year' column to numeric\nsub_saharan_data['Year'] = sub_saharan_data['Year'].str.replace(' ', '').astype(int)\n\n# Check for missing values in the dataset\nmissing_values = sub_saharan_data.isnull().sum()\nmissing_values",
+    "output": "ValueError: All arrays must be of the same length",
+    "elapsed_seconds": 0.0028360337018966675
+  },
+  {
+    "code": "# Check the first few rows of the education expenditure and GNI per capita data for Sub-Saharan Africa\nsub_saharan_education_expenditure[:5]\nsub_saharan_gdp[:5]",
+    "output": "[nan nan nan nan nan]",
+    "elapsed_seconds": 0.0015829503536224365
+  },
+  {
+    "code": "# Remove rows with missing values\nsub_saharan_data = sub_saharan_data.dropna()\n\n# Display the first few rows of the cleaned data\nsub_saharan_data.head()",
+    "output": "NameError: name 'sub_saharan_data' is not defined",
+    "elapsed_seconds": 0.00135493790730834
+  },
+  {
+    "code": "# Extract data for Sub-Saharan Africa for both education expenditure and GNI per capita\nsub_saharan_education_expenditure = education_expenditure_row[education_expenditure_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\nsub_saharan_gdp = gdp_row[gdp_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\n\n# Combine the data into a DataFrame for Sub-Saharan Africa\nsub_saharan_data = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': sub_saharan_education_expenditure,\n    'GNI per Capita': sub_saharan_gdp\n})\n\n# Convert the 'Year' column to numeric\nsub_saharan_data['Year'] = sub_saharan_data['Year'].str.replace(' ', '').astype(int)\n\n# Remove rows with missing values\nsub_saharan_data = sub_saharan_data.dropna()\n\n# Display the first few rows of the cleaned data\nsub_saharan_data.head()",
+    "output": "ValueError: All arrays must be of the same length",
+    "elapsed_seconds": 0.002774937078356743
+  },
+  {
+    "code": "# Check the lengths of the 'Education Expenditure' and 'GNI per Capita' arrays\nlen(sub_saharan_education_expenditure), len(sub_saharan_gdp)",
+    "output": "(41, 41)",
+    "elapsed_seconds": 0.0012694080360233784
+  },
+  {
+    "code": "# Convert the 'Education Expenditure' and 'GNI per Capita' columns to numeric\nsub_saharan_data['Education Expenditure'] = pd.to_numeric(sub_saharan_data['Education Expenditure'], errors='coerce')\nsub_saharan_data['GNI per Capita'] = pd.to_numeric(sub_saharan_data['GNI per Capita'], errors='coerce')\n\n# Remove rows with missing values\nsub_saharan_data = sub_saharan_data.dropna()\n\n# Display the first few rows of the cleaned data\nsub_saharan_data.head()",
+    "output": "NameError: name 'sub_saharan_data' is not defined",
+    "elapsed_seconds": 0.0015333481132984161
+  },
+  {
+    "code": "# Extract data for Sub-Saharan Africa for both education expenditure and GNI per capita\nsub_saharan_education_expenditure = education_expenditure_row[education_expenditure_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\nsub_saharan_gdp = gdp_row[gdp_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\n\n# Combine the data into a DataFrame for Sub-Saharan Africa\nsub_saharan_data = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': sub_saharan_education_expenditure,\n    'GNI per Capita': sub_saharan_gdp\n})\n\n# Convert the 'Year' column to numeric\nsub_saharan_data['Year'] = sub_saharan_data['Year'].str.replace(' ', '').astype(int)\n\n# Convert the 'Education Expenditure' and 'GNI per Capita' columns to numeric\nsub_saharan_data['Education Expenditure'] = pd.to_numeric(sub_saharan_data['Education Expenditure'], errors='coerce')\nsub_saharan_data['GNI per Capita'] = pd.to_numeric(sub_saharan_data['GNI per Capita'], errors='coerce')\n\n# Remove rows with missing values\nsub_saharan_data = sub_saharan_data.dropna()\n\n# Display the first few rows of the cleaned data\nsub_saharan_data.head()",
+    "output": "ValueError: All arrays must be of the same length",
+    "elapsed_seconds": 0.0027846768498420715
+  },
+  {
+    "code": "# Check the first few rows of the education expenditure and GNI per capita data for Sub-Saharan Africa\nsub_saharan_education_expenditure[:5]\nsub_saharan_gdp[:5]",
+    "output": "[nan nan nan nan nan]",
+    "elapsed_seconds": 0.0015869112685322762
+  },
+  {
+    "code": "# Extract data for Sub-Saharan Africa for both education expenditure and GNI per capita\nsub_saharan_education_expenditure = education_expenditure_row[education_expenditure_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\nsub_saharan_gdp = gdp_row[gdp_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\n\n# Combine the data into a DataFrame for Sub-Saharan Africa\nsub_saharan_data = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': sub_saharan_education_expenditure,\n    'GNI per Capita': sub_saharan_gdp\n})\n\n# Convert the 'Year' column to numeric\nsub_saharan_data['Year'] = sub_saharan_data['Year'].str.replace(' ', '').astype(int)\n\n# Convert the 'Education Expenditure' and 'GNI per Capita' columns to numeric\nsub_saharan_data['Education Expenditure'] = pd.to_numeric(sub_saharan_data['Education Expenditure'], errors='coerce')\nsub_saharan_data['GNI per Capita'] = pd.to_numeric(sub_saharan_data['GNI per Capita'], errors='coerce')\n\n# Remove rows with missing values\nsub_saharan_data = sub_saharan_data.dropna()\n\n# Display the first few rows of the cleaned data\nsub_saharan_data.head()",
+    "output": "ValueError: All arrays must be of the same length",
+    "elapsed_seconds": 0.0028901579789817333
+  },
+  {
+    "code": "# Check the lengths of the 'Education Expenditure' and 'GNI per Capita' arrays\nlen(sub_saharan_education_expenditure), len(sub_saharan_gdp)",
+    "output": "(41, 41)",
+    "elapsed_seconds": 0.0014014141634106636
+  },
+  {
+    "code": "# Extract data for Sub-Saharan Africa for both education expenditure and GNI per capita\nsub_saharan_education_expenditure = education_expenditure_row[education_expenditure_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\nsub_saharan_gdp = gdp_row[gdp_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\n\n# Combine the data into a DataFrame for Sub-Saharan Africa\nsub_saharan_data = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': sub_saharan_education_expenditure,\n    'GNI per Capita': sub_saharan_gdp\n})\n\n# Convert the 'Year' column to numeric\nsub_saharan_data['Year'] = sub_saharan_data['Year'].str.replace(' ', '').astype(int)\n\n# Convert the 'Education Expenditure' and 'GNI per Capita' columns to numeric\nsub_saharan_data['Education Expenditure'] = pd.to_numeric(sub_saharan_data['Education Expenditure'], errors='coerce')\nsub_saharan_data['GNI per Capita'] = pd.to_numeric(sub_saharan_data['GNI per Capita'], errors='coerce')\n\n# Remove rows with missing values\nsub_saharan_data = sub_saharan_data.dropna()\n\n# Display the first few rows of the cleaned data\nsub_saharan_data.head()",
+    "output": "ValueError: All arrays must be of the same length",
+    "elapsed_seconds": 0.0031415466219186783
+  },
+  {
+    "code": "# Check the first few rows of the education expenditure and GNI per capita data for Sub-Saharan Africa\nsub_saharan_education_expenditure[:5]\nsub_saharan_gdp[:5]",
+    "output": "[nan nan nan nan nan]",
+    "elapsed_seconds": 0.0016365498304367065
+  },
+  {
+    "code": "# Extract data for Sub-Saharan Africa for both education expenditure and GNI per capita\nsub_saharan_education_expenditure = education_expenditure_row[education_expenditure_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\nsub_saharan_gdp = gdp_row[gdp_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\n\n# Combine the data into a DataFrame for Sub-Saharan Africa\nsub_saharan_data = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': sub_saharan_education_expenditure,\n    'GNI per Capita': sub_saharan_gdp\n})\n\n# Convert the 'Year' column to numeric\nsub_saharan_data['Year'] = sub_saharan_data['Year'].str.replace(' ', '').astype(int)\n\n# Convert the 'Education Expenditure' and 'GNI per Capita' columns to numeric\nsub_saharan_data['Education Expenditure'] = pd.to_numeric(sub_saharan_data['Education Expenditure'], errors='coerce')\nsub_saharan_data['GNI per Capita'] = pd.to_numeric(sub_saharan_data['GNI per Capita'], errors='coerce')\n\n# Remove rows with missing values\nsub_saharan_data = sub_saharan_data.dropna()\n\n# Display the first few rows of the cleaned data\nsub_saharan_data.head()",
+    "output": "ValueError: All arrays must be of the same length",
+    "elapsed_seconds": 0.002751357853412628
+  },
+  {
+    "code": "# Check the first few rows of the education expenditure and GNI per capita data for Sub-Saharan Africa\nsub_saharan_education_expenditure[:5]\nsub_saharan_gdp[:5]",
+    "output": "[nan nan nan nan nan]",
+    "elapsed_seconds": 0.0015090759843587875
+  },
+  {
+    "code": "# Extract data for Sub-Saharan Africa for both education expenditure and GNI per capita\nsub_saharan_education_expenditure = education_expenditure_row[education_expenditure_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\nsub_saharan_gdp = gdp_row[gdp_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\n\n# Combine the data into a DataFrame for Sub-Saharan Africa\nsub_saharan_data = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': sub_saharan_education_expenditure,\n    'GNI per Capita': sub_saharan_gdp\n})\n\n# Convert the 'Year' column to numeric\nsub_saharan_data['Year'] = sub_saharan_data['Year'].str.replace(' ', '').astype(int)\n\n# Convert the 'Education Expenditure' and 'GNI per Capita' columns to numeric\nsub_saharan_data['Education Expenditure'] = pd.to_numeric(sub_saharan_data['Education Expenditure'], errors='coerce')\nsub_saharan_data['GNI per Capita'] = pd.to_numeric(sub_saharan_data['GNI per Capita'], errors='coerce')\n\n# Remove rows with missing values\nsub_saharan_data = sub_saharan_data.dropna()\n\n# Display the first few rows of the cleaned data\nsub_saharan_data.head()",
+    "output": "ValueError: All arrays must be of the same length",
+    "elapsed_seconds": 0.002855162136256695
+  },
+  {
+    "code": "# Check the first few rows of the education expenditure and GNI per capita data for Sub-Saharan Africa\nsub_saharan_education_expenditure[:5]\nsub_saharan_gdp[:5]",
+    "output": "[nan nan nan nan nan]",
+    "elapsed_seconds": 0.001516345888376236
+  },
+  {
+    "code": "# Extract data for Sub-Saharan Africa for both education expenditure and GNI per capita\nsub_saharan_education_expenditure = education_expenditure_row[education_expenditure_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\nsub_saharan_gdp = gdp_row[gdp_row['Country Group'] == 'Sub-Saharan Africa'].drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).values[0]\n\n# Combine the data into a DataFrame for Sub-Saharan Africa\nsub_saharan_data = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': sub_saharan_education_expenditure,\n    'GNI per Capita': sub_saharan_gdp\n})\n\n# Convert the 'Year' column to numeric\nsub_saharan_data['Year'] = sub_saharan_data['Year'].str.replace(' ', '').astype(int)\n\n# Convert the 'Education Expenditure' and 'GNI per Capita' columns to numeric\nsub_saharan_data['Education Expenditure'] = pd.to_numeric(sub_saharan_data['Education Expenditure'], errors='coerce')\nsub_saharan_data['GNI per Capita'] = pd.to_numeric(sub_saharan_data['GNI per Capita'], errors='coerce')\n\n# Remove rows with missing values\nsub_saharan_data = sub_saharan_data.dropna()\n\n# Display the first few rows of the cleaned data\nsub_saharan_data.head()",
+    "output": "ValueError: All arrays must be of the same length",
+    "elapsed_seconds": 0.002626188099384308
+  },
+  {
+    "code": "# Check the first few rows of the education expenditure and GNI per capita data for Sub-Saharan Africa\nsub_saharan_education_expenditure[:5]\nsub_saharan_gdp[:5]",
+    "output": "[nan nan nan nan nan]",
+    "elapsed_seconds": 0.0015909052453935146
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/meta-regression_study_data_heterogeneity_in_replication_projects.csv')\ndf.head()",
+    "output": "      id                                              title  ... us_lab.r   drop\n0   ee.1              Reference points and effort provision  ...        0  False\n1  ee.10  The lure of authority: Motivation and incentiv...  ...        0  False\n2  ee.11                               A continuous dilemma  ...        0  False\n3  ee.12  Slow to anger and fast to forgive: cooperation...  ...        1  False\n4  ee.13  Deferred compensation in multiperiod labor con...  ...        0  False\n\n[5 rows x 57 columns]",
+    "elapsed_seconds": 0.1501271529123187
+  },
+  {
+    "code": "# Filter the dataset for Psychology studies that were replicated\npsychology_replicated_studies = df[(df['project'] == 'ml3') & (df['replicated'] == 1)]\n\n# Count the number of junior professors in the original studies\njunior_professors_count = psychology_replicated_studies[psychology_replicated_studies['seniority.o'] == 'Assistant'].shape[0]\n\n# Count the total number of studies\ntotal_studies_count = psychology_replicated_studies.shape[0]\n\n# Calculate the proportion of junior professors\nproportion_junior_professors = junior_professors_count / total_studies_count\nproportion_junior_professors",
+    "output": "0.0",
+    "elapsed_seconds": 0.0027270647697150707
+  }
+]

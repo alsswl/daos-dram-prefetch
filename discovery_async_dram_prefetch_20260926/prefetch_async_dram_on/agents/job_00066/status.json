@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 47.398611293174326,
+  "llm_calls": 13,
+  "python_calls": 12,
+  "final_answer": "The two documentation formats that are the least used for requirements in ML-enabled system projects are 'Q10_ML_Documentation_BDD_Scenarios' with 2.062% and 'Q10_ML_Documentation_MLCanvas' with 7.732% of respondents indicating so, respectively. This hypothesis is derived from the provided dataset, which includes survey responses detailing the roles, techniques, and documentation practices associated with requirements in ML-enabled system projects. The variables chosen are the documentation formats used for requirements in ML-enabled system projects, and the relationship between these variables is the frequency of their usage, which is statistically significant as indicated by the percentages calculated.",
+  "grading": "not run, as in supplied document",
+  "query": "Which two documentation formats are the least used for requirements in ML-enabled system projects, with 10.13% (95% CI [9.926, 10.333]) and 4.366% (95% CI [4.231, 4.501]) of respondents indicating so, respectively, after bootstrapping for statistical significance?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/requirements_engineering_for_ML_enabled_systems/metadata_8.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

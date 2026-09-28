@@ -1,0 +1,37 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\n\n# Display the first few rows of each dataset\ntime_series_df.head(), capital_df.head(), pollen_df.head()",
+    "output": "(   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns],     BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns],    Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns])",
+    "elapsed_seconds": 0.1709164227358997
+  },
+  {
+    "code": "# Filter the capital dataset for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_df = capital_df[(capital_df['BCE'] >= 1100) & (capital_df['BCE'] <= 500)]\n\n# Display the filtered data\nyoung_bronze_age_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.003043212927877903
+  },
+  {
+    "code": "# Inspect the 'BCE' column in the capital dataset\ncapital_df['BCE'].describe()",
+    "output": "count      39.000000\nmean     2400.000000\nstd      1140.175425\nmin       500.000000\n25%      1450.000000\n50%      2400.000000\n75%      3350.000000\nmax      4300.000000\nName: BCE, dtype: float64",
+    "elapsed_seconds": 0.003184601664543152
+  },
+  {
+    "code": "# Filter the pollen dataset for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_pollen_df = pollen_df[(pollen_df['CE'] >= -1100) & (pollen_df['CE'] <= -500)]\n\n# Display the filtered data\nyoung_bronze_age_pollen_df.head()",
+    "output": "   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns]",
+    "elapsed_seconds": 0.0069716935977339745
+  },
+  {
+    "code": "# Extract the 'Belau_PC1' and 'Woserin_PC1' columns\nbelau_pc1 = pollen_df['Belau_PC1']\nwoserin_pc1 = pollen_df['Woserin_PC1']\n\n# Calculate the mean of 'Belau_PC1' and 'Woserin_PC1' for the Younger Bronze Age (1100-500 BCE)\nmean_belau_pc1 = belau_pc1.mean()\nmean_woserin_pc1 = woserin_pc1.mean()\n\nmean_belau_pc1, mean_woserin_pc1",
+    "output": "TypeError: unsupported operand type(s) for +: 'int' and 'str'",
+    "elapsed_seconds": 0.0015328722074627876
+  },
+  {
+    "code": "# Convert 'Belau_PC1' and 'Woserin_PC1' to numerical values\npollen_df['Belau_PC1'] = pd.to_numeric(pollen_df['Belau_PC1'], errors='coerce')\npollen_df['Woserin_PC1'] = pd.to_numeric(pollen_df['Woserin_PC1'], errors='coerce')\n\n# Calculate the mean of 'Belau_PC1' and 'Woserin_PC1' for the Younger Bronze Age (1100-500 BCE)\nmean_belau_pc1 = pollen_df['Belau_PC1'].mean()\nmean_woserin_pc1 = pollen_df['Woserin_PC1'].mean()\n\nmean_belau_pc1, mean_woserin_pc1",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.0029187030158936977
+  },
+  {
+    "code": "# Check the data types and contents of 'Belau_PC1' and 'Woserin_PC1' columns\npollen_df[['Belau_PC1', 'Woserin_PC1']].info()",
+    "output": "<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 4084 entries, 0 to 4083\nData columns (total 2 columns):\n #   Column       Non-Null Count  Dtype  \n---  ------       --------------  -----  \n 0   Belau_PC1    0 non-null      float64\n 1   Woserin_PC1  0 non-null      float64\ndtypes: float64(2)\nmemory usage: 63.9 KB\n",
+    "elapsed_seconds": 0.005000867880880833
+  }
+]

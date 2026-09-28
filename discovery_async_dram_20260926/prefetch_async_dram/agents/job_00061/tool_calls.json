@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_raw.csv')\ndf.head()",
+    "output": "   ID# (range 1-12686) 1979  ...  Total market value of items over $500, 1996\n0                         1  ...                                          NaN\n1                         2  ...                                      15000.0\n2                         3  ...                                       2000.0\n3                         4  ...                                      15000.0\n4                         5  ...                                          NaN\n\n[5 rows x 61 columns]",
+    "elapsed_seconds": 0.19335465924814343
+  },
+  {
+    "code": "# Check for columns related to education or degree completion\neducation_columns = [col for col in df.columns if 'education' in col.lower() or 'degree' in col.lower() or 'school' in col.lower() or 'grade' in col.lower()]\neducation_columns",
+    "output": "[\"Highest grade completed by respondent's mother, 1979\", \"Highest grade completed by respondent's father, 1979\", 'Highest grade completed, 1979', 'Rank in class last year attended at this school, 1981', 'Number of students in class last year attended at this school, 1981']",
+    "elapsed_seconds": 0.002014889381825924
+  },
+  {
+    "code": "# Identify the gender column\ngender_column = [col for col in df.columns if 'sex' in col.lower()]\ngender_column",
+    "output": "['Sex of respondent, 1979']",
+    "elapsed_seconds": 0.0013129357248544693
+  },
+  {
+    "code": "# Convert the gender column to a categorical variable\ndf['Sex of respondent, 1979'] = df['Sex of respondent, 1979'].astype('category')\n\n# Perform a t-test to compare the mean highest grade completed between males and females\nimport scipy.stats as stats\n\n# Filter the data by gender\nmales = df[df['Sex of respondent, 1979'] == 1]['Highest grade completed, 1979']\nfemales = df[df['Sex of respondent, 1979'] == 2]['Highest grade completed, 1979']\n\n# Perform the t-test\nt_stat, p_value = stats.ttest_ind(males, females)\nt_stat, p_value",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.4804315799847245
+  },
+  {
+    "code": "# Check for missing values in the relevant columns\nmissing_values = df[['Sex of respondent, 1979', 'Highest grade completed, 1979']].isnull().sum()\nmissing_values",
+    "output": "Sex of respondent, 1979            0\nHighest grade completed, 1979    152\ndtype: int64",
+    "elapsed_seconds": 0.0025795530527830124
+  },
+  {
+    "code": "# Drop rows with missing values in the 'Highest grade completed, 1979' column\ndf_clean = df.dropna(subset=['Highest grade completed, 1979'])\n\n# Re-filter the data by gender\nmales_clean = df_clean[df_clean['Sex of respondent, 1979'] == 1]['Highest grade completed, 1979']\nfemales_clean = df_clean[df_clean['Sex of respondent, 1979'] == 2]['Highest grade completed, 1979']\n\n# Perform the t-test again\nt_stat_clean, p_value_clean = stats.ttest_ind(males_clean, females_clean)\nt_stat_clean, p_value_clean",
+    "output": "(-5.691433978032243, 1.2880103410018152e-08)",
+    "elapsed_seconds": 0.008927864022552967
+  }
+]

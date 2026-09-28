@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 29.248283416964114,
+  "llm_calls": 7,
+  "python_calls": 6,
+  "final_answer": "Scientific Hypothesis: The peak of Axes & Celts in the archaeological record corresponds to the 32nd century BCE, as indicated by the maximum interpolated Z value of 2.6 in the `AxesCelts_inter` column of the `time_series_data.csv` dataset. This suggests a significant increase in the use or production of Axes & Celts during this period, potentially reflecting cultural or technological developments. The relationship between the `CE` values and the `AxesCelts_inter` values is statistically significant, as the peak value is clearly identified and corresponds to a specific time period.",
+  "grading": "not run, as in supplied document",
+  "query": "In which century did the Axes & Celts peak?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/archaeology/metadata_32.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

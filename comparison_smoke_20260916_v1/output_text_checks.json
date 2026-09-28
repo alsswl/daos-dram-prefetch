@@ -1,0 +1,38 @@
+[
+  {
+    "repeat": 1,
+    "mode": "dfs",
+    "phase": "fill",
+    "text_matches_dfs_fill": true
+  },
+  {
+    "repeat": 1,
+    "mode": "dfs",
+    "phase": "restart_hit",
+    "text_matches_dfs_fill": true
+  },
+  {
+    "repeat": 1,
+    "mode": "dfs",
+    "phase": "same_process_hit",
+    "text_matches_dfs_fill": true
+  },
+  {
+    "repeat": 1,
+    "mode": "object",
+    "phase": "fill",
+    "text_matches_dfs_fill": true
+  },
+  {
+    "repeat": 1,
+    "mode": "object",
+    "phase": "restart_hit",
+    "text_matches_dfs_fill": true
+  },
+  {
+    "repeat": 1,
+    "mode": "object",
+    "phase": "same_process_hit",
+    "text_matches_dfs_fill": true
+  }
+]

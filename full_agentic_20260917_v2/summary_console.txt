@@ -1,0 +1,38 @@
+# DiscoveryBench full agentic 실행 결과
+
+첨부 문서 Part 5.3~5.4의 adventure-travel_0_0 태스크 하나를 실제 ReAct 에이전트로 실행했다. CSV 읽기 → Python 코드 실행 → 결과를 보고 다음 분석 → 최종 답변까지 진행했다. 전체 테스트셋 실행이나 정답 채점은 아니다.
+
+## 설정과 실행 범위
+
+- Qwen/Qwen3-14B BF16, vLLM 0.25.1, LMCache 0.5.2, 청크 128토큰.
+- 공통 DAOS/libfabric 설치본, GPU staging 10GiB, I/O·메타 작업자 각 16개.
+- 최대 문맥 16384, eager, GPU 메모리 비율 0.75, 내장 prefix caching 비활성.
+- 모델 temperature 0, 호출당 출력 상한 2048토큰, 최대 25회 반복. 고정 합성 프롬프트나 padding 없음.
+- DFS와 object 각각 새 namespace에서 run1 실행 후 vLLM을 종료하고 같은 namespace로 run2 실행.
+- 모델 생성 코드는 네트워크가 없는 별도 Python 컨테이너에서 실행. 원본 CSV는 읽기 전용, 작업 디렉터리만 쓰기 가능. pandas/scikit-learn/statsmodels 사용 가능.
+- 문서의 예전 클라이언트·chunk 2048·8GiB/8workers 대신 현재 통합 환경과 chunk 128을 사용했다. 공용 컨테이너를 삭제하지 않았다.
+
+## 측정
+
+| 모드 | 실행 | 전체 작업 시간 | 모델 호출 | Python 실행 | 평균 서버 TTFT | 첫 요청 hit 토큰 |
+|---|---|---:|---:|---:|---:|---:|
+| dfs | run1 | 9.26s | 4 | 3 | 113.1ms | 0 |
+| dfs | run2 | 8.06s | 3 | 2 | 89.7ms | 1536 |
+| object | run1 | 9.56s | 4 | 3 | 121.5ms | 0 |
+| object | run2 | 8.21s | 3 | 2 | 90.2ms | 1536 |
+
+전체 작업 시간은 에이전트의 문제 처리 시작부터 최종 답변까지다. 모델 기동과 Python 컨테이너 기동은 제외하고, 모델 응답·코드 실행·에이전트 처리·로깅은 포함한다. 평균 TTFT는 각 실행 전후 vLLM metrics의 sum/count 차이로 계산한 **서버 측 평균**이다. 앞선 합성 실험의 클라이언트 첫 텍스트 TTFT 중앙값과 직접 비교하지 않는다.
+
+## 실제 데이터와 답변
+
+문서가 지정한 CSV는 500행·5열이다. stress_tolerance는 전체 행에서 2로 일정하고, number_of_trips는 2 또는 3이다. 원본 데이터는 수정하지 않았다. 따라서 stress_tolerance 변화에 따른 관계를 추정하기 어렵다는 답변은 실제 관측 데이터의 제약과 연결된다. 이 실행은 정답 가설과의 자동 채점을 수행하지 않았다.
+
+### dfs_run1 최종 답변
+
+The dataset provided contains only the value 2 for the 'stress_tolerance' column, which prevents any meaningful analysis of the relationship between stress tolerance and creativity score. This suggests a potential data entry error or incomplete dataset. Therefore, no hypothesis can be formulated based on the current data.
+
+WORKFLOW_SUMMARY:
+1. Data Loading: Loaded the dataset from the specified path using Python.
+2. Data Inspection: Displayed the first few rows of the dataset to understand its structure and the relevant columns.
+3. Data Summary: Calculated summary statistics to understand the distribution of the variables.
+4. Data Validation: Checked the unique values in the 'stress_tolerance' column and found that it contains only the value 2, indicating a potential data issue.

@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Load the capital.csv dataset\ndf_capital = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of the time_series_data.csv dataset\ndf_time_series.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15156996389850974
+  },
+  {
+    "code": "# Check the 'Depot' column in the time_series_data.csv dataset\ndf_time_series['Depot'].head()",
+    "output": "0   -0.55\n1     NaN\n2     NaN\n3     NaN\n4     NaN\nName: Depot, dtype: float64",
+    "elapsed_seconds": 0.0016792039386928082
+  },
+  {
+    "code": "# Find the maximum value in the 'Depot' column and its corresponding 'CE' value\nmax_depot_value = df_time_series['Depot'].max()\nmax_depot_row = df_time_series[df_time_series['Depot'] == max_depot_value]\nmax_depot_row[['CE', 'Depot']]",
+    "output": "        CE  Depot\n3000 -1100   3.38\n3100 -1000   3.38",
+    "elapsed_seconds": 0.004315925296396017
+  }
+]

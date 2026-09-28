@@ -1,0 +1,100 @@
+[
+  {
+    "condition": "prefetch_off",
+    "start_ns": 1790415004472454903,
+    "end_ns": 1790415155784779648,
+    "elapsed_seconds": 151.312324745,
+    "cpu_gib": 8.0,
+    "staging_gib": 10,
+    "workflows": 30,
+    "python_calls": 215,
+    "workflow_status": {
+      "complete": 12,
+      "incomplete": 16,
+      "failed": 2
+    },
+    "forced_workflows": 2,
+    "llm_calls": 244,
+    "llm_call_errors": 2,
+    "measured_server_requests": 244,
+    "prompt_tokens_min": 1752,
+    "prompt_tokens_max": 13947,
+    "prompt_tokens_mean": 6311.9672131147545,
+    "mean_client_ttft_ms": 242.89136408965607,
+    "peak_staging_gib": 3.046875,
+    "mean_staging_gib": 0.057664353567543604,
+    "mean_cpu_gib": 7.334647834099127,
+    "peak_llm_calls": 8,
+    "occupancy_time_fraction": {
+      "empty": 0.9132030224957994,
+      "nonempty": 0.0867969775042004
+    },
+    "agent_issue_jobs": {
+      "output_parse_error_jobs": 15,
+      "context_overflow_jobs": 0,
+      "tool_import_error_jobs": 5,
+      "scipy_statsmodels_compatibility_jobs": 5,
+      "tool_file_not_found_jobs": 3,
+      "iteration_limit_jobs": 1
+    },
+    "lookup_chunks": 11906,
+    "dram_chunks": 2710,
+    "daos_chunks": 8177,
+    "miss_chunks": 1019,
+    "cpu_staged_requests": 0,
+    "cpu_unstaged_requests": 66,
+    "dram_lookup_ratio": 0.2276163279018982,
+    "daos_lookup_ratio": 0.6867965731563918,
+    "miss_lookup_ratio": 0.08558709894171006,
+    "allocator_failures": 0,
+    "partial_daos_reads": 0,
+    "gpu_full_log_count": 0,
+    "negative_ref_log_count": 0,
+    "cpu_store_pressure_log_count": 0,
+    "shutdown_semaphore_warning": true,
+    "context_overflow_count": 0,
+    "engine_dead_count": 0,
+    "error_log_lines": [],
+    "phases": [
+      {
+        "concurrency": 8,
+        "elapsed_seconds": 151.312324745,
+        "workflows": 30,
+        "complete": 12,
+        "forced": 2,
+        "llm_calls": 244,
+        "dram_pct": 22.76163279018982,
+        "daos_pct": 68.67965731563918,
+        "miss_pct": 8.558709894171006,
+        "peak_staging_gib": 3.046875,
+        "cpu_staged_requests": 0,
+        "cpu_unstaged_requests": 66
+      }
+    ],
+    "lookup_time_windows": [
+      {
+        "window": "first_120s",
+        "requests": 222,
+        "chunks": 10189,
+        "dram_chunks": 2710,
+        "daos_chunks": 6524,
+        "miss_chunks": 955,
+        "dram_pct": 26.59731082539994,
+        "daos_pct": 64.02983609775248,
+        "miss_pct": 9.37285307684758
+      },
+      {
+        "window": "after_120s",
+        "requests": 22,
+        "chunks": 1717,
+        "dram_chunks": 0,
+        "daos_chunks": 1653,
+        "miss_chunks": 64,
+        "dram_pct": 0.0,
+        "daos_pct": 96.27256843331392,
+        "miss_pct": 3.7274315666860804
+      }
+    ],
+    "last_dram_hit_elapsed_seconds": 37.958495242
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "     HYBAS_ID       long       lat  ...  soil_div     area  diversity\n0  6050000010 -76.477422  7.742693  ...  0.482402  72363.7         68\n1  6050000740 -74.628725  9.803586  ...  0.457436  17944.3         35\n2  6050068100 -75.295995  8.448815  ...  0.378793  17105.5         44\n3  6050068110 -74.608408  8.922863  ...  0.468328    610.1         48\n4  6050070260 -75.591588  5.770093  ...  0.158870  61901.9         81\n\n[5 rows x 21 columns]",
+    "elapsed_seconds": 0.13834794890135527
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = df[['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']].values  # Predictor (evolutionary traits)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.5807819683104753
+  },
+  {
+    "code": "# Re-check the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.0017690779641270638
+  },
+  {
+    "code": "# Check the correlation matrix to see if there are any other variables that might be relevant to the analysis\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Compute the correlation matrix\ncorr = df.corr()\n\n# Plot the correlation matrix\nplt.figure(figsize=(12, 10))\nsns.heatmap(corr, annot=True, fmt=\".2f\", cmap='coolwarm', square=True)\nplt.title('Correlation Matrix')\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.5094216903671622
+  },
+  {
+    "code": "# Check the correlation between \"RML_evol\" and \"BAMM_speciation\"\ncorrelation_RML = df['RML_evol'].corr(df['BAMM_speciation'])\ncorrelation_RML\n\n# Check the correlation between \"OGP_evol\" and \"BAMM_speciation\"\ncorrelation_OGP = df['OGP_evol'].corr(df['BAMM_speciation'])\ncorrelation_OGP",
+    "output": "0.5872972421814077",
+    "elapsed_seconds": 0.0025667278096079826
+  },
+  {
+    "code": "# Re-check the regression coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.001717492938041687
+  },
+  {
+    "code": "# Re-check the regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.002674063667654991
+  }
+]

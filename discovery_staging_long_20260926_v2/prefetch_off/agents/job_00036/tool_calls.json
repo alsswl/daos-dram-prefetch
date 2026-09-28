@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\ndf.head()",
+    "output": "                                               study  ... us_lab.r\n0                                          A Roelofs  ...        0\n1                                AL Morris, ML Still  ...        0\n2  B Liefooghe, P Barrouillet, A Vandierendonck, ...  ...        0\n3                       BC Storm, EL Bjork, RA Bjork  ...        1\n4                         C Mitchell, S Nash, G Hall  ...        0\n\n[5 rows x 60 columns]",
+    "elapsed_seconds": 0.1520005608908832
+  },
+  {
+    "code": "# Filter the dataset to find rows where both 'compensation.o' and 'compensation.r' are 'cash'\ncash_compensation_studies = df[(df['compensation.o'] == 'cash') & (df['compensation.r'] == 'cash')]\n\n# Check the 'discipline' column for these studies\ncash_compensation_studies['discipline'].unique()",
+    "output": "['Cognitive' 'Social' 'Economics']",
+    "elapsed_seconds": 0.0023231450468301773
+  },
+  {
+    "code": "# Check if all studies in 'Cognitive' discipline use cash compensation for both original and replication studies\ncognitive_studies = df[df['discipline'] == 'Cognitive']\ncognitive_cash_compensation = cognitive_studies[(cognitive_studies['compensation.o'] == 'cash') & (cognitive_studies['compensation.r'] == 'cash')]\n\n# Check if all studies in 'Social' discipline use cash compensation for both original and replication studies\nsocial_studies = df[df['discipline'] == 'Social']\nsocial_cash_compensation = social_studies[(social_studies['compensation.o'] == 'cash') & (social_studies['compensation.r'] == 'cash')]\n\n# Check if all studies in 'Economics' discipline use cash compensation for both original and replication studies\neconomics_studies = df[df['discipline'] == 'Economics']\neconomics_cash_compensation = economics_studies[(economics_studies['compensation.o'] == 'cash') & (economics_studies['compensation.r'] == 'cash')]\n\n# Check if all studies in each discipline use cash compensation\nall_cognitive_cash = len(cognitive_studies) == len(cognitive_cash_compensation)\nall_social_cash = len(social_studies) == len(social_cash_compensation)\nall_economics_cash = len(economics_studies) == len(economics_cash_compensation)\n\nall_cognitive_cash, all_social_cash, all_economics_cash",
+    "output": "(False, False, True)",
+    "elapsed_seconds": 0.0031278999522328377
+  }
+]

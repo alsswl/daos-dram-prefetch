@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_bmi_processed.csv')\ndf.head()",
+    "output": "   GENDER  AGE  AGE_2     INCOME  ...  SAMESAVE        BMI  BLACK  HISPANIC\n0  FEMALE   30    900  47.279064  ...         0  25.158946      0         0\n1  FEMALE   30    900  19.000000  ...         0  21.948044      0         0\n2  FEMALE   27    729  16.443000  ...         1  23.674773      0         0\n3  FEMALE   26    676  22.110000  ...         0  17.541486      0         0\n4    MALE   29    841  52.200000  ...         0  25.158946      0         0\n\n[5 rows x 9 columns]",
+    "elapsed_seconds": 0.14398389495909214
+  },
+  {
+    "code": "from sklearn.linear_model import LogisticRegression\nimport numpy as np\n\n# Prepare the data for logistic regression\nX = df[['INCOME']].values.reshape(-1, 1)  # Predictor\ny = df['SAMESAVE'].values  # Response\n\n# Create a logistic regression model\nmodel = LogisticRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0][0]\np_value = model.pvalues[0]\n\ncoefficient, p_value",
+    "output": "AttributeError: 'LogisticRegression' object has no attribute 'pvalues'",
+    "elapsed_seconds": 0.5742508079856634
+  },
+  {
+    "code": "import statsmodels.api as sm\n\n# Prepare the data for logistic regression\nX = df[['INCOME']]  # Predictor\nX = sm.add_constant(X)  # Adding a constant term for the intercept\ny = df['SAMESAVE']  # Response\n\n# Create a logistic regression model\nmodel = sm.Logit(y, X)\nresult = model.fit()\n\n# Get the coefficient and p-value\ncoefficient = result.params['INCOME']\np_value = result.pvalues['INCOME']\n\ncoefficient, p_value",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.011821164283901453
+  },
+  {
+    "code": "!pip install --upgrade scipy statsmodels",
+    "output": "SyntaxError: invalid syntax (<unknown>, line 1)",
+    "elapsed_seconds": 0.0013445178046822548
+  },
+  {
+    "code": "import statsmodels.api as sm\n\n# Prepare the data for logistic regression\nX = df[['INCOME']]  # Predictor\nX = sm.add_constant(X)  # Adding a constant term for the intercept\ny = df['SAMESAVE']  # Response\n\n# Create a logistic regression model\nmodel = sm.Logit(y, X)\nresult = model.fit()\n\n# Get the coefficient and p-value\ncoefficient = result.params['INCOME']\np_value = result.pvalues['INCOME']\n\ncoefficient, p_value",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.0023740692995488644
+  },
+  {
+    "code": "from sklearn.linear_model import LogisticRegression\nimport numpy as np\n\n# Prepare the data for logistic regression\nX = df[['INCOME']].values.reshape(-1, 1)  # Predictor\ny = df['SAMESAVE'].values  # Response\n\n# Create a logistic regression model\nmodel = LogisticRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0][0]\n\n# Calculate the probability of SAMESAVE = 1 for different income levels\nincome_range = np.linspace(df['INCOME'].min(), df['INCOME'].max(), 100)\nprobabilities = model.predict_proba(income_range.reshape(-1, 1))[:, 1]\n\ncoefficient, income_range, probabilities",
+    "output": "(-0.005552182360038377, array([   0.        ,   10.68129293,   21.36258586,   32.04387879,\n         42.72517172,   53.40646465,   64.08775758,   74.76905051,\n         85.45034343,   96.13163636,  106.81292929,  117.49422222,\n        128.17551515,  138.85680808,  149.53810101,  160.21939394,\n        170.90068687,  181.5819798 ,  192.26327273,  202.94456566,\n        213.62585859,  224.30715152,  234.98844444,  245.66973737,\n        256.3510303 ,  267.03232323,  277.71361616,  288.39490909,\n        299.07620202,  309.75749495,  320.43878788,  331.12008081,\n        341.80137374,  352.48266667,  363.1639596 ,  373.84525253,\n        384.52654545,  395.20783838,  405.88913131,  416.57042424,\n        427.25171717,  437.9330101 ,  448.61430303,  459.29559596,\n        469.97688889,  480.65818182,  491.33947475,  502.02076768,\n        512.70206061,  523.38335354,  534.06464646,  544.74593939,\n        555.42723232,  566.10852525,  576.78981818,  587.47111111,\n        598.15240404,  608.83369697,  619.5149899 ,  630.19628283,\n        640.87757576,  651.55886869,  662.24016162,  672.92145455,\n        683.60274747,  694.2840404 ,  704.96533333,  715.64662626,\n        726.32791919,  737.00921212,  747.69050505,  758.37179798,\n        769.05309091,  779.73438384,  790.41567677,  801.0969697 ,\n        811.77826263,  822.45955556,  833.14084848,  843.82214141,\n        854.50343434,  865.18472727,  875.8660202 ,  886.54731313,\n        897.22860606,  907.90989899,  918.59119192,  929.27248485,\n        939.95377778,  950.63507071,  961.31636364,  971.99765657,\n        982.67894949,  993.36024242, 1004.04153535, 1014.72282828,\n       1025.40412121, 1036.08541414, 1046.76670707, 1057.448     ]), array([0.42707874, 0.41263466, 0.39833945, 0.38421552, 0.37028418,\n       0.35656549, 0.34307814, 0.32983945, 0.31686519, 0.30416965,\n       0.29176552, 0.27966393, 0.26787442, 0.25640501, 0.24526217,\n       0.23445089, 0.22397476, 0.21383598, 0.20403549, 0.194573  ,\n       0.18544711, 0.17665537, 0.16819436, 0.16005982, 0.15224668,\n       0.14474921, 0.13756105, 0.13067531, 0.12408464, 0.11778135,\n       0.1117574 , 0.10600452, 0.10051427, 0.09527807, 0.09028727,\n       0.08553317, 0.08100711, 0.07670047, 0.07260469, 0.06871135,\n       0.06501215, 0.06149895, 0.05816379, 0.0549989 , 0.05199672,\n       0.04914989, 0.04645129, 0.04389402, 0.0414714 , 0.03917702,\n       0.03700468, 0.03494841, 0.03300248, 0.03116141, 0.02941991,\n       0.02777296, 0.02621571, 0.02474355, 0.02335208, 0.02203709,\n       0.02079458, 0.01962072, 0.01851186, 0.01746456, 0.01647552,\n       0.0155416 , 0.01465983, 0.01382738, 0.01304158, 0.01229988,\n       0.01159987, 0.01093925, 0.01031586, 0.00972765, 0.00917267,\n       0.00864907, 0.00815512, 0.00768916, 0.00724962, 0.00683504,\n       0.00644401, 0.00607522, 0.00572741, 0.00539941, 0.00509009,\n       0.00479841, 0.00452336, 0.00426402, 0.00401948, 0.00378892,\n       0.00357153, 0.00336657, 0.00317334, 0.00299116, 0.00281942,\n       0.00265751, 0.00250487, 0.00236098, 0.00222534, 0.00209747]))",
+    "elapsed_seconds": 0.00911099324002862
+  }
+]

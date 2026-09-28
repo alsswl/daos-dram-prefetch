@@ -1,0 +1,47 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "     HYBAS_ID       long       lat  ...  soil_div     area  diversity\n0  6050000010 -76.477422  7.742693  ...  0.482402  72363.7         68\n1  6050000740 -74.628725  9.803586  ...  0.457436  17944.3         35\n2  6050068100 -75.295995  8.448815  ...  0.378793  17105.5         44\n3  6050068110 -74.608408  8.922863  ...  0.468328    610.1         48\n4  6050070260 -75.591588  5.770093  ...  0.158870  61901.9         81\n\n[5 rows x 21 columns]",
+    "elapsed_seconds": 0.21765329968184233
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = df[['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']].values  # Predictor (evolutionary traits)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.5764374299906194
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = df[['DR', 'BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']].values  # Predictor (evolutionary traits)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 5.66949714e-01 -5.22266406e-03  4.08090248e-01 -4.86344392e+00\n  9.34410109e+00 -2.92150386e+00]",
+    "elapsed_seconds": 0.0029108389280736446
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = df[['BAMM_extinction', 'BAMM_NetDiv', 'DR', 'BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']].values  # Predictor (evolutionary traits)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 1.00000000e+00  1.00000000e+00 -1.07723965e-15  2.27774194e-17\n -1.38584929e-15  8.65779895e-15 -5.31360233e-14  1.42272274e-14]",
+    "elapsed_seconds": 0.003092327155172825
+  },
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.describe()",
+    "output": "           HYBAS_ID        long  ...           area   diversity\ncount  4.600000e+02  460.000000  ...     460.000000  460.000000\nmean   6.050328e+09  -58.873749  ...   36986.790435   96.134783\nstd    3.252045e+05   10.574515  ...   55054.781856  102.339003\nmin    6.050000e+09  -80.494202  ...       1.100000    1.000000\n25%    6.050030e+09  -67.961003  ...    9306.425000   17.000000\n50%    6.050224e+09  -59.314345  ...   21605.200000   72.000000\n75%    6.050657e+09  -50.438655  ...   42003.525000  135.250000\nmax    6.050961e+09  -35.747272  ...  514725.600000  786.000000\n\n[8 rows x 21 columns]",
+    "elapsed_seconds": 0.024308749940246344
+  },
+  {
+    "code": "from statsmodels.stats.outliers_influence import variance_inflation_factor\nimport pandas as pd\n\n# Calculate VIF for each predictor\nvif_data = pd.DataFrame()\nvif_data[\"Feature\"] = X.columns\nvif_data[\"VIF\"] = [variance_inflation_factor(X.values, i) for i in range(X.shape[1])]\n\nvif_data",
+    "output": "AttributeError: 'numpy.ndarray' object has no attribute 'columns'",
+    "elapsed_seconds": 0.014267218299210072
+  },
+  {
+    "code": "from statsmodels.stats.outliers_influence import variance_inflation_factor\nimport pandas as pd\n\n# Prepare the data for regression\nX = df[['BAMM_extinction', 'BAMM_NetDiv', 'DR', 'BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']].values  # Predictor (evolutionary traits)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Convert X to a pandas DataFrame\nX_df = pd.DataFrame(X, columns=['BAMM_extinction', 'BAMM_NetDiv', 'DR', 'BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol'])\n\n# Calculate VIF for each predictor\nvif_data = pd.DataFrame()\nvif_data[\"Feature\"] = X_df.columns\nvif_data[\"VIF\"] = [variance_inflation_factor(X_df.values, i) for i in range(X_df.shape[1])]\n\nvif_data",
+    "output": "           Feature         VIF\n0  BAMM_extinction   24.530873\n1      BAMM_NetDiv  145.575664\n2               DR  116.260278\n3         BEL_evol   13.382827\n4         MBL_evol   27.840298\n5         OGP_evol   14.942162\n6         RES_evol   18.421214\n7         RML_evol    5.145033",
+    "elapsed_seconds": 0.00750738475471735
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression with a subset of predictors to reduce multicollinearity\nX = df[['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']].values  # Predictor (evolutionary traits)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.0027391770854592323
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression with a subset of predictors to reduce multicollinearity\nX = df[['DR', 'BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']].values  # Predictor (evolutionary traits)\ny = df['BAMM_speciation'].values  # Response (speciation rates)\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 5.66949714e-01 -5.22266406e-03  4.08090248e-01 -4.86344392e+00\n  9.34410109e+00 -2.92150386e+00]",
+    "elapsed_seconds": 0.0027355109341442585
+  }
+]

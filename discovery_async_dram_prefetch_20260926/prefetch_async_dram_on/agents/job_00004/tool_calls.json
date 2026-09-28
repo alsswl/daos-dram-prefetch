@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\ndf.head()",
+    "output": "                                               study  ... us_lab.r\n0                                          A Roelofs  ...        0\n1                                AL Morris, ML Still  ...        0\n2  B Liefooghe, P Barrouillet, A Vandierendonck, ...  ...        0\n3                       BC Storm, EL Bjork, RA Bjork  ...        1\n4                         C Mitchell, S Nash, G Hall  ...        0\n\n[5 rows x 60 columns]",
+    "elapsed_seconds": 0.14924287516623735
+  },
+  {
+    "code": "# Filter the dataset to find the domain where all original and replication studies use cash compensation\ncash_compensation_domain = df[(df['compensation.o'] == 'cash') & (df['compensation.r'] == 'cash')]['project.y'].unique()\n\ncash_compensation_domain",
+    "output": "['rpp' 'ee']",
+    "elapsed_seconds": 0.0019718529656529427
+  },
+  {
+    "code": "# Verify that all entries in 'rpp' and 'ee' domains have 'cash' compensation for both original and replication studies\nrpp_cash = df[(df['project.y'] == 'rpp') & (df['compensation.o'] == 'cash') & (df['compensation.r'] == 'cash')].shape[0] == df[df['project.y'] == 'rpp'].shape[0]\nee_cash = df[(df['project.y'] == 'ee') & (df['compensation.o'] == 'cash') & (df['compensation.r'] == 'cash')].shape[0] == df[df['project.y'] == 'ee'].shape[0]\n\nrpp_cash, ee_cash",
+    "output": "(False, True)",
+    "elapsed_seconds": 0.0028496230952441692
+  }
+]

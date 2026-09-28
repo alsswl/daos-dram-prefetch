@@ -1,0 +1,47 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/worldbank_education_gdp.csv')\ndf.head()",
+    "output": "        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n2  Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n3  Sub-Saharan Africa          SSF  ...     97.963791     96.974968\n4  Sub-Saharan Africa          SSF  ...     42.847160     43.372971\n\n[5 rows x 45 columns]",
+    "elapsed_seconds": 0.22706777742132545
+  },
+  {
+    "code": "# Identify the relevant columns for education expenditure and per capita GDP\neducation_expenditure_col = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_col = 'GNI per capita (constant 2015 US dollar)'\n\n# Check if the columns exist in the dataset\nif education_expenditure_col in df.columns and gdp_col in df.columns:\n    print(f\"Columns '{education_expenditure_col}' and '{gdp_col}' exist in the dataset.\")\nelse:\n    print(f\"Columns '{education_expenditure_col}' and/or '{gdp_col}' do not exist in the dataset.\")",
+    "output": "Columns 'Adjusted savings: education expenditure (percentage of GNI)' and/or 'GNI per capita (constant 2015 US dollar)' do not exist in the dataset.\n",
+    "elapsed_seconds": 0.0017481585964560509
+  },
+  {
+    "code": "# Display the column names to identify the correct variables\nprint(df.columns.tolist())",
+    "output": "['Country Group', 'Country Code', 'Series Name', 'Series Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]']\n",
+    "elapsed_seconds": 0.0013584098778665066
+  },
+  {
+    "code": "# Identify the Series Name and Series Code for education expenditure and per capita GDP\neducation_expenditure_series = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\ngdp_series = df[df['Series Name'] == 'GNI per capita (constant 2015 US dollar)']\n\nprint(\"Education Expenditure Series:\")\nprint(education_expenditure_series)\nprint(\"\\nGDP Series:\")\nprint(gdp_series)",
+    "output": "Education Expenditure Series:\n         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n1   Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n7  Lower middle income          LMC  ...      3.106096      3.060663\n\n[2 rows x 45 columns]\n\nGDP Series:\nEmpty DataFrame\nColumns: [Country Group, Country Code, Series Name, Series Code, 1975 [YR1975], 1976 [YR1976], 1977 [YR1977], 1978 [YR1978], 1979 [YR1979], 1980 [YR1980], 1981 [YR1981], 1982 [YR1982], 1983 [YR1983], 1984 [YR1984], 1985 [YR1985], 1986 [YR1986], 1987 [YR1987], 1988 [YR1988], 1989 [YR1989], 1990 [YR1990], 1991 [YR1991], 1992 [YR1992], 1993 [YR1993], 1994 [YR1994], 1995 [YR1995], 1996 [YR1996], 1997 [YR1997], 1998 [YR1998], 1999 [YR1999], 2000 [YR2000], 2001 [YR2001], 2002 [YR2002], 2003 [YR2003], 2004 [YR2004], 2005 [YR2005], 2006 [YR2006], 2007 [YR2007], 2008 [YR2008], 2009 [YR2009], 2010 [YR2010], 2011 [YR2011], 2012 [YR2012], 2013 [YR2013], 2014 [YR2014], 2015 [YR2015]]\nIndex: []\n",
+    "elapsed_seconds": 0.014449940994381905
+  },
+  {
+    "code": "# Extract the education expenditure data for Sub-Saharan Africa and Lower Middle Income Countries\neducation_expenditure_data = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\n\n# Display the first few rows of the education expenditure data\neducation_expenditure_data.head()",
+    "output": "         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n1   Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n7  Lower middle income          LMC  ...      3.106096      3.060663\n\n[2 rows x 45 columns]",
+    "elapsed_seconds": 0.021960011683404446
+  },
+  {
+    "code": "# Identify the Series Name and Series Code for exports of goods and services (annual percentage growth) and labor force participation rate\nexports_series = df[df['Series Name'] == 'Exports of goods and services (annual percentage growth)']\nlabor_force_series = df[df['Series Name'] == 'Labor force participation rate, total (percentage of total population ages 15+) (modeled ILO estimate)']\n\nprint(\"Exports Series:\")\nprint(exports_series)\nprint(\"\\nLabor Force Series:\")\nprint(labor_force_series)",
+    "output": "Exports Series:\n         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n2   Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n8  Lower middle income          LMC  ...      2.921528      0.260326\n\n[2 rows x 45 columns]\n\nLabor Force Series:\n          Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n5    Sub-Saharan Africa          SSF  ...     67.060389     67.035198\n11  Lower middle income          LMC  ...     55.571022     55.469790\n\n[2 rows x 45 columns]\n",
+    "elapsed_seconds": 0.02555737877264619
+  },
+  {
+    "code": "# Extract the data for education expenditure, exports, and labor force participation\neducation_expenditure_data = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\nexports_data = df[df['Series Name'] == 'Exports of goods and services (annual percentage growth)']\nlabor_force_data = df[df['Series Name'] == 'Labor force participation rate, total (percentage of total population ages 15+) (modeled ILO estimate)']\n\n# Extract the values for the years 1975 to 2015\neducation_expenditure_values = education_expenditure_data.iloc[:, 4:].values[0]\nexports_values = exports_data.iloc[:, 4:].values[0]\nlabor_force_values = labor_force_data.iloc[:, 4:].values[0]\n\n# Calculate the correlation coefficients\nimport numpy as np\n\ncorrelation_education_exports = np.corrcoef(education_expenditure_values, exports_values)[0, 1]\ncorrelation_education_labor_force = np.corrcoef(education_expenditure_values, labor_force_values)[0, 1]\n\ncorrelation_education_exports, correlation_education_labor_force",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.0032345429062843323
+  },
+  {
+    "code": "# Check for missing values in the education expenditure, exports, and labor force data\nimport numpy as np\n\neducation_expenditure_missing = np.isnan(education_expenditure_values).sum()\nexports_missing = np.isnan(exports_values).sum()\nlabor_force_missing = np.isnan(labor_force_values).sum()\n\neducation_expenditure_missing, exports_missing, labor_force_missing",
+    "output": "(0, 16, 16)",
+    "elapsed_seconds": 0.0015238947235047817
+  },
+  {
+    "code": "# Impute missing values with the mean for exports and labor force participation\nfrom sklearn.impute import SimpleImputer\n\n# Impute missing values for exports\nimputer_exports = SimpleImputer(strategy='mean')\nexports_values_imputed = imputer_exports.fit_transform(exports_values.reshape(-1, 1)).flatten()\n\n# Impute missing values for labor force participation\nimputer_labor_force = SimpleImputer(strategy='mean')\nlabor_force_values_imputed = imputer_labor_force.fit_transform(labor_force_values.reshape(-1, 1)).flatten()\n\n# Recalculate the correlation coefficients\ncorrelation_education_exports = np.corrcoef(education_expenditure_values, exports_values_imputed)[0, 1]\ncorrelation_education_labor_force = np.corrcoef(education_expenditure_values, labor_force_values_imputed)[0, 1]\n\ncorrelation_education_exports, correlation_education_labor_force",
+    "output": "(0.22706398547498283, 0.7510468012979651)",
+    "elapsed_seconds": 0.583609736058861
+  }
+]

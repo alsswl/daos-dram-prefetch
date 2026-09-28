@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 40.459290171042085,
+  "llm_calls": 11,
+  "python_calls": 10,
+  "final_answer": "Scientific Hypothesis: In developing countries, there is a negative relationship between education expenditure (as a percentage of GNI) and GNI per capita, suggesting that higher education expenditure may be associated with lower economic output. This relationship is statistically significant, as indicated by a strong negative correlation coefficient of approximately -0.966 and a high R-squared value of 0.934.\n\nWORKFLOW_SUMMARY:\n1. Data Loading: The dataset was loaded from the specified path using Python.\n2. Data Inspection: The first few rows of the dataset were displayed to understand its structure and identify relevant columns.\n3. Column Identification: The correct Series Codes for education expenditure and GNI per capita were identified based on the dataset's documentation.\n4. Data Extraction: The relevant data for education expenditure and GNI per capita was extracted using the correct Series Codes.\n5. Data Combination: The extracted data was combined into a single DataFrame for analysis.\n6. Data Cleaning: Rows with missing (NaN) values were removed to ensure data quality.\n7. Correlation Analysis: A correlation analysis was performed to determine the relationship between education expenditure and GNI per capita.\n8. Linear Regression: A linear regression model was fitted to quantify the relationship and assess its statistical significance.",
+  "grading": "not run, as in supplied document",
+  "query": "What relationship exists between education expenditure and per capita GDP in developing countries and how does it affect economic output?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/worldbank_education_gdp/metadata_1.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

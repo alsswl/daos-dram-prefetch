@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_raw.csv')\ndf.head()",
+    "output": "   ID# (range 1-12686) 1979  ...  Total market value of items over $500, 1996\n0                         1  ...                                          NaN\n1                         2  ...                                      15000.0\n2                         3  ...                                       2000.0\n3                         4  ...                                      15000.0\n4                         5  ...                                          NaN\n\n[5 rows x 61 columns]",
+    "elapsed_seconds": 0.1944572520442307
+  },
+  {
+    "code": "# Find the column for gender\ngender_column = 'Sex of respondent, 1979: Sex of the respondent, 1:MALE or 2:FEMALE'\n\n# Find the column for degree completion rates\ndegree_completion_column = 'Highest grade completed, 1979: Highest grade or year of regular school that respondent have completed and got credit for till 1979'\n\n# Check if these columns exist in the dataset\nif gender_column in df.columns and degree_completion_column in df.columns:\n    print(\"Columns for gender and degree completion rates found.\")\nelse:\n    print(\"Columns for gender and degree completion rates not found.\")",
+    "output": "Columns for gender and degree completion rates not found.\n",
+    "elapsed_seconds": 0.0018308092840015888
+  },
+  {
+    "code": "# Search for columns related to gender\ngender_columns = [col for col in df.columns if 'Sex' in col or 'sex' in col or 'Gender' in col or 'gender' in col]\nprint(\"Columns related to gender:\", gender_columns)\n\n# Search for columns related to degree completion rates\ndegree_completion_columns = [col for col in df.columns if 'grade' in col or 'education' in col or 'school' in col or 'completion' in col]\nprint(\"Columns related to degree completion rates:\", degree_completion_columns)",
+    "output": "Columns related to gender: ['Sex of respondent, 1979']\nColumns related to degree completion rates: [\"Highest grade completed by respondent's mother, 1979\", \"Highest grade completed by respondent's father, 1979\", 'Highest grade completed, 1979', 'Rank in class last year attended at this school, 1981', 'Number of students in class last year attended at this school, 1981']\n",
+    "elapsed_seconds": 0.001820267178118229
+  },
+  {
+    "code": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nfrom scipy.stats import ttest_ind\n\n# Load the dataset\ndf = pd.read_csv('/data/nls_raw.csv')\n\n# Select the relevant columns\ngender_column = 'Sex of respondent, 1979'\ndegree_completion_column = 'Highest grade completed, 1979'\n\n# Convert the gender column to a categorical type\ndf[gender_column] = df[gender_column].astype('category')\n\n# Create a boxplot to visualize the relationship between gender and degree completion rates\nsns.boxplot(x=gender_column, y=degree_completion_column, data=df)\nplt.title('Relationship between Gender and Degree Completion Rates')\nplt.xlabel('Gender')\nplt.ylabel('Highest Grade Completed')\nplt.show()\n\n# Perform a t-test to determine if there is a statistically significant difference in degree completion rates between genders\nmale_degrees = df[df[gender_column] == 1][degree_completion_column]\nfemale_degrees = df[df[gender_column] == 2][degree_completion_column]\n\nt_statistic, p_value = ttest_ind(male_degrees, female_degrees)\nt_statistic, p_value",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.9277621568180621
+  },
+  {
+    "code": "# Check for missing values in the relevant columns\nmissing_values = df[[gender_column, degree_completion_column]].isnull().sum()\nprint(\"Missing values in gender column:\", missing_values[gender_column])\nprint(\"Missing values in degree completion column:\", missing_values[degree_completion_column])",
+    "output": "Missing values in gender column: 0\nMissing values in degree completion column: 152\n",
+    "elapsed_seconds": 0.0023121419362723827
+  },
+  {
+    "code": "# Drop rows with missing values in the degree completion column\ndf_clean = df.dropna(subset=[degree_completion_column])\n\n# Perform the t-test again on the cleaned data\nmale_degrees = df_clean[df_clean[gender_column] == 1][degree_completion_column]\nfemale_degrees = df_clean[df_clean[gender_column] == 2][degree_completion_column]\n\nt_statistic, p_value = ttest_ind(male_degrees, female_degrees)\nt_statistic, p_value",
+    "output": "(-5.691433978032243, 1.2880103410018152e-08)",
+    "elapsed_seconds": 0.007523253094404936
+  }
+]

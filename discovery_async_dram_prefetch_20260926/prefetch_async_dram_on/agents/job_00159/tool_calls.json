@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\ndf_offshoring = pd.read_stata('/data/offshoring_iv_mar2.dta')\ndf_immi = pd.read_stata('/data/immi_popimputed_00_07.dta')\n\n# Display the first few rows of each dataset\ndf_offshoring.head(), df_immi.head()",
+    "output": "(   year  beaind  iv_offshoring_1\n0  2000       1         0.058817\n1  2000       3         0.129595\n2  2000       4         0.059499\n3  2000       5         0.031044\n4  2000       6         0.044939,      year  beaind  share_immi_imputed  empl_immi_imputed\n0  2000.0     1.0            0.077233            10896.0\n1  2000.0     3.0            0.155982            21254.0\n2  2000.0     4.0            0.233880            55918.0\n3  2000.0     5.0            0.100162            12666.0\n4  2000.0     6.0            0.276959           144049.0)",
+    "elapsed_seconds": 0.13872622326016426
+  },
+  {
+    "code": "# Merge the datasets on 'year' and 'beaind'\ndf_merged = pd.merge(df_offshoring, df_immi, on=['year', 'beaind'], how='inner')\n\n# Display the first few rows of the merged dataset\ndf_merged.head()",
+    "output": "   year  beaind  iv_offshoring_1  share_immi_imputed  empl_immi_imputed\n0  2000       1         0.058817            0.077233            10896.0\n1  2000       3         0.129595            0.155982            21254.0\n2  2000       4         0.059499            0.233880            55918.0\n3  2000       5         0.031044            0.100162            12666.0\n4  2000       6         0.044939            0.276959           144049.0",
+    "elapsed_seconds": 0.0059137786738574505
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = df_merged[['iv_offshoring_1']].values.reshape(-1, 1)  # Predictor\ny = df_merged['share_immi_imputed'].values  # Response\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient and p-value\ncoefficient = model.coef_[0]\np_value = model.pvalue_\n\ncoefficient, p_value",
+    "output": "AttributeError: 'LinearRegression' object has no attribute 'pvalue_'",
+    "elapsed_seconds": 0.5736991912126541
+  },
+  {
+    "code": "import statsmodels.api as sm\n\n# Prepare the data for regression with statsmodels\nX = sm.add_constant(df_merged['iv_offshoring_1'])  # Adding a constant term\ny = df_merged['share_immi_imputed']\n\n# Create a linear regression model\nmodel = sm.OLS(y, X).fit()\n\n# Get the coefficient and p-value\ncoefficient = model.params['iv_offshoring_1']\np_value = model.pvalues['iv_offshoring_1']\n\ncoefficient, p_value",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.012288630940020084
+  },
+  {
+    "code": "import sys\n!{sys.executable} -m pip install --upgrade scipy",
+    "output": "SyntaxError: invalid syntax (<unknown>, line 2)",
+    "elapsed_seconds": 0.0017467099241912365
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = df_merged[['iv_offshoring_1']].values.reshape(-1, 1)  # Predictor\ny = df_merged['share_immi_imputed'].values  # Response\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "-0.0027737056",
+    "elapsed_seconds": 0.002914637792855501
+  }
+]

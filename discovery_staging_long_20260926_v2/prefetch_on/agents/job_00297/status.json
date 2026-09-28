@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 49.64876611484215,
+  "llm_calls": 8,
+  "python_calls": 7,
+  "final_answer": "Hypothesis: The first principal component (PC1) of the forms of capital during the Middle Neolithic (3400-3000 BCE) is more negative compared to the Younger Neolithic (2900-2300 BCE), indicating a shift in the forms of capital during these periods. The variables chosen are the PC1 values derived from the forms of capital (ZHort, ZSichel, ZBeil, ZMW, Zkeverz) and the time periods (BCE). The relationship between these variables is characterized by a more negative PC1 value in the Middle Neolithic compared to the Younger Neolithic, suggesting a change in the forms of capital over time. The statistical significance of this difference is not explicitly tested in this analysis, but the mean PC1 values provide a descriptive comparison between the two periods.",
+  "grading": "not run, as in supplied document",
+  "query": "How were the phases of the Middle Neolithic (3400-3000 BCE) and Younger Neolithic (2900-2300 BCE) characterized in terms of the first principal component in a PCA on the forms of capital analyzed in hundred-year time slices?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/archaeology/metadata_16.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_incarceration_processed.csv')\ndf.head()",
+    "output": "    race     sex  ...  composite_wealth_1990  composite_wealth_1996\n0  white  female  ...                      0                      0\n1  white  female  ...                   2000                 209500\n2  white  female  ...                 -18800                 114500\n3  white  female  ...                   1620                  45000\n4  white    male  ...                      0                      0\n\n[5 rows x 6 columns]",
+    "elapsed_seconds": 0.14128906419500709
+  },
+  {
+    "code": "# Filter the data for white males and females\nwhite_males = df[(df['race'] == 'white') & (df['sex'] == 'male')]\nwhite_females = df[(df['race'] == 'white') & (df['sex'] == 'female')]\n\n# Check for missing values in the composite wealth columns\nmissing_1990 = white_males['composite_wealth_1990'].isnull().sum()\nmissing_1996 = white_males['composite_wealth_1996'].isnull().sum()\n\nmissing_1990_females = white_females['composite_wealth_1990'].isnull().sum()\nmissing_1996_females = white_females['composite_wealth_1996'].isnull().sum()\n\nmissing_1990, missing_1996, missing_1990_females, missing_1996_females",
+    "output": "(0, 0, 0, 0)",
+    "elapsed_seconds": 0.005625886842608452
+  },
+  {
+    "code": "import numpy as np\nfrom scipy.stats import ttest_ind\n\n# Calculate coefficient of variation (CV) for white males\ncv_1990_males = np.std(white_males['composite_wealth_1990']) / np.mean(white_males['composite_wealth_1990'])\ncv_1996_males = np.std(white_males['composite_wealth_1996']) / np.mean(white_males['composite_wealth_1996'])\n\n# Calculate coefficient of variation (CV) for white females\ncv_1990_females = np.std(white_females['composite_wealth_1990']) / np.mean(white_females['composite_wealth_1990'])\ncv_1996_females = np.std(white_females['composite_wealth_1996']) / np.mean(white_females['composite_wealth_1996'])\n\n# Perform t-tests to check for statistical significance\nt_stat_males, p_val_males = ttest_ind(white_males['composite_wealth_1990'], white_males['composite_wealth_1996'])\nt_stat_females, p_val_females = ttest_ind(white_females['composite_wealth_1990'], white_females['composite_wealth_1996'])\n\ncv_1990_males, cv_1996_males, cv_1990_females, cv_1996_females, t_stat_males, p_val_males, t_stat_females, p_val_females",
+    "output": "(2.775348703460677, 2.4084744622460517, 2.6583278136632313, 2.325827677796281, -6.410859147257284, 1.54198810149013e-10, -4.403814836132898, 1.0788941294508524e-05)",
+    "elapsed_seconds": 0.47991485334932804
+  }
+]

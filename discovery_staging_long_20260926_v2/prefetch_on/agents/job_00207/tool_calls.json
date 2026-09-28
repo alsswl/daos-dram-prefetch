@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Display the first few rows of the dataset to understand its structure\ndf_time_series.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15172615414485335
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Extract the 'CE' and 'Depot' columns\nce_values = df_time_series['CE']\ndepot_values = df_time_series['Depot']\n\n# Identify the index of the maximum 'Depot' value\nmax_depot_index = depot_values.idxmax()\n\n# Find the corresponding 'CE' value\npeak_ce = ce_values[max_depot_index]\n\n# Determine the century\npeak_century = peak_ce // 100\n\npeak_century",
+    "output": "-11",
+    "elapsed_seconds": 0.011723264120519161
+  },
+  {
+    "code": "import matplotlib.pyplot as plt\n\n# Plot the 'CE' and 'Depot' values to visualize the trend\nplt.figure(figsize=(12, 6))\nplt.plot(ce_values, depot_values, label='Depot Z values')\nplt.xlabel('CE (Common Era)')\nplt.ylabel('Depot Z values')\nplt.title('Depot Z values over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.36796629801392555
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Check for missing values in the 'Depot' column\nmissing_depot_values = df_time_series['Depot'].isnull().sum()\n\nmissing_depot_values",
+    "output": "3564",
+    "elapsed_seconds": 0.01194924721494317
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Interpolate missing values in the 'Depot' column using linear interpolation\ndf_time_series['Depot_interpolated'] = df_time_series['Depot'].interpolate(method='linear')\n\n# Extract the 'CE' and interpolated 'Depot' values\nce_values = df_time_series['CE']\ndepot_interpolated_values = df_time_series['Depot_interpolated']\n\n# Identify the index of the maximum interpolated 'Depot' value\nmax_depot_interpolated_index = depot_interpolated_values.idxmax()\n\n# Find the corresponding 'CE' value\npeak_ce_interpolated = ce_values[max_depot_interpolated_index]\n\n# Determine the century\npeak_century_interpolated = peak_ce_interpolated // 100\n\npeak_century_interpolated",
+    "output": "-11",
+    "elapsed_seconds": 0.012464199680835009
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Interpolate missing values in the 'Depot' column using linear interpolation\ndf_time_series['Depot_interpolated'] = df_time_series['Depot'].interpolate(method='linear')\n\n# Calculate a rolling mean of the interpolated 'Depot' values with a window size of 100\nrolling_mean = df_time_series['Depot_interpolated'].rolling(window=100).mean()\n\n# Identify the index of the maximum rolling mean value\nmax_rolling_mean_index = rolling_mean.idxmax()\n\n# Find the corresponding 'CE' value\npeak_ce_rolling_mean = df_time_series['CE'][max_rolling_mean_index]\n\n# Determine the century\npeak_century_rolling_mean = peak_ce_rolling_mean // 100\n\npeak_century_rolling_mean",
+    "output": "-11",
+    "elapsed_seconds": 0.011979863047599792
+  }
+]

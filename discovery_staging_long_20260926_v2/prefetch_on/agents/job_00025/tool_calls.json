@@ -1,0 +1,67 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/worldbank_education_gdp.csv')\ndf.head()",
+    "output": "        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n2  Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n3  Sub-Saharan Africa          SSF  ...     97.963791     96.974968\n4  Sub-Saharan Africa          SSF  ...     42.847160     43.372971\n\n[5 rows x 45 columns]",
+    "elapsed_seconds": 0.1475065411068499
+  },
+  {
+    "code": "# Identify the relevant columns\neducation_expenditure_col = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_col = 'GNI per capita (constant 2015 US dollar)'\n\n# Filter the dataset to include only the relevant columns\ndf_filtered = df[[education_expenditure_col, gdp_col, 'Country Group']]\n\n# Display the first few rows of the filtered dataset\ndf_filtered.head()",
+    "output": "KeyError: \"['Adjusted savings: education expenditure (percentage of GNI)', 'GNI per capita (constant 2015 US dollar)'] not in index\"",
+    "elapsed_seconds": 0.0017748009413480759
+  },
+  {
+    "code": "# Display the column names of the dataset\ndf.columns.tolist()",
+    "output": "['Country Group', 'Country Code', 'Series Name', 'Series Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]']",
+    "elapsed_seconds": 0.001326264813542366
+  },
+  {
+    "code": "# Filter the dataset to find the correct columns for education expenditure and GNI per capita\neducation_expenditure_data = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\ngdp_data = df[df['Series Name'] == 'GNI per capita (constant 2015 US dollar)']\n\n# Display the first few rows of the filtered datasets\neducation_expenditure_data.head()\ngdp_data.head()",
+    "output": "Empty DataFrame\nColumns: [Country Group, Country Code, Series Name, Series Code, 1975 [YR1975], 1976 [YR1976], 1977 [YR1977], 1978 [YR1978], 1979 [YR1979], 1980 [YR1980], 1981 [YR1981], 1982 [YR1982], 1983 [YR1983], 1984 [YR1984], 1985 [YR1985], 1986 [YR1986], 1987 [YR1987], 1988 [YR1988], 1989 [YR1989], 1990 [YR1990], 1991 [YR1991], 1992 [YR1992], 1993 [YR1993], 1994 [YR1994], 1995 [YR1995], 1996 [YR1996], 1997 [YR1997], 1998 [YR1998], 1999 [YR1999], 2000 [YR2000], 2001 [YR2001], 2002 [YR2002], 2003 [YR2003], 2004 [YR2004], 2005 [YR2005], 2006 [YR2006], 2007 [YR2007], 2008 [YR2008], 2009 [YR2009], 2010 [YR2010], 2011 [YR2011], 2012 [YR2012], 2013 [YR2013], 2014 [YR2014], 2015 [YR2015]]\nIndex: []",
+    "elapsed_seconds": 0.0021355790086090565
+  },
+  {
+    "code": "# Check the unique values in the 'Series Name' column\nunique_series_names = df['Series Name'].unique()\nunique_series_names",
+    "output": "['GNI per capita (constant 2015 USdollar)'\n 'Adjusted savings: education expenditure (percentage of GNI)'\n 'Exports of goods and services (annual percentage growth)'\n 'School enrollment, primary (percentage gross)'\n 'School enrollment, secondary (percentage gross)'\n 'Labor force participation rate, total (percentage of total population ages 15+) (modeled ILO estimate)']",
+    "elapsed_seconds": 0.0010693869553506374
+  },
+  {
+    "code": "# Correct the 'Series Name' for GNI per capita and filter the dataset\ngdp_data = df[df['Series Name'] == 'GNI per capita (constant 2015 USdollar)']\neducation_expenditure_data = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\n\n# Display the first few rows of the filtered datasets\ngdp_data.head()\neducation_expenditure_data.head()",
+    "output": "         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n1   Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n7  Lower middle income          LMC  ...      3.106096      3.060663\n\n[2 rows x 45 columns]",
+    "elapsed_seconds": 0.013678873889148235
+  },
+  {
+    "code": "# Reshape the data to have one row per country and year\ngdp_data_melted = gdp_data.melt(id_vars=['Country Group', 'Country Code', 'Series Name', 'Series Code'], \n                                 var_name='Year', \n                                 value_name='GNI_per_capita')\n\neducation_expenditure_data_melted = education_expenditure_data.melt(id_vars=['Country Group', 'Country Code', 'Series Name', 'Series Code'], \n                                                                    var_name='Year', \n                                                                    value_name='Education_Expenditure')\n\n# Display the first few rows of the reshaped datasets\ngdp_data_melted.head()\neducation_expenditure_data_melted.head()",
+    "output": "         Country Group Country Code  ...           Year Education_Expenditure\n0   Sub-Saharan Africa          SSF  ...  1975 [YR1975]              4.300055\n1  Lower middle income          LMC  ...  1975 [YR1975]              2.694685\n2   Sub-Saharan Africa          SSF  ...  1976 [YR1976]              4.309288\n3  Lower middle income          LMC  ...  1976 [YR1976]              3.771469\n4   Sub-Saharan Africa          SSF  ...  1977 [YR1977]              4.226369\n\n[5 rows x 6 columns]",
+    "elapsed_seconds": 0.007873104885220528
+  },
+  {
+    "code": "# Merge the two datasets on 'Country Group', 'Country Code', and 'Year'\nmerged_data = pd.merge(gdp_data_melted, education_expenditure_data_melted, \n                       on=['Country Group', 'Country Code', 'Year'], how='inner')\n\n# Display the first few rows of the merged dataset\nmerged_data.head()",
+    "output": "         Country Group Country Code  ...      Series Code_y Education_Expenditure\n0   Sub-Saharan Africa          SSF  ...  NY.ADJ.AEDU.GN.ZS              4.300055\n1  Lower middle income          LMC  ...  NY.ADJ.AEDU.GN.ZS              2.694685\n2   Sub-Saharan Africa          SSF  ...  NY.ADJ.AEDU.GN.ZS              4.309288\n3  Lower middle income          LMC  ...  NY.ADJ.AEDU.GN.ZS              3.771469\n4   Sub-Saharan Africa          SSF  ...  NY.ADJ.AEDU.GN.ZS              4.226369\n\n[5 rows x 9 columns]",
+    "elapsed_seconds": 0.005943105090409517
+  },
+  {
+    "code": "# Perform a regression analysis for each region\nimport statsmodels.api as sm\n\n# Separate the data by region\nsub_saharan_data = merged_data[merged_data['Country Group'] == 'Sub-Saharan Africa']\nlower_middle_income_data = merged_data[merged_data['Country Group'] == 'Lower middle income']\n\n# Define the independent and dependent variables for Sub-Saharan Africa\nX_sub_saharan = sm.add_constant(sub_saharan_data['Education_Expenditure'])\ny_sub_saharan = sub_saharan_data['GNI_per_capita']\n\n# Define the independent and dependent variables for Lower Middle Income countries\nX_lower_middle_income = sm.add_constant(lower_middle_income_data['Education_Expenditure'])\ny_lower_middle_income = lower_middle_income_data['GNI_per_capita']\n\n# Fit the regression models\nmodel_sub_saharan = sm.OLS(y_sub_saharan, X_sub_saharan).fit()\nmodel_lower_middle_income = sm.OLS(y_lower_middle_income, X_lower_middle_income).fit()\n\n# Print the summary of the regression models\nmodel_sub_saharan.summary()\nmodel_lower_middle_income.summary()",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.5018736999481916
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\n\n# Perform a regression analysis for each region using sklearn\n# Sub-Saharan Africa\nX_sub_saharan_sklearn = sub_saharan_data[['Education_Expenditure']]\ny_sub_saharan_sklearn = sub_saharan_data['GNI_per_capita']\n\n# Lower Middle Income countries\nX_lower_middle_income_sklearn = lower_middle_income_data[['Education_Expenditure']]\ny_lower_middle_income_sklearn = lower_middle_income_data['GNI_per_capita']\n\n# Fit the regression models\nmodel_sub_saharan_sklearn = LinearRegression().fit(X_sub_saharan_sklearn, y_sub_saharan_sklearn)\nmodel_lower_middle_income_sklearn = LinearRegression().fit(X_lower_middle_income_sklearn, y_lower_middle_income_sklearn)\n\n# Get the coefficients\ncoefficient_sub_saharan = model_sub_saharan_sklearn.coef_[0]\ncoefficient_lower_middle_income = model_lower_middle_income_sklearn.coef_[0]\n\ncoefficient_sub_saharan, coefficient_lower_middle_income",
+    "output": "NameError: name 'sub_saharan_data' is not defined",
+    "elapsed_seconds": 0.07508431794121861
+  },
+  {
+    "code": "# Re-separate the data by region\nsub_saharan_data = merged_data[merged_data['Country Group'] == 'Sub-Saharan Africa']\nlower_middle_income_data = merged_data[merged_data['Country Group'] == 'Lower middle income']\n\n# Perform a regression analysis for each region using sklearn\n# Sub-Saharan Africa\nX_sub_saharan_sklearn = sub_saharan_data[['Education_Expenditure']]\ny_sub_saharan_sklearn = sub_saharan_data['GNI_per_capita']\n\n# Lower Middle Income countries\nX_lower_middle_income_sklearn = lower_middle_income_data[['Education_Expenditure']]\ny_lower_middle_income_sklearn = lower_middle_income_data['GNI_per_capita']\n\n# Fit the regression models\nmodel_sub_saharan_sklearn = LinearRegression().fit(X_sub_saharan_sklearn, y_sub_saharan_sklearn)\nmodel_lower_middle_income_sklearn = LinearRegression().fit(X_lower_middle_income_sklearn, y_lower_middle_income_sklearn)\n\n# Get the coefficients\ncoefficient_sub_saharan = model_sub_saharan_sklearn.coef_[0]\ncoefficient_lower_middle_income = model_lower_middle_income_sklearn.coef_[0]\n\ncoefficient_sub_saharan, coefficient_lower_middle_income",
+    "output": "ValueError: Input y contains NaN.",
+    "elapsed_seconds": 0.003892262000590563
+  },
+  {
+    "code": "# Check for missing values in the dataset\nmissing_values = merged_data.isnull().sum()\nmissing_values",
+    "output": "Country Group             0\nCountry Code              0\nSeries Name_x             0\nSeries Code_x             0\nYear                      0\nGNI_per_capita           36\nSeries Name_y             0\nSeries Code_y             0\nEducation_Expenditure     0\ndtype: int64",
+    "elapsed_seconds": 0.0021533691324293613
+  },
+  {
+    "code": "# Remove rows with missing values in 'GNI_per_capita'\nmerged_data_clean = merged_data.dropna(subset=['GNI_per_capita'])\n\n# Re-separate the data by region\nsub_saharan_data = merged_data_clean[merged_data_clean['Country Group'] == 'Sub-Saharan Africa']\nlower_middle_income_data = merged_data_clean[merged_data_clean['Country Group'] == 'Lower middle income']\n\n# Perform a regression analysis for each region using sklearn\n# Sub-Saharan Africa\nX_sub_saharan_sklearn = sub_saharan_data[['Education_Expenditure']]\ny_sub_saharan_sklearn = sub_saharan_data['GNI_per_capita']\n\n# Lower Middle Income countries\nX_lower_middle_income_sklearn = lower_middle_income_data[['Education_Expenditure']]\ny_lower_middle_income_sklearn = lower_middle_income_data['GNI_per_capita']\n\n# Fit the regression models\nmodel_sub_saharan_sklearn = LinearRegression().fit(X_sub_saharan_sklearn, y_sub_saharan_sklearn)\nmodel_lower_middle_income_sklearn = LinearRegression().fit(X_lower_middle_income_sklearn, y_lower_middle_income_sklearn)\n\n# Get the coefficients\ncoefficient_sub_saharan = model_sub_saharan_sklearn.coef_[0]\ncoefficient_lower_middle_income = model_lower_middle_income_sklearn.coef_[0]\n\ncoefficient_sub_saharan, coefficient_lower_middle_income",
+    "output": "(-159.13145557434953, -635.0742417239451)",
+    "elapsed_seconds": 0.005734966602176428
+  }
+]

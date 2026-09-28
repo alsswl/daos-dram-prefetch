@@ -1,0 +1,12 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/data.csv')\ndf.head()",
+    "output": "   age  number_of_trips  stress_tolerance travel_style  creativity_score\n0   25                2                 2    adventure               6.5\n1   79                3                 2     business              10.0\n2   70                2                 2    adventure               6.5\n3   33                3                 2    adventure              10.0\n4   45                2                 2     business               6.5",
+    "elapsed_seconds": 0.13659471506252885
+  },
+  {
+    "code": "df.describe()",
+    "output": "              age  number_of_trips  stress_tolerance  creativity_score\ncount  500.000000       500.000000             500.0        500.000000\nmean    47.292000         2.702000               2.0          8.957000\nstd     18.487247         0.457838               0.0          1.602431\nmin     18.000000         2.000000               2.0          6.500000\n25%     31.000000         2.000000               2.0          6.500000\n50%     46.000000         3.000000               2.0         10.000000\n75%     64.000000         3.000000               2.0         10.000000\nmax     80.000000         3.000000               2.0         10.000000",
+    "elapsed_seconds": 0.00666980491951108
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\n\n# Display the first few rows of each dataset\ntime_series_df.head(), capital_df.head(), pollen_df.head()",
+    "output": "(   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns],     BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns],    Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns])",
+    "elapsed_seconds": 0.17032452626153827
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom sklearn.decomposition import PCA\nfrom sklearn.preprocessing import StandardScaler\n\n# Clean the 'capital.csv' dataset\ncapital_df = capital_df.drop(columns=['group', 'color'])\ncapital_df = capital_df.replace(',', '.', regex=True).astype(float)\n\n# Standardize the data\nscaler = StandardScaler()\ncapital_scaled = scaler.fit_transform(capital_df.drop(columns=['BCE']))\n\n# Perform PCA\npca = PCA(n_components=1)\ncapital_pca = pca.fit_transform(capital_scaled)\n\n# Add the PCA results to the original dataset\ncapital_df['PC1'] = capital_pca\n\n# Display the first few rows of the updated dataset\ncapital_df.head()",
+    "output": "      BCE  ZAxtSchwert  ZDolch  Zhausgr  ...       ZMW  ZKeform  Zkeverz       PC1\n0  4300.0        -0.44   -0.58    -1.35  ... -3.134488    -1.13    -1.92 -1.804137\n1  4200.0        -0.44   -0.58    -1.35  ... -3.134488    -1.13    -1.92 -1.804137\n2  4100.0        -0.44   -0.58    -1.35  ... -3.134488    -1.13    -1.92 -1.804137\n3  4000.0        -0.44   -0.58    -1.35  ...  0.439715     1.23    -0.11 -1.995858\n4  3900.0        -0.44   -0.58    -1.35  ...  0.439715     1.02    -0.26 -1.978711\n\n[5 rows x 14 columns]",
+    "elapsed_seconds": 0.5767366806976497
+  },
+  {
+    "code": "# Filter the data for the Middle Neolithic (3400-3000 BCE) and Younger Neolithic (2900-2300 BCE) periods\nmiddle_neolithic = capital_df[(capital_df['BCE'] >= 3000) & (capital_df['BCE'] <= 3400)]\nyounger_neolithic = capital_df[(capital_df['BCE'] >= 2300) & (capital_df['BCE'] <= 2900)]\n\n# Calculate the mean PC1 values for the Middle Neolithic and Younger Neolithic periods\nmiddle_neolithic_mean = middle_neolithic['PC1'].mean()\nyounger_neolithic_mean = younger_neolithic['PC1'].mean()\n\nmiddle_neolithic_mean, younger_neolithic_mean",
+    "output": "(-1.3919032394762625, -1.1319318648439498)",
+    "elapsed_seconds": 0.0023280042223632336
+  },
+  {
+    "code": "from scipy.stats import ttest_ind\n\n# Perform a t-test to compare the mean PC1 values of the Middle Neolithic and Younger Neolithic periods\nt_statistic, p_value = ttest_ind(middle_neolithic['PC1'], younger_neolithic['PC1'])\n\nt_statistic, p_value",
+    "output": "(-0.9644835808951019, 0.3575475461441737)",
+    "elapsed_seconds": 0.002621788065880537
+  },
+  {
+    "code": "# Create hundred-year time slices for the Middle Neolithic (3400-3000 BCE) and Younger Neolithic (2900-2300 BCE) periods\nmiddle_neolithic_slices = []\nfor year in range(3000, 3401, 100):\n    slice_data = capital_df[(capital_df['BCE'] >= year) & (capital_df['BCE'] < year + 100)]\n    if not slice_data.empty:\n        middle_neolithic_slices.append((year, slice_data['PC1'].mean()))\n\nyounger_neolithic_slices = []\nfor year in range(2300, 2901, 100):\n    slice_data = capital_df[(capital_df['BCE'] >= year) & (capital_df['BCE'] < year + 100)]\n    if not slice_data.empty:\n        younger_neolithic_slices.append((year, slice_data['PC1'].mean()))\n\nmiddle_neolithic_slices, younger_neolithic_slices",
+    "output": "([(3000, -1.8058310696771185), (3100, -1.486324531683141), (3200, -1.779537438433262), (3300, -1.2971518975167793), (3400, -0.5906712600710118)], [(2300, -0.41723106038342583), (2400, -1.3099461166262147), (2500, -1.230212699171766), (2600, -1.1306346128148645), (2700, -0.6917827489009638), (2800, -1.6201975077468553), (2900, -1.52351830826356)])",
+    "elapsed_seconds": 0.004538088105618954
+  },
+  {
+    "code": "import matplotlib.pyplot as plt\n\n# Plot the mean PC1 values for the hundred-year time slices of the Middle Neolithic and Younger Neolithic periods\nmiddle_neolithic_years, middle_neolithic_means = zip(*middle_neolithic_slices)\nyounger_neolithic_years, younger_neolithic_means = zip(*younger_neolithic_slices)\n\nplt.figure(figsize=(12, 6))\nplt.plot(middle_neolithic_years, middle_neolithic_means, marker='o', label='Middle Neolithic (3400-3000 BCE)')\nplt.plot(younger_neolithic_years, younger_neolithic_means, marker='s', label='Younger Neolithic (2900-2300 BCE)')\nplt.xlabel('Time (BCE)')\nplt.ylabel('Mean PC1')\nplt.title('Mean PC1 of Forms of Capital in Hundred-Year Time Slices')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.33962138928472996
+  }
+]

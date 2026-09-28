@@ -1,0 +1,806 @@
+DAOS 위의 GPUDirect KV-c
+a
+che 오프로드: 구현과 검증
+Re
+a
+ding LLM KV c
+a
+che from
+pla
+tform c
+ase study
+a
+p
+arallel o
+bject store straight into GPU memory —
+dm
+a
+b
+a
+uf-only
+저자: 김경표 (Gluesys, Ex
+a
+Stor/GPUFlow) · 논문 초안 v0
+4631-ae98-a3f16ad54061
+.1 · 2026-09-07 · 영문판: Hu
+b 99c3f2c1-4e94-
+근거 저장소 exastor/lmcache-daos main (MR !6~!12), 상세 실험 기록 gpudirect/README.md· doc/MP-
+MODE-PLAN.md· doc/MP-VS-HUB-BENCHMARK.md. 선행 Hu
+b
+문서: KV-cache 벤치마크 A·B·C(개정 17),
+lmcache-daos GPUDirect 검증(2026-09-06 정정), 정정 공지(2026-08-31/09-06). 이 초안은 그 문서들의 최종 판정을
+논문 구
+조로 재배열한 것이며 모든 수치는 재측정치(드라이브 분리 후)다.
+초록. LLM 서빙에서 prefix KV c
+a
+che 를 외부 스토리지에 오프로드하는 경로는 보통 "스토리지 →
+호스트 pinned 메모리 → GPU" 두 단계를 거친다. 우리는 DAOS 의 GPU-direct 초안
+API( dfs_read_gpu / dfs_write_gpu )를 LMC
+a
+che 스토리지 플러그인으로 연결해 이 두 단계를 한 단
+계로 줄인 DaosGdsBackend 를 구현하고, H100 + ConnectX-7 RoCE 400G 의 dm
+b
+a
+uf-only 플
+랫폼(nvidia
+open 커널 모듈, peermem 없음)에서 검증했다. 핵심 발견은 세
+가지다. (1) 초기 측정
+에서 GPU-direct 가 스테이징의 0
+.46~
+0
+.79× 에 머문 것은 하드웨어 BAR 쓰기 천장이 아니라
+UCX 전송 경로의 손실이었고, li
+bf
+b
+a
+ric ver
+b
+s 로 바꾸면 ra
+w 대역폭이 0
+.86~1.1× 로 회복된
+다.
+이를 위해 c
+art 의 메모리 디바이스 옵션 활성화, li
+bf
+b
+a
+ric 의 CUDA 빌드, 그리고 ver
+b
+s provider
+의 dm
+a-b
+uf 등록 경로 두 곳(CUDA 라우팅, fd 누수) 수정이 필요했다. (2) 실제 vLLM 워크로드
+(Qwen3-14B)에서 재시작 후 콜드 hit 가 8K 76~149 / 16K 118 / 31K 198~211 ms 로, 호스트
+pinned L1 에 상주한 w
+arm hit(105/85/141) 수준에 도달했으며 호스트 DRAM 트래픽은 0
+.
+09
+B/B 로 스테이징(1.8~1.9)의 1/20 이다. (3) 다중 요청
+집계 처리량은 여전히 호스트 목적지 경로
+(MP 모드, 36 GB/s)가 GPU 목적지(27 GB/s)보다 높다 — 이 상한은 I/O 스레드 수와 무관하며
+GPU 목적지 RDMA write 경로에 있다. 부수적으로, 4 주간 "DAOS 읽기 손상" 으로 추적됐던 정합
+성 문제가 두 서버 랭크가 같은 듀얼포트 NVMe 를 공유한 오구성이었음을 확정하고 관련 결론을 철
+회했다.
+1. 서론
+긴 컨텍스트 재사용(prefix c
+a
+ching)은 prefill 재계산을 KV c
+a
+che 로드로 대체해 TTFT 를 줄인다. GPU
+HBM 이 부족하면 KV 를 호스트 DRAM, 로컬 SSD, 분산 스토리지로 내리는데, LMC
+a
+che 같은 프레임워
+크의 기본 경로는 스토리지에서 pinned 호스트 버퍼로 읽은 뒤 GPU 로 복사하는 두 단계다. 이 구
+는
+조
+(
+a
+) 두 단계가 직렬이라 콜드 hit 지연이 두 전송의 합이고, (b) 전달 바이트당 호스트 DRAM 을 약 2 회 스
+치므로 GPU 여러 장이 한 호스트에서 동시에 로드할 때 DRAM 대역폭이 공유 자원으로 경합한다.
+GPUDirect Stora
+ge(GDS)/GPUDirect RDMA 는 NIC 가 GPU 메모리를 직접 DMA 대상으로 삼아 이 두
+문제를 동시에 푼다. 그러나 병렬 객체 스토리지(DAOS)에서의 GPU-direct 는 (i) 클라이언트 라이브러리
+가 GPU 메모리를 RDMA 등록할 수 있어야 하고, (ii) 서버가 그 rkey 로 GPU BAR 에 RDMA write 를 수
+행해야 하며, (iii) 그 위의 캐시 프레임워크가 GPU 상주 객체를 다룰 수 있어야 한다.
+층 모두 상류에 완
+성된 경로가 없었다.
+이 글
+은 (1) DAOS 초안 API 를 dm
+b
+a
+uf-only 플랫폼에서 동작시키기까지 필요했던 전송 계층 수정, (2)
+LMC
+che 0
+a
+.5.2 에 상류 변경 없이 붙는 GPU-direct 스토리지 플러그인의 설계, (3) 마이크로벤치와 실제
+vLLM 워크로드 양쪽의 검증, (4) 그 과정에서 뒤집힌 판정들과 그 이유를 기록한다.
+세
+2. 배경
+2.1 LMC
+che 의 세
+a
+가지 오프로드 경로
+경로 KV 가 GPU
+에 오르는 길
+in-process
+커넥터
+DAOS →
+워커
+프로세스의
+pinned
+호스트
+MemoryObj
+→ to_gpu
+커널
+MP 모드 DAOS →
+별도 캐시
+서버의
+pinned L1
+→ 워커가
+L1→GPU
+GDS in-
+process(이
+글)
+DAOS →
+GPU
+스테이징 풀
+(RDMA
+write) →
+D2D sc
+a
+tter
+공유 구현 위치
+DAOS
+통해서만
+lmcache_daos.connector.DaosConnector (RemoteConnector)
+노드 내
+인스턴스
+간 L1
+공유 +
+DAOS
+lmcache_daos.mp (L2Ad
+a
+pterInterf
+a
+ce)
+DAOS
+통해서만
+lmcache_daos.gds_backend.DaosGdsBackend (stora
+ge
+plugin)
+2.2 DAOS GPU-direct 초안
+DAOS 상류 브랜치 theodore/b_cufile 은 dfs_read_gpu() / dfs_write_gpu() 와 daos_mem_attr_t (메모리
+타입·디바이스 id·선택적 사전 등록 rkey)를 추가하고, c
+art 가 mercury 의 HG_Bulk_create_attr() 로
+GPU 버퍼를 b
+ulk 핸들로 등록하
+게
+한다. 데이터 이동은 DAOS 의 평소 방식대로 서버가 클라이언트 버퍼
+로 RDMA write(fetch) / RDMA re
+d(upd
+a
+a
+te) 한다. 즉 GDS 라도 NIC→GPU 쓰기의 주체는 서버
+xstre
+m 이다.
+a
+초안은 그대로 빌드되지 않아 6 개 패치가 필요했고(선행 문서), 서버는 stock 2.9.100
+으
+로 충분하다(wire 호환 확인).
+2.3 dm
+a
+b
+uf-only 플랫폼
+DOCA 3.4 의 i
+b_core 는 ib_register_peer_memory_client 를 export 하지 않아 nv_peer_mem 을 쓸
+수 없다. GPU 메모리 등록은 cuMemGetHandleForAddressRange 로 dm
+a-b
+uf fd 를 얻어
+ibv_reg_dmabuf_mr() 로만 가
+능하다(nvidia
+open 커널 모듈 필수). 전송 라이브러리가 이 경로를 실제로
+타는지가 전부를 결정했다(§4).
+3. 시스템 설계
+3.1 v2 저장 포맷 — 페이지 정렬 p
+a
+ylo
+a
+d
+v1 포맷 [8 B prefix][meta][payload] 는 p
+a
+ylo
+a
+d 가 비정렬 오프셋에서 시작해 GPU DMA 대상으로 부적
+합하다. v2 는 4 KiB 헤
+더 페이지(m
+a
+gic, version, st
+te, met
+a
+a_len, p
+a
+ylo
+a
+d_len, 헤
+데이터 ≤ 4060 B) 뒤 오프셋 4096 부터 p
+a
+ylo
+d 를 둔다. 쓰기는 임시 이름 → p
+a
+a
+ylo
+a
+더 CRC32, 메타
+d →
+COMMITTED 헤
+더 → dfs_move() 원자
+시. 읽기는 헤
+게
+더 페이지만 호스트로 읽어 크기·타입을 알고
+GPU 객체를 할당한 뒤 p
+CRC 는 GPU 데이터를 호스트가 읽
+a
+ylo
+a
+d 만 GPU 로 DMA 한다. 헤
+더 CRC 는 메타데이터까지만 덮는다(p
+a
+ylo
+a
+게
+하므로 배제; 전송 무결성은 RoCE ICRC 와 길이 검사에 맡김). v1
+d
+과
+네임스페이스( /v2/<sha256> )를 분리해 공존한다.
+3.2 GPU-direct 바인딩
+기존 ctypes 바인딩에 daos_mem_attr_t (40 B) 와 dfs_read_gpu / dfs_write_gpu ,
+dfs_lookup / dfs_move 를 추가했다. 호출자 소유 sgl 과 메모리 속성( DAOS_MEM_TYPE_CUDA , device
+id)을 넘기며, C shim 없이 충분했다. LMCACHE_DAOS_LIBDIR 로 GPU-direct 클라이언트 번들을 선택
+한다. 검증기 tests/test_gds_binding.py 는 torch 디바이스 텐서로 v2 객체를 쓰고(호스트 헤
+더 + GPU
+p
+a
+ylo
+d) 원자
+a
+게
+시 후 GPU 로 읽어 바이트 일치를 확인한다(40 MiB 3/3, 4 MiB, 256 MiB).
+3.3 DaosGdsBackend — 상류 무변경 플러그인
+LMC
+che 0
+a
+.5.2 의 storage_plugins 로더( extra_config.storage_plugin.
+<name>.module_path/class_name )로 붙는 AllocatorBackendInterface 구현이다. 설계 요점:
+자체 GPU 풀( GPUMemoryAllocator , 4 KiB 정렬, 크기 daosgds.gpu_buﬀer_gb ).
+get_allocator_backend() 가
+자
+신을 돌려주므로 store 시 스토리지 매니저가 호스트 객체를 우리 GPU
+풀로 복사해 넘기고( allocate_and_copy_objects ), 우리는 dfs_write_gpu 로 쓴다. retrieve 시엔 헤
+더
+를 읽고 GPU 객체를 할당해 dfs_read_gpu 로 채우면 GPU 커넥터의 to_gpu 커널이 디바이스 메모
+리에서 페이지드 KV 로 sc
+a
+tter 한다(D2D).
+메타데이터는 자체 JSON(sh
+a
+pes/dtypes/fmt/length). LMC
+che 의 RemoteMetadata 는
+a
+RemoteB
+a
+ckend 가 프로세스 전역 포맷을 초기화해야 직렬화되므로 플러그인이 쓸 수 없다.
+접두 의미론: batched_contains() 는 접두 히트 개수(int)를 반환하고, 배치 get 은 첫 miss 이후 객체
+를 해제하고 None 으로 채운다.
+async prefetch: batched_async_contains / batched_get_non_blocking (coroutine, 스레드풀 re
+d
+a
+를 g
+a
+ther)을 구현해 lookup 시점에 다음 요청의 DAOS→GPU 읽기가 현재 prefill 과 겹치
+했다.
+게
+0
+.5.2 는 prefetch 직렬화기를 AsyncSingleSerializer (
+asyncio.Lock)로 하드코딩하므로, 플러그인
+import 시 같은 파일의 AsyncMultiSerializer (청크 예산 가중 세마포어)를 GPU 풀 예산으로 되묶는 셈
+을 둔다( DAOS_GDS_MULTI_PREFETCH ).
+기동 시 전 타깃 연결(SX 프로브, §8.2) 과 스레드별 CUDA 컨텍스트 바인딩(§8.3).
+storage_plugins: ["daosgds"]
+local_cpu: false # CPU 백엔드는 할당기 역할만
+extra_config:
+storage_plugin.daosgds.module_path: lmcache_daos.gds_backend
+storage_plugin.daosgds.class_name: DaosGdsBackend
+daosgds.pool: attr1
+daosgds.container: kvgds_s16 daosgds.gpu_buﬀer_gb: 10 # S16, chunk 4194304, rd_fac:0
+# ≥ inflight × KV 크기
+daosgds.io_workers: 16
+enable_async_loading: True
+4. 플랫폼에서 GPU-direct 를 동작시키기 — 전송 계층
+4.1 UCX 경로와 그 판정의 오류
+최초 구현은 ucx+rc_v 위에서 UCX 의 dm
+b
+uf 등록
+a
+게
+이트와 mercury 의 TLS 필터를 고쳐 동작시켰고
+(선행 문서), GPU-direct 가 스테이징의 0
+.60× 라는 결과에 대해 perftest 로 "GPU BAR 로의 RDMA
+write 는 QP 당 22 GB/s" 를 원인으로 지목했다. 그러나 그 perftest 사실(1 QP 22, 4 QP 39.9 GB/s)은
+DAOS 경로의 상한을 설명하지 못한다 — DAOS 는 16 xstre
+a
+m × 16 QP 로 밀
+어넣
+는다. 드라이브 분리
+후 UCX 로 재측정하면 판정이 그대로였지만(0
+.46~
+0
+.79×), 전송만 li
+bf
+b
+a
+ric ver
+b
+s 로 바꾸면 결과
+가 뒤
+집혔다(표 1).
+4.2 li
+bf
+a
+b
+ric ver
+b
+s 에서 필요했던 세
+가지
+1. c
+art 메모리 디바이스 옵션: D_MEM_DEVICE=1 (또는 D_GPU_DIRECT=1 ).
+mercury 에 request_mem_device 를 넘기고, 그래야 n
+면 NA_Mem_register() = NA_OPNOTSUPPORTED.
+초안의 c
+art 는 이때만
+a_ofi 가 도메인을 FI_HMEM 으로 연다. 없으
+2. li
+bf
+b
+a
+ric CUDA 빌드: DAOS prereq 의 li
+bf
+b
+a
+ric 1.25 는 --with-cuda 없이 빌드돼
+FI_HMEM_CUDA not supported. CPPFLAGS/LDFLAGS 를 명시하고 --with-cuda --enable-cuda-dlopen
+으로 재빌드(configure 는 --with-cuda=DIR 만으로는 -lcudart 를 못 찾음). 런타임에 버전 없는
+libcudart.so· libcuda.so 이름을 dlopen 하므로 링크 필요.
+3. ver
+b
+s provider 패치 2 헝크: (
+a
+) vrb_mr_reg_common() 이 dm
+a-b
+uf 등록을
+ZE/ROCR/SYNAPSEAI 에만 쓰고 CUDA 는 ibv_reg_mr 로 떨어뜨려 peermem 없는 플랫폼에서
+EFAULT — CUDA 추가(upstre
+m m
+a
+ain 에는 이미 반영됨). (b) vrb_reg_hmem_dmabuf() 가
+ibv_reg_dmabuf_mr() 뒤 dm
+a-b
+uf fd 를 닫지 않아 등록마다 fd 1 개 누수 — MR 캐시가 꺼진 환경에
+서 8 GiB 를 4 MiB 청크로 읽으면 nofile 1024 에 걸려 cuMemGetHandleForAddressRange →
+CUDA_ERROR_OPERATING_SYSTEM (1.5 s 에 dm
+a-b
+uf fd 634 개). close(fd) 추가(upstre
+m 에도
+a
+없음 → 제출 대상).
+UCX 쪽 mercury 패치는 필요 없어졌고 서버는 stock 그대로다. MR 캐시는 mercury 가
+FI_MR_CACHE_MAX_COUNT=0 을 강제해 꺼진 상태이며 대역폭 영향은 없었다(16W 34.3~34.9 GB/s 불
+변).
+5. 실험 방법
+항목 값
+서버 cell1·
+cell2, Rocky 8.10, DAOS 2.9.100 stock( /var/daos-stockfull ), MD-on-SSD(ra
+m 80
+GiB + NVMe, bdev_roles [wal,meta,data] ), 엔진 1/호스트, t
+argets 8, 랭크당 NVMe 4 대
+분리(cell1 02~
+05, cell2 06~
+09), ofi+verbs;ofi_rxm , ConnectX-7 RoCE 400G(PFC 없음)
+클라이언트 client-5: H100 NVL 96 GB, Xeon(SNC 4 NUMA), Rocky 10
+DOCA 3.4(peermem 없음, dm
+b
+uf 만), 400G 1 포트
+a
+.2 / 6.12, nvidia
+open 610
+.57,
+소프트웨어 vLLM 0
+.18 + LMC
+che 0
+a
+.5.2(c_ops 적재), DAOS 클라이언트 theodore/b_cufile 초안(패치
+6 + ver
+b
+s 경로), Mercury 2.4.1, li
+bf
+b
+a
+ric 1.25(CUDA), UCX 1.20(비교용)
+모델·청크 Qwen3-14B BF16, LMC
+a
+che chunk 256 토큰 = 40 MiB, 8K = 1.34 GB … 127K = 21.4 GB
+컨테이너 DFS chunk 4 MiB, S16(rd_f
+a
+c:0) 및 RP_2G4
+마이크로벤치( tests/bench_dfs_gpu.c , 5-arm): 같은 8 GiB 파일을 32 MiB 요청으로 읽는
+arm —
+gpu ( dfs_read_gpu 로 GPU 메모리 직접), pinnedcopy (pinned 호스트로 읽고 cuMemcpyHtoD ),
+pinned (복사 없이 호스트만), hostcopy , host ; 워커 1/4/16; perf uncore_imc 로 호스트 DRAM 트래
+픽 동시 수집
+. P
+art A: 고정 토큰열 8K~127K 의 hit TTFT(store 후 서버 재시작 → 모든 청크가 스토리지
+에서 옴). P
+art B: 149 문서 × 4096 토큰 = 100 GB working set, 12 inflight, 149 쿼리(VAST long-
+doc-q
+a 조
+건 재현). 정합성 게
+이트: 같은 프롬프트를 tempera
+ture 0
+으로 두 번 보내 캐시 hit 출력이 계
+산 출력과 토큰 단위로 같은지 검사.
+6. 결과
+6.1 ra
+w GPU-direct 대역폭: 전송에 따라 뒤집힌다
+컨테이너 워커 gpu (ver
+b
+s) pinnedcopy
+(ver
+b
+s)
+gpu/st
+a
+ging gpu
+(UCX)
+S16 1 11.6 10
+.4 1.12 6.2 0
+gpu/st
+(UCX)
+a
+ging
+.57
+S16 4 26.7 28.
+0 0
+.95 9.4 0
+.35
+S16 16 35.3 (3 회
+35.1~35.4)
+41.20
+.86 16.
+0 0
+.46
+RP_2G4 1 11.9 10
+.4 1.14 8.2 0
+.81
+RP_2G4 4 24.1 23.5 1.
+03 12.5 0
+.57
+RP_2G4 16 23.9 23.5 1.
+02 19.7 0
+.79
+표 1. GB/s. 같은 GDS 클라이언트·같은 서버·같은 드라이브, 전송만 교체. 40 MiB 요청(LMCache 청크 크기)도 16W
+35.1 vs 40
+.2 (0
+MiB — 전달 바이트당
+.87). 호스트 DRAM 트래픽(16W, S16): gpu re
+a
+d 999 + write 887 MiB vs pinnedcopy 7557 + 7542
+0
+.23 vs 1.84.
+1 워커에서는 복사 단계가 없는 GPU-direct 가 앞서고, 스토리지 쪽이 상한인 RP_2G4 에서는 두 경로가
+같다. 즉 GPU 경로 자체의 천장은 이 구성에서 최소 35 GB/s 이상이며, UCX 의 16~20 GB/s 는 UCX 경
+s 가 운영 권고 전송이 된 뒤 추적하지 않았다). 정합성:
+로 안의 손실이었다(원인은 미규명; ver
+b
+dfs_gpu_rt 4 KiB~32 MiB 왕복 전부 일치.
+6.2 P
+art A — 콜드 hit 가 L1 w
+arm 수준으로
+ctx recompute in-process
+스테이징
+(2026-08
+Hu
+b)
+MP ver
+b
+s 콜드
+(DAOS→L1→GPU)
+MP L1
+w
+arm
+(L1→GPU)
+GDS in-process
+콜드
+(DAOS→GPU)
+8K 705 151 139 105 76~149
+16K 1287 298 158 85 118~132
+31K 2942 437 281 141 198~218
+표 2. hit TTFT, ms. GDS 열
+16K 2.5 GB 를 88 ms(30
+류 0
+.
+은 서버 재시작 후 모든 청크가 DAOS 에서 오는 값(1번째/2번째 요청 범위). 백엔드 로그:
+.4 GB/s), 31K 4.84 GB 를 157 ms(33.2 GB/s)에 GPU 로 적재.
+게
+이트 3/3 PASS, put/get 오
+DAOS→L1→GPU 두 단계가 DAOS→GPU 한 단계로 바
+뀌
+같은
+자릿수가 됐다. 31K hit 한 건 동안의 호스트 DRAM 트래픽은 re
+a
+어 콜드 hit 가 pinned L1 상주 w
+arm hit 와
+d 0
+.9 + write 0
+.85 GB(스테이징
+은
+~5 GB × 2).
+6.3 P
+art B — 다중 요청 집계
+arm (100 GB, 149
+쿼리)
+inflight
+vg p50 p95 집계 호스트 DRAM
+a
+Hu
+b
+in-process
+스테이징 (2026-08)
+12 371 356 547 21.4 GB/s ~1.9 B/B
+MP ver
+b
+후)
+s 콜드 (재시작
+12 216 210 295 36.2 ~1.8 B/B
+GDS in-process, sync 12 363 359 477 21.70
+GDS in-process,
+async
+prefetch (single
+serializer)
+12 303~311 319~328 349~356 25.5~26.1
+.
+09 B/B
+(re
+a
+d 4.5 +
+write 4.3 GB /
+100 GB)
+GDS in-process,
+async + multi
+serializer
+12 285~302 290
+~299 320
+~345 26.5~27.7
+GDS in-process,
+async
++ multi
+6 163 163 182 24.4
+표 3. ms / GB/s. GDS 의 GPU 풀 10 GiB. 24 inflight(15 GB > 풀)에서는 급락(avg 1.5 s) — 풀은 inflight × KV 이상
+이어야 한다.
+6.4 시간 분해 — 남은 격차는 어디에 있나
+12 inflight, 149 요청의 로그 분해: prefetch(DAOS→GPU) p50 28.6 / p90 50
+.9 ms,
+retrieve( to_gpu D2D sc
+a
+tter 등) p50 0
+.9 / p90 2.4 ms. I/O 스레드를 16→32→48 로 늘리면 집계
+는 26.6→26.
+0→25.6 GB/s 로 그대로이고 prefetch p50 만 29→43→42 ms 로 늘어난다. 따라서 GDS
+집계 ~27 GB/s 의 상한은 엔진이 아니라 GPU 목적지 RDMA write 경로(ra
+w 35 GB/s, 호스트 목적지
+41)이고, MP 의 36 GB/s 는 호스트 pinned 목적지가
+더 빠른 데서 온다. 스토리지 읽기 자체는 요청당
+23~25 ms(26~30 GB/s)로 두 경로가 같다.
+7. 분석
+지연 vs 처리량의 구
+조
+적 교환. 단일 요청 콜드 지연은
+단계 수가 결정한다 → GDS 가 이긴다. 다중 요
+청
+집계는 목적지 메모리로의 RDMA write 대역폭이 결정한다 → 호스트 pinned(41 GB/s) > GPU
+BAR(35). 한 호스트에 GPU 가 N 장이면 GPU 목적지 대역폭은 N 배로 늘고 호스트 DRAM 은 공유되
+므로 이 교환은 GPU 수가 늘수록 GDS 에 유리해진다 — 단, 8-GPU 는 미측정(장비 없음).
+DRAM 절
+감은 예상대로 크다(0
+.
+09 vs 1.8~1.9 B/B, 20 배). 계획서의 합격 기준(≤
+0
+.3 B/B)을 넉넉
+히 통과하지만, 단일 GPU 에서 DRAM 이 병목이 아니므로 판정 지표는 TTFT 와 집계다.
+"하드웨어 천장" 진단의 위험. perftest 로 잰 1 QP 22 GB/s 는 사실이었지만 DAOS 경로의 상한이
+아니었다. 전송 계층을 바꾸는 대
+조
+실험이 없었다면 잘못된 결론이 굳어졐을 것이다. 같은 교훈이
+§8.1 의 "ver
+b
+s 손상" 판정에도 적용된
+다.
+프레임워크 계약이 성능을 좌우한다. 스토리지 매니저의 할당기 백엔드가 Loc
+alCPUB
+a
+ckend 로 고
+정된 점(store 는 GPU 로 복사돼 넘어옴), prefetch 직렬화기의 하드코딩, 접두 히트 계약 등은 문서화
+되지 않은 계약이며 각각 성능 또는 정확성에 직접 영향을 줬다.
+8. 교훈 — 뒤집힌 판정들
+8.1 "DAOS 읽기 손상" 은 공유 NVMe 오구성이었다
+4 주간 추적된
+조
+용한 읽기 손상(끝내 "li
+bf
+b
+a
+ric rxm 의 대용량 RDMA re
+a
+d 결함 → UCX 로 해결" 로 정
+리됐던 문제)의 실제 원인은, cell1/cell2 가 한 U.2 섀시의 듀얼포트 NVMe 를 공유하는데 두 랭크가 같은
+드라이브 8 대를 각각
+자기 것으로 포맷해 서로 덮어쓴 것이었다(PCI DSN·DAOS 디바이스 UUID 가 두 노
+드에서 동일). UCX 가 "고친" 듯 보인 것은 30 회 시행의 검정력 부족이었다. 드라이브 분리 후 ver
+b
+s 는
+정합성 시험 전부를 통과했다. 운영 규칙: 노드 간 PCI DSN 비교, 랭크별 디바이스 UUID 상이 확인.
+8.2 UCX 의 15 s 첫-로드 스톨 — 지연 연결의 RTU 유실
+mercury NA-UCX 는 서버 xstre
+a
+m 에 첫 RPC 를 보낼 때 rdm
+a_cm 으로 연결한다. store 중(서버가
+클라이언트 메모리를 RDMA re
+a
+d → 클라이언트→서버 방향 포화, PFC 없는 손실형 RoCE)에 첫 접촉이
+일어나면 CM RTU 가 유실되고 서버 커널 CM 의 REP 재전송(~16 s)까지 그 ra
+nk:t
+g 의 RPC 가 대기한
+a
+다. 증거는 커널 CM 카운터( cm_tx_retries/rep , cm_rx_duplicates/rep )와 HCA 재전송 카운터 0
+. 해법은
+어댑터 기동 시 SX 오브젝트 프로브(모든 타깃에 샤드 1 개)에 청크당 4 KiB 를 순차로 써
+조
+용할 때 전 타
+깃을 연결하는 것 — 10/10 무스톨. li
+bf
+b
+a
+ric 은 rdm
+a_cm QP 를 써서 첫 데이터 패킷으로 연결이 확정
+되므로 영향이 없다(추정).
+8.3 LMC
+a
+che 플러그인 계약 함정 (각각 엔진을 한 번씩 죽였다)
+1. batched_contains() 는 접두 히트 개수(int). b
+임아웃
+반복 → TTFT 5 배.
+ool 리스트를 돌려주면 lookup 서버가 예외 → 3 s 타
+2. RemoteMetadata.serialize() 는 RemoteB
+a
+ckend 가 전역 포맷을 초기화해야 동작 → 자체 메타데이
+터.
+3. li
+bf
+b
+a
+ric 의 CUDA 등록( cuMemGetAddressRange , dm
+a-b
+uf export)은 호출 스레드에 CUDA 드라
+이버 컨텍스트가 필요하고, DAOS 클라이언트는 progress 를 돌리는 임의의 스레드에서 다른 스레드
+의 fetch RPC 를 인코딩하며 그 자리에서 GPU b
+ulk 를 등록한다. 따라서 st
+a
+t 만 하는 스레드도
+CUDA_ERROR_INVALID_CONTEXT → DER_HG_FATAL 을 낼 수 있다. torch 런타임 호출은
+새 스레드에
+컨텍스트를 확실히 묶지 않아 24 워커 이상에서 재발했고, 드라이버 API( cuDevicePrimaryCtxRetain 1
+회 + 스레드별 cuCtxSetCurrent )를 스레드풀 initializer 와 contains() 진입에서 호출해 해결했다.
+9. 한계와 향후 과제
+복제 컨테이너에 GPU 소스 쓰기 실패(ver
+b
+s): RP_2/RP_3 에서 64 KiB 이상 upd
+a
+te 마다 서버
+xstre
+m 의 b
+a
+ulk GET 이 14 s 뒤 HG_IO_ERROR. 인라인 4 KiB·호스트 소스·S16 은 정상, UCX 는 정
+상.
+후보: 복제 upd
+a
+te 경로에서 b
+ulk 핸들의 HMEM 속성 소실, 또는 follower→클라이언트 신규 연
+결 위 첫 RMA 의 CUDA MR 처리. KV 용도(S16/rd_f
+a
+c:0)는 영향 없음.
+8-GPU 실측 없음. 이 글의 트레이드오프 분석(§7)은
+단일 GPU 실측과 구
+적 추론이다.
+조
+상류 미반영: li
+bf
+b
+a
+ric ver
+b
+s fd 누수 패치, LMC
+a
+che 직렬화기 선택 옵션, DAOS 초안의 복제 GPU
+쓰기 결함 — 제출 초안은 doc/upstream/.
+사전 등록 rkey( daos_mem_attr_t.ma_rkey )는 초안 mercury 의 HG_Bulk_import_rkey 가 스텁이라
+미시험. 등록 비용은
+청크당 ~
+0
+.2 ms 로 작아 기대 효과도 낮다.
+MP 모드와의 결합: MP 모드는 pinned L1 이 존재 이유라 GDS 와 구
+조
+적으로 어긋난다. GDS 는 in-
+process 경로의 선택 백엔드로 두는 것이 맞다.
+10
+. 재현
+저장소 exastor/lmcache-daos main : lmcache_daos/{gds_backend.py, serde_v2.py, dfs_binding.py} ,
+deploy/launchers/run_vllm_gds_c5.sh (env GDS_GB , ASYNC , MULTI , WORKERS ),
+tests/{test_serde_v2.py, test_gds_binding.py, dfs_gpu_rt.c, bench_dfs_gpu.c, bench_dfs_gpu.sh} ,
+bench/{sweep_mp.py, longdocqa.py, bench_persist.py} , gpudirect/patches/ (DAOS 4 + UCX 1 +
+mercury 1 + li
+bf
+b
+a
+ric 1).
+호스트 전제(client-5): /opt/daos-gds-gpu (초안 클라이언트), /opt/ofi-cuda (CUDA li
+bf
+b
+a
+ric + 패
+치), CUDA 13.3 런타임, libgdrapi , nvidia
+open 모듈. 컨테이너에는 번들을 호스트와 같은 경로에
+마운트(RUNPATH·플러그인 경로), --ulimit nofile=65536 .
+서버 stock 2.9.100 + ofi+verbs;ofi_rxm , 드라이브 분리, 컨테이너 chunk 4 MiB, S16/rd_f
+a
+c:0
+. 에
+이전트 dom
+ain mlx5_0.
+상세
+절차와 모든 실험 로그 요약: gpudirect/README.md (절 "GDS over ofi+ver
+b
+s", "Ph
+ase 1",
+"Ph
+ase 2"), doc/MP-MODE-PLAN.md §7.7(스톨), doc/MP-VS-HUB-BENCHMARK.md §6~§7.
+참고 문헌·문서
+1. KV-c
+a
+#75~#84.
+che 벤치마크 A·B·C (개정 17) — Hu
+b cfa646ed-3b9e-4f1a-94e7-828ac0f98dd5 , 댓글
+2. lmc
+a
+che-d
+a
+os GPUDirect 검증 (2026-09-06 정정) — Hu
+b 5c944988-66cd-4fd7-90ae-
+618f8b51f6a9 , 댓글 #81~#83.
+3. 정정 공지 (2026-08-31 / 09-06) — Hu
+b 719497ﬀ-b5f0-4c66-b4a0-75726e235a67 .
+4. DAOS theodore/b_cufile (GPU-direct 초안), Mercury 2.4.1 NA-OFI/NA-UCX, li
+bf
+b
+a
+b
+ver
+s provider ( prov/verbs/src/verbs_mr.c ), LMC
+che 0
+.5.2
+a
+( storage_backend/storage_manager.py , gds_backend.py ).
+ric 1.25
+5. NVIDIA GPUDirect RDMA / dm
+노트(peermem 미지원).
+a-b
+uf 기반 등록(nvidia open kernel module), DOCA 3.4 릴리스
+이 초안은 논문 구
+조로의 1차 정리이며, 영문화·그림(경로 

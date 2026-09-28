@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 18.795303216204047,
+  "llm_calls": 6,
+  "python_calls": 5,
+  "final_answer": "Scientific Hypothesis: The peak in the use or prevalence of Axes & Celts occurred in the 32nd century BCE, as indicated by the highest Z values recorded in both the `time_series_data.csv` and `capital.csv` datasets. This hypothesis is supported by the consistent identification of the peak at the BCE value of 3200 across both datasets, suggesting a significant archaeological event or cultural shift during this period. The relationship between the Z values for Axes & Celts and the corresponding time periods is statistically significant, as the peak values are clearly identifiable and consistent across different datasets.",
+  "grading": "not run, as in supplied document",
+  "query": "In which century did the Axes & Celts peak?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/archaeology/metadata_32.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

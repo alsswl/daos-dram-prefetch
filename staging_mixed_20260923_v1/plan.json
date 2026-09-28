@@ -1,0 +1,38 @@
+{
+  "model": "Qwen/Qwen3-14B",
+  "context_tokens": 8192,
+  "inputs": 16,
+  "output_tokens": 64,
+  "cpu_gib": 4,
+  "staging_gib": 10,
+  "cpu_prefetch_watermark_gib": 5,
+  "concurrency": [
+    1,
+    4,
+    8,
+    16
+  ],
+  "repeats": 2,
+  "source_sha256": {
+    "staging_mixed_pressure.py": "8ca0f8ec94de6252c9d450dd87a61b9c24160d84484ab235b06c3865949d8e00",
+    "compare_e2e.py": "bf4de2266ed3c7578f8f4399a2d88c79be02fef10996ce15dcb0699f513c081c",
+    "run_vllm.sh": "5f303713631354a1b56837a6f7463a3ed1c45752fd847b05da54a8023e6af32e",
+    "lmcache_daos/staging_probe_backend.py": "2706b1276f0dfc9f89676ecd64e35f2ca6ecd104394fa9e8210efd037cd486a4",
+    "lmcache_daos/staging_trace.py": "ffa54417176287c1f2ba01f81bcf8c56cbfdcd049900e142969529e481485a7d",
+    "lmcache_daos/gds_backend.py": "3fc43aa3a9c9c292b026e60bf4e49cf975ff2d5ac932a4e8c9b7ba8aa56d2983",
+    "lmcache_daos/dram_prefetch_backend.py": "a87bfed6e2a79780f871a45ae8fcd4534439b9e044db98bfd2270f090886a193",
+    "lmcache_daos/object_binding.py": "ce38ed41c12390524fab993ea16e436122412b8f81267d77e857629266aaa13b",
+    "libdaosgdr.so": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c",
+    "libdaosgdr.c": "ff383e783859281626cf1ec9b2a0e52b97fae2c0c21fdd328663bbb9370d4657"
+  },
+  "notes": [
+    "Instrumented synthetic occupancy diagnostic, not DiscoveryBench or a definitive speed benchmark.",
+    "Two fresh processes/namespaces (OFF then ON); repeats within a process are not independent trials.",
+    "16 sequential fills; last two inputs selected as DRAM-hot. All actual tier hits are traced.",
+    "Each batch has 16 requests: hot repeats 2 inputs, cold repeats 8 inputs, mixed alternates both.",
+    "Per-request lmcache.skip_save during probes/measurements freezes cache contents.",
+    "No eviction/admission policy changes. CPU prefetch uses existing 5 GiB shared watermark.",
+    "5ms nominal occupancy sampling plus allocation/free event tracing, nonzero overhead.",
+    "OS/DAOS internal caches are not flushed. New DAOS keys retained, no shared deletion."
+  ]
+}

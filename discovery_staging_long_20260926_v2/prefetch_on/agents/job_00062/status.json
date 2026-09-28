@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 31.18575004581362,
+  "llm_calls": 9,
+  "python_calls": 8,
+  "final_answer": "**\nThe prevalence of non-native plants introduced via gardening varies significantly across different habitat types, with Coastal, Wetlands, and Urban habitats showing the highest prevalence. This relationship is statistically significant (F = 16.53, p < 0.001), suggesting that certain habitat types are more susceptible to the introduction of non-native plants through gardening activities.",
+  "grading": "not run, as in supplied document",
+  "query": "How does the prevalence of non-native plants introduced via gardening vary based on habitat type?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/introduction_pathways_non-native_plants/metadata_2.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "     HYBAS_ID       long       lat  ...  soil_div     area  diversity\n0  6050000010 -76.477422  7.742693  ...  0.482402  72363.7         68\n1  6050000740 -74.628725  9.803586  ...  0.457436  17944.3         35\n2  6050068100 -75.295995  8.448815  ...  0.378793  17105.5         44\n3  6050068110 -74.608408  8.922863  ...  0.468328    610.1         48\n4  6050070260 -75.591588  5.770093  ...  0.158870  61901.9         81\n\n[5 rows x 21 columns]",
+    "elapsed_seconds": 0.1416332428343594
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Select the evolutionary traits\nevolutionary_traits = ['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']\n\n# Prepare the data for regression\nX = df[evolutionary_traits].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.5659627360291779
+  },
+  {
+    "code": "# Recheck the regression analysis\nevolutionary_traits = ['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']\nX = df[evolutionary_traits].values\ny = df['BAMM_speciation'].values\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.0030864179134368896
+  },
+  {
+    "code": "# Perform regression analysis with 'DR' and 'BAMM_extinction'\nX = df[['DR', 'BAMM_extinction']].values\ny = df['BAMM_speciation'].values\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\ncoefficients = model.coef_\ncoefficients",
+    "output": "[0.90064463 1.24842772]",
+    "elapsed_seconds": 0.002985334023833275
+  },
+  {
+    "code": "# Perform regression analysis with 'aet', 'Elevation', 'sgr', 'soil_div', and 'area'\nX = df[['aet', 'Elevation', 'sgr', 'soil_div', 'area']].values\ny = df['BAMM_speciation'].values\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 3.65608656e-05  8.32265284e-05 -3.06160964e-04 -1.06147013e-02\n  1.03857216e-08]",
+    "elapsed_seconds": 0.0031156581826508045
+  },
+  {
+    "code": "# Perform regression analysis with 'bio1', 'bio12', and 'runoff'\nX = df[['bio1', 'bio12', 'runoff']].values\ny = df['BAMM_speciation'].values\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\ncoefficients = model.coef_\ncoefficients",
+    "output": "[-6.33244307e-04  2.52853985e-05 -3.54537569e-05]",
+    "elapsed_seconds": 0.0028904168866574764
+  },
+  {
+    "code": "# Perform regression analysis with 'diversity'\nX = df[['diversity']].values\ny = df['BAMM_speciation'].values\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\ncoefficients = model.coef_\ncoefficients",
+    "output": "[2.30526158e-05]",
+    "elapsed_seconds": 0.002964904997497797
+  }
+]

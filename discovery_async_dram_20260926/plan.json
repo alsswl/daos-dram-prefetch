@@ -1,0 +1,62 @@
+{
+  "args": {
+    "output": "/root/discos_minji/discovery_async_dram_20260926",
+    "cpu_gb": 8.0,
+    "conditions": "async_dram",
+    "phases": [
+      [
+        4,
+        300.0
+      ],
+      [
+        8,
+        300.0
+      ],
+      [
+        16,
+        600.0
+      ]
+    ],
+    "tasks": 32,
+    "port": 8017,
+    "task_timeout": 300,
+    "drain_seconds": 90,
+    "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+    "dry_run": false,
+    "model": "Qwen/Qwen3-14B",
+    "max_model_len": 32768
+  },
+  "source_sha256": {
+    "discovery_staging_bench.py": "55499d17036a04f5bf302843feb53182d72df12d6892435dece6daf151f3a705",
+    "run_full_agent.py": "3faeb082541d252c7fb5937bf94cc42950674344fc78d8f02345c27eb481d89c",
+    "agent_python_worker.py": "c950ce851ee4f1cb0f4e619a342c8a5f69cc4203cba626157bdf7a0a3e567190",
+    "compare_e2e.py": "bf4de2266ed3c7578f8f4399a2d88c79be02fef10996ce15dcb0699f513c081c",
+    "staging_mixed_pressure.py": "a7a973345df40af4a5e2b60035c896470231e228e6c31143ed3413e2735a1c3d",
+    "run_vllm.sh": "5f303713631354a1b56837a6f7463a3ed1c45752fd847b05da54a8023e6af32e",
+    "lmcache_daos/gds_backend.py": "6e4214fad0710dcfd861f235aa20f661a800cd38246f3abfcb30b327047b9ae7",
+    "lmcache_daos/staging_probe_backend.py": "72cf3b068a7814313004af9eb86c90e42f4af87de48c90250d70d862cd63e4f4",
+    "lmcache_daos/staging_trace.py": "ffa54417176287c1f2ba01f81bcf8c56cbfdcd049900e142969529e481485a7d",
+    "lmcache_daos/dram_prefetch_backend.py": "a87bfed6e2a79780f871a45ae8fcd4534439b9e044db98bfd2270f090886a193",
+    "lmcache_daos/async_dram_backend.py": "2847a652bacb898ac88b495bf6000d17dd9b9806c29b9fe1f89b8f04a7bbb398",
+    "lmcache_daos/gpu_store.py": "2f8ac20c46329dfcd0a3a39444781173fc451fb45e9ecec3185ee354e8d5dcbe",
+    "lmcache_daos/store_probe_backend.py": "297f562e142acec6dd9784e59a11062c2a77169bafa5b7a579b16e804222de44",
+    "lmcache_config_daosgds_async_dram.yaml": "767bf52c8a62ff0cda45a417a7ca62349d3ca6890a1fe17b9558c925b2373c24",
+    "discoverybench/agents/react_agent.py": "9d4cbc1b3a4ba12ffeef1e83cd34fb9d1dd546a6055ac7a61c04e5fd33ae8fb3",
+    "discoverybench/agents/react_utils.py": "d01a92e883a883bb4bd7195d25ac2c9672dc052529dbc0eabf858a319569a392",
+    "discoverybench/utils/autonomous_single_agent.py": "93617028a7547ef26d737fd2a87d289b8b9bb194aaf0d3fd2295a34571cf7d0f",
+    "libdaosgdr.so": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c"
+  },
+  "notes": [
+    "Real-data DiscoveryBench subset; scientific-answer grading not run.",
+    "25 agent steps, 2048 output tokens/call; original prompts, no padding.",
+    "Qwen thinking explicitly disabled; accept FINAL_ANSWER alias present in the original prompt example.",
+    "One live vLLM process per condition. Closed-loop agent arrivals, Python tool pauses included.",
+    "No artificial tier ratios; CPU LRU and async DAOS stores remain active.",
+    "New DAOS namespace per condition; no cache deletion or server cache flush.",
+    "OFF/ON have same task catalogue, but actual model calls and arrival timing can diverge.",
+    "async_dram selects GPU-direct store, async CPU write mirror and read promotion; DRAM-to-GPU prefetch is OFF.",
+    "Each phase admits new workflows for requested duration, then drains for at most drain_seconds.",
+    "20ms nominal allocator sampling plus allocation/free events; instrumentation has overhead.",
+    "Failures, context overflows and forced timeout stops are retained, never silently discarded."
+  ]
+}

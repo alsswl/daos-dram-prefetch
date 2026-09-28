@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_raw.csv')\ndf.head()",
+    "output": "   ID# (range 1-12686) 1979  ...  Total market value of items over $500, 1996\n0                         1  ...                                          NaN\n1                         2  ...                                      15000.0\n2                         3  ...                                       2000.0\n3                         4  ...                                      15000.0\n4                         5  ...                                          NaN\n\n[5 rows x 61 columns]",
+    "elapsed_seconds": 0.1952510760165751
+  },
+  {
+    "code": "# Find the column for the sex of the respondent\nsex_column = [col for col in df.columns if 'Sex of respondent' in col]\nprint(sex_column)\n\n# Find the column for the highest grade completed by the respondent\nhighest_grade_column = [col for col in df.columns if 'Highest grade completed' in col]\nprint(highest_grade_column)",
+    "output": "['Sex of respondent, 1979']\n[\"Highest grade completed by respondent's mother, 1979\", \"Highest grade completed by respondent's father, 1979\", 'Highest grade completed, 1979']\n",
+    "elapsed_seconds": 0.0017909319140017033
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport scipy.stats as stats\n\n# Convert the 'Sex of respondent, 1979' column to a categorical variable\ndf['Sex of respondent, 1979'] = df['Sex of respondent, 1979'].astype('category')\n\n# Convert the 'Highest grade completed, 1979' column to a numerical variable\ndf['Highest grade completed, 1979'] = pd.to_numeric(df['Highest grade completed, 1979'], errors='coerce')\n\n# Drop rows with missing values\ndf = df.dropna(subset=['Sex of respondent, 1979', 'Highest grade completed, 1979'])\n\n# Group the data by sex and calculate the mean highest grade completed\ngrouped_data = df.groupby('Sex of respondent, 1979')['Highest grade completed, 1979'].mean()\nprint(grouped_data)\n\n# Perform a t-test to determine if there is a significant difference in mean highest grade completed between males and females\nt_statistic, p_value = stats.ttest_ind(df[df['Sex of respondent, 1979'] == 1]['Highest grade completed, 1979'],\n                                       df[df['Sex of respondent, 1979'] == 2]['Highest grade completed, 1979'])\nprint(f't-statistic: {t_statistic}, p-value: {p_value}')",
+    "output": "<string>:7: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.\nSex of respondent, 1979\n1    10.379801\n2    10.612534\nName: Highest grade completed, 1979, dtype: float64\nt-statistic: -5.691433978032243, p-value: 1.2880103410018152e-08\n",
+    "elapsed_seconds": 0.48971603624522686
+  }
+]

@@ -1,0 +1,163 @@
+{
+  "cases": [
+    {
+      "name": "r1_c8_cancel",
+      "repeat": 1,
+      "concurrency": 8,
+      "mode": "cancel"
+    },
+    {
+      "name": "r1_c8_early_wait",
+      "repeat": 1,
+      "concurrency": 8,
+      "mode": "early_wait"
+    },
+    {
+      "name": "r1_c8_wait",
+      "repeat": 1,
+      "concurrency": 8,
+      "mode": "wait"
+    },
+    {
+      "name": "r1_c16_cancel",
+      "repeat": 1,
+      "concurrency": 16,
+      "mode": "cancel"
+    },
+    {
+      "name": "r1_c16_early_wait",
+      "repeat": 1,
+      "concurrency": 16,
+      "mode": "early_wait"
+    },
+    {
+      "name": "r1_c16_wait",
+      "repeat": 1,
+      "concurrency": 16,
+      "mode": "wait"
+    },
+    {
+      "name": "r2_c8_cancel",
+      "repeat": 2,
+      "concurrency": 8,
+      "mode": "cancel"
+    },
+    {
+      "name": "r2_c8_wait",
+      "repeat": 2,
+      "concurrency": 8,
+      "mode": "wait"
+    },
+    {
+      "name": "r2_c8_early_wait",
+      "repeat": 2,
+      "concurrency": 8,
+      "mode": "early_wait"
+    },
+    {
+      "name": "r2_c16_cancel",
+      "repeat": 2,
+      "concurrency": 16,
+      "mode": "cancel"
+    },
+    {
+      "name": "r2_c16_wait",
+      "repeat": 2,
+      "concurrency": 16,
+      "mode": "wait"
+    },
+    {
+      "name": "r2_c16_early_wait",
+      "repeat": 2,
+      "concurrency": 16,
+      "mode": "early_wait"
+    },
+    {
+      "name": "r3_c8_wait",
+      "repeat": 3,
+      "concurrency": 8,
+      "mode": "wait"
+    },
+    {
+      "name": "r3_c8_cancel",
+      "repeat": 3,
+      "concurrency": 8,
+      "mode": "cancel"
+    },
+    {
+      "name": "r3_c8_early_wait",
+      "repeat": 3,
+      "concurrency": 8,
+      "mode": "early_wait"
+    },
+    {
+      "name": "r3_c16_wait",
+      "repeat": 3,
+      "concurrency": 16,
+      "mode": "wait"
+    },
+    {
+      "name": "r3_c16_cancel",
+      "repeat": 3,
+      "concurrency": 16,
+      "mode": "cancel"
+    },
+    {
+      "name": "r3_c16_early_wait",
+      "repeat": 3,
+      "concurrency": 16,
+      "mode": "early_wait"
+    }
+  ],
+  "repeats": 3,
+  "concurrency": [
+    8,
+    16
+  ],
+  "model": "Qwen/Qwen3-14B",
+  "cpu_gib": 8,
+  "staging_gib": 8,
+  "chunk_tokens": 128,
+  "requests_per_phase": 256,
+  "source_sha256": {
+    "compare_queued_prefetch.py": "93a2bf9ac4b6aff23d139363f79216262a5f395af47422066e24073569423a54",
+    "cold_warm_prefetch.py": "8f4c77006eac2c528d42fb934cd1b2500e3c3f7955c61d016c0b8295d6691945",
+    "discovery_fixed_replay.py": "27dace9b340b6031a46df5a22e38f2f1e80c2033575a6e0611544301b51bb53e",
+    "discovery_rolling_replay.py": "961cfe9b833aa3e98a7609d1ff44788f799b5f04b452675c906e78037b309ae3",
+    "staging_mixed_pressure.py": "a7a973345df40af4a5e2b60035c896470231e228e6c31143ed3413e2735a1c3d",
+    "compare_e2e.py": "bf4de2266ed3c7578f8f4399a2d88c79be02fef10996ce15dcb0699f513c081c",
+    "run_vllm.sh": "5f303713631354a1b56837a6f7463a3ed1c45752fd847b05da54a8023e6af32e",
+    "libdaosgdr.so": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c",
+    "lmcache_config_daosgds_async_dram.yaml": "d45bc5135e9a8bdbce3c2528011004e2148281744e03a79a65dc821b362a1f80",
+    "report_prefetch_timing.py": "c7196b2aab28ca3eb9e12dfdbd38e608b9d7c24f65c18eb6efb2057cee133082",
+    "report_cold_warm_prefetch.py": "77bc65473783e9c6555a10e58198bbf0f84d813ec2d0a846defa0c64614b8412",
+    "tests/test_queued_prefetch.py": "9f35d0ec42f08d40d4675efac7168f7ebdcfa6d3d02dfeb36a7ec27bb2a71412",
+    "lmcache_daos/__init__.py": "152c656af1e88c6d217f043e29ce7c088f594702c6e0935210f4fd5afadbf376",
+    "lmcache_daos/async_dram_backend.py": "525d13893ca77eecb1c1e93337d864c5875c24c20eefa399874639c2bd3d51b3",
+    "lmcache_daos/capacity_probe_backend.py": "329f88ccab4c6143d381915edb621b3a3931145c7aa8413005d1e0819c3fe297",
+    "lmcache_daos/connector.py": "a6b0528521232d6c265a4bf1960e61b50533d599a7bca5ee502a26f5c7d3be6a",
+    "lmcache_daos/daos_event.py": "146c83e75905a587630d8ca9b6f5242d647c9f6c47a2ff1ebdc1540de89fd495",
+    "lmcache_daos/dfs_binding.py": "f1a8d3261bc2b2f3a2034b0f64627c790affc7570c3c807de8a7f76030c2e4a3",
+    "lmcache_daos/dram_prefetch_backend.py": "cd6d8391b97fbd0213421039c4d98bfc6c0e48ee723ecfd73b0b90722cec692e",
+    "lmcache_daos/gds_backend.py": "6e4214fad0710dcfd861f235aa20f661a800cd38246f3abfcb30b327047b9ae7",
+    "lmcache_daos/gpu_store.py": "2f8ac20c46329dfcd0a3a39444781173fc451fb45e9ecec3185ee354e8d5dcbe",
+    "lmcache_daos/object_binding.py": "ce38ed41c12390524fab993ea16e436122412b8f81267d77e857629266aaa13b",
+    "lmcache_daos/prefetch_timing.py": "1bcb112a35bc33db8dadaf63b3a895e5e740507c8089461301bdaa2c8d4fddbb",
+    "lmcache_daos/queued_prefetch.py": "3c067b0981d205d8be6bfd3a5c38c5b785c38aca671fd9ba4e0c0bf6996e2c85",
+    "lmcache_daos/serde.py": "9288649a1d1902c61dcb2ffc7602228a0ab45daae028eb5a27fc03be82f5da6c",
+    "lmcache_daos/serde_v2.py": "5454239696ac29ab8baa0ba0a64e4f06526f798897bae2659f8e4e2c00076733",
+    "lmcache_daos/staging_probe_backend.py": "b9c455c897c2a5114f94dfa4dcc5121171e75e14216c159bb88cae1e97eaca19",
+    "lmcache_daos/staging_trace.py": "ffa54417176287c1f2ba01f81bcf8c56cbfdcd049900e142969529e481485a7d",
+    "lmcache_daos/store_probe_backend.py": "297f562e142acec6dd9784e59a11062c2a77169bafa5b7a579b16e804222de44",
+    "lmcache_daos/streaming.py": "f7093c0230281ae8db4ebe2beba4ba031b060c5d838cfd09ae2259ed501e2a08"
+  },
+  "notes": [
+    "DRAM prefetch ON in ALL arms; toggle is cancellation, not prefetch itself.",
+    "wait vs cancel includes changed scheduler readiness. early_wait isolates cancellation.",
+    "Physical 8GiB pool, no soft watermark, no artificial queue blocking or delays.",
+    "Each case: fresh process/DRAM/DAOS namespace; cold256 then same-process warm256.",
+    "DAOS namespace isolation, not destructive deletion or OS/server cache flush.",
+    "Same recorded prompts, rolling arrivals; EOS/output and arrival timestamps can differ.",
+    "This is recorded DiscoveryBench input replay, not full agent/tool execution."
+  ]
+}

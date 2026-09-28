@@ -1,0 +1,57 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.13791228597983718
+  },
+  {
+    "code": "# Drop the 'group' and 'color' columns\ncapital_df = capital_df.drop(columns=['group', 'color'])\n\n# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_df = capital_df[(capital_df['BCE'] >= 500) & (capital_df['BCE'] <= 1100)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_pc1 = young_bronze_age_df[young_bronze_age_df['BCE'] == 1100][['ZKeform', 'Zkeverz']].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_time_horizons_pc1 = young_bronze_age_df[(young_bronze_age_df['BCE'] >= 500) & (young_bronze_age_df['BCE'] < 1100)][['ZKeform', 'Zkeverz']].values\n\n# Calculate the mean PC1 values for the subsequent time horizons\nmean_subsequent_pc1 = np.mean(subsequent_time_horizons_pc1, axis=0)\n\nbeginning_period_pc1, mean_subsequent_pc1",
+    "output": "NameError: name 'np' is not defined",
+    "elapsed_seconds": 0.0034877220168709755
+  },
+  {
+    "code": "import numpy as np\n\n# Drop the 'group' and 'color' columns\ncapital_df = capital_df.drop(columns=['group', 'color'])\n\n# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_df = capital_df[(capital_df['BCE'] >= 500) & (capital_df['BCE'] <= 1100)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_pc1 = young_bronze_age_df[young_bronze_age_df['BCE'] == 1100][['ZKeform', 'Zkeverz']].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_time_horizons_pc1 = young_bronze_age_df[(young_bronze_age_df['BCE'] >= 500) & (young_bronze_age_df['BCE'] < 1100)][['ZKeform', 'Zkeverz']].values\n\n# Calculate the mean PC1 values for the subsequent time horizons\nmean_subsequent_pc1 = np.mean(subsequent_time_horizons_pc1, axis=0)\n\nbeginning_period_pc1, mean_subsequent_pc1",
+    "output": "KeyError: \"['group', 'color'] not found in axis\"",
+    "elapsed_seconds": 0.002262379042804241
+  },
+  {
+    "code": "# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_df = capital_df[(capital_df['BCE'] >= 500) & (capital_df['BCE'] <= 1100)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_pc1 = young_bronze_age_df[young_bronze_age_df['BCE'] == 1100][['ZKeform', 'Zkeverz']].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_time_horizons_pc1 = young_bronze_age_df[(young_bronze_age_df['BCE'] >= 500) & (young_bronze_age_df['BCE'] < 1100)][['ZKeform', 'Zkeverz']].values\n\n# Calculate the mean PC1 values for the subsequent time horizons\nmean_subsequent_pc1 = np.mean(subsequent_time_horizons_pc1, axis=0)\n\nbeginning_period_pc1, mean_subsequent_pc1",
+    "output": "TypeError: unsupported operand type(s) for /: 'str' and 'int'",
+    "elapsed_seconds": 0.0030716070905327797
+  },
+  {
+    "code": "# Convert the relevant columns to numerical values\ncapital_df['ZKeform'] = pd.to_numeric(capital_df['ZKeform'], errors='coerce')\ncapital_df['Zkeverz'] = pd.to_numeric(capital_df['Zkeverz'], errors='coerce')\n\n# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_df = capital_df[(capital_df['BCE'] >= 500) & (capital_df['BCE'] <= 1100)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_pc1 = young_bronze_age_df[young_bronze_age_df['BCE'] == 1100][['ZKeform', 'Zkeverz']].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_time_horizons_pc1 = young_bronze_age_df[(young_bronze_age_df['BCE'] >= 500) & (young_bronze_age_df['BCE'] < 1100)][['ZKeform', 'Zkeverz']].values\n\n# Calculate the mean PC1 values for the subsequent time horizons\nmean_subsequent_pc1 = np.mean(subsequent_time_horizons_pc1, axis=0)\n\nbeginning_period_pc1, mean_subsequent_pc1",
+    "output": "(array([nan, nan]), array([nan, nan]))",
+    "elapsed_seconds": 0.003815332893282175
+  },
+  {
+    "code": "# Check for missing or non-numeric values in the relevant columns\ncapital_df[['ZKeform', 'Zkeverz']].head()",
+    "output": "   ZKeform  Zkeverz\n0      NaN      NaN\n1      NaN      NaN\n2      NaN      NaN\n3      NaN      NaN\n4      NaN      NaN",
+    "elapsed_seconds": 0.0036637410521507263
+  },
+  {
+    "code": "# Display the column names of the dataset\ncapital_df.columns",
+    "output": "Index(['BCE', 'ZAxtSchwert', 'ZDolch', 'Zhausgr', 'ZCU_AU', 'Zamber',\n       'ZMonument', 'ZHort', 'ZSichel', 'ZBeil', 'ZMW', 'ZKeform', 'Zkeverz'],\n      dtype='object')",
+    "elapsed_seconds": 0.0016748150810599327
+  },
+  {
+    "code": "# Load the time_series_data.csv dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ntime_series_df.head()\n\n# Load the pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv dataset\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\npollen_df.head()",
+    "output": "   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns]",
+    "elapsed_seconds": 0.025226182769984007
+  },
+  {
+    "code": "# Filter the pollen data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_pollen_df = pollen_df[(pollen_df['CE'] >= -1100) & (pollen_df['CE'] <= -500)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_pollen_pc1 = young_bronze_age_pollen_df[young_bronze_age_pollen_df['CE'] == -1100][['Belau_PC1', 'Woserin_PC1']].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_time_horizons_pollen_pc1 = young_bronze_age_pollen_df[(young_bronze_age_pollen_df['CE'] >= -1000) & (young_bronze_age_pollen_df['CE'] <= -500)][['Belau_PC1', 'Woserin_PC1']].values\n\n# Calculate the mean PC1 values for the subsequent time horizons\nmean_subsequent_pollen_pc1 = np.mean(subsequent_time_horizons_pollen_pc1, axis=0)\n\nbeginning_period_pollen_pc1, mean_subsequent_pollen_pc1",
+    "output": "TypeError: unsupported operand type(s) for +: 'float' and 'str'",
+    "elapsed_seconds": 0.003244472201913595
+  },
+  {
+    "code": "# Convert the relevant columns to numerical values\npollen_df['Belau_PC1'] = pd.to_numeric(pollen_df['Belau_PC1'], errors='coerce')\npollen_df['Woserin_PC1'] = pd.to_numeric(pollen_df['Woserin_PC1'], errors='coerce')\n\n# Filter the pollen data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_pollen_df = pollen_df[(pollen_df['CE'] >= -1100) & (pollen_df['CE'] <= -500)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_pollen_pc1 = young_bronze_age_pollen_df[young_bronze_age_pollen_df['CE'] == -1100][['Belau_PC1', 'Woserin_PC1']].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_time_horizons_pollen_pc1 = young_bronze_age_pollen_df[(young_bronze_age_pollen_df['CE'] >= -1000) & (young_bronze_age_pollen_df['CE'] <= -500)][['Belau_PC1', 'Woserin_PC1']].values\n\n# Calculate the mean PC1 values for the subsequent time horizons\nmean_subsequent_pollen_pc1 = np.mean(subsequent_time_horizons_pollen_pc1, axis=0)\n\nbeginning_period_pollen_pc1, mean_subsequent_pollen_pc1",
+    "output": "(array([nan, nan]), array([nan, nan]))",
+    "elapsed_seconds": 0.004633971955627203
+  },
+  {
+    "code": "# Convert the relevant columns to numerical values\ntime_series_df['kde_all_mean'] = pd.to_numeric(time_series_df['kde_all_mean'], errors='coerce')\ntime_series_df['kde_all_std'] = pd.to_numeric(time_series_df['kde_all_std'], errors='coerce')\ntime_series_df['g_all_mean'] = pd.to_numeric(time_series_df['g_all_mean'], errors='coerce')\ntime_series_df['g_all_std'] = pd.to_numeric(time_series_df['g_all_std'], errors='coerce')\n\n# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_time_series_df = time_series_df[(time_series_df['CE'] >= -1100) & (time_series_df['CE'] <= -500)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_time_series_pc1 = young_bronze_age_time_series_df[young_bronze_age_time_series_df['CE'] == -1100][['kde_all_mean', 'g_all_mean']].values[0]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_time_horizons_time_series_pc1 = young_bronze_age_time_series_df[(young_bronze_age_time_series_df['CE'] >= -1000) & (young_bronze_age_time_series_df['CE'] <= -500)][['kde_all_mean', 'g_all_mean']].values\n\n# Calculate the mean PC1 values for the subsequent time horizons\nmean_subsequent_time_series_pc1 = np.mean(subsequent_time_horizons_time_series_pc1, axis=0)\n\nbeginning_period_time_series_pc1, mean_subsequent_time_series_pc1",
+    "output": "(array([ 0.00024077, -0.00534371]), array([ 0.00011111, -0.00115444]))",
+    "elapsed_seconds": 0.003975857049226761
+  }
+]

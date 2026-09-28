@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_raw.csv')\ndf.head()",
+    "output": "   ID# (range 1-12686) 1979  ...  Total market value of items over $500, 1996\n0                         1  ...                                          NaN\n1                         2  ...                                      15000.0\n2                         3  ...                                       2000.0\n3                         4  ...                                      15000.0\n4                         5  ...                                          NaN\n\n[5 rows x 61 columns]",
+    "elapsed_seconds": 0.2647737357765436
+  },
+  {
+    "code": "# Find the column for the sex of the respondent\nsex_column = [col for col in df.columns if 'Sex of respondent' in col]\nprint(sex_column)\n\n# Find the column for the highest grade completed by the respondent\nhighest_grade_column = [col for col in df.columns if 'Highest grade completed' in col]\nprint(highest_grade_column)",
+    "output": "['Sex of respondent, 1979']\n[\"Highest grade completed by respondent's mother, 1979\", \"Highest grade completed by respondent's father, 1979\", 'Highest grade completed, 1979']\n",
+    "elapsed_seconds": 0.0021924651227891445
+  },
+  {
+    "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Convert the sex column to a categorical variable\ndf['Sex of respondent, 1979'] = df['Sex of respondent, 1979'].astype('category')\n\n# Create a boxplot to visualize the relationship between gender and highest grade completed\nsns.boxplot(x='Sex of respondent, 1979', y='Highest grade completed, 1979', data=df)\nplt.title('Relationship between Gender and Highest Grade Completed')\nplt.xlabel('Gender')\nplt.ylabel('Highest Grade Completed')\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.8870226168073714
+  },
+  {
+    "code": "from scipy.stats import ttest_ind\n\n# Filter the data by gender\nmale_data = df[df['Sex of respondent, 1979'] == 1]['Highest grade completed, 1979']\nfemale_data = df[df['Sex of respondent, 1979'] == 2]['Highest grade completed, 1979']\n\n# Perform a t-test to compare the means of the two groups\nt_statistic, p_value = ttest_ind(male_data, female_data)\nt_statistic, p_value",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.005923308897763491
+  },
+  {
+    "code": "# Check for missing values in the relevant columns\nmissing_values = df[['Sex of respondent, 1979', 'Highest grade completed, 1979']].isnull().sum()\nmissing_values",
+    "output": "Sex of respondent, 1979            0\nHighest grade completed, 1979    152\ndtype: int64",
+    "elapsed_seconds": 0.002769654616713524
+  },
+  {
+    "code": "# Drop rows with missing values in the 'Highest grade completed, 1979' column\ndf_clean = df.dropna(subset=['Highest grade completed, 1979'])\n\n# Filter the data by gender\nmale_data = df_clean[df_clean['Sex of respondent, 1979'] == 1]['Highest grade completed, 1979']\nfemale_data = df_clean[df_clean['Sex of respondent, 1979'] == 2]['Highest grade completed, 1979']\n\n# Perform a t-test to compare the means of the two groups\nt_statistic, p_value = ttest_ind(male_data, female_data)\nt_statistic, p_value",
+    "output": "(-5.691433978032243, 1.2880103410018152e-08)",
+    "elapsed_seconds": 0.009079176932573318
+  }
+]

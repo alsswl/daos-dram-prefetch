@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 81.56431098701432,
+  "llm_calls": 12,
+  "python_calls": 11,
+  "final_answer": "Hypothesis: Increased education expenditure is negatively correlated with school enrollment in Sub-Saharan Africa and Lower Middle Income (LMC) countries, suggesting a potential inverse relationship between education spending and enrollment rates. This relationship is statistically significant for Sub-Saharan Africa (primary enrollment: r = -0.639, secondary enrollment: r = -0.610) and less significant for Lower Middle Income countries (primary enrollment: r = -0.319, secondary enrollment: r = -0.348). This finding may indicate issues with data interpretation or the need for further analysis to understand the underlying factors affecting education expenditure and enrollment rates.",
+  "grading": "not run, as in supplied document",
+  "query": "How does increased education expenditure influence human capital and economic output?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/worldbank_education_gdp_indicators/metadata_3.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

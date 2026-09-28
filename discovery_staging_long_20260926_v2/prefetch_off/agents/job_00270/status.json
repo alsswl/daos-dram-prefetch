@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 33.24522742815316,
+  "llm_calls": 5,
+  "python_calls": 4,
+  "final_answer": "Scientific Hypothesis: In the context of ML-enabled system projects, the most frequently used documentation format for requirements is \"Q10_ML_Documentation_Others,\" which indicates that respondents specified other documentation methods not listed in the predefined options. However, the chi-squared test showed no statistically significant difference between the observed and expected frequencies, suggesting that the use of \"Others\" may not be significantly more common than other formats. The free-text responses indicate that the specific documentation methods used are varied and often unspecified, reflecting a lack of standardized documentation practices in ML-enabled system projects.",
+  "grading": "not run, as in supplied document",
+  "query": "Which documentation format is the most frequently used for requirements in ML-enabled system projects after bootstrapping for statistical significance?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/requirements_engineering_for_ML_enabled_systems/metadata_5.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

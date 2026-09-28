@@ -1,0 +1,52 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Display the first few rows of the dataset to understand its structure\ndf_time_series.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15204025385901332
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Extract the 'CE' and 'Depot' columns\nce_values = df_time_series['CE'].values\ndepot_values = df_time_series['Depot'].values\n\n# Identify the index of the maximum 'Depot' value\nmax_index = depot_values.argmax()\n\n# Determine the corresponding 'CE' value\npeak_ce = ce_values[max_index]\n\n# Determine the century\npeak_century = peak_ce // 100\n\npeak_century",
+    "output": "-41",
+    "elapsed_seconds": 0.01056554913520813
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Display the 'CE' and 'Depot' columns to understand their relationship\ndf_time_series[['CE', 'Depot']].head(20)",
+    "output": "      CE  Depot\n0  -4100  -0.55\n1  -4099    NaN\n2  -4098    NaN\n3  -4097    NaN\n4  -4096    NaN\n5  -4095    NaN\n6  -4094    NaN\n7  -4093    NaN\n8  -4092    NaN\n9  -4091    NaN\n10 -4090    NaN\n11 -4089    NaN\n12 -4088    NaN\n13 -4087    NaN\n14 -4086    NaN\n15 -4085    NaN\n16 -4084    NaN\n17 -4083    NaN\n18 -4082    NaN\n19 -4081    NaN",
+    "elapsed_seconds": 0.012669819872826338
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Extract the 'CE' and 'Depot_inter' columns\nce_values = df_time_series['CE'].values\ndepot_inter_values = df_time_series['Depot_inter'].values\n\n# Identify the index of the maximum 'Depot_inter' value\nmax_index = depot_inter_values.argmax()\n\n# Determine the corresponding 'CE' value\npeak_ce = ce_values[max_index]\n\n# Determine the century\npeak_century = peak_ce // 100\n\npeak_century",
+    "output": "-11",
+    "elapsed_seconds": 0.011205442249774933
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Display the 'CE' and 'Depot_inter' columns to understand their relationship\ndf_time_series[['CE', 'Depot_inter']].head(20)",
+    "output": "      CE  Depot_inter\n0  -4100       -0.550\n1  -4099       -0.549\n2  -4098       -0.548\n3  -4097       -0.547\n4  -4096       -0.546\n5  -4095       -0.545\n6  -4094       -0.544\n7  -4093       -0.543\n8  -4092       -0.542\n9  -4091       -0.541\n10 -4090       -0.540\n11 -4089       -0.539\n12 -4088       -0.538\n13 -4087       -0.537\n14 -4086       -0.536\n15 -4085       -0.535\n16 -4084       -0.534\n17 -4083       -0.533\n18 -4082       -0.532\n19 -4081       -0.531",
+    "elapsed_seconds": 0.012826221995055676
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Display the 'CE' and 'Depot_inter' columns for the last few rows\ndf_time_series[['CE', 'Depot_inter']].tail(20)",
+    "output": "       CE  Depot_inter\n3581 -519      -0.0475\n3582 -518      -0.0450\n3583 -517      -0.0425\n3584 -516      -0.0400\n3585 -515      -0.0375\n3586 -514      -0.0350\n3587 -513      -0.0325\n3588 -512      -0.0300\n3589 -511      -0.0275\n3590 -510      -0.0250\n3591 -509      -0.0225\n3592 -508      -0.0200\n3593 -507      -0.0175\n3594 -506      -0.0150\n3595 -505      -0.0125\n3596 -504      -0.0100\n3597 -503      -0.0075\n3598 -502      -0.0050\n3599 -501      -0.0025\n3600 -500       0.0000",
+    "elapsed_seconds": 0.012615484651178122
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Calculate the rolling mean of the 'Depot_inter' values\nrolling_mean = df_time_series['Depot_inter'].rolling(window=100).mean()\n\n# Identify the index of the maximum rolling mean\nmax_index = rolling_mean.argmax()\n\n# Determine the corresponding 'CE' value\npeak_ce = df_time_series['CE'].iloc[max_index]\n\n# Determine the century\npeak_century = peak_ce // 100\n\npeak_century",
+    "output": "-11",
+    "elapsed_seconds": 0.011364724952727556
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Calculate the first derivative of the 'Depot_inter' values to identify peaks\ndf_time_series['Depot_inter_derivative'] = df_time_series['Depot_inter'].diff()\n\n# Identify the index of the maximum derivative\nmax_derivative_index = df_time_series['Depot_inter_derivative'].argmax()\n\n# Determine the corresponding 'CE' value\npeak_ce = df_time_series['CE'].iloc[max_derivative_index]\n\n# Determine the century\npeak_century = peak_ce // 100\n\npeak_century",
+    "output": "-12",
+    "elapsed_seconds": 0.011161954142153263
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Calculate the second derivative of the 'Depot_inter' values to identify peaks\ndf_time_series['Depot_inter_second_derivative'] = df_time_series['Depot_inter_derivative'].diff()\n\n# Identify the index of the maximum second derivative\nmax_second_derivative_index = df_time_series['Depot_inter_second_derivative'].argmax()\n\n# Determine the corresponding 'CE' value\npeak_ce = df_time_series['CE'].iloc[max_second_derivative_index]\n\n# Determine the century\npeak_century = peak_ce // 100\n\npeak_century",
+    "output": "KeyError: 'Depot_inter_derivative'",
+    "elapsed_seconds": 0.0150458007119596
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Calculate the first derivative of the 'Depot_inter' values\ndf_time_series['Depot_inter_derivative'] = df_time_series['Depot_inter'].diff()\n\n# Calculate the second derivative of the 'Depot_inter' values\ndf_time_series['Depot_inter_second_derivative'] = df_time_series['Depot_inter_derivative'].diff()\n\n# Identify the index of the maximum second derivative\nmax_second_derivative_index = df_time_series['Depot_inter_second_derivative'].argmax()\n\n# Determine the corresponding 'CE' value\npeak_ce = df_time_series['CE'].iloc[max_second_derivative_index]\n\n# Determine the century\npeak_century = peak_ce // 100\n\npeak_century",
+    "output": "-12",
+    "elapsed_seconds": 0.011017340701073408
+  }
+]

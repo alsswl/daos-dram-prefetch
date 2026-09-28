@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.13880225364118814
+  },
+  {
+    "code": "# Drop the 'group' and 'color' columns\ncapital_df = capital_df.drop(columns=['group', 'color'])\n\n# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_df = capital_df[(capital_df['BCE'] >= 500) & (capital_df['BCE'] <= 1100)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_df = young_bronze_age_df[young_bronze_age_df['BCE'] == 1100]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_horizons_df = young_bronze_age_df[young_bronze_age_df['BCE'] < 1100]\n\n# Display the beginning period and subsequent horizons data\nbeginning_period_df[['BCE', 'ZKeform', 'Zkeverz']]\nsubsequent_horizons_df[['BCE', 'ZKeform', 'Zkeverz']]",
+    "output": "     BCE ZKeform Zkeverz\n33  1000   -1,13    1,53\n34   900   -1,13    1,53\n35   800   -1,13    1,53\n36   700   -1,13    1,53\n37   600   -1,13    1,53\n38   500   -1,13    1,53",
+    "elapsed_seconds": 0.005071282386779785
+  },
+  {
+    "code": "from scipy.stats import ttest_ind\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_values = beginning_period_df[['ZKeform', 'Zkeverz']].values\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_horizons_values = subsequent_horizons_df[['ZKeform', 'Zkeverz']].values\n\n# Perform a t-test to compare the means of the PC1 values\nt_statistic, p_value = ttest_ind(beginning_period_values, subsequent_horizons_values)\n\nt_statistic, p_value",
+    "output": "TypeError: unsupported operand type(s) for /: 'str' and 'int'",
+    "elapsed_seconds": 0.4831594689749181
+  },
+  {
+    "code": "# Convert the 'ZKeform' and 'Zkeverz' columns to numerical values\ncapital_df['ZKeform'] = pd.to_numeric(capital_df['ZKeform'].str.replace(',', '.'), errors='coerce')\ncapital_df['Zkeverz'] = pd.to_numeric(capital_df['Zkeverz'].str.replace(',', '.'), errors='coerce')\n\n# Re-filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_df = capital_df[(capital_df['BCE'] >= 500) & (capital_df['BCE'] <= 1100)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_df = young_bronze_age_df[young_bronze_age_df['BCE'] == 1100]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_horizons_df = young_bronze_age_df[young_bronze_age_df['BCE'] < 1100]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_values = beginning_period_df[['ZKeform', 'Zkeverz']].values\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_horizons_values = subsequent_horizons_df[['ZKeform', 'Zkeverz']].values\n\n# Perform a t-test to compare the means of the PC1 values\nfrom scipy.stats import ttest_ind\nt_statistic, p_value = ttest_ind(beginning_period_values, subsequent_horizons_values)\n\nt_statistic, p_value",
+    "output": "/opt/site/scipy/stats/_axis_nan_policy.py:635: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.\n  res = hypotest_fun_out(*samples, axis=axis, **kwds)\n(array([ nan, -inf]), array([nan,  0.]))",
+    "elapsed_seconds": 0.0055761151015758514
+  }
+]

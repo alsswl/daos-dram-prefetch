@@ -1,0 +1,102 @@
+{
+  "run_id": "20260916-200146-dcf439f4",
+  "args": {
+    "dry_run": false,
+    "model": "Qwen/Qwen3-14B",
+    "task_root": "/root/discos_minji/discoverybench/discoverybench/synth/train",
+    "repeats": 3,
+    "steps": 6,
+    "context_tokens": [
+      8192,
+      16384,
+      31744
+    ],
+    "concurrency": 1,
+    "chunk_size": 256,
+    "pad_tokens": 3000,
+    "max_model_len": 32768,
+    "max_tokens": 64,
+    "gpu_buffer_gb": 10.0,
+    "io_workers": 16,
+    "meta_workers": 16,
+    "pool": "discospool",
+    "container": "kvcache",
+    "port": 8017,
+    "startup_timeout": 300,
+    "request_timeout": 180,
+    "drain_timeout": 120,
+    "output": "/root/discos_minji/gluesys_reference_20260916_v1"
+  },
+  "server_command": [
+    "/root/discos_minji/run_vllm.sh",
+    "/root/discos_minji/venv/bin/python3",
+    "-m",
+    "vllm.entrypoints.openai.api_server",
+    "--model",
+    "Qwen/Qwen3-14B",
+    "--served-model-name",
+    "comparison-model",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8017",
+    "--max-model-len",
+    "32768",
+    "--gpu-memory-utilization",
+    "0.75",
+    "--enforce-eager",
+    "--seed",
+    "0",
+    "--no-enable-prefix-caching",
+    "--enable-prompt-tokens-details",
+    "--kv-transfer-config",
+    "{\"kv_connector\":\"LMCacheConnectorV1\",\"kv_role\":\"kv_both\"}"
+  ],
+  "order": [
+    {
+      "repeat": 1,
+      "mode": "dfs",
+      "config": "/root/discos_minji/gluesys_reference_20260916_v1/r1_dfs.yaml"
+    },
+    {
+      "repeat": 1,
+      "mode": "object",
+      "config": "/root/discos_minji/gluesys_reference_20260916_v1/r1_object.yaml"
+    },
+    {
+      "repeat": 2,
+      "mode": "object",
+      "config": "/root/discos_minji/gluesys_reference_20260916_v1/r2_object.yaml"
+    },
+    {
+      "repeat": 2,
+      "mode": "dfs",
+      "config": "/root/discos_minji/gluesys_reference_20260916_v1/r2_dfs.yaml"
+    },
+    {
+      "repeat": 3,
+      "mode": "dfs",
+      "config": "/root/discos_minji/gluesys_reference_20260916_v1/r3_dfs.yaml"
+    },
+    {
+      "repeat": 3,
+      "mode": "object",
+      "config": "/root/discos_minji/gluesys_reference_20260916_v1/r3_object.yaml"
+    }
+  ],
+  "notes": [
+    "Fixed schema plus scripted growing history; not full agentic.",
+    "TTFT is first nonempty HTTP text; includes local HTTP/client overhead.",
+    "fill may mix misses and shared-prefix hits.",
+    "restart_hit means client restart; DAOS server cache is not cleared.",
+    "same_process_hit still fetches from DAOS; vLLM prefix caching is off.",
+    "DFS OC_SX matches object redundancy/target class, not physical layout.",
+    "Only UUID-prefixed experiment namespaces are created; no cache deletion."
+  ],
+  "source_sha256": {
+    "compare_e2e.py": "abfaefa120ec689cd9f6c28ccb6b0b51bb4ee6073c4810f087aad69bfbb5adf7",
+    "run_vllm.sh": "5f303713631354a1b56837a6f7463a3ed1c45752fd847b05da54a8023e6af32e",
+    "libdaosgdr.so": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c",
+    "lmcache_daos/gds_backend.py": "f89fc1e30ff0452a47af8cf699d65025bb8af82a687c733a921b175b5352447f"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 72.28740363195539,
+  "llm_calls": 21,
+  "python_calls": 20,
+  "final_answer": "Scientific Hypothesis: In developing countries, there is a moderate negative relationship between education expenditure (as a percentage of GNI) and per capita GDP (in constant 2015 US dollars). This suggests that higher education expenditure as a percentage of GNI is associated with lower per capita GDP in these countries. The correlation coefficient of -0.495 indicates a statistically significant moderate negative relationship between the two variables.",
+  "grading": "not run, as in supplied document",
+  "query": "What relationship exists between education expenditure and per capita GDP in developing countries and how does it affect economic output?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/worldbank_education_gdp/metadata_1.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

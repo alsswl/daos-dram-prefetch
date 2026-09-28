@@ -1,0 +1,70 @@
+{
+  "model": "Qwen/Qwen3-14B",
+  "requests_per_case": 256,
+  "cases": [
+    {
+      "concurrency": 16,
+      "prefetch": false,
+      "name": "c16_off"
+    },
+    {
+      "concurrency": 16,
+      "prefetch": true,
+      "name": "c16_on"
+    }
+  ],
+  "source": "/root/discos_minji/discovery_async_dram_prefetch_20260926/prefetch_async_dram_on",
+  "source_sha256": {
+    "discovery_fixed_replay.py": "a26e69105da0c7bf892c26732cb571626057e30b528f2affa76ebccf5de7795a",
+    "analyze_discovery_staging.py": "95965f046b068e2385e426fe6ee4a8785da9fda57f63ed5d71bfc9b64ccece6f",
+    "report_fixed_replay.py": "8f30986e0e7384bc5d2fac104c8f65f24eb3cf69cf2332ceb782b2becaf6cda1",
+    "compare_e2e.py": "bf4de2266ed3c7578f8f4399a2d88c79be02fef10996ce15dcb0699f513c081c",
+    "staging_mixed_pressure.py": "a7a973345df40af4a5e2b60035c896470231e228e6c31143ed3413e2735a1c3d",
+    "run_vllm.sh": "5f303713631354a1b56837a6f7463a3ed1c45752fd847b05da54a8023e6af32e",
+    "lmcache_config_daosgds_async_dram.yaml": "d45bc5135e9a8bdbce3c2528011004e2148281744e03a79a65dc821b362a1f80",
+    "libdaosgdr.so": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c",
+    "libdaosgdr.c": "ff383e783859281626cf1ec9b2a0e52b97fae2c0c21fdd328663bbb9370d4657",
+    "lmcache_daos/__init__.py": "152c656af1e88c6d217f043e29ce7c088f594702c6e0935210f4fd5afadbf376",
+    "lmcache_daos/async_dram_backend.py": "67685e2e8688370b2bf963c07caf2cad411a19bba17c33af43cd3e85b8275efc",
+    "lmcache_daos/connector.py": "a6b0528521232d6c265a4bf1960e61b50533d599a7bca5ee502a26f5c7d3be6a",
+    "lmcache_daos/daos_event.py": "146c83e75905a587630d8ca9b6f5242d647c9f6c47a2ff1ebdc1540de89fd495",
+    "lmcache_daos/dfs_binding.py": "f1a8d3261bc2b2f3a2034b0f64627c790affc7570c3c807de8a7f76030c2e4a3",
+    "lmcache_daos/dram_prefetch_backend.py": "d64d629930ba9318375969865f3240b3d6ba42e791aa04fed94e5d6207a60a8a",
+    "lmcache_daos/gds_backend.py": "6e4214fad0710dcfd861f235aa20f661a800cd38246f3abfcb30b327047b9ae7",
+    "lmcache_daos/gpu_store.py": "2f8ac20c46329dfcd0a3a39444781173fc451fb45e9ecec3185ee354e8d5dcbe",
+    "lmcache_daos/object_binding.py": "ce38ed41c12390524fab993ea16e436122412b8f81267d77e857629266aaa13b",
+    "lmcache_daos/serde.py": "9288649a1d1902c61dcb2ffc7602228a0ab45daae028eb5a27fc03be82f5da6c",
+    "lmcache_daos/serde_v2.py": "5454239696ac29ab8baa0ba0a64e4f06526f798897bae2659f8e4e2c00076733",
+    "lmcache_daos/staging_probe_backend.py": "b9c455c897c2a5114f94dfa4dcc5121171e75e14216c159bb88cae1e97eaca19",
+    "lmcache_daos/staging_trace.py": "ffa54417176287c1f2ba01f81bcf8c56cbfdcd049900e142969529e481485a7d",
+    "lmcache_daos/store_probe_backend.py": "297f562e142acec6dd9784e59a11062c2a77169bafa5b7a579b16e804222de44",
+    "lmcache_daos/streaming.py": "f7093c0230281ae8db4ebe2beba4ba031b060c5d838cfd09ae2259ed501e2a08"
+  },
+  "requests_sha256": "a5827a4ec16bec7d048d224b5fe98ecb35016c9c196c3fecef63223e0598d1f2",
+  "cpu_gib": 4.0,
+  "staging_gib": 8,
+  "chunk_tokens": 128,
+  "max_model_len": 32768,
+  "generation": {
+    "temperature": 0,
+    "seed": 0,
+    "max_tokens": 2048,
+    "enable_thinking": false,
+    "stop": [
+      "\nObservation:"
+    ]
+  },
+  "notes": [
+    "Replay of the earliest successful recorded model calls, ordered by start timestamp.",
+    "One HumanMessage reconstructed from the recorded ReAct prompt. No new Python executions.",
+    "Fixed input count/order and wave membership; response-paced waves, NOT fixed wall-clock arrivals.",
+    "EOS enabled: generated length/output may differ; do not claim fixed generation work.",
+    "Every case: fresh vLLM, empty DRAM, fresh DAOS namespace; no model-request warmup.",
+    "OS/server hardware caches not flushed. Cases executed OFF then ON; one trial each.",
+    "ON removes DRAM soft watermark, not physical capacity or existing DAOS serializer limits.",
+    "Actual GPU allocation failure falls back to CPU for DRAM hits; DAOS may return a shorter hit prefix.",
+    "DAOS prefetch, GPU-direct stores, async DRAM write mirror/read promotion enabled in all cases.",
+    "No inter-wave draining, natural stores and promotions can overlap subsequent waves.",
+    "20ms occupancy samples plus allocation/free events; instrumentation overhead included."
+  ]
+}

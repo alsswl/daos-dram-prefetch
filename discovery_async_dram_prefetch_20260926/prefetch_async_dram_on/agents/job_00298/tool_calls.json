@@ -1,0 +1,7 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/meta-regression_joined_data_heterogeneity_in_replication_projects.csv')\n\n# Filter the dataset for Experimental Economics\nexperimental_economics_data = df[df['discipline'] == 'Economics']\n\n# Calculate the average number of authors for original studies\naverage_n_authors_o = experimental_economics_data['n_authors.o'].mean()\n\n# Calculate the average number of authors for replication studies\naverage_n_authors_r = experimental_economics_data['n_authors.r'].mean()\n\naverage_n_authors_o, average_n_authors_r",
+    "output": "(2.6666666666666665, 3.2777777777777777)",
+    "elapsed_seconds": 0.131309122312814
+  }
+]

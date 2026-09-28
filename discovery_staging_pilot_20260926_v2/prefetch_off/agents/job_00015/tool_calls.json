@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Display the first few rows of the dataset to understand its structure\ndf_time_series.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15288180485367775
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Extract the 'CE' and 'Depot' columns\nce_values = df_time_series['CE'].values\ndepot_values = df_time_series['Depot'].values\n\n# Find the index of the maximum 'Depot' value\nmax_index = depot_values.argmax()\n\n# Find the corresponding 'CE' value\npeak_ce = ce_values[max_index]\n\n# Determine the century\npeak_century = peak_ce // 100\n\npeak_century",
+    "output": "-41",
+    "elapsed_seconds": 0.010904883034527302
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Check the 'Depot' column for any missing or incorrect values\ndf_time_series['Depot'].describe()",
+    "output": "count    37.000000\nmean      0.029189\nstd       1.005342\nmin      -0.550000\n25%      -0.470000\n50%      -0.430000\n75%       0.000000\nmax       3.380000\nName: Depot, dtype: float64",
+    "elapsed_seconds": 0.011463535949587822
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Find the index of the maximum 'Depot' value\nmax_index = df_time_series['Depot'].idxmax()\n\n# Find the corresponding 'CE' value\npeak_ce = df_time_series.loc[max_index, 'CE']\n\n# Determine the century\npeak_century = peak_ce // 100\n\npeak_ce, peak_century",
+    "output": "(-1100, -11)",
+    "elapsed_seconds": 0.011150497943162918
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Find the index of the maximum 'Depot' value\nmax_index = df_time_series['Depot'].idxmax()\n\n# Find the corresponding 'CE' value\npeak_ce = df_time_series.loc[max_index, 'CE']\n\n# Check the 'Depot' values around the peak\npeak_depot = df_time_series.loc[max_index, 'Depot']\nbefore_peak = df_time_series.loc[max_index - 1, 'Depot']\nafter_peak = df_time_series.loc[max_index + 1, 'Depot']\n\npeak_ce, peak_depot, before_peak, after_peak",
+    "output": "(-1100, 3.38, nan, nan)",
+    "elapsed_seconds": 0.010773355141282082
+  }
+]

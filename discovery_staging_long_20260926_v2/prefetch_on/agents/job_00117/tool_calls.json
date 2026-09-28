@@ -1,0 +1,47 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.1420540688559413
+  },
+  {
+    "code": "# Drop the 'group' and 'color' columns\ncapital_df = capital_df.drop(columns=['group', 'color'])\n\n# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_df = capital_df[(capital_df['BCE'] >= 1100) & (capital_df['BCE'] <= 500)]\n\n# Extract the PC1 values for the beginning of the period (1100 BCE)\nbeginning_period_df = young_bronze_age_df[young_bronze_age_df['BCE'] == 1100]\n\n# Extract the PC1 values for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_horizons_df = young_bronze_age_df[young_bronze_age_df['BCE'] < 1100]\n\n# Calculate the mean PC1 values for the beginning of the period and the subsequent time horizons\nbeginning_period_mean = beginning_period_df['ZKeform'].mean()\nsubsequent_horizons_mean = subsequent_horizons_df['ZKeform'].mean()\n\nbeginning_period_mean, subsequent_horizons_mean",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.0033416938968002796
+  },
+  {
+    "code": "# Check if there are any data points in the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_df.shape",
+    "output": "(0, 13)",
+    "elapsed_seconds": 0.001468369271606207
+  },
+  {
+    "code": "# Load the time_series_data dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ntime_series_df.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.02321234392002225
+  },
+  {
+    "code": "# Filter the time_series_data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_time_series_df = time_series_df[(time_series_df['CE'] >= -1100) & (time_series_df['CE'] <= -500)]\n\n# Check if there are any data points in this time range\nyoung_bronze_age_time_series_df.shape",
+    "output": "(601, 37)",
+    "elapsed_seconds": 0.0024070809595286846
+  },
+  {
+    "code": "# Display the columns in the time_series_data dataset\ntime_series_df.columns.tolist()",
+    "output": "['Unnamed: 0', 'CE', 'calBP', 'kde_all_mean', 'kde_all_std', 'kde_all_detrend', 'g_all_mean', 'g_all_std', 'pollen', 'pollen_inter', 'pollen_detrend', 'pollen_inter_100', 'pollen_grate_100', 'HatchetSword', 'HatchetSword_inter', 'Dagger', 'Dagger_inter', 'HouseSize', 'HouseSize_inter', 'CopperGold', 'CopperGold_inter', 'Amber', 'Amber_inter', 'MonumentCount', 'MonumentCount_inter', 'Depot', 'Depot_inter', 'Sickle', 'Sickle_inter', 'AxesCelts', 'AxesCelts_inter', 'MonumentSize', 'MonumentSize_inter', 'PotteryForm', 'PotteryForm_inter', 'PotteryDecoration', 'PotteryDecoration_inter']",
+    "elapsed_seconds": 0.0016882563941180706
+  },
+  {
+    "code": "# Filter the time_series_data for the beginning of the Younger Bronze Age (1100 BCE)\nbeginning_period_time_series_df = young_bronze_age_time_series_df[young_bronze_age_time_series_df['CE'] == -1100]\n\n# Filter the time_series_data for the subsequent time horizons (1000 to 500 BCE)\nsubsequent_horizons_time_series_df = young_bronze_age_time_series_df[young_bronze_age_time_series_df['CE'] > -1100]\n\n# Calculate the mean values of PotteryForm and PotteryDecoration for the beginning of the period\nbeginning_period_pottery_form_mean = beginning_period_time_series_df['PotteryForm'].mean()\nbeginning_period_pottery_decoration_mean = beginning_period_time_series_df['PotteryDecoration'].mean()\n\n# Calculate the mean values of PotteryForm and PotteryDecoration for the subsequent time horizons\nsubsequent_horizons_pottery_form_mean = subsequent_horizons_time_series_df['PotteryForm'].mean()\nsubsequent_horizons_pottery_decoration_mean = subsequent_horizons_time_series_df['PotteryDecoration'].mean()\n\nbeginning_period_pottery_form_mean, beginning_period_pottery_decoration_mean, subsequent_horizons_pottery_form_mean, subsequent_horizons_pottery_decoration_mean",
+    "output": "(-1.13, 0.97, -1.13, 1.53)",
+    "elapsed_seconds": 0.0025851973332464695
+  },
+  {
+    "code": "from scipy.stats import ttest_ind\n\n# Extract the PotteryDecoration values for the beginning of the period and subsequent time horizons\nbeginning_period_pottery_decoration = beginning_period_time_series_df['PotteryDecoration'].values\nsubsequent_horizons_pottery_decoration = subsequent_horizons_time_series_df['PotteryDecoration'].values\n\n# Perform a t-test to compare the means\nt_statistic, p_value = ttest_ind(beginning_period_pottery_decoration, subsequent_horizons_pottery_decoration)\nt_statistic, p_value",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.4822680400684476
+  },
+  {
+    "code": "# Check for missing values in the PotteryDecoration column for the Younger Bronze Age\nyoung_bronze_age_time_series_df['PotteryDecoration'].isnull().sum()",
+    "output": "594",
+    "elapsed_seconds": 0.0014731702394783497
+  }
+]

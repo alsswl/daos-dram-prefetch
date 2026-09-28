@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 14.084617405198514,
+  "llm_calls": 3,
+  "python_calls": 2,
+  "final_answer": "Hypothesis: In the field of Experimental Economics, replication studies tend to have a higher average number of authors compared to original studies, and this difference is statistically significant.\n\nContext: This hypothesis is derived from the dataset that includes information on the number of authors in original and replication studies, specifically for the field of Experimental Economics.\n\nVariables: The variables considered are 'n_authors.o' (number of authors in original studies) and 'n_authors.r' (number of authors in replication studies).\n\nRelationship: The average number of authors in replication studies (3.28) is significantly higher than in original studies (2.67), with a p-value of 0.0277, indicating a statistically significant difference.",
+  "grading": "not run, as in supplied document",
+  "query": "What is the average number of authors for original studies compared to replication studies in the field of Experimental Economics?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/meta_regression/metadata_4.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

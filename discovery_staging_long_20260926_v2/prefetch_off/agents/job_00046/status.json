@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 29.775573134887964,
+  "llm_calls": 6,
+  "python_calls": 5,
+  "final_answer": "Hypothesis: In the context of requirements engineering for ML-enabled system projects, there is no significant difference in the frequency of use of various documentation formats, as all methods are used equally.\n\nVariables Chosen: The documentation methods used in ML-enabled system projects, including `Q10_ML_Documentation_Vision_Document`, `Q10_ML_Documentation_Requirements_Lists`, `Q10_ML_Documentation_Goal_Models`, `Q10_ML_Documentation_Use_Case_Models`, `Q10_ML_Documentation_Prototypes`, `Q10_ML_Documentation_User_Stories`, `Q10_ML_Documentation_BDD_Scenarios`, `Q10_ML_Documentation_MLCanvas`, and `Q10_ML_Documentation_Notebooks`.\n\nRelationship Between Variables: The frequency of use of each documentation method is uniformly distributed, indicating no significant difference in their usage.\n\nStatistical Significance: The chi-squared test result showed a p-value of 1.0, indicating no statistically significant difference in the frequency of use of the documentation methods.",
+  "grading": "not run, as in supplied document",
+  "query": "Which documentation format is the most frequently used for requirements in ML-enabled system projects after bootstrapping for statistical significance?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/requirements_engineering_for_ML_enabled_systems/metadata_5.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

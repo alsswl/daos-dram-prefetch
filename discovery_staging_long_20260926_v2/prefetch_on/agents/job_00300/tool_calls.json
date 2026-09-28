@@ -1,0 +1,77 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "     HYBAS_ID       long       lat  ...  soil_div     area  diversity\n0  6050000010 -76.477422  7.742693  ...  0.482402  72363.7         68\n1  6050000740 -74.628725  9.803586  ...  0.457436  17944.3         35\n2  6050068100 -75.295995  8.448815  ...  0.378793  17105.5         44\n3  6050068110 -74.608408  8.922863  ...  0.468328    610.1         48\n4  6050070260 -75.591588  5.770093  ...  0.158870  61901.9         81\n\n[5 rows x 21 columns]",
+    "elapsed_seconds": 0.14185906387865543
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Select the evolutionary traits\nevolutionary_traits = ['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']\n\n# Prepare the data for regression\nX = df[evolutionary_traits].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.5737339924089611
+  },
+  {
+    "code": "# Select the environmental factors\nenvironmental_factors = ['aet', 'Elevation', 'sgr', 'soil_div', 'area']\n\n# Prepare the data for regression\nX = df[environmental_factors].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 3.65608656e-05  8.32265284e-05 -3.06160964e-04 -1.06147013e-02\n  1.03857216e-08]",
+    "elapsed_seconds": 0.0027833199128508568
+  },
+  {
+    "code": "# Select the 'DR' variable\nX = df[['DR']].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "1.584322614088037",
+    "elapsed_seconds": 0.0027175587601959705
+  },
+  {
+    "code": "# Select the 'diversity' variable\nX = df[['diversity']].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "2.3052615786476876e-05",
+    "elapsed_seconds": 0.002677277661859989
+  },
+  {
+    "code": "# Select the 'BAMM_extinction' variable\nX = df[['BAMM_extinction']].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "1.690730344980135",
+    "elapsed_seconds": 0.0029031839221715927
+  },
+  {
+    "code": "# Select the 'BAMM_NetDiv' variable\nX = df[['BAMM_NetDiv']].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "1.615149257908535",
+    "elapsed_seconds": 0.002770368941128254
+  },
+  {
+    "code": "# Select the 'bio1' and 'bio12' variables\nX = df[['bio1', 'bio12']].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 6.69323427e-04 -3.36386877e-06]",
+    "elapsed_seconds": 0.0032410151325166225
+  },
+  {
+    "code": "# Select the 'runoff' variable\nX = df[['runoff']].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "-5.850044131526941e-06",
+    "elapsed_seconds": 0.002746379002928734
+  },
+  {
+    "code": "# Select the 'aet' variable\nX = df[['aet']].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "6.288876205019066e-06",
+    "elapsed_seconds": 0.0029123499989509583
+  },
+  {
+    "code": "# Select the 'Elevation' variable\nX = df[['Elevation']].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "3.8219610944930654e-05",
+    "elapsed_seconds": 0.0027597658336162567
+  },
+  {
+    "code": "# Select the 'sgr' variable\nX = df[['sgr']].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "-6.36012204216906e-06",
+    "elapsed_seconds": 0.0028291051276028156
+  },
+  {
+    "code": "# Select the 'soil_div' variable\nX = df[['soil_div']].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "-0.023778989151173324",
+    "elapsed_seconds": 0.002678017131984234
+  },
+  {
+    "code": "# Select the 'area' variable\nX = df[['area']].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0]\ncoefficient",
+    "output": "9.654757329321479e-08",
+    "elapsed_seconds": 0.002634685952216387
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Select the evolutionary traits\nevolutionary_traits = ['BEL_evol', 'MBL_evol', 'OGP_evol', 'RES_evol', 'RML_evol']\n\n# Prepare the data for regression\nX = df[evolutionary_traits].values\ny = df['BAMM_speciation'].values\n\n# Create a linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Get the coefficients\ncoefficients = model.coef_\ncoefficients",
+    "output": "[ 0.02343236  0.53294217 -7.80271276 11.65879374 -5.64509728]",
+    "elapsed_seconds": 0.0028593759052455425
+  }
+]

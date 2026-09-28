@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 38.24897072976455,
+  "llm_calls": 6,
+  "python_calls": 5,
+  "final_answer": "**\nThe effect of increased ease of offshoring on the local job market for native workers is reflected in a statistically significant increase in the **level of immigrant employment** (coefficient = 8016.0063, p-value = 0.0053), but not in the **share of immigrant employment** (coefficient = -0.00277, p-value = 0.320). This suggests that while more immigrants are employed, their proportion of the total workforce may not be significantly affected.",
+  "grading": "not run, as in supplied document",
+  "query": "What is the effect of increased ease of immigration on the local job market for native workers?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/train/immigration_offshoring_effect_on_employment/metadata_1.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

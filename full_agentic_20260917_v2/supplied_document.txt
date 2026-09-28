@@ -1,0 +1,491 @@
+DiscoveryBench agen
+benchmark
+t
+ic
+A
+Part 1. 이 벤치마크가 무엇인지
+1.1 DiscoveryBench 원본
+llen
+AI의 data-driven scien
+t
+ific discovery 벤치마크 ( allenai/discoverybenc ).
+LLM 에이전트가 실제 과학 데이터셋에서 가설을 찾아낼 수 있는지를 채점.
+태스크 하나:
+data.csv 실제 데이터 (수백~수천 행)
+metadata
+0.json 데이터 설명 + 컬럼 스키마(5~41개) + discovery goal
+_
+gold answer 정답 가설 (채점용)
+원본 실행 흐름:
+1. 에이전트에게 스키마와 goal을 준다
+2. 에이전트가 Py
+t
+hon 코드를 쓴다
+3. 실제로 실행한다 (pandas, sklearn, statsmodels)
+4. 결과를 보고 다음 분석을 결정한다 — 반복
+5. 최종 가설을 go
+ld answer와 비교해 채점
+도메인은 사회학, 고고학, 경제학, 생물학 등. synth/ (합성)와 real/ (실제) 두 세트가 있음
+1.2 쓰는 이유 — KV cache 재사용 패턴
+채점에는 관심x. 에이전트 워크플로우가 만드는 프롬프트 구조 필요.
+[고정] system 지시 + 데이터 스키마 + discovery goal [가변] 히스토리 (코드 + 실행 결과 + 해석) ← 매 턴 반복 = 재사용 대상
+← 턴마다 증가 = 재계산
+DiscoveryBench agentic benchmark 1
+긴 고정 프리픽스 + 조금씩 자라는 꼬리. 이것이 prefix caching의 이득이 큰 구조이고, 일
+반 챗봇 대화와 다른 지점.
+컬럼이 많은(= 프리픽스가 긴) 태스크일수록 재사용 토큰이 많아짐 — 컬럼 수와 재사용 토
+큰이 거의 선형 비례(ex, 5컬럼 2
+03토큰 → 38컬럼 891토큰).
+1.3 FI
+O 같은 합성 I/
+O
+벤치마크와의 차이
+FI
+O 이것
+요청 크기 사람이 지정 (bl
+ock size) 모델 구조 × ch
+u
+nk_size가 결정
+접근 패턴 사람이 지정 (random/seq) 프리픽스 해싱이 결정
+t
+hi
+/miss 해당 없음 워크로드의 프리픽스 공유 구조
+I/
+O
+발생 벤치마크가 직접 발행 추론의 부산물
+우리는 PUT/GET을 한 번도 직접 호출하지 않음. vLLM이 추론하고 LMCache가 KV를 저
+장/로드하는 과정에서 알아서 발생.
+그래서 청크 경계 손실 같은 현상이 드러남 — 프리픽스가 ch
+u
+으면 경계 아래 토큰이 통째로 버려지는데. t
+o
+위 벤치마크로는 안보임.
+n
+k_size 배수에 정렬되지 않
+kenizer와 캐시 계층의 상호작용이라 블록 단
+Part 2. 두 가지 실행 방식
+같은 DiscoveryBench를 쓰지만 에이전트를 실제로 돌리느냐가 갈림.
+축약판 ( kv
+measure.py ) f
+_
+ull agen
+t
+ic
+LLM 추론 실제 vLLM 실제 vLLM
+프롬프트 구조 고정 프리픽스 + 자라는 히스토리 동일
+코드 실행 없음 있음 (pandas/sklearn 실행)
+데이터 접근 없음 (스키마 텍스트만) CSV 실제 로드
+히스토리 내용 모델이 지어낸 텍스트 12
+0자 코드 + 실행 출력 + 해석
+턴 수 우리가 지정 (6) 에이전트가 결정 (6~13턴 관측)
+실행 모드 vLLM 오프라인 LLM() vLLM
+O
+pen
+AI 서버 + HTTP
+측정 num
+cached
+tokens 직접 서버 로그 + /metrics
+_
+_
+재현성 결정론적 실행마다 다름
+DiscoveryBench agentic benchmark 2
+2.1 축약판 — emp 서버에서 쓴 방식 (gpu메모리 이슈로 축
+약)
+kv
+measure.py 가 metadata
+_
+_
+0.json 에서 goal과 컬럼 스키마만 꺼내 프롬프트를 만들고, 모델
+출력을 히스토리에 이어붙이며 N회 호출.
+prefix = pad + system + schema + goal # 매 스텝 고
+정
+for step in range(steps):
+prompt = prefix + "\n".join(history) + f"[Step {n}] You
+r next reasoning and code:"
+out = llm.generate([prompt], sp) # 실제 vLLM
+추론
+history.append(out.text[:120]) # 출력을 다음
+프롬프트에
+직접 측정
+cached = out.num_cached_tokens # KV 재사용
+장점: 측정이 정확하고(반환값 직접 읽음), 조건이 결정론적이고, 빠름. backend 비교 실험
+에 적합.
+한계: 에이전트가 코드를 쓰라는 지시를 받지만 실행하지 않음. 히스토리가 12
+실보다 짧음. → 재사용률이 과대평가됨.
+0자로 잘려 현
+emp 서버(RTX A400 4GB)에서는 이것만 가능. GPU가 작아 Qwen2.5-0.5B에
+max_model_len 2
+048이 한계였고, 진짜 에이전트를 돌릴 만한 모델을 못올림.
+2.2 f
+ull agen
+t
+ic — TTA 서버에서 가능해진 것
+DiscoveryBench의 실제 에이전트 코드( agents/react
+_
+언제 이걸 써야 하나:
+agent.py )를 vLLM 위에서 실행.
+"real agen
+t workfl
+ow에서도 되는가"를 보여야 할 때
+재사용률의 현실적인 값이 필요할 때 (축약판은 상한에 가까움)
+코드 실행 시간이 만드는 여유(프리페치 기회)를 보려 할 때
+언제 쓰면 안 되나:
+backend 간 성능 비교 — 턴 수가 실행마다 달라 조건 통제가 안됨
+DiscoveryBench agentic benchmark 3
+Part 3. f
+ull agen
+t
+ic을 돌리기 전 사전작업
+3.1 환경 — clien
+t
+-5 (tta 서버)
+항목 값
+GPU DA
+DA
+H100 NVL 96GB, driver 610.57.04, CUDA 13.3
+O
+S 서버 10.100.230.91/92, st
+ock v2.8 (상시 기동, 우리가 안 건드림)
+O
+S 클라이언트 /opt/discos-daos-gdr (우리 GDR 빌드)
+poo
+l / con
+t discospool (2TB, 2노드 스트라이핑) / gdrcont
+네트워크 Connec
+tX-7 RoCE 400G
+모델 Qwen3-14B (40층, KV head 8, head_dim 128)
+KV 크기가 13배 증가
+Qwen2.5-0.5B (emp) : 토큰당 12 KB → chunk 256 = 3 MB
+Qwen3-14B (client-5): 토큰당 160 KB → chunk 256 = 40 MB
+chunk 2048 = 320 MB
+3.2 트러블슈팅 - 해결된 애들이라 무시, 참고만
+(a) venv 두 개로 분리
+~/discos/venv ~/discos/agent-venv vLLM 0.25.1 + LMCache 0.5.2 + torch 2.11.0+cu130
+DiscoveryBench (langchain 0.1.17, numpy 1.26.4, pandas 2.2.1)
+DiscoveryBench의 requirements.txt 는 2
+24년 버전 고정이라 vLLM이 요구하는 최신
+패키지와 충돌합니다. 서버-클라이언트가 HTTP로만 통신하므로 섞을 이유가 없음.
+실행은 항상 절대경로(~/discos/venv/bin/python3 )로 — activate 를 쓰면 두 venv 헷갈리게
+됨.
+(b) DiscoveryBench는 API 전용
+model
+config.json 에 gpt
+-4o, clau
+_
+음.
+de, gemini, Toge
+t
+her만 있어 로컬 추론을 전제하지 않
+langchain
+openai.ChatOpenAI 를 쓰므로 vLLM의 O
+_
+pen
+AI 호환 서버를 물리면 되는데:
+0
+DiscoveryBench agentic benchmark 4
+OPENAI
+BASE
+_
+_
+URL 환경변수를 langchain-openai
+0.1.5가 읽지 않
+음 ( llm.openai
+api
+base 가 None )
+_
+_
+get
+model() 호출 시 kwargs 를 아무것도 안 넘김 → config로 주입 불가
+_
+→ 코드 1줄 패치 ( agents/coder
+있음):
+agent.py , agents/react
+agent.py 각각, import os 는 이미
+_
+_
+elif (api == "openai"):
+llm = ChatOpenAI(
+model=model,
+api_key=api_key,
+base_url=os.environ.get("OPENAI_BASE_URL"), # ←
+추가
+**kwargs
+)
+(c) reac
+t 에이전트인데 "한 번만 실행하라"고 지시
+# react_agent.py:136 (원본)
+"system_prompt": "You are a discovery agent who can execute
+a python code only once
+to answer a query based on one or more da
+tasets. ...
+"
+max
+_
+iterations=25 인데 4턴에 끝남. coder 에이전트와 같은 프롬프트를 쓰기 때문
+→ mult
+i-turn을 유도하도록 교체:
+"system_prompt": "You are a discovery agent analyzing scien
+tific datasets. "
+"Work step by step: inspect the data, run
+an analysis, examine the result, "
+"then decide what to check next. Run multi
+ple separate analyses to build "
+"confidence before concluding. The dataset
+s are in the current directory."
+결과: 4턴 → 13턴. 히스토리가 훨씬 길게 자람
+DiscoveryBench agentic benchmark 5
+(d) rd_fac 불일치 — DER
+_
+INVAL(-1003)
+dc
+_
+obj_
+redun
+check() obj:cont tolerate failures 0:1, DER
+_
+_
+INVAL(-1003)
+discospool 은 2노드 스트라이핑이라 컨테이너 기본값이 rd
+fac:1(1개 장애 허용)인데, 우
+_
+리 objec
+t는 OC
+_
+SX 라 복제가 없어 장애 허용 0. 컨테이너가 요구하는 수준을 objec
+t가 못
+맞춰 거부됨.
+emp2는 단일 노드라 기본이 0이어서 안 드러났던 문제.
+daos cont create discospool gdrcont --properties rd_fac:0
+KV cache는 잃어도 재계산하면 되므로 복제가 불필요. 복제하면 쓰기 대역폭만 2배
+(Glu
+esys도 같은 이유로 rd
+fac:0 을 씀)
+_
+Part 4. 설정 파일
+~/discos/lmcache
+_
+config_
+daosgdr.yaml
+chunk_size: 2048
+local_cpu: false
+storage_plugins:
+- daos_gdr
+extra_config:
+storage_plugin.daos_gdr.module_path: "daosgdr_backend"
+storage_plugin.daos_gdr.class_name: "DaosGdrBackend"
+daos_gdr_pool: "discospool"
+daos_gdr_cont: "gdrcont"
+daos_gdr_buffer_size_mb: 8192
+daos_gdr_io_workers: 8
+extra
+config 안쪽 키는 점(.) 포함 플랫 문자열이어야 함 — lau
+_
+ncher
+가 extra
+config.get("storage
+_
+_plugin.daos
+_gdr.module
+_path") 로 조회.
+~/discos/run
+vllm.sh
+_
+DiscoveryBench agentic benchmark 6
+#!/usr/bin/env bash
+set -euo pipefail
+export PYTHONPATH="/root/discos${PYTHONPATH:+:$PYTHONPATH}"
+export LD_LIBRARY_PATH="/opt/discos-daos-gdr/prereq/releas
+e/ofi/lib64:/opt/discos-daos-gdr/lib64:/usr/local/cuda/lib6
+4"
+export D_GPU_DIRECT=1
+export DAOSGDR_LIB=/root/discos/libdaosgdr.so
+export LMCACHE_CONFIG_FILE=/root/discos/lmcache_config_daos
+gdr.yaml
+export HF_HOME=/home/hf/hf_cache
+export PYTHONHASHSEED=0
+export VLLM_USE_FLASHINFER_SAMPLER=0
+export DAOSGDR_TIMING=1 # 구간별 시간 계측 (선택)
+exec "$@"
+PYTORCH
+CUDA
+ALLOC
+_
+_
+_
+CONF=expandable
+_
+segments:True 는 절대 넣지 말 것. KV connec
+t
+or와 원
+리적으로 비호환 — PyTorch VMM all
+ocat
+or가 가상주소를 다른 물리 페이지로 재매핑하
+면 NIC에 등록한 KV 메모리가 무효화됨. vLLM이 선제적으로 거부.
+DiscoveryBench config
+# config/api_config.json — vLLM은 아무 키나 받음
+{"openai": "dummy", "anthropic": ""
+, "together": ""
+e": ""}
+, "googl
+# config/model_config.json 의 "models" 에 추가
+"qwen3-14b": {"model_type": "openai", "model_name": "Qwen/Q
+wen3-14B"}
+shim 재컴파일 (경로 확인)
+gcc -shared -fPIC -O2 -o ~/discos/libdaosgdr.so ~/discos/li
+bdaosgdr.c \
+-I/opt/discos-daos-gdr/include \
+-L/opt/discos-daos-gdr/lib64 -ldaos -ldaos_common -lgur
+DiscoveryBench agentic benchmark 7
+t -lcart \
+-Wl,-rpath,/opt/discos-daos-gdr/lib64
+Part 5. 실행 방법
+5.1 컨테이너 준비
+E=/opt/discos-daos-gdr/prereq/release/ofi/lib64:/opt/discos
+-daos-gdr/lib64:/usr/local/cuda/lib64
+DAOS=/opt/discos-daos-gdr/bin/daos
+env LD_LIBRARY_PATH=$E $DAOS cont destroy discospool gdrcon
+t # 초기화 시
+env LD_LIBRARY_PATH=$E $DAOS cont create discospool gdrcont
+--properties rd_fac:0
+env LD_LIBRARY_PATH=$E $DAOS cont get-prop discospool gdrco
+nt | grep -i redun
+5.2 터미널 1 — vLLM 서버
+cd ~/discos
+./run_vllm.sh ~/discos/venv/bin/vllm serve Qwen/Qwen3-14B \
+--port 8000 \
+--max-model-len 16384 \
+--gpu-memory-utilization 0.82 \
+--no-enable-prefix-caching \
+--kv-transfer-config '{"kv_connector":"LMCacheConnector
+V1","kv_role":"kv_both"}' \
+2>&1 | tee ~/discos/srv_run1.log
+-no-enable-prefix-caching — vLLM 내장 GPU 캐시를 끔. 안 끄면 LMCache 효과와
+섞임
+DiscoveryBench agentic benchmark 8
+기동 확인 (다른 터미널):
+grep -iE "Created dynamic backend|Failed to create backend|
+put I/O pool|startup complete" ~/discos/srv_run1.log
+curl -s localhost:8000/v1/models
+Created dynamic backend: daos
+_gdr 가 반드시 떠야 함. Created backend: LocalCPUBackend 만
+있으면 우리 backend가 로드되지 않은 것
+5.3 터미널 2 — 에이전트
+cd ~/discos/discoverybench
+TASK=$PWD/discoverybench/synth/train/adventure-travel_0_0
+GOAL=$(~/discos/agent-venv/bin/python3 -c "
+import json
+m = json.load(open('$TASK/metadata_0.json'))
+q = m['queries'][0]
+q = q[0] if isinstance(q, list) else q
+print(q['question'])
+")
+# TTFT는 누적 카운터이므로 실행 전후 스냅샷 필요
+curl -s localhost:8000/metrics | grep -E "first_token_secon
+ds_(sum|count)" > /tmp/before.txt
+OPENAI_BASE_URL=http://localhost:8000/v1 \
+MODEL_CONFIG=$PWD/config/model_config.json \
+API_CONFIG=$PWD/config/api_config.json \
+~/discos/agent-venv/bin/python3 discovery_agent.py \
+--agent_type react \
+--model_name qwen3-14b \
+--metadata_path $TASK/metadata_0.json \
+--metadata_type synth \
+--log_file ~/discos/agent_run1.log \
+"$GOAL"
+DiscoveryBench agentic benchmark 9
+curl -s localhost:8000/metrics | grep -E "first_token_secon
+ds_(sum|count)" > /tmp/after.txt
+5.4 ru
+n1 / ru
+n2 — persist
+ence 측정
+1. 컨테이너 초기화
+2. 서버 기동 → 에이전트 실행 (run1)
+3. 서버 Ctrl+C 4. 서버 재기동 (컨테이너는 그대로)
+5. 같은 에이전트 실행 (run2)
+← 프로세스 메모리의 인덱스가 사라짐
+주의: ru
+n1과 ru
+n2 사이에 react
+전부 달라져 hi
+t이 안 남
+agent.py 의 syst
+_
+em_prompt를 바꾸면 프리픽스 해시가
+5.5 모니터링
+tail -f ~/discos/srv_run1.log | grep -vE "GET /metrics"
+/metrics 를 0.5초마다 긁는 프로세스가 있음(우리 것 아님, Glu
+esys 모니터링으로 추정).
+부록 A. 축약판 실행 (참고)
+비교 실험에는 여전히 축약판이 유용 — 빠르고 측정이 정확
+cd ~/discos
+LMCACHE_LOG_LEVEL=DEBUG ./run_vllm.sh ~/discos/venv/bin/pyt
+hon3 ~/discos/kv_measure.py \
+--root ~/discos/discoverybench/discoverybench/synth/tra
+in \
+--model Qwen/Qwen3-14B \
+--max-model-len 8192 --tasks 1 --steps 6 \
+--chunk-size 2048 --pad-tokens 3000 --no-prefix-cache \
+--out ~/discos/run1.csv 2>&1 | tee ~/discos/run1.log
+청크 크기별 pad/max-model-len:
+u
+ch
+nk KV (14B) pad-t
+o
+kens max-model-len
+256 40MB 300
+2
+048
+DiscoveryBench agentic benchmark 10
+u
+ch
+nk KV (14B) pad-t
+o
+kens max-model-len
+512 80MB 800
+2
+048
+10
+24 160MB 1500 4096
+2
+048 32
+0MB 3000 8192
+pad는 첫 청크를 채우기 위한 것. DiscoveryBench 프롬프트만으로는 큰 청크가 안 차서
+st
+ep1부터 hi
+t이 안 남
+-tasks 1 필수 — 태스크가 여럿이면 공통 syst
+em prompt 공유로 st
+ep1에도 hi
+t이 생
+겨 ru
+n1/ru
+n2 비교가 오염.
+부록 B. 관련 연구 —
+O
+bjec
+tCache
+O
+bjec
+tCache 우리
+문제 인식 용량 → S3로, 그런데 느림 인덱스 소멸 + host 경유
+해법 전송 스케줄링 (GPU 소비 순서대로 배달,
+요청 간 겹침)
+데이터 경로 단축 (GPU 직결, 파일
+계층 제거)
+스택 NIXL + Ceph RGW(S3) + DA
+S DA
+O
+O
+S nat
+ive objec
+t
+API
+KV 데이터 경로 HTTP/S3 RDMA
+결과 64K에서 로컬 DRAM 대비 +5.6% df
+use 대비 1.4~1.7배
+우리 HTTP는 에이전트↔vLLM 제어 경로일 뿐이고 KV 데이터는 한 바이트도 안 탐.
+O
+bjec
+tCache는 KV 자체가 S3 HTTP로 오감.
+DiscoveryBench agentic benchmark 11

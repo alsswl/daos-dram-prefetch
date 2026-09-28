@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\ndf.head()",
+    "output": "   ID  ...                           Origin\n0  31  ...  https://ww2.unipark.de/uc/seml/\n1  34  ...                              -99\n2  36  ...                              -99\n3  57  ...                              -99\n4  46  ...                              -99\n\n[5 rows x 202 columns]",
+    "elapsed_seconds": 0.1586295827291906
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# List of documentation method columns\ndoc_columns = [\n    'Q10_ML_Documentation_Not_Documented',\n    'Q10_ML_Documentation_Vision_Document',\n    'Q10_ML_Documentation_Requirements_Lists',\n    'Q10_ML_Documentation_Goal_Models',\n    'Q10_ML_Documentation_Use_Case_Models',\n    'Q10_ML_Documentation_Prototypes',\n    'Q10_ML_Documentation_User_Stories',\n    'Q10_ML_Documentation_BDD_Scenarios',\n    'Q10_ML_Documentation_MLCanvas',\n    'Q10_ML_Documentation_Notebooks',\n    'Q10_ML_Documentation_Data_Models',\n    'Q10_ML_Documentation_Others',\n    'Q10_ML_Documentation_Others_Free'\n]\n\n# Calculate the mean for each documentation method\ndoc_means = df[doc_columns].mean()\n\n# Identify the two documentation methods with the lowest mean values\nleast_used = doc_means.sort_values().head(2)\nleast_used",
+    "output": "TypeError: can only concatenate str (not \"int\") to str",
+    "elapsed_seconds": 0.012728798668831587
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# List of documentation method columns\ndoc_columns = [\n    'Q10_ML_Documentation_Not_Documented',\n    'Q10_ML_Documentation_Vision_Document',\n    'Q10_ML_Documentation_Requirements_Lists',\n    'Q10_ML_Documentation_Goal_Models',\n    'Q10_ML_Documentation_Use_Case_Models',\n    'Q10_ML_Documentation_Prototypes',\n    'Q10_ML_Documentation_User_Stories',\n    'Q10_ML_Documentation_BDD_Scenarios',\n    'Q10_ML_Documentation_MLCanvas',\n    'Q10_ML_Documentation_Notebooks',\n    'Q10_ML_Documentation_Data_Models',\n    'Q10_ML_Documentation_Others',\n    'Q10_ML_Documentation_Others_Free'\n]\n\n# Check the data types of the documentation method columns\ndoc_dtypes = df[doc_columns].dtypes\ndoc_dtypes",
+    "output": "Q10_ML_Documentation_Not_Documented        object\nQ10_ML_Documentation_Vision_Document       object\nQ10_ML_Documentation_Requirements_Lists    object\nQ10_ML_Documentation_Goal_Models           object\nQ10_ML_Documentation_Use_Case_Models       object\nQ10_ML_Documentation_Prototypes            object\nQ10_ML_Documentation_User_Stories          object\nQ10_ML_Documentation_BDD_Scenarios         object\nQ10_ML_Documentation_MLCanvas              object\nQ10_ML_Documentation_Notebooks             object\nQ10_ML_Documentation_Data_Models           object\nQ10_ML_Documentation_Others                object\nQ10_ML_Documentation_Others_Free           object\ndtype: object",
+    "elapsed_seconds": 0.012250562198460102
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Check unique values in one of the documentation method columns\nunique_values = df['Q10_ML_Documentation_Not_Documented'].unique()\nunique_values",
+    "output": "['quoted' 'not quoted' '-77']",
+    "elapsed_seconds": 0.011823919136077166
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# List of documentation method columns\ndoc_columns = [\n    'Q10_ML_Documentation_Not_Documented',\n    'Q10_ML_Documentation_Vision_Document',\n    'Q10_ML_Documentation_Requirements_Lists',\n    'Q10_ML_Documentation_Goal_Models',\n    'Q10_ML_Documentation_Use_Case_Models',\n    'Q10_ML_Documentation_Prototypes',\n    'Q10_ML_Documentation_User_Stories',\n    'Q10_ML_Documentation_BDD_Scenarios',\n    'Q10_ML_Documentation_MLCanvas',\n    'Q10_ML_Documentation_Notebooks',\n    'Q10_ML_Documentation_Data_Models',\n    'Q10_ML_Documentation_Others',\n    'Q10_ML_Documentation_Others_Free'\n]\n\n# Convert the documentation method columns to numeric, handling non-numeric values\nfor col in doc_columns:\n    df[col] = pd.to_numeric(df[col], errors='coerce')\n\n# Drop rows with NaN values in the documentation method columns\ndf_clean = df.dropna(subset=doc_columns)\n\n# Calculate the mean for each documentation method\ndoc_means = df_clean[doc_columns].mean()\n\n# Identify the two documentation methods with the lowest mean values\nleast_used = doc_means.sort_values().head(2)\nleast_used",
+    "output": "Q10_ML_Documentation_Not_Documented    -77.0\nQ10_ML_Documentation_Vision_Document   -77.0\ndtype: float64",
+    "elapsed_seconds": 0.01664131786674261
+  }
+]

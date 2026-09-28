@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 34.73040305962786,
+  "llm_calls": 7,
+  "python_calls": 6,
+  "final_answer": "Hypothesis: An increase in the ease of offshoring (captured by the instrumental variable `iv_offshoring_1`) is associated with a decrease in the share of immigrant employment (`share_immi_imputed`) in the local job market for native workers. The relationship is described by a linear coefficient of approximately -0.00277, indicating a negative association. However, the statistical significance of this relationship could not be determined due to the lack of p-value information from the regression model used.",
+  "grading": "not run, as in supplied document",
+  "query": "What is the effect of increased ease of immigration on the local job market for native workers?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/train/immigration_offshoring_effect_on_employment/metadata_1.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

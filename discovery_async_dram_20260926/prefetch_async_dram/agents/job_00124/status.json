@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "workflow_seconds": 10.896792617160827,
+  "llm_calls": 3,
+  "python_calls": 2,
+  "final_answer": "Scientific Hypothesis: In the context of replication studies in Psychology, there is no presence of junior professors (those with the seniority level of \"Assistant\") among the authors of replicated studies. This suggests that seniority levels of authors in replicated studies may be skewed towards more experienced researchers, potentially influencing the outcomes or methodologies of these studies.\n\nWORKFLOW_SUMMARY:\n1. Data Loading: The dataset was loaded from the specified path using Python.\n2. Data Inspection: The first few rows of the dataset were displayed to understand its structure and the relevant columns.\n3. Filtering and Analysis: The dataset was filtered to include only Psychology studies that were replicated. The count of junior professors (those with the seniority level of \"Assistant\") was calculated among the authors of these studies, and the proportion was determined.",
+  "grading": "not run, as in supplied document",
+  "query": "What is the proportion of junior professors in replicated studies in Psychology?",
+  "max_iterations": 25,
+  "temperature": 0,
+  "max_output_tokens_per_call": 2048,
+  "metadata_source": "/root/discos_minji/discoverybench/discoverybench/real/test/meta_regression_raw/metadata_10.json",
+  "dataset_type": "real",
+  "streaming": true,
+  "disable_thinking": true,
+  "tool_site": "/root/discos_minji/discovery_tool_deps_20260926",
+  "accept_final_alias": true
+}

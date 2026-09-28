@@ -1,0 +1,52 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\nadjusted_savings_df = pd.read_csv('/data/Adjusted_savings_education_expenditure_percentage_of_GNI.csv')\nexports_df = pd.read_csv('/data/Exports_of_goods_and_services_annual_percentage_growth.csv')\ngni_df = pd.read_csv('/data/GNI_per_capita_constant_2015_USdollar.csv')\nlabor_force_df = pd.read_csv('/data/Labor_force_participation_rate_total_percentage_of_total_population_ages_15+_modeled_ILO_estimate.csv')\nschool_primary_df = pd.read_csv('/data/School_enrollment_primary_percentage_gross.csv')\nschool_secondary_df = pd.read_csv('/data/School_enrollment_secondary_percentage_gross.csv')\n\n# Display the first few rows of each dataset\nadjusted_savings_df.head()\nexports_df.head()\ngni_df.head()\nlabor_force_df.head()\nschool_primary_df.head()\nschool_secondary_df.head()",
+    "output": "         Country Group Country Code  ...  2014 [YR2014]  2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...      42.847160      43.372971\n1  Lower middle income          LMC  ...      64.281197      64.532967\n\n[2 rows x 43 columns]",
+    "elapsed_seconds": 0.1495594149455428
+  },
+  {
+    "code": "import numpy as np\n\n# Extract the relevant columns for analysis\neducation_expenditure = adjusted_savings_df.filter(regex='YR').values\nschool_primary_enrollment = school_primary_df.filter(regex='YR').values\nschool_secondary_enrollment = school_secondary_df.filter(regex='YR').values\n\n# Calculate the correlation between education expenditure and school enrollment\ncorrelation_primary = np.corrcoef(education_expenditure, school_primary_enrollment)[0, 1]\ncorrelation_secondary = np.corrcoef(education_expenditure, school_secondary_enrollment)[0, 1]\ncorrelation_primary, correlation_secondary",
+    "output": "(0.5858935384174062, 0.5858935384174062)",
+    "elapsed_seconds": 0.003289680927991867
+  },
+  {
+    "code": "# Extract the relevant columns for economic output\ngni_per_capita = gni_df.filter(regex='YR').values\nexports_growth = exports_df.filter(regex='YR').values\n\n# Calculate the correlation between education expenditure and economic output\ncorrelation_gni = np.corrcoef(education_expenditure, gni_per_capita)[0, 1]\ncorrelation_exports = np.corrcoef(education_expenditure, exports_growth)[0, 1]\ncorrelation_gni, correlation_exports",
+    "output": "(0.5858935384174062, 0.5858935384174062)",
+    "elapsed_seconds": 0.0029192091897130013
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\n\n# Prepare the data for regression\nX = education_expenditure\ny_gni = gni_per_capita\ny_exports = exports_growth\n\n# Create a linear regression model for GNI per capita\nmodel_gni = LinearRegression()\nmodel_gni.fit(X.reshape(-1, 1), y_gni)\ncoefficient_gni = model_gni.coef_[0]\n\n# Create a linear regression model for exports of goods and services\nmodel_exports = LinearRegression()\nmodel_exports.fit(X.reshape(-1, 1), y_exports)\ncoefficient_exports = model_exports.coef_[0]\n\ncoefficient_gni, coefficient_exports",
+    "output": "ValueError: Input y contains NaN.",
+    "elapsed_seconds": 0.5677076657302678
+  },
+  {
+    "code": "# Clean the data by removing rows with missing values\nadjusted_savings_df = adjusted_savings_df.dropna()\nexports_df = exports_df.dropna()\ngni_df = gni_df.dropna()\nschool_primary_df = school_primary_df.dropna()\nschool_secondary_df = school_secondary_df.dropna()\n\n# Re-extract the relevant columns for analysis\neducation_expenditure = adjusted_savings_df.filter(regex='YR').values\nschool_primary_enrollment = school_primary_df.filter(regex='YR').values\nschool_secondary_enrollment = school_secondary_df.filter(regex='YR').values\ngni_per_capita = gni_df.filter(regex='YR').values\nexports_growth = exports_df.filter(regex='YR').values\n\n# Re-calculate the correlation between education expenditure and school enrollment\ncorrelation_primary = np.corrcoef(education_expenditure, school_primary_enrollment)[0, 1]\ncorrelation_secondary = np.corrcoef(education_expenditure, school_secondary_enrollment)[0, 1]\ncorrelation_primary, correlation_secondary",
+    "output": "(0.5858935384174062, 0.5858935384174062)",
+    "elapsed_seconds": 0.0032794922590255737
+  },
+  {
+    "code": "# Re-run the regression analysis with the cleaned data\nX = education_expenditure\ny_gni = gni_per_capita\ny_exports = exports_growth\n\n# Create a linear regression model for GNI per capita\nmodel_gni = LinearRegression()\nmodel_gni.fit(X.reshape(-1, 1), y_gni)\ncoefficient_gni = model_gni.coef_[0]\n\n# Create a linear regression model for exports of goods and services\nmodel_exports = LinearRegression()\nmodel_exports.fit(X.reshape(-1, 1), y_exports)\ncoefficient_exports = model_exports.coef_[0]\n\ncoefficient_gni, coefficient_exports",
+    "output": "ValueError: Found input variables with inconsistent numbers of samples: [82, 1]",
+    "elapsed_seconds": 0.0021744179539382458
+  },
+  {
+    "code": "# Check the dimensions of the datasets\nprint(\"Education Expenditure Shape:\", education_expenditure.shape)\nprint(\"GNI Per Capita Shape:\", gni_per_capita.shape)\nprint(\"Exports Growth Shape:\", exports_growth.shape)",
+    "output": "Education Expenditure Shape: (2, 41)\nGNI Per Capita Shape: (1, 41)\nExports Growth Shape: (1, 41)\n",
+    "elapsed_seconds": 0.0012020720168948174
+  },
+  {
+    "code": "# Ensure that the data is properly aligned by selecting the same rows for all datasets\neducation_expenditure = education_expenditure[:1]\ngni_per_capita = gni_per_capita[:1]\nexports_growth = exports_growth[:1]\n\n# Re-run the regression analysis with the aligned data\nX = education_expenditure.reshape(-1, 1)\ny_gni = gni_per_capita\ny_exports = exports_growth\n\n# Create a linear regression model for GNI per capita\nmodel_gni = LinearRegression()\nmodel_gni.fit(X, y_gni)\ncoefficient_gni = model_gni.coef_[0]\n\n# Create a linear regression model for exports of goods and services\nmodel_exports = LinearRegression()\nmodel_exports.fit(X, y_exports)\ncoefficient_exports = model_exports.coef_[0]\n\ncoefficient_gni, coefficient_exports",
+    "output": "ValueError: Found input variables with inconsistent numbers of samples: [41, 1]",
+    "elapsed_seconds": 0.0021222918294370174
+  },
+  {
+    "code": "# Reshape the data to have years as rows\neducation_expenditure = education_expenditure.T\ngni_per_capita = gni_per_capita.T\nexports_growth = exports_growth.T\n\n# Ensure that the data is properly aligned\neducation_expenditure = education_expenditure[:1]\ngni_per_capita = gni_per_capita[:1]\nexports_growth = exports_growth[:1]\n\n# Re-run the regression analysis with the aligned data\nX = education_expenditure.reshape(-1, 1)\ny_gni = gni_per_capita\ny_exports = exports_growth\n\n# Create a linear regression model for GNI per capita\nmodel_gni = LinearRegression()\nmodel_gni.fit(X, y_gni)\ncoefficient_gni = model_gni.coef_[0]\n\n# Create a linear regression model for exports of goods and services\nmodel_exports = LinearRegression()\nmodel_exports.fit(X, y_exports)\ncoefficient_exports = model_exports.coef_[0]\n\ncoefficient_gni, coefficient_exports",
+    "output": "(array([0.]), array([0.]))",
+    "elapsed_seconds": 0.002990997862070799
+  },
+  {
+    "code": "# Reshape the data to have years as rows\neducation_expenditure = education_expenditure.T\ngni_per_capita = gni_per_capita.T\nexports_growth = exports_growth.T\n\n# Ensure that the data is properly aligned\neducation_expenditure = education_expenditure[:1]\ngni_per_capita = gni_per_capita[:1]\nexports_growth = exports_growth[:1]\n\n# Re-run the regression analysis with the aligned data\nX = education_expenditure.reshape(-1, 1)\ny_gni = gni_per_capita\ny_exports = exports_growth\n\n# Create a linear regression model for GNI per capita\nmodel_gni = LinearRegression()\nmodel_gni.fit(X, y_gni)\ncoefficient_gni = model_gni.coef_[0]\n\n# Create a linear regression model for exports of goods and services\nmodel_exports = LinearRegression()\nmodel_exports.fit(X, y_exports)\ncoefficient_exports = model_exports.coef_[0]\n\ncoefficient_gni, coefficient_exports",
+    "output": "(array([0.]), array([0.]))",
+    "elapsed_seconds": 0.002382527105510235
+  }
+]

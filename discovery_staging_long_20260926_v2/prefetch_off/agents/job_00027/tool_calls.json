@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\n\n# Display the first few rows of the dataset to understand its structure\ntime_series_df.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.1533958539366722
+  },
+  {
+    "code": "import matplotlib.pyplot as plt\n\n# Plot the 'Dagger' column over time to visualize any trends\nplt.figure(figsize=(14, 7))\nplt.plot(time_series_df['CE'], time_series_df['Dagger'], label='Dagger Z values')\nplt.xlabel('CE (Common Era)')\nplt.ylabel('Z values')\nplt.title('Z values for Daggers over Time')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.3611167101189494
+  },
+  {
+    "code": "from scipy.stats import linregress\n\n# Perform linear regression on the 'Dagger' column to determine the trend over time\nslope, intercept, r_value, p_value, std_err = linregress(time_series_df['CE'], time_series_df['Dagger'])\n\nslope, p_value",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.45196213386952877
+  },
+  {
+    "code": "# Check for missing values in the 'Dagger' column\ntime_series_df['Dagger'].isnull().sum()\n\n# Ensure the 'Dagger' column is numeric\ntime_series_df['Dagger'] = pd.to_numeric(time_series_df['Dagger'], errors='coerce')",
+    "output": "",
+    "elapsed_seconds": 0.0016458099707961082
+  },
+  {
+    "code": "# Drop missing values in the 'Dagger' column\ntime_series_df_clean = time_series_df.dropna(subset=['Dagger'])\n\n# Perform linear regression on the cleaned 'Dagger' column\nslope, intercept, r_value, p_value, std_err = linregress(time_series_df_clean['CE'], time_series_df_clean['Dagger'])\n\nslope, p_value",
+    "output": "(0.0003200806069227122, 0.03916820022136639)",
+    "elapsed_seconds": 0.0030247168615460396
+  }
+]

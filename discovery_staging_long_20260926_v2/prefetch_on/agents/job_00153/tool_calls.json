@@ -1,0 +1,72 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/worldbank_education_gdp.csv')\ndf.head()",
+    "output": "        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n2  Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n3  Sub-Saharan Africa          SSF  ...     97.963791     96.974968\n4  Sub-Saharan Africa          SSF  ...     42.847160     43.372971\n\n[5 rows x 45 columns]",
+    "elapsed_seconds": 0.14787829294800758
+  },
+  {
+    "code": "# Identify the relevant columns\neducation_expenditure_col = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_col = 'GNI per capita (constant 2015 US dollar)'\n\n# Filter the dataset to include only the relevant columns\ndf_filtered = df[[education_expenditure_col, gdp_col, 'Country Group']]\n\n# Display the first few rows of the filtered dataset\ndf_filtered.head()",
+    "output": "KeyError: \"['Adjusted savings: education expenditure (percentage of GNI)', 'GNI per capita (constant 2015 US dollar)'] not in index\"",
+    "elapsed_seconds": 0.002281086053699255
+  },
+  {
+    "code": "# Display the actual column names\ndf.columns.tolist()",
+    "output": "['Country Group', 'Country Code', 'Series Name', 'Series Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]']",
+    "elapsed_seconds": 0.0015576919540762901
+  },
+  {
+    "code": "# Filter the dataset to include only the relevant series names\neducation_expenditure_series = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_series = 'GNI per capita (constant 2015 US dollar)'\n\n# Extract the relevant columns based on the series names\neducation_expenditure_data = df[df['Series Name'] == education_expenditure_series]\ngdp_data = df[df['Series Name'] == gdp_series]\n\n# Display the first few rows of the filtered datasets\neducation_expenditure_data.head(), gdp_data.head()",
+    "output": "(         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n1   Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n7  Lower middle income          LMC  ...      3.106096      3.060663\n\n[2 rows x 45 columns], Empty DataFrame\nColumns: [Country Group, Country Code, Series Name, Series Code, 1975 [YR1975], 1976 [YR1976], 1977 [YR1977], 1978 [YR1978], 1979 [YR1979], 1980 [YR1980], 1981 [YR1981], 1982 [YR1982], 1983 [YR1983], 1984 [YR1984], 1985 [YR1985], 1986 [YR1986], 1987 [YR1987], 1988 [YR1988], 1989 [YR1989], 1990 [YR1990], 1991 [YR1991], 1992 [YR1992], 1993 [YR1993], 1994 [YR1994], 1995 [YR1995], 1996 [YR1996], 1997 [YR1997], 1998 [YR1998], 1999 [YR1999], 2000 [YR2000], 2001 [YR2001], 2002 [YR2002], 2003 [YR2003], 2004 [YR2004], 2005 [YR2005], 2006 [YR2006], 2007 [YR2007], 2008 [YR2008], 2009 [YR2009], 2010 [YR2010], 2011 [YR2011], 2012 [YR2012], 2013 [YR2013], 2014 [YR2014], 2015 [YR2015]]\nIndex: [])",
+    "elapsed_seconds": 0.01518723787739873
+  },
+  {
+    "code": "# Check the unique values in the 'Series Name' column\nunique_series_names = df['Series Name'].unique()\nunique_series_names",
+    "output": "['GNI per capita (constant 2015 USdollar)'\n 'Adjusted savings: education expenditure (percentage of GNI)'\n 'Exports of goods and services (annual percentage growth)'\n 'School enrollment, primary (percentage gross)'\n 'School enrollment, secondary (percentage gross)'\n 'Labor force participation rate, total (percentage of total population ages 15+) (modeled ILO estimate)']",
+    "elapsed_seconds": 0.001959660090506077
+  },
+  {
+    "code": "# Correct the series name for GNI per capita\ngdp_series_corrected = 'GNI per capita (constant 2015 USdollar)'\n\n# Extract the relevant columns based on the corrected series name\ngdp_data_corrected = df[df['Series Name'] == gdp_series_corrected]\n\n# Display the first few rows of the corrected GDP data\ngdp_data_corrected.head()",
+    "output": "         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n6  Lower middle income          LMC  ...   1894.302198   1965.288164\n\n[2 rows x 45 columns]",
+    "elapsed_seconds": 0.014250880107283592
+  },
+  {
+    "code": "# Extract the education expenditure data and GDP data for the two country groups\neducation_expenditure_data = df[df['Series Name'] == education_expenditure_series]\ngdp_data_corrected = df[df['Series Name'] == gdp_series_corrected]\n\n# Filter the data for the two country groups\nsub_saharan_africa_education = education_expenditure_data[education_expenditure_data['Country Group'] == 'Sub-Saharan Africa']\nlower_middle_income_education = education_expenditure_data[education_expenditure_data['Country Group'] == 'Lower middle income']\n\nsub_saharan_africa_gdp = gdp_data_corrected[gdp_data_corrected['Country Group'] == 'Sub-Saharan Africa']\nlower_middle_income_gdp = gdp_data_corrected[gdp_data_corrected['Country Group'] == 'Lower middle income']\n\n# Display the first few rows of the filtered data\nsub_saharan_africa_education.head(), sub_saharan_africa_gdp.head(), lower_middle_income_education.head(), lower_middle_income_gdp.head()",
+    "output": "(        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n\n[1 rows x 45 columns],         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n\n[1 rows x 45 columns],          Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n7  Lower middle income          LMC  ...      3.106096      3.060663\n\n[1 rows x 45 columns],          Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n6  Lower middle income          LMC  ...   1894.302198   1965.288164\n\n[1 rows x 45 columns])",
+    "elapsed_seconds": 0.04887573979794979
+  },
+  {
+    "code": "# Extract the education expenditure and GDP values for Sub-Saharan Africa\nsub_saharan_africa_education_value = sub_saharan_africa_education.iloc[0][1975:2016].values\nsub_saharan_africa_gdp_value = sub_saharan_africa_gdp.iloc[0][1975:2016].values\n\n# Extract the education expenditure and GDP values for Lower Middle Income Countries\nlower_middle_income_education_value = lower_middle_income_education.iloc[0][1975:2016].values\nlower_middle_income_gdp_value = lower_middle_income_gdp.iloc[0][1975:2016].values\n\n# Perform correlation analysis for Sub-Saharan Africa\nsub_saharan_africa_correlation = np.corrcoef(sub_saharan_africa_education_value, sub_saharan_africa_gdp_value)[0, 1]\n\n# Perform correlation analysis for Lower Middle Income Countries\nlower_middle_income_correlation = np.corrcoef(lower_middle_income_education_value, lower_middle_income_gdp_value)[0, 1]\n\nsub_saharan_africa_correlation, lower_middle_income_correlation",
+    "output": "NameError: name 'np' is not defined",
+    "elapsed_seconds": 0.0027806758880615234
+  },
+  {
+    "code": "import numpy as np\n\n# Extract the education expenditure and GDP values for Sub-Saharan Africa\nsub_saharan_africa_education_value = sub_saharan_africa_education.iloc[0][1975:2016].values\nsub_saharan_africa_gdp_value = sub_saharan_africa_gdp.iloc[0][1975:2016].values\n\n# Extract the education expenditure and GDP values for Lower Middle Income Countries\nlower_middle_income_education_value = lower_middle_income_education.iloc[0][1975:2016].values\nlower_middle_income_gdp_value = lower_middle_income_gdp.iloc[0][1975:2016].values\n\n# Perform correlation analysis for Sub-Saharan Africa\nsub_saharan_africa_correlation = np.corrcoef(sub_saharan_africa_education_value, sub_saharan_africa_gdp_value)[0, 1]\n\n# Perform correlation analysis for Lower Middle Income Countries\nlower_middle_income_correlation = np.corrcoef(lower_middle_income_education_value, lower_middle_income_gdp_value)[0, 1]\n\nsub_saharan_africa_correlation, lower_middle_income_correlation",
+    "output": "/opt/site/numpy/lib/function_base.py:520: RuntimeWarning: Mean of empty slice.\n  avg = a.mean(axis, **keepdims_kw)\nZeroDivisionError: division by zero",
+    "elapsed_seconds": 0.0028663305565714836
+  },
+  {
+    "code": "# Check for missing values in the education expenditure and GDP data\nsub_saharan_africa_education_value_missing = np.isnan(sub_saharan_africa_education_value).sum()\nsub_saharan_africa_gdp_value_missing = np.isnan(sub_saharan_africa_gdp_value).sum()\n\nlower_middle_income_education_value_missing = np.isnan(lower_middle_income_education_value).sum()\nlower_middle_income_gdp_value_missing = np.isnan(lower_middle_income_gdp_value).sum()\n\nsub_saharan_africa_education_value_missing, sub_saharan_africa_gdp_value_missing, lower_middle_income_education_value_missing, lower_middle_income_gdp_value_missing",
+    "output": "TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''",
+    "elapsed_seconds": 0.001878736075013876
+  },
+  {
+    "code": "# Check the data types of the education expenditure and GDP values\ntype(sub_saharan_africa_education_value[0]), type(sub_saharan_africa_gdp_value[0]), type(lower_middle_income_education_value[0]), type(lower_middle_income_gdp_value[0])",
+    "output": "IndexError: index 0 is out of bounds for axis 0 with size 0",
+    "elapsed_seconds": 0.0017558149993419647
+  },
+  {
+    "code": "# Re-examine the data for Sub-Saharan Africa and Lower Middle Income Countries\nsub_saharan_africa_education.head(), sub_saharan_africa_gdp.head(), lower_middle_income_education.head(), lower_middle_income_gdp.head()",
+    "output": "(        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n\n[1 rows x 45 columns],         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n\n[1 rows x 45 columns],          Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n7  Lower middle income          LMC  ...      3.106096      3.060663\n\n[1 rows x 45 columns],          Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n6  Lower middle income          LMC  ...   1894.302198   1965.288164\n\n[1 rows x 45 columns])",
+    "elapsed_seconds": 0.04783998616039753
+  },
+  {
+    "code": "# Extract the education expenditure and GDP values for Sub-Saharan Africa\nsub_saharan_africa_education_value = sub_saharan_africa_education.iloc[0][1975:2016].values\nsub_saharan_africa_gdp_value = sub_saharan_africa_gdp.iloc[0][1975:2016].values\n\n# Extract the education expenditure and GDP values for Lower Middle Income Countries\nlower_middle_income_education_value = lower_middle_income_education.iloc[0][1975:2016].values\nlower_middle_income_gdp_value = lower_middle_income_gdp.iloc[0][1975:2016].values\n\n# Perform correlation analysis for Sub-Saharan Africa\nsub_saharan_africa_correlation = np.corrcoef(sub_saharan_africa_education_value, sub_saharan_africa_gdp_value)[0, 1]\n\n# Perform correlation analysis for Lower Middle Income Countries\nlower_middle_income_correlation = np.corrcoef(lower_middle_income_education_value, lower_middle_income_gdp_value)[0, 1]\n\nsub_saharan_africa_correlation, lower_middle_income_correlation",
+    "output": "/opt/site/numpy/lib/function_base.py:520: RuntimeWarning: Mean of empty slice.\n  avg = a.mean(axis, **keepdims_kw)\nZeroDivisionError: division by zero",
+    "elapsed_seconds": 0.002285219728946686
+  },
+  {
+    "code": "# Re-examine the data for Sub-Saharan Africa and Lower Middle Income Countries\nsub_saharan_africa_education.head(), sub_saharan_africa_gdp.head(), lower_middle_income_education.head(), lower_middle_income_gdp.head()",
+    "output": "(        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n\n[1 rows x 45 columns],         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n\n[1 rows x 45 columns],          Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n7  Lower middle income          LMC  ...      3.106096      3.060663\n\n[1 rows x 45 columns],          Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n6  Lower middle income          LMC  ...   1894.302198   1965.288164\n\n[1 rows x 45 columns])",
+    "elapsed_seconds": 0.04732269374653697
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.13900253595784307
+  },
+  {
+    "code": "# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_data = capital_df[(capital_df['BCE'] >= 1100) & (capital_df['BCE'] <= 500)]\n\n# Check if the data covers the Younger Bronze Age\nyoung_bronze_age_data.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.002743388991802931
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ntime_series_df.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.021837878972291946
+  },
+  {
+    "code": "# Load the pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv dataset\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\npollen_df.head()",
+    "output": "   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns]",
+    "elapsed_seconds": 0.016758021898567677
+  },
+  {
+    "code": "# Check the range of CE values in the pollen dataset\npollen_ce_range = pollen_df['CE'].min(), pollen_df['CE'].max()\npollen_ce_range",
+    "output": "(-4785, -702)",
+    "elapsed_seconds": 0.0019154339097440243
+  },
+  {
+    "code": "# Filter the data for the Younger Bronze Age (1100-500 BCE)\nyoung_bronze_age_pollen_data = pollen_df[(pollen_df['CE'] >= -1100) & (pollen_df['CE'] <= -500)]\n\n# Check if the data covers the Younger Bronze Age\nyoung_bronze_age_pollen_data.head()",
+    "output": "   Unnamed: 0  calBP   CE  ...  SMOOTH_MEAN_150y  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0        -702   2652 -702  ...  5,37224840271418  4,89808375665465  4,54560986290257\n1        -703   2653 -703  ...  5,35503994552403  4,88127173943994  4,53705419177113\n2        -704   2654 -704  ...  5,33745164061893  4,86452437482883  4,52893186931685\n3        -705   2655 -705  ...  5,31949809752639  4,84783977973579  4,52122484408036\n4        -706   2656 -706  ...    5,301193186051  4,83121614350165  4,51392345798681\n\n[5 rows x 13 columns]",
+    "elapsed_seconds": 0.006632460746914148
+  },
+  {
+    "code": "# Check the range of CE values in the filtered Younger Bronze Age data\nyoung_bronze_age_pollen_data['CE'].min(), young_bronze_age_pollen_data['CE'].max()",
+    "output": "(-1100, -702)",
+    "elapsed_seconds": 0.0017850492149591446
+  },
+  {
+    "code": "# Filter the data for the beginning of the Younger Bronze Age (1100 BCE)\nbeginning_young_bronze_age_data = young_bronze_age_pollen_data[young_bronze_age_pollen_data['CE'] == -1100]\n\n# Filter the data for the subsequent time horizons (1000-500 BCE)\nsubsequent_young_bronze_age_data = young_bronze_age_pollen_data[young_bronze_age_pollen_data['CE'] > -1100]\n\n# Check the data for the beginning and subsequent periods\nbeginning_young_bronze_age_data, subsequent_young_bronze_age_data",
+    "output": "(     Unnamed: 0  calBP  ...  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n398       -1100   3050  ...  1,45187455278246  1,58959442231146\n\n[1 rows x 13 columns],      Unnamed: 0  calBP  ...  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0          -702   2652  ...  4,89808375665465  4,54560986290257\n1          -703   2653  ...  4,88127173943994  4,53705419177113\n2          -704   2654  ...  4,86452437482883  4,52893186931685\n3          -705   2655  ...  4,84783977973579  4,52122484408036\n4          -706   2656  ...  4,83121614350165  4,51392345798681\n..          ...    ...  ...               ...               ...\n393       -1095   3045  ...  1,44136362281261  1,59400945098797\n394       -1096   3046  ...  1,44319078009934  1,59260309237115\n395       -1097   3047  ...   1,4451554517397  1,59145841019509\n396       -1098   3048  ...  1,44725763773367  1,59057540445979\n397       -1099   3049  ...  1,44949733808125  1,58995407516524\n\n[398 rows x 13 columns])",
+    "elapsed_seconds": 0.01125369779765606
+  },
+  {
+    "code": "# Check the range of CE values in the filtered Younger Bronze Age data\nyoung_bronze_age_pollen_data['CE'].min(), young_bronze_age_pollen_data['CE'].max()",
+    "output": "(-1100, -702)",
+    "elapsed_seconds": 0.0014800960198044777
+  },
+  {
+    "code": "# Filter the data for the beginning of the Younger Bronze Age (1100 BCE)\nbeginning_young_bronze_age_data = young_bronze_age_pollen_data[young_bronze_age_pollen_data['CE'] == -1100]\n\n# Filter the data for the subsequent time horizons (1000-500 BCE)\nsubsequent_young_bronze_age_data = young_bronze_age_pollen_data[young_bronze_age_pollen_data['CE'] > -1100]\n\n# Check the data for the beginning and subsequent periods\nbeginning_young_bronze_age_data, subsequent_young_bronze_age_data",
+    "output": "(     Unnamed: 0  calBP  ...  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n398       -1100   3050  ...  1,45187455278246  1,58959442231146\n\n[1 rows x 13 columns],      Unnamed: 0  calBP  ...  SMOOTH_MEAN_200y  SMOOTH_MEAN_250y\n0          -702   2652  ...  4,89808375665465  4,54560986290257\n1          -703   2653  ...  4,88127173943994  4,53705419177113\n2          -704   2654  ...  4,86452437482883  4,52893186931685\n3          -705   2655  ...  4,84783977973579  4,52122484408036\n4          -706   2656  ...  4,83121614350165  4,51392345798681\n..          ...    ...  ...               ...               ...\n393       -1095   3045  ...  1,44136362281261  1,59400945098797\n394       -1096   3046  ...  1,44319078009934  1,59260309237115\n395       -1097   3047  ...   1,4451554517397  1,59145841019509\n396       -1098   3048  ...  1,44725763773367  1,59057540445979\n397       -1099   3049  ...  1,44949733808125  1,58995407516524\n\n[398 rows x 13 columns])",
+    "elapsed_seconds": 0.011043051723390818
+  }
+]

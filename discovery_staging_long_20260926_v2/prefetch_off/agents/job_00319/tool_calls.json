@@ -1,0 +1,42 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\ndf_offshoring = pd.read_stata('/data/offshoring_iv_mar2.dta')\ndf_immi = pd.read_stata('/data/immi_popimputed_00_07.dta')\n\n# Display the first few rows of each dataset\ndf_offshoring.head(), df_immi.head()",
+    "output": "(   year  beaind  iv_offshoring_1\n0  2000       1         0.058817\n1  2000       3         0.129595\n2  2000       4         0.059499\n3  2000       5         0.031044\n4  2000       6         0.044939,      year  beaind  share_immi_imputed  empl_immi_imputed\n0  2000.0     1.0            0.077233            10896.0\n1  2000.0     3.0            0.155982            21254.0\n2  2000.0     4.0            0.233880            55918.0\n3  2000.0     5.0            0.100162            12666.0\n4  2000.0     6.0            0.276959           144049.0)",
+    "elapsed_seconds": 0.1369436332024634
+  },
+  {
+    "code": "# Merge the datasets on 'year' and 'beaind'\ndf_merged = pd.merge(df_offshoring, df_immi, on=['year', 'beaind'], how='inner')\n\n# Display the first few rows of the merged dataset\ndf_merged.head()",
+    "output": "   year  beaind  iv_offshoring_1  share_immi_imputed  empl_immi_imputed\n0  2000       1         0.058817            0.077233            10896.0\n1  2000       3         0.129595            0.155982            21254.0\n2  2000       4         0.059499            0.233880            55918.0\n3  2000       5         0.031044            0.100162            12666.0\n4  2000       6         0.044939            0.276959           144049.0",
+    "elapsed_seconds": 0.005512775853276253
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Prepare the data for regression\nX = df_merged[['iv_offshoring_1']].values.reshape(-1, 1)  # Predictor\ny_share = df_merged['share_immi_imputed'].values  # Response for share of immigrant employment\ny_empl = df_merged['empl_immi_imputed'].values  # Response for level of immigrant employment\n\n# Create a linear regression model for share of immigrant employment\nmodel_share = LinearRegression()\nmodel_share.fit(X, y_share)\n\n# Create a linear regression model for level of immigrant employment\nmodel_empl = LinearRegression()\nmodel_empl.fit(X, y_empl)\n\n# Get the coefficients\ncoefficient_share = model_share.coef_[0]\ncoefficient_empl = model_empl.coef_[0]\n\ncoefficient_share, coefficient_empl",
+    "output": "(-0.0027737056, 8016.0063)",
+    "elapsed_seconds": 0.5654570353217423
+  },
+  {
+    "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\nimport statsmodels.api as sm\n\n# Prepare the data for regression with statsmodels for p-values\nX = sm.add_constant(df_merged[['iv_offshoring_1']])\ny_share = df_merged['share_immi_imputed']\ny_empl = df_merged['empl_immi_imputed']\n\n# Create a linear regression model for share of immigrant employment\nmodel_share = sm.OLS(y_share, X).fit()\nmodel_empl = sm.OLS(y_empl, X).fit()\n\n# Get the coefficients and p-values\ncoefficients_share = model_share.params\np_values_share = model_share.pvalues\n\ncoefficients_empl = model_empl.params\np_values_empl = model_empl.pvalues\n\ncoefficients_share, p_values_share, coefficients_empl, p_values_empl",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.011990375816822052
+  },
+  {
+    "code": "import numpy as np\nfrom scipy.stats import t\n\n# Calculate the p-values for the regression coefficients\n# For the share of immigrant employment\nt_stat_share = coefficient_share / model_share._resid_std * np.sqrt(np.sum((X[:, 1] - np.mean(X[:, 1]))**2) / (len(X) - 2))\np_value_share = 2 * t.sf(np.abs(t_stat_share), len(X) - 2)\n\n# For the level of immigrant employment\nt_stat_empl = coefficient_empl / model_empl._resid_std * np.sqrt(np.sum((X[:, 1] - np.mean(X[:, 1]))**2) / (len(X) - 2))\np_value_empl = 2 * t.sf(np.abs(t_stat_empl), len(X) - 2)\n\np_value_share, p_value_empl",
+    "output": "AttributeError: 'LinearRegression' object has no attribute '_resid_std'",
+    "elapsed_seconds": 0.0018447209149599075
+  },
+  {
+    "code": "import statsmodels.api as sm\n\n# Prepare the data for regression\nX = sm.add_constant(df_merged[['iv_offshoring_1']])\ny_share = df_merged['share_immi_imputed']\ny_empl = df_merged['empl_immi_imputed']\n\n# Create a linear regression model for share of immigrant employment\nmodel_share = sm.OLS(y_share, X).fit()\nmodel_empl = sm.OLS(y_empl, X).fit()\n\n# Get the coefficients and p-values\ncoefficients_share = model_share.params\np_values_share = model_share.pvalues\n\ncoefficients_empl = model_empl.params\np_values_empl = model_empl.pvalues\n\ncoefficients_share, p_values_share, coefficients_empl, p_values_empl",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.002047301735728979
+  },
+  {
+    "code": "import statsmodels.api as sm\n\n# Prepare the data for regression\nX = sm.add_constant(df_merged[['iv_offshoring_1']])\ny_share = df_merged['share_immi_imputed']\ny_empl = df_merged['empl_immi_imputed']\n\n# Create a linear regression model for share of immigrant employment\nmodel_share = sm.OLS(y_share, X).fit()\nmodel_empl = sm.OLS(y_empl, X).fit()\n\n# Get the coefficients and p-values\ncoefficients_share = model_share.params\np_values_share = model_share.pvalues\n\ncoefficients_empl = model_empl.params\np_values_empl = model_empl.pvalues\n\ncoefficients_share, p_values_share, coefficients_empl, p_values_empl",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.002049175091087818
+  },
+  {
+    "code": "import numpy as np\nfrom scipy.stats import t\n\n# Calculate the standard error of the coefficients\nse_share = np.std(df_merged['share_immi_imputed'] - model_share.predict(X)) / np.sqrt(len(df_merged) - 2)\nse_empl = np.std(df_merged['empl_immi_imputed'] - model_empl.predict(X)) / np.sqrt(len(df_merged) - 2)\n\n# Calculate the t-statistics\nt_stat_share = coefficient_share / se_share\nt_stat_empl = coefficient_empl / se_empl\n\n# Calculate the p-values\np_value_share = 2 * t.sf(np.abs(t_stat_share), len(df_merged) - 2)\np_value_empl = 2 * t.sf(np.abs(t_stat_empl), len(df_merged) - 2)\n\np_value_share, p_value_empl",
+    "output": "(0.32057347510872336, 0.005391718815153641)",
+    "elapsed_seconds": 0.0026097185909748077
+  }
+]

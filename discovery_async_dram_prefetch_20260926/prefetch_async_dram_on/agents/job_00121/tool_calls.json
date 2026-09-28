@@ -1,0 +1,87 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/worldbank_education_gdp.csv')\ndf.head()",
+    "output": "        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n2  Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n3  Sub-Saharan Africa          SSF  ...     97.963791     96.974968\n4  Sub-Saharan Africa          SSF  ...     42.847160     43.372971\n\n[5 rows x 45 columns]",
+    "elapsed_seconds": 0.14183561597019434
+  },
+  {
+    "code": "# Identify the relevant columns\neducation_expenditure_col = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_col = 'GNI per capita (constant 2015 US dollar)'\n\n# Filter the dataset to include only the relevant columns\ndf_filtered = df[[education_expenditure_col, gdp_col, 'Country Group']]\n\n# Display the first few rows of the filtered dataset\ndf_filtered.head()",
+    "output": "KeyError: \"['Adjusted savings: education expenditure (percentage of GNI)', 'GNI per capita (constant 2015 US dollar)'] not in index\"",
+    "elapsed_seconds": 0.0016904780641198158
+  },
+  {
+    "code": "# Display the column names of the dataset\ndf.columns.tolist()",
+    "output": "['Country Group', 'Country Code', 'Series Name', 'Series Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]']",
+    "elapsed_seconds": 0.0013351049274206161
+  },
+  {
+    "code": "# Identify the rows where 'Series Name' corresponds to the education expenditure and GNI per capita\neducation_expenditure_row = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\ngdp_row = df[df['Series Name'] == 'GNI per capita (constant 2015 US dollar)']\n\n# Extract the relevant data\neducation_expenditure_data = education_expenditure_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).transpose()\ngdp_data = gdp_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).transpose()\n\n# Reset the index to make the years the column names\neducation_expenditure_data.columns = education_expenditure_data.iloc[0]\neducation_expenditure_data = education_expenditure_data.drop(education_expenditure_data.index[0])\n\ngdp_data.columns = gdp_data.iloc[0]\ngdp_data = gdp_data.drop(gdp_data.index[0])\n\n# Display the first few rows of the extracted data\neducation_expenditure_data.head()",
+    "output": "1975 [YR1975]  4.300055  2.694685\n1976 [YR1976]  4.309288  3.771469\n1977 [YR1977]  4.226369  3.488118\n1978 [YR1978]  4.357860  3.765356\n1979 [YR1979]  4.429893  3.813484\n1980 [YR1980]  4.479610  3.634043",
+    "elapsed_seconds": 0.00492635415866971
+  },
+  {
+    "code": "# Align the education expenditure data with the GNI per capita data\ngdp_data.columns = gdp_data.iloc[0]\ngdp_data = gdp_data.drop(gdp_data.index[0])\n\n# Ensure the years are aligned\neducation_expenditure_data = education_expenditure_data.reset_index()\ngdp_data = gdp_data.reset_index()\n\n# Rename the columns for clarity\neducation_expenditure_data.columns = ['Year', 'SSA_Education_Expenditure', 'LMC_Education_Expenditure']\ngdp_data.columns = ['Year', 'SSA_GNI', 'LMC_GNI']\n\n# Merge the data on the 'Year' column\nmerged_data = pd.merge(education_expenditure_data, gdp_data, on='Year')\n\n# Display the first few rows of the merged data\nmerged_data.head()",
+    "output": "ValueError: Length mismatch: Expected axis has 1 elements, new values have 3 elements",
+    "elapsed_seconds": 0.0026261708699166775
+  },
+  {
+    "code": "# Re-express the data correctly\n# Extract the relevant data for education expenditure and GNI per capita\neducation_expenditure_data = education_expenditure_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).transpose()\ngdp_data = gdp_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).transpose()\n\n# Reset the index to make the years the column names\neducation_expenditure_data.columns = education_expenditure_data.iloc[0]\neducation_expenditure_data = education_expenditure_data.drop(education_expenditure_data.index[0])\n\ngdp_data.columns = gdp_data.iloc[0]\ngdp_data = gdp_data.drop(gdp_data.index[0])\n\n# Reset index for both dataframes\neducation_expenditure_data = education_expenditure_data.reset_index()\ngdp_data = gdp_data.reset_index()\n\n# Rename the columns for clarity\neducation_expenditure_data.columns = ['Year', 'SSA_Education_Expenditure', 'LMC_Education_Expenditure']\ngdp_data.columns = ['Year', 'SSA_GNI', 'LMC_GNI']\n\n# Merge the data on the 'Year' column\nmerged_data = pd.merge(education_expenditure_data, gdp_data, on='Year')\n\n# Display the first few rows of the merged data\nmerged_data.head()",
+    "output": "ValueError: Length mismatch: Expected axis has 1 elements, new values have 3 elements",
+    "elapsed_seconds": 0.002755348104983568
+  },
+  {
+    "code": "# Inspect the education expenditure data after transposing\neducation_expenditure_data.head()",
+    "output": "            Year  SSA_Education_Expenditure  LMC_Education_Expenditure\n0  1976 [YR1976]                   4.309288                   3.771469\n1  1977 [YR1977]                   4.226369                   3.488118\n2  1978 [YR1978]                   4.357860                   3.765356\n3  1979 [YR1979]                   4.429893                   3.813484\n4  1980 [YR1980]                   4.479610                   3.634043",
+    "elapsed_seconds": 0.0034402268938720226
+  },
+  {
+    "code": "# Inspect the GNI data after transposing\ngdp_data.head()",
+    "output": "1975 [YR1975]          index\n0              1976 [YR1976]\n1              1977 [YR1977]\n2              1978 [YR1978]\n3              1979 [YR1979]\n4              1980 [YR1980]",
+    "elapsed_seconds": 0.002677139826118946
+  },
+  {
+    "code": "# Correctly transpose and process the GNI data\ngdp_data = gdp_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).transpose()\ngdp_data.columns = gdp_data.iloc[0]\ngdp_data = gdp_data.drop(gdp_data.index[0])\ngdp_data = gdp_data.reset_index()\n\n# Rename the columns for clarity\ngdp_data.columns = ['Year', 'SSA_GNI', 'LMC_GNI']\n\n# Merge the data on the 'Year' column\nmerged_data = pd.merge(education_expenditure_data, gdp_data, on='Year')\n\n# Display the first few rows of the merged data\nmerged_data.head()",
+    "output": "ValueError: Length mismatch: Expected axis has 1 elements, new values have 3 elements",
+    "elapsed_seconds": 0.0023806910030543804
+  },
+  {
+    "code": "# Inspect the GNI data after transposition\ngdp_data.head()",
+    "output": "1975 [YR1975]          index\n0              1976 [YR1976]\n1              1977 [YR1977]\n2              1978 [YR1978]\n3              1979 [YR1979]\n4              1980 [YR1980]",
+    "elapsed_seconds": 0.0027185198850929737
+  },
+  {
+    "code": "# Correctly transpose and process the GNI data\ngdp_data = gdp_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).transpose()\ngdp_data.columns = gdp_data.iloc[0]\ngdp_data = gdp_data.drop(gdp_data.index[0])\ngdp_data = gdp_data.reset_index()\n\n# Rename the columns for clarity\ngdp_data.columns = ['Year', 'SSA_GNI', 'LMC_GNI']\n\n# Merge the data on the 'Year' column\nmerged_data = pd.merge(education_expenditure_data, gdp_data, on='Year')\n\n# Display the first few rows of the merged data\nmerged_data.head()",
+    "output": "ValueError: Length mismatch: Expected axis has 1 elements, new values have 3 elements",
+    "elapsed_seconds": 0.0025344151072204113
+  },
+  {
+    "code": "# Manually inspect the GNI data\ngdp_row.head()",
+    "output": "Empty DataFrame\nColumns: [Country Group, Country Code, Series Name, Series Code, 1975 [YR1975], 1976 [YR1976], 1977 [YR1977], 1978 [YR1978], 1979 [YR1979], 1980 [YR1980], 1981 [YR1981], 1982 [YR1982], 1983 [YR1983], 1984 [YR1984], 1985 [YR1985], 1986 [YR1986], 1987 [YR1987], 1988 [YR1988], 1989 [YR1989], 1990 [YR1990], 1991 [YR1991], 1992 [YR1992], 1993 [YR1993], 1994 [YR1994], 1995 [YR1995], 1996 [YR1996], 1997 [YR1997], 1998 [YR1998], 1999 [YR1999], 2000 [YR2000], 2001 [YR2001], 2002 [YR2002], 2003 [YR2003], 2004 [YR2004], 2005 [YR2005], 2006 [YR2006], 2007 [YR2007], 2008 [YR2008], 2009 [YR2009], 2010 [YR2010], 2011 [YR2011], 2012 [YR2012], 2013 [YR2013], 2014 [YR2014], 2015 [YR2015]]\nIndex: []",
+    "elapsed_seconds": 0.0019813627004623413
+  },
+  {
+    "code": "# Inspect unique values in the 'Series Name' column\ndf['Series Name'].unique()",
+    "output": "['GNI per capita (constant 2015 USdollar)'\n 'Adjusted savings: education expenditure (percentage of GNI)'\n 'Exports of goods and services (annual percentage growth)'\n 'School enrollment, primary (percentage gross)'\n 'School enrollment, secondary (percentage gross)'\n 'Labor force participation rate, total (percentage of total population ages 15+) (modeled ILO estimate)']",
+    "elapsed_seconds": 0.0015161610208451748
+  },
+  {
+    "code": "# Correct the name of the GNI per capita indicator\ngdp_row = df[df['Series Name'] == 'GNI per capita (constant 2015 USdollar)']\n\n# Extract the relevant data\ngdp_data = gdp_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).transpose()\ngdp_data.columns = gdp_data.iloc[0]\ngdp_data = gdp_data.drop(gdp_data.index[0])\ngdp_data = gdp_data.reset_index()\n\n# Rename the columns for clarity\ngdp_data.columns = ['Year', 'SSA_GNI', 'LMC_GNI']\n\n# Merge the data on the 'Year' column\nmerged_data = pd.merge(education_expenditure_data, gdp_data, on='Year')\n\n# Display the first few rows of the merged data\nmerged_data.head()",
+    "output": "            Year  SSA_Education_Expenditure  ...  SSA_GNI     LMC_GNI\n0  1976 [YR1976]                   4.309288  ...      NaN  934.500597\n1  1977 [YR1977]                   4.226369  ...      NaN  939.069381\n2  1978 [YR1978]                   4.357860  ...      NaN  919.155717\n3  1979 [YR1979]                   4.429893  ...      NaN  878.047381\n4  1980 [YR1980]                   4.479610  ...      NaN  840.490364\n\n[5 rows x 5 columns]",
+    "elapsed_seconds": 0.00626722164452076
+  },
+  {
+    "code": "# Drop rows with NaN values in the 'SSA_GNI' column\nmerged_data = merged_data.dropna(subset=['SSA_GNI'])\n\n# Display the first few rows of the cleaned data\nmerged_data.head()",
+    "output": "             Year  SSA_Education_Expenditure  ...      SSA_GNI      LMC_GNI\n35  2011 [YR2011]                   3.650844  ...  1555.253067  1726.782904\n36  2012 [YR2012]                   3.633342  ...  1556.395539  1768.708890\n37  2013 [YR2013]                   3.377043  ...  1578.260044  1821.097219\n38  2014 [YR2014]                   3.254963  ...  1620.904978  1894.302198\n39  2015 [YR2015]                   3.153823  ...  1634.258291  1965.288164\n\n[5 rows x 5 columns]",
+    "elapsed_seconds": 0.005048435181379318
+  },
+  {
+    "code": "# Extract the LMC data for education expenditure and GNI\nlmc_data = merged_data[['Year', 'LMC_Education_Expenditure', 'LMC_GNI']]\n\n# Drop rows with NaN values in the 'LMC_Education_Expenditure' or 'LMC_GNI' columns\nlmc_data = lmc_data.dropna(subset=['LMC_Education_Expenditure', 'LMC_GNI'])\n\n# Display the first few rows of the cleaned LMC data\nlmc_data.head()",
+    "output": "             Year  LMC_Education_Expenditure      LMC_GNI\n35  2011 [YR2011]                   3.227041  1726.782904\n36  2012 [YR2012]                   3.219501  1768.708890\n37  2013 [YR2013]                   3.207516  1821.097219\n38  2014 [YR2014]                   3.106096  1894.302198\n39  2015 [YR2015]                   3.060663  1965.288164",
+    "elapsed_seconds": 0.0039882296696305275
+  },
+  {
+    "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Calculate the correlation coefficient\ncorrelation = lmc_data['LMC_Education_Expenditure'].corr(lmc_data['LMC_GNI'])\ncorrelation\n\n# Plot the relationship\nsns.scatterplot(x='LMC_Education_Expenditure', y='LMC_GNI', data=lmc_data)\nplt.title('Relationship between Education Expenditure and GNI in LMC')\nplt.xlabel('Education Expenditure (percentage of GNI)')\nplt.ylabel('GNI per capita (constant 2015 US$)')\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.8702643029391766
+  }
+]

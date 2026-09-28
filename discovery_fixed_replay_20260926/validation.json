@@ -1,0 +1,69 @@
+{
+  "c04_off": {
+    "input_sequence_equal": true,
+    "started_empty": true,
+    "native_maps": [
+      "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+      "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+      "/opt/ofi-cuda/lib64/libfabric.so.1.25.0"
+    ]
+  },
+  "c04_on": {
+    "input_sequence_equal": true,
+    "started_empty": true,
+    "native_maps": [
+      "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+      "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+      "/opt/ofi-cuda/lib64/libfabric.so.1.25.0"
+    ]
+  },
+  "c08_off": {
+    "input_sequence_equal": true,
+    "started_empty": true,
+    "native_maps": [
+      "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+      "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+      "/opt/ofi-cuda/lib64/libfabric.so.1.25.0"
+    ]
+  },
+  "c08_on": {
+    "input_sequence_equal": true,
+    "started_empty": true,
+    "native_maps": [
+      "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+      "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+      "/opt/ofi-cuda/lib64/libfabric.so.1.25.0"
+    ]
+  },
+  "c16_off": {
+    "input_sequence_equal": true,
+    "started_empty": true,
+    "native_maps": [
+      "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+      "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+      "/opt/ofi-cuda/lib64/libfabric.so.1.25.0"
+    ]
+  },
+  "c16_on": {
+    "input_sequence_equal": true,
+    "started_empty": true,
+    "native_maps": [
+      "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+      "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+      "/opt/ofi-cuda/lib64/libfabric.so.1.25.0"
+    ]
+  },
+  "archive_hash_mismatches": [],
+  "current_hash_mismatches": [
+    "analyze_discovery_staging.py",
+    "report_fixed_replay.py"
+  ],
+  "current_measurement_hash_mismatches": [],
+  "postprocessing_source_sha256": {
+    "report_fixed_replay.py": "8fcec4f00886918d686479602a9b9fb238af31e73ab147ad5fafa2441dba20e2",
+    "analyze_discovery_staging.py": "f42dd0ff99d45e6b2e5da37d5c8670056df734ec4a9e64004e6e5bdcac36b81b"
+  },
+  "postprocessing_note": "Report generator was extended after measurement started to distinguish backend store allocation failures from DAOS read failures; measurement code unchanged.",
+  "requests_hash_matches": true,
+  "native_maps_equal": true
+}

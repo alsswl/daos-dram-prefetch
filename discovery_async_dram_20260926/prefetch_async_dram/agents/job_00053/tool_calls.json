@@ -1,0 +1,127 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.13908216916024685
+  },
+  {
+    "code": "# Check if the dataset contains any principal component values\ncapital_df.columns",
+    "output": "Index(['BCE', 'group', 'color', 'ZAxtSchwert', 'ZDolch', 'Zhausgr', 'ZCU_AU',\n       'Zamber', 'ZMonument', 'ZHort', 'ZSichel', 'ZBeil', 'ZMW', 'ZKeform',\n       'Zkeverz'],\n      dtype='object')",
+    "elapsed_seconds": 0.0016751941293478012
+  },
+  {
+    "code": "# Drop the 'group' and 'color' columns\ncapital_df = capital_df.drop(columns=['group', 'color'])\ncapital_df.head()",
+    "output": "    BCE ZAxtSchwert ZDolch Zhausgr  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300       -0,44  -0,58   -1,35  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200       -0,44  -0,58   -1,35  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100       -0,44  -0,58   -1,35  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000       -0,44  -0,58   -1,35  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900       -0,44  -0,58   -1,35  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 13 columns]",
+    "elapsed_seconds": 0.00691694300621748
+  },
+  {
+    "code": "from sklearn.decomposition import PCA\nimport numpy as np\n\n# Prepare the data for PCA\nX = capital_df.drop(columns=['BCE']).values\n\n# Perform PCA\npca = PCA(n_components=1)\npca.fit(X)\ncapital_df['PC1'] = pca.transform(X)[:, 0]\n\n# Display the first few rows of the dataset with the new 'PC1' column\ncapital_df.head()",
+    "output": "ValueError: could not convert string to float: '-0,44'",
+    "elapsed_seconds": 0.5745504330843687
+  },
+  {
+    "code": "# Convert all columns to numeric values\ncapital_df = capital_df.apply(pd.to_numeric, errors='coerce')\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Display the first few rows of the dataset with the new 'PC1' column\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.003606810700148344
+  },
+  {
+    "code": "# Inspect the first few rows of the dataset to understand the data format\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0019325320608913898
+  },
+  {
+    "code": "import os\n\n# Check if the file exists at the specified path\nfile_path = '/data/capital.csv'\nos.path.exists(file_path)",
+    "output": "True",
+    "elapsed_seconds": 0.0012810267508029938
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset again\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.00798493716865778
+  },
+  {
+    "code": "# Replace commas with periods in the dataset\ncapital_df = capital_df.replace(',', '.', regex=True)\n\n# Convert all columns to numeric values\ncapital_df = capital_df.apply(pd.to_numeric, errors='coerce')\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Display the first few rows of the dataset\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.004318442661315203
+  },
+  {
+    "code": "# Inspect the first few rows of the dataset to understand the data format\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0017688493244349957
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the capital dataset again\ncapital_df = pd.read_csv('/data/capital.csv')\ncapital_df.head()",
+    "output": "    BCE group       color ZAxtSchwert  ...  ZBeil                ZMW ZKeform Zkeverz\n0  4300    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n1  4200    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n2  4100    EN  blueviolet       -0,44  ...  -1,14  -3,13448793268026   -1,13   -1,92\n3  4000    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,23   -0,11\n4  3900    EN  blueviolet       -0,44  ...   0,37  0,439715131684893    1,02   -0,26\n\n[5 rows x 15 columns]",
+    "elapsed_seconds": 0.008050136733800173
+  },
+  {
+    "code": "# Replace commas with periods in the dataset\ncapital_df = capital_df.replace(',', '.', regex=True)\n\n# Convert all columns to numeric values\ncapital_df = capital_df.apply(pd.to_numeric, errors='coerce')\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Display the first few rows of the dataset\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0038565280847251415
+  },
+  {
+    "code": "# Inspect the first few rows of the dataset to understand the data format\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0015158173628151417
+  },
+  {
+    "code": "import pandas as pd\n\n# Read the file as a string to inspect its contents\nwith open('/data/capital.csv', 'r') as file:\n    content = file.read()\ncontent[:500]  # Display the first 500 characters of the file",
+    "output": "BCE,group,color,ZAxtSchwert,ZDolch,Zhausgr,ZCU_AU,Zamber,ZMonument,ZHort,ZSichel,ZBeil,ZMW,ZKeform,Zkeverz\n4300,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\n4200,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\n4100,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-",
+    "elapsed_seconds": 0.001407854724675417
+  },
+  {
+    "code": "# Replace commas with periods in the numeric values\ncapital_df = capital_df.replace({'ZAxtSchwert': ',', '.', 'ZDolch': ',', '.', 'Zhausgr': ',', '.', 'ZCU_AU': ',', '.', 'Zamber': ',', '.', 'ZMonument': ',', '.', 'ZHort': ',', '.', 'ZSichel': ',', '.', 'ZBeil': ',', '.', 'ZMW': ',', '.', 'ZKeform': ',', '.', 'Zkeverz': ',', '.'})\n\n# Convert all columns to numeric values\ncapital_df = capital_df.apply(pd.to_numeric, errors='coerce')\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Display the first few rows of the dataset\ncapital_df.head()",
+    "output": "SyntaxError: ':' expected after dictionary key (<unknown>, line 2)",
+    "elapsed_seconds": 0.0014322660863399506
+  },
+  {
+    "code": "# Replace commas with periods in the entire dataset\ncapital_df = capital_df.replace(',', '.', regex=True)\n\n# Convert all columns to numeric values\ncapital_df = capital_df.apply(pd.to_numeric, errors='coerce')\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Display the first few rows of the dataset\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0023178402334451675
+  },
+  {
+    "code": "# Inspect the first few rows of the dataset to understand the data format\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0018913778476417065
+  },
+  {
+    "code": "import pandas as pd\n\n# Read the file as a string to inspect its contents\nwith open('/data/capital.csv', 'r') as file:\n    content = file.read()\ncontent[:500]  # Display the first 500 characters of the file",
+    "output": "BCE,group,color,ZAxtSchwert,ZDolch,Zhausgr,ZCU_AU,Zamber,ZMonument,ZHort,ZSichel,ZBeil,ZMW,ZKeform,Zkeverz\n4300,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\n4200,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\n4100,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-",
+    "elapsed_seconds": 0.0016736951656639576
+  },
+  {
+    "code": "# Replace commas with periods in the entire dataset\ncapital_df = capital_df.replace(',', '.', regex=True)\n\n# Convert all columns to numeric values\ncapital_df = capital_df.apply(pd.to_numeric, errors='coerce')\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Display the first few rows of the dataset\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0025331531651318073
+  },
+  {
+    "code": "import pandas as pd\n\n# Read the file as a string to inspect its contents\nwith open('/data/capital.csv', 'r') as file:\n    content = file.read()\ncontent[:500]  # Display the first 500 characters of the file",
+    "output": "BCE,group,color,ZAxtSchwert,ZDolch,Zhausgr,ZCU_AU,Zamber,ZMonument,ZHort,ZSichel,ZBeil,ZMW,ZKeform,Zkeverz\n4300,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\n4200,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\n4100,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-",
+    "elapsed_seconds": 0.0014468850567936897
+  },
+  {
+    "code": "# Replace commas with periods in the entire dataset\ncapital_df = capital_df.replace(',', '.', regex=True)\n\n# Convert all columns to numeric values\ncapital_df = capital_df.apply(pd.to_numeric, errors='coerce')\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Display the first few rows of the dataset\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.002246859949082136
+  },
+  {
+    "code": "import pandas as pd\n\n# Read the file as a string to inspect its contents\nwith open('/data/capital.csv', 'r') as file:\n    content = file.read()\ncontent[:500]  # Display the first 500 characters of the file",
+    "output": "BCE,group,color,ZAxtSchwert,ZDolch,Zhausgr,ZCU_AU,Zamber,ZMonument,ZHort,ZSichel,ZBeil,ZMW,ZKeform,Zkeverz\n4300,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\n4200,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\n4100,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-",
+    "elapsed_seconds": 0.0017854212783277035
+  },
+  {
+    "code": "# Replace commas with periods in the entire dataset\ncapital_df = capital_df.replace(',', '.', regex=True)\n\n# Convert all columns to numeric values\ncapital_df = capital_df.apply(pd.to_numeric, errors='coerce')\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Display the first few rows of the dataset\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.002551260869950056
+  },
+  {
+    "code": "import pandas as pd\n\n# Read the file as a string to inspect its contents\nwith open('/data/capital.csv', 'r') as file:\n    content = file.read()\ncontent[:500]  # Display the first 500 characters of the file",
+    "output": "BCE,group,color,ZAxtSchwert,ZDolch,Zhausgr,ZCU_AU,Zamber,ZMonument,ZHort,ZSichel,ZBeil,ZMW,ZKeform,Zkeverz\n4300,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\n4200,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-1,92\"\n4100,EN,blueviolet,\"-0,44\",\"-0,58\",\"-1,35\",\"-0,6\",\"-1,07\",\"-0,923560777939055\",\"-0,55\",0,\"-1,14\",\"-3,13448793268026\",\"-1,13\",\"-",
+    "elapsed_seconds": 0.0015849308110773563
+  },
+  {
+    "code": "# Replace commas with periods in the entire dataset\ncapital_df = capital_df.replace(',', '.', regex=True)\n\n# Convert all columns to numeric values\ncapital_df = capital_df.apply(pd.to_numeric, errors='coerce')\n\n# Drop rows with missing values\ncapital_df = capital_df.dropna()\n\n# Display the first few rows of the dataset\ncapital_df.head()",
+    "output": "Empty DataFrame\nColumns: [BCE, group, color, ZAxtSchwert, ZDolch, Zhausgr, ZCU_AU, Zamber, ZMonument, ZHort, ZSichel, ZBeil, ZMW, ZKeform, Zkeverz]\nIndex: []",
+    "elapsed_seconds": 0.0021551037207245827
+  }
+]

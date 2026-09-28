@@ -1,0 +1,12 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('body-size-evolution-in-south-american-freshwater-fishes.csv')\ndf.head()",
+    "output": "FileNotFoundError: [Errno 2] No such file or directory: 'body-size-evolution-in-south-american-freshwater-fishes.csv'",
+    "elapsed_seconds": 0.13222768902778625
+  },
+  {
+    "code": "import os\n\n# List all files in the current directory\nos.listdir()",
+    "output": "[]",
+    "elapsed_seconds": 0.0017191977240145206
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/worldbank_education_gdp.csv')\ndf.head()",
+    "output": "        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n2  Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n3  Sub-Saharan Africa          SSF  ...     97.963791     96.974968\n4  Sub-Saharan Africa          SSF  ...     42.847160     43.372971\n\n[5 rows x 45 columns]",
+    "elapsed_seconds": 0.14641634514555335
+  },
+  {
+    "code": "# Identify the relevant columns\neducation_expenditure_col = 'Adjusted savings: education expenditure (percentage of GNI)'\ngdp_col = 'GNI per capita (constant 2015 US dollar)'\n\n# Filter the dataset to include only the relevant columns\ndf_filtered = df[[education_expenditure_col, gdp_col, 'Country Group']]\n\n# Display the first few rows of the filtered dataset\ndf_filtered.head()",
+    "output": "KeyError: \"['Adjusted savings: education expenditure (percentage of GNI)', 'GNI per capita (constant 2015 US dollar)'] not in index\"",
+    "elapsed_seconds": 0.0019741319119930267
+  },
+  {
+    "code": "# Display the column names of the dataset\ndf.columns.tolist()",
+    "output": "['Country Group', 'Country Code', 'Series Name', 'Series Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]']",
+    "elapsed_seconds": 0.001821884885430336
+  },
+  {
+    "code": "# Identify the correct columns for education expenditure and GNI per capita\neducation_expenditure_series = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\ngdp_series = df[df['Series Name'] == 'GNI per capita (constant 2015 US dollar)']\n\n# Extract the relevant columns\neducation_expenditure_col = education_expenditure_series.columns[3]  # Series Code\ngdp_col = gdp_series.columns[3]  # Series Code\n\n# Filter the dataset to include only the relevant columns and 'Country Group'\ndf_filtered = df[[education_expenditure_col, gdp_col, 'Country Group']]\n\n# Display the first few rows of the filtered dataset\ndf_filtered.head()",
+    "output": "         Series Code        Series Code       Country Group\n0     NY.GNP.PCAP.KD     NY.GNP.PCAP.KD  Sub-Saharan Africa\n1  NY.ADJ.AEDU.GN.ZS  NY.ADJ.AEDU.GN.ZS  Sub-Saharan Africa\n2  NE.EXP.GNFS.KD.ZG  NE.EXP.GNFS.KD.ZG  Sub-Saharan Africa\n3        SE.PRM.ENRR        SE.PRM.ENRR  Sub-Saharan Africa\n4        SE.SEC.ENRR        SE.SEC.ENRR  Sub-Saharan Africa",
+    "elapsed_seconds": 0.004586436320096254
+  },
+  {
+    "code": "# Identify the correct rows for education expenditure and GNI per capita\neducation_expenditure_row = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\ngdp_row = df[df['Series Name'] == 'GNI per capita (constant 2015 US dollar)']\n\n# Extract the relevant values for each year\neducation_expenditure_values = education_expenditure_row.iloc[:, 3:].values[0]\ngdp_values = gdp_row.iloc[:, 3:].values[0]\n\n# Create a DataFrame with the relevant values\ndf_education_gdp = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': education_expenditure_values,\n    'GNI per Capita': gdp_values\n})\n\n# Add the 'Country Group' information\ndf_education_gdp['Country Group'] = education_expenditure_row['Country Group'].values[0]\n\n# Display the first few rows of the filtered dataset\ndf_education_gdp.head()",
+    "output": "IndexError: index 0 is out of bounds for axis 0 with size 0",
+    "elapsed_seconds": 0.0027355998754501343
+  },
+  {
+    "code": "# Display the unique 'Series Name' values in the dataset\ndf['Series Name'].unique()",
+    "output": "['GNI per capita (constant 2015 USdollar)'\n 'Adjusted savings: education expenditure (percentage of GNI)'\n 'Exports of goods and services (annual percentage growth)'\n 'School enrollment, primary (percentage gross)'\n 'School enrollment, secondary (percentage gross)'\n 'Labor force participation rate, total (percentage of total population ages 15+) (modeled ILO estimate)']",
+    "elapsed_seconds": 0.001871428918093443
+  },
+  {
+    "code": "# Identify the correct rows for education expenditure and GNI per capita\neducation_expenditure_row = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\ngdp_row = df[df['Series Name'] == 'GNI per capita (constant 2015 USdollar)']\n\n# Extract the relevant values for each year\neducation_expenditure_values = education_expenditure_row.iloc[:, 3:].values[0]\ngdp_values = gdp_row.iloc[:, 3:].values[0]\n\n# Create a DataFrame with the relevant values\ndf_education_gdp = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': education_expenditure_values,\n    'GNI per Capita': gdp_values\n})\n\n# Add the 'Country Group' information\ndf_education_gdp['Country Group'] = education_expenditure_row['Country Group'].values[0]\n\n# Display the first few rows of the filtered dataset\ndf_education_gdp.head()",
+    "output": "            Year Education Expenditure  GNI per Capita       Country Group\n0    Series Code     NY.ADJ.AEDU.GN.ZS  NY.GNP.PCAP.KD  Sub-Saharan Africa\n1  1975 [YR1975]              4.300055             NaN  Sub-Saharan Africa\n2  1976 [YR1976]              4.309288             NaN  Sub-Saharan Africa\n3  1977 [YR1977]              4.226369             NaN  Sub-Saharan Africa\n4  1978 [YR1978]               4.35786             NaN  Sub-Saharan Africa",
+    "elapsed_seconds": 0.004993143025785685
+  },
+  {
+    "code": "# Remove the first row (Series Code) and drop NaN values\ndf_education_gdp = df_education_gdp.drop(0).dropna()\n\n# Convert the 'Year' column to a string for clarity\ndf_education_gdp['Year'] = df_education_gdp['Year'].astype(str)\n\n# Display the first few rows of the filtered dataset\ndf_education_gdp.head()",
+    "output": "             Year Education Expenditure GNI per Capita       Country Group\n37  2011 [YR2011]              3.650844    1555.253067  Sub-Saharan Africa\n38  2012 [YR2012]              3.633342    1556.395539  Sub-Saharan Africa\n39  2013 [YR2013]              3.377043    1578.260044  Sub-Saharan Africa\n40  2014 [YR2014]              3.254963    1620.904978  Sub-Saharan Africa\n41  2015 [YR2015]              3.153823    1634.258291  Sub-Saharan Africa",
+    "elapsed_seconds": 0.004300298634916544
+  },
+  {
+    "code": "import numpy as np\n\n# Calculate the correlation coefficient between education expenditure and GNI per capita\ncorrelation_coefficient = np.corrcoef(df_education_gdp['Education Expenditure'], df_education_gdp['GNI per Capita'])[0, 1]\ncorrelation_coefficient",
+    "output": "AttributeError: 'float' object has no attribute 'shape'",
+    "elapsed_seconds": 0.001930990256369114
+  },
+  {
+    "code": "# Convert the 'Education Expenditure' and 'GNI per Capita' columns to numeric values\ndf_education_gdp['Education Expenditure'] = pd.to_numeric(df_education_gdp['Education Expenditure'], errors='coerce')\ndf_education_gdp['GNI per Capita'] = pd.to_numeric(df_education_gdp['GNI per Capita'], errors='coerce')\n\n# Drop any remaining NaN values\ndf_education_gdp = df_education_gdp.dropna()\n\n# Calculate the correlation coefficient between education expenditure and GNI per capita\ncorrelation_coefficient = np.corrcoef(df_education_gdp['Education Expenditure'], df_education_gdp['GNI per Capita'])[0, 1]\ncorrelation_coefficient",
+    "output": "-0.9664207841515774",
+    "elapsed_seconds": 0.003118931781500578
+  },
+  {
+    "code": "# Identify the correct rows for education expenditure and GNI per capita for LMC\neducation_expenditure_row_lmc = df[df['Series Name'] == 'Adjusted savings: education expenditure (percentage of GNI)']\ngdp_row_lmc = df[df['Series Name'] == 'GNI per capita (constant 2015 USdollar)']\n\n# Extract the relevant values for each year\neducation_expenditure_values_lmc = education_expenditure_row_lmc.iloc[:, 3:].values[0]\ngdp_values_lmc = gdp_row_lmc.iloc[:, 3:].values[0]\n\n# Create a DataFrame with the relevant values for LMC\ndf_education_gdp_lmc = pd.DataFrame({\n    'Year': df.columns[3:],\n    'Education Expenditure': education_expenditure_values_lmc,\n    'GNI per Capita': gdp_values_lmc\n})\n\n# Add the 'Country Group' information for LMC\ndf_education_gdp_lmc['Country Group'] = education_expenditure_row_lmc['Country Group'].values[0]\n\n# Remove the first row (Series Code) and drop NaN values\ndf_education_gdp_lmc = df_education_gdp_lmc.drop(0).dropna()\n\n# Convert the 'Year' column to a string for clarity\ndf_education_gdp_lmc['Year'] = df_education_gdp_lmc['Year'].astype(str)\n\n# Convert the 'Education Expenditure' and 'GNI per Capita' columns to numeric values\ndf_education_gdp_lmc['Education Expenditure'] = pd.to_numeric(df_education_gdp_lmc['Education Expenditure'], errors='coerce')\ndf_education_gdp_lmc['GNI per Capita'] = pd.to_numeric(df_education_gdp_lmc['GNI per Capita'], errors='coerce')\n\n# Drop any remaining NaN values\ndf_education_gdp_lmc = df_education_gdp_lmc.dropna()\n\n# Calculate the correlation coefficient between education expenditure and GNI per capita for LMC\ncorrelation_coefficient_lmc = np.corrcoef(df_education_gdp_lmc['Education Expenditure'], df_education_gdp_lmc['GNI per Capita'])[0, 1]\ncorrelation_coefficient_lmc",
+    "output": "-0.9664207841515774",
+    "elapsed_seconds": 0.004495828878134489
+  }
+]

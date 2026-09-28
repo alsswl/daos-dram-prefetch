@@ -1,0 +1,17 @@
+[
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Filter the dataset to find the number of respondents who indicated that NFRs were not at all considered\nnot_considered = df['Q11_ML_NFRs_Not_Considered'].value_counts()\n\n# Calculate the proportion of respondents who indicated that NFRs were not at all considered\nproportion = not_considered['Not Relevant at All'] / len(df)\n\n# Perform bootstrapping to calculate the 95% confidence interval\nbootstrap_result = bootstrap((df['Q11_ML_NFRs_Not_Considered'],), np.mean, confidence_level=0.95, method='basic')\n\nproportion, bootstrap_result.confidence_interval",
+    "output": "KeyError: 'Not Relevant at All'",
+    "elapsed_seconds": 0.628384763840586
+  },
+  {
+    "code": "import pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Display the unique values in the 'Q11_ML_NFRs_Not_Considered' column\ndf['Q11_ML_NFRs_Not_Considered'].unique()",
+    "output": "['quoted' 'not quoted' '-77']",
+    "elapsed_seconds": 0.017718960996717215
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nfrom scipy.stats import bootstrap\n\n# Load the dataset\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\n\n# Filter the dataset to find the number of respondents who indicated that NFRs were not at all considered\nnot_considered = df['Q11_ML_NFRs_Not_Considered'] == 'not quoted'\n\n# Calculate the proportion of respondents who indicated that NFRs were not at all considered\nproportion = not_considered.sum() / len(df)\n\n# Perform bootstrapping to calculate the 95% confidence interval\nbootstrap_result = bootstrap((not_considered.values,), np.mean, confidence_level=0.95, method='basic')\n\nproportion, bootstrap_result.confidence_interval",
+    "output": "(0.6340579710144928, ConfidenceInterval(low=0.5760869565217392, high=0.6920289855072465))",
+    "elapsed_seconds": 0.058737529907375574
+  }
+]

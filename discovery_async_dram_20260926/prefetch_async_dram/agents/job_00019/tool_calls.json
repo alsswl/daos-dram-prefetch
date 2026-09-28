@@ -1,0 +1,102 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/worldbank_education_gdp.csv')\ndf.head()",
+    "output": "        Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0  Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n1  Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n2  Sub-Saharan Africa          SSF  ...      6.513038     -1.549815\n3  Sub-Saharan Africa          SSF  ...     97.963791     96.974968\n4  Sub-Saharan Africa          SSF  ...     42.847160     43.372971\n\n[5 rows x 45 columns]",
+    "elapsed_seconds": 0.14750700304284692
+  },
+  {
+    "code": "# Identify the columns for education expenditure and per capita GDP\neducation_expenditure_col = [col for col in df.columns if 'education expenditure' in col.lower()][0]\ngdp_col = [col for col in df.columns if 'gni per capita' in col.lower()][0]\n\neducation_expenditure_col, gdp_col",
+    "output": "IndexError: list index out of range",
+    "elapsed_seconds": 0.001450890675187111
+  },
+  {
+    "code": "# Display the column names to identify the correct ones\ndf.columns.tolist()",
+    "output": "['Country Group', 'Country Code', 'Series Name', 'Series Code', '1975 [YR1975]', '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]', '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]', '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]', '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]', '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]', '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]', '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]', '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]', '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]', '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]']",
+    "elapsed_seconds": 0.0011338512413203716
+  },
+  {
+    "code": "# Identify the correct columns using the series codes\neducation_expenditure_col = [col for col in df.columns if 'SE.XPD.TOTL.GD.ZS' in col][0]\ngdp_col = [col for col in df.columns if 'NY.GNP.PCAP.CD' in col][0]\n\neducation_expenditure_col, gdp_col",
+    "output": "IndexError: list index out of range",
+    "elapsed_seconds": 0.0016510430723428726
+  },
+  {
+    "code": "# Filter rows for education expenditure and per capita GDP based on the \"Series Name\" column\neducation_expenditure_row = df[df['Series Name'].str.contains('education expenditure', case=False, na=False)]\ngdp_row = df[df['Series Name'].str.contains('GNI per capita', case=False, na=False)]\n\neducation_expenditure_row, gdp_row",
+    "output": "(         Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n1   Sub-Saharan Africa          SSF  ...      3.254963      3.153823\n7  Lower middle income          LMC  ...      3.106096      3.060663\n\n[2 rows x 45 columns],          Country Group Country Code  ... 2014 [YR2014] 2015 [YR2015]\n0   Sub-Saharan Africa          SSF  ...   1620.904978   1634.258291\n6  Lower middle income          LMC  ...   1894.302198   1965.288164\n\n[2 rows x 45 columns])",
+    "elapsed_seconds": 0.026453522965312004
+  },
+  {
+    "code": "# Extract the relevant columns for education expenditure and GNI per capita\neducation_expenditure_data = education_expenditure_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).set_index('Country Group').T\ngdp_data = gdp_row.drop(columns=['Country Group', 'Country Code', 'Series Name', 'Series Code']).set_index('Country Group').T\n\neducation_expenditure_data, gdp_data",
+    "output": "KeyError: \"None of ['Country Group'] are in the columns\"",
+    "elapsed_seconds": 0.0017939899116754532
+  },
+  {
+    "code": "# Extract the relevant columns for education expenditure and GNI per capita\neducation_expenditure_data = education_expenditure_row.drop(columns=['Country Code', 'Series Name', 'Series Code']).set_index('Country Group').T\ngdp_data = gdp_row.drop(columns=['Country Code', 'Series Name', 'Series Code']).set_index('Country Group').T\n\neducation_expenditure_data, gdp_data",
+    "output": "(Country Group  Sub-Saharan Africa  Lower middle income\n1975 [YR1975]            4.300055             2.694685\n1976 [YR1976]            4.309288             3.771469\n1977 [YR1977]            4.226369             3.488118\n1978 [YR1978]            4.357860             3.765356\n1979 [YR1979]            4.429893             3.813484\n1980 [YR1980]            4.479610             3.634043\n1981 [YR1981]            4.430887             3.640844\n1982 [YR1982]            4.391519             3.686585\n1983 [YR1983]            4.435321             3.508543\n1984 [YR1984]            4.302503             3.210605\n1985 [YR1985]            4.280351             3.252194\n1986 [YR1986]            4.370818             3.408057\n1987 [YR1987]            4.327707             3.514179\n1988 [YR1988]            4.307133             3.268386\n1989 [YR1989]            4.170064             3.558448\n1990 [YR1990]            4.212591             3.564864\n1991 [YR1991]            4.559711             3.623879\n1992 [YR1992]            5.494206             3.730230\n1993 [YR1993]            5.336775             3.758409\n1994 [YR1994]            5.304096             3.721667\n1995 [YR1995]            5.932381             3.763499\n1996 [YR1996]            5.482557             3.683771\n1997 [YR1997]            6.096690             3.668857\n1998 [YR1998]            4.578321             3.753211\n1999 [YR1999]            4.461235             3.873223\n2000 [YR2000]            4.043159             3.741925\n2001 [YR2001]            4.030061             3.675504\n2002 [YR2002]            4.020684             3.641694\n2003 [YR2003]            4.141498             3.577681\n2004 [YR2004]            4.285404             3.475960\n2005 [YR2005]            4.227455             3.524512\n2006 [YR2006]            4.113232             3.519232\n2007 [YR2007]            3.992516             3.510348\n2008 [YR2008]            3.098684             3.265790\n2009 [YR2009]            3.351354             3.259991\n2010 [YR2010]            3.465261             3.289518\n2011 [YR2011]            3.650844             3.227041\n2012 [YR2012]            3.633342             3.219501\n2013 [YR2013]            3.377043             3.207516\n2014 [YR2014]            3.254963             3.106096\n2015 [YR2015]            3.153823             3.060663, Country Group  Sub-Saharan Africa  Lower middle income\n1975 [YR1975]                 NaN           880.766431\n1976 [YR1976]                 NaN           934.500597\n1977 [YR1977]                 NaN           939.069381\n1978 [YR1978]                 NaN           919.155717\n1979 [YR1979]                 NaN           878.047381\n1980 [YR1980]                 NaN           840.490364\n1981 [YR1981]                 NaN           844.236006\n1982 [YR1982]                 NaN           884.584243\n1983 [YR1983]                 NaN           918.655483\n1984 [YR1984]                 NaN           901.842608\n1985 [YR1985]                 NaN           906.061670\n1986 [YR1986]                 NaN           897.090875\n1987 [YR1987]                 NaN           909.936317\n1988 [YR1988]                 NaN           929.569607\n1989 [YR1989]                 NaN           954.112877\n1990 [YR1990]                 NaN           986.856715\n1991 [YR1991]                 NaN          1001.900102\n1992 [YR1992]                 NaN          1007.737394\n1993 [YR1993]                 NaN           994.109899\n1994 [YR1994]                 NaN           991.823353\n1995 [YR1995]                 NaN          1012.349859\n1996 [YR1996]                 NaN          1052.539314\n1997 [YR1997]                 NaN          1066.127258\n1998 [YR1998]                 NaN          1092.515828\n1999 [YR1999]                 NaN          1129.053979\n2000 [YR2000]                 NaN          1157.995847\n2001 [YR2001]                 NaN          1187.052521\n2002 [YR2002]                 NaN          1213.979916\n2003 [YR2003]                 NaN          1269.706182\n2004 [YR2004]                 NaN          1331.801480\n2005 [YR2005]                 NaN          1390.881557\n2006 [YR2006]                 NaN          1460.679779\n2007 [YR2007]                 NaN          1542.179634\n2008 [YR2008]                 NaN          1571.872830\n2009 [YR2009]                 NaN          1611.409495\n2010 [YR2010]                 NaN          1682.274280\n2011 [YR2011]         1555.253067          1726.782904\n2012 [YR2012]         1556.395539          1768.708890\n2013 [YR2013]         1578.260044          1821.097219\n2014 [YR2014]         1620.904978          1894.302198\n2015 [YR2015]         1634.258291          1965.288164)",
+    "elapsed_seconds": 0.006539538037031889
+  },
+  {
+    "code": "import numpy as np\n\n# Calculate the correlation coefficient between education expenditure and GNI per capita\ncorrelation_coefficient = np.corrcoef(education_expenditure_data.values, gdp_data.values)[0, 1]\ncorrelation_coefficient",
+    "output": "1.0",
+    "elapsed_seconds": 0.001680891029536724
+  },
+  {
+    "code": "# Check for any missing values in the education expenditure and GNI per capita data\neducation_expenditure_data.isnull().sum(), gdp_data.isnull().sum()",
+    "output": "(Country Group\nSub-Saharan Africa     0\nLower middle income    0\ndtype: int64, Country Group\nSub-Saharan Africa     36\nLower middle income     0\ndtype: int64)",
+    "elapsed_seconds": 0.0022238800302147865
+  },
+  {
+    "code": "# Drop rows with missing values in the GNI per capita data\ngdp_data_clean = gdp_data.dropna()\n\n# Recalculate the correlation coefficient between education expenditure and GNI per capita\ncorrelation_coefficient_clean = np.corrcoef(education_expenditure_data.values, gdp_data_clean.values)[0, 1]\ncorrelation_coefficient_clean",
+    "output": "1.0",
+    "elapsed_seconds": 0.002013102173805237
+  },
+  {
+    "code": "# Check the first few rows of the education expenditure and GNI per capita data\neducation_expenditure_data.head(), gdp_data.head()",
+    "output": "(Country Group  Sub-Saharan Africa  Lower middle income\n1975 [YR1975]            4.300055             2.694685\n1976 [YR1976]            4.309288             3.771469\n1977 [YR1977]            4.226369             3.488118\n1978 [YR1978]            4.357860             3.765356\n1979 [YR1979]            4.429893             3.813484, Country Group  Sub-Saharan Africa  Lower middle income\n1975 [YR1975]                 NaN           880.766431\n1976 [YR1976]                 NaN           934.500597\n1977 [YR1977]                 NaN           939.069381\n1978 [YR1978]                 NaN           919.155717\n1979 [YR1979]                 NaN           878.047381)",
+    "elapsed_seconds": 0.004083090927451849
+  },
+  {
+    "code": "# Extract data for the \"Lower middle income\" group\neducation_expenditure_lower_middle_income = education_expenditure_data.loc[:, 'Lower middle income']\ngdp_lower_middle_income = gdp_data_clean.loc[:, 'Lower middle income']\n\n# Calculate the correlation coefficient for the \"Lower middle income\" group\ncorrelation_coefficient_lower_middle_income = np.corrcoef(education_expenditure_lower_middle_income.values, gdp_lower_middle_income.values)[0, 1]\ncorrelation_coefficient_lower_middle_income",
+    "output": "ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 41 and the array at index 1 has size 5",
+    "elapsed_seconds": 0.0013873903080821037
+  },
+  {
+    "code": "# Check the number of observations for education expenditure and GNI per capita data\neducation_expenditure_lower_middle_income.shape, gdp_lower_middle_income.shape",
+    "output": "((41,), (5,))",
+    "elapsed_seconds": 0.0011563971638679504
+  },
+  {
+    "code": "# Ensure that the data for the \"Lower middle income\" group has the same number of observations for both variables\ngdp_lower_middle_income = gdp_data_clean.loc[:, 'Lower middle income'].reindex(education_expenditure_lower_middle_income.index)\n\n# Calculate the correlation coefficient for the \"Lower middle income\" group\ncorrelation_coefficient_lower_middle_income = np.corrcoef(education_expenditure_lower_middle_income.values, gdp_lower_middle_income.values)[0, 1]\ncorrelation_coefficient_lower_middle_income",
+    "output": "nan",
+    "elapsed_seconds": 0.0018480322323739529
+  },
+  {
+    "code": "# Check for missing values in the \"Lower middle income\" group for both education expenditure and GNI per capita\neducation_expenditure_lower_middle_income.isnull().sum(), gdp_lower_middle_income.isnull().sum()",
+    "output": "(0, 36)",
+    "elapsed_seconds": 0.0012929970398545265
+  },
+  {
+    "code": "# Drop rows with missing values in the GNI per capita data for the \"Lower middle income\" group\ngdp_lower_middle_income_clean = gdp_lower_middle_income.dropna()\n\n# Calculate the correlation coefficient for the \"Lower middle income\" group\ncorrelation_coefficient_lower_middle_income_clean = np.corrcoef(education_expenditure_lower_middle_income.values, gdp_lower_middle_income_clean.values)[0, 1]\ncorrelation_coefficient_lower_middle_income_clean",
+    "output": "ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 41 and the array at index 1 has size 5",
+    "elapsed_seconds": 0.00161734689027071
+  },
+  {
+    "code": "# Ensure that the data for both variables has the same number of observations\neducation_expenditure_lower_middle_income_clean = education_expenditure_lower_middle_income.dropna()\ngdp_lower_middle_income_clean = gdp_lower_middle_income.dropna()\n\n# Calculate the correlation coefficient for the \"Lower middle income\" group\ncorrelation_coefficient_lower_middle_income_clean = np.corrcoef(education_expenditure_lower_middle_income_clean.values, gdp_lower_middle_income_clean.values)[0, 1]\ncorrelation_coefficient_lower_middle_income_clean",
+    "output": "ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 41 and the array at index 1 has size 5",
+    "elapsed_seconds": 0.0019228900782763958
+  },
+  {
+    "code": "# Extract data for the \"Sub-Saharan Africa\" group\neducation_expenditure_sub_saharan_africa = education_expenditure_data.loc[:, 'Sub-Saharan Africa']\ngdp_sub_saharan_africa = gdp_data_clean.loc[:, 'Sub-Saharan Africa']\n\n# Calculate the correlation coefficient for the \"Sub-Saharan Africa\" group\ncorrelation_coefficient_sub_saharan_africa = np.corrcoef(education_expenditure_sub_saharan_africa.values, gdp_sub_saharan_africa.values)[0, 1]\ncorrelation_coefficient_sub_saharan_africa",
+    "output": "ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 41 and the array at index 1 has size 5",
+    "elapsed_seconds": 0.0017085219733417034
+  },
+  {
+    "code": "# Ensure that the data for both variables has the same number of observations\neducation_expenditure_sub_saharan_africa_clean = education_expenditure_sub_saharan_africa.dropna()\ngdp_sub_saharan_africa_clean = gdp_sub_saharan_africa.dropna()\n\n# Calculate the correlation coefficient for the \"Sub-Saharan Africa\" group\ncorrelation_coefficient_sub_saharan_africa_clean = np.corrcoef(education_expenditure_sub_saharan_africa_clean.values, gdp_sub_saharan_africa_clean.values)[0, 1]\ncorrelation_coefficient_sub_saharan_africa_clean",
+    "output": "ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 41 and the array at index 1 has size 5",
+    "elapsed_seconds": 0.0014433469623327255
+  },
+  {
+    "code": "# Identify the years where both education expenditure and GNI per capita data are available for \"Sub-Saharan Africa\"\ncommon_years = education_expenditure_sub_saharan_africa.index.intersection(gdp_sub_saharan_africa.index)\n\n# Extract the data for the common years\neducation_expenditure_sub_saharan_africa_common = education_expenditure_sub_saharan_africa.loc[common_years]\ngdp_sub_saharan_africa_common = gdp_sub_saharan_africa.loc[common_years]\n\n# Calculate the correlation coefficient for the common years\ncorrelation_coefficient_sub_saharan_africa_common = np.corrcoef(education_expenditure_sub_saharan_africa_common.values, gdp_sub_saharan_africa_common.values)[0, 1]\ncorrelation_coefficient_sub_saharan_africa_common",
+    "output": "-0.9664207841515774",
+    "elapsed_seconds": 0.0023647346533834934
+  }
+]

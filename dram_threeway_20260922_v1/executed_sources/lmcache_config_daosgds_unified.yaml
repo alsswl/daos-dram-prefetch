@@ -1,0 +1,22 @@
+# Change only daosgds.transport between "dfs" and "object" for an A/B run.
+chunk_size: 2048
+local_cpu: false
+enable_async_loading: true
+
+storage_plugins:
+  - daosgds
+
+extra_config:
+  storage_plugin.daosgds.module_path: "lmcache_daos.gds_backend"
+  storage_plugin.daosgds.class_name: "DaosGdsBackend"
+
+  daosgds.pool: "discospool"
+  daosgds.container: "kvcache"      # healthy POSIX layout, usable by both transports
+  daosgds.transport: "dfs"       # "dfs" or "object"; DAOSGDS_TRANSPORT overrides
+  daosgds.root: "/minji-v2"         # DFS key namespace
+  daosgds.object_namespace: "minji-v2:" # object dkey namespace
+  daosgds.object_library: "/root/discos_minji/libdaosgdr.so"
+  daosgds.gpu_buffer_gb: 8
+  daosgds.io_workers: 8
+  daosgds.meta_workers: 8
+  daosgds.store: true

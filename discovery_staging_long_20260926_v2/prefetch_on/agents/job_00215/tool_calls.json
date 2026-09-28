@@ -1,0 +1,27 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/nls_bmi_processed.csv')\ndf.head()",
+    "output": "   GENDER  AGE  AGE_2     INCOME  ...  SAMESAVE        BMI  BLACK  HISPANIC\n0  FEMALE   30    900  47.279064  ...         0  25.158946      0         0\n1  FEMALE   30    900  19.000000  ...         0  21.948044      0         0\n2  FEMALE   27    729  16.443000  ...         1  23.674773      0         0\n3  FEMALE   26    676  22.110000  ...         0  17.541486      0         0\n4    MALE   29    841  52.200000  ...         0  25.158946      0         0\n\n[5 rows x 9 columns]",
+    "elapsed_seconds": 0.14332101214677095
+  },
+  {
+    "code": "from sklearn.linear_model import LogisticRegression\nimport numpy as np\n\n# Prepare the data for logistic regression\nX = df[['INCOME']].values.reshape(-1, 1)  # Predictor\ny = df['SAMESAVE'].values  # Response\n\n# Create a logistic regression model\nmodel = LogisticRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0][0]\np_value = model.pvalues[0]\n\ncoefficient, p_value",
+    "output": "AttributeError: 'LogisticRegression' object has no attribute 'pvalues'",
+    "elapsed_seconds": 0.5832150839269161
+  },
+  {
+    "code": "import statsmodels.api as sm\n\n# Prepare the data for logistic regression\nX = df[['INCOME']]  # Predictor\nX = sm.add_constant(X)  # Adding a constant term for the intercept\ny = df['SAMESAVE']  # Response\n\n# Create a logistic regression model\nmodel = sm.Logit(y, X)\nresult = model.fit()\n\n# Get the coefficient and p-value\ncoefficient = result.params['INCOME']\np_value = result.pvalues['INCOME']\n\ncoefficient, p_value",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.012134773191064596
+  },
+  {
+    "code": "import statsmodels.api as sm\nimport pandas as pd\n\n# Load the dataset\ndf = pd.read_csv('/data/nls_bmi_processed.csv')\n\n# Prepare the data for logistic regression\nX = df[['INCOME']]  # Predictor\nX = sm.add_constant(X)  # Adding a constant term for the intercept\ny = df['SAMESAVE']  # Response\n\n# Create a logistic regression model\nmodel = sm.Logit(y, X)\nresult = model.fit()\n\n# Get the coefficient and p-value\ncoefficient = result.params['INCOME']\np_value = result.pvalues['INCOME']\n\ncoefficient, p_value",
+    "output": "ImportError: cannot import name '_lazywhere' from 'scipy._lib._util' (/opt/site/scipy/_lib/_util.py)",
+    "elapsed_seconds": 0.002166322898119688
+  },
+  {
+    "code": "from sklearn.linear_model import LogisticRegression\nimport numpy as np\n\n# Prepare the data for logistic regression\nX = df[['INCOME']].values.reshape(-1, 1)  # Predictor\ny = df['SAMESAVE'].values  # Response\n\n# Create a logistic regression model\nmodel = LogisticRegression()\nmodel.fit(X, y)\n\n# Get the coefficient\ncoefficient = model.coef_[0][0]\n\n# Calculate odds ratio\nodds_ratio = np.exp(coefficient)\n\ncoefficient, odds_ratio",
+    "output": "(-0.005552182360038377, 0.9944632025180559)",
+    "elapsed_seconds": 0.008112496696412563
+  }
+]

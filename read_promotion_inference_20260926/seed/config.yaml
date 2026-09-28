@@ -1,0 +1,22 @@
+chunk_size: 128
+local_cpu: false
+max_local_cpu_size: 8
+enable_async_loading: true
+use_layerwise: false
+save_decode_cache: true
+storage_plugins:
+- daosgds
+extra_config:
+  storage_plugin.daosgds.module_path: lmcache_daos.store_probe_backend
+  storage_plugin.daosgds.class_name: StoreProbeBackend
+  daosgds.pool: discospool
+  daosgds.container: kvcache
+  daosgds.transport: object
+  daosgds.root: /minji-gpu-store
+  daosgds.object_namespace: 'minji-read-promotion-inference-1ab1486aab5d461bae5744ba16050c13:'
+  daosgds.object_library: /root/discos_minji/libdaosgdr.so
+  daosgds.gpu_buffer_gb: 10
+  daosgds.io_workers: 16
+  daosgds.meta_workers: 16
+  daosgds.store: true
+  daosgds.store_path: gpu_direct

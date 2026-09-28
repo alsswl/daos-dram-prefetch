@@ -1,0 +1,127 @@
+[
+  {
+    "code": "import pandas as pd\n\ndf = pd.read_csv('/data/requirements_engineering_for_ML-enabled_systems.csv')\ndf.head()",
+    "output": "   ID  ...                           Origin\n0  31  ...  https://ww2.unipark.de/uc/seml/\n1  34  ...                              -99\n2  36  ...                              -99\n3  57  ...                              -99\n4  46  ...                              -99\n\n[5 rows x 202 columns]",
+    "elapsed_seconds": 0.16431430587545037
+  },
+  {
+    "code": "# Inspect the columns related to documentation formats\ndocumentation_columns = [col for col in df.columns if 'Q10_ML_Documentation' in col]\ndocumentation_columns",
+    "output": "['Q10_ML_Documentation_Not_Documented', 'Q10_ML_Documentation_Vision_Document', 'Q10_ML_Documentation_Requirements_Lists', 'Q10_ML_Documentation_Goal_Models', 'Q10_ML_Documentation_Use_Case_Models', 'Q10_ML_Documentation_Prototypes', 'Q10_ML_Documentation_User_Stories', 'Q10_ML_Documentation_BDD_Scenarios', 'Q10_ML_Documentation_MLCanvas', 'Q10_ML_Documentation_Notebooks', 'Q10_ML_Documentation_Data_Models', 'Q10_ML_Documentation_Others', 'Q10_ML_Documentation_Others_Free']",
+    "elapsed_seconds": 0.0017381170764565468
+  },
+  {
+    "code": "# Count the frequency of each documentation format\ndocumentation_freq = df[documentation_columns].apply(lambda x: x.value_counts()).fillna(0).astype(int)\ndocumentation_freq",
+    "output": "                                                    Q10_ML_Documentation_Not_Documented  ...  Q10_ML_Documentation_Others_Free\n-66                                                                                   0  ...                                82\n-77                                                                                  82  ...                                 0\n-99                                                                                   0  ...                               179\nConfluence docs                                                                       0  ...                                 1\nConfluence pages                                                                      0  ...                                 1\nCreating a  document in Confluence.                                                   0  ...                                 1\nDesign docs                                                                           0  ...                                 1\nDesign documents                                                                      0  ...                                 1\nFormal Documentation in Confluence for Models V...                                    0  ...                                 1\nGoogle Docs shared between stakeholders                                               0  ...                                 1\nJira                                                                                  0  ...                                 1\nMathematical Models                                                                   0  ...                                 1\nMeeting Notes, mostly                                                                 0  ...                                 1\nNotion/ Git hub                                                                       0  ...                                 1\nReporting via Jira & Confluence                                                       0  ...                                 1\nlimited docmentataion                                                                 0  ...                                 1\nnot quoted                                                                          164  ...                                 0\nquoted                                                                               30  ...                                 0\nwiki                                                                                  0  ...                                 1\n\n[19 rows x 13 columns]",
+    "elapsed_seconds": 0.00940995803102851
+  },
+  {
+    "code": "# Determine the most frequently used documentation format\nmost_used_documentation = df[documentation_columns].mode().iloc[0]\nmost_used_documentation",
+    "output": "Q10_ML_Documentation_Not_Documented        not quoted\nQ10_ML_Documentation_Vision_Document       not quoted\nQ10_ML_Documentation_Requirements_Lists    not quoted\nQ10_ML_Documentation_Goal_Models           not quoted\nQ10_ML_Documentation_Use_Case_Models       not quoted\nQ10_ML_Documentation_Prototypes            not quoted\nQ10_ML_Documentation_User_Stories          not quoted\nQ10_ML_Documentation_BDD_Scenarios         not quoted\nQ10_ML_Documentation_MLCanvas              not quoted\nQ10_ML_Documentation_Notebooks             not quoted\nQ10_ML_Documentation_Data_Models           not quoted\nQ10_ML_Documentation_Others                not quoted\nQ10_ML_Documentation_Others_Free                  -99\nName: 0, dtype: object",
+    "elapsed_seconds": 0.0030649839900434017
+  },
+  {
+    "code": "import numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09296189714223146
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09369333880022168
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09260575287044048
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09369032876566052
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.0935261519625783
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09272921783849597
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09246977977454662
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09389182925224304
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09373247297480702
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09305847203359008
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09263314912095666
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09332683589309454
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09714331990107894
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09486598102375865
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09319953573867679
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.0926477387547493
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09264270216226578
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09255803376436234
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09230764955282211
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09260431304574013
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\n\n# Perform bootstrapping to validate the most frequently used documentation format\ndef bootstrap_most_used(df, col, n_bootstrap=1000):\n    bootstrap_results = []\n    for _ in range(n_bootstrap):\n        sample = df[col].sample(frac=1, replace=True)\n        bootstrap_mode = sample.mode().iloc[0]\n        bootstrap_results.append(bootstrap_mode)\n    return pd.Series(bootstrap_results).mode().iloc[0]\n\n# Apply bootstrapping to each documentation column\nbootstrap_results = {}\nfor col in documentation_columns:\n    bootstrap_results[col] = bootstrap_most_used(df, col)\n\nbootstrap_results",
+    "output": "NameError: name 'pd' is not defined",
+    "elapsed_seconds": 0.09240367589518428
+  }
+]

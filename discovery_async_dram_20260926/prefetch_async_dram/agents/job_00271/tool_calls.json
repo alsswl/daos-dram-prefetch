@@ -1,0 +1,22 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ndf_time_series = pd.read_csv('/data/time_series_data.csv')\n\n# Load the capital.csv dataset\ndf_capital = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of the time_series_data.csv dataset\ndf_time_series.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.15532148908823729
+  },
+  {
+    "code": "# Check the 'Depot' column in the time_series_data.csv dataset\ndf_time_series['Depot'].head()",
+    "output": "0   -0.55\n1     NaN\n2     NaN\n3     NaN\n4     NaN\nName: Depot, dtype: float64",
+    "elapsed_seconds": 0.0021704589016735554
+  },
+  {
+    "code": "# Check the 'Depot_inter' column in the time_series_data.csv dataset\ndf_time_series['Depot_inter'].head()",
+    "output": "0   -0.550\n1   -0.549\n2   -0.548\n3   -0.547\n4   -0.546\nName: Depot_inter, dtype: float64",
+    "elapsed_seconds": 0.0021903649903833866
+  },
+  {
+    "code": "# Find the maximum value in the 'Depot_inter' column and its corresponding 'CE' value\nmax_depot_value = df_time_series['Depot_inter'].max()\nmax_depot_row = df_time_series[df_time_series['Depot_inter'] == max_depot_value]\nmax_depot_row[['CE', 'Depot_inter']]",
+    "output": "        CE  Depot_inter\n3000 -1100         3.38\n3001 -1099         3.38\n3002 -1098         3.38\n3003 -1097         3.38\n3004 -1096         3.38\n...    ...          ...\n3096 -1004         3.38\n3097 -1003         3.38\n3098 -1002         3.38\n3099 -1001         3.38\n3100 -1000         3.38\n\n[101 rows x 2 columns]",
+    "elapsed_seconds": 0.004756262991577387
+  }
+]

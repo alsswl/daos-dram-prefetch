@@ -1,0 +1,57 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of the time_series_df to understand its structure\ntime_series_df.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.16225936310365796
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Extract the relevant column for daggers\ndagger_data = time_series_df['Dagger']\n\n# Calculate the rolling mean of the dagger data\nrolling_mean = dagger_data.rolling(window=50).mean()\n\n# Plot the original data and the rolling mean\nplt.figure(figsize=(14, 7))\nplt.plot(time_series_df['CE'], dagger_data, label='Dagger Z values')\nplt.plot(time_series_df['CE'], rolling_mean, label='Rolling mean of Dagger Z values')\nplt.xlabel('CE')\nplt.ylabel('Z values')\nplt.title('Dagger Z values over time')\nplt.legend()\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.3852038951590657
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import ttest_ind\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Extract the relevant column for daggers\ndagger_data = time_series_df['Dagger']\n\n# Calculate the rolling mean of the dagger data\nrolling_mean = dagger_data.rolling(window=50).mean()\n\n# Identify the point in time when the rolling mean starts to increase significantly\n# For this, I will compare the rolling mean before and after a certain point in time\n# Let's assume that the increase starts around CE 0 (the beginning of the Common Era)\n# I will split the data into two parts: before and after CE 0\nbefore_ce_0 = rolling_mean[time_series_df['CE'] < 0]\nafter_ce_0 = rolling_mean[time_series_df['CE'] >= 0]\n\n# Perform a t-test to compare the means of the two groups\nt_stat, p_value = ttest_ind(before_ce_0, after_ce_0)\n\nt_stat, p_value",
+    "output": "(nan, nan)",
+    "elapsed_seconds": 0.48302722396329045
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Extract the relevant column for daggers\ndagger_data = time_series_df['Dagger']\n\n# Calculate the rolling mean of the dagger data\nrolling_mean = dagger_data.rolling(window=50).mean()\n\n# Check for missing values in the rolling mean\nmissing_values = rolling_mean.isna().sum()\nmissing_values\n\n# Display the first few rows of the rolling mean\nrolling_mean.head()",
+    "output": "0   NaN\n1   NaN\n2   NaN\n3   NaN\n4   NaN\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.022503820713609457
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Extract the relevant column for daggers\ndagger_data = time_series_df['Dagger']\n\n# Calculate the rolling mean of the dagger data\nrolling_mean = dagger_data.rolling(window=50).mean()\n\n# Drop the first few rows with missing values in the rolling mean\nrolling_mean_clean = rolling_mean.dropna()\n\n# Extract the corresponding CE values\nce_values_clean = time_series_df['CE'][rolling_mean_clean.index]\n\n# Plot the cleaned rolling mean\nplt.figure(figsize=(14, 7))\nplt.plot(ce_values_clean, rolling_mean_clean, label='Rolling mean of Dagger Z values')\nplt.xlabel('CE')\nplt.ylabel('Z values')\nplt.title('Cleaned Rolling Mean of Dagger Z values over time')\nplt.legend()\nplt.show()",
+    "output": "",
+    "elapsed_seconds": 0.027136854827404022
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import linregress\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Extract the relevant column for daggers\ndagger_data = time_series_df['Dagger']\n\n# Calculate the rolling mean of the dagger data\nrolling_mean = dagger_data.rolling(window=50).mean()\n\n# Drop the first few rows with missing values in the rolling mean\nrolling_mean_clean = rolling_mean.dropna()\n\n# Extract the corresponding CE values\nce_values_clean = time_series_df['CE'][rolling_mean_clean.index]\n\n# Perform linear regression on the cleaned rolling mean\nslope, intercept, r_value, p_value, std_err = linregress(ce_values_clean, rolling_mean_clean)\n\nslope, intercept, r_value, p_value, std_err",
+    "output": "<string>:12: SmallSampleWarning: One or more sample arguments is too small; all returned values will be NaN. See documentation for sample size requirements.\n(nan, nan, nan, nan, nan)",
+    "elapsed_seconds": 0.022582952864468098
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Extract the relevant column for daggers\ndagger_data = time_series_df['Dagger']\n\n# Calculate the rolling mean of the dagger data\nrolling_mean = dagger_data.rolling(window=50).mean()\n\n# Drop the first few rows with missing values in the rolling mean\nrolling_mean_clean = rolling_mean.dropna()\n\n# Extract the corresponding CE values\nce_values_clean = time_series_df['CE'][rolling_mean_clean.index]\n\n# Check the number of data points available for the cleaned rolling mean\nnum_data_points = len(rolling_mean_clean)\nnum_data_points",
+    "output": "0",
+    "elapsed_seconds": 0.021913334261626005
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Extract the relevant column for daggers\ndagger_data = time_series_df['Dagger']\n\n# Calculate the rolling mean of the dagger data with a smaller window size\nrolling_mean = dagger_data.rolling(window=10).mean()\n\n# Drop the first few rows with missing values in the rolling mean\nrolling_mean_clean = rolling_mean.dropna()\n\n# Extract the corresponding CE values\nce_values_clean = time_series_df['CE'][rolling_mean_clean.index]\n\n# Check the number of data points available for the cleaned rolling mean\nnum_data_points = len(rolling_mean_clean)\nnum_data_points",
+    "output": "0",
+    "elapsed_seconds": 0.02241950435563922
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Display the first few rows of the time_series_df to understand its structure\ntime_series_df.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.032362718135118484
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Check the number of non-missing values in the \"Dagger\" column\nnon_missing_dagger_values = time_series_df['Dagger'].notna().sum()\nnon_missing_dagger_values",
+    "output": "37",
+    "elapsed_seconds": 0.02146794693544507
+  },
+  {
+    "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Load the datasets\npollen_df = pd.read_csv('/data/pollen_openness_score_Belau_Woserin_Feeser_et_al_2019.csv')\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\ncapital_df = pd.read_csv('/data/capital.csv')\n\n# Extract the relevant column for daggers\ndagger_data = time_series_df['Dagger']\n\n# Display the non-missing values of the \"Dagger\" column along with their corresponding CE values\nnon_missing_dagger_data = time_series_df[time_series_df['Dagger'].notna()][['CE', 'Dagger']]\nnon_missing_dagger_data",
+    "output": "        CE  Dagger\n0    -4100   -0.58\n100  -4000   -0.58\n200  -3900   -0.58\n300  -3800   -0.58\n400  -3700   -0.58\n500  -3600   -0.58\n600  -3500   -0.58\n700  -3400   -0.58\n800  -3300   -0.58\n900  -3200   -0.58\n1000 -3100   -0.58\n1100 -3000   -0.58\n1200 -2900   -0.58\n1300 -2800   -0.58\n1400 -2700   -0.58\n1500 -2600   -0.58\n1600 -2500   -0.58\n1700 -2400   -0.58\n1800 -2300    0.80\n1900 -2200    1.26\n2000 -2100    2.23\n2100 -2000    0.86\n2200 -1900    1.54\n2300 -1800    3.33\n2400 -1700   -0.41\n2500 -1600   -0.41\n2600 -1500   -0.26\n2700 -1400    1.68\n2800 -1300    1.68\n2900 -1200    1.09\n3000 -1100    1.10\n3100 -1000   -0.48\n3200  -900   -0.44\n3300  -800   -0.43\n3400  -700   -0.43\n3500  -600   -0.55\n3600  -500   -0.55",
+    "elapsed_seconds": 0.0245801848359406
+  }
+]

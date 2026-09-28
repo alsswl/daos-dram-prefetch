@@ -1,0 +1,37 @@
+[
+  {
+    "code": "import pandas as pd\n\n# Load the time_series_data.csv dataset\ntime_series_df = pd.read_csv('/data/time_series_data.csv')\n\n# Display the first few rows of the dataset to understand its structure\ntime_series_df.head()",
+    "output": "   Unnamed: 0    CE  ...  PotteryDecoration  PotteryDecoration_inter\n0           0 -4100  ...              -1.92                  -1.9200\n1           1 -4099  ...                NaN                  -1.9019\n2           2 -4098  ...                NaN                  -1.8838\n3           3 -4097  ...                NaN                  -1.8657\n4           4 -4096  ...                NaN                  -1.8476\n\n[5 rows x 37 columns]",
+    "elapsed_seconds": 0.1524140234105289
+  },
+  {
+    "code": "# Check the 'Dagger' column for values and missing data\ndagger_data = time_series_df['Dagger']\ndagger_data.head()",
+    "output": "0   -0.58\n1     NaN\n2     NaN\n3     NaN\n4     NaN\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.001631823368370533
+  },
+  {
+    "code": "# Interpolate missing values in the 'Dagger' column\ndagger_data_interpolated = dagger_data.interpolate()\n\n# Display the first few rows of the interpolated data\ndagger_data_interpolated.head()",
+    "output": "0   -0.58\n1   -0.58\n2   -0.58\n3   -0.58\n4   -0.58\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.002223815768957138
+  },
+  {
+    "code": "# Calculate the rolling mean and percentage change of the interpolated 'Dagger' column\ndagger_rolling_mean = dagger_data_interpolated.rolling(window=100).mean()\ndagger_percentage_change = dagger_data_interpolated.pct_change()\n\n# Display the first few rows of the rolling mean and percentage change\ndagger_rolling_mean.head()",
+    "output": "0   NaN\n1   NaN\n2   NaN\n3   NaN\n4   NaN\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.0030132499523460865
+  },
+  {
+    "code": "# Check the length of the dataset\nlen(dagger_data_interpolated)",
+    "output": "3601",
+    "elapsed_seconds": 0.0018332828767597675
+  },
+  {
+    "code": "# Calculate the rolling mean and percentage change for the entire dataset\ndagger_rolling_mean = dagger_data_interpolated.rolling(window=100).mean()\ndagger_percentage_change = dagger_data_interpolated.pct_change()\n\n# Display the last few rows of the rolling mean and percentage change\ndagger_rolling_mean.tail()",
+    "output": "3596   -0.549928\n3597   -0.549964\n3598   -0.549988\n3599   -0.550000\n3600   -0.550000\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.0025447411462664604
+  },
+  {
+    "code": "# Display the last few rows of the percentage change\ndagger_percentage_change.tail()",
+    "output": "3596    0.0\n3597    0.0\n3598    0.0\n3599    0.0\n3600    0.0\nName: Dagger, dtype: float64",
+    "elapsed_seconds": 0.0015422902069985867
+  }
+]
