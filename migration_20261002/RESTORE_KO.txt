@@ -19,3 +19,12 @@ DAOS/GDR 빌드 소스·패치·스크립트와 /opt 클라이언트 라이브�
 DAOS 서버 안의 KV 데이터는 로컬 파일 백업에 포함되지 않는다.
 새 서버에서 DAOS endpoint, pool/container 접근, agent 설정, NIC/GPU 장치와 경로를 확인한다.
 최근 실험은 cxs_async_drop2g_c8s10_20261002이며 결과와 원본 trace가 project에 보존된다.
+
+가상환경 재설치 시 주의:
+Python 버전과 패키지 버전을 맞춰 의존성을 설치한 뒤, 보존한 lmcache/vllm 패키지의 수정된 Python 소스를 반영한다.
+기존 바이너리는 동일 ABI 환경에서만 재사용하고, 다른 환경은 대응 버전에서 재빌드한다.
+source_and_model_revisions.json에 upstream commit과 로컬 HF 모델 snapshot revision을 기록했다.
+
+Git에서 제외한 원본 ShareGPT 데이터 3개와 설정/키 등 15개 파일은 원본 서버의
+/home/discos_migration_private_20261002 에 별도 보관했다. Git에는 이 압축본을 넣지 않았다.
+필요하면 신뢰할 수 있는 경로로 직접 이전하고 그 폴더의 SHA256SUMS를 확인한다.

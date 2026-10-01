@@ -1,0 +1,87 @@
+{
+  "upstream_repositories": {
+    "/root/discos-daos-src": {
+      "commit": "b31b3ee03c67f92d9c2013e694d6adba887b4eef",
+      "remote": "https://github.com/daos-stack/daos.git",
+      "status": [
+        "M site_scons/components/__init__.py",
+        " M src/cart/crt_hg.c",
+        "?? hs-tests/"
+      ]
+    },
+    "/root/discos-gdrcopy-src": {
+      "commit": "93c606bbcaa10457cbbab93163aa446d902b983d",
+      "remote": "https://github.com/NVIDIA/gdrcopy.git",
+      "status": [
+        "?? src/gdrdrv/..module-common.o.cmd",
+        "?? src/gdrdrv/.Module.symvers.cmd",
+        "?? src/gdrdrv/.gdrdrv.ko.cmd",
+        "?? src/gdrdrv/.gdrdrv.mod.cmd",
+        "?? src/gdrdrv/.gdrdrv.mod.o.cmd",
+        "?? src/gdrdrv/.gdrdrv.o.cmd",
+        "?? src/gdrdrv/.modules.order.cmd",
+        "?? src/gdrdrv/.nv-p2p-dummy.ko.cmd",
+        "?? src/gdrdrv/.nv-p2p-dummy.mod.cmd",
+        "?? src/gdrdrv/.nv-p2p-dummy.mod.o.cmd",
+        "?? src/gdrdrv/.nv-p2p-dummy.o.cmd",
+        "?? src/gdrdrv/.nv-p2p-dummy.o.d",
+        "?? src/gdrdrv/Module.symvers",
+        "?? src/gdrdrv/gdrdrv.ko",
+        "?? src/gdrdrv/gdrdrv.mod",
+        "?? src/gdrdrv/gdrdrv.mod.c",
+        "?? src/gdrdrv/modules.order",
+        "?? src/gdrdrv/nv-p2p-dummy.ko",
+        "?? src/gdrdrv/nv-p2p-dummy.mod",
+        "?? src/gdrdrv/nv-p2p-dummy.mod.c",
+        "?? src/libgdrapi.so.2",
+        "?? src/libgdrapi.so.2.6",
+        "?? tests/gdrcopy_copybw",
+        "?? tests/gdrcopy_sanity"
+      ]
+    },
+    "/root/discos_minji/LMBenchmark": {
+      "commit": "c1e05a708a5a1fd04a9ec09d215edbdcccdf92cb",
+      "remote": "https://github.com/LMCache/LMBenchmark.git",
+      "status": []
+    },
+    "/root/discos_minji/discoverybench": {
+      "commit": "c31fcf011e070f021a5f5b906896d0821f6880e8",
+      "remote": "https://github.com/allenai/discoverybench.git",
+      "status": [
+        "M agents/coder_agent.py",
+        " M agents/react_agent.py",
+        " M config/api_config.json",
+        " M config/model_config.json",
+        "?? agents/coder_agent.py.bak",
+        "?? agents/react_agent.py.bak",
+        "?? agents/react_agent.py.bak2"
+      ]
+    }
+  },
+  "model_cache_inventory_weights_not_included": {
+    "models--Qwen--Qwen3-1.7B": {
+      "snapshots": [
+        "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+      ],
+      "refs": {
+        "main": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+      }
+    },
+    "models--Qwen--Qwen3-14B": {
+      "snapshots": [
+        "40c069824f4251a91eefaf281ebe4c544efd3e18"
+      ],
+      "refs": {
+        "main": "40c069824f4251a91eefaf281ebe4c544efd3e18"
+      }
+    },
+    "models--Qwen--Qwen3-4B-Instruct-2507": {
+      "snapshots": [
+        "cdbee75f17c01a7cc42f958dc650907174af0554"
+      ],
+      "refs": {
+        "main": "cdbee75f17c01a7cc42f958dc650907174af0554"
+      }
+    }
+  }
+}
