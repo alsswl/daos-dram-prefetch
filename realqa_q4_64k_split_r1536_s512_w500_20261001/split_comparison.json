@@ -1,0 +1,64 @@
+{
+  "results": [
+    {
+      "experiment": "realqa_q4_64k_window1024_d256_s2_u0835_resume_fix_20261001",
+      "staging_gib": 2,
+      "mean_ttft_ms": 2203.43031376875,
+      "duration_s": 1002.580370794,
+      "cached_token_pct": 86.71767323356991,
+      "staging_peak_gib": 1.3359375,
+      "same_input_files": true
+    },
+    {
+      "experiment": "realqa_q4_64k_read500_store500_d256_s1_20261001",
+      "staging_gib": 1,
+      "mean_ttft_ms": 2745.68460708125,
+      "duration_s": 1027.752583168,
+      "cached_token_pct": 86.71826648017468,
+      "staging_peak_gib": 0.984375,
+      "same_input_files": true
+    },
+    {
+      "experiment": "realqa_q4_64k_split_r1536_s512_w500_20261001",
+      "staging_gib": 2,
+      "mean_ttft_ms": 2368.72617559375,
+      "duration_s": 1030.327292177,
+      "cached_token_pct": 86.71985529880867,
+      "staging_peak_gib": 1.423828125,
+      "same_input_files": true
+    }
+  ],
+  "occupancy": {
+    "store_peak_gib": 0.4921875,
+    "retrieve_peak_gib": 1.423828125,
+    "store_time_weighted_mean_gib": 0.015895776984188065,
+    "retrieve_time_weighted_mean_gib": 0.19448160022885017
+  },
+  "validation": {
+    "passed": true,
+    "store_peak_gib": 0.4921875,
+    "retrieve_peak_gib": 1.423828125,
+    "max_concurrent_window_loads": 3,
+    "load_copy_overlap_events": 9291,
+    "allocation_failures": 0,
+    "event": "split_staging_enabled",
+    "time_ns": 1790859402043089662,
+    "monotonic_ns": 2544855377970623,
+    "pid": 3925821,
+    "used_bytes": 0,
+    "active_objects": 0,
+    "ready_bytes": 0,
+    "store_used_bytes": 0,
+    "retrieve_used_bytes": 0,
+    "store_capacity_bytes": 536870912,
+    "retrieve_capacity_bytes": 1610612736,
+    "pipeline_depth": 3,
+    "effective_window_bytes": 509607936
+  },
+  "limitations": [
+    "One run per configuration; actual generated histories and arrival timing vary.",
+    "Against 1GiB baseline, staging capacity and vLLM KV budget also change.",
+    "Against original 2GiB baseline, both window size and store admission also change.",
+    "Concurrent load intervals include worker queueing and metadata; not an RDMA hardware timeline."
+  ]
+}

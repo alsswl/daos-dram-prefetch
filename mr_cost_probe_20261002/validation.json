@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "entry_return_counts_match": true,
+  "probe_records": 67584,
+  "all_payload_reads_have_512_successful_NIC_MR_registrations_and_deregistrations": true,
+  "all_payload_reads_have_512_GDRCopy_pin_map_unmap_unpin": true,
+  "all_test_keys_removed": 1536,
+  "notes": [
+    "Function duration is entry-to-return elapsed time including waits/preemption.",
+    "Nested function durations must not be summed with their parents.",
+    "Thread-summed lock acquisition time is not critical-path wall time.",
+    "Control runs use identical payload and settings but fresh key namespaces; timing noise remains.",
+    "Lock timers include clock overhead (minimum clock pair measured in lock logs)."
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "passed": true,
+  "verified_timed_reads": 72,
+  "measured_reads": 60,
+  "placement_verified": true,
+  "balanced_every_contiguous_shard_count_chunks": true,
+  "isolated_objects_removed": 3,
+  "comparisons": [
+    {
+      "workers": 1,
+      "per_pair": [
+        {
+          "seed": 0,
+          "baseline": 395.173426,
+          "balanced": 417.614517,
+          "reduction_percent": -5.678795567594652
+        },
+        {
+          "seed": 1,
+          "baseline": 400.125968,
+          "balanced": 395.222803,
+          "reduction_percent": 1.2254053453486402
+        },
+        {
+          "seed": 2,
+          "baseline": 414.218345,
+          "balanced": 396.075499,
+          "reduction_percent": 4.380019914376321
+        }
+      ],
+      "median_pair_reduction_percent": 1.2254053453486402
+    },
+    {
+      "workers": 16,
+      "per_pair": [
+        {
+          "seed": 0,
+          "baseline": 65.882804,
+          "balanced": 58.145321,
+          "reduction_percent": 11.744313432682663
+        },
+        {
+          "seed": 1,
+          "baseline": 62.528971,
+          "balanced": 57.299651,
+          "reduction_percent": 8.363035432007992
+        },
+        {
+          "seed": 2,
+          "baseline": 63.789326,
+          "balanced": 58.59349,
+          "reduction_percent": 8.145306316608513
+        }
+      ],
+      "median_pair_reduction_percent": 8.363035432007992
+    }
+  ],
+  "counts_by_shard": [
+    {
+      "baseline": [
+        5,
+        3,
+        8,
+        9,
+        4,
+        5,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        4,
+        7,
+        2,
+        7
+      ],
+      "balanced": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "baseline": [
+        9,
+        6,
+        6,
+        2,
+        8,
+        7,
+        5,
+        4,
+        9,
+        5,
+        7,
+        5,
+        4,
+        4,
+        7,
+        8
+      ],
+      "balanced": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "baseline": [
+        5,
+        6,
+        3,
+        5,
+        9,
+        8,
+        6,
+        5,
+        5,
+        8,
+        6,
+        9,
+        4,
+        6,
+        4,
+        7
+      ],
+      "balanced": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    }
+  ],
+  "limitations": [
+    "Native payload benchmark, not CXS TTFT or integrated LMCache.",
+    "Only three fresh layouts by default; repeat timings are not independent deployments.",
+    "Client call intervals include local registration and scheduling delays.",
+    "balanced changes both placement and dkey/akey indexing hierarchy."
+  ]
+}

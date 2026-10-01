@@ -1,0 +1,378 @@
+{
+  "passed": true,
+  "source": "/root/discos_minji/cxs_target_coldwarm_20261002/t16",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "sessions": 8,
+  "turns": 6,
+  "phases": [
+    "cold",
+    "warm"
+  ],
+  "chunk_bytes": 18874368,
+  "namespace": "minji-cxs-target-631ce499ecbb45d7a54ecaa20ea3fda4:",
+  "oid": "281543696187392.8300360372581303133",
+  "sections": {
+    "all_stored": {
+      "chunks": 4056,
+      "targets": [
+        {
+          "rank": 0,
+          "target": 0,
+          "baseline_chunks": 270,
+          "balanced_chunks": 256
+        },
+        {
+          "rank": 0,
+          "target": 1,
+          "baseline_chunks": 256,
+          "balanced_chunks": 259
+        },
+        {
+          "rank": 0,
+          "target": 2,
+          "baseline_chunks": 268,
+          "balanced_chunks": 259
+        },
+        {
+          "rank": 0,
+          "target": 3,
+          "baseline_chunks": 254,
+          "balanced_chunks": 257
+        },
+        {
+          "rank": 0,
+          "target": 4,
+          "baseline_chunks": 234,
+          "balanced_chunks": 253
+        },
+        {
+          "rank": 0,
+          "target": 5,
+          "baseline_chunks": 231,
+          "balanced_chunks": 248
+        },
+        {
+          "rank": 0,
+          "target": 6,
+          "baseline_chunks": 253,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 0,
+          "target": 7,
+          "baseline_chunks": 272,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 1,
+          "target": 0,
+          "baseline_chunks": 246,
+          "balanced_chunks": 261
+        },
+        {
+          "rank": 1,
+          "target": 1,
+          "baseline_chunks": 260,
+          "balanced_chunks": 264
+        },
+        {
+          "rank": 1,
+          "target": 2,
+          "baseline_chunks": 233,
+          "balanced_chunks": 263
+        },
+        {
+          "rank": 1,
+          "target": 3,
+          "baseline_chunks": 277,
+          "balanced_chunks": 261
+        },
+        {
+          "rank": 1,
+          "target": 4,
+          "baseline_chunks": 241,
+          "balanced_chunks": 263
+        },
+        {
+          "rank": 1,
+          "target": 5,
+          "baseline_chunks": 255,
+          "balanced_chunks": 252
+        },
+        {
+          "rank": 1,
+          "target": 6,
+          "baseline_chunks": 267,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 1,
+          "target": 7,
+          "baseline_chunks": 239,
+          "balanced_chunks": 240
+        }
+      ],
+      "statistics": {
+        "baseline": {
+          "total": 4056,
+          "mean": 253.5,
+          "min": 231,
+          "max": 277,
+          "max_min_ratio": 1.199134199134199,
+          "population_stddev": 14.44818327679989,
+          "coefficient_of_variation_pct": 5.699480582564059,
+          "max_above_mean_pct": 9.270216962524657
+        },
+        "balanced": {
+          "total": 4056,
+          "mean": 253.5,
+          "min": 240,
+          "max": 264,
+          "max_min_ratio": 1.1,
+          "population_stddev": 8.817596044274199,
+          "coefficient_of_variation_pct": 3.478341634822169,
+          "max_above_mean_pct": 4.142011834319526
+        }
+      }
+    },
+    "initial_480_chunks_per_document": {
+      "chunks": 3840,
+      "targets": [
+        {
+          "rank": 0,
+          "target": 0,
+          "baseline_chunks": 257,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 0,
+          "target": 1,
+          "baseline_chunks": 244,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 0,
+          "target": 2,
+          "baseline_chunks": 257,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 0,
+          "target": 3,
+          "baseline_chunks": 237,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 0,
+          "target": 4,
+          "baseline_chunks": 225,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 0,
+          "target": 5,
+          "baseline_chunks": 218,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 0,
+          "target": 6,
+          "baseline_chunks": 241,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 0,
+          "target": 7,
+          "baseline_chunks": 252,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 1,
+          "target": 0,
+          "baseline_chunks": 230,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 1,
+          "target": 1,
+          "baseline_chunks": 243,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 1,
+          "target": 2,
+          "baseline_chunks": 217,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 1,
+          "target": 3,
+          "baseline_chunks": 263,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 1,
+          "target": 4,
+          "baseline_chunks": 231,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 1,
+          "target": 5,
+          "baseline_chunks": 244,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 1,
+          "target": 6,
+          "baseline_chunks": 254,
+          "balanced_chunks": 240
+        },
+        {
+          "rank": 1,
+          "target": 7,
+          "baseline_chunks": 227,
+          "balanced_chunks": 240
+        }
+      ],
+      "statistics": {
+        "baseline": {
+          "total": 3840,
+          "mean": 240,
+          "min": 217,
+          "max": 263,
+          "max_min_ratio": 1.2119815668202765,
+          "population_stddev": 13.88794441233115,
+          "coefficient_of_variation_pct": 5.786643505137978,
+          "max_above_mean_pct": 9.583333333333343
+        },
+        "balanced": {
+          "total": 3840,
+          "mean": 240,
+          "min": 240,
+          "max": 240,
+          "max_min_ratio": 1.0,
+          "population_stddev": 0.0,
+          "coefficient_of_variation_pct": 0.0,
+          "max_above_mean_pct": 0.0
+        }
+      }
+    },
+    "conversation_suffix": {
+      "chunks": 216,
+      "targets": [
+        {
+          "rank": 0,
+          "target": 0,
+          "baseline_chunks": 13,
+          "balanced_chunks": 16
+        },
+        {
+          "rank": 0,
+          "target": 1,
+          "baseline_chunks": 12,
+          "balanced_chunks": 19
+        },
+        {
+          "rank": 0,
+          "target": 2,
+          "baseline_chunks": 11,
+          "balanced_chunks": 19
+        },
+        {
+          "rank": 0,
+          "target": 3,
+          "baseline_chunks": 17,
+          "balanced_chunks": 17
+        },
+        {
+          "rank": 0,
+          "target": 4,
+          "baseline_chunks": 9,
+          "balanced_chunks": 13
+        },
+        {
+          "rank": 0,
+          "target": 5,
+          "baseline_chunks": 13,
+          "balanced_chunks": 8
+        },
+        {
+          "rank": 0,
+          "target": 6,
+          "baseline_chunks": 12,
+          "balanced_chunks": 0
+        },
+        {
+          "rank": 0,
+          "target": 7,
+          "baseline_chunks": 20,
+          "balanced_chunks": 0
+        },
+        {
+          "rank": 1,
+          "target": 0,
+          "baseline_chunks": 16,
+          "balanced_chunks": 21
+        },
+        {
+          "rank": 1,
+          "target": 1,
+          "baseline_chunks": 17,
+          "balanced_chunks": 24
+        },
+        {
+          "rank": 1,
+          "target": 2,
+          "baseline_chunks": 16,
+          "balanced_chunks": 23
+        },
+        {
+          "rank": 1,
+          "target": 3,
+          "baseline_chunks": 14,
+          "balanced_chunks": 21
+        },
+        {
+          "rank": 1,
+          "target": 4,
+          "baseline_chunks": 10,
+          "balanced_chunks": 23
+        },
+        {
+          "rank": 1,
+          "target": 5,
+          "baseline_chunks": 11,
+          "balanced_chunks": 12
+        },
+        {
+          "rank": 1,
+          "target": 6,
+          "baseline_chunks": 13,
+          "balanced_chunks": 0
+        },
+        {
+          "rank": 1,
+          "target": 7,
+          "baseline_chunks": 12,
+          "balanced_chunks": 0
+        }
+      ]
+    }
+  },
+  "interpretation": [
+    "Balanced counts reproduce the prior actual DAOS shard validation for all 4056 stored keys.",
+    "Baseline is a deterministic counterfactual: hash the same full keys without the routing suffix.",
+    "Same namespace, key set and object layout; baseline was not a separate serving run.",
+    "These are unique stored chunk counts after cold+warm, not fetch counts or runtime concurrency.",
+    "All 3840 initial body chunks distribute exactly 240 per target with index-modulo-16 placement.",
+    "Conversation suffix branches occupy indices 480..491, so total balanced counts need not be equal.",
+    "Good aggregate hash balance does not imply balanced concurrent/window-level demand."
+  ],
+  "source_sha256": {
+    "plan.json": "3922007cebac17a5c380a28a20d1e441b3bf3d96eb50f05af4f82d33ccc726c5",
+    "placement.json": "5d66e962d840734eeca19cdec8bdc4c866db3a3ed6e02ce4eb2e63896ee78961",
+    "placement_validation.json": "6fff169b69e8e04de742a85a262c6c068061f4f18d863341f9ab581c36d7e6af"
+  },
+  "native_library_sha256": "59512c784ad2e02aa90809b267e79df332cc34e3931aec8e5dfc85c0f441ee76"
+}

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "validated_keys": 4055,
+  "counts_by_shard": {
+    "4": 1011,
+    "7": 1027,
+    "10": 1001,
+    "8": 1016
+  },
+  "selected_physical_targets": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "distinct_dkey_per_chunk": true
+}

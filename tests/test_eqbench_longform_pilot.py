@@ -25,6 +25,49 @@ def test_prefix_length():
     assert common_prefix([1,2,4],[1,2,3])==2
 
 
+def test_four_chapters_finish_at_ninth_call():
+    templates=load_templates(UPSTREAM/'data', chapters=4)
+    assert list(templates)==list(range(1,10))
+    assert 'finish the story with chapter 4' in templates[9]
+    outputs={str(i):f'answer {i}' for i in range(1,9)}
+    messages=build_messages({'writing_prompt':'test'},templates,outputs,9)
+    assert '4 chapters' in messages[0]['content']
+    assert len(messages)==17
+    assert [m['content'] for m in messages if m['role']=='assistant']==list(outputs.values())
+
+
+def test_short_run_counts_cap_and_indices(tmp_path, monkeypatch):
+    import threading
+    import eqbench_longform_pilot as pilot
+    templates=load_templates(UPSTREAM/'data', chapters=4)
+    class Tokenizer:
+        def apply_chat_template(self, messages, **kwargs):return [1]*len(messages)
+    def call(client, messages, seed, max_tokens):
+        assert max_tokens==2500
+        return dict(output='answer',prompt_tokens=len(messages),completion_tokens=1,
+            output_words=1,cached_tokens=0,ttft_ms=1)
+    monkeypatch.setattr(pilot,'streaming_call',call)
+    pilot.run_story(None,Tokenizer(),'16',{'writing_prompt':'test'},templates,
+        tmp_path,threading.Barrier(1),threading.Event(),2500,32768)
+    folder=tmp_path/'stories/16'
+    assert json.loads((folder/'status.json').read_text())=={'status':'completed','requests':9}
+    calls=json.loads((folder/'calls.json').read_text())
+    assert [r['index'] for r in calls]==list(range(135,144))
+    assert calls[-1]['chapter']==4
+
+
+def test_actual_context_guard_never_sends_oversized_request(tmp_path, monkeypatch):
+    import threading
+    import pytest
+    import eqbench_longform_pilot as pilot
+    class Tokenizer:
+        def apply_chat_template(self, messages, **kwargs):return [1]*31000
+    monkeypatch.setattr(pilot,'streaming_call',lambda *a,**kw:pytest.fail('must not send'))
+    with pytest.raises(RuntimeError,match='31000\\+2500>32768'):
+        pilot.run_story(None,Tokenizer(),'1',{'writing_prompt':'test'},load_templates(UPSTREAM/'data',4),
+            tmp_path,threading.Barrier(1),threading.Event(),2500,32768)
+
+
 def test_stream_does_not_force_output_or_retry():
     messages=[dict(role='user',content='hello')]
     class Response:

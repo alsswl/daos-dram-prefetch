@@ -1,0 +1,820 @@
+{
+  "engine_w16": {
+    "samples": 312,
+    "symbols": [
+      {
+        "symbol": "gomp_barrier_wait_end",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libgomp.so.1",
+        "count": 117,
+        "percent": 37.5
+      },
+      {
+        "symbol": "gomp_team_barrier_wait_end",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libgomp.so.1",
+        "count": 65,
+        "percent": 20.833333333333332
+      },
+      {
+        "symbol": "pthread_mutex_lock@@GLIBC_2.2.5",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 33,
+        "percent": 10.576923076923077
+      },
+      {
+        "symbol": "__GI___lll_lock_wait",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 16,
+        "percent": 5.128205128205129
+      },
+      {
+        "symbol": "__GI___pthread_mutex_unlock_usercnt",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 12,
+        "percent": 3.8461538461538463
+      },
+      {
+        "symbol": "pthread_spin_lock@@GLIBC_2.34",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 10,
+        "percent": 3.2051282051282053
+      },
+      {
+        "symbol": "tse_sched_progress",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 9,
+        "percent": 2.8846153846153846
+      },
+      {
+        "symbol": "_PyEval_EvalFrameDefault",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 4,
+        "percent": 1.2820512820512822
+      },
+      {
+        "symbol": "__GI___lll_lock_wake",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 3,
+        "percent": 0.9615384615384616
+      },
+      {
+        "symbol": "tse_sched_priv_decref",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 3,
+        "percent": 0.9615384615384616
+      },
+      {
+        "symbol": "crt_hg_event_progress",
+        "dso": "/opt/daos-gds-gpu/lib64/libcart.so.4.9.0",
+        "count": 2,
+        "percent": 0.6410256410256411
+      },
+      {
+        "symbol": "dictresize",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 2,
+        "percent": 0.6410256410256411
+      },
+      {
+        "symbol": "PyType_GenericAlloc",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 2,
+        "percent": 0.6410256410256411
+      },
+      {
+        "symbol": "timeout_bp_node_cmp",
+        "dso": "/opt/daos-gds-gpu/lib64/libcart.so.4.9.0",
+        "count": 2,
+        "percent": 0.6410256410256411
+      },
+      {
+        "symbol": "[unknown]",
+        "dso": "[vdso]",
+        "count": 2,
+        "percent": 0.6410256410256411
+      },
+      {
+        "symbol": "hg_core_progress",
+        "dso": "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+        "count": 2,
+        "percent": 0.6410256410256411
+      },
+      {
+        "symbol": "parse_internal_render_format_spec",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "listiter_next",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "take_gil",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "torch::ADInplaceOrView::(anonymous namespace)::slice_Tensor(c10::DispatchKeySet, at::Tensor const&, long, std::optional<c10::SymInt>, std::optional<c10::SymInt>, c10::SymInt)",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "c10::WarningUtils::get_warning_handler()",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libc10.so",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "tse_sched_check_complete",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "rxm_cq_write_tx_comp.part.8",
+        "dso": "/opt/ofi-cuda/lib64/libfabric.so.1.25.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "malloc",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "ev_progress_cb",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "torch::autograd::VariableType::(anonymous namespace)::view(c10::DispatchKeySet, at::Tensor const&, c10::ArrayRef<c10::SymInt>)",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "malloc_consolidate",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "tse_sched_run",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "pthread_mutex_unlock@@GLIBC_2.2.5",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "method_get",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "c10::TensorImpl::storage() const",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libc10.so",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "__strlen_evex",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "rxm_ep_do_progress",
+        "dso": "/opt/ofi-cuda/lib64/libfabric.so.1.25.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "c10::impl::wrap_kernel_functor_unboxed_<c10::impl::detail::WrapFunctionIntoFunctor_<c10::CompileTimeFunctionPointer<at::Tensor (at::Tensor const&, long, std::optional<c10::SymInt>, std::optional<c10::SymInt>, c10::SymInt), &at::(anonymous namespace)::(anonymous namespace)::wrapper_CompositeExplicitAutograd_Tensor_slice>, at::Tensor, c10::guts::typelist::typelist<at::Tensor const&, long, std::optional<c10::SymInt>, std::optional<c10::SymInt>, c10::SymInt> >, at::Tensor (at::Tensor const&, long, std::optional<c10::SymInt>, std::optional<c10::SymInt>, c10::SymInt)>::call(c10::OperatorKernel*, c10::DispatchKeySet, at::Tensor const&, long, std::optional<c10::SymInt>, std::optional<c10::SymInt>, c10::SymInt)",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "_PyEvalFrameClearAndPop",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "PyObject_GC_Del",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "_PyObject_GC_New",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "method_vectorcall",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "pthread_cond_timedwait@@GLIBC_2.3.2",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "long_to_decimal_string_internal",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "scan_once_unicode",
+        "dso": "/usr/lib64/python3.12/lib-dynload/_json.cpython-312-x86_64-linux-gnu.so",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "_PyObject_VectorcallTstate.lto_priv.22",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "__tls_get_addr",
+        "dso": "/usr/lib64/ld-linux-x86-64.so.2",
+        "count": 1,
+        "percent": 0.32051282051282054
+      },
+      {
+        "symbol": "torch::PyWarningHandler::PyWarningHandler()",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libtorch_python.so",
+        "count": 1,
+        "percent": 0.32051282051282054
+      }
+    ]
+  },
+  "native_w16": {
+    "samples": 104,
+    "symbols": [
+      {
+        "symbol": "pthread_mutex_lock@@GLIBC_2.2.5",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 36,
+        "percent": 34.61538461538461
+      },
+      {
+        "symbol": "__GI___pthread_mutex_unlock_usercnt",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 23,
+        "percent": 22.115384615384617
+      },
+      {
+        "symbol": "__GI___lll_lock_wait",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 10,
+        "percent": 9.615384615384615
+      },
+      {
+        "symbol": "tse_sched_progress",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 9,
+        "percent": 8.653846153846153
+      },
+      {
+        "symbol": "pthread_spin_lock@@GLIBC_2.34",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 7,
+        "percent": 6.730769230769231
+      },
+      {
+        "symbol": "__GI___lll_lock_wake",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 3,
+        "percent": 2.8846153846153846
+      },
+      {
+        "symbol": "ofi_cq_read",
+        "dso": "/opt/ofi-cuda/lib64/libfabric.so.1.25.0",
+        "count": 2,
+        "percent": 1.9230769230769231
+      },
+      {
+        "symbol": "mlx5_poll_cq_v1",
+        "dso": "/usr/lib64/libmlx5.so.1.27.63.0",
+        "count": 2,
+        "percent": 1.9230769230769231
+      },
+      {
+        "symbol": "[unknown]",
+        "dso": "[vdso]",
+        "count": 2,
+        "percent": 1.9230769230769231
+      },
+      {
+        "symbol": "NA_Trigger",
+        "dso": "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libna.so.6.0.0",
+        "count": 1,
+        "percent": 0.9615384615384616
+      },
+      {
+        "symbol": "tse_task_schedule_with_delay",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 1,
+        "percent": 0.9615384615384616
+      },
+      {
+        "symbol": "crt_proc_obj_rw_v10_in",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+        "count": 1,
+        "percent": 0.9615384615384616
+      },
+      {
+        "symbol": "clock_gettime@@GLIBC_2.17",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.9615384615384616
+      },
+      {
+        "symbol": "crt_context_timeout_check",
+        "dso": "/opt/daos-gds-gpu/lib64/libcart.so.4.9.0",
+        "count": 1,
+        "percent": 0.9615384615384616
+      },
+      {
+        "symbol": "tse_sched_priv_decref",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 1,
+        "percent": 0.9615384615384616
+      },
+      {
+        "symbol": "pthread_mutex_lock@plt",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 1,
+        "percent": 0.9615384615384616
+      },
+      {
+        "symbol": "__GI___ioctl",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.9615384615384616
+      },
+      {
+        "symbol": "pthread_rwlock_unlock@@GLIBC_2.34",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.9615384615384616
+      },
+      {
+        "symbol": "hg_core_progress",
+        "dso": "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+        "count": 1,
+        "percent": 0.9615384615384616
+      }
+    ]
+  },
+  "native_w64": {
+    "samples": 145,
+    "symbols": [
+      {
+        "symbol": "pthread_spin_lock@@GLIBC_2.34",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 53,
+        "percent": 36.55172413793103
+      },
+      {
+        "symbol": "pthread_mutex_lock@@GLIBC_2.2.5",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 32,
+        "percent": 22.06896551724138
+      },
+      {
+        "symbol": "__GI___pthread_mutex_unlock_usercnt",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 19,
+        "percent": 13.10344827586207
+      },
+      {
+        "symbol": "__GI___lll_lock_wait",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 12,
+        "percent": 8.275862068965518
+      },
+      {
+        "symbol": "tse_sched_progress",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 9,
+        "percent": 6.206896551724138
+      },
+      {
+        "symbol": "[unknown]",
+        "dso": "[vdso]",
+        "count": 4,
+        "percent": 2.7586206896551726
+      },
+      {
+        "symbol": "__GI___lll_lock_wake",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 3,
+        "percent": 2.0689655172413794
+      },
+      {
+        "symbol": "crt_proc_obj_rw_v10_out",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+        "count": 1,
+        "percent": 0.6896551724137931
+      },
+      {
+        "symbol": "tse_sched_run",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 1,
+        "percent": 0.6896551724137931
+      },
+      {
+        "symbol": "mlx5_poll_cq_v1",
+        "dso": "/usr/lib64/libmlx5.so.1.27.63.0",
+        "count": 1,
+        "percent": 0.6896551724137931
+      },
+      {
+        "symbol": "crt_context_timeout_check",
+        "dso": "/opt/daos-gds-gpu/lib64/libcart.so.4.9.0",
+        "count": 1,
+        "percent": 0.6896551724137931
+      },
+      {
+        "symbol": "ofi_mutex_lock_op",
+        "dso": "/opt/ofi-cuda/lib64/libfabric.so.1.25.0",
+        "count": 1,
+        "percent": 0.6896551724137931
+      },
+      {
+        "symbol": "__libc_calloc",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.6896551724137931
+      },
+      {
+        "symbol": "malloc_consolidate",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.6896551724137931
+      },
+      {
+        "symbol": "tse_sched_check_complete",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 1,
+        "percent": 0.6896551724137931
+      },
+      {
+        "symbol": "tse_sched_process_complete",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 1,
+        "percent": 0.6896551724137931
+      },
+      {
+        "symbol": "_PyEval_EvalFrameDefault",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.6896551724137931
+      },
+      {
+        "symbol": "hg_core_progress",
+        "dso": "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+        "count": 1,
+        "percent": 0.6896551724137931
+      },
+      {
+        "symbol": "ofi_cq_readfrom",
+        "dso": "/opt/ofi-cuda/lib64/libfabric.so.1.25.0",
+        "count": 1,
+        "percent": 0.6896551724137931
+      },
+      {
+        "symbol": "d_binheap_find_locked",
+        "dso": "/opt/daos-gds-gpu/lib64/libgurt.so.4.9.0",
+        "count": 1,
+        "percent": 0.6896551724137931
+      }
+    ]
+  },
+  "engine_w64": {
+    "samples": 371,
+    "symbols": [
+      {
+        "symbol": "gomp_barrier_wait_end",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libgomp.so.1",
+        "count": 186,
+        "percent": 50.13477088948787
+      },
+      {
+        "symbol": "gomp_team_barrier_wait_end",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libgomp.so.1",
+        "count": 44,
+        "percent": 11.859838274932615
+      },
+      {
+        "symbol": "pthread_mutex_lock@@GLIBC_2.2.5",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 27,
+        "percent": 7.277628032345014
+      },
+      {
+        "symbol": "__GI___pthread_mutex_unlock_usercnt",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 23,
+        "percent": 6.199460916442049
+      },
+      {
+        "symbol": "__GI___lll_lock_wait",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 13,
+        "percent": 3.504043126684636
+      },
+      {
+        "symbol": "pthread_spin_lock@@GLIBC_2.34",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 11,
+        "percent": 2.964959568733154
+      },
+      {
+        "symbol": "_PyEval_EvalFrameDefault",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 10,
+        "percent": 2.6954177897574123
+      },
+      {
+        "symbol": "__GI___lll_lock_wake",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 5,
+        "percent": 1.3477088948787062
+      },
+      {
+        "symbol": "[unknown]",
+        "dso": "[vdso]",
+        "count": 4,
+        "percent": 1.0781671159029649
+      },
+      {
+        "symbol": "tse_sched_progress",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 3,
+        "percent": 0.8086253369272237
+      },
+      {
+        "symbol": "gomp_barrier_wait",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libgomp.so.1",
+        "count": 2,
+        "percent": 0.5390835579514824
+      },
+      {
+        "symbol": "hg_core_progress",
+        "dso": "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+        "count": 2,
+        "percent": 0.5390835579514824
+      },
+      {
+        "symbol": "_PyEvalFrameClearAndPop",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 2,
+        "percent": 0.5390835579514824
+      },
+      {
+        "symbol": "tse_sched_process_complete",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 2,
+        "percent": 0.5390835579514824
+      },
+      {
+        "symbol": "take_gil",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 2,
+        "percent": 0.5390835579514824
+      },
+      {
+        "symbol": "torch::get_dynint_class()",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libtorch_python.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "PyObject_Malloc",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "c10::cuda::impl::CUDAGuardImpl::uncheckedSetDevice(c10::Device) const",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libc10_cuda.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "torch::autograd::VariableType::(anonymous namespace)::checked_cast_variable(at::Tensor const&, char const*, int)",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "at::TensorIteratorBase::populate_operands(at::TensorIteratorConfig&)",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "c10::SymInt::guard_int(char const*, long) const",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libc10.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "d_binheap_find_locked",
+        "dso": "/opt/daos-gds-gpu/lib64/libgurt.so.4.9.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "__tls_get_addr",
+        "dso": "/usr/lib64/ld-linux-x86-64.so.2",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "unicode_hash",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "c10::intrusive_ptr<c10::TensorImpl, c10::UndefinedTensorImpl>::reset_not_null_(c10::TensorImpl*)",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "torch::PyWarningHandler::~PyWarningHandler()",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/torch/lib/libtorch_python.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "HG_Get_output",
+        "dso": "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "std::_Bit_iterator_base::_Bit_iterator_base(unsigned long*, unsigned int)@plt",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/lmcache/c_ops.cpython-312-x86_64-linux-gnu.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "rxm_match_recv_entry_tag_addr",
+        "dso": "/opt/ofi-cuda/lib64/libfabric.so.1.25.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "pthread_rwlock_unlock@@GLIBC_2.34",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "tse_sched_check_complete",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "_int_malloc",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "vrb_mr_reg_common",
+        "dso": "/opt/ofi-cuda/lib64/libfabric.so.1.25.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "pthread_cond_signal@@GLIBC_2.3.2",
+        "dso": "/usr/lib64/libc.so.6",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "asciilib_default_find",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "PyObject_SelfIter",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "std::_Head_base<0ul, pybind11::detail::local_internals*, false>::_M_head(std::_Head_base<0ul, pybind11::detail::local_internals*, false> const&)",
+        "dso": "/root/discos_minji/venv/lib/python3.12/site-packages/lmcache/c_ops.cpython-312-x86_64-linux-gnu.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "_PyObject_GenericGetAttrWithDict.cold",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "PyCData_dealloc",
+        "dso": "/usr/lib64/python3.12/lib-dynload/_ctypes.cpython-312-x86_64-linux-gnu.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "PyType_GenericAlloc",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "ofi_memcpy",
+        "dso": "/opt/ofi-cuda/lib64/libfabric.so.1.25.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "_PyObject_Free",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "visit_reachable",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "hg_proc_reset",
+        "dso": "/opt/daos-gds-gpu/prereq/release/mercury/lib64/libmercury.so.2.4.1",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "tupledealloc",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "PyArg_UnpackTuple@plt",
+        "dso": "/usr/lib64/python3.12/lib-dynload/_ctypes.cpython-312-x86_64-linux-gnu.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "PyLong_FromLong",
+        "dso": "/usr/lib64/libpython3.12.so.1.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "tse_sched_run",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos_common.so",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "crt_context_timeout_check",
+        "dso": "/opt/daos-gds-gpu/lib64/libcart.so.4.9.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      },
+      {
+        "symbol": "daos_rpc_send",
+        "dso": "/opt/daos-gds-gpu/lib64/libdaos.so.2.8.0",
+        "count": 1,
+        "percent": 0.2695417789757412
+      }
+    ]
+  }
+}

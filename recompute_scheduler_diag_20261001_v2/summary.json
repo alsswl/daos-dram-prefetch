@@ -1,0 +1,32 @@
+[
+  {
+    "arm": "sync",
+    "error": null,
+    "success": 0,
+    "failed": 8,
+    "recovery_events": 1,
+    "affected_tokens": 46976,
+    "capacity_failed_chunks": 2936,
+    "returned_daos_chunks": 892,
+    "requested_daos_chunks": 3840,
+    "cuda_error": true,
+    "v2_runner": true,
+    "scheduler_setting_confirmed": true,
+    "daos_puts": 0
+  },
+  {
+    "arm": "async",
+    "error": null,
+    "success": 0,
+    "failed": 8,
+    "recovery_events": 2,
+    "affected_tokens": 235265,
+    "capacity_failed_chunks": 1835,
+    "returned_daos_chunks": 562,
+    "requested_daos_chunks": 2400,
+    "cuda_error": false,
+    "v2_runner": true,
+    "scheduler_setting_confirmed": true,
+    "daos_puts": 0
+  }
+]

@@ -1,0 +1,15 @@
+[
+  "/root/discos_minji/run_vllm.sh",
+  "/root/discos_minji/venv/bin/python",
+  "/root/discos_minji/tests/sync_retrieve_capacity.py",
+  "--capacity",
+  "1",
+  "--chunks",
+  "512",
+  "--window-mib",
+  "500",
+  "--output",
+  "/root/discos_minji/realqa_q4_64k_read500_store500_d256_s1_20261001/gpu_9gib_check",
+  "--store-window-mib",
+  "500"
+]

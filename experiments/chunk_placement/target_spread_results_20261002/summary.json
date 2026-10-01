@@ -1,0 +1,87 @@
+[
+  {
+    "targets": 1,
+    "samples": 20,
+    "median_ms": 291.74248,
+    "median_gib_s": 5.784210793347037,
+    "per_layout_median_ms": [
+      291.345249,
+      292.058683,
+      291.776644,
+      291.751723
+    ],
+    "median_per_run_fetch_median_ms": 42.971691250000006,
+    "median_per_run_fetch_p95_ms": 83.802002375,
+    "mean_targets_with_outstanding_client_calls": 0.9975243388275931,
+    "min_peak_client_calls": 16,
+    "max_peak_client_calls": 16
+  },
+  {
+    "targets": 2,
+    "samples": 20,
+    "median_ms": 148.08319699999998,
+    "median_gib_s": 11.395621584129525,
+    "per_layout_median_ms": [
+      148.318387,
+      148.783704,
+      147.558478,
+      147.949264
+    ],
+    "median_per_run_fetch_median_ms": 21.496533,
+    "median_per_run_fetch_p95_ms": 40.67815675,
+    "mean_targets_with_outstanding_client_calls": 1.9857467725527913,
+    "min_peak_client_calls": 16,
+    "max_peak_client_calls": 16
+  },
+  {
+    "targets": 4,
+    "samples": 20,
+    "median_ms": 78.1382405,
+    "median_gib_s": 21.596341737655905,
+    "per_layout_median_ms": [
+      77.687047,
+      78.342985,
+      77.105258,
+      78.161115
+    ],
+    "median_per_run_fetch_median_ms": 11.406901000000001,
+    "median_per_run_fetch_p95_ms": 19.273102625,
+    "mean_targets_with_outstanding_client_calls": 3.9056398244504082,
+    "min_peak_client_calls": 16,
+    "max_peak_client_calls": 16
+  },
+  {
+    "targets": 8,
+    "samples": 20,
+    "median_ms": 68.12351100000001,
+    "median_gib_s": 24.771328178424994,
+    "per_layout_median_ms": [
+      67.454535,
+      69.808243,
+      68.288077,
+      65.709477
+    ],
+    "median_per_run_fetch_median_ms": 10.87438525,
+    "median_per_run_fetch_p95_ms": 13.54546575,
+    "mean_targets_with_outstanding_client_calls": 7.634087709325563,
+    "min_peak_client_calls": 16,
+    "max_peak_client_calls": 16
+  },
+  {
+    "targets": 16,
+    "samples": 20,
+    "median_ms": 57.5535235,
+    "median_gib_s": 29.320578157745075,
+    "per_layout_median_ms": [
+      58.259073,
+      56.472233,
+      57.372657,
+      58.248435
+    ],
+    "median_per_run_fetch_median_ms": 8.509765250000001,
+    "median_per_run_fetch_p95_ms": 11.471279625000001,
+    "mean_targets_with_outstanding_client_calls": 14.306843476338619,
+    "min_peak_client_calls": 16,
+    "max_peak_client_calls": 16
+  }
+]

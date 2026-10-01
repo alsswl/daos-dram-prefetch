@@ -1,0 +1,48 @@
+{
+  "case": "pilot",
+  "phase": "warm",
+  "requests": 8,
+  "elapsed_seconds": 3.241625193,
+  "ttft": {
+    "n": 8,
+    "mean": 172.81513172201812,
+    "p50": 175.21527875214815,
+    "p95": 184.91159959230572,
+    "maximum": 185.35590218380094
+  },
+  "input_tokens": 17203,
+  "cached_tokens": 16640,
+  "computed_tokens": 563,
+  "output_tokens": 1729,
+  "queried_chunks": 130,
+  "hit_chunks": {
+    "dram": 130,
+    "daos": 0
+  },
+  "dram_hit_pct": 100.0,
+  "daos_hit_pct": 0.0,
+  "input_reuse_pct": 96.72731500319712,
+  "peak_staging_gib": 2.44140625,
+  "mean_sampled_staging_gib": 0.05712890625,
+  "initial_cpu_gib": 2.8125,
+  "final_cpu_gib": 2.9296875,
+  "retrieve_decisions": {
+    "dram/ready": 8
+  },
+  "resolve_wait_ms": {
+    "dram": {
+      "n": 8,
+      "mean": 0.005449875,
+      "p50": 0.004838500000000001,
+      "p95": 0.0079913,
+      "maximum": 0.008454
+    },
+    "daos": {
+      "n": 0,
+      "mean": null,
+      "p50": null,
+      "p95": null,
+      "maximum": null
+    }
+  }
+}

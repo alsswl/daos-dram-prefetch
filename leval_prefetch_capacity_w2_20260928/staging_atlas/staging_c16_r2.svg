@@ -1,0 +1,344 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1650" height="1720">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#182333">
+<text x="40" y="43" font-size="27" >L-Eval | GPU staging occupancy | concurrency 16 | repeat 2</text>
+<text x="40" y="76" font-size="17" >Qwen3-14B | 72 requests/run | 2 DRAM prefetch workers | 18 documents x 4 questions</text>
+<line x1="40" x2="70" y1="105" y2="105" stroke="#0072b2" stroke-width="3"/>
+<text x="80" y="111" font-size="16" >Repeat 1</text>
+<line x1="200" x2="230" y1="105" y2="105" stroke="#d55e00" stroke-width="3"/>
+<text x="240" y="111" font-size="16" >Repeat 2</text>
+<line x1="360" x2="390" y1="105" y2="105" stroke="#009e73" stroke-width="3"/>
+<text x="400" y="111" font-size="16" >Repeat 3</text>
+<text x="570" y="111" font-size="16" >Solid: sampled peak per 2s bin   |   Dashed: sampled mean per 2s bin</text>
+<text x="40" y="143" font-size="16" >Y: allocated staging / configured capacity (%)    X: seconds since each run started</text>
+<text x="305" y="186" font-size="23" text-anchor="middle">OFF</text>
+<text x="845" y="186" font-size="23" text-anchor="middle">ON / wait</text>
+<text x="1385" y="186" font-size="23" text-anchor="middle">ON / cancel queued</text>
+<text x="80" y="217" font-size="18" >DRAM 4 GiB / staging 4 GiB</text>
+<line x1="80" x2="540" y1="389.0" y2="389.0" stroke="#dfe4e9"/>
+<text x="68" y="394.0" font-size="13" text-anchor="end">0</text>
+<line x1="80" x2="540" y1="353.25" y2="353.25" stroke="#dfe4e9"/>
+<text x="68" y="358.25" font-size="13" text-anchor="end">25</text>
+<line x1="80" x2="540" y1="317.5" y2="317.5" stroke="#dfe4e9"/>
+<text x="68" y="322.5" font-size="13" text-anchor="end">50</text>
+<line x1="80" x2="540" y1="281.75" y2="281.75" stroke="#dfe4e9"/>
+<text x="68" y="286.75" font-size="13" text-anchor="end">75</text>
+<line x1="80" x2="540" y1="246.0" y2="246.0" stroke="#dfe4e9"/>
+<text x="68" y="251.0" font-size="13" text-anchor="end">100</text>
+<text x="80.0" y="410" font-size="13" text-anchor="middle">0</text>
+<text x="195.0" y="410" font-size="13" text-anchor="middle">10</text>
+<text x="310.0" y="410" font-size="13" text-anchor="middle">20</text>
+<text x="425.0" y="410" font-size="13" text-anchor="middle">30</text>
+<text x="540.0" y="410" font-size="13" text-anchor="middle">40</text>
+<polyline points="91.50,345.71 114.50,345.01 137.50,347.80 160.50,356.88 183.50,331.05 206.50,357.58 229.50,358.98 252.50,320.57 275.50,345.71 298.50,347.11 321.50,388.30 344.50,388.30 367.50,389.00 390.50,388.30 413.50,388.30 427.45,389.00" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="91.50,385.80 114.50,385.73 137.50,386.56 160.50,386.76 183.50,382.95 206.50,387.02 229.50,387.26 252.50,380.14 275.50,382.92 298.50,383.31 321.50,388.98 344.50,388.99 367.50,389.00 390.50,388.99 413.50,388.99 427.45,389.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="620" y="217" font-size="18" >DRAM 4 GiB / staging 4 GiB</text>
+<line x1="620" x2="1080" y1="389.0" y2="389.0" stroke="#dfe4e9"/>
+<text x="608" y="394.0" font-size="13" text-anchor="end">0</text>
+<line x1="620" x2="1080" y1="353.25" y2="353.25" stroke="#dfe4e9"/>
+<text x="608" y="358.25" font-size="13" text-anchor="end">25</text>
+<line x1="620" x2="1080" y1="317.5" y2="317.5" stroke="#dfe4e9"/>
+<text x="608" y="322.5" font-size="13" text-anchor="end">50</text>
+<line x1="620" x2="1080" y1="281.75" y2="281.75" stroke="#dfe4e9"/>
+<text x="608" y="286.75" font-size="13" text-anchor="end">75</text>
+<line x1="620" x2="1080" y1="246.0" y2="246.0" stroke="#dfe4e9"/>
+<text x="608" y="251.0" font-size="13" text-anchor="end">100</text>
+<text x="620.0" y="410" font-size="13" text-anchor="middle">0</text>
+<text x="735.0" y="410" font-size="13" text-anchor="middle">10</text>
+<text x="850.0" y="410" font-size="13" text-anchor="middle">20</text>
+<text x="965.0" y="410" font-size="13" text-anchor="middle">30</text>
+<text x="1080.0" y="410" font-size="13" text-anchor="middle">40</text>
+<polyline points="631.50,328.25 654.50,284.26 677.50,345.01 700.50,356.88 723.50,336.63 746.50,334.54 769.50,357.58 792.50,351.29 815.50,328.95 838.50,322.67 861.50,388.30 884.50,389.00 907.50,388.30 926.54,388.30" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="631.50,381.16 654.50,329.68 677.50,386.12 700.50,384.78 723.50,382.88 746.50,383.65 769.50,386.80 792.50,381.86 815.50,381.08 838.50,379.47 861.50,388.98 884.50,389.00 907.50,388.99 926.54,388.99" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="1160" y="217" font-size="18" >DRAM 4 GiB / staging 4 GiB</text>
+<line x1="1160" x2="1620" y1="389.0" y2="389.0" stroke="#dfe4e9"/>
+<text x="1148" y="394.0" font-size="13" text-anchor="end">0</text>
+<line x1="1160" x2="1620" y1="353.25" y2="353.25" stroke="#dfe4e9"/>
+<text x="1148" y="358.25" font-size="13" text-anchor="end">25</text>
+<line x1="1160" x2="1620" y1="317.5" y2="317.5" stroke="#dfe4e9"/>
+<text x="1148" y="322.5" font-size="13" text-anchor="end">50</text>
+<line x1="1160" x2="1620" y1="281.75" y2="281.75" stroke="#dfe4e9"/>
+<text x="1148" y="286.75" font-size="13" text-anchor="end">75</text>
+<line x1="1160" x2="1620" y1="246.0" y2="246.0" stroke="#dfe4e9"/>
+<text x="1148" y="251.0" font-size="13" text-anchor="end">100</text>
+<text x="1160.0" y="410" font-size="13" text-anchor="middle">0</text>
+<text x="1275.0" y="410" font-size="13" text-anchor="middle">10</text>
+<text x="1390.0" y="410" font-size="13" text-anchor="middle">20</text>
+<text x="1505.0" y="410" font-size="13" text-anchor="middle">30</text>
+<text x="1620.0" y="410" font-size="13" text-anchor="middle">40</text>
+<polyline points="1171.50,316.38 1194.50,285.66 1217.50,333.84 1240.50,356.88 1263.50,321.27 1286.50,349.20 1309.50,357.58 1332.50,351.29 1355.50,328.95 1378.50,321.27 1401.50,388.30 1424.50,388.30 1443.44,388.30" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="1171.50,379.53 1194.50,334.89 1217.50,379.27 1240.50,375.77 1263.50,379.64 1286.50,384.39 1309.50,386.42 1332.50,381.60 1355.50,383.43 1378.50,379.97 1401.50,388.99 1424.50,388.99 1443.44,388.99" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="80" y="449" font-size="18" >DRAM 4 GiB / staging 8 GiB</text>
+<line x1="80" x2="540" y1="621.0" y2="621.0" stroke="#dfe4e9"/>
+<text x="68" y="626.0" font-size="13" text-anchor="end">0</text>
+<line x1="80" x2="540" y1="585.25" y2="585.25" stroke="#dfe4e9"/>
+<text x="68" y="590.25" font-size="13" text-anchor="end">25</text>
+<line x1="80" x2="540" y1="549.5" y2="549.5" stroke="#dfe4e9"/>
+<text x="68" y="554.5" font-size="13" text-anchor="end">50</text>
+<line x1="80" x2="540" y1="513.75" y2="513.75" stroke="#dfe4e9"/>
+<text x="68" y="518.75" font-size="13" text-anchor="end">75</text>
+<line x1="80" x2="540" y1="478.0" y2="478.0" stroke="#dfe4e9"/>
+<text x="68" y="483.0" font-size="13" text-anchor="end">100</text>
+<text x="80.0" y="642" font-size="13" text-anchor="middle">0</text>
+<text x="195.0" y="642" font-size="13" text-anchor="middle">10</text>
+<text x="310.0" y="642" font-size="13" text-anchor="middle">20</text>
+<text x="425.0" y="642" font-size="13" text-anchor="middle">30</text>
+<text x="540.0" y="642" font-size="13" text-anchor="middle">40</text>
+<polyline points="91.50,601.10 114.50,599.01 137.50,599.01 160.50,604.94 183.50,602.15 206.50,606.69 229.50,605.29 252.50,588.53 275.50,592.02 298.50,591.67 321.50,620.65 344.50,620.65 367.50,621.00 386.41,620.65" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="91.50,619.45 114.50,619.65 137.50,618.71 160.50,619.04 183.50,618.20 206.50,620.04 229.50,619.68 252.50,616.85 275.50,617.76 298.50,616.26 321.50,621.00 344.50,621.00 367.50,621.00 386.41,620.99" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="620" y="449" font-size="18" >DRAM 4 GiB / staging 8 GiB</text>
+<line x1="620" x2="1080" y1="621.0" y2="621.0" stroke="#dfe4e9"/>
+<text x="608" y="626.0" font-size="13" text-anchor="end">0</text>
+<line x1="620" x2="1080" y1="585.25" y2="585.25" stroke="#dfe4e9"/>
+<text x="608" y="590.25" font-size="13" text-anchor="end">25</text>
+<line x1="620" x2="1080" y1="549.5" y2="549.5" stroke="#dfe4e9"/>
+<text x="608" y="554.5" font-size="13" text-anchor="end">50</text>
+<line x1="620" x2="1080" y1="513.75" y2="513.75" stroke="#dfe4e9"/>
+<text x="608" y="518.75" font-size="13" text-anchor="end">75</text>
+<line x1="620" x2="1080" y1="478.0" y2="478.0" stroke="#dfe4e9"/>
+<text x="608" y="483.0" font-size="13" text-anchor="end">100</text>
+<text x="620.0" y="642" font-size="13" text-anchor="middle">0</text>
+<text x="735.0" y="642" font-size="13" text-anchor="middle">10</text>
+<text x="850.0" y="642" font-size="13" text-anchor="middle">20</text>
+<text x="965.0" y="642" font-size="13" text-anchor="middle">30</text>
+<text x="1080.0" y="642" font-size="13" text-anchor="middle">40</text>
+<polyline points="631.50,595.51 654.50,585.74 677.50,587.14 700.50,593.42 723.50,602.15 746.50,592.02 769.50,604.94 792.50,601.80 815.50,602.15 838.50,599.01 861.50,583.99 884.50,621.00 907.50,620.65 930.50,620.65 943.46,621.00" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="631.50,615.40 654.50,606.36 677.50,616.43 700.50,618.88 723.50,618.54 746.50,618.38 769.50,619.69 792.50,618.45 815.50,618.95 838.50,616.94 861.50,619.18 884.50,621.00 907.50,621.00 930.50,621.00 943.46,621.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="1160" y="449" font-size="18" >DRAM 4 GiB / staging 8 GiB</text>
+<line x1="1160" x2="1620" y1="621.0" y2="621.0" stroke="#dfe4e9"/>
+<text x="1148" y="626.0" font-size="13" text-anchor="end">0</text>
+<line x1="1160" x2="1620" y1="585.25" y2="585.25" stroke="#dfe4e9"/>
+<text x="1148" y="590.25" font-size="13" text-anchor="end">25</text>
+<line x1="1160" x2="1620" y1="549.5" y2="549.5" stroke="#dfe4e9"/>
+<text x="1148" y="554.5" font-size="13" text-anchor="end">50</text>
+<line x1="1160" x2="1620" y1="513.75" y2="513.75" stroke="#dfe4e9"/>
+<text x="1148" y="518.75" font-size="13" text-anchor="end">75</text>
+<line x1="1160" x2="1620" y1="478.0" y2="478.0" stroke="#dfe4e9"/>
+<text x="1148" y="483.0" font-size="13" text-anchor="end">100</text>
+<text x="1160.0" y="642" font-size="13" text-anchor="middle">0</text>
+<text x="1275.0" y="642" font-size="13" text-anchor="middle">10</text>
+<text x="1390.0" y="642" font-size="13" text-anchor="middle">20</text>
+<text x="1505.0" y="642" font-size="13" text-anchor="middle">30</text>
+<text x="1620.0" y="642" font-size="13" text-anchor="middle">40</text>
+<polyline points="1171.50,593.07 1194.50,586.09 1217.50,587.14 1240.50,604.94 1263.50,602.15 1286.50,596.21 1309.50,605.29 1332.50,593.07 1355.50,602.15 1378.50,590.28 1401.50,620.65 1424.50,620.65 1447.50,620.65" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="1171.50,613.04 1194.50,606.84 1217.50,611.58 1240.50,616.14 1263.50,615.69 1286.50,616.53 1309.50,620.10 1332.50,617.71 1355.50,618.37 1378.50,616.41 1401.50,620.99 1424.50,621.00 1447.50,621.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="80" y="681" font-size="18" >DRAM 8 GiB / staging 4 GiB</text>
+<line x1="80" x2="540" y1="853.0" y2="853.0" stroke="#dfe4e9"/>
+<text x="68" y="858.0" font-size="13" text-anchor="end">0</text>
+<line x1="80" x2="540" y1="817.25" y2="817.25" stroke="#dfe4e9"/>
+<text x="68" y="822.25" font-size="13" text-anchor="end">25</text>
+<line x1="80" x2="540" y1="781.5" y2="781.5" stroke="#dfe4e9"/>
+<text x="68" y="786.5" font-size="13" text-anchor="end">50</text>
+<line x1="80" x2="540" y1="745.75" y2="745.75" stroke="#dfe4e9"/>
+<text x="68" y="750.75" font-size="13" text-anchor="end">75</text>
+<line x1="80" x2="540" y1="710.0" y2="710.0" stroke="#dfe4e9"/>
+<text x="68" y="715.0" font-size="13" text-anchor="end">100</text>
+<text x="80.0" y="874" font-size="13" text-anchor="middle">0</text>
+<text x="195.0" y="874" font-size="13" text-anchor="middle">10</text>
+<text x="310.0" y="874" font-size="13" text-anchor="middle">20</text>
+<text x="425.0" y="874" font-size="13" text-anchor="middle">30</text>
+<text x="540.0" y="874" font-size="13" text-anchor="middle">40</text>
+<polyline points="91.50,808.31 114.50,810.41 137.50,809.01 160.50,821.58 183.50,815.29 206.50,806.22 229.50,821.58 252.50,794.35 275.50,821.58 298.50,815.99 321.50,852.30 344.50,853.00 367.50,852.30 388.55,853.00" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="91.50,849.72 114.50,849.89 137.50,850.01 160.50,851.08 183.50,849.03 206.50,851.18 229.50,851.28 252.50,845.97 275.50,850.50 298.50,847.68 321.50,852.98 344.50,853.00 367.50,852.99 388.55,853.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="620" y="681" font-size="18" >DRAM 8 GiB / staging 4 GiB</text>
+<line x1="620" x2="1080" y1="853.0" y2="853.0" stroke="#dfe4e9"/>
+<text x="608" y="858.0" font-size="13" text-anchor="end">0</text>
+<line x1="620" x2="1080" y1="817.25" y2="817.25" stroke="#dfe4e9"/>
+<text x="608" y="822.25" font-size="13" text-anchor="end">25</text>
+<line x1="620" x2="1080" y1="781.5" y2="781.5" stroke="#dfe4e9"/>
+<text x="608" y="786.5" font-size="13" text-anchor="end">50</text>
+<line x1="620" x2="1080" y1="745.75" y2="745.75" stroke="#dfe4e9"/>
+<text x="608" y="750.75" font-size="13" text-anchor="end">75</text>
+<line x1="620" x2="1080" y1="710.0" y2="710.0" stroke="#dfe4e9"/>
+<text x="608" y="715.0" font-size="13" text-anchor="end">100</text>
+<text x="620.0" y="874" font-size="13" text-anchor="middle">0</text>
+<text x="735.0" y="874" font-size="13" text-anchor="middle">10</text>
+<text x="850.0" y="874" font-size="13" text-anchor="middle">20</text>
+<text x="965.0" y="874" font-size="13" text-anchor="middle">30</text>
+<text x="1080.0" y="874" font-size="13" text-anchor="middle">40</text>
+<polyline points="631.50,786.67 654.50,748.96 677.50,772.00 700.50,794.35 723.50,815.29 746.50,800.63 769.50,821.58 792.50,785.27 815.50,792.95 838.50,794.35 861.50,852.30 884.50,852.30 907.50,852.30 925.04,853.00" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="631.50,845.16 654.50,792.04 677.50,832.97 700.50,847.03 723.50,844.02 746.50,848.82 769.50,850.18 792.50,845.00 815.50,846.87 838.50,845.78 861.50,852.99 884.50,852.99 907.50,852.99 925.04,853.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="1160" y="681" font-size="18" >DRAM 8 GiB / staging 4 GiB</text>
+<line x1="1160" x2="1620" y1="853.0" y2="853.0" stroke="#dfe4e9"/>
+<text x="1148" y="858.0" font-size="13" text-anchor="end">0</text>
+<line x1="1160" x2="1620" y1="817.25" y2="817.25" stroke="#dfe4e9"/>
+<text x="1148" y="822.25" font-size="13" text-anchor="end">25</text>
+<line x1="1160" x2="1620" y1="781.5" y2="781.5" stroke="#dfe4e9"/>
+<text x="1148" y="786.5" font-size="13" text-anchor="end">50</text>
+<line x1="1160" x2="1620" y1="745.75" y2="745.75" stroke="#dfe4e9"/>
+<text x="1148" y="750.75" font-size="13" text-anchor="end">75</text>
+<line x1="1160" x2="1620" y1="710.0" y2="710.0" stroke="#dfe4e9"/>
+<text x="1148" y="715.0" font-size="13" text-anchor="end">100</text>
+<text x="1160.0" y="874" font-size="13" text-anchor="middle">0</text>
+<text x="1275.0" y="874" font-size="13" text-anchor="middle">10</text>
+<text x="1390.0" y="874" font-size="13" text-anchor="middle">20</text>
+<text x="1505.0" y="874" font-size="13" text-anchor="middle">30</text>
+<text x="1620.0" y="874" font-size="13" text-anchor="middle">40</text>
+<polyline points="1171.50,808.31 1194.50,772.00 1217.50,771.31 1240.50,790.86 1263.50,807.61 1286.50,801.33 1309.50,821.58 1332.50,815.29 1355.50,793.65 1378.50,779.68 1401.50,851.60 1424.50,853.00 1447.50,852.30 1468.23,852.30" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="1171.50,847.65 1194.50,813.26 1217.50,821.03 1240.50,850.32 1263.50,848.55 1286.50,844.69 1309.50,851.20 1332.50,846.67 1355.50,847.56 1378.50,844.93 1401.50,852.94 1424.50,853.00 1447.50,852.99 1468.23,852.99" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="80" y="913" font-size="18" >DRAM 8 GiB / staging 8 GiB</text>
+<line x1="80" x2="540" y1="1085.0" y2="1085.0" stroke="#dfe4e9"/>
+<text x="68" y="1090.0" font-size="13" text-anchor="end">0</text>
+<line x1="80" x2="540" y1="1049.25" y2="1049.25" stroke="#dfe4e9"/>
+<text x="68" y="1054.25" font-size="13" text-anchor="end">25</text>
+<line x1="80" x2="540" y1="1013.5" y2="1013.5" stroke="#dfe4e9"/>
+<text x="68" y="1018.5" font-size="13" text-anchor="end">50</text>
+<line x1="80" x2="540" y1="977.75" y2="977.75" stroke="#dfe4e9"/>
+<text x="68" y="982.75" font-size="13" text-anchor="end">75</text>
+<line x1="80" x2="540" y1="942.0" y2="942.0" stroke="#dfe4e9"/>
+<text x="68" y="947.0" font-size="13" text-anchor="end">100</text>
+<text x="80.0" y="1106" font-size="13" text-anchor="middle">0</text>
+<text x="195.0" y="1106" font-size="13" text-anchor="middle">10</text>
+<text x="310.0" y="1106" font-size="13" text-anchor="middle">20</text>
+<text x="425.0" y="1106" font-size="13" text-anchor="middle">30</text>
+<text x="540.0" y="1106" font-size="13" text-anchor="middle">40</text>
+<polyline points="91.50,1063.01 114.50,1063.35 137.50,1063.01 160.50,1068.94 183.50,1066.15 206.50,1072.08 229.50,1069.29 252.50,1051.14 275.50,1068.94 298.50,1057.77 321.50,1066.50 344.50,1084.65 367.50,1084.65 380.33,1085.00" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="91.50,1083.72 114.50,1083.37 137.50,1083.73 160.50,1084.08 183.50,1083.28 206.50,1084.16 229.50,1084.13 252.50,1081.87 275.50,1083.28 298.50,1082.73 321.50,1084.02 344.50,1085.00 367.50,1085.00 380.33,1085.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="620" y="913" font-size="18" >DRAM 8 GiB / staging 8 GiB</text>
+<line x1="620" x2="1080" y1="1085.0" y2="1085.0" stroke="#dfe4e9"/>
+<text x="608" y="1090.0" font-size="13" text-anchor="end">0</text>
+<line x1="620" x2="1080" y1="1049.25" y2="1049.25" stroke="#dfe4e9"/>
+<text x="608" y="1054.25" font-size="13" text-anchor="end">25</text>
+<line x1="620" x2="1080" y1="1013.5" y2="1013.5" stroke="#dfe4e9"/>
+<text x="608" y="1018.5" font-size="13" text-anchor="end">50</text>
+<line x1="620" x2="1080" y1="977.75" y2="977.75" stroke="#dfe4e9"/>
+<text x="608" y="982.75" font-size="13" text-anchor="end">75</text>
+<line x1="620" x2="1080" y1="942.0" y2="942.0" stroke="#dfe4e9"/>
+<text x="608" y="947.0" font-size="13" text-anchor="end">100</text>
+<text x="620.0" y="1106" font-size="13" text-anchor="middle">0</text>
+<text x="735.0" y="1106" font-size="13" text-anchor="middle">10</text>
+<text x="850.0" y="1106" font-size="13" text-anchor="middle">20</text>
+<text x="965.0" y="1106" font-size="13" text-anchor="middle">30</text>
+<text x="1080.0" y="1106" font-size="13" text-anchor="middle">40</text>
+<polyline points="631.50,1062.66 654.50,1048.69 677.50,1050.79 700.50,1068.94 723.50,1051.83 746.50,1068.94 769.50,1069.29 792.50,1065.80 815.50,1055.32 838.50,1050.09 861.50,1084.65 884.50,1085.00 907.50,1084.65 928.44,1084.65" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="631.50,1083.30 654.50,1070.90 677.50,1075.02 700.50,1080.19 723.50,1078.84 746.50,1081.12 769.50,1083.97 792.50,1081.72 815.50,1082.93 838.50,1080.39 861.50,1084.98 884.50,1085.00 907.50,1085.00 928.44,1085.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="1160" y="913" font-size="18" >DRAM 8 GiB / staging 8 GiB</text>
+<line x1="1160" x2="1620" y1="1085.0" y2="1085.0" stroke="#dfe4e9"/>
+<text x="1148" y="1090.0" font-size="13" text-anchor="end">0</text>
+<line x1="1160" x2="1620" y1="1049.25" y2="1049.25" stroke="#dfe4e9"/>
+<text x="1148" y="1054.25" font-size="13" text-anchor="end">25</text>
+<line x1="1160" x2="1620" y1="1013.5" y2="1013.5" stroke="#dfe4e9"/>
+<text x="1148" y="1018.5" font-size="13" text-anchor="end">50</text>
+<line x1="1160" x2="1620" y1="977.75" y2="977.75" stroke="#dfe4e9"/>
+<text x="1148" y="982.75" font-size="13" text-anchor="end">75</text>
+<line x1="1160" x2="1620" y1="942.0" y2="942.0" stroke="#dfe4e9"/>
+<text x="1148" y="947.0" font-size="13" text-anchor="end">100</text>
+<text x="1160.0" y="1106" font-size="13" text-anchor="middle">0</text>
+<text x="1275.0" y="1106" font-size="13" text-anchor="middle">10</text>
+<text x="1390.0" y="1106" font-size="13" text-anchor="middle">20</text>
+<text x="1505.0" y="1106" font-size="13" text-anchor="middle">30</text>
+<text x="1620.0" y="1106" font-size="13" text-anchor="middle">40</text>
+<polyline points="1171.50,1040.66 1194.50,1031.58 1217.50,1063.70 1240.50,1053.93 1263.50,1059.17 1286.50,1068.59 1309.50,1069.29 1332.50,1066.15 1355.50,1066.15 1378.50,1053.58 1401.50,1084.30 1424.50,1084.65 1446.10,1085.00" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="1171.50,1079.78 1194.50,1053.27 1217.50,1080.02 1240.50,1080.80 1263.50,1082.71 1286.50,1083.84 1309.50,1083.39 1332.50,1081.30 1355.50,1081.66 1378.50,1082.24 1401.50,1084.99 1424.50,1085.00 1446.10,1085.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="80" y="1145" font-size="18" >DRAM 16 GiB / staging 4 GiB</text>
+<line x1="80" x2="540" y1="1317.0" y2="1317.0" stroke="#dfe4e9"/>
+<text x="68" y="1322.0" font-size="13" text-anchor="end">0</text>
+<line x1="80" x2="540" y1="1281.25" y2="1281.25" stroke="#dfe4e9"/>
+<text x="68" y="1286.25" font-size="13" text-anchor="end">25</text>
+<line x1="80" x2="540" y1="1245.5" y2="1245.5" stroke="#dfe4e9"/>
+<text x="68" y="1250.5" font-size="13" text-anchor="end">50</text>
+<line x1="80" x2="540" y1="1209.75" y2="1209.75" stroke="#dfe4e9"/>
+<text x="68" y="1214.75" font-size="13" text-anchor="end">75</text>
+<line x1="80" x2="540" y1="1174.0" y2="1174.0" stroke="#dfe4e9"/>
+<text x="68" y="1179.0" font-size="13" text-anchor="end">100</text>
+<text x="80.0" y="1338" font-size="13" text-anchor="middle">0</text>
+<text x="195.0" y="1338" font-size="13" text-anchor="middle">10</text>
+<text x="310.0" y="1338" font-size="13" text-anchor="middle">20</text>
+<text x="425.0" y="1338" font-size="13" text-anchor="middle">30</text>
+<text x="540.0" y="1338" font-size="13" text-anchor="middle">40</text>
+<polyline points="91.50,1272.31 114.50,1274.41 137.50,1276.50 160.50,1285.58 183.50,1279.29 206.50,1292.56 229.50,1289.07 252.50,1316.30 275.50,1291.17 298.50,1298.15 321.50,1316.30 344.50,1316.30 367.50,1316.30 390.50,1317.00 403.46,1317.00" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="91.50,1313.80 114.50,1314.02 137.50,1314.61 160.50,1315.84 183.50,1315.32 206.50,1316.40 229.50,1316.43 252.50,1316.96 275.50,1316.23 298.50,1316.34 321.50,1316.97 344.50,1316.99 367.50,1316.99 390.50,1317.00 403.46,1317.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="620" y="1145" font-size="18" >DRAM 16 GiB / staging 4 GiB</text>
+<line x1="620" x2="1080" y1="1317.0" y2="1317.0" stroke="#dfe4e9"/>
+<text x="608" y="1322.0" font-size="13" text-anchor="end">0</text>
+<line x1="620" x2="1080" y1="1281.25" y2="1281.25" stroke="#dfe4e9"/>
+<text x="608" y="1286.25" font-size="13" text-anchor="end">25</text>
+<line x1="620" x2="1080" y1="1245.5" y2="1245.5" stroke="#dfe4e9"/>
+<text x="608" y="1250.5" font-size="13" text-anchor="end">50</text>
+<line x1="620" x2="1080" y1="1209.75" y2="1209.75" stroke="#dfe4e9"/>
+<text x="608" y="1214.75" font-size="13" text-anchor="end">75</text>
+<line x1="620" x2="1080" y1="1174.0" y2="1174.0" stroke="#dfe4e9"/>
+<text x="608" y="1179.0" font-size="13" text-anchor="end">100</text>
+<text x="620.0" y="1338" font-size="13" text-anchor="middle">0</text>
+<text x="735.0" y="1338" font-size="13" text-anchor="middle">10</text>
+<text x="850.0" y="1338" font-size="13" text-anchor="middle">20</text>
+<text x="965.0" y="1338" font-size="13" text-anchor="middle">30</text>
+<text x="1080.0" y="1338" font-size="13" text-anchor="middle">40</text>
+<polyline points="631.50,1247.18 654.50,1249.27 677.50,1246.48 700.50,1270.92 723.50,1279.29 746.50,1262.54 769.50,1284.88 792.50,1262.54 815.50,1279.29 838.50,1249.27 861.50,1316.30 884.50,1317.00 907.50,1316.30 930.50,1317.00 944.25,1317.00" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="631.50,1296.83 654.50,1289.17 677.50,1311.98 700.50,1313.05 723.50,1313.00 746.50,1311.80 769.50,1315.52 792.50,1311.40 815.50,1313.23 838.50,1309.62 861.50,1316.94 884.50,1317.00 907.50,1316.99 930.50,1317.00 944.25,1317.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="1160" y="1145" font-size="18" >DRAM 16 GiB / staging 4 GiB</text>
+<line x1="1160" x2="1620" y1="1317.0" y2="1317.0" stroke="#dfe4e9"/>
+<text x="1148" y="1322.0" font-size="13" text-anchor="end">0</text>
+<line x1="1160" x2="1620" y1="1281.25" y2="1281.25" stroke="#dfe4e9"/>
+<text x="1148" y="1286.25" font-size="13" text-anchor="end">25</text>
+<line x1="1160" x2="1620" y1="1245.5" y2="1245.5" stroke="#dfe4e9"/>
+<text x="1148" y="1250.5" font-size="13" text-anchor="end">50</text>
+<line x1="1160" x2="1620" y1="1209.75" y2="1209.75" stroke="#dfe4e9"/>
+<text x="1148" y="1214.75" font-size="13" text-anchor="end">75</text>
+<line x1="1160" x2="1620" y1="1174.0" y2="1174.0" stroke="#dfe4e9"/>
+<text x="1148" y="1179.0" font-size="13" text-anchor="end">100</text>
+<text x="1160.0" y="1338" font-size="13" text-anchor="middle">0</text>
+<text x="1275.0" y="1338" font-size="13" text-anchor="middle">10</text>
+<text x="1390.0" y="1338" font-size="13" text-anchor="middle">20</text>
+<text x="1505.0" y="1338" font-size="13" text-anchor="middle">30</text>
+<text x="1620.0" y="1338" font-size="13" text-anchor="middle">40</text>
+<polyline points="1171.50,1278.60 1194.50,1236.00 1217.50,1275.11 1240.50,1284.88 1263.50,1279.29 1286.50,1265.33 1309.50,1285.58 1332.50,1279.29 1355.50,1256.95 1378.50,1279.99 1401.50,1316.30 1424.50,1316.30 1444.41,1317.00" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="1171.50,1314.62 1194.50,1293.51 1217.50,1311.21 1240.50,1308.14 1263.50,1312.23 1286.50,1313.18 1309.50,1315.62 1332.50,1311.28 1355.50,1311.36 1378.50,1311.76 1401.50,1316.98 1424.50,1316.99 1444.41,1317.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="80" y="1377" font-size="18" >DRAM 16 GiB / staging 8 GiB</text>
+<line x1="80" x2="540" y1="1549.0" y2="1549.0" stroke="#dfe4e9"/>
+<text x="68" y="1554.0" font-size="13" text-anchor="end">0</text>
+<line x1="80" x2="540" y1="1513.25" y2="1513.25" stroke="#dfe4e9"/>
+<text x="68" y="1518.25" font-size="13" text-anchor="end">25</text>
+<line x1="80" x2="540" y1="1477.5" y2="1477.5" stroke="#dfe4e9"/>
+<text x="68" y="1482.5" font-size="13" text-anchor="end">50</text>
+<line x1="80" x2="540" y1="1441.75" y2="1441.75" stroke="#dfe4e9"/>
+<text x="68" y="1446.75" font-size="13" text-anchor="end">75</text>
+<line x1="80" x2="540" y1="1406.0" y2="1406.0" stroke="#dfe4e9"/>
+<text x="68" y="1411.0" font-size="13" text-anchor="end">100</text>
+<text x="80.0" y="1570" font-size="13" text-anchor="middle">0</text>
+<text x="195.0" y="1570" font-size="13" text-anchor="middle">10</text>
+<text x="310.0" y="1570" font-size="13" text-anchor="middle">20</text>
+<text x="425.0" y="1570" font-size="13" text-anchor="middle">30</text>
+<text x="540.0" y="1570" font-size="13" text-anchor="middle">40</text>
+<polyline points="91.50,1527.35 114.50,1527.01 137.50,1527.01 160.50,1533.29 183.50,1531.54 206.50,1537.83 229.50,1548.65 252.50,1536.78 275.50,1536.08 298.50,1538.53 321.50,1548.65 344.50,1548.65 367.50,1548.65 387.59,1549.00" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="91.50,1547.85 114.50,1547.16 137.50,1547.58 160.50,1548.38 183.50,1548.28 206.50,1548.79 229.50,1548.99 252.50,1548.78 275.50,1548.68 298.50,1548.82 321.50,1548.98 344.50,1548.99 367.50,1549.00 387.59,1549.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="620" y="1377" font-size="18" >DRAM 16 GiB / staging 8 GiB</text>
+<line x1="620" x2="1080" y1="1549.0" y2="1549.0" stroke="#dfe4e9"/>
+<text x="608" y="1554.0" font-size="13" text-anchor="end">0</text>
+<line x1="620" x2="1080" y1="1513.25" y2="1513.25" stroke="#dfe4e9"/>
+<text x="608" y="1518.25" font-size="13" text-anchor="end">25</text>
+<line x1="620" x2="1080" y1="1477.5" y2="1477.5" stroke="#dfe4e9"/>
+<text x="608" y="1482.5" font-size="13" text-anchor="end">50</text>
+<line x1="620" x2="1080" y1="1441.75" y2="1441.75" stroke="#dfe4e9"/>
+<text x="608" y="1446.75" font-size="13" text-anchor="end">75</text>
+<line x1="620" x2="1080" y1="1406.0" y2="1406.0" stroke="#dfe4e9"/>
+<text x="608" y="1411.0" font-size="13" text-anchor="end">100</text>
+<text x="620.0" y="1570" font-size="13" text-anchor="middle">0</text>
+<text x="735.0" y="1570" font-size="13" text-anchor="middle">10</text>
+<text x="850.0" y="1570" font-size="13" text-anchor="middle">20</text>
+<text x="965.0" y="1570" font-size="13" text-anchor="middle">30</text>
+<text x="1080.0" y="1570" font-size="13" text-anchor="middle">40</text>
+<polyline points="631.50,1517.58 654.50,1501.52 677.50,1527.35 700.50,1526.31 723.50,1515.14 746.50,1523.17 769.50,1533.29 792.50,1498.73 815.50,1520.02 838.50,1517.93 861.50,1549.00 884.50,1548.65 907.50,1548.65 923.60,1549.00" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="631.50,1544.66 654.50,1532.38 677.50,1547.20 700.50,1547.30 723.50,1546.43 746.50,1547.21 769.50,1547.93 792.50,1546.22 815.50,1546.55 838.50,1546.69 861.50,1549.00 884.50,1549.00 907.50,1549.00 923.60,1549.00" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="1160" y="1377" font-size="18" >DRAM 16 GiB / staging 8 GiB</text>
+<line x1="1160" x2="1620" y1="1549.0" y2="1549.0" stroke="#dfe4e9"/>
+<text x="1148" y="1554.0" font-size="13" text-anchor="end">0</text>
+<line x1="1160" x2="1620" y1="1513.25" y2="1513.25" stroke="#dfe4e9"/>
+<text x="1148" y="1518.25" font-size="13" text-anchor="end">25</text>
+<line x1="1160" x2="1620" y1="1477.5" y2="1477.5" stroke="#dfe4e9"/>
+<text x="1148" y="1482.5" font-size="13" text-anchor="end">50</text>
+<line x1="1160" x2="1620" y1="1441.75" y2="1441.75" stroke="#dfe4e9"/>
+<text x="1148" y="1446.75" font-size="13" text-anchor="end">75</text>
+<line x1="1160" x2="1620" y1="1406.0" y2="1406.0" stroke="#dfe4e9"/>
+<text x="1148" y="1411.0" font-size="13" text-anchor="end">100</text>
+<text x="1160.0" y="1570" font-size="13" text-anchor="middle">0</text>
+<text x="1275.0" y="1570" font-size="13" text-anchor="middle">10</text>
+<text x="1390.0" y="1570" font-size="13" text-anchor="middle">20</text>
+<text x="1505.0" y="1570" font-size="13" text-anchor="middle">30</text>
+<text x="1620.0" y="1570" font-size="13" text-anchor="middle">40</text>
+<polyline points="1171.50,1506.41 1194.50,1492.09 1217.50,1520.72 1240.50,1517.93 1263.50,1515.14 1286.50,1518.63 1309.50,1533.29 1332.50,1516.88 1355.50,1519.67 1378.50,1522.12 1401.50,1548.65 1424.50,1549.00 1439.54,1548.65" fill="none" stroke="#d55e00" stroke-width="1.8"  opacity="0.85"/>
+<polyline points="1171.50,1543.90 1194.50,1521.27 1217.50,1538.33 1240.50,1541.49 1263.50,1546.31 1286.50,1547.12 1309.50,1547.99 1332.50,1545.89 1355.50,1546.09 1378.50,1547.55 1401.50,1549.00 1424.50,1549.00 1439.54,1548.99" fill="none" stroke="#d55e00" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/>
+<text x="40" y="1647" font-size="16" >All panels share the same axes. Runs end at different times; no zero padding or time normalization.</text>
+<text x="40" y="1673" font-size="16" >Sampled peaks may miss brief allocation spikes. Occupancy is not GPU compute utilization.</text>
+<text x="40" y="1699" font-size="16" >OFF disables only DRAM prefetch; DAOS prefetch remains enabled. Equal times do not imply equal requests.</text>
+</g></svg>

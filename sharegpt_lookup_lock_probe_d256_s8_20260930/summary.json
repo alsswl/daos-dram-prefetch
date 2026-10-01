@@ -1,0 +1,61 @@
+{
+  "phases": [
+    {
+      "phase": "cold",
+      "requests": 1684,
+      "responses": 1684,
+      "response_lock_acquire_ms": {
+        "n": 1684,
+        "mean": 0.0022937832541567696,
+        "p50": 0.00199,
+        "p95": 0.003141,
+        "maximum": 0.153565
+      },
+      "acquire_over_0_1ms": 2,
+      "acquire_over_1ms": 0,
+      "observed_locked_count": 2,
+      "total_response_acquire_ms": 3.862731,
+      "total_acquire_overlap_poll_hold_ms": 0.191461,
+      "polling_lock_hold_ms": {
+        "n": 3349,
+        "mean": 0.009787087787399224,
+        "p50": 0.004797,
+        "p95": 0.0097696,
+        "maximum": 1.590704
+      },
+      "polling_holds_over_0_5ms": 14
+    },
+    {
+      "phase": "warm_lock_probe",
+      "requests": 256,
+      "responses": 256,
+      "response_lock_acquire_ms": {
+        "n": 256,
+        "mean": 0.0347521640625,
+        "p50": 0.0019705,
+        "p95": 0.00306375,
+        "maximum": 7.626528
+      },
+      "acquire_over_0_1ms": 2,
+      "acquire_over_1ms": 1,
+      "observed_locked_count": 2,
+      "total_response_acquire_ms": 8.896554,
+      "total_acquire_overlap_poll_hold_ms": 6.126812,
+      "polling_lock_hold_ms": {
+        "n": 511,
+        "mean": 0.01796438747553816,
+        "p50": 0.004853,
+        "p95": 0.008531,
+        "maximum": 5.575216
+      },
+      "polling_holds_over_0_5ms": 2
+    }
+  ],
+  "limitations": [
+    "Instrumented diagnostic, not a performance A/B or pure mutex hardware wait.",
+    "Acquire time includes OS scheduling, GIL and measurement overhead.",
+    "Overlap with scheduler polling lock hold supports contention; it is not directly TTFT savings.",
+    "Per-event JSON I/O happens after unlock but can perturb subsequent scheduling.",
+    "Warm subset is first64 original conversations, not the complete 1684-request warm phase."
+  ]
+}

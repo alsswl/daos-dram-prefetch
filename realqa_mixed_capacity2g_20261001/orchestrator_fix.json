@@ -1,0 +1,12 @@
+{
+  "timing": "After both measurements and execution validation completed",
+  "change": "Run namespace cleanup in a separate run_vllm.sh subprocess to supply DAOS environment and release its CUDA context before next condition.",
+  "measured_sha256": "dfe2778d94d54d664757eb5851c05b56727ca5f9d91226c2934de1b189650534",
+  "updated_sha256": "f7834dd7f863df3521219020fbd60c853d3e0ab0d8a2cee37cd32c80d0d15985",
+  "validation": [
+    "py_compile passed",
+    "CLI help passed"
+  ],
+  "benchmark_backend_changed": false,
+  "measured_snapshots_preserved": true
+}

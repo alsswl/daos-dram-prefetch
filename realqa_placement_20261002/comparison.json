@@ -1,0 +1,270 @@
+{
+  "results": [
+    {
+      "condition": "baseline",
+      "root": "/root/discos_minji/realqa_placement_20261002_baseline",
+      "requests": 480,
+      "duration_s": 913.463979903,
+      "ttft_http_ms": {
+        "all": {
+          "n": 480,
+          "mean": 1820.6581610666667,
+          "p50": 896.0322424999999,
+          "p95": 6678.455069899977,
+          "maximum": 31754.491277
+        },
+        "new_document": {
+          "n": 80,
+          "mean": 6616.1452295,
+          "p50": 4990.3445665,
+          "p95": 16419.12011489999,
+          "maximum": 31754.491277
+        },
+        "followup": {
+          "n": 400,
+          "mean": 861.56074738,
+          "p50": 851.7889795000001,
+          "p95": 1309.2288448999993,
+          "maximum": 5037.379969
+        },
+        "middle_lane_positions_3_to_50": {
+          "n": 384,
+          "mean": 1368.9834684609375,
+          "p50": 883.619559,
+          "p95": 4984.128162749999,
+          "maximum": 12552.038886
+        }
+      },
+      "completion_tokens": 121308,
+      "input_tokens": 29822671,
+      "cached_token_pct": 86.71716896182774,
+      "store_peak_gib": 1.125,
+      "retrieve_peak_gib": 1.8984375,
+      "total_peak_gib": 1.8984375,
+      "simultaneous_occupancy_s": 0.069624009,
+      "simultaneous_occupancy_pct": 0.00762197640320676,
+      "request_mix_by_time_quarter": [
+        {
+          "quarter": 1,
+          "requests": 90,
+          "new_documents": 32,
+          "followups": 58
+        },
+        {
+          "quarter": 2,
+          "requests": 127,
+          "new_documents": 16,
+          "followups": 111
+        },
+        {
+          "quarter": 3,
+          "requests": 130,
+          "new_documents": 17,
+          "followups": 113
+        },
+        {
+          "quarter": 4,
+          "requests": 133,
+          "new_documents": 15,
+          "followups": 118
+        }
+      ],
+      "capacity_validation": {
+        "passed": true,
+        "shared": true,
+        "pipeline_depth": 4,
+        "max_concurrent_loads": 4,
+        "load_copy_overlap_events": 7348,
+        "allocation_failures": 0,
+        "store_peak_gib": 1.125,
+        "retrieve_peak_gib": 1.8984375
+      },
+      "store_validation": {
+        "passed": true,
+        "requests": 1487,
+        "windows": 2447,
+        "store_allocation_failures": 0,
+        "retrieve_allocation_failures": 0,
+        "total_staging_allocation_failures": 0,
+        "effective_window_bytes": 509607936,
+        "capacity_waits": 1,
+        "capacity_wait_ms": 2.1640988998115063
+      },
+      "final_mirror": {
+        "admitted": 0,
+        "copied": 0,
+        "copied_bytes": 0,
+        "skipped_budget": 0,
+        "skipped_present": 0,
+        "skipped_closed": 0,
+        "skipped_expired": 0,
+        "skipped_allocation": 0,
+        "errors": 0,
+        "peak_pending_bytes": 0,
+        "copy_ms": 0,
+        "cpu_hit_chunks": 0,
+        "read_submit_errors": 0,
+        "write_offered": 0,
+        "write_admitted": 0,
+        "write_copied": 0,
+        "write_copied_bytes": 0,
+        "read_offered": 0,
+        "read_admitted": 0,
+        "read_copied": 0,
+        "read_copied_bytes": 0,
+        "enabled": false,
+        "pending_bytes": 0,
+        "pending_chunks": 0
+      },
+      "no_dram_validation": {
+        "passed": true,
+        "cpu_cache_peak_bytes": 0,
+        "dram_copied_bytes": 0,
+        "retrieved_chunks": 202042,
+        "daos_returned_chunks": 202042,
+        "daos_returned_gib": 3551.51953125
+      }
+    },
+    {
+      "condition": "balanced",
+      "root": "/root/discos_minji/realqa_placement_20261002_balanced",
+      "requests": 480,
+      "duration_s": 898.742502512,
+      "ttft_http_ms": {
+        "all": {
+          "n": 480,
+          "mean": 1643.2721645958334,
+          "p50": 554.9036779999999,
+          "p95": 8356.19017165,
+          "maximum": 31820.755072
+        },
+        "new_document": {
+          "n": 80,
+          "mean": 6158.5500403375,
+          "p50": 4660.415194,
+          "p95": 16393.91341294999,
+          "maximum": 31820.755072
+        },
+        "followup": {
+          "n": 400,
+          "mean": 740.2165894475,
+          "p50": 540.9125505,
+          "p95": 1195.9111437499998,
+          "maximum": 5015.019823
+        },
+        "middle_lane_positions_3_to_50": {
+          "n": 384,
+          "mean": 1140.9931096875,
+          "p50": 544.1537915,
+          "p95": 4656.23916805,
+          "maximum": 9586.442792
+        }
+      },
+      "completion_tokens": 121080,
+      "input_tokens": 29822065,
+      "cached_token_pct": 86.7172142505893,
+      "store_peak_gib": 1.125,
+      "retrieve_peak_gib": 1.8984375,
+      "total_peak_gib": 1.8984375,
+      "simultaneous_occupancy_s": 0.060779169,
+      "simultaneous_occupancy_pct": 0.006762689961821237,
+      "request_mix_by_time_quarter": [
+        {
+          "quarter": 1,
+          "requests": 90,
+          "new_documents": 32,
+          "followups": 58
+        },
+        {
+          "quarter": 2,
+          "requests": 127,
+          "new_documents": 16,
+          "followups": 111
+        },
+        {
+          "quarter": 3,
+          "requests": 132,
+          "new_documents": 16,
+          "followups": 116
+        },
+        {
+          "quarter": 4,
+          "requests": 131,
+          "new_documents": 16,
+          "followups": 115
+        }
+      ],
+      "capacity_validation": {
+        "passed": true,
+        "shared": true,
+        "pipeline_depth": 4,
+        "max_concurrent_loads": 4,
+        "load_copy_overlap_events": 7432,
+        "allocation_failures": 0,
+        "store_peak_gib": 1.125,
+        "retrieve_peak_gib": 1.8984375
+      },
+      "store_validation": {
+        "passed": true,
+        "requests": 1482,
+        "windows": 2442,
+        "store_allocation_failures": 0,
+        "retrieve_allocation_failures": 0,
+        "total_staging_allocation_failures": 0,
+        "effective_window_bytes": 509607936,
+        "capacity_waits": 0,
+        "capacity_wait_ms": 0
+      },
+      "final_mirror": {
+        "admitted": 0,
+        "copied": 0,
+        "copied_bytes": 0,
+        "skipped_budget": 0,
+        "skipped_present": 0,
+        "skipped_closed": 0,
+        "skipped_expired": 0,
+        "skipped_allocation": 0,
+        "errors": 0,
+        "peak_pending_bytes": 0,
+        "copy_ms": 0,
+        "cpu_hit_chunks": 0,
+        "read_submit_errors": 0,
+        "write_offered": 0,
+        "write_admitted": 0,
+        "write_copied": 0,
+        "write_copied_bytes": 0,
+        "read_offered": 0,
+        "read_admitted": 0,
+        "read_copied": 0,
+        "read_copied_bytes": 0,
+        "enabled": false,
+        "pending_bytes": 0,
+        "pending_chunks": 0
+      },
+      "no_dram_validation": {
+        "passed": true,
+        "cpu_cache_peak_bytes": 0,
+        "dram_copied_bytes": 0,
+        "retrieved_chunks": 202038,
+        "daos_returned_chunks": 202038,
+        "daos_returned_gib": 3551.44921875
+      }
+    }
+  ],
+  "balanced_vs_baseline_change_pct": {
+    "all": -9.742960005567902,
+    "new_document": -6.916341363278711,
+    "followup": -14.084225436396292,
+    "middle_lane_positions_3_to_50": -16.6539891843802,
+    "duration": -1.6116100596066496
+  },
+  "identical_input_and_schedule": true,
+  "actual_prompt_hash_matches": 87,
+  "actual_prompt_hash_compared": 480,
+  "limitations": [
+    "One run per condition; no confidence interval.",
+    "Same planned per-lane sequence, but real generated answers and wall-clock timing vary.",
+    "Concurrent load/copy spans include metadata and worker queueing; not a hardware RDMA timeline.",
+    "DRAM KV cache and mirror disabled in both conditions; all retrieved chunks validated as DAOS reads."
+  ]
+}

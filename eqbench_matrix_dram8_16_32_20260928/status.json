@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "current": "c8_d8_s8_cancel",
+  "completed": [
+    "c8_d8_s4_off",
+    "c8_d8_s4_wait",
+    "c8_d8_s4_cancel",
+    "c8_d8_s8_wait"
+  ],
+  "error": "RuntimeError('Context budget exceeded at step12: 30074+4000>32768; no truncation')",
+  "supervisor_reason": "needs_investigation"
+}

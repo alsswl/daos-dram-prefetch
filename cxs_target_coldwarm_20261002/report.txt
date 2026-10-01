@@ -1,0 +1,36 @@
+CXS target-count cold/warm comparison
+Qwen3-4B-Instruct-2507; 8 Gutenberg documents, 61440 document tokens; C8 x S1 x 6 turns.
+NVIDIA H100 NVL, 95830 MiB, 610.57.04
+DAOS CLI version 2.9.100, libdaos v2.8.0
+48 requests/phase. 16 I/O workers. 2GiB shared staging, 500MiB windows. DRAM and native prefix cache OFF.
+All 480 actual request hashes and input token counts match the 48-request reference.
+
+targets | phase | mean TTFT ms | p95 TTFT ms | mean retrieve ms | DAOS read GiB | cached input % | duration s
+      1 | cold  |      5371.30 |    22664.17 |          1477.16 |       376.277 |         83.420 |     149.84
+      1 | warm  |     12224.45 |    12372.66 |          1479.00 |       417.867 |         99.903 |     125.95
+      2 | cold  |      4364.39 |    22800.96 |           746.76 |       392.713 |         83.210 |     121.22
+      2 | warm  |      6440.09 |     6559.36 |           753.73 |       417.867 |         99.903 |      91.13
+      4 | cold  |      3849.35 |    22783.76 |           384.88 |       375.258 |         83.171 |     104.24
+      4 | warm  |      3396.07 |     3593.70 |           396.81 |       426.516 |         99.903 |      74.13
+      8 | cold  |      3790.35 |    22876.32 |           335.09 |       357.908 |         83.163 |     101.57
+      8 | warm  |      3018.60 |     3186.77 |           348.40 |       417.867 |         99.903 |      71.63
+     16 | cold  |      3742.26 |    22903.79 |           300.12 |       409.834 |         83.171 |     101.97
+     16 | warm  |      2727.62 |     2954.40 |           307.91 |       426.516 |         99.903 |      70.00
+
+Limitations:
+- One cold/warm pair per condition, not independent repeated measurements.
+- Cold means empty namespace at phase start, with natural within-phase follow-up cache hits.
+- Warm retains DAOS and process state; DRAM and native GPU prefix caches are disabled.
+- Reference conversations generated in the first cold phase; subsequent outputs do not alter replay inputs.
+- Cold includes first-use overhead; server caches were not flushed.
+- 8 sessions and C8 are retained; S1 means no multiple sessions interleaved inside a lane.
+- 1-to-2 targets also changes engine count. 2/4/8/16 use two engines.
+- Scheduler preemption/resume can produce more retrieve calls than HTTP requests; actual transferred bytes include re-restoration.
+- Retrieve is client-observed restoration time, including allocation, metadata, I/O and GPU scatter.
+
+Warm per-request first retrieval vs scheduler re-restoration:
+1 targets: first retrieval 409.218750GiB; 1 repeated calls add 8.648438GiB; matched 1 scheduler resume records.
+2 targets: first retrieval 409.218750GiB; 1 repeated calls add 8.648438GiB; matched 1 scheduler resume records.
+4 targets: first retrieval 409.218750GiB; 2 repeated calls add 17.296875GiB; matched 2 scheduler resume records.
+8 targets: first retrieval 409.218750GiB; 1 repeated calls add 8.648438GiB; matched 1 scheduler resume records.
+16 targets: first retrieval 409.218750GiB; 2 repeated calls add 17.296875GiB; matched 2 scheduler resume records.

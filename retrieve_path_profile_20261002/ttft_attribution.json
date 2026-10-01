@@ -1,0 +1,3359 @@
+{
+  "source": "/root/discos_minji/realqa_mixed_nodram2g_20261002_w500/c8_s10_mixed_nodram_w500",
+  "matched_requests": 418,
+  "all_requests": 480,
+  "mean_all_ttft_ms": 1629.6283127479167,
+  "means": {
+    "ttft_ms": 771.2992570622009,
+    "retrieve_ms": 332.9445719784689,
+    "before_retrieve_ms": 272.8997011291866,
+    "after_retrieve_ms": 165.45498395454544
+  },
+  "note": "Existing completed DRAM-off mixed benchmark. Before/after intervals include scheduling and compute and are not isolated GPU compute times.",
+  "requests": [
+    {
+      "request_id": "chatcmpl-9a90fc4ee56d2093",
+      "turn": 0,
+      "ttft_ms": 544.469431,
+      "retrieve_ms": 333.961266,
+      "before_retrieve_ms": 144.30135,
+      "after_retrieve_ms": 66.206815
+    },
+    {
+      "request_id": "chatcmpl-8157ed695e11701c",
+      "turn": 1,
+      "ttft_ms": 553.366226,
+      "retrieve_ms": 321.915766,
+      "before_retrieve_ms": 168.609287,
+      "after_retrieve_ms": 62.841173
+    },
+    {
+      "request_id": "chatcmpl-ae16ad917c76cc33",
+      "turn": 1,
+      "ttft_ms": 545.266801,
+      "retrieve_ms": 326.068854,
+      "before_retrieve_ms": 158.96243,
+      "after_retrieve_ms": 60.235517
+    },
+    {
+      "request_id": "chatcmpl-9ab89bc077e8d544",
+      "turn": 1,
+      "ttft_ms": 949.476935,
+      "retrieve_ms": 353.035548,
+      "before_retrieve_ms": 155.870182,
+      "after_retrieve_ms": 440.571205
+    },
+    {
+      "request_id": "chatcmpl-81acde457790adea",
+      "turn": 1,
+      "ttft_ms": 764.308523,
+      "retrieve_ms": 331.252674,
+      "before_retrieve_ms": 377.578667,
+      "after_retrieve_ms": 55.477182
+    },
+    {
+      "request_id": "chatcmpl-ae1935628a2cb0bf",
+      "turn": 1,
+      "ttft_ms": 913.572403,
+      "retrieve_ms": 336.088258,
+      "before_retrieve_ms": 153.380225,
+      "after_retrieve_ms": 424.10392
+    },
+    {
+      "request_id": "chatcmpl-bdb34dc92eb6be21",
+      "turn": 1,
+      "ttft_ms": 702.637309,
+      "retrieve_ms": 325.987651,
+      "before_retrieve_ms": 301.838959,
+      "after_retrieve_ms": 74.810699
+    },
+    {
+      "request_id": "chatcmpl-9bf9b07dee66d4d8",
+      "turn": 1,
+      "ttft_ms": 892.401996,
+      "retrieve_ms": 338.472193,
+      "before_retrieve_ms": 149.817409,
+      "after_retrieve_ms": 404.112394
+    },
+    {
+      "request_id": "chatcmpl-bb38ac2a8b807a26",
+      "turn": 1,
+      "ttft_ms": 692.20464,
+      "retrieve_ms": 331.382612,
+      "before_retrieve_ms": 306.119272,
+      "after_retrieve_ms": 54.702756
+    },
+    {
+      "request_id": "chatcmpl-badac592f6f40751",
+      "turn": 1,
+      "ttft_ms": 507.933628,
+      "retrieve_ms": 322.680381,
+      "before_retrieve_ms": 115.4869,
+      "after_retrieve_ms": 69.766347
+    },
+    {
+      "request_id": "chatcmpl-80f9d3caf61c76b7",
+      "turn": 1,
+      "ttft_ms": 480.399522,
+      "retrieve_ms": 330.166654,
+      "before_retrieve_ms": 100.692213,
+      "after_retrieve_ms": 49.540655
+    },
+    {
+      "request_id": "chatcmpl-946ef422f1f2da2e",
+      "turn": 1,
+      "ttft_ms": 835.488489,
+      "retrieve_ms": 339.492746,
+      "before_retrieve_ms": 93.761297,
+      "after_retrieve_ms": 402.234446
+    },
+    {
+      "request_id": "chatcmpl-8ab3e99e628ba16c",
+      "turn": 2,
+      "ttft_ms": 832.059859,
+      "retrieve_ms": 329.242117,
+      "before_retrieve_ms": 423.704431,
+      "after_retrieve_ms": 79.113311
+    },
+    {
+      "request_id": "chatcmpl-9a5ce70e7dd3234f",
+      "turn": 1,
+      "ttft_ms": 876.995738,
+      "retrieve_ms": 334.785404,
+      "before_retrieve_ms": 144.901888,
+      "after_retrieve_ms": 397.308446
+    },
+    {
+      "request_id": "chatcmpl-a53689ced70859b5",
+      "turn": 1,
+      "ttft_ms": 868.968627,
+      "retrieve_ms": 323.639749,
+      "before_retrieve_ms": 490.415084,
+      "after_retrieve_ms": 54.913794
+    },
+    {
+      "request_id": "chatcmpl-9dc802b13dc4bd53",
+      "turn": 1,
+      "ttft_ms": 884.675341,
+      "retrieve_ms": 335.146623,
+      "before_retrieve_ms": 145.498079,
+      "after_retrieve_ms": 404.030639
+    },
+    {
+      "request_id": "chatcmpl-85e3079267cb7335",
+      "turn": 1,
+      "ttft_ms": 869.704669,
+      "retrieve_ms": 329.180881,
+      "before_retrieve_ms": 487.645018,
+      "after_retrieve_ms": 52.87877
+    },
+    {
+      "request_id": "chatcmpl-80f85d083e57df0c",
+      "turn": 2,
+      "ttft_ms": 571.943403,
+      "retrieve_ms": 341.120599,
+      "before_retrieve_ms": 160.00969,
+      "after_retrieve_ms": 70.813114
+    },
+    {
+      "request_id": "chatcmpl-b971b6a202cd3ce2",
+      "turn": 2,
+      "ttft_ms": 559.021039,
+      "retrieve_ms": 323.176879,
+      "before_retrieve_ms": 164.917495,
+      "after_retrieve_ms": 70.926665
+    },
+    {
+      "request_id": "chatcmpl-8af4c7bcb7130aa2",
+      "turn": 1,
+      "ttft_ms": 571.441372,
+      "retrieve_ms": 326.01542,
+      "before_retrieve_ms": 177.588403,
+      "after_retrieve_ms": 67.837549
+    },
+    {
+      "request_id": "chatcmpl-8587293a4b403f57",
+      "turn": 1,
+      "ttft_ms": 549.788927,
+      "retrieve_ms": 328.404477,
+      "before_retrieve_ms": 151.183051,
+      "after_retrieve_ms": 70.201399
+    },
+    {
+      "request_id": "chatcmpl-94f747331a32ce56",
+      "turn": 2,
+      "ttft_ms": 865.787778,
+      "retrieve_ms": 329.403028,
+      "before_retrieve_ms": 136.835583,
+      "after_retrieve_ms": 399.549167
+    },
+    {
+      "request_id": "chatcmpl-be0c49133ed05bc8",
+      "turn": 2,
+      "ttft_ms": 881.857578,
+      "retrieve_ms": 327.817511,
+      "before_retrieve_ms": 484.148935,
+      "after_retrieve_ms": 69.891132
+    },
+    {
+      "request_id": "chatcmpl-a190c548eed54c58",
+      "turn": 2,
+      "ttft_ms": 871.91844,
+      "retrieve_ms": 325.635934,
+      "before_retrieve_ms": 142.228669,
+      "after_retrieve_ms": 404.053837
+    },
+    {
+      "request_id": "chatcmpl-aa8e66f65949d983",
+      "turn": 2,
+      "ttft_ms": 875.41219,
+      "retrieve_ms": 333.048089,
+      "before_retrieve_ms": 471.659957,
+      "after_retrieve_ms": 70.704144
+    },
+    {
+      "request_id": "chatcmpl-847a1cb36ecc5ad5",
+      "turn": 2,
+      "ttft_ms": 512.484106,
+      "retrieve_ms": 332.145103,
+      "before_retrieve_ms": 105.009771,
+      "after_retrieve_ms": 75.329232
+    },
+    {
+      "request_id": "chatcmpl-94b69431093d101a",
+      "turn": 3,
+      "ttft_ms": 540.267729,
+      "retrieve_ms": 326.586203,
+      "before_retrieve_ms": 140.752642,
+      "after_retrieve_ms": 72.928884
+    },
+    {
+      "request_id": "chatcmpl-ab8be28f37fadaf6",
+      "turn": 2,
+      "ttft_ms": 549.268643,
+      "retrieve_ms": 323.351747,
+      "before_retrieve_ms": 154.482128,
+      "after_retrieve_ms": 71.434768
+    },
+    {
+      "request_id": "chatcmpl-b87bc69d325b5a89",
+      "turn": 2,
+      "ttft_ms": 555.86193,
+      "retrieve_ms": 332.292405,
+      "before_retrieve_ms": 151.437309,
+      "after_retrieve_ms": 72.132216
+    },
+    {
+      "request_id": "chatcmpl-a42497c18bac0059",
+      "turn": 2,
+      "ttft_ms": 877.378501,
+      "retrieve_ms": 333.22102,
+      "before_retrieve_ms": 142.902573,
+      "after_retrieve_ms": 401.254908
+    },
+    {
+      "request_id": "chatcmpl-b6182b04816d3814",
+      "turn": 1,
+      "ttft_ms": 887.060899,
+      "retrieve_ms": 328.803458,
+      "before_retrieve_ms": 501.954031,
+      "after_retrieve_ms": 56.30341
+    },
+    {
+      "request_id": "chatcmpl-817de63028b516aa",
+      "turn": 1,
+      "ttft_ms": 891.866197,
+      "retrieve_ms": 338.668072,
+      "before_retrieve_ms": 150.167152,
+      "after_retrieve_ms": 403.030973
+    },
+    {
+      "request_id": "chatcmpl-baadb7f70929b839",
+      "turn": 2,
+      "ttft_ms": 882.072703,
+      "retrieve_ms": 330.480538,
+      "before_retrieve_ms": 481.445663,
+      "after_retrieve_ms": 70.146502
+    },
+    {
+      "request_id": "chatcmpl-80542bc47f0de468",
+      "turn": 1,
+      "ttft_ms": 531.542651,
+      "retrieve_ms": 325.76012,
+      "before_retrieve_ms": 149.079404,
+      "after_retrieve_ms": 56.703127
+    },
+    {
+      "request_id": "chatcmpl-9ed9a5ed9bdebd7a",
+      "turn": 1,
+      "ttft_ms": 538.122856,
+      "retrieve_ms": 342.65386,
+      "before_retrieve_ms": 138.841152,
+      "after_retrieve_ms": 56.627844
+    },
+    {
+      "request_id": "chatcmpl-9ca553a7deeee17b",
+      "turn": 3,
+      "ttft_ms": 523.014562,
+      "retrieve_ms": 332.93273,
+      "before_retrieve_ms": 116.329857,
+      "after_retrieve_ms": 73.751975
+    },
+    {
+      "request_id": "chatcmpl-a1d2a1db4d0952aa",
+      "turn": 3,
+      "ttft_ms": 533.594988,
+      "retrieve_ms": 327.821111,
+      "before_retrieve_ms": 134.946897,
+      "after_retrieve_ms": 70.82698
+    },
+    {
+      "request_id": "chatcmpl-9fc99d783e81ea27",
+      "turn": 1,
+      "ttft_ms": 892.919014,
+      "retrieve_ms": 345.729552,
+      "before_retrieve_ms": 139.22527,
+      "after_retrieve_ms": 407.964192
+    },
+    {
+      "request_id": "chatcmpl-9cda1c0e66b38d78",
+      "turn": 2,
+      "ttft_ms": 944.206191,
+      "retrieve_ms": 333.058038,
+      "before_retrieve_ms": 508.513258,
+      "after_retrieve_ms": 102.634895
+    },
+    {
+      "request_id": "chatcmpl-a6d9701675ab6a9a",
+      "turn": 3,
+      "ttft_ms": 911.291037,
+      "retrieve_ms": 347.515763,
+      "before_retrieve_ms": 133.17341,
+      "after_retrieve_ms": 430.601864
+    },
+    {
+      "request_id": "chatcmpl-914e6c64cb24160c",
+      "turn": 3,
+      "ttft_ms": 923.431183,
+      "retrieve_ms": 332.607695,
+      "before_retrieve_ms": 518.842675,
+      "after_retrieve_ms": 71.980813
+    },
+    {
+      "request_id": "chatcmpl-91ac985c16e1cc53",
+      "turn": 2,
+      "ttft_ms": 539.092219,
+      "retrieve_ms": 326.39218,
+      "before_retrieve_ms": 141.864909,
+      "after_retrieve_ms": 70.83513
+    },
+    {
+      "request_id": "chatcmpl-be5787485c971a48",
+      "turn": 2,
+      "ttft_ms": 545.205973,
+      "retrieve_ms": 328.639522,
+      "before_retrieve_ms": 144.504359,
+      "after_retrieve_ms": 72.062092
+    },
+    {
+      "request_id": "chatcmpl-8f84332d1e3b22a2",
+      "turn": 2,
+      "ttft_ms": 563.924069,
+      "retrieve_ms": 332.703317,
+      "before_retrieve_ms": 158.141818,
+      "after_retrieve_ms": 73.078934
+    },
+    {
+      "request_id": "chatcmpl-9c2542dbcb26c635",
+      "turn": 1,
+      "ttft_ms": 534.003053,
+      "retrieve_ms": 338.397321,
+      "before_retrieve_ms": 139.306099,
+      "after_retrieve_ms": 56.299633
+    },
+    {
+      "request_id": "chatcmpl-af61cd6feea0fbbb",
+      "turn": 2,
+      "ttft_ms": 906.779355,
+      "retrieve_ms": 344.770532,
+      "before_retrieve_ms": 151.267746,
+      "after_retrieve_ms": 410.741077
+    },
+    {
+      "request_id": "chatcmpl-953c5701701b3467",
+      "turn": 3,
+      "ttft_ms": 899.90239,
+      "retrieve_ms": 337.462985,
+      "before_retrieve_ms": 489.595492,
+      "after_retrieve_ms": 72.843913
+    },
+    {
+      "request_id": "chatcmpl-b838e4ef229de47d",
+      "turn": 2,
+      "ttft_ms": 920.938246,
+      "retrieve_ms": 354.778717,
+      "before_retrieve_ms": 132.980695,
+      "after_retrieve_ms": 433.178834
+    },
+    {
+      "request_id": "chatcmpl-977497746fe9b99f",
+      "turn": 3,
+      "ttft_ms": 905.333505,
+      "retrieve_ms": 342.158147,
+      "before_retrieve_ms": 480.691849,
+      "after_retrieve_ms": 82.483509
+    },
+    {
+      "request_id": "chatcmpl-8d1241b3e403b730",
+      "turn": 0,
+      "ttft_ms": 523.292502,
+      "retrieve_ms": 325.352069,
+      "before_retrieve_ms": 149.430717,
+      "after_retrieve_ms": 48.509716
+    },
+    {
+      "request_id": "chatcmpl-94d91024d0cd64ac",
+      "turn": 0,
+      "ttft_ms": 6941.031674,
+      "retrieve_ms": 326.885476,
+      "before_retrieve_ms": 6016.387568,
+      "after_retrieve_ms": 597.75863
+    },
+    {
+      "request_id": "chatcmpl-a88e5f99e46f4199",
+      "turn": 3,
+      "ttft_ms": 563.825628,
+      "retrieve_ms": 343.208573,
+      "before_retrieve_ms": 147.195079,
+      "after_retrieve_ms": 73.421976
+    },
+    {
+      "request_id": "chatcmpl-a6df50a5a2f1ef58",
+      "turn": 3,
+      "ttft_ms": 557.780796,
+      "retrieve_ms": 337.305668,
+      "before_retrieve_ms": 147.491602,
+      "after_retrieve_ms": 72.983526
+    },
+    {
+      "request_id": "chatcmpl-ae7bbbf11ef40dc8",
+      "turn": 4,
+      "ttft_ms": 529.092421,
+      "retrieve_ms": 329.974681,
+      "before_retrieve_ms": 118.082123,
+      "after_retrieve_ms": 81.035617
+    },
+    {
+      "request_id": "chatcmpl-803a0fd828c6d8e5",
+      "turn": 4,
+      "ttft_ms": 538.474852,
+      "retrieve_ms": 330.779303,
+      "before_retrieve_ms": 135.295078,
+      "after_retrieve_ms": 72.400471
+    },
+    {
+      "request_id": "chatcmpl-ae1bcd4be5a9dca7",
+      "turn": 3,
+      "ttft_ms": 539.694711,
+      "retrieve_ms": 333.847663,
+      "before_retrieve_ms": 152.012012,
+      "after_retrieve_ms": 53.835036
+    },
+    {
+      "request_id": "chatcmpl-83b9c4684298f020",
+      "turn": 2,
+      "ttft_ms": 1248.460712,
+      "retrieve_ms": 343.657882,
+      "before_retrieve_ms": 132.97984,
+      "after_retrieve_ms": 771.82299
+    },
+    {
+      "request_id": "chatcmpl-b94b41cb83e5b084",
+      "turn": 1,
+      "ttft_ms": 1284.47414,
+      "retrieve_ms": 332.869933,
+      "before_retrieve_ms": 508.307546,
+      "after_retrieve_ms": 443.296661
+    },
+    {
+      "request_id": "chatcmpl-93a930266a7eecc2",
+      "turn": 4,
+      "ttft_ms": 1095.831276,
+      "retrieve_ms": 346.723802,
+      "before_retrieve_ms": 653.034944,
+      "after_retrieve_ms": 96.07253
+    },
+    {
+      "request_id": "chatcmpl-ba7db5e87accab96",
+      "turn": 3,
+      "ttft_ms": 554.358205,
+      "retrieve_ms": 329.906177,
+      "before_retrieve_ms": 153.052031,
+      "after_retrieve_ms": 71.399997
+    },
+    {
+      "request_id": "chatcmpl-bb7a0744796f95a8",
+      "turn": 4,
+      "ttft_ms": 549.503388,
+      "retrieve_ms": 334.5705,
+      "before_retrieve_ms": 141.835216,
+      "after_retrieve_ms": 73.097672
+    },
+    {
+      "request_id": "chatcmpl-bc1feef2d5b34379",
+      "turn": 5,
+      "ttft_ms": 574.734123,
+      "retrieve_ms": 331.466417,
+      "before_retrieve_ms": 156.291716,
+      "after_retrieve_ms": 86.97599
+    },
+    {
+      "request_id": "chatcmpl-83dfa3bd3628dfe2",
+      "turn": 5,
+      "ttft_ms": 561.272847,
+      "retrieve_ms": 342.564374,
+      "before_retrieve_ms": 145.701894,
+      "after_retrieve_ms": 73.006579
+    },
+    {
+      "request_id": "chatcmpl-9304238615b90953",
+      "turn": 3,
+      "ttft_ms": 564.172732,
+      "retrieve_ms": 328.310438,
+      "before_retrieve_ms": 147.613279,
+      "after_retrieve_ms": 88.249015
+    },
+    {
+      "request_id": "chatcmpl-8f38974c8c82f079",
+      "turn": 4,
+      "ttft_ms": 1265.005875,
+      "retrieve_ms": 348.325503,
+      "before_retrieve_ms": 142.809907,
+      "after_retrieve_ms": 773.870465
+    },
+    {
+      "request_id": "chatcmpl-917e232738b46dc8",
+      "turn": 4,
+      "ttft_ms": 1307.421466,
+      "retrieve_ms": 343.393663,
+      "before_retrieve_ms": 529.670268,
+      "after_retrieve_ms": 434.357535
+    },
+    {
+      "request_id": "chatcmpl-be2bda8ac5b9f4d4",
+      "turn": 2,
+      "ttft_ms": 1303.621409,
+      "retrieve_ms": 335.268076,
+      "before_retrieve_ms": 870.272086,
+      "after_retrieve_ms": 98.081247
+    },
+    {
+      "request_id": "chatcmpl-8c6da0ff05524f56",
+      "turn": 3,
+      "ttft_ms": 512.487404,
+      "retrieve_ms": 331.910412,
+      "before_retrieve_ms": 101.503533,
+      "after_retrieve_ms": 79.073459
+    },
+    {
+      "request_id": "chatcmpl-9863a7fdb08ff145",
+      "turn": 5,
+      "ttft_ms": 555.656476,
+      "retrieve_ms": 328.611935,
+      "before_retrieve_ms": 152.741662,
+      "after_retrieve_ms": 74.302879
+    },
+    {
+      "request_id": "chatcmpl-b18366e2a4f88cb7",
+      "turn": 1,
+      "ttft_ms": 550.712715,
+      "retrieve_ms": 338.458754,
+      "before_retrieve_ms": 156.488308,
+      "after_retrieve_ms": 55.765653
+    },
+    {
+      "request_id": "chatcmpl-a24a9eb644138c12",
+      "turn": 2,
+      "ttft_ms": 569.202876,
+      "retrieve_ms": 332.618943,
+      "before_retrieve_ms": 164.873494,
+      "after_retrieve_ms": 71.710439
+    },
+    {
+      "request_id": "chatcmpl-9ab5d326bd4bc67d",
+      "turn": 1,
+      "ttft_ms": 505.49511,
+      "retrieve_ms": 329.004372,
+      "before_retrieve_ms": 120.789105,
+      "after_retrieve_ms": 55.701633
+    },
+    {
+      "request_id": "chatcmpl-965431b436d3bd25",
+      "turn": 4,
+      "ttft_ms": 1621.423021,
+      "retrieve_ms": 354.8229,
+      "before_retrieve_ms": 148.501504,
+      "after_retrieve_ms": 1118.098617
+    },
+    {
+      "request_id": "chatcmpl-a0b44af5ece26682",
+      "turn": 1,
+      "ttft_ms": 1480.608889,
+      "retrieve_ms": 323.714323,
+      "before_retrieve_ms": 353.659425,
+      "after_retrieve_ms": 803.235141
+    },
+    {
+      "request_id": "chatcmpl-8340ababf020dd7c",
+      "turn": 1,
+      "ttft_ms": 1443.945916,
+      "retrieve_ms": 340.900792,
+      "before_retrieve_ms": 642.362885,
+      "after_retrieve_ms": 460.682239
+    },
+    {
+      "request_id": "chatcmpl-84baf057f6c61054",
+      "turn": 3,
+      "ttft_ms": 1434.656472,
+      "retrieve_ms": 352.597305,
+      "before_retrieve_ms": 974.552508,
+      "after_retrieve_ms": 107.506659
+    },
+    {
+      "request_id": "chatcmpl-b455379bfd3a59a1",
+      "turn": 4,
+      "ttft_ms": 568.867899,
+      "retrieve_ms": 336.157652,
+      "before_retrieve_ms": 160.566463,
+      "after_retrieve_ms": 72.143784
+    },
+    {
+      "request_id": "chatcmpl-b49bdb27bb1bdbac",
+      "turn": 1,
+      "ttft_ms": 544.754814,
+      "retrieve_ms": 335.10152,
+      "before_retrieve_ms": 141.974593,
+      "after_retrieve_ms": 67.678701
+    },
+    {
+      "request_id": "chatcmpl-9979e353bbdf818e",
+      "turn": 2,
+      "ttft_ms": 894.385471,
+      "retrieve_ms": 340.359091,
+      "before_retrieve_ms": 123.261957,
+      "after_retrieve_ms": 430.764423
+    },
+    {
+      "request_id": "chatcmpl-9d882eb99211b4eb",
+      "turn": 3,
+      "ttft_ms": 727.306906,
+      "retrieve_ms": 340.698487,
+      "before_retrieve_ms": 303.194376,
+      "after_retrieve_ms": 83.414043
+    },
+    {
+      "request_id": "chatcmpl-8c6815a2fcf02209",
+      "turn": 5,
+      "ttft_ms": 1659.505792,
+      "retrieve_ms": 358.349304,
+      "before_retrieve_ms": 156.970718,
+      "after_retrieve_ms": 1144.18577
+    },
+    {
+      "request_id": "chatcmpl-b8a92d62ba525b72",
+      "turn": 5,
+      "ttft_ms": 1668.407386,
+      "retrieve_ms": 340.729555,
+      "before_retrieve_ms": 512.73648,
+      "after_retrieve_ms": 814.941351
+    },
+    {
+      "request_id": "chatcmpl-8c9be5601689b54a",
+      "turn": 4,
+      "ttft_ms": 1663.123891,
+      "retrieve_ms": 347.194134,
+      "before_retrieve_ms": 849.981068,
+      "after_retrieve_ms": 465.948689
+    },
+    {
+      "request_id": "chatcmpl-a6f4e3d62629a413",
+      "turn": 3,
+      "ttft_ms": 1651.760222,
+      "retrieve_ms": 351.590468,
+      "before_retrieve_ms": 1186.054578,
+      "after_retrieve_ms": 114.115176
+    },
+    {
+      "request_id": "chatcmpl-870782cd34e15998",
+      "turn": 5,
+      "ttft_ms": 595.403971,
+      "retrieve_ms": 335.052296,
+      "before_retrieve_ms": 155.877444,
+      "after_retrieve_ms": 104.474231
+    },
+    {
+      "request_id": "chatcmpl-b3173b3ff8e5cdca",
+      "turn": 2,
+      "ttft_ms": 502.807444,
+      "retrieve_ms": 331.047258,
+      "before_retrieve_ms": 104.526267,
+      "after_retrieve_ms": 67.233919
+    },
+    {
+      "request_id": "chatcmpl-828d2b5d5e258e97",
+      "turn": 3,
+      "ttft_ms": 902.648454,
+      "retrieve_ms": 354.363524,
+      "before_retrieve_ms": 141.988433,
+      "after_retrieve_ms": 406.296497
+    },
+    {
+      "request_id": "chatcmpl-817ad28940d20ca3",
+      "turn": 3,
+      "ttft_ms": 936.104659,
+      "retrieve_ms": 331.35984,
+      "before_retrieve_ms": 530.352001,
+      "after_retrieve_ms": 74.392818
+    },
+    {
+      "request_id": "chatcmpl-8a9db4aa620a03f8",
+      "turn": 4,
+      "ttft_ms": 1603.04413,
+      "retrieve_ms": 353.338692,
+      "before_retrieve_ms": 131.437513,
+      "after_retrieve_ms": 1118.267925
+    },
+    {
+      "request_id": "chatcmpl-abe6b4136cb66ee3",
+      "turn": 5,
+      "ttft_ms": 1613.75042,
+      "retrieve_ms": 336.143766,
+      "before_retrieve_ms": 482.960718,
+      "after_retrieve_ms": 794.645936
+    },
+    {
+      "request_id": "chatcmpl-b0a0366141aea354",
+      "turn": 3,
+      "ttft_ms": 1611.103928,
+      "retrieve_ms": 352.260339,
+      "before_retrieve_ms": 816.697133,
+      "after_retrieve_ms": 442.146456
+    },
+    {
+      "request_id": "chatcmpl-89c81c1edaa49509",
+      "turn": 2,
+      "ttft_ms": 1607.921322,
+      "retrieve_ms": 330.703663,
+      "before_retrieve_ms": 1166.368546,
+      "after_retrieve_ms": 110.849113
+    },
+    {
+      "request_id": "chatcmpl-aa3c7bccc8b74b73",
+      "turn": 2,
+      "ttft_ms": 585.844177,
+      "retrieve_ms": 321.827827,
+      "before_retrieve_ms": 159.136435,
+      "after_retrieve_ms": 104.879915
+    },
+    {
+      "request_id": "chatcmpl-bca21ad57975bec0",
+      "turn": 3,
+      "ttft_ms": 569.915009,
+      "retrieve_ms": 332.887767,
+      "before_retrieve_ms": 149.043249,
+      "after_retrieve_ms": 87.983993
+    },
+    {
+      "request_id": "chatcmpl-a63c6d161b24417e",
+      "turn": 1,
+      "ttft_ms": 913.257027,
+      "retrieve_ms": 335.853285,
+      "before_retrieve_ms": 133.69401,
+      "after_retrieve_ms": 443.709732
+    },
+    {
+      "request_id": "chatcmpl-8edb08868bc408c3",
+      "turn": 4,
+      "ttft_ms": 913.313293,
+      "retrieve_ms": 329.12135,
+      "before_retrieve_ms": 491.245881,
+      "after_retrieve_ms": 92.946062
+    },
+    {
+      "request_id": "chatcmpl-bc284e45f85056de",
+      "turn": 3,
+      "ttft_ms": 5393.582745,
+      "retrieve_ms": 339.533497,
+      "before_retrieve_ms": 3786.60694,
+      "after_retrieve_ms": 1267.442308
+    },
+    {
+      "request_id": "chatcmpl-b38f5aeb9201d56d",
+      "turn": 5,
+      "ttft_ms": 5379.460808,
+      "retrieve_ms": 355.253384,
+      "before_retrieve_ms": 4113.272945,
+      "after_retrieve_ms": 910.934479
+    },
+    {
+      "request_id": "chatcmpl-8fc95217dbebf5b8",
+      "turn": 5,
+      "ttft_ms": 5371.708884,
+      "retrieve_ms": 348.863557,
+      "before_retrieve_ms": 4460.687276,
+      "after_retrieve_ms": 562.158051
+    },
+    {
+      "request_id": "chatcmpl-b1e034ab8d27c504",
+      "turn": 4,
+      "ttft_ms": 1100.830805,
+      "retrieve_ms": 343.985071,
+      "before_retrieve_ms": 91.017525,
+      "after_retrieve_ms": 665.828209
+    },
+    {
+      "request_id": "chatcmpl-85ff55e4b15cbea6",
+      "turn": 0,
+      "ttft_ms": 1392.813742,
+      "retrieve_ms": 330.158299,
+      "before_retrieve_ms": 471.942661,
+      "after_retrieve_ms": 590.712782
+    },
+    {
+      "request_id": "chatcmpl-81c1de0d6e50e83f",
+      "turn": 0,
+      "ttft_ms": 5355.919288,
+      "retrieve_ms": 30.839421,
+      "before_retrieve_ms": 794.375318,
+      "after_retrieve_ms": 4530.704549
+    },
+    {
+      "request_id": "chatcmpl-83a004433328fba3",
+      "turn": 3,
+      "ttft_ms": 543.970735,
+      "retrieve_ms": 327.346264,
+      "before_retrieve_ms": 142.721713,
+      "after_retrieve_ms": 73.902758
+    },
+    {
+      "request_id": "chatcmpl-bc92156348de9072",
+      "turn": 2,
+      "ttft_ms": 528.497405,
+      "retrieve_ms": 335.738692,
+      "before_retrieve_ms": 121.151268,
+      "after_retrieve_ms": 71.607445
+    },
+    {
+      "request_id": "chatcmpl-9d1ebb8e2399861a",
+      "turn": 5,
+      "ttft_ms": 538.242147,
+      "retrieve_ms": 329.532482,
+      "before_retrieve_ms": 134.350624,
+      "after_retrieve_ms": 74.359041
+    },
+    {
+      "request_id": "chatcmpl-ac03587490057597",
+      "turn": 2,
+      "ttft_ms": 544.307638,
+      "retrieve_ms": 342.644084,
+      "before_retrieve_ms": 129.933749,
+      "after_retrieve_ms": 71.729805
+    },
+    {
+      "request_id": "chatcmpl-b9a24ccbdd7afdc0",
+      "turn": 2,
+      "ttft_ms": 547.612868,
+      "retrieve_ms": 328.156802,
+      "before_retrieve_ms": 146.929724,
+      "after_retrieve_ms": 72.526342
+    },
+    {
+      "request_id": "chatcmpl-97a2e152b5512328",
+      "turn": 1,
+      "ttft_ms": 525.736437,
+      "retrieve_ms": 334.245567,
+      "before_retrieve_ms": 135.836537,
+      "after_retrieve_ms": 55.654333
+    },
+    {
+      "request_id": "chatcmpl-8346e5fb92995ede",
+      "turn": 1,
+      "ttft_ms": 519.135829,
+      "retrieve_ms": 335.110269,
+      "before_retrieve_ms": 125.515449,
+      "after_retrieve_ms": 58.510111
+    },
+    {
+      "request_id": "chatcmpl-b86faf70ae9e8f0f",
+      "turn": 4,
+      "ttft_ms": 564.551469,
+      "retrieve_ms": 335.651546,
+      "before_retrieve_ms": 139.017386,
+      "after_retrieve_ms": 89.882537
+    },
+    {
+      "request_id": "chatcmpl-a5c8a541aceb83e6",
+      "turn": 4,
+      "ttft_ms": 576.562995,
+      "retrieve_ms": 332.829324,
+      "before_retrieve_ms": 156.549993,
+      "after_retrieve_ms": 87.183678
+    },
+    {
+      "request_id": "chatcmpl-8367bbd5f9b97561",
+      "turn": 1,
+      "ttft_ms": 516.796621,
+      "retrieve_ms": 334.565106,
+      "before_retrieve_ms": 126.200025,
+      "after_retrieve_ms": 56.03149
+    },
+    {
+      "request_id": "chatcmpl-a8a548b892ef243b",
+      "turn": 2,
+      "ttft_ms": 549.097816,
+      "retrieve_ms": 338.819311,
+      "before_retrieve_ms": 139.240811,
+      "after_retrieve_ms": 71.037694
+    },
+    {
+      "request_id": "chatcmpl-a1609915397495bc",
+      "turn": 1,
+      "ttft_ms": 547.360315,
+      "retrieve_ms": 328.578385,
+      "before_retrieve_ms": 161.734527,
+      "after_retrieve_ms": 57.047403
+    },
+    {
+      "request_id": "chatcmpl-a57007db8cdb3602",
+      "turn": 4,
+      "ttft_ms": 586.477529,
+      "retrieve_ms": 340.088563,
+      "before_retrieve_ms": 166.472281,
+      "after_retrieve_ms": 79.916685
+    },
+    {
+      "request_id": "chatcmpl-b91e8b5dac420e2d",
+      "turn": 3,
+      "ttft_ms": 552.772696,
+      "retrieve_ms": 327.950105,
+      "before_retrieve_ms": 147.551817,
+      "after_retrieve_ms": 77.270774
+    },
+    {
+      "request_id": "chatcmpl-9975fc5d67791a1a",
+      "turn": 2,
+      "ttft_ms": 562.276909,
+      "retrieve_ms": 345.480506,
+      "before_retrieve_ms": 149.894594,
+      "after_retrieve_ms": 66.901809
+    },
+    {
+      "request_id": "chatcmpl-a1b0b3bbc918c754",
+      "turn": 4,
+      "ttft_ms": 557.906624,
+      "retrieve_ms": 335.49586,
+      "before_retrieve_ms": 150.04516,
+      "after_retrieve_ms": 72.365604
+    },
+    {
+      "request_id": "chatcmpl-ab4a4fcfb156e218",
+      "turn": 1,
+      "ttft_ms": 542.175404,
+      "retrieve_ms": 339.945892,
+      "before_retrieve_ms": 143.648883,
+      "after_retrieve_ms": 58.580629
+    },
+    {
+      "request_id": "chatcmpl-8ea962010d7546c0",
+      "turn": 2,
+      "ttft_ms": 542.121051,
+      "retrieve_ms": 331.860115,
+      "before_retrieve_ms": 138.406486,
+      "after_retrieve_ms": 71.85445
+    },
+    {
+      "request_id": "chatcmpl-8bacd8af77e48030",
+      "turn": 1,
+      "ttft_ms": 535.375616,
+      "retrieve_ms": 330.280911,
+      "before_retrieve_ms": 150.314254,
+      "after_retrieve_ms": 54.780451
+    },
+    {
+      "request_id": "chatcmpl-b29992dadc43f3b9",
+      "turn": 5,
+      "ttft_ms": 480.071048,
+      "retrieve_ms": 328.606506,
+      "before_retrieve_ms": 100.215501,
+      "after_retrieve_ms": 51.249041
+    },
+    {
+      "request_id": "chatcmpl-8a4cc33e3a2cb668",
+      "turn": 5,
+      "ttft_ms": 561.511165,
+      "retrieve_ms": 343.238021,
+      "before_retrieve_ms": 145.423135,
+      "after_retrieve_ms": 72.850009
+    },
+    {
+      "request_id": "chatcmpl-b905aff97dcb06ba",
+      "turn": 4,
+      "ttft_ms": 543.314606,
+      "retrieve_ms": 324.584723,
+      "before_retrieve_ms": 145.047004,
+      "after_retrieve_ms": 73.682879
+    },
+    {
+      "request_id": "chatcmpl-a81f393d1f646b54",
+      "turn": 4,
+      "ttft_ms": 572.457866,
+      "retrieve_ms": 337.609233,
+      "before_retrieve_ms": 160.482573,
+      "after_retrieve_ms": 74.36606
+    },
+    {
+      "request_id": "chatcmpl-bbef03e1928b3f97",
+      "turn": 1,
+      "ttft_ms": 535.988544,
+      "retrieve_ms": 325.507444,
+      "before_retrieve_ms": 153.30393,
+      "after_retrieve_ms": 57.17717
+    },
+    {
+      "request_id": "chatcmpl-914da5bdd0f2fab1",
+      "turn": 4,
+      "ttft_ms": 537.836553,
+      "retrieve_ms": 341.307276,
+      "before_retrieve_ms": 124.762712,
+      "after_retrieve_ms": 71.766565
+    },
+    {
+      "request_id": "chatcmpl-a07694bd17a92edf",
+      "turn": 3,
+      "ttft_ms": 526.830431,
+      "retrieve_ms": 333.874749,
+      "before_retrieve_ms": 120.496579,
+      "after_retrieve_ms": 72.459103
+    },
+    {
+      "request_id": "chatcmpl-b6b2a7fe35d9d613",
+      "turn": 3,
+      "ttft_ms": 556.350711,
+      "retrieve_ms": 324.050874,
+      "before_retrieve_ms": 161.80258,
+      "after_retrieve_ms": 70.497257
+    },
+    {
+      "request_id": "chatcmpl-ac6904d8bad8ddd8",
+      "turn": 1,
+      "ttft_ms": 549.949164,
+      "retrieve_ms": 334.532443,
+      "before_retrieve_ms": 160.126565,
+      "after_retrieve_ms": 55.290156
+    },
+    {
+      "request_id": "chatcmpl-8cce9b63a40f2471",
+      "turn": 4,
+      "ttft_ms": 571.890181,
+      "retrieve_ms": 329.680121,
+      "before_retrieve_ms": 168.535135,
+      "after_retrieve_ms": 73.674925
+    },
+    {
+      "request_id": "chatcmpl-9acae1481c0a2fc9",
+      "turn": 3,
+      "ttft_ms": 541.420493,
+      "retrieve_ms": 327.382358,
+      "before_retrieve_ms": 141.693687,
+      "after_retrieve_ms": 72.344448
+    },
+    {
+      "request_id": "chatcmpl-8845400b2c6399f4",
+      "turn": 4,
+      "ttft_ms": 550.969566,
+      "retrieve_ms": 328.989962,
+      "before_retrieve_ms": 146.234866,
+      "after_retrieve_ms": 75.744738
+    },
+    {
+      "request_id": "chatcmpl-ba679a331df48455",
+      "turn": 2,
+      "ttft_ms": 560.073497,
+      "retrieve_ms": 333.896114,
+      "before_retrieve_ms": 154.180375,
+      "after_retrieve_ms": 71.997008
+    },
+    {
+      "request_id": "chatcmpl-bf9ecb2568314586",
+      "turn": 3,
+      "ttft_ms": 561.084394,
+      "retrieve_ms": 335.817802,
+      "before_retrieve_ms": 154.390619,
+      "after_retrieve_ms": 70.875973
+    },
+    {
+      "request_id": "chatcmpl-90dae432c865f8aa",
+      "turn": 3,
+      "ttft_ms": 486.792686,
+      "retrieve_ms": 331.279785,
+      "before_retrieve_ms": 86.712802,
+      "after_retrieve_ms": 68.800099
+    },
+    {
+      "request_id": "chatcmpl-9f7af0c4f4a99e55",
+      "turn": 2,
+      "ttft_ms": 561.480919,
+      "retrieve_ms": 331.715247,
+      "before_retrieve_ms": 159.112701,
+      "after_retrieve_ms": 70.652971
+    },
+    {
+      "request_id": "chatcmpl-b0bd19f5ee32402f",
+      "turn": 2,
+      "ttft_ms": 579.671277,
+      "retrieve_ms": 334.945441,
+      "before_retrieve_ms": 171.740855,
+      "after_retrieve_ms": 72.984981
+    },
+    {
+      "request_id": "chatcmpl-a6a5d1455f249197",
+      "turn": 5,
+      "ttft_ms": 552.661518,
+      "retrieve_ms": 334.705264,
+      "before_retrieve_ms": 145.626022,
+      "after_retrieve_ms": 72.330232
+    },
+    {
+      "request_id": "chatcmpl-8bab1f0c4ec64f45",
+      "turn": 5,
+      "ttft_ms": 552.135561,
+      "retrieve_ms": 330.541289,
+      "before_retrieve_ms": 147.746345,
+      "after_retrieve_ms": 73.847927
+    },
+    {
+      "request_id": "chatcmpl-9c730e27f055e360",
+      "turn": 4,
+      "ttft_ms": 565.58015,
+      "retrieve_ms": 333.537906,
+      "before_retrieve_ms": 160.873644,
+      "after_retrieve_ms": 71.1686
+    },
+    {
+      "request_id": "chatcmpl-9338124fd101da6d",
+      "turn": 5,
+      "ttft_ms": 564.601845,
+      "retrieve_ms": 339.096892,
+      "before_retrieve_ms": 148.172566,
+      "after_retrieve_ms": 77.332387
+    },
+    {
+      "request_id": "chatcmpl-9ba6444fc1432853",
+      "turn": 5,
+      "ttft_ms": 588.496648,
+      "retrieve_ms": 350.452169,
+      "before_retrieve_ms": 163.732896,
+      "after_retrieve_ms": 74.311583
+    },
+    {
+      "request_id": "chatcmpl-8fb68904fe112498",
+      "turn": 2,
+      "ttft_ms": 584.41079,
+      "retrieve_ms": 346.539991,
+      "before_retrieve_ms": 154.769981,
+      "after_retrieve_ms": 83.100818
+    },
+    {
+      "request_id": "chatcmpl-bcbbd62ee313ef6c",
+      "turn": 3,
+      "ttft_ms": 555.079105,
+      "retrieve_ms": 337.872475,
+      "before_retrieve_ms": 145.455543,
+      "after_retrieve_ms": 71.751087
+    },
+    {
+      "request_id": "chatcmpl-b5a9f8f65b5f8711",
+      "turn": 0,
+      "ttft_ms": 502.67533,
+      "retrieve_ms": 330.281472,
+      "before_retrieve_ms": 125.113821,
+      "after_retrieve_ms": 47.280037
+    },
+    {
+      "request_id": "chatcmpl-9d2910b8333db380",
+      "turn": 3,
+      "ttft_ms": 543.17236,
+      "retrieve_ms": 328.984929,
+      "before_retrieve_ms": 141.87802,
+      "after_retrieve_ms": 72.309411
+    },
+    {
+      "request_id": "chatcmpl-82b97ed730a8a406",
+      "turn": 4,
+      "ttft_ms": 555.331262,
+      "retrieve_ms": 335.634875,
+      "before_retrieve_ms": 147.493556,
+      "after_retrieve_ms": 72.202831
+    },
+    {
+      "request_id": "chatcmpl-939efcf99481e6c0",
+      "turn": 3,
+      "ttft_ms": 2894.368749,
+      "retrieve_ms": 346.28927,
+      "before_retrieve_ms": 2038.74229,
+      "after_retrieve_ms": 509.337189
+    },
+    {
+      "request_id": "chatcmpl-97035e000108a082",
+      "turn": 2,
+      "ttft_ms": 558.684009,
+      "retrieve_ms": 335.575823,
+      "before_retrieve_ms": 151.847571,
+      "after_retrieve_ms": 71.260615
+    },
+    {
+      "request_id": "chatcmpl-bb4afba68fbc4606",
+      "turn": 3,
+      "ttft_ms": 554.296709,
+      "retrieve_ms": 332.65221,
+      "before_retrieve_ms": 148.207845,
+      "after_retrieve_ms": 73.436654
+    },
+    {
+      "request_id": "chatcmpl-82a772a08215c1d0",
+      "turn": 4,
+      "ttft_ms": 809.719827,
+      "retrieve_ms": 343.993976,
+      "before_retrieve_ms": 132.131004,
+      "after_retrieve_ms": 333.594847
+    },
+    {
+      "request_id": "chatcmpl-af2fa8a106ecbd3c",
+      "turn": 1,
+      "ttft_ms": 519.039116,
+      "retrieve_ms": 329.572304,
+      "before_retrieve_ms": 137.465686,
+      "after_retrieve_ms": 52.001126
+    },
+    {
+      "request_id": "chatcmpl-96956037b6ec2e80",
+      "turn": 4,
+      "ttft_ms": 551.378516,
+      "retrieve_ms": 331.790248,
+      "before_retrieve_ms": 146.327865,
+      "after_retrieve_ms": 73.260403
+    },
+    {
+      "request_id": "chatcmpl-b099500bbeb72ce7",
+      "turn": 2,
+      "ttft_ms": 554.330469,
+      "retrieve_ms": 328.39398,
+      "before_retrieve_ms": 153.857844,
+      "after_retrieve_ms": 72.078645
+    },
+    {
+      "request_id": "chatcmpl-af5c04a8ea2bfa12",
+      "turn": 1,
+      "ttft_ms": 535.927017,
+      "retrieve_ms": 334.373178,
+      "before_retrieve_ms": 144.181096,
+      "after_retrieve_ms": 57.372743
+    },
+    {
+      "request_id": "chatcmpl-80e1022edabac551",
+      "turn": 1,
+      "ttft_ms": 550.001718,
+      "retrieve_ms": 330.458894,
+      "before_retrieve_ms": 157.505061,
+      "after_retrieve_ms": 62.037763
+    },
+    {
+      "request_id": "chatcmpl-873f8df60332e402",
+      "turn": 4,
+      "ttft_ms": 549.116294,
+      "retrieve_ms": 330.955638,
+      "before_retrieve_ms": 145.637182,
+      "after_retrieve_ms": 72.523474
+    },
+    {
+      "request_id": "chatcmpl-bfd633e8817e19d0",
+      "turn": 2,
+      "ttft_ms": 556.191865,
+      "retrieve_ms": 326.842375,
+      "before_retrieve_ms": 150.315779,
+      "after_retrieve_ms": 79.033711
+    },
+    {
+      "request_id": "chatcmpl-bbdd870f7c0f0201",
+      "turn": 3,
+      "ttft_ms": 582.410764,
+      "retrieve_ms": 334.88709,
+      "before_retrieve_ms": 144.694837,
+      "after_retrieve_ms": 102.828837
+    },
+    {
+      "request_id": "chatcmpl-b3fcb5a3c732f573",
+      "turn": 5,
+      "ttft_ms": 527.30709,
+      "retrieve_ms": 326.999048,
+      "before_retrieve_ms": 127.06357,
+      "after_retrieve_ms": 73.244472
+    },
+    {
+      "request_id": "chatcmpl-ad24d3a25eab7d12",
+      "turn": 5,
+      "ttft_ms": 549.059141,
+      "retrieve_ms": 336.529151,
+      "before_retrieve_ms": 139.187869,
+      "after_retrieve_ms": 73.342121
+    },
+    {
+      "request_id": "chatcmpl-87dad7c69a40df35",
+      "turn": 1,
+      "ttft_ms": 543.237022,
+      "retrieve_ms": 329.038772,
+      "before_retrieve_ms": 126.001402,
+      "after_retrieve_ms": 88.196848
+    },
+    {
+      "request_id": "chatcmpl-97db4559f829a327",
+      "turn": 2,
+      "ttft_ms": 577.767887,
+      "retrieve_ms": 339.990861,
+      "before_retrieve_ms": 150.160341,
+      "after_retrieve_ms": 87.616685
+    },
+    {
+      "request_id": "chatcmpl-bc4b3dc2c89c272a",
+      "turn": 1,
+      "ttft_ms": 517.571346,
+      "retrieve_ms": 321.258147,
+      "before_retrieve_ms": 140.47867,
+      "after_retrieve_ms": 55.834529
+    },
+    {
+      "request_id": "chatcmpl-a1355d493f1229fb",
+      "turn": 4,
+      "ttft_ms": 542.244907,
+      "retrieve_ms": 333.717852,
+      "before_retrieve_ms": 132.89081,
+      "after_retrieve_ms": 75.636245
+    },
+    {
+      "request_id": "chatcmpl-88656ffd262760dc",
+      "turn": 1,
+      "ttft_ms": 538.796525,
+      "retrieve_ms": 330.696992,
+      "before_retrieve_ms": 150.344698,
+      "after_retrieve_ms": 57.754835
+    },
+    {
+      "request_id": "chatcmpl-a092c451e41593b5",
+      "turn": 3,
+      "ttft_ms": 558.65245,
+      "retrieve_ms": 341.162084,
+      "before_retrieve_ms": 145.869855,
+      "after_retrieve_ms": 71.620511
+    },
+    {
+      "request_id": "chatcmpl-8c0381f98b4b3b74",
+      "turn": 5,
+      "ttft_ms": 558.998309,
+      "retrieve_ms": 336.680154,
+      "before_retrieve_ms": 149.415934,
+      "after_retrieve_ms": 72.902221
+    },
+    {
+      "request_id": "chatcmpl-830ae546023d866b",
+      "turn": 3,
+      "ttft_ms": 584.868184,
+      "retrieve_ms": 335.733267,
+      "before_retrieve_ms": 151.702847,
+      "after_retrieve_ms": 97.43207
+    },
+    {
+      "request_id": "chatcmpl-ad3cd95d9eb29224",
+      "turn": 4,
+      "ttft_ms": 590.184167,
+      "retrieve_ms": 349.373846,
+      "before_retrieve_ms": 156.648347,
+      "after_retrieve_ms": 84.161974
+    },
+    {
+      "request_id": "chatcmpl-9a09cba13cd3a383",
+      "turn": 3,
+      "ttft_ms": 557.11891,
+      "retrieve_ms": 333.358273,
+      "before_retrieve_ms": 150.248544,
+      "after_retrieve_ms": 73.512093
+    },
+    {
+      "request_id": "chatcmpl-839d988d7e5c9b11",
+      "turn": 2,
+      "ttft_ms": 529.391854,
+      "retrieve_ms": 328.532,
+      "before_retrieve_ms": 122.574995,
+      "after_retrieve_ms": 78.284859
+    },
+    {
+      "request_id": "chatcmpl-a907396014c126a7",
+      "turn": 5,
+      "ttft_ms": 562.382491,
+      "retrieve_ms": 334.327589,
+      "before_retrieve_ms": 153.657521,
+      "after_retrieve_ms": 74.397381
+    },
+    {
+      "request_id": "chatcmpl-ad5789300fa31f79",
+      "turn": 3,
+      "ttft_ms": 554.92428,
+      "retrieve_ms": 329.377522,
+      "before_retrieve_ms": 151.338223,
+      "after_retrieve_ms": 74.208535
+    },
+    {
+      "request_id": "chatcmpl-a3fda8e4883870cb",
+      "turn": 4,
+      "ttft_ms": 546.102843,
+      "retrieve_ms": 327.810879,
+      "before_retrieve_ms": 145.64485,
+      "after_retrieve_ms": 72.647114
+    },
+    {
+      "request_id": "chatcmpl-94d44dfe9b71b2de",
+      "turn": 4,
+      "ttft_ms": 547.819518,
+      "retrieve_ms": 334.516355,
+      "before_retrieve_ms": 128.004338,
+      "after_retrieve_ms": 85.298825
+    },
+    {
+      "request_id": "chatcmpl-ae8a63920cdb8ffb",
+      "turn": 4,
+      "ttft_ms": 536.050724,
+      "retrieve_ms": 344.734841,
+      "before_retrieve_ms": 129.935155,
+      "after_retrieve_ms": 61.380728
+    },
+    {
+      "request_id": "chatcmpl-a85d2af490801739",
+      "turn": 3,
+      "ttft_ms": 561.325718,
+      "retrieve_ms": 331.127146,
+      "before_retrieve_ms": 157.539263,
+      "after_retrieve_ms": 72.659309
+    },
+    {
+      "request_id": "chatcmpl-bdddcab01f5f8ccb",
+      "turn": 4,
+      "ttft_ms": 572.383137,
+      "retrieve_ms": 329.535469,
+      "before_retrieve_ms": 170.118672,
+      "after_retrieve_ms": 72.728996
+    },
+    {
+      "request_id": "chatcmpl-9227006493d53349",
+      "turn": 2,
+      "ttft_ms": 544.132273,
+      "retrieve_ms": 338.224608,
+      "before_retrieve_ms": 133.994135,
+      "after_retrieve_ms": 71.91353
+    },
+    {
+      "request_id": "chatcmpl-8325e9e0bf6f8870",
+      "turn": 5,
+      "ttft_ms": 541.709021,
+      "retrieve_ms": 334.536364,
+      "before_retrieve_ms": 134.342799,
+      "after_retrieve_ms": 72.829858
+    },
+    {
+      "request_id": "chatcmpl-af974a45f10a8880",
+      "turn": 5,
+      "ttft_ms": 921.289119,
+      "retrieve_ms": 340.471217,
+      "before_retrieve_ms": 144.829163,
+      "after_retrieve_ms": 435.988739
+    },
+    {
+      "request_id": "chatcmpl-823fa47bc48ac5f7",
+      "turn": 4,
+      "ttft_ms": 947.285795,
+      "retrieve_ms": 330.412745,
+      "before_retrieve_ms": 543.68797,
+      "after_retrieve_ms": 73.18508
+    },
+    {
+      "request_id": "chatcmpl-bcb235775962340e",
+      "turn": 1,
+      "ttft_ms": 528.6569,
+      "retrieve_ms": 328.797017,
+      "before_retrieve_ms": 144.166843,
+      "after_retrieve_ms": 55.69304
+    },
+    {
+      "request_id": "chatcmpl-bc9e22325a6cff7f",
+      "turn": 4,
+      "ttft_ms": 566.190169,
+      "retrieve_ms": 320.116813,
+      "before_retrieve_ms": 174.084109,
+      "after_retrieve_ms": 71.989247
+    },
+    {
+      "request_id": "chatcmpl-be7b0f05e96b79e5",
+      "turn": 2,
+      "ttft_ms": 554.365259,
+      "retrieve_ms": 332.925818,
+      "before_retrieve_ms": 148.507176,
+      "after_retrieve_ms": 72.932265
+    },
+    {
+      "request_id": "chatcmpl-8c86e36e620a848c",
+      "turn": 5,
+      "ttft_ms": 581.172652,
+      "retrieve_ms": 340.005318,
+      "before_retrieve_ms": 155.086634,
+      "after_retrieve_ms": 86.0807
+    },
+    {
+      "request_id": "chatcmpl-b7778a03957aef4c",
+      "turn": 5,
+      "ttft_ms": 556.832474,
+      "retrieve_ms": 328.968401,
+      "before_retrieve_ms": 154.83429,
+      "after_retrieve_ms": 73.029783
+    },
+    {
+      "request_id": "chatcmpl-b0885c794247c6f6",
+      "turn": 5,
+      "ttft_ms": 487.924142,
+      "retrieve_ms": 332.415069,
+      "before_retrieve_ms": 104.395514,
+      "after_retrieve_ms": 51.113559
+    },
+    {
+      "request_id": "chatcmpl-afcfb6b4d5e88922",
+      "turn": 3,
+      "ttft_ms": 913.848738,
+      "retrieve_ms": 343.467112,
+      "before_retrieve_ms": 150.142977,
+      "after_retrieve_ms": 420.238649
+    },
+    {
+      "request_id": "chatcmpl-9b07f81b9004b35f",
+      "turn": 4,
+      "ttft_ms": 907.621379,
+      "retrieve_ms": 332.183308,
+      "before_retrieve_ms": 502.385388,
+      "after_retrieve_ms": 73.052683
+    },
+    {
+      "request_id": "chatcmpl-83b171ff9dda323f",
+      "turn": 4,
+      "ttft_ms": 566.856478,
+      "retrieve_ms": 346.599668,
+      "before_retrieve_ms": 148.128906,
+      "after_retrieve_ms": 72.127904
+    },
+    {
+      "request_id": "chatcmpl-9f66621b49c1e4f4",
+      "turn": 5,
+      "ttft_ms": 566.864899,
+      "retrieve_ms": 338.297203,
+      "before_retrieve_ms": 155.814173,
+      "after_retrieve_ms": 72.753523
+    },
+    {
+      "request_id": "chatcmpl-867b6bdf6f3d9837",
+      "turn": 0,
+      "ttft_ms": 506.068643,
+      "retrieve_ms": 327.292523,
+      "before_retrieve_ms": 130.322773,
+      "after_retrieve_ms": 48.453347
+    },
+    {
+      "request_id": "chatcmpl-89a52d9d83294cf6",
+      "turn": 4,
+      "ttft_ms": 551.885184,
+      "retrieve_ms": 348.11627,
+      "before_retrieve_ms": 132.108564,
+      "after_retrieve_ms": 71.66035
+    },
+    {
+      "request_id": "chatcmpl-a79c8578832f3045",
+      "turn": 5,
+      "ttft_ms": 541.512394,
+      "retrieve_ms": 334.572257,
+      "before_retrieve_ms": 134.020234,
+      "after_retrieve_ms": 72.919903
+    },
+    {
+      "request_id": "chatcmpl-bfccafd90c81384b",
+      "turn": 0,
+      "ttft_ms": 521.295507,
+      "retrieve_ms": 334.27203,
+      "before_retrieve_ms": 138.154354,
+      "after_retrieve_ms": 48.869123
+    },
+    {
+      "request_id": "chatcmpl-b87578529ab65b74",
+      "turn": 5,
+      "ttft_ms": 4636.472741,
+      "retrieve_ms": 348.685082,
+      "before_retrieve_ms": 3778.015685,
+      "after_retrieve_ms": 509.771974
+    },
+    {
+      "request_id": "chatcmpl-937f6744b0cccdb1",
+      "turn": 5,
+      "ttft_ms": 555.242442,
+      "retrieve_ms": 328.31806,
+      "before_retrieve_ms": 153.84955,
+      "after_retrieve_ms": 73.074832
+    },
+    {
+      "request_id": "chatcmpl-8ef9100d761e639d",
+      "turn": 0,
+      "ttft_ms": 511.849398,
+      "retrieve_ms": 329.153706,
+      "before_retrieve_ms": 134.919285,
+      "after_retrieve_ms": 47.776407
+    },
+    {
+      "request_id": "chatcmpl-9bd59619ab8787ce",
+      "turn": 1,
+      "ttft_ms": 532.777057,
+      "retrieve_ms": 337.602907,
+      "before_retrieve_ms": 128.139183,
+      "after_retrieve_ms": 67.034967
+    },
+    {
+      "request_id": "chatcmpl-bc0be25fe923457a",
+      "turn": 1,
+      "ttft_ms": 562.558212,
+      "retrieve_ms": 324.470635,
+      "before_retrieve_ms": 149.22495,
+      "after_retrieve_ms": 88.862627
+    },
+    {
+      "request_id": "chatcmpl-8d5bc10d820c89a4",
+      "turn": 4,
+      "ttft_ms": 5052.358134,
+      "retrieve_ms": 340.472813,
+      "before_retrieve_ms": 3870.002485,
+      "after_retrieve_ms": 841.882836
+    },
+    {
+      "request_id": "chatcmpl-a36523995b54ed70",
+      "turn": 5,
+      "ttft_ms": 542.934086,
+      "retrieve_ms": 341.485304,
+      "before_retrieve_ms": 131.539103,
+      "after_retrieve_ms": 69.909679
+    },
+    {
+      "request_id": "chatcmpl-8162ee0aa2750635",
+      "turn": 4,
+      "ttft_ms": 580.441963,
+      "retrieve_ms": 350.519622,
+      "before_retrieve_ms": 156.887202,
+      "after_retrieve_ms": 73.035139
+    },
+    {
+      "request_id": "chatcmpl-b2cc6c8b35c287e7",
+      "turn": 5,
+      "ttft_ms": 562.752154,
+      "retrieve_ms": 340.287855,
+      "before_retrieve_ms": 148.485772,
+      "after_retrieve_ms": 73.978527
+    },
+    {
+      "request_id": "chatcmpl-98d46ecdff028f5a",
+      "turn": 3,
+      "ttft_ms": 559.291348,
+      "retrieve_ms": 334.390627,
+      "before_retrieve_ms": 152.254607,
+      "after_retrieve_ms": 72.646114
+    },
+    {
+      "request_id": "chatcmpl-81dbe20796adc350",
+      "turn": 2,
+      "ttft_ms": 549.506961,
+      "retrieve_ms": 327.369806,
+      "before_retrieve_ms": 149.392247,
+      "after_retrieve_ms": 72.744908
+    },
+    {
+      "request_id": "chatcmpl-95bb0761fc3ace21",
+      "turn": 2,
+      "ttft_ms": 857.463851,
+      "retrieve_ms": 331.876015,
+      "before_retrieve_ms": 130.207124,
+      "after_retrieve_ms": 395.380712
+    },
+    {
+      "request_id": "chatcmpl-99dda1eaad2c0de9",
+      "turn": 2,
+      "ttft_ms": 824.818726,
+      "retrieve_ms": 324.722746,
+      "before_retrieve_ms": 443.490317,
+      "after_retrieve_ms": 56.605663
+    },
+    {
+      "request_id": "chatcmpl-bed6a28d5f9ca850",
+      "turn": 5,
+      "ttft_ms": 556.175136,
+      "retrieve_ms": 335.843728,
+      "before_retrieve_ms": 147.102879,
+      "after_retrieve_ms": 73.228529
+    },
+    {
+      "request_id": "chatcmpl-99d1e9a64395d19d",
+      "turn": 1,
+      "ttft_ms": 534.137983,
+      "retrieve_ms": 334.95719,
+      "before_retrieve_ms": 143.170366,
+      "after_retrieve_ms": 56.010427
+    },
+    {
+      "request_id": "chatcmpl-b136c4b265c0adf4",
+      "turn": 5,
+      "ttft_ms": 562.562681,
+      "retrieve_ms": 336.748418,
+      "before_retrieve_ms": 152.887378,
+      "after_retrieve_ms": 72.926885
+    },
+    {
+      "request_id": "chatcmpl-82e0511454bd1d51",
+      "turn": 1,
+      "ttft_ms": 519.864027,
+      "retrieve_ms": 330.234331,
+      "before_retrieve_ms": 133.745596,
+      "after_retrieve_ms": 55.8841
+    },
+    {
+      "request_id": "chatcmpl-add773728f434acd",
+      "turn": 4,
+      "ttft_ms": 554.864065,
+      "retrieve_ms": 333.013425,
+      "before_retrieve_ms": 148.205492,
+      "after_retrieve_ms": 73.645148
+    },
+    {
+      "request_id": "chatcmpl-afa43842e5c4941c",
+      "turn": 5,
+      "ttft_ms": 548.049102,
+      "retrieve_ms": 326.57041,
+      "before_retrieve_ms": 148.381407,
+      "after_retrieve_ms": 73.097285
+    },
+    {
+      "request_id": "chatcmpl-9c04462064c38fea",
+      "turn": 5,
+      "ttft_ms": 911.638789,
+      "retrieve_ms": 340.149632,
+      "before_retrieve_ms": 142.183855,
+      "after_retrieve_ms": 429.305302
+    },
+    {
+      "request_id": "chatcmpl-8a8f3093b8fa9d85",
+      "turn": 5,
+      "ttft_ms": 893.973988,
+      "retrieve_ms": 335.054964,
+      "before_retrieve_ms": 480.816469,
+      "after_retrieve_ms": 78.102555
+    },
+    {
+      "request_id": "chatcmpl-a765bf6e0274ef89",
+      "turn": 5,
+      "ttft_ms": 603.337748,
+      "retrieve_ms": 338.727722,
+      "before_retrieve_ms": 158.882509,
+      "after_retrieve_ms": 105.727517
+    },
+    {
+      "request_id": "chatcmpl-85cfd1a7d2211df3",
+      "turn": 2,
+      "ttft_ms": 553.772867,
+      "retrieve_ms": 330.99087,
+      "before_retrieve_ms": 147.539793,
+      "after_retrieve_ms": 75.242204
+    },
+    {
+      "request_id": "chatcmpl-98086ecc5070d07f",
+      "turn": 2,
+      "ttft_ms": 552.846809,
+      "retrieve_ms": 321.190816,
+      "before_retrieve_ms": 157.080136,
+      "after_retrieve_ms": 74.575857
+    },
+    {
+      "request_id": "chatcmpl-83c8a6945ba28770",
+      "turn": 1,
+      "ttft_ms": 519.179173,
+      "retrieve_ms": 326.387126,
+      "before_retrieve_ms": 136.504932,
+      "after_retrieve_ms": 56.287115
+    },
+    {
+      "request_id": "chatcmpl-a81ab1233a2f3689",
+      "turn": 3,
+      "ttft_ms": 539.302392,
+      "retrieve_ms": 326.028867,
+      "before_retrieve_ms": 139.33223,
+      "after_retrieve_ms": 73.941295
+    },
+    {
+      "request_id": "chatcmpl-afb188ad732e1859",
+      "turn": 3,
+      "ttft_ms": 550.868147,
+      "retrieve_ms": 327.046325,
+      "before_retrieve_ms": 149.070445,
+      "after_retrieve_ms": 74.751377
+    },
+    {
+      "request_id": "chatcmpl-b13661af7525d8c0",
+      "turn": 3,
+      "ttft_ms": 891.195812,
+      "retrieve_ms": 335.977021,
+      "before_retrieve_ms": 142.476037,
+      "after_retrieve_ms": 412.742754
+    },
+    {
+      "request_id": "chatcmpl-b5823a971fdbf9fc",
+      "turn": 3,
+      "ttft_ms": 864.423168,
+      "retrieve_ms": 327.283776,
+      "before_retrieve_ms": 464.031267,
+      "after_retrieve_ms": 73.108125
+    },
+    {
+      "request_id": "chatcmpl-8600ca48324d164b",
+      "turn": 2,
+      "ttft_ms": 545.372149,
+      "retrieve_ms": 324.49734,
+      "before_retrieve_ms": 149.388374,
+      "after_retrieve_ms": 71.486435
+    },
+    {
+      "request_id": "chatcmpl-a95094f414811308",
+      "turn": 3,
+      "ttft_ms": 550.827831,
+      "retrieve_ms": 333.129041,
+      "before_retrieve_ms": 146.127619,
+      "after_retrieve_ms": 71.571171
+    },
+    {
+      "request_id": "chatcmpl-9e60f9d8598effaf",
+      "turn": 3,
+      "ttft_ms": 562.253274,
+      "retrieve_ms": 334.591824,
+      "before_retrieve_ms": 155.080122,
+      "after_retrieve_ms": 72.581328
+    },
+    {
+      "request_id": "chatcmpl-be0bf8d0357870f7",
+      "turn": 2,
+      "ttft_ms": 554.583837,
+      "retrieve_ms": 323.335527,
+      "before_retrieve_ms": 159.219446,
+      "after_retrieve_ms": 72.028864
+    },
+    {
+      "request_id": "chatcmpl-b327a6610fc1c1f9",
+      "turn": 5,
+      "ttft_ms": 557.550556,
+      "retrieve_ms": 337.502215,
+      "before_retrieve_ms": 145.235084,
+      "after_retrieve_ms": 74.813257
+    },
+    {
+      "request_id": "chatcmpl-9c54183a84f3e544",
+      "turn": 4,
+      "ttft_ms": 557.136497,
+      "retrieve_ms": 330.541477,
+      "before_retrieve_ms": 151.244878,
+      "after_retrieve_ms": 75.350142
+    },
+    {
+      "request_id": "chatcmpl-9b4b0e167d8091c6",
+      "turn": 4,
+      "ttft_ms": 874.910228,
+      "retrieve_ms": 349.767755,
+      "before_retrieve_ms": 112.927001,
+      "after_retrieve_ms": 412.215472
+    },
+    {
+      "request_id": "chatcmpl-92251615cc2cd7eb",
+      "turn": 5,
+      "ttft_ms": 845.217872,
+      "retrieve_ms": 326.744641,
+      "before_retrieve_ms": 445.747587,
+      "after_retrieve_ms": 72.725644
+    },
+    {
+      "request_id": "chatcmpl-b7a62b2618956c35",
+      "turn": 1,
+      "ttft_ms": 525.354317,
+      "retrieve_ms": 322.524073,
+      "before_retrieve_ms": 146.520818,
+      "after_retrieve_ms": 56.309426
+    },
+    {
+      "request_id": "chatcmpl-b9bd8a63e1be988f",
+      "turn": 4,
+      "ttft_ms": 548.56763,
+      "retrieve_ms": 329.429726,
+      "before_retrieve_ms": 148.836744,
+      "after_retrieve_ms": 70.30116
+    },
+    {
+      "request_id": "chatcmpl-9fcc6c3f1de6c26b",
+      "turn": 4,
+      "ttft_ms": 565.675964,
+      "retrieve_ms": 336.632581,
+      "before_retrieve_ms": 156.195595,
+      "after_retrieve_ms": 72.847788
+    },
+    {
+      "request_id": "chatcmpl-bfc864464478bc58",
+      "turn": 2,
+      "ttft_ms": 530.663441,
+      "retrieve_ms": 329.446251,
+      "before_retrieve_ms": 130.40255,
+      "after_retrieve_ms": 70.81464
+    },
+    {
+      "request_id": "chatcmpl-80375025bb76b46e",
+      "turn": 4,
+      "ttft_ms": 541.654335,
+      "retrieve_ms": 327.19944,
+      "before_retrieve_ms": 140.750767,
+      "after_retrieve_ms": 73.704128
+    },
+    {
+      "request_id": "chatcmpl-8bb1f855fa8ddb48",
+      "turn": 5,
+      "ttft_ms": 582.991873,
+      "retrieve_ms": 329.981237,
+      "before_retrieve_ms": 147.825907,
+      "after_retrieve_ms": 105.184729
+    },
+    {
+      "request_id": "chatcmpl-89d159394b70a5f5",
+      "turn": 1,
+      "ttft_ms": 901.216285,
+      "retrieve_ms": 339.159497,
+      "before_retrieve_ms": 146.976545,
+      "after_retrieve_ms": 415.080243
+    },
+    {
+      "request_id": "chatcmpl-a0ab2934c449da15",
+      "turn": 4,
+      "ttft_ms": 849.388622,
+      "retrieve_ms": 329.620694,
+      "before_retrieve_ms": 446.532469,
+      "after_retrieve_ms": 73.235459
+    },
+    {
+      "request_id": "chatcmpl-881c78236b10fb9a",
+      "turn": 2,
+      "ttft_ms": 542.357348,
+      "retrieve_ms": 325.280785,
+      "before_retrieve_ms": 145.764382,
+      "after_retrieve_ms": 71.312181
+    },
+    {
+      "request_id": "chatcmpl-a0b28a026234bbd1",
+      "turn": 5,
+      "ttft_ms": 557.441645,
+      "retrieve_ms": 340.48753,
+      "before_retrieve_ms": 145.773534,
+      "after_retrieve_ms": 71.180581
+    },
+    {
+      "request_id": "chatcmpl-be80b75f3d5a6d67",
+      "turn": 3,
+      "ttft_ms": 587.531935,
+      "retrieve_ms": 337.628025,
+      "before_retrieve_ms": 151.615092,
+      "after_retrieve_ms": 98.288818
+    },
+    {
+      "request_id": "chatcmpl-a695f1a9182f1b2e",
+      "turn": 5,
+      "ttft_ms": 545.539838,
+      "retrieve_ms": 329.226136,
+      "before_retrieve_ms": 142.220686,
+      "after_retrieve_ms": 74.093016
+    },
+    {
+      "request_id": "chatcmpl-ac6f70c41bc78ad3",
+      "turn": 0,
+      "ttft_ms": 891.746819,
+      "retrieve_ms": 336.854383,
+      "before_retrieve_ms": 155.642345,
+      "after_retrieve_ms": 399.250091
+    },
+    {
+      "request_id": "chatcmpl-a9ff8e301162dec9",
+      "turn": 1,
+      "ttft_ms": 848.813636,
+      "retrieve_ms": 329.754039,
+      "before_retrieve_ms": 463.680978,
+      "after_retrieve_ms": 55.378619
+    },
+    {
+      "request_id": "chatcmpl-a6975b71d33c33dd",
+      "turn": 3,
+      "ttft_ms": 543.541978,
+      "retrieve_ms": 328.165281,
+      "before_retrieve_ms": 142.557488,
+      "after_retrieve_ms": 72.819209
+    },
+    {
+      "request_id": "chatcmpl-a77bdb4731389088",
+      "turn": 5,
+      "ttft_ms": 553.244555,
+      "retrieve_ms": 333.773249,
+      "before_retrieve_ms": 146.882883,
+      "after_retrieve_ms": 72.588423
+    },
+    {
+      "request_id": "chatcmpl-9efcf867543833d7",
+      "turn": 0,
+      "ttft_ms": 491.011375,
+      "retrieve_ms": 323.183888,
+      "before_retrieve_ms": 119.881794,
+      "after_retrieve_ms": 47.945693
+    },
+    {
+      "request_id": "chatcmpl-8be3dfd598269549",
+      "turn": 1,
+      "ttft_ms": 531.06958,
+      "retrieve_ms": 327.672112,
+      "before_retrieve_ms": 146.628342,
+      "after_retrieve_ms": 56.769126
+    },
+    {
+      "request_id": "chatcmpl-9d2a323b121d1750",
+      "turn": 2,
+      "ttft_ms": 764.045499,
+      "retrieve_ms": 330.326454,
+      "before_retrieve_ms": 140.595621,
+      "after_retrieve_ms": 293.123424
+    },
+    {
+      "request_id": "chatcmpl-8f70cf8dcd9d9bbf",
+      "turn": 0,
+      "ttft_ms": 5410.120581,
+      "retrieve_ms": 6.542837,
+      "before_retrieve_ms": 751.520073,
+      "after_retrieve_ms": 4652.057671
+    },
+    {
+      "request_id": "chatcmpl-b6e8a8a34a6e40bd",
+      "turn": 1,
+      "ttft_ms": 547.436569,
+      "retrieve_ms": 330.611755,
+      "before_retrieve_ms": 160.687815,
+      "after_retrieve_ms": 56.136999
+    },
+    {
+      "request_id": "chatcmpl-a76e6b1b04b63192",
+      "turn": 5,
+      "ttft_ms": 576.494311,
+      "retrieve_ms": 352.877306,
+      "before_retrieve_ms": 151.551974,
+      "after_retrieve_ms": 72.065031
+    },
+    {
+      "request_id": "chatcmpl-979ebfa55d21bd91",
+      "turn": 3,
+      "ttft_ms": 560.8365,
+      "retrieve_ms": 339.56833,
+      "before_retrieve_ms": 136.207131,
+      "after_retrieve_ms": 85.061039
+    },
+    {
+      "request_id": "chatcmpl-bbb97a1b0d6ba920",
+      "turn": 1,
+      "ttft_ms": 583.293992,
+      "retrieve_ms": 330.791175,
+      "before_retrieve_ms": 152.55117,
+      "after_retrieve_ms": 99.951647
+    },
+    {
+      "request_id": "chatcmpl-9240faf49f025002",
+      "turn": 2,
+      "ttft_ms": 542.743625,
+      "retrieve_ms": 325.533861,
+      "before_retrieve_ms": 143.695601,
+      "after_retrieve_ms": 73.514163
+    },
+    {
+      "request_id": "chatcmpl-9da4e855a6692740",
+      "turn": 3,
+      "ttft_ms": 552.05856,
+      "retrieve_ms": 327.840431,
+      "before_retrieve_ms": 152.70825,
+      "after_retrieve_ms": 71.509879
+    },
+    {
+      "request_id": "chatcmpl-be78d94aa6f58478",
+      "turn": 2,
+      "ttft_ms": 911.089432,
+      "retrieve_ms": 338.833308,
+      "before_retrieve_ms": 151.92558,
+      "after_retrieve_ms": 420.330544
+    },
+    {
+      "request_id": "chatcmpl-93e8250714e9e881",
+      "turn": 3,
+      "ttft_ms": 714.578464,
+      "retrieve_ms": 334.667235,
+      "before_retrieve_ms": 308.337457,
+      "after_retrieve_ms": 71.573772
+    },
+    {
+      "request_id": "chatcmpl-87459298ab083219",
+      "turn": 2,
+      "ttft_ms": 578.318339,
+      "retrieve_ms": 338.319009,
+      "before_retrieve_ms": 168.586303,
+      "after_retrieve_ms": 71.413027
+    },
+    {
+      "request_id": "chatcmpl-bfe88b49efa9d696",
+      "turn": 3,
+      "ttft_ms": 522.0319,
+      "retrieve_ms": 323.50318,
+      "before_retrieve_ms": 127.40703,
+      "after_retrieve_ms": 71.12169
+    },
+    {
+      "request_id": "chatcmpl-84631d11cbf9a47f",
+      "turn": 3,
+      "ttft_ms": 586.079491,
+      "retrieve_ms": 330.542696,
+      "before_retrieve_ms": 151.426001,
+      "after_retrieve_ms": 104.110794
+    },
+    {
+      "request_id": "chatcmpl-a7aa3cd82625d69b",
+      "turn": 4,
+      "ttft_ms": 564.061368,
+      "retrieve_ms": 332.779643,
+      "before_retrieve_ms": 159.385512,
+      "after_retrieve_ms": 71.896213
+    },
+    {
+      "request_id": "chatcmpl-8cd66054f7c42c30",
+      "turn": 1,
+      "ttft_ms": 549.870227,
+      "retrieve_ms": 322.637857,
+      "before_retrieve_ms": 170.26627,
+      "after_retrieve_ms": 56.9661
+    },
+    {
+      "request_id": "chatcmpl-a72187105bcd1bd2",
+      "turn": 3,
+      "ttft_ms": 562.042529,
+      "retrieve_ms": 337.768131,
+      "before_retrieve_ms": 151.713895,
+      "after_retrieve_ms": 72.560503
+    },
+    {
+      "request_id": "chatcmpl-a47242843dfebeaf",
+      "turn": 4,
+      "ttft_ms": 580.7119,
+      "retrieve_ms": 330.713661,
+      "before_retrieve_ms": 144.593131,
+      "after_retrieve_ms": 105.405108
+    },
+    {
+      "request_id": "chatcmpl-8a3abf1245b3e6a6",
+      "turn": 4,
+      "ttft_ms": 560.968625,
+      "retrieve_ms": 328.857518,
+      "before_retrieve_ms": 159.572551,
+      "after_retrieve_ms": 72.538556
+    },
+    {
+      "request_id": "chatcmpl-ad15bf81c0b02b1f",
+      "turn": 1,
+      "ttft_ms": 521.517547,
+      "retrieve_ms": 328.095146,
+      "before_retrieve_ms": 133.43032,
+      "after_retrieve_ms": 59.992081
+    },
+    {
+      "request_id": "chatcmpl-bf5b2edac36b2b41",
+      "turn": 5,
+      "ttft_ms": 549.377261,
+      "retrieve_ms": 330.699279,
+      "before_retrieve_ms": 144.704204,
+      "after_retrieve_ms": 73.973778
+    },
+    {
+      "request_id": "chatcmpl-a787cf59c34a3aee",
+      "turn": 4,
+      "ttft_ms": 543.556867,
+      "retrieve_ms": 336.54296,
+      "before_retrieve_ms": 133.966308,
+      "after_retrieve_ms": 73.047599
+    },
+    {
+      "request_id": "chatcmpl-b768e816ee12f29e",
+      "turn": 4,
+      "ttft_ms": 565.246535,
+      "retrieve_ms": 331.305608,
+      "before_retrieve_ms": 159.438748,
+      "after_retrieve_ms": 74.502179
+    },
+    {
+      "request_id": "chatcmpl-9912cafcfa2b76e6",
+      "turn": 2,
+      "ttft_ms": 566.705499,
+      "retrieve_ms": 333.712003,
+      "before_retrieve_ms": 160.997843,
+      "after_retrieve_ms": 71.995653
+    },
+    {
+      "request_id": "chatcmpl-90453a7bd572c03e",
+      "turn": 1,
+      "ttft_ms": 545.032948,
+      "retrieve_ms": 331.347302,
+      "before_retrieve_ms": 157.85355,
+      "after_retrieve_ms": 55.832096
+    },
+    {
+      "request_id": "chatcmpl-b50058a39bb544dc",
+      "turn": 5,
+      "ttft_ms": 552.395277,
+      "retrieve_ms": 337.846175,
+      "before_retrieve_ms": 140.041432,
+      "after_retrieve_ms": 74.50767
+    },
+    {
+      "request_id": "chatcmpl-b98eaf01de8532bf",
+      "turn": 5,
+      "ttft_ms": 556.428142,
+      "retrieve_ms": 324.164755,
+      "before_retrieve_ms": 160.001763,
+      "after_retrieve_ms": 72.261624
+    },
+    {
+      "request_id": "chatcmpl-9f7b2f9edc8f1484",
+      "turn": 3,
+      "ttft_ms": 563.263812,
+      "retrieve_ms": 333.365425,
+      "before_retrieve_ms": 157.011712,
+      "after_retrieve_ms": 72.886675
+    },
+    {
+      "request_id": "chatcmpl-ad8fe4b415aa7c6a",
+      "turn": 4,
+      "ttft_ms": 584.444363,
+      "retrieve_ms": 349.347379,
+      "before_retrieve_ms": 147.65637,
+      "after_retrieve_ms": 87.440614
+    },
+    {
+      "request_id": "chatcmpl-afb82439346bd7ed",
+      "turn": 5,
+      "ttft_ms": 561.515374,
+      "retrieve_ms": 327.452544,
+      "before_retrieve_ms": 161.052382,
+      "after_retrieve_ms": 73.010448
+    },
+    {
+      "request_id": "chatcmpl-baf9844c6ba3fc35",
+      "turn": 1,
+      "ttft_ms": 540.705937,
+      "retrieve_ms": 327.826314,
+      "before_retrieve_ms": 155.98531,
+      "after_retrieve_ms": 56.894313
+    },
+    {
+      "request_id": "chatcmpl-a7cc98181ece08a1",
+      "turn": 3,
+      "ttft_ms": 556.68522,
+      "retrieve_ms": 335.807477,
+      "before_retrieve_ms": 147.834179,
+      "after_retrieve_ms": 73.043564
+    },
+    {
+      "request_id": "chatcmpl-8d19a8a8c1bb7523",
+      "turn": 5,
+      "ttft_ms": 548.850941,
+      "retrieve_ms": 330.770133,
+      "before_retrieve_ms": 162.650099,
+      "after_retrieve_ms": 55.430709
+    },
+    {
+      "request_id": "chatcmpl-a6f02d7f001f6196",
+      "turn": 2,
+      "ttft_ms": 546.442955,
+      "retrieve_ms": 332.27019,
+      "before_retrieve_ms": 142.873362,
+      "after_retrieve_ms": 71.299403
+    },
+    {
+      "request_id": "chatcmpl-9c46d79e699841a0",
+      "turn": 5,
+      "ttft_ms": 514.168148,
+      "retrieve_ms": 334.038657,
+      "before_retrieve_ms": 109.784418,
+      "after_retrieve_ms": 70.345073
+    },
+    {
+      "request_id": "chatcmpl-8b326eab3ee248ea",
+      "turn": 4,
+      "ttft_ms": 574.957736,
+      "retrieve_ms": 332.070356,
+      "before_retrieve_ms": 152.839292,
+      "after_retrieve_ms": 90.048088
+    },
+    {
+      "request_id": "chatcmpl-8cc1d993a697e169",
+      "turn": 2,
+      "ttft_ms": 576.874255,
+      "retrieve_ms": 335.407476,
+      "before_retrieve_ms": 151.747885,
+      "after_retrieve_ms": 89.718894
+    },
+    {
+      "request_id": "chatcmpl-92e285e57c477e9a",
+      "turn": 1,
+      "ttft_ms": 486.869369,
+      "retrieve_ms": 322.834903,
+      "before_retrieve_ms": 109.988499,
+      "after_retrieve_ms": 54.045967
+    },
+    {
+      "request_id": "chatcmpl-bb2290c6e84e681c",
+      "turn": 5,
+      "ttft_ms": 564.962588,
+      "retrieve_ms": 345.898893,
+      "before_retrieve_ms": 145.098793,
+      "after_retrieve_ms": 73.964902
+    },
+    {
+      "request_id": "chatcmpl-b060631efb5d7703",
+      "turn": 4,
+      "ttft_ms": 569.961542,
+      "retrieve_ms": 333.913697,
+      "before_retrieve_ms": 138.586056,
+      "after_retrieve_ms": 97.461789
+    },
+    {
+      "request_id": "chatcmpl-aa55905b712e69d7",
+      "turn": 3,
+      "ttft_ms": 874.881264,
+      "retrieve_ms": 340.677065,
+      "before_retrieve_ms": 123.48655,
+      "after_retrieve_ms": 410.717649
+    },
+    {
+      "request_id": "chatcmpl-b778812192709fb7",
+      "turn": 1,
+      "ttft_ms": 877.040382,
+      "retrieve_ms": 330.405333,
+      "before_retrieve_ms": 491.633118,
+      "after_retrieve_ms": 55.001931
+    },
+    {
+      "request_id": "chatcmpl-b883b88d754580b7",
+      "turn": 1,
+      "ttft_ms": 570.129773,
+      "retrieve_ms": 345.958469,
+      "before_retrieve_ms": 157.278444,
+      "after_retrieve_ms": 66.89286
+    },
+    {
+      "request_id": "chatcmpl-89c9f0c8d95ba711",
+      "turn": 1,
+      "ttft_ms": 532.588993,
+      "retrieve_ms": 330.219386,
+      "before_retrieve_ms": 146.262607,
+      "after_retrieve_ms": 56.107
+    },
+    {
+      "request_id": "chatcmpl-a701ce8c79835606",
+      "turn": 4,
+      "ttft_ms": 555.290784,
+      "retrieve_ms": 336.071124,
+      "before_retrieve_ms": 147.778547,
+      "after_retrieve_ms": 71.441113
+    },
+    {
+      "request_id": "chatcmpl-b6e13ecf2dd80e37",
+      "turn": 2,
+      "ttft_ms": 539.06719,
+      "retrieve_ms": 327.254148,
+      "before_retrieve_ms": 137.284628,
+      "after_retrieve_ms": 74.528414
+    },
+    {
+      "request_id": "chatcmpl-8398709a45c07066",
+      "turn": 2,
+      "ttft_ms": 549.390637,
+      "retrieve_ms": 323.55861,
+      "before_retrieve_ms": 155.304082,
+      "after_retrieve_ms": 70.527945
+    },
+    {
+      "request_id": "chatcmpl-94e59a9c68a6bf06",
+      "turn": 0,
+      "ttft_ms": 538.087252,
+      "retrieve_ms": 326.548667,
+      "before_retrieve_ms": 162.451276,
+      "after_retrieve_ms": 49.087309
+    },
+    {
+      "request_id": "chatcmpl-a76f8ef0bdd42d44",
+      "turn": 2,
+      "ttft_ms": 547.14606,
+      "retrieve_ms": 336.093421,
+      "before_retrieve_ms": 140.882974,
+      "after_retrieve_ms": 70.169665
+    },
+    {
+      "request_id": "chatcmpl-ac100651769d81f5",
+      "turn": 0,
+      "ttft_ms": 527.258385,
+      "retrieve_ms": 323.983388,
+      "before_retrieve_ms": 147.707301,
+      "after_retrieve_ms": 55.567696
+    },
+    {
+      "request_id": "chatcmpl-ad4c99785e02dfa7",
+      "turn": 2,
+      "ttft_ms": 4584.524375,
+      "retrieve_ms": 327.15484,
+      "before_retrieve_ms": 3759.417589,
+      "after_retrieve_ms": 497.951946
+    },
+    {
+      "request_id": "chatcmpl-88ec8b2f0d874d1b",
+      "turn": 0,
+      "ttft_ms": 550.587887,
+      "retrieve_ms": 331.36344,
+      "before_retrieve_ms": 154.517535,
+      "after_retrieve_ms": 64.706912
+    },
+    {
+      "request_id": "chatcmpl-93fd8a2617a769e8",
+      "turn": 1,
+      "ttft_ms": 554.025212,
+      "retrieve_ms": 340.981637,
+      "before_retrieve_ms": 145.374301,
+      "after_retrieve_ms": 67.669274
+    },
+    {
+      "request_id": "chatcmpl-a7ac65d01db4cdca",
+      "turn": 1,
+      "ttft_ms": 569.152411,
+      "retrieve_ms": 337.382179,
+      "before_retrieve_ms": 131.26232,
+      "after_retrieve_ms": 100.507912
+    },
+    {
+      "request_id": "chatcmpl-b2477e7a1bb4227b",
+      "turn": 1,
+      "ttft_ms": 543.076048,
+      "retrieve_ms": 327.951456,
+      "before_retrieve_ms": 159.000388,
+      "after_retrieve_ms": 56.124204
+    },
+    {
+      "request_id": "chatcmpl-b11b9e8182297b61",
+      "turn": 3,
+      "ttft_ms": 906.882341,
+      "retrieve_ms": 342.005228,
+      "before_retrieve_ms": 147.84771,
+      "after_retrieve_ms": 417.029403
+    },
+    {
+      "request_id": "chatcmpl-b7a9c047611a84f4",
+      "turn": 3,
+      "ttft_ms": 759.692484,
+      "retrieve_ms": 326.495534,
+      "before_retrieve_ms": 367.167009,
+      "after_retrieve_ms": 66.029941
+    },
+    {
+      "request_id": "chatcmpl-9a04236fec79772f",
+      "turn": 3,
+      "ttft_ms": 589.279989,
+      "retrieve_ms": 340.610777,
+      "before_retrieve_ms": 161.969338,
+      "after_retrieve_ms": 86.699874
+    },
+    {
+      "request_id": "chatcmpl-b00f698fb2cc97f4",
+      "turn": 5,
+      "ttft_ms": 555.454859,
+      "retrieve_ms": 337.403429,
+      "before_retrieve_ms": 144.529252,
+      "after_retrieve_ms": 73.522178
+    },
+    {
+      "request_id": "chatcmpl-9e97e7f688cbff0b",
+      "turn": 4,
+      "ttft_ms": 554.70473,
+      "retrieve_ms": 336.056168,
+      "before_retrieve_ms": 129.455309,
+      "after_retrieve_ms": 89.193253
+    },
+    {
+      "request_id": "chatcmpl-b3dd82a8953cfe43",
+      "turn": 2,
+      "ttft_ms": 546.268577,
+      "retrieve_ms": 329.773377,
+      "before_retrieve_ms": 144.840903,
+      "after_retrieve_ms": 71.654297
+    },
+    {
+      "request_id": "chatcmpl-a13cd215e82057da",
+      "turn": 4,
+      "ttft_ms": 498.272149,
+      "retrieve_ms": 326.862255,
+      "before_retrieve_ms": 106.993877,
+      "after_retrieve_ms": 64.416017
+    },
+    {
+      "request_id": "chatcmpl-bd2390f2a3371609",
+      "turn": 2,
+      "ttft_ms": 581.745187,
+      "retrieve_ms": 331.694062,
+      "before_retrieve_ms": 162.985574,
+      "after_retrieve_ms": 87.065551
+    },
+    {
+      "request_id": "chatcmpl-bcba86f67bf57768",
+      "turn": 1,
+      "ttft_ms": 554.813649,
+      "retrieve_ms": 342.515055,
+      "before_retrieve_ms": 145.089819,
+      "after_retrieve_ms": 67.208775
+    },
+    {
+      "request_id": "chatcmpl-9898e49008073c5a",
+      "turn": 1,
+      "ttft_ms": 542.234631,
+      "retrieve_ms": 332.286461,
+      "before_retrieve_ms": 153.200387,
+      "after_retrieve_ms": 56.747783
+    },
+    {
+      "request_id": "chatcmpl-aa7924758ec7fc2c",
+      "turn": 4,
+      "ttft_ms": 534.157324,
+      "retrieve_ms": 329.128023,
+      "before_retrieve_ms": 148.5535,
+      "after_retrieve_ms": 56.475801
+    },
+    {
+      "request_id": "chatcmpl-af9f5b71ffcd56f4",
+      "turn": 3,
+      "ttft_ms": 555.426798,
+      "retrieve_ms": 327.954255,
+      "before_retrieve_ms": 154.041849,
+      "after_retrieve_ms": 73.430694
+    },
+    {
+      "request_id": "chatcmpl-8a5c4c7bd22e5920",
+      "turn": 1,
+      "ttft_ms": 909.872311,
+      "retrieve_ms": 333.187278,
+      "before_retrieve_ms": 155.004075,
+      "after_retrieve_ms": 421.680958
+    },
+    {
+      "request_id": "chatcmpl-9cbfe9c1c7370ff9",
+      "turn": 2,
+      "ttft_ms": 777.974866,
+      "retrieve_ms": 328.978368,
+      "before_retrieve_ms": 377.827955,
+      "after_retrieve_ms": 71.168543
+    },
+    {
+      "request_id": "chatcmpl-a2470476daf17f5f",
+      "turn": 3,
+      "ttft_ms": 566.128776,
+      "retrieve_ms": 337.34928,
+      "before_retrieve_ms": 146.592428,
+      "after_retrieve_ms": 82.187068
+    },
+    {
+      "request_id": "chatcmpl-aa506ebed3d0bede",
+      "turn": 2,
+      "ttft_ms": 542.473164,
+      "retrieve_ms": 332.548349,
+      "before_retrieve_ms": 140.07387,
+      "after_retrieve_ms": 69.850945
+    },
+    {
+      "request_id": "chatcmpl-b873a4f7ac545fc8",
+      "turn": 2,
+      "ttft_ms": 591.02787,
+      "retrieve_ms": 331.82474,
+      "before_retrieve_ms": 148.032631,
+      "after_retrieve_ms": 111.170499
+    },
+    {
+      "request_id": "chatcmpl-9c73a146d9f45db5",
+      "turn": 2,
+      "ttft_ms": 561.137361,
+      "retrieve_ms": 326.034922,
+      "before_retrieve_ms": 162.474549,
+      "after_retrieve_ms": 72.62789
+    },
+    {
+      "request_id": "chatcmpl-b765c9919a6e1870",
+      "turn": 1,
+      "ttft_ms": 531.461442,
+      "retrieve_ms": 321.457979,
+      "before_retrieve_ms": 153.958326,
+      "after_retrieve_ms": 56.045137
+    },
+    {
+      "request_id": "chatcmpl-8a1994cdc0cdfc9f",
+      "turn": 1,
+      "ttft_ms": 582.871086,
+      "retrieve_ms": 332.584263,
+      "before_retrieve_ms": 158.345299,
+      "after_retrieve_ms": 91.941524
+    },
+    {
+      "request_id": "chatcmpl-82cec6f35e1fe864",
+      "turn": 5,
+      "ttft_ms": 853.216246,
+      "retrieve_ms": 329.366295,
+      "before_retrieve_ms": 103.499213,
+      "after_retrieve_ms": 420.350738
+    },
+    {
+      "request_id": "chatcmpl-a21f9729083e9129",
+      "turn": 4,
+      "ttft_ms": 819.919647,
+      "retrieve_ms": 353.529019,
+      "before_retrieve_ms": 363.878177,
+      "after_retrieve_ms": 102.512451
+    },
+    {
+      "request_id": "chatcmpl-9bb20ed8820c0387",
+      "turn": 2,
+      "ttft_ms": 550.856958,
+      "retrieve_ms": 325.787211,
+      "before_retrieve_ms": 153.183753,
+      "after_retrieve_ms": 71.885994
+    },
+    {
+      "request_id": "chatcmpl-9e3ad82e3a574a0f",
+      "turn": 3,
+      "ttft_ms": 534.201389,
+      "retrieve_ms": 330.693128,
+      "before_retrieve_ms": 131.613576,
+      "after_retrieve_ms": 71.894685
+    },
+    {
+      "request_id": "chatcmpl-b27d45299f73b63e",
+      "turn": 3,
+      "ttft_ms": 553.919204,
+      "retrieve_ms": 337.959939,
+      "before_retrieve_ms": 143.353286,
+      "after_retrieve_ms": 72.605979
+    },
+    {
+      "request_id": "chatcmpl-9a28991d3ace5ff7",
+      "turn": 3,
+      "ttft_ms": 583.99549,
+      "retrieve_ms": 330.539704,
+      "before_retrieve_ms": 182.374315,
+      "after_retrieve_ms": 71.081471
+    },
+    {
+      "request_id": "chatcmpl-a05866bf8d9cafb8",
+      "turn": 3,
+      "ttft_ms": 547.554719,
+      "retrieve_ms": 326.918265,
+      "before_retrieve_ms": 149.272768,
+      "after_retrieve_ms": 71.363686
+    },
+    {
+      "request_id": "chatcmpl-aa96cca6f19eda07",
+      "turn": 5,
+      "ttft_ms": 560.102971,
+      "retrieve_ms": 333.240666,
+      "before_retrieve_ms": 155.065479,
+      "after_retrieve_ms": 71.796826
+    },
+    {
+      "request_id": "chatcmpl-b998416e027e65e4",
+      "turn": 4,
+      "ttft_ms": 530.63469,
+      "retrieve_ms": 328.660527,
+      "before_retrieve_ms": 126.978784,
+      "after_retrieve_ms": 74.995379
+    },
+    {
+      "request_id": "chatcmpl-93afc7319439591a",
+      "turn": 2,
+      "ttft_ms": 889.818729,
+      "retrieve_ms": 334.073873,
+      "before_retrieve_ms": 142.766437,
+      "after_retrieve_ms": 412.978419
+    },
+    {
+      "request_id": "chatcmpl-8ea871fec66cac45",
+      "turn": 5,
+      "ttft_ms": 920.112261,
+      "retrieve_ms": 337.085221,
+      "before_retrieve_ms": 509.91663,
+      "after_retrieve_ms": 73.11041
+    },
+    {
+      "request_id": "chatcmpl-b7350944244ef111",
+      "turn": 3,
+      "ttft_ms": 580.172115,
+      "retrieve_ms": 350.421471,
+      "before_retrieve_ms": 157.668179,
+      "after_retrieve_ms": 72.082465
+    },
+    {
+      "request_id": "chatcmpl-a4596d86e9dc7e13",
+      "turn": 5,
+      "ttft_ms": 554.924274,
+      "retrieve_ms": 336.295679,
+      "before_retrieve_ms": 146.556725,
+      "after_retrieve_ms": 72.07187
+    },
+    {
+      "request_id": "chatcmpl-a0f55ac2df90edba",
+      "turn": 5,
+      "ttft_ms": 587.083846,
+      "retrieve_ms": 337.639253,
+      "before_retrieve_ms": 176.3824,
+      "after_retrieve_ms": 73.062193
+    },
+    {
+      "request_id": "chatcmpl-b09e973fe2524e6c",
+      "turn": 4,
+      "ttft_ms": 543.803427,
+      "retrieve_ms": 329.596141,
+      "before_retrieve_ms": 141.611577,
+      "after_retrieve_ms": 72.595709
+    },
+    {
+      "request_id": "chatcmpl-bafe72a625856225",
+      "turn": 5,
+      "ttft_ms": 572.421224,
+      "retrieve_ms": 344.080151,
+      "before_retrieve_ms": 156.550707,
+      "after_retrieve_ms": 71.790366
+    },
+    {
+      "request_id": "chatcmpl-a85707230de5afe3",
+      "turn": 2,
+      "ttft_ms": 600.418586,
+      "retrieve_ms": 341.560516,
+      "before_retrieve_ms": 173.634015,
+      "after_retrieve_ms": 85.224055
+    },
+    {
+      "request_id": "chatcmpl-aeda5ac7542f46ed",
+      "turn": 0,
+      "ttft_ms": 879.035375,
+      "retrieve_ms": 336.252672,
+      "before_retrieve_ms": 144.381137,
+      "after_retrieve_ms": 398.401566
+    },
+    {
+      "request_id": "chatcmpl-ad854c078180dda5",
+      "turn": 3,
+      "ttft_ms": 880.131968,
+      "retrieve_ms": 328.742482,
+      "before_retrieve_ms": 478.096797,
+      "after_retrieve_ms": 73.292689
+    },
+    {
+      "request_id": "chatcmpl-80be71befa877c83",
+      "turn": 4,
+      "ttft_ms": 553.868346,
+      "retrieve_ms": 350.209304,
+      "before_retrieve_ms": 131.796659,
+      "after_retrieve_ms": 71.862383
+    },
+    {
+      "request_id": "chatcmpl-ae8594fa4dfd3acf",
+      "turn": 4,
+      "ttft_ms": 554.162079,
+      "retrieve_ms": 339.752552,
+      "before_retrieve_ms": 142.332623,
+      "after_retrieve_ms": 72.076904
+    },
+    {
+      "request_id": "chatcmpl-8ca4bf3e300b9c5c",
+      "turn": 4,
+      "ttft_ms": 571.690819,
+      "retrieve_ms": 330.224249,
+      "before_retrieve_ms": 168.80029,
+      "after_retrieve_ms": 72.66628
+    },
+    {
+      "request_id": "chatcmpl-bb5c0a7c020819e6",
+      "turn": 2,
+      "ttft_ms": 589.478367,
+      "retrieve_ms": 326.260379,
+      "before_retrieve_ms": 158.678232,
+      "after_retrieve_ms": 104.539756
+    },
+    {
+      "request_id": "chatcmpl-81985f0826d2908c",
+      "turn": 3,
+      "ttft_ms": 561.39717,
+      "retrieve_ms": 333.62026,
+      "before_retrieve_ms": 155.167113,
+      "after_retrieve_ms": 72.609797
+    },
+    {
+      "request_id": "chatcmpl-ba0583d709f67a1c",
+      "turn": 3,
+      "ttft_ms": 947.013537,
+      "retrieve_ms": 353.748903,
+      "before_retrieve_ms": 168.998353,
+      "after_retrieve_ms": 424.266281
+    },
+    {
+      "request_id": "chatcmpl-993a1afdb8857540",
+      "turn": 0,
+      "ttft_ms": 963.895264,
+      "retrieve_ms": 334.876489,
+      "before_retrieve_ms": 550.328393,
+      "after_retrieve_ms": 78.690382
+    },
+    {
+      "request_id": "chatcmpl-868f1d742eece935",
+      "turn": 3,
+      "ttft_ms": 559.423783,
+      "retrieve_ms": 336.531771,
+      "before_retrieve_ms": 149.692291,
+      "after_retrieve_ms": 73.199721
+    },
+    {
+      "request_id": "chatcmpl-98f7b21338ee8f6a",
+      "turn": 5,
+      "ttft_ms": 563.537313,
+      "retrieve_ms": 330.33348,
+      "before_retrieve_ms": 161.948131,
+      "after_retrieve_ms": 71.255702
+    },
+    {
+      "request_id": "chatcmpl-aecab49ed43ce0d1",
+      "turn": 1,
+      "ttft_ms": 882.1657,
+      "retrieve_ms": 340.031342,
+      "before_retrieve_ms": 140.156011,
+      "after_retrieve_ms": 401.978347
+    },
+    {
+      "request_id": "chatcmpl-b22d35af11cfe528",
+      "turn": 4,
+      "ttft_ms": 885.70331,
+      "retrieve_ms": 326.689617,
+      "before_retrieve_ms": 486.743214,
+      "after_retrieve_ms": 72.270479
+    },
+    {
+      "request_id": "chatcmpl-a05d04fbae0ec29c",
+      "turn": 1,
+      "ttft_ms": 541.715144,
+      "retrieve_ms": 332.648707,
+      "before_retrieve_ms": 155.275228,
+      "after_retrieve_ms": 53.791209
+    },
+    {
+      "request_id": "chatcmpl-87929dc4cc756639",
+      "turn": 0,
+      "ttft_ms": 524.431595,
+      "retrieve_ms": 327.961617,
+      "before_retrieve_ms": 148.519296,
+      "after_retrieve_ms": 47.950682
+    },
+    {
+      "request_id": "chatcmpl-96d96f6c4d07b301",
+      "turn": 4,
+      "ttft_ms": 564.651306,
+      "retrieve_ms": 336.298349,
+      "before_retrieve_ms": 155.196662,
+      "after_retrieve_ms": 73.156295
+    },
+    {
+      "request_id": "chatcmpl-a27e88fca304f730",
+      "turn": 4,
+      "ttft_ms": 539.793169,
+      "retrieve_ms": 324.178089,
+      "before_retrieve_ms": 143.109152,
+      "after_retrieve_ms": 72.505928
+    },
+    {
+      "request_id": "chatcmpl-bfb2d7cd8e7a91fc",
+      "turn": 1,
+      "ttft_ms": 566.452932,
+      "retrieve_ms": 324.141319,
+      "before_retrieve_ms": 154.313189,
+      "after_retrieve_ms": 87.998424
+    },
+    {
+      "request_id": "chatcmpl-85acffe4d25385c4",
+      "turn": 5,
+      "ttft_ms": 563.766126,
+      "retrieve_ms": 335.571073,
+      "before_retrieve_ms": 154.887642,
+      "after_retrieve_ms": 73.307411
+    },
+    {
+      "request_id": "chatcmpl-b973ecb295636470",
+      "turn": 5,
+      "ttft_ms": 552.307366,
+      "retrieve_ms": 334.4525,
+      "before_retrieve_ms": 144.676245,
+      "after_retrieve_ms": 73.178621
+    },
+    {
+      "request_id": "chatcmpl-b51f22e44944f553",
+      "turn": 4,
+      "ttft_ms": 891.124962,
+      "retrieve_ms": 338.199283,
+      "before_retrieve_ms": 130.381659,
+      "after_retrieve_ms": 422.54402
+    },
+    {
+      "request_id": "chatcmpl-b667aec75e4197e7",
+      "turn": 5,
+      "ttft_ms": 895.914347,
+      "retrieve_ms": 333.878803,
+      "before_retrieve_ms": 490.51639,
+      "after_retrieve_ms": 71.519154
+    },
+    {
+      "request_id": "chatcmpl-907933e31fbb8650",
+      "turn": 4,
+      "ttft_ms": 568.959762,
+      "retrieve_ms": 349.709773,
+      "before_retrieve_ms": 145.715175,
+      "after_retrieve_ms": 73.534814
+    },
+    {
+      "request_id": "chatcmpl-b6a06c2759796138",
+      "turn": 5,
+      "ttft_ms": 578.785146,
+      "retrieve_ms": 330.85419,
+      "before_retrieve_ms": 143.403366,
+      "after_retrieve_ms": 104.52759
+    },
+    {
+      "request_id": "chatcmpl-a5a69c00c2435d3e",
+      "turn": 1,
+      "ttft_ms": 556.000316,
+      "retrieve_ms": 333.728277,
+      "before_retrieve_ms": 152.919125,
+      "after_retrieve_ms": 69.352914
+    },
+    {
+      "request_id": "chatcmpl-8fb9a6adc17b5b84",
+      "turn": 3,
+      "ttft_ms": 564.046951,
+      "retrieve_ms": 335.585332,
+      "before_retrieve_ms": 153.584304,
+      "after_retrieve_ms": 74.877315
+    },
+    {
+      "request_id": "chatcmpl-81e7eb5752b6f131",
+      "turn": 2,
+      "ttft_ms": 549.336865,
+      "retrieve_ms": 331.385984,
+      "before_retrieve_ms": 142.555845,
+      "after_retrieve_ms": 75.395036
+    },
+    {
+      "request_id": "chatcmpl-98b9e753eb29de3c",
+      "turn": 4,
+      "ttft_ms": 589.435885,
+      "retrieve_ms": 334.216022,
+      "before_retrieve_ms": 149.463661,
+      "after_retrieve_ms": 105.756202
+    },
+    {
+      "request_id": "chatcmpl-b1badc283bc7cd87",
+      "turn": 5,
+      "ttft_ms": 945.424459,
+      "retrieve_ms": 362.746465,
+      "before_retrieve_ms": 145.511081,
+      "after_retrieve_ms": 437.166913
+    },
+    {
+      "request_id": "chatcmpl-919788e5fc01b8d9",
+      "turn": 1,
+      "ttft_ms": 892.169958,
+      "retrieve_ms": 338.330184,
+      "before_retrieve_ms": 498.85755,
+      "after_retrieve_ms": 54.982224
+    },
+    {
+      "request_id": "chatcmpl-8ed42f4fa540f686",
+      "turn": 5,
+      "ttft_ms": 572.18203,
+      "retrieve_ms": 349.728264,
+      "before_retrieve_ms": 149.022074,
+      "after_retrieve_ms": 73.431692
+    },
+    {
+      "request_id": "chatcmpl-b0e2547abc5fc8e6",
+      "turn": 5,
+      "ttft_ms": 561.895901,
+      "retrieve_ms": 351.96227,
+      "before_retrieve_ms": 136.140058,
+      "after_retrieve_ms": 73.793573
+    },
+    {
+      "request_id": "chatcmpl-af2c5f3ee0efdddc",
+      "turn": 5,
+      "ttft_ms": 549.67562,
+      "retrieve_ms": 330.922541,
+      "before_retrieve_ms": 146.215974,
+      "after_retrieve_ms": 72.537105
+    },
+    {
+      "request_id": "chatcmpl-a8755530acddcb6c",
+      "turn": 3,
+      "ttft_ms": 533.810618,
+      "retrieve_ms": 330.305243,
+      "before_retrieve_ms": 133.447735,
+      "after_retrieve_ms": 70.05764
+    },
+    {
+      "request_id": "chatcmpl-90d95e1a1d4ed4dc",
+      "turn": 4,
+      "ttft_ms": 550.313956,
+      "retrieve_ms": 329.978052,
+      "before_retrieve_ms": 146.835612,
+      "after_retrieve_ms": 73.500292
+    },
+    {
+      "request_id": "chatcmpl-ae513b537ba1f4fe",
+      "turn": 1,
+      "ttft_ms": 537.446959,
+      "retrieve_ms": 328.340599,
+      "before_retrieve_ms": 151.424368,
+      "after_retrieve_ms": 57.681992
+    },
+    {
+      "request_id": "chatcmpl-ba681859463fe6e3",
+      "turn": 2,
+      "ttft_ms": 907.066749,
+      "retrieve_ms": 334.373205,
+      "before_retrieve_ms": 174.380568,
+      "after_retrieve_ms": 398.312976
+    },
+    {
+      "request_id": "chatcmpl-abeac49f68ed01b9",
+      "turn": 5,
+      "ttft_ms": 912.997959,
+      "retrieve_ms": 325.672911,
+      "before_retrieve_ms": 514.741813,
+      "after_retrieve_ms": 72.583235
+    },
+    {
+      "request_id": "chatcmpl-bbcb27eb2e1dc6ab",
+      "turn": 1,
+      "ttft_ms": 510.4938,
+      "retrieve_ms": 326.53417,
+      "before_retrieve_ms": 128.261976,
+      "after_retrieve_ms": 55.697654
+    },
+    {
+      "request_id": "chatcmpl-b30d157ad864ff2d",
+      "turn": 1,
+      "ttft_ms": 524.649521,
+      "retrieve_ms": 329.665267,
+      "before_retrieve_ms": 137.450322,
+      "after_retrieve_ms": 57.533932
+    },
+    {
+      "request_id": "chatcmpl-b644f8a2d61a048a",
+      "turn": 2,
+      "ttft_ms": 561.713946,
+      "retrieve_ms": 339.037717,
+      "before_retrieve_ms": 152.513823,
+      "after_retrieve_ms": 70.162406
+    },
+    {
+      "request_id": "chatcmpl-acc58575861afd3d",
+      "turn": 4,
+      "ttft_ms": 556.750425,
+      "retrieve_ms": 346.860507,
+      "before_retrieve_ms": 134.89109,
+      "after_retrieve_ms": 74.998828
+    },
+    {
+      "request_id": "chatcmpl-968b7e5f25bb65b3",
+      "turn": 2,
+      "ttft_ms": 544.449218,
+      "retrieve_ms": 327.767419,
+      "before_retrieve_ms": 145.20639,
+      "after_retrieve_ms": 71.475409
+    },
+    {
+      "request_id": "chatcmpl-9a7cac1d0b183a26",
+      "turn": 5,
+      "ttft_ms": 568.206608,
+      "retrieve_ms": 341.197063,
+      "before_retrieve_ms": 151.868105,
+      "after_retrieve_ms": 75.14144
+    },
+    {
+      "request_id": "chatcmpl-ab0c79c17c293c33",
+      "turn": 2,
+      "ttft_ms": 898.788603,
+      "retrieve_ms": 350.330254,
+      "before_retrieve_ms": 145.561862,
+      "after_retrieve_ms": 402.896487
+    },
+    {
+      "request_id": "chatcmpl-81c2ff674804349e",
+      "turn": 3,
+      "ttft_ms": 931.596476,
+      "retrieve_ms": 331.474422,
+      "before_retrieve_ms": 528.462462,
+      "after_retrieve_ms": 71.659592
+    },
+    {
+      "request_id": "chatcmpl-a770d1500b43e4aa",
+      "turn": 5,
+      "ttft_ms": 580.311001,
+      "retrieve_ms": 339.664997,
+      "before_retrieve_ms": 167.089376,
+      "after_retrieve_ms": 73.556628
+    },
+    {
+      "request_id": "chatcmpl-b957a784d42dce95",
+      "turn": 2,
+      "ttft_ms": 544.146462,
+      "retrieve_ms": 324.488656,
+      "before_retrieve_ms": 142.752712,
+      "after_retrieve_ms": 76.905094
+    },
+    {
+      "request_id": "chatcmpl-a0c52b5ebeb2e946",
+      "turn": 3,
+      "ttft_ms": 600.608265,
+      "retrieve_ms": 336.858221,
+      "before_retrieve_ms": 151.886696,
+      "after_retrieve_ms": 111.863348
+    },
+    {
+      "request_id": "chatcmpl-8ec25c48781b587b",
+      "turn": 4,
+      "ttft_ms": 605.589664,
+      "retrieve_ms": 351.024762,
+      "before_retrieve_ms": 179.992486,
+      "after_retrieve_ms": 74.572416
+    },
+    {
+      "request_id": "chatcmpl-a1c12446b26db40f",
+      "turn": 3,
+      "ttft_ms": 576.106282,
+      "retrieve_ms": 334.770086,
+      "before_retrieve_ms": 166.4208,
+      "after_retrieve_ms": 74.915396
+    },
+    {
+      "request_id": "chatcmpl-a5be6347c0db2e38",
+      "turn": 2,
+      "ttft_ms": 551.153673,
+      "retrieve_ms": 331.628202,
+      "before_retrieve_ms": 146.586828,
+      "after_retrieve_ms": 72.938643
+    },
+    {
+      "request_id": "chatcmpl-b7b01512bcef429e",
+      "turn": 3,
+      "ttft_ms": 926.786627,
+      "retrieve_ms": 339.366637,
+      "before_retrieve_ms": 140.339111,
+      "after_retrieve_ms": 447.080879
+    },
+    {
+      "request_id": "chatcmpl-a9f90ed5e73c0585",
+      "turn": 4,
+      "ttft_ms": 953.427939,
+      "retrieve_ms": 332.696456,
+      "before_retrieve_ms": 547.752764,
+      "after_retrieve_ms": 72.978719
+    },
+    {
+      "request_id": "chatcmpl-b017ba5ee7f6c765",
+      "turn": 2,
+      "ttft_ms": 554.563658,
+      "retrieve_ms": 327.32485,
+      "before_retrieve_ms": 156.455487,
+      "after_retrieve_ms": 70.783321
+    },
+    {
+      "request_id": "chatcmpl-acc29eb447a91a34",
+      "turn": 3,
+      "ttft_ms": 909.563268,
+      "retrieve_ms": 336.702459,
+      "before_retrieve_ms": 138.092491,
+      "after_retrieve_ms": 434.768318
+    },
+    {
+      "request_id": "chatcmpl-ab2bf94d7eb17d69",
+      "turn": 5,
+      "ttft_ms": 830.605392,
+      "retrieve_ms": 331.215415,
+      "before_retrieve_ms": 426.856792,
+      "after_retrieve_ms": 72.533185
+    },
+    {
+      "request_id": "chatcmpl-b45b351fa2cf72d0",
+      "turn": 4,
+      "ttft_ms": 559.243987,
+      "retrieve_ms": 336.343065,
+      "before_retrieve_ms": 151.672041,
+      "after_retrieve_ms": 71.228881
+    },
+    {
+      "request_id": "chatcmpl-ae74b3fabd75f423",
+      "turn": 5,
+      "ttft_ms": 606.350152,
+      "retrieve_ms": 341.090659,
+      "before_retrieve_ms": 149.149309,
+      "after_retrieve_ms": 116.110184
+    },
+    {
+      "request_id": "chatcmpl-9687aa03a3cb3f3b",
+      "turn": 3,
+      "ttft_ms": 554.297819,
+      "retrieve_ms": 332.611274,
+      "before_retrieve_ms": 148.359088,
+      "after_retrieve_ms": 73.327457
+    },
+    {
+      "request_id": "chatcmpl-a4445ce096a47985",
+      "turn": 4,
+      "ttft_ms": 927.30846,
+      "retrieve_ms": 345.889539,
+      "before_retrieve_ms": 150.553322,
+      "after_retrieve_ms": 430.865599
+    },
+    {
+      "request_id": "chatcmpl-81a33793ad9fac43",
+      "turn": 5,
+      "ttft_ms": 925.652101,
+      "retrieve_ms": 341.865267,
+      "before_retrieve_ms": 510.471637,
+      "after_retrieve_ms": 73.315197
+    },
+    {
+      "request_id": "chatcmpl-a3dbc92fde6d5722",
+      "turn": 3,
+      "ttft_ms": 570.272673,
+      "retrieve_ms": 322.923628,
+      "before_retrieve_ms": 174.784733,
+      "after_retrieve_ms": 72.564312
+    },
+    {
+      "request_id": "chatcmpl-811f1b2935a607d2",
+      "turn": 4,
+      "ttft_ms": 929.747454,
+      "retrieve_ms": 340.365679,
+      "before_retrieve_ms": 159.171103,
+      "after_retrieve_ms": 430.210672
+    },
+    {
+      "request_id": "chatcmpl-a0bf74c53527b628",
+      "turn": 5,
+      "ttft_ms": 911.35635,
+      "retrieve_ms": 339.254646,
+      "before_retrieve_ms": 502.065963,
+      "after_retrieve_ms": 70.035741
+    },
+    {
+      "request_id": "chatcmpl-b112183d23dfbcb7",
+      "turn": 5,
+      "ttft_ms": 561.762069,
+      "retrieve_ms": 333.531629,
+      "before_retrieve_ms": 155.611376,
+      "after_retrieve_ms": 72.619064
+    },
+    {
+      "request_id": "chatcmpl-927867de23df5b1f",
+      "turn": 4,
+      "ttft_ms": 554.899065,
+      "retrieve_ms": 330.366675,
+      "before_retrieve_ms": 150.702796,
+      "after_retrieve_ms": 73.829594
+    },
+    {
+      "request_id": "chatcmpl-a9a75df72284da88",
+      "turn": 4,
+      "ttft_ms": 599.31139,
+      "retrieve_ms": 360.548748,
+      "before_retrieve_ms": 153.571769,
+      "after_retrieve_ms": 85.190873
+    },
+    {
+      "request_id": "chatcmpl-a52e27d7789ca6aa",
+      "turn": 5,
+      "ttft_ms": 576.520033,
+      "retrieve_ms": 350.842818,
+      "before_retrieve_ms": 154.864321,
+      "after_retrieve_ms": 70.812894
+    },
+    {
+      "request_id": "chatcmpl-aafd0df58b82e28e",
+      "turn": 4,
+      "ttft_ms": 553.410411,
+      "retrieve_ms": 333.888212,
+      "before_retrieve_ms": 148.519635,
+      "after_retrieve_ms": 71.002564
+    },
+    {
+      "request_id": "chatcmpl-bb1b3afacbca87ef",
+      "turn": 5,
+      "ttft_ms": 559.385833,
+      "retrieve_ms": 334.583872,
+      "before_retrieve_ms": 156.550252,
+      "after_retrieve_ms": 68.251709
+    },
+    {
+      "request_id": "chatcmpl-9b625f3287ef4d80",
+      "turn": 5,
+      "ttft_ms": 516.956504,
+      "retrieve_ms": 331.888375,
+      "before_retrieve_ms": 131.683929,
+      "after_retrieve_ms": 53.3842
+    },
+    {
+      "request_id": "chatcmpl-8bca05bb4e9d3645",
+      "turn": 5,
+      "ttft_ms": 520.326855,
+      "retrieve_ms": 337.811786,
+      "before_retrieve_ms": 126.696712,
+      "after_retrieve_ms": 55.818357
+    },
+    {
+      "request_id": "chatcmpl-a8f1ddb56c420a27",
+      "turn": 5,
+      "ttft_ms": 506.798382,
+      "retrieve_ms": 330.236922,
+      "before_retrieve_ms": 123.408184,
+      "after_retrieve_ms": 53.153276
+    }
+  ]
+}

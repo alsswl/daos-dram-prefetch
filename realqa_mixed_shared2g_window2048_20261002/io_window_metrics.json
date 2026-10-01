@@ -1,0 +1,35 @@
+{
+  "results": [
+    {
+      "root": "/root/discos_minji/realqa_mixed_capacity2g_20261001_shared",
+      "configured_window_mib": 500,
+      "retrieve_requests": 418,
+      "retrieve_wall_total_s": 115.043559804,
+      "retrieve_wall_mean_ms": 275.22382728229667,
+      "retrieve_wall_median_ms": 255.19711999999998,
+      "retrieve_copy_windows": 7646,
+      "daos_read_batches": 709,
+      "daos_returned_chunks": 17237,
+      "daos_returned_gib": 302.994140625,
+      "store_windows": 2437,
+      "store_submitted_chunks": 31671,
+      "store_submitted_gib": 556.716796875
+    },
+    {
+      "root": "/root/discos_minji/realqa_mixed_shared2g_window2048_20261002",
+      "configured_window_mib": 2048,
+      "retrieve_requests": 418,
+      "retrieve_wall_total_s": 110.002856726,
+      "retrieve_wall_mean_ms": 263.1647290095694,
+      "retrieve_wall_median_ms": 240.5455465,
+      "retrieve_copy_windows": 2082,
+      "daos_read_batches": 155,
+      "daos_returned_chunks": 13238,
+      "daos_returned_gib": 232.69921875,
+      "store_windows": 1494,
+      "store_submitted_chunks": 31679,
+      "store_submitted_gib": 556.857421875
+    }
+  ],
+  "note": "Retrieve wall time includes DRAM/DAOS, orchestration and scatter. Chunk counts describe application payloads, not hardware RDMA operations. Actual generated histories and cache tier hit patterns can differ."
+}

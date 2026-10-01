@@ -1,0 +1,580 @@
+{
+  "passed": true,
+  "requests": 480,
+  "identical_prompt_hashes_and_token_counts": true,
+  "config_only_routing_namespace_differs": true,
+  "warm_read_volume_identical": false,
+  "warm_first_retrieve_volume_identical": true,
+  "gpu_hardware": "NVIDIA H100 NVL, 95830 MiB, 610.57.04",
+  "daos_version": "DAOS CLI version 2.9.100, libdaos v2.8.0",
+  "execution_order": [
+    1,
+    8,
+    4,
+    16,
+    2
+  ],
+  "results": [
+    {
+      "targets": 1,
+      "phase": "cold",
+      "requests": 48,
+      "duration_s": 149.836578694,
+      "ttft_ms": {
+        "count": 48,
+        "mean": 5371.297974666667,
+        "median": 3199.3801555,
+        "p95": 22664.169347649993,
+        "max": 31634.04661
+      },
+      "initial_turn_ttft_ms": {
+        "count": 8,
+        "mean": 18141.174420125,
+        "median": 18101.121782000002,
+        "p95": 30343.29076985,
+        "max": 31634.04661
+      },
+      "followup_ttft_ms": {
+        "count": 40,
+        "mean": 2817.322685575,
+        "median": 3176.7249345,
+        "p95": 3254.6242390499997,
+        "max": 3341.554114
+      },
+      "retrieve_ms": {
+        "count": 44,
+        "mean": 1477.164802431818,
+        "median": 1475.2867875,
+        "p95": 1494.1068436,
+        "max": 1505.581166
+      },
+      "retrieve_ms_per_gib": {
+        "count": 44,
+        "mean": 172.7319076854823,
+        "median": 172.700490921207,
+        "p95": 173.07710407655628,
+        "max": 174.08707249141824
+      },
+      "read_gib": 376.27734375,
+      "first_retrieve_gib": 341.701171875,
+      "repeated_retrieve_gib": 34.576171875,
+      "repeated_retrieve_calls": 4,
+      "scheduler_resume_records": 4,
+      "read_chunks": 21406,
+      "input_tokens": 2982719,
+      "cached_tokens": 2488192,
+      "cached_token_pct": 83.42026184833368,
+      "computed_tokens": 494527,
+      "output_tokens": 12288,
+      "daos_puts": 3937,
+      "read_allocation_failures": 0,
+      "store_allocation_failures": 0
+    },
+    {
+      "targets": 1,
+      "phase": "warm",
+      "requests": 48,
+      "duration_s": 125.947613348,
+      "ttft_ms": {
+        "count": 48,
+        "mean": 12224.445549541666,
+        "median": 12212.219354500001,
+        "p95": 12372.65754975,
+        "max": 12384.04805
+      },
+      "initial_turn_ttft_ms": {
+        "count": 8,
+        "mean": 12123.661919,
+        "median": 12132.955904999999,
+        "p95": 12142.248915799999,
+        "max": 12142.294805
+      },
+      "followup_ttft_ms": {
+        "count": 40,
+        "mean": 12244.60227565,
+        "median": 12245.989591,
+        "p95": 12373.95951325,
+        "max": 12384.04805
+      },
+      "retrieve_ms": {
+        "count": 49,
+        "mean": 1478.9981349591837,
+        "median": 1477.916148,
+        "p95": 1495.3885848,
+        "max": 1504.527957
+      },
+      "retrieve_ms_per_gib": {
+        "count": 49,
+        "mean": 173.43093142121594,
+        "median": 173.5163836342021,
+        "p95": 174.31491571325776,
+        "max": 175.39123724590164
+      },
+      "read_gib": 417.8671875,
+      "first_retrieve_gib": 409.21875,
+      "repeated_retrieve_gib": 8.6484375,
+      "repeated_retrieve_calls": 1,
+      "scheduler_resume_records": 1,
+      "read_chunks": 23772,
+      "input_tokens": 2982719,
+      "cached_tokens": 2979840,
+      "cached_token_pct": 99.90347733058327,
+      "computed_tokens": 2879,
+      "output_tokens": 12288,
+      "daos_puts": 66,
+      "read_allocation_failures": 0,
+      "store_allocation_failures": 0
+    },
+    {
+      "targets": 2,
+      "phase": "cold",
+      "requests": 48,
+      "duration_s": 121.218204991,
+      "ttft_ms": {
+        "count": 48,
+        "mean": 4364.387179875,
+        "median": 1784.718344,
+        "p95": 22800.958276699996,
+        "max": 31942.649492
+      },
+      "initial_turn_ttft_ms": {
+        "count": 8,
+        "mean": 18241.346993625,
+        "median": 18153.876242500002,
+        "p95": 30620.592477399998,
+        "max": 31942.649492
+      },
+      "followup_ttft_ms": {
+        "count": 40,
+        "mean": 1588.995217125,
+        "median": 1775.0972000000002,
+        "p95": 1863.80758245,
+        "max": 1895.863294
+      },
+      "retrieve_ms": {
+        "count": 46,
+        "mean": 746.7621235869565,
+        "median": 745.164147,
+        "p95": 763.543023,
+        "max": 767.509263
+      },
+      "retrieve_ms_per_gib": {
+        "count": 46,
+        "mean": 87.46974057210203,
+        "median": 87.3698774552298,
+        "p95": 88.44503552308021,
+        "max": 88.7454251707317
+      },
+      "read_gib": 392.712890625,
+      "first_retrieve_gib": 340.83984375,
+      "repeated_retrieve_gib": 51.873046875,
+      "repeated_retrieve_calls": 6,
+      "scheduler_resume_records": 6,
+      "read_chunks": 22341,
+      "input_tokens": 2982719,
+      "cached_tokens": 2481920,
+      "cached_token_pct": 83.20998391065334,
+      "computed_tokens": 500799,
+      "output_tokens": 12288,
+      "daos_puts": 3986,
+      "read_allocation_failures": 0,
+      "store_allocation_failures": 0
+    },
+    {
+      "targets": 2,
+      "phase": "warm",
+      "requests": 48,
+      "duration_s": 91.125343044,
+      "ttft_ms": {
+        "count": 48,
+        "mean": 6440.092881541666,
+        "median": 6440.0788455,
+        "p95": 6559.3570166,
+        "max": 6567.402928
+      },
+      "initial_turn_ttft_ms": {
+        "count": 8,
+        "mean": 6375.12324225,
+        "median": 6386.308856,
+        "p95": 6393.3275404999995,
+        "max": 6393.447818
+      },
+      "followup_ttft_ms": {
+        "count": 40,
+        "mean": 6453.0868094,
+        "median": 6457.2080215000005,
+        "p95": 6560.76577305,
+        "max": 6567.402928
+      },
+      "retrieve_ms": {
+        "count": 49,
+        "mean": 753.7273111632653,
+        "median": 753.713638,
+        "p95": 770.1180392,
+        "max": 772.983422
+      },
+      "retrieve_ms_per_gib": {
+        "count": 49,
+        "mean": 88.38338006530878,
+        "median": 88.32392604149378,
+        "p95": 89.61297186729892,
+        "max": 89.8498846795225
+      },
+      "read_gib": 417.8671875,
+      "first_retrieve_gib": 409.21875,
+      "repeated_retrieve_gib": 8.6484375,
+      "repeated_retrieve_calls": 1,
+      "scheduler_resume_records": 1,
+      "read_chunks": 23772,
+      "input_tokens": 2982719,
+      "cached_tokens": 2979840,
+      "cached_token_pct": 99.90347733058327,
+      "computed_tokens": 2879,
+      "output_tokens": 12288,
+      "daos_puts": 51,
+      "read_allocation_failures": 0,
+      "store_allocation_failures": 0
+    },
+    {
+      "targets": 4,
+      "phase": "cold",
+      "requests": 48,
+      "duration_s": 104.242038396,
+      "ttft_ms": {
+        "count": 48,
+        "mean": 3849.3500208333335,
+        "median": 1100.2897695,
+        "p95": 22783.760120549996,
+        "max": 31915.210168
+      },
+      "initial_turn_ttft_ms": {
+        "count": 8,
+        "mean": 18226.75293925,
+        "median": 18151.7758995,
+        "p95": 30592.4897298,
+        "max": 31915.210168
+      },
+      "followup_ttft_ms": {
+        "count": 40,
+        "mean": 973.86943715,
+        "median": 1090.2262875000001,
+        "p95": 1180.9910338500001,
+        "max": 1190.734168
+      },
+      "retrieve_ms": {
+        "count": 44,
+        "mean": 384.8810802727273,
+        "median": 384.54758449999997,
+        "p95": 391.11483745,
+        "max": 399.267637
+      },
+      "retrieve_ms_per_gib": {
+        "count": 44,
+        "mean": 45.12862186326856,
+        "median": 45.091773892004994,
+        "p95": 45.99957485587828,
+        "max": 46.16644763866305
+      },
+      "read_gib": 375.2578125,
+      "first_retrieve_gib": 340.681640625,
+      "repeated_retrieve_gib": 34.576171875,
+      "repeated_retrieve_calls": 4,
+      "scheduler_resume_records": 4,
+      "read_chunks": 21348,
+      "input_tokens": 2982719,
+      "cached_tokens": 2480768,
+      "cached_token_pct": 83.17136143230388,
+      "computed_tokens": 501951,
+      "output_tokens": 12288,
+      "daos_puts": 3995,
+      "read_allocation_failures": 0,
+      "store_allocation_failures": 0
+    },
+    {
+      "targets": 4,
+      "phase": "warm",
+      "requests": 48,
+      "duration_s": 74.133654995,
+      "ttft_ms": {
+        "count": 48,
+        "mean": 3396.0700691041666,
+        "median": 3528.8489584999998,
+        "p95": 3593.6984957,
+        "max": 3606.735734
+      },
+      "initial_turn_ttft_ms": {
+        "count": 8,
+        "mean": 3470.5703521249998,
+        "median": 3577.8905135,
+        "p95": 3601.83676545,
+        "max": 3606.735734
+      },
+      "followup_ttft_ms": {
+        "count": 40,
+        "mean": 3381.1700124999998,
+        "median": 3518.2179705,
+        "p95": 3591.5204482999998,
+        "max": 3598.593733
+      },
+      "retrieve_ms": {
+        "count": 50,
+        "mean": 396.81443488,
+        "median": 398.88151400000004,
+        "p95": 407.87190365000004,
+        "max": 414.862202
+      },
+      "retrieve_ms_per_gib": {
+        "count": 50,
+        "mean": 46.51851905036933,
+        "median": 46.73023158013867,
+        "p95": 48.06564387519274,
+        "max": 48.333439170370376
+      },
+      "read_gib": 426.515625,
+      "first_retrieve_gib": 409.21875,
+      "repeated_retrieve_gib": 17.296875,
+      "repeated_retrieve_calls": 2,
+      "scheduler_resume_records": 2,
+      "read_chunks": 24264,
+      "input_tokens": 2982719,
+      "cached_tokens": 2979840,
+      "cached_token_pct": 99.90347733058327,
+      "computed_tokens": 2879,
+      "output_tokens": 12288,
+      "daos_puts": 60,
+      "read_allocation_failures": 0,
+      "store_allocation_failures": 0
+    },
+    {
+      "targets": 8,
+      "phase": "cold",
+      "requests": 48,
+      "duration_s": 101.565383995,
+      "ttft_ms": {
+        "count": 48,
+        "mean": 3790.3454325416665,
+        "median": 989.0282565,
+        "p95": 22876.319694249993,
+        "max": 32039.19057
+      },
+      "initial_turn_ttft_ms": {
+        "count": 8,
+        "mean": 18299.238901875,
+        "median": 18229.214210000002,
+        "p95": 30714.448825449996,
+        "max": 32039.19057
+      },
+      "followup_ttft_ms": {
+        "count": 40,
+        "mean": 888.566738675,
+        "median": 976.1425145000001,
+        "p95": 1067.2112958999999,
+        "max": 1070.970974
+      },
+      "retrieve_ms": {
+        "count": 42,
+        "mean": 335.08932392857145,
+        "median": 335.52151449999997,
+        "p95": 344.6267909,
+        "max": 345.471729
+      },
+      "retrieve_ms_per_gib": {
+        "count": 42,
+        "mean": 39.32490484474182,
+        "median": 39.227235855375184,
+        "p95": 40.54385672862083,
+        "max": 40.623759407407405
+      },
+      "read_gib": 357.908203125,
+      "first_retrieve_gib": 340.646484375,
+      "repeated_retrieve_gib": 17.26171875,
+      "repeated_retrieve_calls": 2,
+      "scheduler_resume_records": 2,
+      "read_chunks": 20361,
+      "input_tokens": 2982719,
+      "cached_tokens": 2480512,
+      "cached_token_pct": 83.16277865933733,
+      "computed_tokens": 502207,
+      "output_tokens": 12288,
+      "daos_puts": 3997,
+      "read_allocation_failures": 0,
+      "store_allocation_failures": 0
+    },
+    {
+      "targets": 8,
+      "phase": "warm",
+      "requests": 48,
+      "duration_s": 71.625867484,
+      "ttft_ms": {
+        "count": 48,
+        "mean": 3018.602932270833,
+        "median": 3142.322448,
+        "p95": 3186.76524835,
+        "max": 3198.120717
+      },
+      "initial_turn_ttft_ms": {
+        "count": 8,
+        "mean": 3019.73716675,
+        "median": 3144.1061474999997,
+        "p95": 3186.1493689,
+        "max": 3186.313577
+      },
+      "followup_ttft_ms": {
+        "count": 40,
+        "mean": 3018.376085375,
+        "median": 3138.5244555,
+        "p95": 3187.22163295,
+        "max": 3198.120717
+      },
+      "retrieve_ms": {
+        "count": 49,
+        "mean": 348.4037322244898,
+        "median": 348.530952,
+        "p95": 364.6913614,
+        "max": 369.38057
+      },
+      "retrieve_ms_per_gib": {
+        "count": 49,
+        "mean": 40.85551649167683,
+        "median": 41.02688964868603,
+        "p95": 42.75511647480718,
+        "max": 43.41663265381084
+      },
+      "read_gib": 417.8671875,
+      "first_retrieve_gib": 409.21875,
+      "repeated_retrieve_gib": 8.6484375,
+      "repeated_retrieve_calls": 1,
+      "scheduler_resume_records": 1,
+      "read_chunks": 23772,
+      "input_tokens": 2982719,
+      "cached_tokens": 2979840,
+      "cached_token_pct": 99.90347733058327,
+      "computed_tokens": 2879,
+      "output_tokens": 12288,
+      "daos_puts": 67,
+      "read_allocation_failures": 0,
+      "store_allocation_failures": 0
+    },
+    {
+      "targets": 16,
+      "phase": "cold",
+      "requests": 48,
+      "duration_s": 101.974153215,
+      "ttft_ms": {
+        "count": 48,
+        "mean": 3742.256400395833,
+        "median": 930.808735,
+        "p95": 22903.786312849996,
+        "max": 32036.839969
+      },
+      "initial_turn_ttft_ms": {
+        "count": 8,
+        "mean": 18311.77418925,
+        "median": 18241.715282,
+        "p95": 30719.79572965,
+        "max": 32036.839969
+      },
+      "followup_ttft_ms": {
+        "count": 40,
+        "mean": 828.352842625,
+        "median": 917.3184365,
+        "p95": 982.7565191499998,
+        "max": 1057.207789
+      },
+      "retrieve_ms": {
+        "count": 48,
+        "mean": 300.11747591666665,
+        "median": 299.54375100000004,
+        "p95": 312.30996595,
+        "max": 316.746112
+      },
+      "retrieve_ms_per_gib": {
+        "count": 48,
+        "mean": 35.15150343126434,
+        "median": 35.101954793607604,
+        "p95": 36.41744645079539,
+        "max": 37.2300296932966
+      },
+      "read_gib": 409.833984375,
+      "first_retrieve_gib": 340.681640625,
+      "repeated_retrieve_gib": 69.15234375,
+      "repeated_retrieve_calls": 8,
+      "scheduler_resume_records": 8,
+      "read_chunks": 23315,
+      "input_tokens": 2982719,
+      "cached_tokens": 2480768,
+      "cached_token_pct": 83.17136143230388,
+      "computed_tokens": 501951,
+      "output_tokens": 12288,
+      "daos_puts": 3995,
+      "read_allocation_failures": 0,
+      "store_allocation_failures": 0
+    },
+    {
+      "targets": 16,
+      "phase": "warm",
+      "requests": 48,
+      "duration_s": 70.000357359,
+      "ttft_ms": {
+        "count": 48,
+        "mean": 2727.6191685833332,
+        "median": 2853.780668,
+        "p95": 2954.3993597,
+        "max": 2981.921627
+      },
+      "initial_turn_ttft_ms": {
+        "count": 8,
+        "mean": 2667.759271,
+        "median": 2831.3248865,
+        "p95": 2866.77599785,
+        "max": 2867.127611
+      },
+      "followup_ttft_ms": {
+        "count": 40,
+        "mean": 2739.5911481,
+        "median": 2854.4274885,
+        "p95": 2962.17803665,
+        "max": 2981.921627
+      },
+      "retrieve_ms": {
+        "count": 50,
+        "mean": 307.91251308,
+        "median": 306.61339150000003,
+        "p95": 328.11078519999995,
+        "max": 336.269622
+      },
+      "retrieve_ms_per_gib": {
+        "count": 50,
+        "mean": 36.0950218124854,
+        "median": 36.069995174132885,
+        "p95": 38.30278352582878,
+        "max": 39.09888058287796
+      },
+      "read_gib": 426.515625,
+      "first_retrieve_gib": 409.21875,
+      "repeated_retrieve_gib": 17.296875,
+      "repeated_retrieve_calls": 2,
+      "scheduler_resume_records": 2,
+      "read_chunks": 24264,
+      "input_tokens": 2982719,
+      "cached_tokens": 2979840,
+      "cached_token_pct": 99.90347733058327,
+      "computed_tokens": 2879,
+      "output_tokens": 12288,
+      "daos_puts": 61,
+      "read_allocation_failures": 0,
+      "store_allocation_failures": 0
+    }
+  ],
+  "limitations": [
+    "One cold/warm pair per condition, not independent repeated measurements.",
+    "Cold means empty namespace at phase start, with natural within-phase follow-up cache hits.",
+    "Warm retains DAOS and process state; DRAM and native GPU prefix caches are disabled.",
+    "Reference conversations generated in the first cold phase; subsequent outputs do not alter replay inputs.",
+    "Cold includes first-use overhead; server caches were not flushed.",
+    "8 sessions and C8 are retained; S1 means no multiple sessions interleaved inside a lane.",
+    "1-to-2 targets also changes engine count. 2/4/8/16 use two engines.",
+    "Scheduler preemption/resume can produce more retrieve calls than HTTP requests; actual transferred bytes include re-restoration.",
+    "Retrieve is client-observed restoration time, including allocation, metadata, I/O and GPU scatter."
+  ]
+}

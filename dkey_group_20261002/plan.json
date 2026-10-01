@@ -1,0 +1,39 @@
+{
+  "pool": "discospool",
+  "container": "kvcache",
+  "oid": "281543696187392.7541657932020502560",
+  "object_class": "OC_SX",
+  "chunk_bytes": 18874368,
+  "chunks": 96,
+  "read_bytes": 1811939328,
+  "gpu_slab_bytes": 2147483648,
+  "groups": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "workers": [
+    1,
+    16
+  ],
+  "layouts": 3,
+  "repeats": 5,
+  "payload_sha256": "ee81c738b6daa19ba3d3ca48c7307a58f006b923549c29ed73d05e600e9fa1c8",
+  "measured_path": "native daos_obj_fetch_gpu; g SINGLE akeys/IODs per dkey",
+  "source_sha256": {
+    "dkey_group.py": "f938d4f8d4b8815107baa1e3e32676c2c1d510622d12a1ff52f571b5517ff54f",
+    "dkey_group.c": "00fdd2f65f57b7ef1e72725eec657e0356c12b95282c4659bbf06b56f43bab9e",
+    "dkey_group.so": "1c18439c4d7c88cfaac849e64a3264381b7d3b4e79ceacd9646ba21577ce9411"
+  },
+  "notes": [
+    "No client payload cache, scatter copy, metadata lookup, or LLM compute in timing.",
+    "2 GiB GPU slab; CPU reference used only after timing for full byte validation.",
+    "Warm repeated reads; server caches are not flushed.",
+    "Native API call counts are not physical RPC/RDMA/NVMe counts.",
+    "Random dkeys: target collision is measured, not controlled away.",
+    "Cleanup punches only the newly generated experiment OID."
+  ]
+}

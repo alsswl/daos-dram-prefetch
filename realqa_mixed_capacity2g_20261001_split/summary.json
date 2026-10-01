@@ -1,0 +1,299 @@
+{
+  "duration_s": 914.145887636,
+  "by_turn": [
+    {
+      "turn": "all",
+      "requests": 480,
+      "input_tokens": 29822823,
+      "cached_tokens": 25861888,
+      "cached_token_pct": 86.71844379051574,
+      "queried_chunks": 232771,
+      "hit_chunks": {
+        "dram": 178719,
+        "daos": 23327
+      },
+      "dram_candidate_pct": 76.77889427806728,
+      "daos_candidate_pct": 10.02143737836758,
+      "ttft_http_ms": {
+        "n": 480,
+        "mean": 2056.311434995833,
+        "p50": 751.4624515,
+        "p95": 8647.778907849997,
+        "maximum": 33987.933538
+      },
+      "ttft_upstream_ms": {
+        "n": 480,
+        "mean": 2067.422303557396,
+        "p50": 757.8353881835938,
+        "p95": 8652.637672424315,
+        "maximum": 34308.52389335632
+      },
+      "completion_tokens": 121294
+    },
+    {
+      "turn": "0",
+      "requests": 80,
+      "input_tokens": 4916320,
+      "cached_tokens": 983296,
+      "cached_token_pct": 20.000650893351125,
+      "queried_chunks": 38400,
+      "hit_chunks": {
+        "dram": 5446,
+        "daos": 2236
+      },
+      "dram_candidate_pct": 14.182291666666666,
+      "daos_candidate_pct": 5.822916666666667,
+      "ttft_http_ms": {
+        "n": 80,
+        "mean": 7297.7948536125,
+        "p50": 5325.369877,
+        "p95": 17670.59191764999,
+        "maximum": 33987.933538
+      },
+      "ttft_upstream_ms": {
+        "n": 80,
+        "mean": 7333.027711510658,
+        "p50": 5330.269813537598,
+        "p95": 17995.819067955006,
+        "maximum": 34308.52389335632
+      },
+      "completion_tokens": 20480
+    },
+    {
+      "turn": "1",
+      "requests": 80,
+      "input_tokens": 4938160,
+      "cached_tokens": 4935168,
+      "cached_token_pct": 99.93941063068026,
+      "queried_chunks": 38560,
+      "hit_chunks": {
+        "dram": 33701,
+        "daos": 4855
+      },
+      "dram_candidate_pct": 87.39885892116183,
+      "daos_candidate_pct": 12.590767634854771,
+      "ttft_http_ms": {
+        "n": 80,
+        "mean": 1031.91592045,
+        "p50": 711.1846525,
+        "p95": 3674.4307326499957,
+        "maximum": 5822.011006
+      },
+      "ttft_upstream_ms": {
+        "n": 80,
+        "mean": 1038.041266798973,
+        "p50": 715.8560752868652,
+        "p95": 3679.331076145168,
+        "maximum": 5829.658985137939
+      },
+      "completion_tokens": 20066
+    },
+    {
+      "turn": "2",
+      "requests": 80,
+      "input_tokens": 4959819,
+      "cached_tokens": 4955648,
+      "cached_token_pct": 99.91590418924561,
+      "queried_chunks": 38716,
+      "hit_chunks": {
+        "dram": 34252,
+        "daos": 4464
+      },
+      "dram_candidate_pct": 88.46988325240211,
+      "daos_candidate_pct": 11.530116747597893,
+      "ttft_http_ms": {
+        "n": 80,
+        "mean": 1057.7561422375,
+        "p50": 711.345307,
+        "p95": 4848.879836949999,
+        "maximum": 5825.043072
+      },
+      "ttft_upstream_ms": {
+        "n": 80,
+        "mean": 1064.0077978372574,
+        "p50": 715.9961462020874,
+        "p95": 4853.4969091415405,
+        "maximum": 5837.331771850586
+      },
+      "completion_tokens": 19759
+    },
+    {
+      "turn": "3",
+      "requests": 80,
+      "input_tokens": 4980928,
+      "cached_tokens": 4975488,
+      "cached_token_pct": 99.89078340421705,
+      "queried_chunks": 38872,
+      "hit_chunks": {
+        "dram": 35246,
+        "daos": 3625
+      },
+      "dram_candidate_pct": 90.6719489606915,
+      "daos_candidate_pct": 9.325478493517185,
+      "ttft_http_ms": {
+        "n": 80,
+        "mean": 1002.13064225,
+        "p50": 748.539719,
+        "p95": 2095.5421853499997,
+        "maximum": 5637.342986
+      },
+      "ttft_upstream_ms": {
+        "n": 80,
+        "mean": 1008.6091607809067,
+        "p50": 756.3116550445557,
+        "p95": 2100.2564430236816,
+        "maximum": 5662.561655044556
+      },
+      "completion_tokens": 20366
+    },
+    {
+      "turn": "4",
+      "requests": 80,
+      "input_tokens": 5002731,
+      "cached_tokens": 4995968,
+      "cached_token_pct": 99.86481383868131,
+      "queried_chunks": 39032,
+      "hit_chunks": {
+        "dram": 34539,
+        "daos": 4492
+      },
+      "dram_candidate_pct": 88.48893215822915,
+      "daos_candidate_pct": 11.508505841360934,
+      "ttft_http_ms": {
+        "n": 80,
+        "mean": 877.1162703375,
+        "p50": 729.917149,
+        "p95": 1760.6222539999999,
+        "maximum": 5296.007554
+      },
+      "ttft_upstream_ms": {
+        "n": 80,
+        "mean": 883.2409799098969,
+        "p50": 735.5778217315674,
+        "p95": 1773.9851593971252,
+        "maximum": 5301.235914230347
+      },
+      "completion_tokens": 20219
+    },
+    {
+      "turn": "5",
+      "requests": 80,
+      "input_tokens": 5024865,
+      "cached_tokens": 5016320,
+      "cached_token_pct": 99.8299456801327,
+      "queried_chunks": 39191,
+      "hit_chunks": {
+        "dram": 35535,
+        "daos": 3655
+      },
+      "dram_candidate_pct": 90.67132760072465,
+      "daos_candidate_pct": 9.326120793039218,
+      "ttft_http_ms": {
+        "n": 80,
+        "mean": 1071.1547810875,
+        "p50": 736.5556345,
+        "p95": 2317.592238149991,
+        "maximum": 10346.188405
+      },
+      "ttft_upstream_ms": {
+        "n": 80,
+        "mean": 1077.6069045066833,
+        "p50": 741.1822080612183,
+        "p95": 2333.5790276527314,
+        "maximum": 10350.964546203613
+      },
+      "completion_tokens": 20404
+    }
+  ],
+  "staging_peak_gib": 1.423828125,
+  "staging_time_weighted_mean_gib": 0.03982652135032406,
+  "staging_peak_pct": 71.19140625,
+  "staging_mean_pct": 1.991326067516203,
+  "hit_denominator": "Initial DRAM-tier candidate chunks; DAOS counted over same denominator",
+  "initial": {
+    "event": "occupancy_sample",
+    "time_ns": 1790863910689018226,
+    "monotonic_ns": 2549364023899558,
+    "pid": 4184609,
+    "used_bytes": 0,
+    "active_objects": 0,
+    "ready_bytes": 0,
+    "store_used_bytes": 0,
+    "retrieve_used_bytes": 0,
+    "cpu_hot_chunks": 0,
+    "cpu_hot_bytes": 0,
+    "cpu_ready_bytes": 0,
+    "daos_ready_bytes": 0,
+    "daos_puts": 0,
+    "daos_alloc_fail": 0,
+    "dram_mirror": {
+      "admitted": 0,
+      "copied": 0,
+      "copied_bytes": 0,
+      "skipped_budget": 0,
+      "skipped_present": 0,
+      "skipped_closed": 0,
+      "skipped_expired": 0,
+      "skipped_allocation": 0,
+      "errors": 0,
+      "peak_pending_bytes": 0,
+      "copy_ms": 0.0,
+      "cpu_hit_chunks": 0,
+      "write_offered": 0,
+      "write_admitted": 0,
+      "write_copied": 0,
+      "write_copied_bytes": 0,
+      "read_offered": 0,
+      "read_admitted": 0,
+      "read_copied": 0,
+      "read_copied_bytes": 0,
+      "read_submit_errors": 0,
+      "pending_bytes": 0,
+      "pending_chunks": 0
+    },
+    "cpu_prefetch": null
+  },
+  "final": {
+    "event": "occupancy_sample",
+    "time_ns": 1790864826633068349,
+    "monotonic_ns": 2550279967949802,
+    "pid": 4184609,
+    "used_bytes": 0,
+    "active_objects": 0,
+    "ready_bytes": 0,
+    "store_used_bytes": 0,
+    "retrieve_used_bytes": 0,
+    "cpu_hot_chunks": 14563,
+    "cpu_hot_bytes": 274867421184,
+    "cpu_ready_bytes": 0,
+    "daos_ready_bytes": 0,
+    "daos_puts": 31667,
+    "daos_alloc_fail": 0,
+    "dram_mirror": {
+      "admitted": 46009,
+      "copied": 45989,
+      "copied_bytes": 868013309952,
+      "skipped_budget": 631,
+      "skipped_present": 2381,
+      "skipped_closed": 0,
+      "skipped_expired": 20,
+      "skipped_allocation": 0,
+      "errors": 0,
+      "peak_pending_bytes": 1056964608,
+      "copy_ms": 47540.22258752957,
+      "cpu_hit_chunks": 178719,
+      "write_offered": 31667,
+      "write_admitted": 31667,
+      "write_copied": 31667,
+      "write_copied_bytes": 597694611456,
+      "read_offered": 17354,
+      "read_admitted": 14342,
+      "read_copied": 14322,
+      "read_copied_bytes": 270318698496,
+      "read_submit_errors": 0,
+      "pending_bytes": 0,
+      "pending_chunks": 0
+    },
+    "cpu_prefetch": null
+  }
+}

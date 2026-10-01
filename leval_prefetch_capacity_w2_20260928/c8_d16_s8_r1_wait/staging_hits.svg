@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560">
+<rect width="1000" height="560" fill="white"/><g font-family="sans-serif" font-size="13">
+<text x="55" y="28">leval_prefetch_capacity_w2_20260928 / c8_d16_s8_r1_wait: 2-second bins</text>
+<text x="60" y="63">Staging occupancy (%): blue=sampled peak, green=sampled mean</text>
+<line x1="65" x2="970" y1="240.0" y2="240.0" stroke="#ddd"/>
+<text x="25" y="244.0">0</text>
+<line x1="65" x2="970" y1="198.75" y2="198.75" stroke="#ddd"/>
+<text x="25" y="202.75">25</text>
+<line x1="65" x2="970" y1="157.5" y2="157.5" stroke="#ddd"/>
+<text x="25" y="161.5">50</text>
+<line x1="65" x2="970" y1="116.25" y2="116.25" stroke="#ddd"/>
+<text x="25" y="120.25">75</text>
+<line x1="65" x2="970" y1="75.0" y2="75.0" stroke="#ddd"/>
+<text x="25" y="79.0">100</text>
+<polyline points="65.00,214.22 115.41,216.64 165.81,223.48 216.22,222.28 266.63,221.47 317.03,221.47 367.44,218.25 417.84,221.47 468.25,221.47 518.66,221.87 569.06,218.25 619.47,218.25 669.88,222.28 720.28,203.34 770.69,239.60 821.09,240.00 871.50,240.00 921.91,240.00" stroke="#0072b2" fill="none" stroke-width="1.6"/>
+<circle cx="65.00" cy="214.22" r="1.5" fill="#0072b2"/>
+<circle cx="115.41" cy="216.64" r="1.5" fill="#0072b2"/>
+<circle cx="165.81" cy="223.48" r="1.5" fill="#0072b2"/>
+<circle cx="216.22" cy="222.28" r="1.5" fill="#0072b2"/>
+<circle cx="266.63" cy="221.47" r="1.5" fill="#0072b2"/>
+<circle cx="317.03" cy="221.47" r="1.5" fill="#0072b2"/>
+<circle cx="367.44" cy="218.25" r="1.5" fill="#0072b2"/>
+<circle cx="417.84" cy="221.47" r="1.5" fill="#0072b2"/>
+<circle cx="468.25" cy="221.47" r="1.5" fill="#0072b2"/>
+<circle cx="518.66" cy="221.87" r="1.5" fill="#0072b2"/>
+<circle cx="569.06" cy="218.25" r="1.5" fill="#0072b2"/>
+<circle cx="619.47" cy="218.25" r="1.5" fill="#0072b2"/>
+<circle cx="669.88" cy="222.28" r="1.5" fill="#0072b2"/>
+<circle cx="720.28" cy="203.34" r="1.5" fill="#0072b2"/>
+<circle cx="770.69" cy="239.60" r="1.5" fill="#0072b2"/>
+<circle cx="821.09" cy="240.00" r="1.5" fill="#0072b2"/>
+<circle cx="871.50" cy="240.00" r="1.5" fill="#0072b2"/>
+<circle cx="921.91" cy="240.00" r="1.5" fill="#0072b2"/>
+<polyline points="65.00,238.06 115.41,238.86 165.81,238.73 216.22,239.22 266.63,239.26 317.03,238.97 367.44,238.12 417.84,238.63 468.25,239.17 518.66,239.24 569.06,238.20 619.47,238.27 669.88,237.92 720.28,237.97 770.69,240.00 821.09,240.00 871.50,240.00 921.91,240.00" stroke="#009e73" fill="none" stroke-width="1.6"/>
+<circle cx="65.00" cy="238.06" r="1.5" fill="#009e73"/>
+<circle cx="115.41" cy="238.86" r="1.5" fill="#009e73"/>
+<circle cx="165.81" cy="238.73" r="1.5" fill="#009e73"/>
+<circle cx="216.22" cy="239.22" r="1.5" fill="#009e73"/>
+<circle cx="266.63" cy="239.26" r="1.5" fill="#009e73"/>
+<circle cx="317.03" cy="238.97" r="1.5" fill="#009e73"/>
+<circle cx="367.44" cy="238.12" r="1.5" fill="#009e73"/>
+<circle cx="417.84" cy="238.63" r="1.5" fill="#009e73"/>
+<circle cx="468.25" cy="239.17" r="1.5" fill="#009e73"/>
+<circle cx="518.66" cy="239.24" r="1.5" fill="#009e73"/>
+<circle cx="569.06" cy="238.20" r="1.5" fill="#009e73"/>
+<circle cx="619.47" cy="238.27" r="1.5" fill="#009e73"/>
+<circle cx="669.88" cy="237.92" r="1.5" fill="#009e73"/>
+<circle cx="720.28" cy="237.97" r="1.5" fill="#009e73"/>
+<circle cx="770.69" cy="240.00" r="1.5" fill="#009e73"/>
+<circle cx="821.09" cy="240.00" r="1.5" fill="#009e73"/>
+<circle cx="871.50" cy="240.00" r="1.5" fill="#009e73"/>
+<circle cx="921.91" cy="240.00" r="1.5" fill="#009e73"/>
+<text x="65.0" y="262">0s</text>
+<text x="291.25" y="262">9s</text>
+<text x="517.5" y="262">18s</text>
+<text x="743.75" y="262">27s</text>
+<text x="970.0" y="262">36s</text>
+<text x="60" y="308">Lookup chunk ratio (%): blue=DRAM, green=DAOS; gaps=no lookup</text>
+<line x1="65" x2="970" y1="485.0" y2="485.0" stroke="#ddd"/>
+<text x="25" y="489.0">0</text>
+<line x1="65" x2="970" y1="443.75" y2="443.75" stroke="#ddd"/>
+<text x="25" y="447.75">25</text>
+<line x1="65" x2="970" y1="402.5" y2="402.5" stroke="#ddd"/>
+<text x="25" y="406.5">50</text>
+<line x1="65" x2="970" y1="361.25" y2="361.25" stroke="#ddd"/>
+<text x="25" y="365.25">75</text>
+<line x1="65" x2="970" y1="320.0" y2="320.0" stroke="#ddd"/>
+<text x="25" y="324.0">100</text>
+<polyline points="65.00,485.00 115.41,485.00 165.81,365.89 216.22,485.00 266.63,439.82 317.03,358.57 367.44,354.06 417.84,345.98 468.25,321.04 518.66,353.00 569.06,346.40 619.47,320.00 669.88,320.90 720.28,363.88" stroke="#0072b2" fill="none" stroke-width="1.6"/>
+<circle cx="65.00" cy="485.00" r="1.5" fill="#0072b2"/>
+<circle cx="115.41" cy="485.00" r="1.5" fill="#0072b2"/>
+<circle cx="165.81" cy="365.89" r="1.5" fill="#0072b2"/>
+<circle cx="216.22" cy="485.00" r="1.5" fill="#0072b2"/>
+<circle cx="266.63" cy="439.82" r="1.5" fill="#0072b2"/>
+<circle cx="317.03" cy="358.57" r="1.5" fill="#0072b2"/>
+<circle cx="367.44" cy="354.06" r="1.5" fill="#0072b2"/>
+<circle cx="417.84" cy="345.98" r="1.5" fill="#0072b2"/>
+<circle cx="468.25" cy="321.04" r="1.5" fill="#0072b2"/>
+<circle cx="518.66" cy="353.00" r="1.5" fill="#0072b2"/>
+<circle cx="569.06" cy="346.40" r="1.5" fill="#0072b2"/>
+<circle cx="619.47" cy="320.00" r="1.5" fill="#0072b2"/>
+<circle cx="669.88" cy="320.90" r="1.5" fill="#0072b2"/>
+<circle cx="720.28" cy="363.88" r="1.5" fill="#0072b2"/>
+<polyline points="65.00,485.00 115.41,485.00 165.81,485.00 216.22,485.00 266.63,485.00 317.03,485.00 367.44,485.00 417.84,485.00 468.25,485.00 518.66,485.00 569.06,459.11 619.47,485.00 669.88,485.00 720.28,442.87" stroke="#009e73" fill="none" stroke-width="1.6"/>
+<circle cx="65.00" cy="485.00" r="1.5" fill="#009e73"/>
+<circle cx="115.41" cy="485.00" r="1.5" fill="#009e73"/>
+<circle cx="165.81" cy="485.00" r="1.5" fill="#009e73"/>
+<circle cx="216.22" cy="485.00" r="1.5" fill="#009e73"/>
+<circle cx="266.63" cy="485.00" r="1.5" fill="#009e73"/>
+<circle cx="317.03" cy="485.00" r="1.5" fill="#009e73"/>
+<circle cx="367.44" cy="485.00" r="1.5" fill="#009e73"/>
+<circle cx="417.84" cy="485.00" r="1.5" fill="#009e73"/>
+<circle cx="468.25" cy="485.00" r="1.5" fill="#009e73"/>
+<circle cx="518.66" cy="485.00" r="1.5" fill="#009e73"/>
+<circle cx="569.06" cy="459.11" r="1.5" fill="#009e73"/>
+<circle cx="619.47" cy="485.00" r="1.5" fill="#009e73"/>
+<circle cx="669.88" cy="485.00" r="1.5" fill="#009e73"/>
+<circle cx="720.28" cy="442.87" r="1.5" fill="#009e73"/>
+<text x="65.0" y="507">0s</text>
+<text x="291.25" y="507">9s</text>
+<text x="517.5" y="507">18s</text>
+<text x="743.75" y="507">27s</text>
+<text x="970.0" y="507">36s</text>
+<text x="60" y="545">Sampled occupancy, not GPU utilization. Hit ratios use initial CPU-tier candidate chunks.</text></g></svg>

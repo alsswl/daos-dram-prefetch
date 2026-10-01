@@ -1,0 +1,13 @@
+[
+  "/root/discos_minji/run_vllm.sh",
+  "/root/discos_minji/venv/bin/python3",
+  "/root/discos_minji/tests/sync_retrieve_capacity.py",
+  "--capacity",
+  "2",
+  "--chunks",
+  "512",
+  "--window-mib",
+  "0",
+  "--output",
+  "/root/discos_minji/realqa_q4_64k_unwindowed_d256_s2_u0835_recompute_20261001/gpu_9gib_check"
+]

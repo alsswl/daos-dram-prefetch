@@ -1,0 +1,8 @@
+{
+  "sessions": 192,
+  "unique_documents": 121,
+  "initial_document_kv_gib": 302.5,
+  "dram_capacity_gib": 256,
+  "caveat": "Estimate before shared-prefix deduplication; actual DRAM retention and later growth are measured.",
+  "sampling": "Fixed seed, with replacement like upstream; identical assignments across policies."
+}

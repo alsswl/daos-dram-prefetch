@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "staging_gib": 4,
+  "requested_tokens": 256,
+  "requested_chunks": 2,
+  "requested_gib": 0.03515625,
+  "lookup_hit_tokens": 256,
+  "returned_tokens": 256,
+  "returned_chunks": 2,
+  "returned_gib": 0.03515625,
+  "capacity_failed_chunks": 0,
+  "successful_tail_discarded_chunks": 0,
+  "peak_staging_gib": 0.03515625,
+  "staging_bytes_after": 0,
+  "scatter_calls": [
+    {
+      "chunks": 2,
+      "bytes": 37748736,
+      "staging_bytes_at_entry": 37748736,
+      "time_ns": 1790769277903242163
+    }
+  ],
+  "all_returned_gpu_values_match": true,
+  "unreturned_gpu_region_unchanged": true,
+  "retrieve_ms": 9.84758,
+  "lookup_start_ns": 1790769277895416962,
+  "start_ns": 1790769277895969642,
+  "end_ns": 1790769277905817222
+}

@@ -1,0 +1,199 @@
+{
+  "completed_policies": [
+    "none",
+    "daos",
+    "both"
+  ],
+  "warm_aggregates": {
+    "none": {
+      "warm_repeats": 4,
+      "mean_ttft_ms": 126.86699095068471,
+      "min_phase_mean_ttft_ms": 126.34079448183039,
+      "max_phase_mean_ttft_ms": 127.63787578402038,
+      "mean_elapsed_seconds": 400.701752457,
+      "dram_hit_pct": 39.37358314441926,
+      "daos_hit_pct": 60.62641685558074,
+      "input_reuse_pct": 98.15777682220124,
+      "computed_tokens": 432356,
+      "output_tokens": 1260152,
+      "peak_staging_gib": 1.23046875
+    },
+    "daos": {
+      "warm_repeats": 4,
+      "mean_ttft_ms": 112.27364061776916,
+      "min_phase_mean_ttft_ms": 111.56745658603424,
+      "max_phase_mean_ttft_ms": 113.62958024808974,
+      "mean_elapsed_seconds": 383.88170622024995,
+      "dram_hit_pct": 39.129661732675466,
+      "daos_hit_pct": 60.870338267324534,
+      "input_reuse_pct": 98.15777682220124,
+      "computed_tokens": 432356,
+      "output_tokens": 1259996,
+      "peak_staging_gib": 3.06640625
+    },
+    "both": {
+      "warm_repeats": 4,
+      "mean_ttft_ms": 108.38414523760221,
+      "min_phase_mean_ttft_ms": 107.22592363306576,
+      "max_phase_mean_ttft_ms": 108.86609205570196,
+      "mean_elapsed_seconds": 386.12096750525,
+      "dram_hit_pct": 39.12688358447793,
+      "daos_hit_pct": 60.87311641552207,
+      "input_reuse_pct": 98.15777682220124,
+      "computed_tokens": 432356,
+      "output_tokens": 1260010,
+      "peak_staging_gib": 3.8671875
+    }
+  },
+  "comparisons": [
+    {
+      "before": "none",
+      "after": "daos",
+      "phases": [
+        {
+          "phase": "cold",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 749,
+          "ttft_change_pct": -1.4923547153200767,
+          "elapsed_change_pct": -1.9285642539009884
+        },
+        {
+          "phase": "warm1",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 965,
+          "ttft_change_pct": -10.444640900375157,
+          "elapsed_change_pct": -4.090422033036889
+        },
+        {
+          "phase": "warm2",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 1016,
+          "ttft_change_pct": -11.879162887634553,
+          "elapsed_change_pct": -4.398261521842706
+        },
+        {
+          "phase": "warm3",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 965,
+          "ttft_change_pct": -12.431080242842329,
+          "elapsed_change_pct": -4.228845927535241
+        },
+        {
+          "phase": "warm4",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 984,
+          "ttft_change_pct": -11.250821975772308,
+          "elapsed_change_pct": -4.073018825127173
+        }
+      ],
+      "warm_mean_ttft_change_pct": -11.502874170467415,
+      "warm_mean_elapsed_change_pct": -4.197647285946182
+    },
+    {
+      "before": "none",
+      "after": "both",
+      "phases": [
+        {
+          "phase": "cold",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 728,
+          "ttft_change_pct": -1.8171936547871637,
+          "elapsed_change_pct": -1.2569776425490398
+        },
+        {
+          "phase": "warm1",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 966,
+          "ttft_change_pct": -14.19890888855847,
+          "elapsed_change_pct": -4.065387501582252
+        },
+        {
+          "phase": "warm2",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 956,
+          "ttft_change_pct": -15.308294731932525,
+          "elapsed_change_pct": -4.349899513915845
+        },
+        {
+          "phase": "warm3",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 947,
+          "ttft_change_pct": -14.7114680310515,
+          "elapsed_change_pct": -3.316384910332981
+        },
+        {
+          "phase": "warm4",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 965,
+          "ttft_change_pct": -14.054605074755877,
+          "elapsed_change_pct": -2.824687502654366
+        }
+      ],
+      "warm_mean_ttft_change_pct": -14.568679823317543,
+      "warm_mean_elapsed_change_pct": -3.6388123741272316
+    },
+    {
+      "before": "daos",
+      "after": "both",
+      "phases": [
+        {
+          "phase": "cold",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 728,
+          "ttft_change_pct": -0.32976013032117724,
+          "elapsed_change_pct": 0.6847932899551434
+        },
+        {
+          "phase": "warm1",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 965,
+          "ttft_change_pct": -4.192119852935794,
+          "elapsed_change_pct": 0.026102222515533846
+        },
+        {
+          "phase": "warm2",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 982,
+          "ttft_change_pct": -3.891397263879137,
+          "elapsed_change_pct": 0.05058695448088013
+        },
+        {
+          "phase": "warm3",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 975,
+          "ttft_change_pct": -2.604106336509615,
+          "elapsed_change_pct": 0.9527514062447784
+        },
+        {
+          "phase": "warm4",
+          "requests": 1684,
+          "same_cached_requests": 1684,
+          "same_generated_output_requests": 992,
+          "ttft_change_pct": -3.1592214839647914,
+          "elapsed_change_pct": 1.301334939538168
+        }
+      ],
+      "warm_mean_ttft_change_pct": -3.464299686699013,
+      "warm_mean_elapsed_change_pct": 0.5833206554821668
+    }
+  ],
+  "limitations": [
+    "Warm4 is continued cache reuse, not independent trials; fixed arm order.",
+    "Cold is reported separately. Negative change means faster.",
+    "Same inputs and policy except prefetch tiers; actual arrivals, tier placement and generation can differ."
+  ]
+}

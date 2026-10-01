@@ -1,0 +1,96 @@
+{
+  "result": "PASS",
+  "categories": {
+    "cpu_op": 16,
+    "overhead": 8,
+    "cuda_runtime": 100,
+    "ac2g": 148,
+    "gpu_memcpy": 16,
+    "kernel": 16,
+    "cuda_driver": 16,
+    "null": 62,
+    "Trace": 1
+  },
+  "background_copies": 16,
+  "kernels": 16,
+  "start_ns": 1790733095255625774,
+  "end_ns": 1790733095335620232,
+  "copy_stream_handle": 93847323005728,
+  "sample_copy": {
+    "ph": "X",
+    "cat": "gpu_memcpy",
+    "name": "Memcpy HtoD (Pinned -> Device)",
+    "pid": 0,
+    "tid": 13,
+    "ts": 7765307257187.465,
+    "dur": 378.02,
+    "args": {
+      "device": 0,
+      "context": 1,
+      "stream": 13,
+      "correlation": 279,
+      "bytes": 20971520,
+      "memory bandwidth (GB/s)": 55.47727633458547
+    }
+  },
+  "sample_kernel": {
+    "ph": "X",
+    "cat": "kernel",
+    "name": "nvjet_sm90_hsh_256x128_64x4_1x2_h_bz_coopA_NNT",
+    "pid": 0,
+    "tid": 17,
+    "ts": 7765307335032.984,
+    "dur": 28.544,
+    "args": {
+      "External id": 1,
+      "queued": 0,
+      "device": 0,
+      "context": 1,
+      "stream": 17,
+      "correlation": 1520,
+      "registers per thread": 168,
+      "shared memory": 213188,
+      "blocks per SM": 0.969697,
+      "warps per SM": 11.636364,
+      "grid": [
+        2,
+        64,
+        1
+      ],
+      "block": [
+        384,
+        1,
+        1
+      ],
+      "est. achieved occupancy %": 0
+    }
+  },
+  "trace_metadata": {
+    "schemaVersion": 1,
+    "deviceProperties": [
+      {
+        "id": 0,
+        "name": "NVIDIA H100 NVL",
+        "totalGlobalMem": 99941482496,
+        "computeMajor": 9,
+        "computeMinor": 0,
+        "maxThreadsPerBlock": 1024,
+        "maxThreadsPerMultiprocessor": 2048,
+        "regsPerBlock": 65536,
+        "warpSize": 32,
+        "sharedMemPerBlock": 49152,
+        "numSms": 132,
+        "regsPerMultiprocessor": 65536,
+        "sharedMemPerBlockOptin": 232448,
+        "sharedMemPerMultiprocessor": 233472
+      }
+    ],
+    "trace_id": "8A2BD0C74A7E4DCB99E093C80C32501C",
+    "cuda_driver_version": 13030,
+    "cuda_runtime_version": 13000,
+    "cupti_version": 130001,
+    "displayTimeUnit": "ms",
+    "baseTimeNanoseconds": 1782967788000000000,
+    "traceName": "/root/discos_minji/gpu_overlap_profiler_probe_20260930/trace.json"
+  }
+}

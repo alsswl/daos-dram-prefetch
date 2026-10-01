@@ -1,0 +1,46 @@
+{
+  "case": "c8_none",
+  "phase": "cold",
+  "requests": 80,
+  "elapsed_seconds": 138.146675257,
+  "ttft": {
+    "n": 80,
+    "mean": 2156.8902495666407,
+    "p50": 1465.3199380263686,
+    "p95": 5290.07024161983,
+    "maximum": 9422.575277741998
+  },
+  "input_tokens": 2317823,
+  "cached_tokens": 0,
+  "computed_tokens": 2317823,
+  "output_tokens": 19305,
+  "queried_chunks": 18069,
+  "hit_chunks": {
+    "dram": 0,
+    "daos": 0
+  },
+  "dram_hit_pct": 0.0,
+  "daos_hit_pct": 0.0,
+  "input_reuse_pct": 0.0,
+  "peak_staging_gib": 1.142578125,
+  "mean_sampled_staging_gib": 0.11569701958066193,
+  "initial_cpu_gib": 0.0,
+  "final_cpu_gib": 255.990234375,
+  "retrieve_decisions": {},
+  "resolve_wait_ms": {
+    "dram": {
+      "n": 0,
+      "mean": null,
+      "p50": null,
+      "p95": null,
+      "maximum": null
+    },
+    "daos": {
+      "n": 0,
+      "mean": null,
+      "p50": null,
+      "p95": null,
+      "maximum": null
+    }
+  }
+}

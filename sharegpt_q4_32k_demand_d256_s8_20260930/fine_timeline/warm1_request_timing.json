@@ -1,0 +1,802 @@
+[
+  {
+    "index": 0,
+    "request_id": "chatcmpl-a0df10a3689d17ca-921116d3",
+    "lookup_notify_ns": 1790767741325836025,
+    "retrieve_start_ns": 1790767741331111719,
+    "retrieve_return_ns": 1790767741550624192,
+    "notify_to_retrieve_ms": 5.276186,
+    "retrieve_api_ms": 219.512179,
+    "daos_demand_resolve_ms": 192.042068
+  },
+  {
+    "index": 1,
+    "request_id": "chatcmpl-9f3201c95c93e062-bf85dd37",
+    "lookup_notify_ns": 1790767741618544352,
+    "retrieve_start_ns": 1790767741680493895,
+    "retrieve_return_ns": 1790767741881364758,
+    "notify_to_retrieve_ms": 61.950025,
+    "retrieve_api_ms": 200.870365,
+    "daos_demand_resolve_ms": 184.978796
+  },
+  {
+    "index": 2,
+    "request_id": "chatcmpl-aad2893362afc5bb-b96f5d10",
+    "lookup_notify_ns": 1790767741626846818,
+    "retrieve_start_ns": 1790767742099232153,
+    "retrieve_return_ns": 1790767742344667521,
+    "notify_to_retrieve_ms": 472.385503,
+    "retrieve_api_ms": 245.435148,
+    "daos_demand_resolve_ms": 220.919178
+  },
+  {
+    "index": 3,
+    "request_id": "chatcmpl-a40e3e9588ce5eb1-88ce0ea2",
+    "lookup_notify_ns": 1790767741618724195,
+    "retrieve_start_ns": 1790767741881845031,
+    "retrieve_return_ns": 1790767742098355464,
+    "notify_to_retrieve_ms": 263.121552,
+    "retrieve_api_ms": 216.509896,
+    "daos_demand_resolve_ms": 191.985143
+  },
+  {
+    "index": 4,
+    "request_id": "chatcmpl-b93776542e7740bf-81659a5d",
+    "lookup_notify_ns": 1790767741636250579,
+    "retrieve_start_ns": 1790767742345593457,
+    "retrieve_return_ns": 1790767742560274482,
+    "notify_to_retrieve_ms": 709.343407,
+    "retrieve_api_ms": 214.680502,
+    "daos_demand_resolve_ms": 190.938308
+  },
+  {
+    "index": 5,
+    "request_id": "chatcmpl-86b948e489521f6d-811d7741",
+    "lookup_notify_ns": 1790767741636471966,
+    "retrieve_start_ns": 1790767742561214939,
+    "retrieve_return_ns": 1790767742758151133,
+    "notify_to_retrieve_ms": 924.743763,
+    "retrieve_api_ms": 196.935709,
+    "daos_demand_resolve_ms": 173.163261
+  },
+  {
+    "index": 6,
+    "request_id": "chatcmpl-96125e6cda42d9f8-adc4314c",
+    "lookup_notify_ns": 1790767741636688395,
+    "retrieve_start_ns": 1790767742758953624,
+    "retrieve_return_ns": 1790767742976496921,
+    "notify_to_retrieve_ms": 1122.265872,
+    "retrieve_api_ms": 217.542706,
+    "daos_demand_resolve_ms": 193.95301
+  },
+  {
+    "index": 7,
+    "request_id": "chatcmpl-b5ac4584cc749a32-831db70e",
+    "lookup_notify_ns": 1790767741663570446,
+    "retrieve_start_ns": 1790767743011834914,
+    "retrieve_return_ns": 1790767743212309143,
+    "notify_to_retrieve_ms": 1348.264949,
+    "retrieve_api_ms": 200.473772,
+    "daos_demand_resolve_ms": 182.850909
+  },
+  {
+    "index": 8,
+    "request_id": "chatcmpl-a9aaa8cc0b688445-87a6887f",
+    "lookup_notify_ns": 1790767747671457762,
+    "retrieve_start_ns": 1790767747676039259,
+    "retrieve_return_ns": 1790767747901883431,
+    "notify_to_retrieve_ms": 4.581955,
+    "retrieve_api_ms": 225.843809,
+    "daos_demand_resolve_ms": 203.531226
+  },
+  {
+    "index": 9,
+    "request_id": "chatcmpl-9b8261a4e4f25051-a53971ad",
+    "lookup_notify_ns": 1790767747963462617,
+    "retrieve_start_ns": 1790767748022075480,
+    "retrieve_return_ns": 1790767748221434012,
+    "notify_to_retrieve_ms": 58.613348,
+    "retrieve_api_ms": 199.358128,
+    "daos_demand_resolve_ms": 185.131154
+  },
+  {
+    "index": 10,
+    "request_id": "chatcmpl-87ff4e9a29f7fca0-be4e909c",
+    "lookup_notify_ns": 1790767747963633397,
+    "retrieve_start_ns": 1790767748221837239,
+    "retrieve_return_ns": 1790767748431456297,
+    "notify_to_retrieve_ms": 258.20436,
+    "retrieve_api_ms": 209.618556,
+    "daos_demand_resolve_ms": 188.287113
+  },
+  {
+    "index": 11,
+    "request_id": "chatcmpl-a4551f9c35ae7c65-98705888",
+    "lookup_notify_ns": 1790767747963768552,
+    "retrieve_start_ns": 1790767748431870339,
+    "retrieve_return_ns": 1790767748630858026,
+    "notify_to_retrieve_ms": 468.102246,
+    "retrieve_api_ms": 198.987279,
+    "daos_demand_resolve_ms": 176.418797
+  },
+  {
+    "index": 12,
+    "request_id": "chatcmpl-bfaec29a68a1ba19-a51f18cd",
+    "lookup_notify_ns": 1790767747984627684,
+    "retrieve_start_ns": 1790767748631243149,
+    "retrieve_return_ns": 1790767748829426433,
+    "notify_to_retrieve_ms": 646.615844,
+    "retrieve_api_ms": 198.182956,
+    "daos_demand_resolve_ms": 184.910572
+  },
+  {
+    "index": 13,
+    "request_id": "chatcmpl-b3cc03441d85c234-8a79c86d",
+    "lookup_notify_ns": 1790767747984971792,
+    "retrieve_start_ns": 1790767748829686882,
+    "retrieve_return_ns": 1790767749017727576,
+    "notify_to_retrieve_ms": 844.715231,
+    "retrieve_api_ms": 188.040484,
+    "daos_demand_resolve_ms": 174.199097
+  },
+  {
+    "index": 14,
+    "request_id": "chatcmpl-9feb75372384f225-af5f8829",
+    "lookup_notify_ns": 1790767747985102704,
+    "retrieve_start_ns": 1790767749018103636,
+    "retrieve_return_ns": 1790767749225975972,
+    "notify_to_retrieve_ms": 1033.001341,
+    "retrieve_api_ms": 207.871982,
+    "daos_demand_resolve_ms": 186.20494
+  },
+  {
+    "index": 15,
+    "request_id": "chatcmpl-9edb8137ca4249ea-a8b457af",
+    "lookup_notify_ns": 1790767748011705881,
+    "retrieve_start_ns": 1790767749258222787,
+    "retrieve_return_ns": 1790767749457642883,
+    "notify_to_retrieve_ms": 1246.517438,
+    "retrieve_api_ms": 199.419523,
+    "daos_demand_resolve_ms": 177.783219
+  },
+  {
+    "index": 16,
+    "request_id": "chatcmpl-aeeb40914d81c895-b6992096",
+    "lookup_notify_ns": 1790767750263461332,
+    "retrieve_start_ns": 1790767750280475678,
+    "retrieve_return_ns": 1790767750476304484,
+    "notify_to_retrieve_ms": 17.014821,
+    "retrieve_api_ms": 195.828339,
+    "daos_demand_resolve_ms": 174.876366
+  },
+  {
+    "index": 17,
+    "request_id": "chatcmpl-8372c4bdb79c3d39-bdb9ab33",
+    "lookup_notify_ns": 1790767752942013933,
+    "retrieve_start_ns": 1790767752967052418,
+    "retrieve_return_ns": 1790767753174295577,
+    "notify_to_retrieve_ms": 25.039066,
+    "retrieve_api_ms": 207.24265,
+    "daos_demand_resolve_ms": 184.485824
+  },
+  {
+    "index": 18,
+    "request_id": "chatcmpl-b43731a83f0d8ffa-93509eeb",
+    "lookup_notify_ns": 1790767754374664058,
+    "retrieve_start_ns": 1790767754389340035,
+    "retrieve_return_ns": 1790767754616669916,
+    "notify_to_retrieve_ms": 14.676445,
+    "retrieve_api_ms": 227.329695,
+    "daos_demand_resolve_ms": 213.005128
+  },
+  {
+    "index": 19,
+    "request_id": "chatcmpl-bb47f4723b658c3a-9261281f",
+    "lookup_notify_ns": 1790767754677751899,
+    "retrieve_start_ns": 1790767755110699012,
+    "retrieve_return_ns": 1790767755308937385,
+    "notify_to_retrieve_ms": 432.947472,
+    "retrieve_api_ms": 198.238009,
+    "daos_demand_resolve_ms": 182.857389
+  },
+  {
+    "index": 20,
+    "request_id": "chatcmpl-84ef65a31a20b9f5-b0bbfb8a",
+    "lookup_notify_ns": 1790767754650747561,
+    "retrieve_start_ns": 1790767754715144899,
+    "retrieve_return_ns": 1790767754919441663,
+    "notify_to_retrieve_ms": 64.397898,
+    "retrieve_api_ms": 204.296179,
+    "daos_demand_resolve_ms": 192.102995
+  },
+  {
+    "index": 21,
+    "request_id": "chatcmpl-854633eeb618da62-b2b75bde",
+    "lookup_notify_ns": 1790767754676463873,
+    "retrieve_start_ns": 1790767754919719675,
+    "retrieve_return_ns": 1790767755110326117,
+    "notify_to_retrieve_ms": 243.255945,
+    "retrieve_api_ms": 190.606263,
+    "daos_demand_resolve_ms": 176.602425
+  },
+  {
+    "index": 22,
+    "request_id": "chatcmpl-93798e727c5a7309-afe036c8",
+    "lookup_notify_ns": 1790767754677972073,
+    "retrieve_start_ns": 1790767755309318125,
+    "retrieve_return_ns": 1790767755524066247,
+    "notify_to_retrieve_ms": 631.346322,
+    "retrieve_api_ms": 214.74794,
+    "daos_demand_resolve_ms": 192.660079
+  },
+  {
+    "index": 23,
+    "request_id": "chatcmpl-addabb776a34ec39-a4113bca",
+    "lookup_notify_ns": 1790767754687318566,
+    "retrieve_start_ns": 1790767755524443050,
+    "retrieve_return_ns": 1790767755728593594,
+    "notify_to_retrieve_ms": 837.124811,
+    "retrieve_api_ms": 204.150157,
+    "daos_demand_resolve_ms": 189.719531
+  },
+  {
+    "index": 24,
+    "request_id": "chatcmpl-bfe2a4fb9b5add3a-bf0a5094",
+    "lookup_notify_ns": 1790767756548272653,
+    "retrieve_start_ns": 1790767756572553129,
+    "retrieve_return_ns": 1790767756774761017,
+    "notify_to_retrieve_ms": 24.280992,
+    "retrieve_api_ms": 202.207315,
+    "daos_demand_resolve_ms": 182.148989
+  },
+  {
+    "index": 25,
+    "request_id": "chatcmpl-abfd523ac7c202a0-8662746e",
+    "lookup_notify_ns": 1790767759239637154,
+    "retrieve_start_ns": 1790767759259755857,
+    "retrieve_return_ns": 1790767759467711664,
+    "notify_to_retrieve_ms": 20.119121,
+    "retrieve_api_ms": 207.955316,
+    "daos_demand_resolve_ms": 185.990398
+  },
+  {
+    "index": 26,
+    "request_id": "chatcmpl-a581a664eba334c8-b2fd4569",
+    "lookup_notify_ns": 1790767760205106613,
+    "retrieve_start_ns": 1790767760224503130,
+    "retrieve_return_ns": 1790767760435294043,
+    "notify_to_retrieve_ms": 19.396993,
+    "retrieve_api_ms": 210.790423,
+    "daos_demand_resolve_ms": 189.998422
+  },
+  {
+    "index": 27,
+    "request_id": "chatcmpl-b26abe5f1504b889-ab75ba65",
+    "lookup_notify_ns": 1790767760882603150,
+    "retrieve_start_ns": 1790767760903004209,
+    "retrieve_return_ns": 1790767761110016544,
+    "notify_to_retrieve_ms": 20.401531,
+    "retrieve_api_ms": 207.011881,
+    "daos_demand_resolve_ms": 193.453433
+  },
+  {
+    "index": 28,
+    "request_id": "chatcmpl-b20991ca2557d152-8b2f18b7",
+    "lookup_notify_ns": 1790767761182018084,
+    "retrieve_start_ns": 1790767761216782138,
+    "retrieve_return_ns": 1790767761421768109,
+    "notify_to_retrieve_ms": 34.764525,
+    "retrieve_api_ms": 204.985476,
+    "daos_demand_resolve_ms": 190.622504
+  },
+  {
+    "index": 29,
+    "request_id": "chatcmpl-9fbe93498f5940dd-81580286",
+    "lookup_notify_ns": 1790767761187344664,
+    "retrieve_start_ns": 1790767761629691204,
+    "retrieve_return_ns": 1790767761843443759,
+    "notify_to_retrieve_ms": 442.346896,
+    "retrieve_api_ms": 213.752383,
+    "daos_demand_resolve_ms": 192.229641
+  },
+  {
+    "index": 30,
+    "request_id": "chatcmpl-8a28225f2afe0d81-aed2a543",
+    "lookup_notify_ns": 1790767761187053781,
+    "retrieve_start_ns": 1790767761422127108,
+    "retrieve_return_ns": 1790767761629283985,
+    "notify_to_retrieve_ms": 235.07361,
+    "retrieve_api_ms": 207.156614,
+    "daos_demand_resolve_ms": 193.101846
+  },
+  {
+    "index": 31,
+    "request_id": "chatcmpl-992bb8a6344c0625-8381c920",
+    "lookup_notify_ns": 1790767761187911942,
+    "retrieve_start_ns": 1790767762050028419,
+    "retrieve_return_ns": 1790767762255607508,
+    "notify_to_retrieve_ms": 862.116781,
+    "retrieve_api_ms": 205.578858,
+    "daos_demand_resolve_ms": 184.01765
+  },
+  {
+    "index": 32,
+    "request_id": "chatcmpl-97d8e496b9c5baa3-ab84a316",
+    "lookup_notify_ns": 1790767761187464354,
+    "retrieve_start_ns": 1790767761843794176,
+    "retrieve_return_ns": 1790767762049669044,
+    "notify_to_retrieve_ms": 656.330119,
+    "retrieve_api_ms": 205.874627,
+    "daos_demand_resolve_ms": 184.13254
+  },
+  {
+    "index": 33,
+    "request_id": "chatcmpl-890d453d2a5c9dab-9ad5ebb2",
+    "lookup_notify_ns": 1790767763067328976,
+    "retrieve_start_ns": 1790767763091751658,
+    "retrieve_return_ns": 1790767763289629490,
+    "notify_to_retrieve_ms": 24.423109,
+    "retrieve_api_ms": 197.87734,
+    "daos_demand_resolve_ms": 183.739382
+  },
+  {
+    "index": 34,
+    "request_id": "chatcmpl-9cf5429dd92c59a8-ae16b924",
+    "lookup_notify_ns": 1790767764220070228,
+    "retrieve_start_ns": 1790767764242970297,
+    "retrieve_return_ns": 1790767764449731180,
+    "notify_to_retrieve_ms": 22.900526,
+    "retrieve_api_ms": 206.760401,
+    "daos_demand_resolve_ms": 184.528442
+  },
+  {
+    "index": 35,
+    "request_id": "chatcmpl-907bb1d9c454f846-909dc3f9",
+    "lookup_notify_ns": 1790767764585257688,
+    "retrieve_start_ns": 1790767764606907186,
+    "retrieve_return_ns": 1790767764808280905,
+    "notify_to_retrieve_ms": 21.649962,
+    "retrieve_api_ms": 201.373321,
+    "daos_demand_resolve_ms": 187.836034
+  },
+  {
+    "index": 36,
+    "request_id": "chatcmpl-b7f689fa22cdc211-bdc40bad",
+    "lookup_notify_ns": 1790767766884103395,
+    "retrieve_start_ns": 1790767766908394661,
+    "retrieve_return_ns": 1790767767106376177,
+    "notify_to_retrieve_ms": 24.291721,
+    "retrieve_api_ms": 197.981139,
+    "daos_demand_resolve_ms": 183.779099
+  },
+  {
+    "index": 37,
+    "request_id": "chatcmpl-9730a6ecece3f11a-a83860fb",
+    "lookup_notify_ns": 1790767767628689568,
+    "retrieve_start_ns": 1790767767660138465,
+    "retrieve_return_ns": 1790767767879412274,
+    "notify_to_retrieve_ms": 31.449356,
+    "retrieve_api_ms": 219.273304,
+    "daos_demand_resolve_ms": 197.964347
+  },
+  {
+    "index": 38,
+    "request_id": "chatcmpl-ba22ce16414fa4ff-b64bbc60",
+    "lookup_notify_ns": 1790767767915906463,
+    "retrieve_start_ns": 1790767768339288126,
+    "retrieve_return_ns": 1790767768560603059,
+    "notify_to_retrieve_ms": 423.382123,
+    "retrieve_api_ms": 221.314526,
+    "daos_demand_resolve_ms": 201.429974
+  },
+  {
+    "index": 39,
+    "request_id": "chatcmpl-8d6c29ba579bfa14-a070bfb8",
+    "lookup_notify_ns": 1790767767658039971,
+    "retrieve_start_ns": 1790767767918026091,
+    "retrieve_return_ns": 1790767768113874375,
+    "notify_to_retrieve_ms": 259.986668,
+    "retrieve_api_ms": 195.847706,
+    "daos_demand_resolve_ms": 181.720973
+  },
+  {
+    "index": 40,
+    "request_id": "chatcmpl-af355ccf0997d2ae-92720c49",
+    "lookup_notify_ns": 1790767767910883095,
+    "retrieve_start_ns": 1790767768139920385,
+    "retrieve_return_ns": 1790767768338893282,
+    "notify_to_retrieve_ms": 229.037751,
+    "retrieve_api_ms": 198.972428,
+    "daos_demand_resolve_ms": 184.737115
+  },
+  {
+    "index": 41,
+    "request_id": "chatcmpl-88c739450242f9ad-a308cb27",
+    "lookup_notify_ns": 1790767769296211978,
+    "retrieve_start_ns": 1790767769338650235,
+    "retrieve_return_ns": 1790767769546806997,
+    "notify_to_retrieve_ms": 42.438679,
+    "retrieve_api_ms": 208.156303,
+    "daos_demand_resolve_ms": 186.248637
+  },
+  {
+    "index": 42,
+    "request_id": "chatcmpl-88f661caca4d5f69-a03b1fd8",
+    "lookup_notify_ns": 1790767769336166271,
+    "retrieve_start_ns": 1790767769575006860,
+    "retrieve_return_ns": 1790767769773492334,
+    "notify_to_retrieve_ms": 238.84104,
+    "retrieve_api_ms": 198.48499,
+    "daos_demand_resolve_ms": 184.593012
+  },
+  {
+    "index": 43,
+    "request_id": "chatcmpl-81f7ed4f0ce4ae2d-bac29280",
+    "lookup_notify_ns": 1790767770732856797,
+    "retrieve_start_ns": 1790767770752227270,
+    "retrieve_return_ns": 1790767770955716749,
+    "notify_to_retrieve_ms": 19.370891,
+    "retrieve_api_ms": 203.489049,
+    "daos_demand_resolve_ms": 182.530517
+  },
+  {
+    "index": 44,
+    "request_id": "chatcmpl-890a874ed876050c-9e0f3ddf",
+    "lookup_notify_ns": 1790767771215947321,
+    "retrieve_start_ns": 1790767771239400148,
+    "retrieve_return_ns": 1790767771440294130,
+    "notify_to_retrieve_ms": 23.453235,
+    "retrieve_api_ms": 200.893729,
+    "daos_demand_resolve_ms": 178.385955
+  },
+  {
+    "index": 45,
+    "request_id": "chatcmpl-bc5dceb09a2f4fc9-9edf13e6",
+    "lookup_notify_ns": 1790767773395731350,
+    "retrieve_start_ns": 1790767773425896508,
+    "retrieve_return_ns": 1790767773622921183,
+    "notify_to_retrieve_ms": 30.165058,
+    "retrieve_api_ms": 197.024173,
+    "daos_demand_resolve_ms": 175.149022
+  },
+  {
+    "index": 46,
+    "request_id": "chatcmpl-9e324eaa720749e5-a4fcad0a",
+    "lookup_notify_ns": 1790767774117109480,
+    "retrieve_start_ns": 1790767774148040136,
+    "retrieve_return_ns": 1790767774375816779,
+    "notify_to_retrieve_ms": 30.931377,
+    "retrieve_api_ms": 227.776051,
+    "daos_demand_resolve_ms": 213.879096
+  },
+  {
+    "index": 47,
+    "request_id": "chatcmpl-9200f83d5f8b31e9-957a2a9a",
+    "lookup_notify_ns": 1790767774147323805,
+    "retrieve_start_ns": 1790767774417955787,
+    "retrieve_return_ns": 1790767774615405555,
+    "notify_to_retrieve_ms": 270.632629,
+    "retrieve_api_ms": 197.449235,
+    "daos_demand_resolve_ms": 175.927866
+  },
+  {
+    "index": 48,
+    "request_id": "chatcmpl-b13ac7e458f0d2ee-951f12ab",
+    "lookup_notify_ns": 1790767774418027279,
+    "retrieve_start_ns": 1790767774648274930,
+    "retrieve_return_ns": 1790767774845518290,
+    "notify_to_retrieve_ms": 230.24794,
+    "retrieve_api_ms": 197.242842,
+    "daos_demand_resolve_ms": 182.850155
+  },
+  {
+    "index": 49,
+    "request_id": "chatcmpl-93c5aabba588656c-bfd16f12",
+    "lookup_notify_ns": 1790767775329490940,
+    "retrieve_start_ns": 1790767775352253476,
+    "retrieve_return_ns": 1790767775546651907,
+    "notify_to_retrieve_ms": 22.763019,
+    "retrieve_api_ms": 194.397905,
+    "daos_demand_resolve_ms": 180.124649
+  },
+  {
+    "index": 50,
+    "request_id": "chatcmpl-94989ce91e4c7ffe-92049749",
+    "lookup_notify_ns": 1790767775808204129,
+    "retrieve_start_ns": 1790767775831707006,
+    "retrieve_return_ns": 1790767776036318345,
+    "notify_to_retrieve_ms": 23.503287,
+    "retrieve_api_ms": 204.61083,
+    "daos_demand_resolve_ms": 183.485988
+  },
+  {
+    "index": 51,
+    "request_id": "chatcmpl-89e1c317be8eef0c-8a271a16",
+    "lookup_notify_ns": 1790767776062659564,
+    "retrieve_start_ns": 1790767776083357816,
+    "retrieve_return_ns": 1790767776284607742,
+    "notify_to_retrieve_ms": 20.698685,
+    "retrieve_api_ms": 201.249502,
+    "daos_demand_resolve_ms": 187.156661
+  },
+  {
+    "index": 52,
+    "request_id": "chatcmpl-ae2c467438a53af1-8187bf84",
+    "lookup_notify_ns": 1790767777209967847,
+    "retrieve_start_ns": 1790767777232197538,
+    "retrieve_return_ns": 1790767777432045621,
+    "notify_to_retrieve_ms": 22.230131,
+    "retrieve_api_ms": 199.847626,
+    "daos_demand_resolve_ms": 178.022709
+  },
+  {
+    "index": 53,
+    "request_id": "chatcmpl-b8929a790b8007ca-87242ff0",
+    "lookup_notify_ns": 1790767778698782425,
+    "retrieve_start_ns": 1790767778721574620,
+    "retrieve_return_ns": 1790767778933411119,
+    "notify_to_retrieve_ms": 22.792458,
+    "retrieve_api_ms": 211.836032,
+    "daos_demand_resolve_ms": 189.534887
+  },
+  {
+    "index": 54,
+    "request_id": "chatcmpl-9d56f38738bdf988-ac630a3b",
+    "lookup_notify_ns": 1790767780395286574,
+    "retrieve_start_ns": 1790767780415541722,
+    "retrieve_return_ns": 1790767780618419984,
+    "notify_to_retrieve_ms": 20.255658,
+    "retrieve_api_ms": 202.877802,
+    "daos_demand_resolve_ms": 188.122029
+  },
+  {
+    "index": 55,
+    "request_id": "chatcmpl-b50ca4f1a2480c9d-90bed19b",
+    "lookup_notify_ns": 1790767780651747222,
+    "retrieve_start_ns": 1790767780679159388,
+    "retrieve_return_ns": 1790767780884613404,
+    "notify_to_retrieve_ms": 27.412783,
+    "retrieve_api_ms": 205.453442,
+    "daos_demand_resolve_ms": 184.106183
+  },
+  {
+    "index": 56,
+    "request_id": "chatcmpl-81b51f9ba96d5748-af86cf30",
+    "lookup_notify_ns": 1790767780663397567,
+    "retrieve_start_ns": 1790767780885000814,
+    "retrieve_return_ns": 1790767781089030100,
+    "notify_to_retrieve_ms": 221.603573,
+    "retrieve_api_ms": 204.028962,
+    "daos_demand_resolve_ms": 183.235623
+  },
+  {
+    "index": 57,
+    "request_id": "chatcmpl-a23a1ff4fc709a84-96cc6415",
+    "lookup_notify_ns": 1790767781544926229,
+    "retrieve_start_ns": 1790767781565283118,
+    "retrieve_return_ns": 1790767781787163126,
+    "notify_to_retrieve_ms": 20.357329,
+    "retrieve_api_ms": 221.879569,
+    "daos_demand_resolve_ms": 199.880932
+  },
+  {
+    "index": 58,
+    "request_id": "chatcmpl-8c199e0381e3476d-9ab0b960",
+    "lookup_notify_ns": 1790767782105745061,
+    "retrieve_start_ns": 1790767782133942585,
+    "retrieve_return_ns": 1790767782327969430,
+    "notify_to_retrieve_ms": 28.19805,
+    "retrieve_api_ms": 194.026243,
+    "daos_demand_resolve_ms": 179.723406
+  },
+  {
+    "index": 59,
+    "request_id": "chatcmpl-ac786d00be472a76-b66df0ae",
+    "lookup_notify_ns": 1790767782131941785,
+    "retrieve_start_ns": 1790767782356212020,
+    "retrieve_return_ns": 1790767782546782382,
+    "notify_to_retrieve_ms": 224.27066,
+    "retrieve_api_ms": 190.56994,
+    "daos_demand_resolve_ms": 176.012997
+  },
+  {
+    "index": 60,
+    "request_id": "chatcmpl-b2d952676b01adfb-b0bb0f0c",
+    "lookup_notify_ns": 1790767783470310322,
+    "retrieve_start_ns": 1790767783493285730,
+    "retrieve_return_ns": 1790767783696083093,
+    "notify_to_retrieve_ms": 22.975904,
+    "retrieve_api_ms": 202.796859,
+    "daos_demand_resolve_ms": 180.617064
+  },
+  {
+    "index": 61,
+    "request_id": "chatcmpl-b6a7dab35b17f656-9aee87a4",
+    "lookup_notify_ns": 1790767784970737046,
+    "retrieve_start_ns": 1790767784993624674,
+    "retrieve_return_ns": 1790767785198506886,
+    "notify_to_retrieve_ms": 22.888125,
+    "retrieve_api_ms": 204.881644,
+    "daos_demand_resolve_ms": 182.481513
+  },
+  {
+    "index": 62,
+    "request_id": "chatcmpl-ba122bad6acd123c-b0043c30",
+    "lookup_notify_ns": 1790767786668591867,
+    "retrieve_start_ns": 1790767786688804337,
+    "retrieve_return_ns": 1790767786892602343,
+    "notify_to_retrieve_ms": 20.213042,
+    "retrieve_api_ms": 203.797569,
+    "daos_demand_resolve_ms": 189.263122
+  },
+  {
+    "index": 63,
+    "request_id": "chatcmpl-aff123309c4ff901-82f959e6",
+    "lookup_notify_ns": 1790767786924177435,
+    "retrieve_start_ns": 1790767786956941201,
+    "retrieve_return_ns": 1790767787158417779,
+    "notify_to_retrieve_ms": 32.764354,
+    "retrieve_api_ms": 201.476034,
+    "daos_demand_resolve_ms": 180.266723
+  },
+  {
+    "index": 64,
+    "request_id": "chatcmpl-8aa84fddf74adf23-9f3f692d",
+    "lookup_notify_ns": 1790767786936543607,
+    "retrieve_start_ns": 1790767787158823018,
+    "retrieve_return_ns": 1790767787364484121,
+    "notify_to_retrieve_ms": 222.279809,
+    "retrieve_api_ms": 205.660885,
+    "daos_demand_resolve_ms": 183.436728
+  },
+  {
+    "index": 65,
+    "request_id": "chatcmpl-87f49a85c18c4327-b02d50ec",
+    "lookup_notify_ns": 1790767787795399572,
+    "retrieve_start_ns": 1790767787818166902,
+    "retrieve_return_ns": 1790767788021467057,
+    "notify_to_retrieve_ms": 22.767632,
+    "retrieve_api_ms": 203.299807,
+    "daos_demand_resolve_ms": 188.799785
+  },
+  {
+    "index": 66,
+    "request_id": "chatcmpl-8e37fcc9e4ba484a-b228c8fa",
+    "lookup_notify_ns": 1790767788326970540,
+    "retrieve_start_ns": 1790767788360443395,
+    "retrieve_return_ns": 1790767788553430640,
+    "notify_to_retrieve_ms": 33.473215,
+    "retrieve_api_ms": 192.986609,
+    "daos_demand_resolve_ms": 171.439188
+  },
+  {
+    "index": 67,
+    "request_id": "chatcmpl-b4f6bd033224a6f6-8b100b14",
+    "lookup_notify_ns": 1790767788358016160,
+    "retrieve_start_ns": 1790767788577058799,
+    "retrieve_return_ns": 1790767788777985283,
+    "notify_to_retrieve_ms": 219.043082,
+    "retrieve_api_ms": 200.926052,
+    "daos_demand_resolve_ms": 178.584319
+  },
+  {
+    "index": 68,
+    "request_id": "chatcmpl-bed8ef028dc1fb32-8202da8d",
+    "lookup_notify_ns": 1790767789721740120,
+    "retrieve_start_ns": 1790767789740184413,
+    "retrieve_return_ns": 1790767789938780493,
+    "notify_to_retrieve_ms": 18.444736,
+    "retrieve_api_ms": 198.595583,
+    "daos_demand_resolve_ms": 176.550614
+  },
+  {
+    "index": 69,
+    "request_id": "chatcmpl-b9afbf8175baed26-96620ae5",
+    "lookup_notify_ns": 1790767791226124160,
+    "retrieve_start_ns": 1790767791248956093,
+    "retrieve_return_ns": 1790767791453817697,
+    "notify_to_retrieve_ms": 22.832662,
+    "retrieve_api_ms": 204.860851,
+    "daos_demand_resolve_ms": 183.682484
+  },
+  {
+    "index": 70,
+    "request_id": "chatcmpl-bc98a940ab06a568-8c8528fd",
+    "lookup_notify_ns": 1790767792899352357,
+    "retrieve_start_ns": 1790767792931698516,
+    "retrieve_return_ns": 1790767793139351246,
+    "notify_to_retrieve_ms": 32.346683,
+    "retrieve_api_ms": 207.652247,
+    "daos_demand_resolve_ms": 195.431006
+  },
+  {
+    "index": 71,
+    "request_id": "chatcmpl-9bd343f4dc3507a0-be85ad5e",
+    "lookup_notify_ns": 1790767792929526426,
+    "retrieve_start_ns": 1790767793177446948,
+    "retrieve_return_ns": 1790767793384035126,
+    "notify_to_retrieve_ms": 247.921134,
+    "retrieve_api_ms": 206.587595,
+    "daos_demand_resolve_ms": 185.913064
+  },
+  {
+    "index": 72,
+    "request_id": "chatcmpl-9a1d93b85ed7f1cb-9d172787",
+    "lookup_notify_ns": 1790767793176620932,
+    "retrieve_start_ns": 1790767793404448917,
+    "retrieve_return_ns": 1790767793605615861,
+    "notify_to_retrieve_ms": 227.82849,
+    "retrieve_api_ms": 201.166556,
+    "daos_demand_resolve_ms": 179.086408
+  },
+  {
+    "index": 73,
+    "request_id": "chatcmpl-8c3ec52b69a77ab0-bc5ab814",
+    "lookup_notify_ns": 1790767794050397845,
+    "retrieve_start_ns": 1790767794079641860,
+    "retrieve_return_ns": 1790767794282202919,
+    "notify_to_retrieve_ms": 29.244398,
+    "retrieve_api_ms": 202.560738,
+    "daos_demand_resolve_ms": 179.997448
+  },
+  {
+    "index": 74,
+    "request_id": "chatcmpl-a787d9417dffd7be-be23acba",
+    "lookup_notify_ns": 1790767794583663600,
+    "retrieve_start_ns": 1790767794623085224,
+    "retrieve_return_ns": 1790767794826010512,
+    "notify_to_retrieve_ms": 39.42209,
+    "retrieve_api_ms": 202.924691,
+    "daos_demand_resolve_ms": 188.596441
+  },
+  {
+    "index": 75,
+    "request_id": "chatcmpl-9efee28fb402bab7-be04da73",
+    "lookup_notify_ns": 1790767794622970633,
+    "retrieve_start_ns": 1790767794852541214,
+    "retrieve_return_ns": 1790767795047645251,
+    "notify_to_retrieve_ms": 229.571168,
+    "retrieve_api_ms": 195.103392,
+    "daos_demand_resolve_ms": 180.83679
+  },
+  {
+    "index": 76,
+    "request_id": "chatcmpl-9cdb2cb002f37789-9df193b1",
+    "lookup_notify_ns": 1790767795923068886,
+    "retrieve_start_ns": 1790767795946321213,
+    "retrieve_return_ns": 1790767796151539476,
+    "notify_to_retrieve_ms": 23.252868,
+    "retrieve_api_ms": 205.217671,
+    "daos_demand_resolve_ms": 184.580684
+  },
+  {
+    "index": 77,
+    "request_id": "chatcmpl-b65b7115a3f0ba2b-b26f3ed8",
+    "lookup_notify_ns": 1790767797447390432,
+    "retrieve_start_ns": 1790767797469724362,
+    "retrieve_return_ns": 1790767797671331436,
+    "notify_to_retrieve_ms": 22.334297,
+    "retrieve_api_ms": 201.606701,
+    "daos_demand_resolve_ms": 187.344866
+  },
+  {
+    "index": 78,
+    "request_id": "chatcmpl-a1b10107a245c27f-ac39dae6",
+    "lookup_notify_ns": 1790767799122714819,
+    "retrieve_start_ns": 1790767799143985967,
+    "retrieve_return_ns": 1790767799388265250,
+    "notify_to_retrieve_ms": 21.271564,
+    "retrieve_api_ms": 244.278894,
+    "daos_demand_resolve_ms": 221.298697
+  },
+  {
+    "index": 79,
+    "request_id": "chatcmpl-82ba1f3c6666cd02-ace4fbb2",
+    "lookup_notify_ns": 1790767799415378848,
+    "retrieve_start_ns": 1790767799430425442,
+    "retrieve_return_ns": 1790767799645880906,
+    "notify_to_retrieve_ms": 15.047019,
+    "retrieve_api_ms": 215.455093,
+    "daos_demand_resolve_ms": 195.089472
+  }
+]

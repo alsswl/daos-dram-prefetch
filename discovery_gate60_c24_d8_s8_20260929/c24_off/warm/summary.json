@@ -1,0 +1,56 @@
+{
+  "name": "c24_off",
+  "concurrency": 24,
+  "mode": "off",
+  "prefetch": false,
+  "occupancy_stop_ratio": null,
+  "phase": "warm",
+  "requests": 256,
+  "ttft": {
+    "n": 256,
+    "mean": 241.7291219917388,
+    "p50": 184.07925078645349,
+    "p95": 791.7058015009388,
+    "maximum": 836.4650839939713
+  },
+  "elapsed_seconds": 76.815463069,
+  "input_tokens": 1578438,
+  "computed_input_tokens": 17097,
+  "cached_input_pct": 98.91684057276878,
+  "output_tokens": 69315,
+  "dram_hit_pct": 92.41678963764552,
+  "daos_hit_pct": 7.583210362354484,
+  "capacity_recomputed_tokens": 0,
+  "peak_staging_gib": 1.11328125,
+  "prefetch_counters": {},
+  "timings": {
+    "queue_ms": {
+      "n": 0,
+      "mean": null,
+      "p50": null,
+      "p95": null,
+      "maximum": null
+    },
+    "copy_ms": {
+      "n": 0,
+      "mean": null,
+      "p50": null,
+      "p95": null,
+      "maximum": null
+    },
+    "retrieve_ms": {
+      "n": 256,
+      "mean": 19.28352304296875,
+      "p50": 16.4186145,
+      "p95": 41.142613,
+      "maximum": 55.598399
+    },
+    "http_to_retrieve_start_ms": {
+      "n": 256,
+      "mean": 107.125169796875,
+      "p50": 66.358301,
+      "p95": 464.32747275,
+      "maximum": 727.647358
+    }
+  }
+}

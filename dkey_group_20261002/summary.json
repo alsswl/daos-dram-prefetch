@@ -1,0 +1,266 @@
+[
+  {
+    "group": 1,
+    "workers": 1,
+    "calls": 96,
+    "fetch_mib": 18,
+    "samples": 15,
+    "median_ms": 402.863287,
+    "median_gib_s": 4.1887659026125155,
+    "per_seed_median_ms": [
+      402.863287,
+      397.167338,
+      417.742416
+    ],
+    "active_shards": [
+      16,
+      16,
+      16
+    ],
+    "mean_ms": 408.2159799333333,
+    "min_ms": 394.022666,
+    "max_ms": 431.493229
+  },
+  {
+    "group": 2,
+    "workers": 1,
+    "calls": 48,
+    "fetch_mib": 36,
+    "samples": 15,
+    "median_ms": 387.857588,
+    "median_gib_s": 4.35082373585018,
+    "per_seed_median_ms": [
+      396.060209,
+      387.523844,
+      387.857588
+    ],
+    "active_shards": [
+      16,
+      16,
+      16
+    ],
+    "mean_ms": 396.64128746666665,
+    "min_ms": 385.264836,
+    "max_ms": 429.351009
+  },
+  {
+    "group": 4,
+    "workers": 1,
+    "calls": 24,
+    "fetch_mib": 72,
+    "samples": 15,
+    "median_ms": 393.290373,
+    "median_gib_s": 4.290722875131246,
+    "per_seed_median_ms": [
+      388.025377,
+      396.226912,
+      395.404195
+    ],
+    "active_shards": [
+      14,
+      13,
+      13
+    ],
+    "mean_ms": 390.7922048666667,
+    "min_ms": 379.639951,
+    "max_ms": 406.171125
+  },
+  {
+    "group": 8,
+    "workers": 1,
+    "calls": 12,
+    "fetch_mib": 144,
+    "samples": 15,
+    "median_ms": 383.033531,
+    "median_gib_s": 4.405619517420265,
+    "per_seed_median_ms": [
+      383.201437,
+      378.717193,
+      381.136407
+    ],
+    "active_shards": [
+      8,
+      8,
+      7
+    ],
+    "mean_ms": 381.4580967333333,
+    "min_ms": 355.269401,
+    "max_ms": 390.464704
+  },
+  {
+    "group": 16,
+    "workers": 1,
+    "calls": 6,
+    "fetch_mib": 288,
+    "samples": 15,
+    "median_ms": 382.638465,
+    "median_gib_s": 4.410168224984909,
+    "per_seed_median_ms": [
+      384.106804,
+      382.768433,
+      376.110191
+    ],
+    "active_shards": [
+      6,
+      4,
+      5
+    ],
+    "mean_ms": 381.6287122,
+    "min_ms": 367.930522,
+    "max_ms": 388.389045
+  },
+  {
+    "group": 32,
+    "workers": 1,
+    "calls": 3,
+    "fetch_mib": 576,
+    "samples": 15,
+    "median_ms": 380.883459,
+    "median_gib_s": 4.430489064635385,
+    "per_seed_median_ms": [
+      381.326179,
+      375.931804,
+      381.792328
+    ],
+    "active_shards": [
+      3,
+      3,
+      3
+    ],
+    "mean_ms": 380.30582906666666,
+    "min_ms": 374.601186,
+    "max_ms": 386.140162
+  },
+  {
+    "group": 1,
+    "workers": 16,
+    "calls": 96,
+    "fetch_mib": 18,
+    "samples": 15,
+    "median_ms": 64.510777,
+    "median_gib_s": 26.15842001096964,
+    "per_seed_median_ms": [
+      66.56276,
+      64.510777,
+      62.795141
+    ],
+    "active_shards": [
+      16,
+      16,
+      16
+    ],
+    "mean_ms": 64.67052873333333,
+    "min_ms": 61.870716,
+    "max_ms": 67.810099
+  },
+  {
+    "group": 2,
+    "workers": 16,
+    "calls": 48,
+    "fetch_mib": 36,
+    "samples": 15,
+    "median_ms": 70.011013,
+    "median_gib_s": 24.103350711408787,
+    "per_seed_median_ms": [
+      70.011013,
+      68.050057,
+      74.291233
+    ],
+    "active_shards": [
+      16,
+      16,
+      16
+    ],
+    "mean_ms": 70.58010133333333,
+    "min_ms": 64.116362,
+    "max_ms": 76.966288
+  },
+  {
+    "group": 4,
+    "workers": 16,
+    "calls": 24,
+    "fetch_mib": 72,
+    "samples": 15,
+    "median_ms": 86.237577,
+    "median_gib_s": 19.568035869096832,
+    "per_seed_median_ms": [
+      86.237577,
+      100.057293,
+      80.204246
+    ],
+    "active_shards": [
+      14,
+      13,
+      13
+    ],
+    "mean_ms": 87.57116353333333,
+    "min_ms": 75.034911,
+    "max_ms": 100.636276
+  },
+  {
+    "group": 8,
+    "workers": 16,
+    "calls": 12,
+    "fetch_mib": 144,
+    "samples": 15,
+    "median_ms": 141.259806,
+    "median_gib_s": 11.946073322513271,
+    "per_seed_median_ms": [
+      141.259806,
+      110.5274,
+      149.579048
+    ],
+    "active_shards": [
+      8,
+      8,
+      7
+    ],
+    "mean_ms": 133.30203473333333,
+    "min_ms": 110.092457,
+    "max_ms": 150.859161
+  },
+  {
+    "group": 16,
+    "workers": 16,
+    "calls": 6,
+    "fetch_mib": 288,
+    "samples": 15,
+    "median_ms": 141.582356,
+    "median_gib_s": 11.918858024936384,
+    "per_seed_median_ms": [
+      125.440074,
+      142.008031,
+      142.154812
+    ],
+    "active_shards": [
+      6,
+      4,
+      5
+    ],
+    "mean_ms": 136.51235666666668,
+    "min_ms": 122.911337,
+    "max_ms": 143.517568
+  },
+  {
+    "group": 32,
+    "workers": 16,
+    "calls": 3,
+    "fetch_mib": 576,
+    "samples": 15,
+    "median_ms": 162.08813,
+    "median_gib_s": 10.41100295252959,
+    "per_seed_median_ms": [
+      161.304198,
+      162.08813,
+      162.540565
+    ],
+    "active_shards": [
+      3,
+      3,
+      3
+    ],
+    "mean_ms": 162.05147893333333,
+    "min_ms": 157.940299,
+    "max_ms": 166.314341
+  }
+]

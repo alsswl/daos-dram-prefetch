@@ -1,0 +1,4 @@
+{
+  "status": "failed",
+  "error": "CalledProcessError(-15, ['/root/discos_minji/run_vllm.sh', '/root/discos_minji/venv/bin/python', '/root/discos_minji/tests/sync_retrieve_capacity.py', '--capacity', '2', '--chunks', '512', '--window-mib', '500', '--store-window-mib', '500', '--capacity-pipeline', '--split-store-gib', '0', '--no-dram', '--output', '/root/discos_minji/realqa_mixed_nodram2g_20261002_w500/gpu_9gib_check'])"
+}

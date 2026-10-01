@@ -1,0 +1,111 @@
+{
+  "all_reads": {
+    "requests": 42,
+    "host_read_ms": {
+      "n": 42,
+      "mean": 41.67140343656994,
+      "p50": 28.752810546875,
+      "p95": 94.30267260742187,
+      "maximum": 103.94350390625
+    },
+    "compute_overlap_pct": 12.264752364348821,
+    "cpu_execute_overlap_pct": 88.74115616094198,
+    "any_retrieve_overlap_pct": 17.617437384639196,
+    "mainthread_cuda_sync_overlap_pct": 0.05259725722062292,
+    "ready_to_retrieve_ms": {
+      "n": 42,
+      "mean": 38.950518694196425,
+      "p50": 29.866622558593747,
+      "p95": 80.91377397460934,
+      "maximum": 119.72385546875
+    }
+  },
+  "after_first16": {
+    "requests": 27,
+    "host_read_ms": {
+      "n": 27,
+      "mean": 27.50703779658565,
+      "p50": 24.6345693359375,
+      "p95": 55.302076464843736,
+      "maximum": 59.3599140625
+    },
+    "compute_overlap_pct": 13.480480790413667,
+    "cpu_execute_overlap_pct": 89.82360339518594,
+    "any_retrieve_overlap_pct": 7.443978250299976,
+    "mainthread_cuda_sync_overlap_pct": 0.01963959715323328,
+    "ready_to_retrieve_ms": {
+      "n": 27,
+      "mean": 29.329392578125,
+      "p50": 21.3593349609375,
+      "p95": 65.92284746093749,
+      "maximum": 81.220318359375
+    }
+  },
+  "kernel_free_read_examples": [
+    {
+      "index": 5,
+      "session": 5,
+      "turn": 0,
+      "chunks": 3,
+      "start_ms": 758.9918203125,
+      "read_ms": 18.6050009765625,
+      "compute_overlap_ms": 0.0,
+      "any_kernel_overlap_ms": 0.0,
+      "cpu_execute_overlap_ms": 0.0,
+      "any_retrieve_overlap_ms": 0.0,
+      "mainthread_cuda_sync_overlap_ms": 0.0,
+      "ready_to_retrieve_ms": 119.72385546875,
+      "prior_step": "execute_context_1(122)_generation_0(0)",
+      "next_step": "execute_context_4(241)_generation_1(1)",
+      "full_kernel_gap_ms": 27.7931767578125
+    },
+    {
+      "index": 34,
+      "session": 34,
+      "turn": 0,
+      "chunks": 9,
+      "start_ms": 7119.3831875,
+      "read_ms": 14.4814990234375,
+      "compute_overlap_ms": 0.0,
+      "any_kernel_overlap_ms": 0.0,
+      "cpu_execute_overlap_ms": 0.0,
+      "any_retrieve_overlap_ms": 0.0,
+      "mainthread_cuda_sync_overlap_ms": 0.0,
+      "ready_to_retrieve_ms": 81.220318359375,
+      "prior_step": "execute_context_0(0)_generation_7(7)",
+      "next_step": "execute_context_3(166)_generation_7(7)",
+      "full_kernel_gap_ms": 26.0811865234375
+    }
+  ],
+  "decode_only_steps": {
+    "count": 482,
+    "total": 512
+  },
+  "step_duration_ms": {
+    "n": 512,
+    "mean": 22.714432587890624,
+    "p50": 22.6886035,
+    "p95": 26.315645,
+    "maximum": 99.912178
+  },
+  "cpu_start_to_first_compute_ms": {
+    "n": 511,
+    "mean": 1.2848652477525684,
+    "p50": 0.938966796875,
+    "p95": 3.82280224609375,
+    "maximum": 17.67934765625
+  },
+  "step_retrieve_inside_ms": {
+    "n": 512,
+    "mean": 0.20665336990356445,
+    "p50": 0.0,
+    "p95": 0.0,
+    "maximum": 29.950953125
+  },
+  "limitations": [
+    "Profiled first512 steps, host DAOS reads include queues/metadata/completion.",
+    "CPU execution annotations include setup/retrieve, not continuous GPU model compute.",
+    "Same-thread CUDA sync overlap does not identify which stream or source operation without stacks.",
+    "Temporal overlap and cumulative request-ms are not an end-to-end critical path attribution."
+  ]
+}

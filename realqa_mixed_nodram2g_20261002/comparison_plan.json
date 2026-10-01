@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "label": "window500",
+      "root": "/root/discos_minji/realqa_mixed_nodram2g_20261002_w500",
+      "description": "shared2GiB, effective window486MiB, depth4"
+    },
+    {
+      "label": "window2048",
+      "root": "/root/discos_minji/realqa_mixed_nodram2g_20261002_w2048",
+      "description": "shared2GiB, effective window2034MiB, depth1"
+    }
+  ],
+  "delta_key": "window2048_vs_500_change_pct",
+  "chart_title": "Mixed 80-session QA | DRAM OFF | shared2GiB | windows486MiB vs2034MiB"
+}

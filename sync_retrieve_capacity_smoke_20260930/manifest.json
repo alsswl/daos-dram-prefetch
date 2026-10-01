@@ -1,0 +1,15 @@
+{
+  "namespace": "minji-sync-capacity-69ee20c72b214fe386f5a8059a065cc7:",
+  "keys": [
+    "minji-sync-capacity-69ee20c72b214fe386f5a8059a065cc7:qwen4b-shaped-capacity-test@1@0@2fea150ed91d1a03@bfloat16",
+    "minji-sync-capacity-69ee20c72b214fe386f5a8059a065cc7:qwen4b-shaped-capacity-test@1@0@2d47f1184b9ae063@bfloat16"
+  ],
+  "chunks": 2,
+  "payload_bytes": 37748736,
+  "native_process_tokens_source": "/root/discos_minji/venv/lib64/python3.12/site-packages/lmcache/v1/cache_engine.py",
+  "notes": [
+    "Patterned KV, not model-generated KV; real DAOS writes/reads and real paged GPU scatter.",
+    "Native synchronous engine retrieve; custom DAOS transport and passive tracing remain.",
+    "No vLLM scheduler: returned mask is tested, not HTTP failure/recompute behavior."
+  ]
+}

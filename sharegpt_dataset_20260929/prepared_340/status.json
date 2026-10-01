@@ -1,0 +1,33 @@
+{
+  "status": "prepared",
+  "sessions": 421,
+  "requests": 1684,
+  "turns": 4,
+  "scanned": 76589,
+  "source_entries": 76920,
+  "excluded": {
+    "final_length_outside_range": 34170,
+    "too_few_or_invalid_turns": 41922,
+    "over_200k_char_safety_bound": 4,
+    "duplicate_prefixes": 72
+  },
+  "input_tokens_min": 15,
+  "input_tokens_mean": 3484.152612826603,
+  "input_tokens_max": 8184,
+  "input_tokens_sum": 5867313,
+  "unique_input_chunks": 17438,
+  "unique_input_kv_gib": 340.5859375,
+  "requested_output_tokens": 321442,
+  "conservative_stored_kv_gib": 422.26776123046875,
+  "request_sha256": "e4732c4742a1abb671c121c82a6ef3efbed496075ee07f47e9f25d38593ce016",
+  "notes": [
+    "Fixed-seed, first eligible conversations; no performance-based selection.",
+    "First four original turns, cumulative text like upstream LMBenchmark; no padding or truncation.",
+    "Final turn 4K-8K; earlier turns may be shorter. Qwen chat-template token counts.",
+    "Unique input KV is a full-prefix chunk estimate, not actual DRAM residency.",
+    "Original answers form later prompts. Generated benchmark answers are NOT fed back.",
+    "Output cap 256; source-answer token length used when smaller. EOS remains enabled."
+  ],
+  "elapsed_seconds": 81.60144233703613,
+  "updated_ns": 1790674088370282573
+}

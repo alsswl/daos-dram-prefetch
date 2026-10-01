@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "label": "baseline",
+      "root": "/root/discos_minji/realqa_placement_20261002_baseline",
+      "description": "hash placement"
+    },
+    {
+      "label": "balanced",
+      "root": "/root/discos_minji/realqa_placement_20261002_balanced",
+      "description": "balanced absolute-index placement"
+    }
+  ],
+  "delta_key": "balanced_vs_baseline_change_pct",
+  "chart_title": "Mixed CXS | DRAM OFF | shared 2GiB | existing vs balanced placement"
+}

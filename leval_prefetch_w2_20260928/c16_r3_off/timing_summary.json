@@ -1,0 +1,51 @@
+{
+  "ttft_ms": {
+    "n": 72,
+    "mean": 1022.1534914970915,
+    "p50": 130.8423550799489,
+    "p95": 5490.076095564292,
+    "maximum": 5718.5457977466285
+  },
+  "http_to_retrieve_start_ms": {
+    "n": 52,
+    "mean": 261.50118982692305,
+    "p50": 68.532432,
+    "p95": 429.9843563499993,
+    "maximum": 5301.990942
+  },
+  "retrieve_ms": {
+    "n": 52,
+    "mean": 11.575933576923077,
+    "p50": 10.154114499999999,
+    "p95": 30.159273849999998,
+    "maximum": 32.794436
+  },
+  "queue_ms": {
+    "n": 0,
+    "mean": null,
+    "p50": null,
+    "p95": null,
+    "maximum": null
+  },
+  "copy_ms": {
+    "n": 0,
+    "mean": null,
+    "p50": null,
+    "p95": null,
+    "maximum": null
+  },
+  "cpu_ready_to_retrieve_ms": {
+    "n": 26,
+    "mean": 350.9139158076923,
+    "p50": 32.257002,
+    "p95": 2665.565632,
+    "maximum": 4601.022442
+  },
+  "worker_end_to_retrieve_ms": {
+    "n": 0,
+    "mean": null,
+    "p50": null,
+    "p95": null,
+    "maximum": null
+  }
+}

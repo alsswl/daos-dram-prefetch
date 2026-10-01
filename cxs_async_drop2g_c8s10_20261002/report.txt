@@ -1,0 +1,15 @@
+Full CXS C8 x S10 x 6: 480 successful requests
+Qwen3-4B-Instruct-2507, 61440-token documents, output cap 256, max model length 65536.
+2GiB shared staging; DRAM off; original dkey hash; native async loading; store/read immediate capacity miss.
+Mean TTFT: 6129.72 ms; p95: 11395.94 ms.
+Elapsed: 2301.13 s; cached input: 17.548%.
+DAOS read/write: 780.715/565.172 GiB.
+Read allocation failures: 155212; store capacity-failure calls: 175 (zero admission 115).
+Peak staging: 1.986328 GiB; final staging: 0.
+Historical window500 mean TTFT: 1820.66 ms, cached 86.717%.
+Computed input = prompt minus reported cached tokens; not GPU timing or unique tokens.
+Store token totals cover nonempty logged stores only; native zero-admission early returns omit requested token counts.
+Unadmitted store token totals are therefore a lower bound and can include later retried or repeated prefixes.
+Async lookup reports actual loaded prefix before scheduling, so normal prefill need not log recovery.
+C8 HTTP concurrency, original single async serializer, 16 per-chunk IO workers.
+Historical comparison changes both loading and store/drop policy; not a single-variable async comparison.

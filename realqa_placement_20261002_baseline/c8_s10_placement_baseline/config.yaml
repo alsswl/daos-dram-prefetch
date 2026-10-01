@@ -1,0 +1,36 @@
+chunk_size: 128
+local_cpu: false
+max_local_cpu_size: 0
+enable_async_loading: false
+use_layerwise: false
+use_gpu_connector_v3: false
+save_decode_cache: true
+storage_plugins:
+- daosgds
+extra_config:
+  storage_plugin.daosgds.module_path: lmcache_daos.placement_backend
+  storage_plugin.daosgds.class_name: PlacementBackend
+  daosgds.demand_read_only: true
+  daosgds.dram_prefetch: false
+  daosgds.retrieve_window_mib: 500
+  daosgds.retrieve_window_timeout_s: 5
+  daosgds.pool: discospool
+  daosgds.container: kvcache
+  daosgds.object_namespace: 'minji-placement-06fd4d98831444e6a1bb9f08abf2f79b:'
+  daosgds.root: /minji-placement-06fd4d98831444e6a1bb9f08abf2f79b
+  daosgds.transport: object
+  daosgds.object_library: /root/discos_minji/libdaosgdr.so
+  daosgds.gpu_buffer_gb: 2
+  daosgds.io_workers: 16
+  daosgds.meta_workers: 16
+  daosgds.store: true
+  daosgds.store_path: gpu_direct
+  daosgds.async_dram: false
+  daosgds.dram_promote_on_read: false
+  daosgds.dram_mirror_max_pending_gb: 1
+  daosgds.dram_mirror_max_age_ms: 100
+  daosgds.probe_interval_ms: 20
+  daosgds.dram_disabled: true
+  daosgds.store_window_mib: 500
+  daosgds.store_staging_gib: 0
+  daosgds.placement_manifest: /root/discos_minji/realqa_placement_20261002_baseline/placement.json

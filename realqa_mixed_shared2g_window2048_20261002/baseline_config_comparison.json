@@ -1,0 +1,33 @@
+{
+  "identical_input_hashes": true,
+  "changed_sources": [
+    "lmcache_daos/capacity_pipeline_backend.py",
+    "lmcache_daos/capacity_validation.py",
+    "realqa_mixed_comparison.py",
+    "tests/test_capacity_mixed.py"
+  ],
+  "unchanged_controls": {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "staging_gib": 2,
+    "cpu_gib": 256,
+    "gpu_memory_utilization": 0.835,
+    "concurrency": 8,
+    "session_depth": 10,
+    "max_model_len": 65536,
+    "max_num_seqs": 8,
+    "answer_len": 256,
+    "chunk_tokens": 128,
+    "mixed_schedule": true,
+    "split_store_gib": 0
+  },
+  "changed_windows": {
+    "store_window_mib": [
+      500,
+      2048
+    ],
+    "retrieve_window_mib": [
+      500,
+      2048
+    ]
+  }
+}

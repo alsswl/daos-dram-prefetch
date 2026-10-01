@@ -1,0 +1,25 @@
+chunk_size: 128
+local_cpu: false
+max_local_cpu_size: 0
+enable_async_loading: false
+use_layerwise: false
+use_gpu_connector_v3: false
+save_decode_cache: true
+storage_plugins:
+- daosgds
+extra_config:
+  storage_plugin.daosgds.module_path: lmcache_daos.direct_scatter_backend
+  storage_plugin.daosgds.class_name: DirectScatterBackend
+  daosgds.direct_scatter: true
+  daosgds.transport: object
+  daosgds.pool: discospool
+  daosgds.container: kvcache
+  daosgds.object_namespace: 'minji-cxs-direct-41cbfdd2b7e54287aae955f1724d9517:'
+  daosgds.object_library: /root/discos_minji/libdaosgdr_scatter.so
+  daosgds.gpu_buffer_gb: 0
+  daosgds.io_workers: 16
+  daosgds.meta_workers: 16
+  daosgds.store: true
+  daosgds.async_dram: false
+  daosgds.dram_prefetch: false
+  daosgds.dram_promote_on_read: false

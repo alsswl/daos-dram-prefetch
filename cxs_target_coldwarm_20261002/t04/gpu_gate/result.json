@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "staging_gib": 2,
+  "requested_tokens": 16384,
+  "window_mib": 500,
+  "store_window_mib": 500,
+  "requested_chunks": 128,
+  "requested_gib": 2.25,
+  "lookup_hit_tokens": 16384,
+  "returned_tokens": 16384,
+  "returned_chunks": 128,
+  "returned_gib": 2.25,
+  "capacity_failed_chunks": 0,
+  "successful_tail_discarded_chunks": 0,
+  "peak_staging_gib": 0.826171875,
+  "staging_bytes_after": 0,
+  "scatter_calls": [
+    {
+      "chunks": 27,
+      "bytes": 509607936,
+      "staging_bytes_at_entry": 792723456,
+      "time_ns": 1790886158773473296
+    },
+    {
+      "chunks": 27,
+      "bytes": 509607936,
+      "staging_bytes_at_entry": 811597824,
+      "time_ns": 1790886158794018189
+    },
+    {
+      "chunks": 27,
+      "bytes": 509607936,
+      "staging_bytes_at_entry": 792723456,
+      "time_ns": 1790886158813630747
+    },
+    {
+      "chunks": 27,
+      "bytes": 509607936,
+      "staging_bytes_at_entry": 868220928,
+      "time_ns": 1790886158837239988
+    },
+    {
+      "chunks": 20,
+      "bytes": 377487360,
+      "staging_bytes_at_entry": 377487360,
+      "time_ns": 1790886158860930649
+    }
+  ],
+  "all_returned_gpu_values_match": true,
+  "unreturned_gpu_region_unchanged": true,
+  "retrieve_ms": 122.205526,
+  "lookup_start_ns": 1790886158734659477,
+  "start_ns": 1790886158740886655,
+  "end_ns": 1790886158863092181,
+  "store_windows": 6,
+  "store_allocation_failures": 0,
+  "all_store_keys_present": true,
+  "capacity_validation": {
+    "passed": true,
+    "shared": true,
+    "pipeline_depth": 4,
+    "max_concurrent_loads": 4,
+    "load_copy_overlap_events": 4,
+    "allocation_failures": 0,
+    "store_peak_gib": 1.951171875,
+    "retrieve_peak_gib": 0.826171875
+  },
+  "no_dram_validation": {
+    "passed": true,
+    "cpu_cache_peak_bytes": 0,
+    "dram_copied_bytes": 0,
+    "retrieved_chunks": 128,
+    "daos_returned_chunks": 128,
+    "daos_returned_gib": 2.25
+  },
+  "placement_validation": {
+    "passed": true,
+    "key_only_index_lookup": true,
+    "reopened_object_metadata_lookup": true,
+    "mode": "baseline",
+    "actual_target_counts": {
+      "4": 32,
+      "7": 32,
+      "10": 32,
+      "8": 32
+    }
+  }
+}

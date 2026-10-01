@@ -1,0 +1,96 @@
+[
+  {
+    "case": "c8_none",
+    "phase": "cold",
+    "requests": 80,
+    "elapsed_seconds": 138.146675257,
+    "ttft": {
+      "n": 80,
+      "mean": 2156.8902495666407,
+      "p50": 1465.3199380263686,
+      "p95": 5290.07024161983,
+      "maximum": 9422.575277741998
+    },
+    "input_tokens": 2317823,
+    "cached_tokens": 0,
+    "computed_tokens": 2317823,
+    "output_tokens": 19305,
+    "queried_chunks": 18069,
+    "hit_chunks": {
+      "dram": 0,
+      "daos": 0
+    },
+    "dram_hit_pct": 0.0,
+    "daos_hit_pct": 0.0,
+    "input_reuse_pct": 0.0,
+    "peak_staging_gib": 1.142578125,
+    "mean_sampled_staging_gib": 0.11569701958066193,
+    "initial_cpu_gib": 0.0,
+    "final_cpu_gib": 255.990234375,
+    "retrieve_decisions": {},
+    "resolve_wait_ms": {
+      "dram": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "maximum": null
+      },
+      "daos": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "maximum": null
+      }
+    }
+  },
+  {
+    "case": "c8_none",
+    "phase": "warm1",
+    "requests": 80,
+    "elapsed_seconds": 62.125644947,
+    "ttft": {
+      "n": 80,
+      "mean": 876.6488624038175,
+      "p50": 574.652433861047,
+      "p95": 2020.188954565674,
+      "maximum": 2025.1111253164709
+    },
+    "input_tokens": 2317823,
+    "cached_tokens": 2312832,
+    "computed_tokens": 4991,
+    "output_tokens": 19240,
+    "queried_chunks": 18069,
+    "hit_chunks": {
+      "dram": 0,
+      "daos": 18069
+    },
+    "dram_hit_pct": 0.0,
+    "daos_hit_pct": 100.0,
+    "input_reuse_pct": 99.78466863086612,
+    "peak_staging_gib": 4.201171875,
+    "mean_sampled_staging_gib": 0.5711043536558669,
+    "initial_cpu_gib": 255.990234375,
+    "final_cpu_gib": 255.990234375,
+    "retrieve_decisions": {
+      "daos/queued_to_demand": 80
+    },
+    "resolve_wait_ms": {
+      "dram": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "maximum": null
+      },
+      "daos": {
+        "n": 80,
+        "mean": 186.7145262875,
+        "p50": 184.589912,
+        "p95": 204.00718579999997,
+        "maximum": 221.300915
+      }
+    }
+  }
+]

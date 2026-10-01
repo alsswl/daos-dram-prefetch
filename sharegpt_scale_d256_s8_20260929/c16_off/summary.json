@@ -1,0 +1,62 @@
+{
+  "case": "c16_off",
+  "requests": 1684,
+  "elapsed_seconds": 515.172780557,
+  "ttft": {
+    "n": 1684,
+    "mean": 260.20178113231157,
+    "p50": 206.74155605956912,
+    "p95": 587.0760116027668,
+    "maximum": 1970.9038021974266
+  },
+  "input_tokens": 5867313,
+  "cached_tokens": 3527168,
+  "computed_tokens": 2340145,
+  "output_tokens": 314679,
+  "queried_chunks": 44994,
+  "hit_chunks": {
+    "dram": 11922,
+    "daos": 15634
+  },
+  "dram_hit_pct": 26.49686624883318,
+  "daos_hit_pct": 34.746855136240384,
+  "input_reuse_pct": 60.115558859736986,
+  "peak_staging_gib": 3.76953125,
+  "sampled_peak_cpu_gib": 255.99609375,
+  "final_cpu_gib": 255.99609375,
+  "mean_sampled_staging_gib": 0.0538699214647188,
+  "sample_fraction_ge_60pct": 0.0,
+  "sample_fraction_ge_90pct": 0.0,
+  "capacity_recomputed_tokens": 0,
+  "prefetch_counters": null,
+  "mirror_counters": {
+    "admitted": 35472,
+    "copied": 35472,
+    "copied_bytes": 743901757440,
+    "skipped_budget": 6,
+    "skipped_present": 9,
+    "skipped_closed": 0,
+    "skipped_expired": 0,
+    "skipped_allocation": 0,
+    "errors": 0,
+    "peak_pending_bytes": 1069547520,
+    "copy_ms": 29986.65784811601,
+    "cpu_hit_chunks": 11922,
+    "write_offered": 19853,
+    "write_admitted": 19853,
+    "write_copied": 19853,
+    "write_copied_bytes": 416347586560,
+    "read_offered": 15634,
+    "read_admitted": 15619,
+    "read_copied": 15619,
+    "read_copied_bytes": 327554170880,
+    "read_submit_errors": 0,
+    "pending_bytes": 0,
+    "pending_chunks": 0
+  },
+  "notes": [
+    "Hit ratios are lookup candidate chunk ratios; input reuse is actual server cached_tokens.",
+    "Staging includes DAOS, DRAM prefetch and store lifetimes, not just DRAM reads.",
+    "Sample averages are approximate (20ms sampler), not exact time-weighted GPU utilization."
+  ]
+}

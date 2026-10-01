@@ -1,0 +1,89 @@
+[
+  {
+    "status": "passed",
+    "staging_gib": 4,
+    "requested_tokens": 65536,
+    "requested_chunks": 512,
+    "requested_gib": 9.0,
+    "lookup_hit_tokens": 65536,
+    "returned_tokens": 28928,
+    "returned_chunks": 226,
+    "returned_gib": 3.97265625,
+    "capacity_failed_chunks": 285,
+    "successful_tail_discarded_chunks": 1,
+    "peak_staging_gib": 3.990234375,
+    "staging_bytes_after": 0,
+    "scatter_calls": [
+      {
+        "chunks": 226,
+        "bytes": 4265607168,
+        "staging_bytes_at_entry": 4265607168,
+        "time_ns": 1790769318703280179
+      }
+    ],
+    "all_returned_gpu_values_match": true,
+    "unreturned_gpu_region_unchanged": true,
+    "retrieve_ms": 264.411585,
+    "lookup_start_ns": 1790769318442553931,
+    "start_ns": 1790769318452575288,
+    "end_ns": 1790769318716986873
+  },
+  {
+    "status": "passed",
+    "staging_gib": 8,
+    "requested_tokens": 65536,
+    "requested_chunks": 512,
+    "requested_gib": 9.0,
+    "lookup_hit_tokens": 65536,
+    "returned_tokens": 58240,
+    "returned_chunks": 455,
+    "returned_gib": 7.998046875,
+    "capacity_failed_chunks": 57,
+    "successful_tail_discarded_chunks": 0,
+    "peak_staging_gib": 7.998046875,
+    "staging_bytes_after": 0,
+    "scatter_calls": [
+      {
+        "chunks": 455,
+        "bytes": 8587837440,
+        "staging_bytes_at_entry": 8587837440,
+        "time_ns": 1790769330746591176
+      }
+    ],
+    "all_returned_gpu_values_match": true,
+    "unreturned_gpu_region_unchanged": true,
+    "retrieve_ms": 335.988925,
+    "lookup_start_ns": 1790769330420590019,
+    "start_ns": 1790769330430619085,
+    "end_ns": 1790769330766608010
+  },
+  {
+    "status": "passed",
+    "staging_gib": 12,
+    "requested_tokens": 65536,
+    "requested_chunks": 512,
+    "requested_gib": 9.0,
+    "lookup_hit_tokens": 65536,
+    "returned_tokens": 65536,
+    "returned_chunks": 512,
+    "returned_gib": 9.0,
+    "capacity_failed_chunks": 0,
+    "successful_tail_discarded_chunks": 0,
+    "peak_staging_gib": 9.0,
+    "staging_bytes_after": 0,
+    "scatter_calls": [
+      {
+        "chunks": 512,
+        "bytes": 9663676416,
+        "staging_bytes_at_entry": 9663676416,
+        "time_ns": 1790769342919220805
+      }
+    ],
+    "all_returned_gpu_values_match": true,
+    "unreturned_gpu_region_unchanged": true,
+    "retrieve_ms": 381.75128,
+    "lookup_start_ns": 1790769342550317500,
+    "start_ns": 1790769342560482206,
+    "end_ns": 1790769342942233486
+  }
+]

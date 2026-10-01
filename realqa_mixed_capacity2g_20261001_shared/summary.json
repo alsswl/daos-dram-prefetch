@@ -1,0 +1,299 @@
+{
+  "duration_s": 892.573471746,
+  "by_turn": [
+    {
+      "turn": "all",
+      "requests": 480,
+      "input_tokens": 29821384,
+      "cached_tokens": 25859584,
+      "cached_token_pct": 86.71490229963841,
+      "queried_chunks": 232760,
+      "hit_chunks": {
+        "dram": 181899,
+        "daos": 20129
+      },
+      "dram_candidate_pct": 78.14873689637395,
+      "daos_candidate_pct": 8.647963567623304,
+      "ttft_http_ms": {
+        "n": 480,
+        "mean": 1692.3834459416667,
+        "p50": 680.93421,
+        "p95": 5225.63357525,
+        "maximum": 31701.759624
+      },
+      "ttft_upstream_ms": {
+        "n": 480,
+        "mean": 1703.4958218534787,
+        "p50": 687.7546310424805,
+        "p95": 5230.974042415618,
+        "maximum": 32026.293754577637
+      },
+      "completion_tokens": 120927
+    },
+    {
+      "turn": "0",
+      "requests": 80,
+      "input_tokens": 4916320,
+      "cached_tokens": 983296,
+      "cached_token_pct": 20.000650893351125,
+      "queried_chunks": 38400,
+      "hit_chunks": {
+        "dram": 6381,
+        "daos": 1301
+      },
+      "dram_candidate_pct": 16.6171875,
+      "daos_candidate_pct": 3.3880208333333335,
+      "ttft_http_ms": {
+        "n": 80,
+        "mean": 6169.6578637,
+        "p50": 4678.034506,
+        "p95": 16404.47241599999,
+        "maximum": 31701.759624
+      },
+      "ttft_upstream_ms": {
+        "n": 80,
+        "mean": 6204.128086566925,
+        "p50": 4689.846158027649,
+        "p95": 16730.90897798537,
+        "maximum": 32026.293754577637
+      },
+      "completion_tokens": 20480
+    },
+    {
+      "turn": "1",
+      "requests": 80,
+      "input_tokens": 4938160,
+      "cached_tokens": 4935424,
+      "cached_token_pct": 99.94459474784131,
+      "queried_chunks": 38560,
+      "hit_chunks": {
+        "dram": 34546,
+        "daos": 4012
+      },
+      "dram_candidate_pct": 89.59024896265561,
+      "daos_candidate_pct": 10.404564315352697,
+      "ttft_http_ms": {
+        "n": 80,
+        "mean": 722.43270945,
+        "p50": 506.3670865,
+        "p95": 1862.5884472499995,
+        "maximum": 5014.057621
+      },
+      "ttft_upstream_ms": {
+        "n": 80,
+        "mean": 728.3784598112106,
+        "p50": 510.84375381469727,
+        "p95": 1882.767009735107,
+        "maximum": 5020.462274551392
+      },
+      "completion_tokens": 19709
+    },
+    {
+      "turn": "2",
+      "requests": 80,
+      "input_tokens": 4959460,
+      "cached_tokens": 4955008,
+      "cached_token_pct": 99.91023216237252,
+      "queried_chunks": 38713,
+      "hit_chunks": {
+        "dram": 34563,
+        "daos": 4148
+      },
+      "dram_candidate_pct": 89.2800867925503,
+      "daos_candidate_pct": 10.714746984217188,
+      "ttft_http_ms": {
+        "n": 80,
+        "mean": 811.423152425,
+        "p50": 509.3271355,
+        "p95": 1703.9586192999996,
+        "maximum": 4890.224816
+      },
+      "ttft_upstream_ms": {
+        "n": 80,
+        "mean": 818.0907845497131,
+        "p50": 514.5394802093506,
+        "p95": 1739.28290605545,
+        "maximum": 4895.534515380859
+      },
+      "completion_tokens": 19785
+    },
+    {
+      "turn": "3",
+      "requests": 80,
+      "input_tokens": 4980593,
+      "cached_tokens": 4974464,
+      "cached_token_pct": 99.87694236409199,
+      "queried_chunks": 38869,
+      "hit_chunks": {
+        "dram": 36636,
+        "daos": 2227
+      },
+      "dram_candidate_pct": 94.25506187450154,
+      "daos_candidate_pct": 5.729501659420103,
+      "ttft_http_ms": {
+        "n": 80,
+        "mean": 842.5062611124999,
+        "p50": 520.7968989999999,
+        "p95": 1686.98495765,
+        "maximum": 5232.887248
+      },
+      "ttft_upstream_ms": {
+        "n": 80,
+        "mean": 848.6241281032562,
+        "p50": 526.1003971099854,
+        "p95": 1703.6478757858276,
+        "maximum": 5242.91205406189
+      },
+      "completion_tokens": 20408
+    },
+    {
+      "turn": "4",
+      "requests": 80,
+      "input_tokens": 5002438,
+      "cached_tokens": 4995456,
+      "cached_token_pct": 99.86042805528025,
+      "queried_chunks": 39031,
+      "hit_chunks": {
+        "dram": 34781,
+        "daos": 4246
+      },
+      "dram_candidate_pct": 89.11121928723323,
+      "daos_candidate_pct": 10.878532448566524,
+      "ttft_http_ms": {
+        "n": 80,
+        "mean": 762.725554375,
+        "p50": 607.8188795,
+        "p95": 1651.2650778,
+        "maximum": 1984.944774
+      },
+      "ttft_upstream_ms": {
+        "n": 80,
+        "mean": 769.3688482046127,
+        "p50": 612.8201484680176,
+        "p95": 1672.131586074829,
+        "maximum": 2014.798879623413
+      },
+      "completion_tokens": 20065
+    },
+    {
+      "turn": "5",
+      "requests": 80,
+      "input_tokens": 5024413,
+      "cached_tokens": 5015936,
+      "cached_token_pct": 99.83128377384583,
+      "queried_chunks": 39187,
+      "hit_chunks": {
+        "dram": 34992,
+        "daos": 4195
+      },
+      "dram_candidate_pct": 89.29491923341925,
+      "daos_candidate_pct": 10.705080766580753,
+      "ttft_http_ms": {
+        "n": 80,
+        "mean": 845.5551345875,
+        "p50": 634.151713,
+        "p95": 1853.62328575,
+        "maximum": 4732.663023
+      },
+      "ttft_upstream_ms": {
+        "n": 80,
+        "mean": 852.3846238851547,
+        "p50": 639.9590969085693,
+        "p95": 1879.2691826820374,
+        "maximum": 4740.72527885437
+      },
+      "completion_tokens": 20480
+    }
+  ],
+  "staging_peak_gib": 1.8984375,
+  "staging_time_weighted_mean_gib": 0.05794446213421817,
+  "staging_peak_pct": 94.921875,
+  "staging_mean_pct": 2.897223106710909,
+  "hit_denominator": "Initial DRAM-tier candidate chunks; DAOS counted over same denominator",
+  "initial": {
+    "event": "occupancy_sample",
+    "time_ns": 1790862702381678694,
+    "monotonic_ns": 2548155716560016,
+    "pid": 4058326,
+    "used_bytes": 0,
+    "active_objects": 0,
+    "ready_bytes": 0,
+    "store_used_bytes": 0,
+    "retrieve_used_bytes": 0,
+    "cpu_hot_chunks": 0,
+    "cpu_hot_bytes": 0,
+    "cpu_ready_bytes": 0,
+    "daos_ready_bytes": 0,
+    "daos_puts": 0,
+    "daos_alloc_fail": 0,
+    "dram_mirror": {
+      "admitted": 0,
+      "copied": 0,
+      "copied_bytes": 0,
+      "skipped_budget": 0,
+      "skipped_present": 0,
+      "skipped_closed": 0,
+      "skipped_expired": 0,
+      "skipped_allocation": 0,
+      "errors": 0,
+      "peak_pending_bytes": 0,
+      "copy_ms": 0.0,
+      "cpu_hit_chunks": 0,
+      "write_offered": 0,
+      "write_admitted": 0,
+      "write_copied": 0,
+      "write_copied_bytes": 0,
+      "read_offered": 0,
+      "read_admitted": 0,
+      "read_copied": 0,
+      "read_copied_bytes": 0,
+      "read_submit_errors": 0,
+      "pending_bytes": 0,
+      "pending_chunks": 0
+    },
+    "cpu_prefetch": null
+  },
+  "final": {
+    "event": "occupancy_sample",
+    "time_ns": 1790863596737126371,
+    "monotonic_ns": 2549050072007898,
+    "pid": 4058326,
+    "used_bytes": 0,
+    "active_objects": 0,
+    "ready_bytes": 0,
+    "store_used_bytes": 0,
+    "retrieve_used_bytes": 0,
+    "cpu_hot_chunks": 14563,
+    "cpu_hot_bytes": 274867421184,
+    "cpu_ready_bytes": 0,
+    "daos_ready_bytes": 0,
+    "daos_puts": 31661,
+    "daos_alloc_fail": 0,
+    "dram_mirror": {
+      "admitted": 43496,
+      "copied": 43453,
+      "copied_bytes": 820147912704,
+      "skipped_budget": 2298,
+      "skipped_present": 3104,
+      "skipped_closed": 0,
+      "skipped_expired": 43,
+      "skipped_allocation": 0,
+      "errors": 0,
+      "peak_pending_bytes": 1056964608,
+      "copy_ms": 47944.339401554316,
+      "cpu_hit_chunks": 181899,
+      "write_offered": 31661,
+      "write_admitted": 31659,
+      "write_copied": 31646,
+      "write_copied_bytes": 597298249728,
+      "read_offered": 17237,
+      "read_admitted": 11837,
+      "read_copied": 11807,
+      "read_copied_bytes": 222849662976,
+      "read_submit_errors": 0,
+      "pending_bytes": 0,
+      "pending_chunks": 0
+    },
+    "cpu_prefetch": null
+  }
+}

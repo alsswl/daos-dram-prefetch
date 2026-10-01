@@ -1,0 +1,270 @@
+{
+  "results": [
+    {
+      "condition": "window500",
+      "root": "/root/discos_minji/realqa_mixed_nodram2g_20261002_w500",
+      "requests": 480,
+      "duration_s": 910.220668653,
+      "ttft_http_ms": {
+        "all": {
+          "n": 480,
+          "mean": 1629.6283127479167,
+          "p50": 566.7809885,
+          "p95": 7273.40780124999,
+          "maximum": 31874.950984
+        },
+        "new_document": {
+          "n": 80,
+          "mean": 6092.4261339375,
+          "p50": 4633.346956,
+          "p95": 16366.334784849989,
+          "maximum": 31874.950984
+        },
+        "followup": {
+          "n": 400,
+          "mean": 737.06874851,
+          "p50": 561.61466,
+          "p95": 1303.81141185,
+          "maximum": 5393.582745
+        },
+        "middle_lane_positions_3_to_50": {
+          "n": 384,
+          "mean": 1197.6037898203124,
+          "p50": 563.007983,
+          "p95": 4701.61227815,
+          "maximum": 9837.3529
+        }
+      },
+      "completion_tokens": 120923,
+      "input_tokens": 29821671,
+      "cached_token_pct": 86.7175015108979,
+      "store_peak_gib": 1.125,
+      "retrieve_peak_gib": 1.8984375,
+      "total_peak_gib": 1.8984375,
+      "simultaneous_occupancy_s": 0.041490323,
+      "simultaneous_occupancy_pct": 0.004558270804968636,
+      "request_mix_by_time_quarter": [
+        {
+          "quarter": 1,
+          "requests": 89,
+          "new_documents": 32,
+          "followups": 57
+        },
+        {
+          "quarter": 2,
+          "requests": 126,
+          "new_documents": 16,
+          "followups": 110
+        },
+        {
+          "quarter": 3,
+          "requests": 134,
+          "new_documents": 16,
+          "followups": 118
+        },
+        {
+          "quarter": 4,
+          "requests": 131,
+          "new_documents": 16,
+          "followups": 115
+        }
+      ],
+      "capacity_validation": {
+        "passed": true,
+        "shared": true,
+        "pipeline_depth": 4,
+        "max_concurrent_loads": 4,
+        "load_copy_overlap_events": 7512,
+        "allocation_failures": 0,
+        "store_peak_gib": 1.125,
+        "retrieve_peak_gib": 1.8984375
+      },
+      "store_validation": {
+        "passed": true,
+        "requests": 1481,
+        "windows": 2441,
+        "store_allocation_failures": 0,
+        "retrieve_allocation_failures": 0,
+        "total_staging_allocation_failures": 0,
+        "effective_window_bytes": 509607936,
+        "capacity_waits": 1,
+        "capacity_wait_ms": 1.1089928448200226
+      },
+      "final_mirror": {
+        "admitted": 0,
+        "copied": 0,
+        "copied_bytes": 0,
+        "skipped_budget": 0,
+        "skipped_present": 0,
+        "skipped_closed": 0,
+        "skipped_expired": 0,
+        "skipped_allocation": 0,
+        "errors": 0,
+        "peak_pending_bytes": 0,
+        "copy_ms": 0,
+        "cpu_hit_chunks": 0,
+        "read_submit_errors": 0,
+        "write_offered": 0,
+        "write_admitted": 0,
+        "write_copied": 0,
+        "write_copied_bytes": 0,
+        "read_offered": 0,
+        "read_admitted": 0,
+        "read_copied": 0,
+        "read_copied_bytes": 0,
+        "enabled": false,
+        "pending_bytes": 0,
+        "pending_chunks": 0
+      },
+      "no_dram_validation": {
+        "passed": true,
+        "cpu_cache_peak_bytes": 0,
+        "dram_copied_bytes": 0,
+        "retrieved_chunks": 202036,
+        "daos_returned_chunks": 202036,
+        "daos_returned_gib": 3551.4140625
+      }
+    },
+    {
+      "condition": "window2048",
+      "root": "/root/discos_minji/realqa_mixed_nodram2g_20261002_w2048",
+      "requests": 480,
+      "duration_s": 936.340216553,
+      "ttft_http_ms": {
+        "all": {
+          "n": 480,
+          "mean": 1704.6289233104167,
+          "p50": 645.913413,
+          "p95": 4915.042680049869,
+          "maximum": 31617.34318
+        },
+        "new_document": {
+          "n": 80,
+          "mean": 6082.0756989875,
+          "p50": 4622.9450424999995,
+          "p95": 16286.30576119999,
+          "maximum": 31617.34318
+        },
+        "followup": {
+          "n": 400,
+          "mean": 829.139568175,
+          "p50": 633.350398,
+          "p95": 1086.8140876,
+          "maximum": 4758.560861
+        },
+        "middle_lane_positions_3_to_50": {
+          "n": 384,
+          "mean": 1231.4470382760417,
+          "p50": 642.9973415,
+          "p95": 4660.382091499999,
+          "maximum": 8824.261129
+        }
+      },
+      "completion_tokens": 121241,
+      "input_tokens": 29822653,
+      "cached_token_pct": 86.71507528186712,
+      "store_peak_gib": 1.16015625,
+      "retrieve_peak_gib": 1.986328125,
+      "total_peak_gib": 1.986328125,
+      "simultaneous_occupancy_s": 0.005760786,
+      "simultaneous_occupancy_pct": 0.0006152449609830382,
+      "request_mix_by_time_quarter": [
+        {
+          "quarter": 1,
+          "requests": 91,
+          "new_documents": 32,
+          "followups": 59
+        },
+        {
+          "quarter": 2,
+          "requests": 126,
+          "new_documents": 16,
+          "followups": 110
+        },
+        {
+          "quarter": 3,
+          "requests": 132,
+          "new_documents": 16,
+          "followups": 116
+        },
+        {
+          "quarter": 4,
+          "requests": 131,
+          "new_documents": 16,
+          "followups": 115
+        }
+      ],
+      "capacity_validation": {
+        "passed": true,
+        "shared": true,
+        "pipeline_depth": 1,
+        "max_concurrent_loads": 1,
+        "load_copy_overlap_events": 0,
+        "allocation_failures": 0,
+        "store_peak_gib": 1.16015625,
+        "retrieve_peak_gib": 1.986328125
+      },
+      "store_validation": {
+        "passed": true,
+        "requests": 1484,
+        "windows": 1484,
+        "store_allocation_failures": 0,
+        "retrieve_allocation_failures": 0,
+        "total_staging_allocation_failures": 0,
+        "effective_window_bytes": 2132803584,
+        "capacity_waits": 0,
+        "capacity_wait_ms": 0
+      },
+      "final_mirror": {
+        "admitted": 0,
+        "copied": 0,
+        "copied_bytes": 0,
+        "skipped_budget": 0,
+        "skipped_present": 0,
+        "skipped_closed": 0,
+        "skipped_expired": 0,
+        "skipped_allocation": 0,
+        "errors": 0,
+        "peak_pending_bytes": 0,
+        "copy_ms": 0,
+        "cpu_hit_chunks": 0,
+        "read_submit_errors": 0,
+        "write_offered": 0,
+        "write_admitted": 0,
+        "write_copied": 0,
+        "write_copied_bytes": 0,
+        "read_offered": 0,
+        "read_admitted": 0,
+        "read_copied": 0,
+        "read_copied_bytes": 0,
+        "enabled": false,
+        "pending_bytes": 0,
+        "pending_chunks": 0
+      },
+      "no_dram_validation": {
+        "passed": true,
+        "cpu_cache_peak_bytes": 0,
+        "dram_copied_bytes": 0,
+        "retrieved_chunks": 202037,
+        "daos_returned_chunks": 202037,
+        "daos_returned_gib": 3551.431640625
+      }
+    }
+  ],
+  "window2048_vs_500_change_pct": {
+    "all": 4.602313912675715,
+    "new_document": -0.16989020010178546,
+    "followup": 12.491483304796613,
+    "middle_lane_positions_3_to_50": 2.8259136071043134,
+    "duration": 2.869584134872838
+  },
+  "identical_input_and_schedule": true,
+  "actual_prompt_hash_matches": 87,
+  "actual_prompt_hash_compared": 480,
+  "limitations": [
+    "One run per condition; no confidence interval.",
+    "Same planned per-lane sequence, but real generated answers and wall-clock timing vary.",
+    "Concurrent load/copy spans include metadata and worker queueing; not a hardware RDMA timeline.",
+    "DRAM KV cache and mirror disabled in both conditions; all retrieved chunks validated as DAOS reads."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "pool": "f973c142-2353-41da-b154-5079ba6969f2",
+  "container": "a2d875e3-195b-4598-98b4-b381ef49867a",
+  "oid": "281543696187392.1000",
+  "namespaces": [
+    {
+      "namespace": "minji-windowed-56d2edbbe832411db929a432ab66e75c:",
+      "pool": "discospool",
+      "container": "kvcache",
+      "sources": [
+        "realqa_q4_64k_unwindowed_d256_s10_20261001_v2/c8_s10_window0/config.yaml"
+      ],
+      "experiments": [
+        "realqa_q4_64k_unwindowed_d256_s10_20261001_v2"
+      ]
+    }
+  ],
+  "target_count": 31666,
+  "total_count": 84340,
+  "preserved_count": 52674,
+  "per_namespace": {
+    "minji-windowed-56d2edbbe832411db929a432ab66e75c:": 31666
+  },
+  "target_sha256": "8dca832d7a2b5f74335c14c643fa06364d79d2965aeec514953f92839484ab6f",
+  "binding_sha256": "ce38ed41c12390524fab993ea16e436122412b8f81267d77e857629266aaa13b",
+  "library_sha256": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c",
+  "source_sha256": "ff383e783859281626cf1ec9b2a0e52b97fae2c0c21fdd328663bbb9370d4657"
+}

@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "run": "retrieve_path_profile_20261002",
+      "verified_payload_reads": 48,
+      "source_hashes_match": true,
+      "cleanup": {
+        "namespace": "minji-path-profile-5ff143f2416a432da13f9688379ea1aa:",
+        "removed": 512,
+        "remaining": 0
+      },
+      "omp_threads": "unset",
+      "perf_instrumented": false
+    },
+    {
+      "run": "retrieve_path_profile64_20261002",
+      "verified_payload_reads": 24,
+      "source_hashes_match": true,
+      "cleanup": {
+        "namespace": "minji-path-profile-44dc513629304f5f933e44570d31851c:",
+        "removed": 512,
+        "remaining": 0
+      },
+      "omp_threads": "unset",
+      "perf_instrumented": false
+    },
+    {
+      "run": "retrieve_cpu_profile_20261002",
+      "verified_payload_reads": 12,
+      "source_hashes_match": true,
+      "cleanup": {
+        "namespace": "minji-path-profile-e94dd0d921f24205a7fe2acc9ace4025:",
+        "removed": 512,
+        "remaining": 0
+      },
+      "omp_threads": "unset",
+      "perf_instrumented": true
+    },
+    {
+      "run": "retrieve_path_omp1_20261002",
+      "verified_payload_reads": 24,
+      "source_hashes_match": true,
+      "cleanup": {
+        "namespace": "minji-path-profile-c4a1b282ff354a0b8041c0e27f143b35:",
+        "removed": 512,
+        "remaining": 0
+      },
+      "omp_threads": 1,
+      "perf_instrumented": false
+    },
+    {
+      "run": "retrieve_callgraph_20261002",
+      "verified_payload_reads": 8,
+      "source_hashes_match": true,
+      "cleanup": {
+        "namespace": "minji-path-profile-88c35aea50964d558c07693aa293cb78:",
+        "removed": 512,
+        "remaining": 0
+      },
+      "omp_threads": 1,
+      "perf_instrumented": true
+    }
+  ],
+  "server_metrics_available": false,
+  "server_limitation": "Both server telemetry endpoints refused connection; root SSH authentication rejected on rank0 host.",
+  "rdma_units_source": "https://www.kernel.org/doc/html/v5.19/admin-guide/abi-stable.html",
+  "physical_NIC_MR_creation_count_measured": false
+}

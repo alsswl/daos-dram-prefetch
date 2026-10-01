@@ -1,0 +1,103 @@
+{
+  "model": "Qwen/Qwen3-14B",
+  "cpu_gib": 256,
+  "staging_gib": 8,
+  "chunk_tokens": 128,
+  "max_num_seqs": 16,
+  "max_model_len": 16384,
+  "workers": 1,
+  "requests_per_case": 8420,
+  "cases": [
+    {
+      "name": "c16_profile",
+      "prefetch": true,
+      "concurrency": 16
+    }
+  ],
+  "capacity": {
+    "sessions": 421,
+    "requests": 1684,
+    "turns": 4,
+    "scanned": 76589,
+    "source_entries": 76920,
+    "excluded": {
+      "final_length_outside_range": 34170,
+      "too_few_or_invalid_turns": 41922,
+      "over_200k_char_safety_bound": 4,
+      "duplicate_prefixes": 72
+    },
+    "input_tokens_min": 15,
+    "input_tokens_mean": 3484.152612826603,
+    "input_tokens_max": 8184,
+    "input_tokens_sum": 5867313,
+    "unique_input_chunks": 17438,
+    "unique_input_kv_gib": 340.5859375,
+    "requested_output_tokens": 321442,
+    "conservative_stored_kv_gib": 422.26776123046875,
+    "request_sha256": "e4732c4742a1abb671c121c82a6ef3efbed496075ee07f47e9f25d38593ce016",
+    "notes": [
+      "Fixed-seed, first eligible conversations; no performance-based selection.",
+      "First four original turns, cumulative text like upstream LMBenchmark; no padding or truncation.",
+      "Final turn 4K-8K; earlier turns may be shorter. Qwen chat-template token counts.",
+      "Unique input KV is a full-prefix chunk estimate, not actual DRAM residency.",
+      "Original answers form later prompts. Generated benchmark answers are NOT fed back.",
+      "Output cap 256; source-answer token length used when smaller. EOS remains enabled."
+    ]
+  },
+  "source_sha256": {
+    "lmcache_daos/__init__.py": "152c656af1e88c6d217f043e29ce7c088f594702c6e0935210f4fd5afadbf376",
+    "lmcache_daos/async_dram_backend.py": "2115acbaf0b3ae0c6268d8db3f2a7e92d4fe6a8efe5533bce2a9045001c78adf",
+    "lmcache_daos/capacity_probe_backend.py": "329f88ccab4c6143d381915edb621b3a3931145c7aa8413005d1e0819c3fe297",
+    "lmcache_daos/connector.py": "a6b0528521232d6c265a4bf1960e61b50533d599a7bca5ee502a26f5c7d3be6a",
+    "lmcache_daos/daos_event.py": "146c83e75905a587630d8ca9b6f5242d647c9f6c47a2ff1ebdc1540de89fd495",
+    "lmcache_daos/demand_read_backend.py": "cd3d896de77e61ce0420e184db8120cbad3f79126e85852d8276f594d4724579",
+    "lmcache_daos/dfs_binding.py": "f1a8d3261bc2b2f3a2034b0f64627c790affc7570c3c807de8a7f76030c2e4a3",
+    "lmcache_daos/dram_prefetch_backend.py": "62ac08d76a5fe6f7dd24bb538720cea565c71eb66f21dfd9b9944b9fffb1b268",
+    "lmcache_daos/early_lookup_backend.py": "5c0e0332b5705d8b0bf09d1ab1fb272f466cfd86a92700fb237190c6df451123",
+    "lmcache_daos/early_lookup_state.py": "38ef743fbd640207a1008d685ebaead6c71cc5eacabbc6b624bb0479d930ea8c",
+    "lmcache_daos/gds_backend.py": "6e4214fad0710dcfd861f235aa20f661a800cd38246f3abfcb30b327047b9ae7",
+    "lmcache_daos/gpu_store.py": "2f8ac20c46329dfcd0a3a39444781173fc451fb45e9ecec3185ee354e8d5dcbe",
+    "lmcache_daos/object_binding.py": "ce38ed41c12390524fab993ea16e436122412b8f81267d77e857629266aaa13b",
+    "lmcache_daos/prefetch_timing.py": "782a098db61178204400deff588a5fd7e1157f1a178017bf25232aed8643ac5c",
+    "lmcache_daos/queued_prefetch.py": "d1dc269bf121403b0e759d83d11d2de9aa48042aa875c3f9730ae5bf0081cc59",
+    "lmcache_daos/serde.py": "9288649a1d1902c61dcb2ffc7602228a0ab45daae028eb5a27fc03be82f5da6c",
+    "lmcache_daos/serde_v2.py": "5454239696ac29ab8baa0ba0a64e4f06526f798897bae2659f8e4e2c00076733",
+    "lmcache_daos/staging_probe_backend.py": "b9c455c897c2a5114f94dfa4dcc5121171e75e14216c159bb88cae1e97eaca19",
+    "lmcache_daos/staging_trace.py": "ffa54417176287c1f2ba01f81bcf8c56cbfdcd049900e142969529e481485a7d",
+    "lmcache_daos/store_probe_backend.py": "297f562e142acec6dd9784e59a11062c2a77169bafa5b7a579b16e804222de44",
+    "lmcache_daos/streaming.py": "f7093c0230281ae8db4ebe2beba4ba031b060c5d838cfd09ae2259ed501e2a08",
+    "profile_sharegpt_overlap.py": "27ab4ea569c222f9b6dee23b35485ae6e22c6d35af45474719a31e2eef422acc",
+    "sharegpt_early_lookup.py": "2a090490b9b926a4321076a2fc7aaa821f9cdc5ac5c54533630a416b653d2a99",
+    "sharegpt_cold_warm.py": "15a248e57685a9416a830f7d56fce18c44f4797ce02032fd0a05b8e5cd1f86b8",
+    "sharegpt_scale_experiment.py": "af0fcf4cc51dbb9064d403e25688c71d28f645208fc61173275386d3105e5650",
+    "staging_mixed_pressure.py": "4c4d5a3ff1689710364ed2c28e20e7b767488fd991102a7a875f6b810302269f"
+  },
+  "request_sha256": "e4732c4742a1abb671c121c82a6ef3efbed496075ee07f47e9f25d38593ce016",
+  "notes": [
+    "Metadata-first notification; DRAM and DAOS speculative prefetch ON.",
+    "Queued work is cancelled on retrieve; in-flight work is awaited.",
+    "Same ShareGPT histories, output caps, rolling C16, DRAM256/staging8.",
+    "Fresh process/DRAM/staging/UUID namespace; cold once then warm four times.",
+    "Warm repeats retain evolving caches; not independent trials.",
+    "No lookup backoff changes, occupancy gate, artificial delay or cache placement.",
+    "Separate GPU byte test and small vLLM smoke test must pass before full run.",
+    "Only exact successful experiment UUID keys are cleaned; failures retain evidence."
+  ],
+  "phases": [
+    "cold",
+    "warm_profile"
+  ],
+  "warm_repeats": 4,
+  "numa_interleave": false,
+  "segmented_pinned": false,
+  "all_prefetch_off": false,
+  "requests_per_phase": 1684,
+  "early_lookup": true,
+  "baseline": "/root/discos_minji/sharegpt_prefetch_cold_warm4_d256_s8_20260930",
+  "after_unit": "discos-minji-sharegpt-prefetch-warm4-d256.service",
+  "diagnostic": true,
+  "full_cold_requests": 1684,
+  "warm_requests": 256,
+  "profiler_max_iterations": 512,
+  "note": "Profiling changes runtime; not a TTFT benchmark. Full cold fill retained. Warm replays first64 original conversations, 4turns each. GPU recording covers first512 engine steps only; no synthetic prompts or cache placement."
+}

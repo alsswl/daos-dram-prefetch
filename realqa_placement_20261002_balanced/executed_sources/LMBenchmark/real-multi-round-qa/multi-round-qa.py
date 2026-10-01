@@ -1,0 +1,277 @@
+import os
+import random
+import time
+import uuid
+import asyncio
+import argparse
+import openai
+import httpx
+from dataclasses import dataclass, asdict
+from typing import List
+import json
+
+FIRST_PROMPT = "Read and summarize this novel.\n\n{}"
+FOLLOWUP_PROMPTS = [
+    "Write down the author's feelings.",
+    "What scene did the author most want to write?",
+    "Describe the setting of the story.",
+    "Describe the protagonist's development in detail.",
+    "What do you think is the theme this story is trying to convey?",
+    "Analyze the relationships between the characters.",
+    "Name a line that made an impression on you and explain why.",
+    "Compare this story with other works and note similarities and differences.",
+    "What is the moral or lesson of the story?",
+    "What role does symbolism play in this novel?",
+    "How does the narrative structure influence the reader’s experience?",
+    "Discuss the use of foreshadowing in the story.",
+    "Explain the significance of the story’s title.",
+    "What historical or cultural background is important to understand this story?",
+    "Analyze how the author builds tension or suspense.",
+    "Identify and analyze any use of irony.",
+    "What is the role of secondary characters in the plot?",
+    "How does the setting reflect the themes or mood of the story?",
+    "Describe the tone and how it shifts throughout the novel.",
+    "What does the author want the reader to question or reflect on?",
+    "Was there an unreliable narrator? If so, what effect did that have?",
+    "Discuss the power dynamics between characters.",
+    "What philosophical or existential questions does the novel explore?",
+    "Explain how time is handled (linear, non-linear, flashbacks, etc.).",
+    "How is identity or self-perception explored in the novel?",
+    "What role does memory play in the narrative?",
+    "Are there any recurring motifs or patterns? What do they represent?",
+    "How does the novel depict power, control, or authority?",
+    "What role does fate vs. free will play in the character's journey?",
+    "How would the story change if told from another character’s perspective?",
+    "Is the protagonist heroic, tragic, anti-heroic? Justify your answer.",
+    "What are the ethical dilemmas faced by the characters?",
+    "Identify an important internal conflict and how it is resolved.",
+    "How does the author use descriptive language to evoke atmosphere?",
+    "Is there any metafictional or self-referential content?",
+    "How does the author use silence, ambiguity, or the unsaid?",
+    "Are there any scenes that are intentionally open to interpretation?",
+    "What is the relationship between the personal and the political in the story?",
+    "Does the novel challenge any societal norms or expectations?",
+]
+
+
+@dataclass
+class Result:
+    session_id: str
+    turn: int
+    start_time: float
+    latency: float
+    ttft: float
+    generation_time: float
+    prompt_tokens: int
+    completion_tokens: int
+    metrics: str
+    status: str
+    error: str
+    itl: float
+    throughput: float
+
+class ChatSession:
+    def __init__(self, args):
+        self.session_id = str(uuid.uuid4())
+        self.turns = 0
+        self.messages = []
+        self.total_completion_tokens = 0
+        self.model = args.model
+        self.answer_len = args.answer_len
+        self.src_dir = args.src_dir
+        self.num_rounds = args.num_rounds
+        self.first_prompt = self._load_random_file()
+
+    def _load_random_file(self):
+        files = [f for f in os.listdir(self.src_dir) if os.path.isfile(os.path.join(self.src_dir, f))]
+        if not files:
+            raise RuntimeError("No files found in {}".format(self.src_dir))
+        with open(os.path.join(self.src_dir, random.choice(files)), encoding='utf-8') as f:
+            return FIRST_PROMPT.format(f.read())
+
+    def get_next_prompt(self):
+        if self.turns == 0:
+            return self.first_prompt
+        return FOLLOWUP_PROMPTS[self.turns - 1]
+
+    def is_finished(self):
+        return self.turns >= min(len(FOLLOWUP_PROMPTS), self.num_rounds) + 1
+
+    def append_user_message(self, content):
+        self.messages.append({"role": "user", "content": content})
+
+    def append_assistant_message(self, content):
+        self.messages.append({"role": "assistant", "content": content})
+        self.turns += 1
+
+async def run_turn(session: ChatSession, client: openai.AsyncOpenAI, http_client: httpx.AsyncClient, base_url: str, gap: float) -> Result:
+    prompt = session.get_next_prompt()
+    session.append_user_message(prompt)
+
+    start_time = time.time()
+    first_token_time = None
+    content = ""
+    completion_tokens = 0
+    prompt_tokens = 0
+    success = True
+    error = ""
+
+    print(f"Session {session.session_id}, Turn {session.turns}: {prompt[:50]}...")
+
+    try:
+        resp = await http_client.get(f"{base_url}/metrics")
+        metrics = resp.text
+    except Exception:
+        metrics = ""
+
+    try:
+        response = await client.chat.completions.create(
+            model=session.model,
+            messages=session.messages,
+            stream=True,
+            max_tokens=session.answer_len,
+            temperature=0,
+            stream_options={"include_usage": True},
+        )
+
+        async for chunk in response:
+            if not chunk.choices:
+                continue
+            delta = chunk.choices[0].delta.content
+            if delta:
+                if first_token_time is None:
+                    first_token_time = time.time()
+                content += delta
+
+        completion_tokens = chunk.usage.completion_tokens
+        prompt_tokens = chunk.usage.prompt_tokens
+    except Exception as e:
+        print(f"Request failed: {e}")
+        first_token_time = time.time()
+        success = False
+        error = str(e)
+
+    ttft = first_token_time - start_time if first_token_time else 0.0
+    generation_time = time.time() - first_token_time if first_token_time else 0.0
+    latency = time.time() - start_time
+    itl = generation_time / completion_tokens if completion_tokens > 0 else 0.0
+    throughput = completion_tokens / generation_time if generation_time > 0 else 0.0
+
+    result = Result(
+        session_id=session.session_id,
+        turn=session.turns,
+        start_time=start_time,
+        latency=latency,
+        ttft=ttft,
+        generation_time=generation_time,
+        prompt_tokens=prompt_tokens,
+        completion_tokens=completion_tokens,
+        metrics=metrics,
+        status="success" if success else "failed",
+        error=error,
+        itl=itl,
+        throughput=throughput,
+    )
+
+    session.append_assistant_message(content)
+
+    if gap > 0:
+        await asyncio.sleep(gap)
+
+    return result
+
+async def run_group(args, http_client: httpx.AsyncClient, start_time: float) -> List[Result]:
+    client = openai.AsyncOpenAI(base_url=f"{args.base_url}/v1", api_key="EMPTY", http_client=http_client)
+    sessions = [ChatSession(args) for _ in range(args.session_depth)]
+    results = []
+
+    while any(not s.is_finished() for s in sessions):
+        if args.time is not None and time.time() - start_time > args.time:
+            break
+        for session in sessions:
+            if session.is_finished():
+                continue
+            result = await run_turn(session, client, http_client, args.base_url, args.gap_between_requests)
+            results.append(result)
+
+    return results
+
+async def run_user(args, http_client: httpx.AsyncClient, client: openai.AsyncOpenAI, start_time: float, results: List[Result]):
+    """Run a single user session, replacing with new session when finished (constant load mode)."""
+    while True:
+        if args.time is not None and time.time() - start_time > args.time:
+            break
+        session = ChatSession(args)
+        while not session.is_finished():
+            if args.time is not None and time.time() - start_time > args.time:
+                return
+            result = await run_turn(session, client, http_client, args.base_url, args.gap_between_requests)
+            results.append(result)
+
+async def run_all_concurrent(args):
+    http_client = httpx.AsyncClient(
+        timeout=args.timeout,
+        verify=not args.skip_ssl_verify,
+    )
+    try:
+        start_time = time.time()
+        tasks = [run_group(args, http_client, start_time) for _ in range(args.concurrent)]
+        all_results = await asyncio.gather(*tasks)
+        return [asdict(r) for group in all_results for r in group]
+    finally:
+        await http_client.aclose()
+
+async def run_all_num_users(args):
+    http_client = httpx.AsyncClient(
+        timeout=args.timeout,
+        verify=not args.skip_ssl_verify,
+    )
+    try:
+        start_time = time.time()
+        client = openai.AsyncOpenAI(base_url=f"{args.base_url}/v1", api_key="EMPTY", http_client=http_client)
+        all_results = [[] for _ in range(args.num_users)]
+        tasks = [run_user(args, http_client, client, start_time, all_results[i]) for i in range(args.num_users)]
+        await asyncio.gather(*tasks)
+        return [asdict(r) for user_results in all_results for r in user_results]
+    finally:
+        await http_client.aclose()
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("-c", "--concurrent", type=int, help="Number of parallel threads (fixed workload mode)")
+    group.add_argument("-n", "--num-users", type=int, help="Number of concurrent users (constant load mode)")
+    parser.add_argument("-s", "--session-depth", type=int, default=1, help="Sessions per thread (only for --concurrent mode)")
+    parser.add_argument("--model", type=str, required=True)
+    parser.add_argument("--base-url", type=str, required=True)
+    parser.add_argument("--num-rounds", type=int, default=10)
+    parser.add_argument("--src-dir", type=str, default="gutenberg/8k")
+    parser.add_argument("--answer-len", type=int, default=512)
+    parser.add_argument("--output", type=str, default="summary.csv")
+    parser.add_argument("--timeout", type=float, default=None)
+    parser.add_argument("--skip-ssl-verify", action="store_true")
+    parser.add_argument("--gap-between-requests", type=float, default=0.0)
+    parser.add_argument("--time", type=float, default=None, help="Time limit in seconds")
+    return parser.parse_args()
+
+def main():
+    args = parse_args()
+    
+    if args.num_users is not None:
+        results = asyncio.run(run_all_num_users(args))
+    else:
+        results = asyncio.run(run_all_concurrent(args))
+    output_data = {
+        "params": vars(args),
+        "results": results,
+        "src": [f for f in os.listdir(args.src_dir)
+            if os.path.isfile(os.path.join(args.src_dir, f))]
+    }
+
+    output_json = os.path.splitext(args.output)[0] + ".json"
+    with open(output_json, "w", encoding="utf-8") as f:
+        json.dump(output_data, f, indent=2)
+    print(f"Results written to {output_json}")
+
+if __name__ == "__main__":
+    main()

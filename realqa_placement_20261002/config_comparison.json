@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "differences": {
+    "extra_config.daosgds.placement_manifest": [
+      "/root/discos_minji/realqa_placement_20261002_baseline/placement.json",
+      "/root/discos_minji/realqa_placement_20261002_balanced/placement.json"
+    ],
+    "extra_config.daosgds.object_namespace": [
+      "minji-placement-06fd4d98831444e6a1bb9f08abf2f79b:",
+      "minji-placement-fe12ac07ef204770b39c4188d6aeaef3:"
+    ],
+    "extra_config.daosgds.root": [
+      "/minji-placement-06fd4d98831444e6a1bb9f08abf2f79b",
+      "/minji-placement-fe12ac07ef204770b39c4188d6aeaef3"
+    ]
+  }
+}

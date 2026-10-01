@@ -1,0 +1,19 @@
+{
+  "source": "/root/discos_minji/realqa_q4_64k_unwindowed_d256_s2_u0835_recompute_20261001",
+  "source_sha256": {
+    "diagnose_recompute_scheduler.py": "c25aae7a5e9eff929832c5bf0717c10dfa768742a7fd2c8e417dfc856c2ae9bf",
+    "compare_e2e.py": "4cae454f839dbcb4ba18a6bd06e7709870646ecfb9d75bfc6366c908cdc4cf26",
+    "recompute_experiment_support.py": "03614137e1d61edcadb73bd8286643dcf2b5a056a0f71a49d146688249c8d8c7",
+    "lmcache_daos/demand_read_backend.py": "cd3d896de77e61ce0420e184db8120cbad3f79126e85852d8276f594d4724579",
+    "lmcache_daos/vllm_resume_patch.py": "ed121c3c4818cf51a38582789b397f2bdd4cde3142b05effb235594aeb1f3887",
+    "lmcache_daos/recompute_state_probe.py": "79532f696af8b4844c2cfe65fb0690dbf4e8b4f79a92ba49819c8d6d4ba32220"
+  },
+  "arms": [
+    "sync"
+  ],
+  "state_probe": true,
+  "requests_per_arm": 8,
+  "skip_store": true,
+  "force_same_v2_runner": true,
+  "note": "Read-only fault diagnosis; retained DAOS cache, fresh DRAM/staging each arm. Not full CxS performance."
+}

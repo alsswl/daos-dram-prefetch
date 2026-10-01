@@ -1,0 +1,1734 @@
+{
+  "baseline": [
+    {
+      "chunk": 0,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@5a1ce2441f1ad37b@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@5a1ce2441f1ad37b@bfloat16",
+      "akey": "kv",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 1,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f6f9affcbbafef99@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f6f9affcbbafef99@bfloat16",
+      "akey": "kv",
+      "shard": 9,
+      "rank": 1,
+      "target": 7
+    },
+    {
+      "chunk": 2,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a73c7a4a36db3ac5@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a73c7a4a36db3ac5@bfloat16",
+      "akey": "kv",
+      "shard": 11,
+      "rank": 1,
+      "target": 5
+    },
+    {
+      "chunk": 3,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@92f6b3667b58304f@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@92f6b3667b58304f@bfloat16",
+      "akey": "kv",
+      "shard": 7,
+      "rank": 0,
+      "target": 7
+    },
+    {
+      "chunk": 4,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f66d719367a54e9a@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f66d719367a54e9a@bfloat16",
+      "akey": "kv",
+      "shard": 2,
+      "rank": 0,
+      "target": 6
+    },
+    {
+      "chunk": 5,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7b8f55ff6dab98ca@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7b8f55ff6dab98ca@bfloat16",
+      "akey": "kv",
+      "shard": 7,
+      "rank": 0,
+      "target": 7
+    },
+    {
+      "chunk": 6,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@fad0cca05a79862f@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@fad0cca05a79862f@bfloat16",
+      "akey": "kv",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 7,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@91d2a00aa497b5de@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@91d2a00aa497b5de@bfloat16",
+      "akey": "kv",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 8,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@39670a47dc34c6c@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@39670a47dc34c6c@bfloat16",
+      "akey": "kv",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 9,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@e5ee20d713ffae58@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@e5ee20d713ffae58@bfloat16",
+      "akey": "kv",
+      "shard": 6,
+      "rank": 1,
+      "target": 4
+    },
+    {
+      "chunk": 10,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3c94d1a2616607ca@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3c94d1a2616607ca@bfloat16",
+      "akey": "kv",
+      "shard": 2,
+      "rank": 0,
+      "target": 6
+    },
+    {
+      "chunk": 11,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d96a66fb9c75d5e@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d96a66fb9c75d5e@bfloat16",
+      "akey": "kv",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 12,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@9edd0fcc6ca1c3ed@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@9edd0fcc6ca1c3ed@bfloat16",
+      "akey": "kv",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 13,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@70a2d5a118b35f02@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@70a2d5a118b35f02@bfloat16",
+      "akey": "kv",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 14,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@128590ccbebf90da@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@128590ccbebf90da@bfloat16",
+      "akey": "kv",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 15,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@bb7a14c93ff8f61@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@bb7a14c93ff8f61@bfloat16",
+      "akey": "kv",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    },
+    {
+      "chunk": 16,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@bd26690b6edd2d4a@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@bd26690b6edd2d4a@bfloat16",
+      "akey": "kv",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 17,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d98869249f19fcdd@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d98869249f19fcdd@bfloat16",
+      "akey": "kv",
+      "shard": 6,
+      "rank": 1,
+      "target": 4
+    },
+    {
+      "chunk": 18,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@1a140080fb45ac6d@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@1a140080fb45ac6d@bfloat16",
+      "akey": "kv",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 19,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@849b3735470008e4@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@849b3735470008e4@bfloat16",
+      "akey": "kv",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 20,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7625817b91e45308@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7625817b91e45308@bfloat16",
+      "akey": "kv",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    },
+    {
+      "chunk": 21,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@dc6e79d5dedf8bda@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@dc6e79d5dedf8bda@bfloat16",
+      "akey": "kv",
+      "shard": 7,
+      "rank": 0,
+      "target": 7
+    },
+    {
+      "chunk": 22,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@caec842dfc6a0990@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@caec842dfc6a0990@bfloat16",
+      "akey": "kv",
+      "shard": 12,
+      "rank": 1,
+      "target": 6
+    },
+    {
+      "chunk": 23,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@db81f900cc5751e5@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@db81f900cc5751e5@bfloat16",
+      "akey": "kv",
+      "shard": 11,
+      "rank": 1,
+      "target": 5
+    },
+    {
+      "chunk": 24,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d0620501e32b71c9@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d0620501e32b71c9@bfloat16",
+      "akey": "kv",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 25,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@81934b8cee091cb8@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@81934b8cee091cb8@bfloat16",
+      "akey": "kv",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 26,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@13643e79b1dbeb5f@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@13643e79b1dbeb5f@bfloat16",
+      "akey": "kv",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 27,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c71bdc17b5a80a6f@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c71bdc17b5a80a6f@bfloat16",
+      "akey": "kv",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 28,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@85696e31fbf65617@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@85696e31fbf65617@bfloat16",
+      "akey": "kv",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 29,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@9505934c0f82b005@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@9505934c0f82b005@bfloat16",
+      "akey": "kv",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 30,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f29542e4f9675745@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f29542e4f9675745@bfloat16",
+      "akey": "kv",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 31,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3e7a4d6933123110@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3e7a4d6933123110@bfloat16",
+      "akey": "kv",
+      "shard": 9,
+      "rank": 1,
+      "target": 7
+    },
+    {
+      "chunk": 32,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@2463122f37002b69@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@2463122f37002b69@bfloat16",
+      "akey": "kv",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 33,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@cc26262f8acf4cb5@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@cc26262f8acf4cb5@bfloat16",
+      "akey": "kv",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 34,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@82718a73866311d0@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@82718a73866311d0@bfloat16",
+      "akey": "kv",
+      "shard": 1,
+      "rank": 1,
+      "target": 1
+    },
+    {
+      "chunk": 35,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@87fedbc5dbb02508@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@87fedbc5dbb02508@bfloat16",
+      "akey": "kv",
+      "shard": 2,
+      "rank": 0,
+      "target": 6
+    },
+    {
+      "chunk": 36,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@23a4d6c42b7a81d6@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@23a4d6c42b7a81d6@bfloat16",
+      "akey": "kv",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 37,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3d555c8701e78d24@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3d555c8701e78d24@bfloat16",
+      "akey": "kv",
+      "shard": 3,
+      "rank": 1,
+      "target": 3
+    },
+    {
+      "chunk": 38,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c29cf06a1afd9f3f@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c29cf06a1afd9f3f@bfloat16",
+      "akey": "kv",
+      "shard": 1,
+      "rank": 1,
+      "target": 1
+    },
+    {
+      "chunk": 39,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@dc50a051ab812f66@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@dc50a051ab812f66@bfloat16",
+      "akey": "kv",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 40,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@bbbc72e39052bc4a@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@bbbc72e39052bc4a@bfloat16",
+      "akey": "kv",
+      "shard": 1,
+      "rank": 1,
+      "target": 1
+    },
+    {
+      "chunk": 41,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c87ca77a822377ca@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c87ca77a822377ca@bfloat16",
+      "akey": "kv",
+      "shard": 12,
+      "rank": 1,
+      "target": 6
+    },
+    {
+      "chunk": 42,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7bb2c02ab6faaf3a@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7bb2c02ab6faaf3a@bfloat16",
+      "akey": "kv",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 43,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3211d7b6e353e1e1@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3211d7b6e353e1e1@bfloat16",
+      "akey": "kv",
+      "shard": 9,
+      "rank": 1,
+      "target": 7
+    },
+    {
+      "chunk": 44,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@47f935542256ce8f@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@47f935542256ce8f@bfloat16",
+      "akey": "kv",
+      "shard": 11,
+      "rank": 1,
+      "target": 5
+    },
+    {
+      "chunk": 45,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@cdd6ea240a416dc6@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@cdd6ea240a416dc6@bfloat16",
+      "akey": "kv",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 46,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3cd48020f8f68a4d@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3cd48020f8f68a4d@bfloat16",
+      "akey": "kv",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 47,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@72ebe07325baa86d@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@72ebe07325baa86d@bfloat16",
+      "akey": "kv",
+      "shard": 12,
+      "rank": 1,
+      "target": 6
+    },
+    {
+      "chunk": 48,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@2c2455833cba3292@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@2c2455833cba3292@bfloat16",
+      "akey": "kv",
+      "shard": 9,
+      "rank": 1,
+      "target": 7
+    },
+    {
+      "chunk": 49,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7ad628ae756cd69c@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7ad628ae756cd69c@bfloat16",
+      "akey": "kv",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 50,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@aee65b1a078143a1@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@aee65b1a078143a1@bfloat16",
+      "akey": "kv",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 51,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b54d3372800ebadd@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b54d3372800ebadd@bfloat16",
+      "akey": "kv",
+      "shard": 3,
+      "rank": 1,
+      "target": 3
+    },
+    {
+      "chunk": 52,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f18a5055d0637915@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f18a5055d0637915@bfloat16",
+      "akey": "kv",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 53,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d90d272dc944a355@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d90d272dc944a355@bfloat16",
+      "akey": "kv",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 54,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a89fb8e6b99a65f2@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a89fb8e6b99a65f2@bfloat16",
+      "akey": "kv",
+      "shard": 6,
+      "rank": 1,
+      "target": 4
+    },
+    {
+      "chunk": 55,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a4f5d39ae5831855@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a4f5d39ae5831855@bfloat16",
+      "akey": "kv",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 56,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@ce2dc96e785963cd@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@ce2dc96e785963cd@bfloat16",
+      "akey": "kv",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 57,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d1c25d7dfd88b55d@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d1c25d7dfd88b55d@bfloat16",
+      "akey": "kv",
+      "shard": 11,
+      "rank": 1,
+      "target": 5
+    },
+    {
+      "chunk": 58,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a76afdf11fa530b4@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a76afdf11fa530b4@bfloat16",
+      "akey": "kv",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 59,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@ff8d201b8af9f03e@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@ff8d201b8af9f03e@bfloat16",
+      "akey": "kv",
+      "shard": 13,
+      "rank": 0,
+      "target": 2
+    },
+    {
+      "chunk": 60,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c82f744221dc565d@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c82f744221dc565d@bfloat16",
+      "akey": "kv",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 61,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d43fd53c375866d7@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d43fd53c375866d7@bfloat16",
+      "akey": "kv",
+      "shard": 13,
+      "rank": 0,
+      "target": 2
+    },
+    {
+      "chunk": 62,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c8fbb404c5b965e3@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c8fbb404c5b965e3@bfloat16",
+      "akey": "kv",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    },
+    {
+      "chunk": 63,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f8c98cab43af9bda@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f8c98cab43af9bda@bfloat16",
+      "akey": "kv",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 64,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b0b11b3b556c8611@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b0b11b3b556c8611@bfloat16",
+      "akey": "kv",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 65,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@9b548751018dd615@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@9b548751018dd615@bfloat16",
+      "akey": "kv",
+      "shard": 9,
+      "rank": 1,
+      "target": 7
+    },
+    {
+      "chunk": 66,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@2940ab7868e220ff@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@2940ab7868e220ff@bfloat16",
+      "akey": "kv",
+      "shard": 7,
+      "rank": 0,
+      "target": 7
+    },
+    {
+      "chunk": 67,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@caebc1f0c4597b1@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@caebc1f0c4597b1@bfloat16",
+      "akey": "kv",
+      "shard": 1,
+      "rank": 1,
+      "target": 1
+    },
+    {
+      "chunk": 68,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b313137263a81513@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b313137263a81513@bfloat16",
+      "akey": "kv",
+      "shard": 11,
+      "rank": 1,
+      "target": 5
+    },
+    {
+      "chunk": 69,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a16e49e3318762d5@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a16e49e3318762d5@bfloat16",
+      "akey": "kv",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 70,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@12d53a917622622c@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@12d53a917622622c@bfloat16",
+      "akey": "kv",
+      "shard": 2,
+      "rank": 0,
+      "target": 6
+    },
+    {
+      "chunk": 71,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@ff928578b74638f1@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@ff928578b74638f1@bfloat16",
+      "akey": "kv",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 72,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@e7d5aef86749ad11@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@e7d5aef86749ad11@bfloat16",
+      "akey": "kv",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 73,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b248bb84ae46cd2d@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b248bb84ae46cd2d@bfloat16",
+      "akey": "kv",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    },
+    {
+      "chunk": 74,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@be30ba479de8f2af@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@be30ba479de8f2af@bfloat16",
+      "akey": "kv",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 75,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a2fea971f8cfefe@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a2fea971f8cfefe@bfloat16",
+      "akey": "kv",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 76,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@181713afc762eeb5@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@181713afc762eeb5@bfloat16",
+      "akey": "kv",
+      "shard": 1,
+      "rank": 1,
+      "target": 1
+    },
+    {
+      "chunk": 77,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@19bca350c9b51946@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@19bca350c9b51946@bfloat16",
+      "akey": "kv",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 78,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3f65eb8d78cc2def@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3f65eb8d78cc2def@bfloat16",
+      "akey": "kv",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    },
+    {
+      "chunk": 79,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@4225cf0ff4c88101@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@4225cf0ff4c88101@bfloat16",
+      "akey": "kv",
+      "shard": 2,
+      "rank": 0,
+      "target": 6
+    },
+    {
+      "chunk": 80,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@10733cf54b1ee7c1@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@10733cf54b1ee7c1@bfloat16",
+      "akey": "kv",
+      "shard": 12,
+      "rank": 1,
+      "target": 6
+    },
+    {
+      "chunk": 81,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a36258aae913b47f@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a36258aae913b47f@bfloat16",
+      "akey": "kv",
+      "shard": 6,
+      "rank": 1,
+      "target": 4
+    },
+    {
+      "chunk": 82,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@dcafc1331d347954@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@dcafc1331d347954@bfloat16",
+      "akey": "kv",
+      "shard": 13,
+      "rank": 0,
+      "target": 2
+    },
+    {
+      "chunk": 83,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a5eb230ced009229@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a5eb230ced009229@bfloat16",
+      "akey": "kv",
+      "shard": 2,
+      "rank": 0,
+      "target": 6
+    },
+    {
+      "chunk": 84,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@4f34aec97d1c09e7@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@4f34aec97d1c09e7@bfloat16",
+      "akey": "kv",
+      "shard": 6,
+      "rank": 1,
+      "target": 4
+    },
+    {
+      "chunk": 85,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@86091de2971f6d4@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@86091de2971f6d4@bfloat16",
+      "akey": "kv",
+      "shard": 1,
+      "rank": 1,
+      "target": 1
+    },
+    {
+      "chunk": 86,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f676fdb0472c17c5@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f676fdb0472c17c5@bfloat16",
+      "akey": "kv",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 87,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@fe900a21f4da16f9@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@fe900a21f4da16f9@bfloat16",
+      "akey": "kv",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 88,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@4a8b8b67660586e0@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@4a8b8b67660586e0@bfloat16",
+      "akey": "kv",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 89,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@e3fa1df6c8a90b4d@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@e3fa1df6c8a90b4d@bfloat16",
+      "akey": "kv",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 90,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@63fe0f93a735e68@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@63fe0f93a735e68@bfloat16",
+      "akey": "kv",
+      "shard": 13,
+      "rank": 0,
+      "target": 2
+    },
+    {
+      "chunk": 91,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@69d8d43a7a6ec11f@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@69d8d43a7a6ec11f@bfloat16",
+      "akey": "kv",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 92,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@16621de875657e96@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@16621de875657e96@bfloat16",
+      "akey": "kv",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    },
+    {
+      "chunk": 93,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b59bf363b7effc43@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b59bf363b7effc43@bfloat16",
+      "akey": "kv",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 94,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@1e4451e03ff2d5e5@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@1e4451e03ff2d5e5@bfloat16",
+      "akey": "kv",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 95,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@445709ef2ed8010f@bfloat16",
+      "dkey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@445709ef2ed8010f@bfloat16",
+      "akey": "kv",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    }
+  ],
+  "balanced": [
+    {
+      "chunk": 0,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@5a1ce2441f1ad37b@bfloat16",
+      "dkey": "placement-v1/1/48",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@5a1ce2441f1ad37b@bfloat16",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 1,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f6f9affcbbafef99@bfloat16",
+      "dkey": "placement-v1/1/0",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f6f9affcbbafef99@bfloat16",
+      "shard": 1,
+      "rank": 1,
+      "target": 1
+    },
+    {
+      "chunk": 2,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a73c7a4a36db3ac5@bfloat16",
+      "dkey": "placement-v1/1/8",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a73c7a4a36db3ac5@bfloat16",
+      "shard": 2,
+      "rank": 0,
+      "target": 6
+    },
+    {
+      "chunk": 3,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@92f6b3667b58304f@bfloat16",
+      "dkey": "placement-v1/1/28",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@92f6b3667b58304f@bfloat16",
+      "shard": 3,
+      "rank": 1,
+      "target": 3
+    },
+    {
+      "chunk": 4,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f66d719367a54e9a@bfloat16",
+      "dkey": "placement-v1/1/4",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f66d719367a54e9a@bfloat16",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 5,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7b8f55ff6dab98ca@bfloat16",
+      "dkey": "placement-v1/1/6",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7b8f55ff6dab98ca@bfloat16",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 6,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@fad0cca05a79862f@bfloat16",
+      "dkey": "placement-v1/1/2",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@fad0cca05a79862f@bfloat16",
+      "shard": 6,
+      "rank": 1,
+      "target": 4
+    },
+    {
+      "chunk": 7,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@91d2a00aa497b5de@bfloat16",
+      "dkey": "placement-v1/1/10",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@91d2a00aa497b5de@bfloat16",
+      "shard": 7,
+      "rank": 0,
+      "target": 7
+    },
+    {
+      "chunk": 8,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@39670a47dc34c6c@bfloat16",
+      "dkey": "placement-v1/1/42",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@39670a47dc34c6c@bfloat16",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 9,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@e5ee20d713ffae58@bfloat16",
+      "dkey": "placement-v1/1/11",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@e5ee20d713ffae58@bfloat16",
+      "shard": 9,
+      "rank": 1,
+      "target": 7
+    },
+    {
+      "chunk": 10,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3c94d1a2616607ca@bfloat16",
+      "dkey": "placement-v1/1/5",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3c94d1a2616607ca@bfloat16",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 11,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d96a66fb9c75d5e@bfloat16",
+      "dkey": "placement-v1/1/21",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d96a66fb9c75d5e@bfloat16",
+      "shard": 11,
+      "rank": 1,
+      "target": 5
+    },
+    {
+      "chunk": 12,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@9edd0fcc6ca1c3ed@bfloat16",
+      "dkey": "placement-v1/1/26",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@9edd0fcc6ca1c3ed@bfloat16",
+      "shard": 12,
+      "rank": 1,
+      "target": 6
+    },
+    {
+      "chunk": 13,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@70a2d5a118b35f02@bfloat16",
+      "dkey": "placement-v1/1/43",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@70a2d5a118b35f02@bfloat16",
+      "shard": 13,
+      "rank": 0,
+      "target": 2
+    },
+    {
+      "chunk": 14,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@128590ccbebf90da@bfloat16",
+      "dkey": "placement-v1/1/1",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@128590ccbebf90da@bfloat16",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    },
+    {
+      "chunk": 15,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@bb7a14c93ff8f61@bfloat16",
+      "dkey": "placement-v1/1/3",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@bb7a14c93ff8f61@bfloat16",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 16,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@bd26690b6edd2d4a@bfloat16",
+      "dkey": "placement-v1/1/48",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@bd26690b6edd2d4a@bfloat16",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 17,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d98869249f19fcdd@bfloat16",
+      "dkey": "placement-v1/1/0",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d98869249f19fcdd@bfloat16",
+      "shard": 1,
+      "rank": 1,
+      "target": 1
+    },
+    {
+      "chunk": 18,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@1a140080fb45ac6d@bfloat16",
+      "dkey": "placement-v1/1/8",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@1a140080fb45ac6d@bfloat16",
+      "shard": 2,
+      "rank": 0,
+      "target": 6
+    },
+    {
+      "chunk": 19,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@849b3735470008e4@bfloat16",
+      "dkey": "placement-v1/1/28",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@849b3735470008e4@bfloat16",
+      "shard": 3,
+      "rank": 1,
+      "target": 3
+    },
+    {
+      "chunk": 20,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7625817b91e45308@bfloat16",
+      "dkey": "placement-v1/1/4",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7625817b91e45308@bfloat16",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 21,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@dc6e79d5dedf8bda@bfloat16",
+      "dkey": "placement-v1/1/6",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@dc6e79d5dedf8bda@bfloat16",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 22,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@caec842dfc6a0990@bfloat16",
+      "dkey": "placement-v1/1/2",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@caec842dfc6a0990@bfloat16",
+      "shard": 6,
+      "rank": 1,
+      "target": 4
+    },
+    {
+      "chunk": 23,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@db81f900cc5751e5@bfloat16",
+      "dkey": "placement-v1/1/10",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@db81f900cc5751e5@bfloat16",
+      "shard": 7,
+      "rank": 0,
+      "target": 7
+    },
+    {
+      "chunk": 24,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d0620501e32b71c9@bfloat16",
+      "dkey": "placement-v1/1/42",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d0620501e32b71c9@bfloat16",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 25,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@81934b8cee091cb8@bfloat16",
+      "dkey": "placement-v1/1/11",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@81934b8cee091cb8@bfloat16",
+      "shard": 9,
+      "rank": 1,
+      "target": 7
+    },
+    {
+      "chunk": 26,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@13643e79b1dbeb5f@bfloat16",
+      "dkey": "placement-v1/1/5",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@13643e79b1dbeb5f@bfloat16",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 27,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c71bdc17b5a80a6f@bfloat16",
+      "dkey": "placement-v1/1/21",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c71bdc17b5a80a6f@bfloat16",
+      "shard": 11,
+      "rank": 1,
+      "target": 5
+    },
+    {
+      "chunk": 28,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@85696e31fbf65617@bfloat16",
+      "dkey": "placement-v1/1/26",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@85696e31fbf65617@bfloat16",
+      "shard": 12,
+      "rank": 1,
+      "target": 6
+    },
+    {
+      "chunk": 29,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@9505934c0f82b005@bfloat16",
+      "dkey": "placement-v1/1/43",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@9505934c0f82b005@bfloat16",
+      "shard": 13,
+      "rank": 0,
+      "target": 2
+    },
+    {
+      "chunk": 30,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f29542e4f9675745@bfloat16",
+      "dkey": "placement-v1/1/1",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f29542e4f9675745@bfloat16",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    },
+    {
+      "chunk": 31,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3e7a4d6933123110@bfloat16",
+      "dkey": "placement-v1/1/3",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3e7a4d6933123110@bfloat16",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 32,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@2463122f37002b69@bfloat16",
+      "dkey": "placement-v1/1/48",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@2463122f37002b69@bfloat16",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 33,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@cc26262f8acf4cb5@bfloat16",
+      "dkey": "placement-v1/1/0",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@cc26262f8acf4cb5@bfloat16",
+      "shard": 1,
+      "rank": 1,
+      "target": 1
+    },
+    {
+      "chunk": 34,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@82718a73866311d0@bfloat16",
+      "dkey": "placement-v1/1/8",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@82718a73866311d0@bfloat16",
+      "shard": 2,
+      "rank": 0,
+      "target": 6
+    },
+    {
+      "chunk": 35,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@87fedbc5dbb02508@bfloat16",
+      "dkey": "placement-v1/1/28",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@87fedbc5dbb02508@bfloat16",
+      "shard": 3,
+      "rank": 1,
+      "target": 3
+    },
+    {
+      "chunk": 36,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@23a4d6c42b7a81d6@bfloat16",
+      "dkey": "placement-v1/1/4",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@23a4d6c42b7a81d6@bfloat16",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 37,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3d555c8701e78d24@bfloat16",
+      "dkey": "placement-v1/1/6",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3d555c8701e78d24@bfloat16",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 38,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c29cf06a1afd9f3f@bfloat16",
+      "dkey": "placement-v1/1/2",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c29cf06a1afd9f3f@bfloat16",
+      "shard": 6,
+      "rank": 1,
+      "target": 4
+    },
+    {
+      "chunk": 39,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@dc50a051ab812f66@bfloat16",
+      "dkey": "placement-v1/1/10",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@dc50a051ab812f66@bfloat16",
+      "shard": 7,
+      "rank": 0,
+      "target": 7
+    },
+    {
+      "chunk": 40,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@bbbc72e39052bc4a@bfloat16",
+      "dkey": "placement-v1/1/42",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@bbbc72e39052bc4a@bfloat16",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 41,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c87ca77a822377ca@bfloat16",
+      "dkey": "placement-v1/1/11",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c87ca77a822377ca@bfloat16",
+      "shard": 9,
+      "rank": 1,
+      "target": 7
+    },
+    {
+      "chunk": 42,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7bb2c02ab6faaf3a@bfloat16",
+      "dkey": "placement-v1/1/5",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7bb2c02ab6faaf3a@bfloat16",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 43,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3211d7b6e353e1e1@bfloat16",
+      "dkey": "placement-v1/1/21",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3211d7b6e353e1e1@bfloat16",
+      "shard": 11,
+      "rank": 1,
+      "target": 5
+    },
+    {
+      "chunk": 44,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@47f935542256ce8f@bfloat16",
+      "dkey": "placement-v1/1/26",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@47f935542256ce8f@bfloat16",
+      "shard": 12,
+      "rank": 1,
+      "target": 6
+    },
+    {
+      "chunk": 45,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@cdd6ea240a416dc6@bfloat16",
+      "dkey": "placement-v1/1/43",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@cdd6ea240a416dc6@bfloat16",
+      "shard": 13,
+      "rank": 0,
+      "target": 2
+    },
+    {
+      "chunk": 46,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3cd48020f8f68a4d@bfloat16",
+      "dkey": "placement-v1/1/1",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3cd48020f8f68a4d@bfloat16",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    },
+    {
+      "chunk": 47,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@72ebe07325baa86d@bfloat16",
+      "dkey": "placement-v1/1/3",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@72ebe07325baa86d@bfloat16",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 48,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@2c2455833cba3292@bfloat16",
+      "dkey": "placement-v1/1/48",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@2c2455833cba3292@bfloat16",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 49,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7ad628ae756cd69c@bfloat16",
+      "dkey": "placement-v1/1/0",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@7ad628ae756cd69c@bfloat16",
+      "shard": 1,
+      "rank": 1,
+      "target": 1
+    },
+    {
+      "chunk": 50,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@aee65b1a078143a1@bfloat16",
+      "dkey": "placement-v1/1/8",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@aee65b1a078143a1@bfloat16",
+      "shard": 2,
+      "rank": 0,
+      "target": 6
+    },
+    {
+      "chunk": 51,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b54d3372800ebadd@bfloat16",
+      "dkey": "placement-v1/1/28",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b54d3372800ebadd@bfloat16",
+      "shard": 3,
+      "rank": 1,
+      "target": 3
+    },
+    {
+      "chunk": 52,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f18a5055d0637915@bfloat16",
+      "dkey": "placement-v1/1/4",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f18a5055d0637915@bfloat16",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 53,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d90d272dc944a355@bfloat16",
+      "dkey": "placement-v1/1/6",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d90d272dc944a355@bfloat16",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 54,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a89fb8e6b99a65f2@bfloat16",
+      "dkey": "placement-v1/1/2",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a89fb8e6b99a65f2@bfloat16",
+      "shard": 6,
+      "rank": 1,
+      "target": 4
+    },
+    {
+      "chunk": 55,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a4f5d39ae5831855@bfloat16",
+      "dkey": "placement-v1/1/10",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a4f5d39ae5831855@bfloat16",
+      "shard": 7,
+      "rank": 0,
+      "target": 7
+    },
+    {
+      "chunk": 56,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@ce2dc96e785963cd@bfloat16",
+      "dkey": "placement-v1/1/42",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@ce2dc96e785963cd@bfloat16",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 57,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d1c25d7dfd88b55d@bfloat16",
+      "dkey": "placement-v1/1/11",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d1c25d7dfd88b55d@bfloat16",
+      "shard": 9,
+      "rank": 1,
+      "target": 7
+    },
+    {
+      "chunk": 58,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a76afdf11fa530b4@bfloat16",
+      "dkey": "placement-v1/1/5",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a76afdf11fa530b4@bfloat16",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 59,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@ff8d201b8af9f03e@bfloat16",
+      "dkey": "placement-v1/1/21",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@ff8d201b8af9f03e@bfloat16",
+      "shard": 11,
+      "rank": 1,
+      "target": 5
+    },
+    {
+      "chunk": 60,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c82f744221dc565d@bfloat16",
+      "dkey": "placement-v1/1/26",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c82f744221dc565d@bfloat16",
+      "shard": 12,
+      "rank": 1,
+      "target": 6
+    },
+    {
+      "chunk": 61,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d43fd53c375866d7@bfloat16",
+      "dkey": "placement-v1/1/43",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@d43fd53c375866d7@bfloat16",
+      "shard": 13,
+      "rank": 0,
+      "target": 2
+    },
+    {
+      "chunk": 62,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c8fbb404c5b965e3@bfloat16",
+      "dkey": "placement-v1/1/1",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@c8fbb404c5b965e3@bfloat16",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    },
+    {
+      "chunk": 63,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f8c98cab43af9bda@bfloat16",
+      "dkey": "placement-v1/1/3",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f8c98cab43af9bda@bfloat16",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 64,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b0b11b3b556c8611@bfloat16",
+      "dkey": "placement-v1/1/48",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b0b11b3b556c8611@bfloat16",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 65,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@9b548751018dd615@bfloat16",
+      "dkey": "placement-v1/1/0",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@9b548751018dd615@bfloat16",
+      "shard": 1,
+      "rank": 1,
+      "target": 1
+    },
+    {
+      "chunk": 66,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@2940ab7868e220ff@bfloat16",
+      "dkey": "placement-v1/1/8",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@2940ab7868e220ff@bfloat16",
+      "shard": 2,
+      "rank": 0,
+      "target": 6
+    },
+    {
+      "chunk": 67,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@caebc1f0c4597b1@bfloat16",
+      "dkey": "placement-v1/1/28",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@caebc1f0c4597b1@bfloat16",
+      "shard": 3,
+      "rank": 1,
+      "target": 3
+    },
+    {
+      "chunk": 68,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b313137263a81513@bfloat16",
+      "dkey": "placement-v1/1/4",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b313137263a81513@bfloat16",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 69,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a16e49e3318762d5@bfloat16",
+      "dkey": "placement-v1/1/6",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a16e49e3318762d5@bfloat16",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 70,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@12d53a917622622c@bfloat16",
+      "dkey": "placement-v1/1/2",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@12d53a917622622c@bfloat16",
+      "shard": 6,
+      "rank": 1,
+      "target": 4
+    },
+    {
+      "chunk": 71,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@ff928578b74638f1@bfloat16",
+      "dkey": "placement-v1/1/10",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@ff928578b74638f1@bfloat16",
+      "shard": 7,
+      "rank": 0,
+      "target": 7
+    },
+    {
+      "chunk": 72,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@e7d5aef86749ad11@bfloat16",
+      "dkey": "placement-v1/1/42",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@e7d5aef86749ad11@bfloat16",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 73,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b248bb84ae46cd2d@bfloat16",
+      "dkey": "placement-v1/1/11",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b248bb84ae46cd2d@bfloat16",
+      "shard": 9,
+      "rank": 1,
+      "target": 7
+    },
+    {
+      "chunk": 74,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@be30ba479de8f2af@bfloat16",
+      "dkey": "placement-v1/1/5",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@be30ba479de8f2af@bfloat16",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 75,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a2fea971f8cfefe@bfloat16",
+      "dkey": "placement-v1/1/21",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a2fea971f8cfefe@bfloat16",
+      "shard": 11,
+      "rank": 1,
+      "target": 5
+    },
+    {
+      "chunk": 76,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@181713afc762eeb5@bfloat16",
+      "dkey": "placement-v1/1/26",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@181713afc762eeb5@bfloat16",
+      "shard": 12,
+      "rank": 1,
+      "target": 6
+    },
+    {
+      "chunk": 77,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@19bca350c9b51946@bfloat16",
+      "dkey": "placement-v1/1/43",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@19bca350c9b51946@bfloat16",
+      "shard": 13,
+      "rank": 0,
+      "target": 2
+    },
+    {
+      "chunk": 78,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3f65eb8d78cc2def@bfloat16",
+      "dkey": "placement-v1/1/1",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@3f65eb8d78cc2def@bfloat16",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    },
+    {
+      "chunk": 79,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@4225cf0ff4c88101@bfloat16",
+      "dkey": "placement-v1/1/3",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@4225cf0ff4c88101@bfloat16",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    },
+    {
+      "chunk": 80,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@10733cf54b1ee7c1@bfloat16",
+      "dkey": "placement-v1/1/48",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@10733cf54b1ee7c1@bfloat16",
+      "shard": 0,
+      "rank": 0,
+      "target": 4
+    },
+    {
+      "chunk": 81,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a36258aae913b47f@bfloat16",
+      "dkey": "placement-v1/1/0",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a36258aae913b47f@bfloat16",
+      "shard": 1,
+      "rank": 1,
+      "target": 1
+    },
+    {
+      "chunk": 82,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@dcafc1331d347954@bfloat16",
+      "dkey": "placement-v1/1/8",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@dcafc1331d347954@bfloat16",
+      "shard": 2,
+      "rank": 0,
+      "target": 6
+    },
+    {
+      "chunk": 83,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a5eb230ced009229@bfloat16",
+      "dkey": "placement-v1/1/28",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@a5eb230ced009229@bfloat16",
+      "shard": 3,
+      "rank": 1,
+      "target": 3
+    },
+    {
+      "chunk": 84,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@4f34aec97d1c09e7@bfloat16",
+      "dkey": "placement-v1/1/4",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@4f34aec97d1c09e7@bfloat16",
+      "shard": 4,
+      "rank": 1,
+      "target": 2
+    },
+    {
+      "chunk": 85,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@86091de2971f6d4@bfloat16",
+      "dkey": "placement-v1/1/6",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@86091de2971f6d4@bfloat16",
+      "shard": 5,
+      "rank": 0,
+      "target": 1
+    },
+    {
+      "chunk": 86,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f676fdb0472c17c5@bfloat16",
+      "dkey": "placement-v1/1/2",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@f676fdb0472c17c5@bfloat16",
+      "shard": 6,
+      "rank": 1,
+      "target": 4
+    },
+    {
+      "chunk": 87,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@fe900a21f4da16f9@bfloat16",
+      "dkey": "placement-v1/1/10",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@fe900a21f4da16f9@bfloat16",
+      "shard": 7,
+      "rank": 0,
+      "target": 7
+    },
+    {
+      "chunk": 88,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@4a8b8b67660586e0@bfloat16",
+      "dkey": "placement-v1/1/42",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@4a8b8b67660586e0@bfloat16",
+      "shard": 8,
+      "rank": 0,
+      "target": 5
+    },
+    {
+      "chunk": 89,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@e3fa1df6c8a90b4d@bfloat16",
+      "dkey": "placement-v1/1/11",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@e3fa1df6c8a90b4d@bfloat16",
+      "shard": 9,
+      "rank": 1,
+      "target": 7
+    },
+    {
+      "chunk": 90,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@63fe0f93a735e68@bfloat16",
+      "dkey": "placement-v1/1/5",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@63fe0f93a735e68@bfloat16",
+      "shard": 10,
+      "rank": 0,
+      "target": 0
+    },
+    {
+      "chunk": 91,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@69d8d43a7a6ec11f@bfloat16",
+      "dkey": "placement-v1/1/21",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@69d8d43a7a6ec11f@bfloat16",
+      "shard": 11,
+      "rank": 1,
+      "target": 5
+    },
+    {
+      "chunk": 92,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@16621de875657e96@bfloat16",
+      "dkey": "placement-v1/1/26",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@16621de875657e96@bfloat16",
+      "shard": 12,
+      "rank": 1,
+      "target": 6
+    },
+    {
+      "chunk": 93,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b59bf363b7effc43@bfloat16",
+      "dkey": "placement-v1/1/43",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@b59bf363b7effc43@bfloat16",
+      "shard": 13,
+      "rank": 0,
+      "target": 2
+    },
+    {
+      "chunk": 94,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@1e4451e03ff2d5e5@bfloat16",
+      "dkey": "placement-v1/1/1",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@1e4451e03ff2d5e5@bfloat16",
+      "shard": 14,
+      "rank": 1,
+      "target": 0
+    },
+    {
+      "chunk": 95,
+      "full_key": "placement-experiment:qwen4b-shaped-placement-v1@1@0@445709ef2ed8010f@bfloat16",
+      "dkey": "placement-v1/1/3",
+      "akey": "placement-experiment:qwen4b-shaped-placement-v1@1@0@445709ef2ed8010f@bfloat16",
+      "shard": 15,
+      "rank": 0,
+      "target": 3
+    }
+  ]
+}

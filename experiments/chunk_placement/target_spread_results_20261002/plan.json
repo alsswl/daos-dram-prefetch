@@ -1,0 +1,35 @@
+{
+  "workers": 16,
+  "chunks": 96,
+  "chunk_bytes": 18874368,
+  "read_bytes": 1811939328,
+  "gpu_slab_bytes": 2147483648,
+  "target_counts": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "layouts": 4,
+  "repeats": 5,
+  "source_sha256": {
+    "target_spread.py": "cba518f05a1c0115d1bcdec7670d25816c424f79ca49aa6ac7ecbd1562c6d8de",
+    "target_spread.sh": "df1653ab493850ca249812f838c60a1986c2b7cdd6e568b20f17dd6f35781dab",
+    "run.py": "de8496e32307a1d716f2da8273d2d23c2ad863c5a93082150f0edbf4700dad6e",
+    "addressing.py": "5cc8408cd14ce48bc0bafb0734ef617cd891a0bd9413fe2422840c39db2dce00",
+    "placement.c": "6e643331212ea93c4ae8b49dbd89785f9be3635d4622f0f1a979b8b0bec25635",
+    "placement.so": "e6220d01507ff805c73fb80439f8047c450c3565b91f362047a6e7c69ff2dcc3"
+  },
+  "notes": [
+    "Each condition uses 96 distinct dkeys, one fixed kv akey, SINGLE value, and 96 fetch calls.",
+    "One fresh OC_SX object per layout; all five conditions share its physical layout.",
+    "Selected targets receive equal chunk counts in cyclic order; no target-aware runtime scheduling.",
+    "Targets alternate between the two engines; 2/4/8/16 target conditions use both engines equally.",
+    "One-target condition alternates engine across layouts. 1-to-2 also changes engine count.",
+    "Five conditions execute in shuffled order each round; first round is untimed warmup.",
+    "Warm reads; no server cache flush. No LMCache windows, scatter, model, or DRAM payload cache.",
+    "Client fetch timing includes registration, network, progress, and server work; not server service time.",
+    "CPU full-byte verification is outside timing. Only run-owned objects are removed."
+  ]
+}

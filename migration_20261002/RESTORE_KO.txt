@@ -1,0 +1,21 @@
+discos_minji 서버 이전 백업 (2026-10-02)
+
+Git 루트에는 탐색용 코드/설정/10MiB 이하 결과를 배치했다.
+전체 선별 파일은 project/runtime 분할 압축본에 있으며, 원본 로그와 큰 JSON도 포함한다.
+excluded.json에 가상환경/캐시/인증정보 등 제외 경로를 정확히 기록했다.
+credential content 판정 파일은 자동 업로드에서 제외했으며 원본 서버에 남아 있다.
+
+복구 (빈 디렉터리에서 먼저 확인):
+  python3 migration_20261002/restore.py /충분한공간/recovered
+파일별 SHA-256과 압축 조각을 검사한 뒤 recovered 아래에 원래 절대경로 구조를 복원한다.
+root/discos_minji, opt, etc/daos 등을 검토한 뒤 실제 경로로 옮긴다.
+기존 파일 위에 바로 덮어쓰지 않는다. 심볼릭 링크는 원래 경로를 가리킬 수 있다.
+
+Python 패키지 버전은 python_packages.json 및 *_versions.txt에 있다.
+가상환경 자체는 포함하지 않지만 현재 lmcache/vllm 패키지는 runtime에 보존했다.
+OS/CUDA/드라이버/RDMA 구성이 다른 서버에서는 네이티브 바이너리 호환을 검증하고 필요 시 재빌드한다.
+DAOS/GDR 빌드 소스·패치·스크립트와 /opt 클라이언트 라이브러리를 runtime에 포함했다.
+모델 가중치(/home/hf/hf_cache)는 포함하지 않는다. Qwen 모델을 다시 내려받거나 별도 전송한다.
+DAOS 서버 안의 KV 데이터는 로컬 파일 백업에 포함되지 않는다.
+새 서버에서 DAOS endpoint, pool/container 접근, agent 설정, NIC/GPU 장치와 경로를 확인한다.
+최근 실험은 cxs_async_drop2g_c8s10_20261002이며 결과와 원본 trace가 project에 보존된다.

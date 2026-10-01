@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330">
+<rect width="1000" height="330" fill="white"/><g font-family="sans-serif" font-size="13">
+<text x="55" y="28">pilot_on: DRAM residency (GiB), 2-second sampled peak</text>
+<line x1="65" x2="970" y1="260.0" y2="260.0" stroke="#ddd"/>
+<text x="20" y="264.0">0</text>
+<line x1="65" x2="970" y1="210.0" y2="210.0" stroke="#ddd"/>
+<text x="20" y="214.0">64</text>
+<line x1="65" x2="970" y1="160.0" y2="160.0" stroke="#ddd"/>
+<text x="20" y="164.0">128</text>
+<line x1="65" x2="970" y1="110.0" y2="110.0" stroke="#ddd"/>
+<text x="20" y="114.0">192</text>
+<line x1="65" x2="970" y1="60.0" y2="60.0" stroke="#ddd"/>
+<text x="20" y="64.0">256</text>
+<polyline points="103.61,258.81 180.84,258.60 258.06,257.33 335.28,256.80 412.51,256.55 489.73,256.37 566.95,256.02 644.18,255.33 721.40,255.15 798.62,254.49 875.85,254.09 953.07,254.08" stroke="#0072b2" fill="none" stroke-width="1.5"/>
+<text x="65.0" y="285">0s</text>
+<text x="291.25" y="285">6s</text>
+<text x="517.5" y="285">12s</text>
+<text x="743.75" y="285">18s</text>
+<text x="970.0" y="285">23s</text>
+<text x="60" y="315">Configured DRAM cache capacity: 256GiB. This is resident KV, not process RSS.</text></g></svg>

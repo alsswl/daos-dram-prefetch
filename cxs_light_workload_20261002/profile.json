@@ -1,0 +1,41 @@
+{
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "source_dataset": "/root/discos_minji/realqa_mixed_nodram2g_20261002_w500",
+  "concurrency": 8,
+  "session_depth": 2,
+  "sessions": 16,
+  "num_rounds": 5,
+  "turns_per_session": 6,
+  "expected_requests": 96,
+  "answer_len": 256,
+  "document_tokens": 61440,
+  "max_model_len": 65536,
+  "max_num_seqs": 8,
+  "chunk_tokens": 128,
+  "cpu_gib": 0,
+  "dram_disabled": true,
+  "staging_gib": 2,
+  "store_window_mib": 500,
+  "retrieve_window_mib": 500,
+  "gpu_memory_utilization": 0.835,
+  "split_store_gib": 0,
+  "capacity_pipeline": true,
+  "mixed_schedule": true,
+  "capacity": {
+    "unique_selected_books": 15,
+    "initial_unique_kv_upper_gib": 126.59133911132812,
+    "stored_kv_upper_gib": 131.65383911132812
+  },
+  "notes": [
+    "Workload inputs only; comparison conditions, fresh object manifests and source snapshots must be added before execution.",
+    "First two original document assignments from each of eight lanes. Document contents unchanged.",
+    "Each lane starts sessions at positions 0 and 3; other requests are seeded follow-ups.",
+    "Keep all six turns and real generated-answer feedback; no shortening of documents or output budget.",
+    "Reduced sessions change reuse/interleaving relative to the 480-request run; compare conditions within this new workload."
+  ],
+  "input_sha256": {
+    "sessions.json": "a49c43fb638faebef339df654b8569b47475fed029df0e755d35d37b04feabe1",
+    "documents.json": "15ae57e8c3337b2850387771b384de7c1e59f3afd51b859dbfce2f0b18332b00",
+    "mixed_schedule.json": "f6082db1ebd78ad1bdcc789076602eb3a4020f9dd6d70ae6e605d71da2568a0f"
+  }
+}

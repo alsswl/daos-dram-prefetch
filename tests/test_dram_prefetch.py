@@ -108,6 +108,54 @@ def test_partial_allocation_is_rolled_back():
     finally: pf.close()
 
 
+@pytest.mark.parametrize('used,blocked', [(59, False), (60, True), (80, True)])
+def test_current_occupancy_gate_boundary_and_source_lifetime(used, blocked):
+    pf, cpu, inner, sources = fixture(limit=None)
+    pf.occupancy_stop_bytes = 60
+    inner.total_allocated_size = used
+    try:
+        out = asyncio.run(cpu.batched_get_non_blocking('gate', ['key']))
+        assert (out is sources) == blocked
+        assert pf.stats['occupancy_rejections'] == int(blocked)
+        assert pf.stats['occupancy_rejected_bytes'] == (32 if blocked else 0)
+        assert pf.stats['capacity_rejections'] == pf.stats['watermark_rejections'] == 0
+        assert inner.total_allocated_size == used + (0 if blocked else 32)
+        discard(out)
+        assert inner.total_allocated_size == used and sources[0].refs == 1
+        # No hysteresis: resumes when total occupancy drops below the gate.
+        inner.total_allocated_size = 0
+        out = asyncio.run(cpu.batched_get_non_blocking('retry', ['key']))
+        assert isinstance(out[0], StagedCPUObject)
+        discard(out)
+    finally:
+        pf.close()
+
+
+def test_occupancy_gate_rechecks_at_worker_allocation():
+    pf, cpu, inner, sources = fixture(limit=None)
+    pf.occupancy_stop_bytes = 60
+    started, finish = threading.Event(), threading.Event()
+    def block():
+        started.set()
+        assert finish.wait(5)
+    blocker = pf.worker.submit(block)
+    started.wait(5)
+    async def run():
+        task = asyncio.create_task(cpu.batched_get_non_blocking('queued', ['key']))
+        await asyncio.sleep(.01)
+        inner.total_allocated_size = 70
+        finish.set()
+        out = await task
+        assert out is sources and pf.stats['occupancy_rejections'] == 1
+        discard(out)
+    try:
+        asyncio.run(run())
+    finally:
+        finish.set()
+        blocker.result()
+        pf.close()
+
+
 def test_capacity_policy_ignores_watermark_and_keeps_physical_failure_safe():
     pf, cpu, inner, sources = fixture(limit=None, sources=[Obj(), Obj()])
     inner.total_allocated_size = 96

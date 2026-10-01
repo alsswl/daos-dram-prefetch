@@ -1,0 +1,1694 @@
+[
+  {
+    "tag": 10644,
+    "trial": "r-1_w64",
+    "phase": "native",
+    "workers": 64,
+    "measured": false,
+    "wall_ms": 276.413745,
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 1015.800888671875,
+          "median": 106.176,
+          "p95": 7883.468,
+          "max": 17783.179
+        },
+        "sum_thread_ms": 520.090055
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 392.17632421875,
+          "median": 173.4405,
+          "p95": 1110.648,
+          "max": 11111.06
+        },
+        "sum_thread_ms": 200.794278
+      },
+      "rxm_mr_regattr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 1177.479427734375,
+          "median": 181.5245,
+          "p95": 8625.02,
+          "max": 18150.072
+        },
+        "sum_thread_ms": 602.869467
+      },
+      "rxm_mr_close": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 444.376765625,
+          "median": 232.087,
+          "p95": 1175.496,
+          "max": 11184.587
+        },
+        "sum_thread_ms": 227.520904
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 39.87598828125,
+          "median": 28.183,
+          "p95": 69.189,
+          "max": 487.535
+        },
+        "sum_thread_ms": 20.416506
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 31.92537890625,
+          "median": 21.649,
+          "p95": 56.397,
+          "max": 414.777
+        },
+        "sum_thread_ms": 16.345794
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 45.3320078125,
+          "median": 39.7715,
+          "p95": 75.471,
+          "max": 201.833
+        },
+        "sum_thread_ms": 23.209988
+      },
+      "gdr_pin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 51.897107421875,
+          "median": 34.8095,
+          "p95": 66.616,
+          "max": 1180.903
+        },
+        "sum_thread_ms": 26.571319
+      },
+      "gdr_map": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 32.039583984375,
+          "median": 28.104999999999997,
+          "p95": 44.812,
+          "max": 489.832
+        },
+        "sum_thread_ms": 16.404267
+      },
+      "gdr_unmap": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 89.596705078125,
+          "median": 86.592,
+          "p95": 112.615,
+          "max": 121.082
+        },
+        "sum_thread_ms": 45.873513
+      },
+      "gdr_unpin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 27.514126953125,
+          "median": 26.4985,
+          "p95": 38.694,
+          "max": 56.196
+        },
+        "sum_thread_ms": 14.087233
+      }
+    },
+    "locks": {
+      "scheduler_mutex": {
+        "calls": 844470,
+        "sum_thread_ms": 6613.902057,
+        "mean_us": 7.8320154144019325,
+        "max_us": 318.499
+      },
+      "cuda_register_spin": {
+        "calls": 512,
+        "sum_thread_ms": 471.739933,
+        "mean_us": 921.367056640625,
+        "max_us": 17665.205
+      },
+      "cuda_unregister_spin": {
+        "calls": 512,
+        "sum_thread_ms": 135.814416,
+        "mean_us": 265.26253125,
+        "max_us": 10976.746
+      }
+    },
+    "parent_register_close_union_ms": 133.427573
+  },
+  {
+    "tag": 10643,
+    "trial": "r-1_w64",
+    "phase": "engine",
+    "workers": 64,
+    "measured": false,
+    "wall_ms": 294.290935,
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 154.5909765625,
+          "median": 108.882,
+          "p95": 391.251,
+          "max": 1077.318
+        },
+        "sum_thread_ms": 79.15058
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 203.405015625,
+          "median": 156.2875,
+          "p95": 438.666,
+          "max": 718.716
+        },
+        "sum_thread_ms": 104.143368
+      },
+      "rxm_mr_regattr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 269.818013671875,
+          "median": 223.14,
+          "p95": 522.559,
+          "max": 1283.244
+        },
+        "sum_thread_ms": 138.146823
+      },
+      "rxm_mr_close": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 264.779376953125,
+          "median": 231.07999999999998,
+          "p95": 502.221,
+          "max": 774.524
+        },
+        "sum_thread_ms": 135.567041
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 53.049501953125,
+          "median": 37.308,
+          "p95": 142.048,
+          "max": 324.888
+        },
+        "sum_thread_ms": 27.161345
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 44.45057421875,
+          "median": 28.201500000000003,
+          "p95": 132.711,
+          "max": 313.046
+        },
+        "sum_thread_ms": 22.758694
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 53.591263671875,
+          "median": 44.9705,
+          "p95": 139.381,
+          "max": 275.472
+        },
+        "sum_thread_ms": 27.438727
+      },
+      "gdr_pin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 44.6545234375,
+          "median": 40.176500000000004,
+          "p95": 70.996,
+          "max": 332.595
+        },
+        "sum_thread_ms": 22.863116
+      },
+      "gdr_map": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 36.023359375,
+          "median": 36.1605,
+          "p95": 42.67,
+          "max": 52.914
+        },
+        "sum_thread_ms": 18.44396
+      },
+      "gdr_unmap": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 87.98170703125,
+          "median": 85.39750000000001,
+          "p95": 110.359,
+          "max": 174.013
+        },
+        "sum_thread_ms": 45.046634
+      },
+      "gdr_unpin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 27.8531328125,
+          "median": 26.1145,
+          "p95": 39.337,
+          "max": 98.993
+        },
+        "sum_thread_ms": 14.260804
+      }
+    },
+    "locks": {
+      "scheduler_mutex": {
+        "calls": 827842,
+        "sum_thread_ms": 4256.329889,
+        "mean_us": 5.141476137958692,
+        "max_us": 299.269
+      },
+      "cuda_register_spin": {
+        "calls": 512,
+        "sum_thread_ms": 32.473833,
+        "mean_us": 63.425455078125,
+        "max_us": 994.043
+      },
+      "cuda_unregister_spin": {
+        "calls": 512,
+        "sum_thread_ms": 39.610152,
+        "mean_us": 77.363578125,
+        "max_us": 562.54
+      }
+    },
+    "parent_register_close_union_ms": 147.488234
+  },
+  {
+    "tag": 10163,
+    "trial": "r-1_w16",
+    "phase": "engine",
+    "workers": 16,
+    "measured": false,
+    "wall_ms": 340.008123,
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 89.458345703125,
+          "median": 68.0305,
+          "p95": 168.957,
+          "max": 337.028
+        },
+        "sum_thread_ms": 45.802673
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 113.248962890625,
+          "median": 93.31800000000001,
+          "p95": 197.979,
+          "max": 337.058
+        },
+        "sum_thread_ms": 57.983469
+      },
+      "rxm_mr_regattr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 218.61251171875,
+          "median": 219.828,
+          "p95": 367.885,
+          "max": 518.213
+        },
+        "sum_thread_ms": 111.929606
+      },
+      "rxm_mr_close": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 215.35150390625,
+          "median": 223.639,
+          "p95": 341.757,
+          "max": 477.162
+        },
+        "sum_thread_ms": 110.25997
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 87.75952734375,
+          "median": 79.868,
+          "p95": 177.283,
+          "max": 357.955
+        },
+        "sum_thread_ms": 44.932878
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 81.522208984375,
+          "median": 76.0195,
+          "p95": 171.78,
+          "max": 347.875
+        },
+        "sum_thread_ms": 41.739371
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 95.818521484375,
+          "median": 80.72399999999999,
+          "p95": 198.678,
+          "max": 278.864
+        },
+        "sum_thread_ms": 49.059083
+      },
+      "gdr_pin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 33.0963125,
+          "median": 29.7945,
+          "p95": 54.45,
+          "max": 101.64
+        },
+        "sum_thread_ms": 16.945312
+      },
+      "gdr_map": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 25.421654296875,
+          "median": 24.5365,
+          "p95": 32.129,
+          "max": 43.547
+        },
+        "sum_thread_ms": 13.015887
+      },
+      "gdr_unmap": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 61.356302734375,
+          "median": 60.6515,
+          "p95": 68.76,
+          "max": 87.466
+        },
+        "sum_thread_ms": 31.414427
+      },
+      "gdr_unpin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 21.543208984375,
+          "median": 21.012500000000003,
+          "p95": 29.925,
+          "max": 44.997
+        },
+        "sum_thread_ms": 11.030123
+      }
+    },
+    "locks": {
+      "scheduler_mutex": {
+        "calls": 1181272,
+        "sum_thread_ms": 2328.386999,
+        "mean_us": 1.9710845588484278,
+        "max_us": 175.848
+      },
+      "cuda_register_spin": {
+        "calls": 512,
+        "sum_thread_ms": 11.419732,
+        "mean_us": 22.3041640625,
+        "max_us": 250.382
+      },
+      "cuda_unregister_spin": {
+        "calls": 512,
+        "sum_thread_ms": 11.099728,
+        "mean_us": 21.67915625,
+        "max_us": 245.412
+      }
+    },
+    "parent_register_close_union_ms": 148.478849
+  },
+  {
+    "tag": 10164,
+    "trial": "r-1_w16",
+    "phase": "native",
+    "workers": 16,
+    "measured": false,
+    "wall_ms": 331.65454,
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 95.2961171875,
+          "median": 53.489999999999995,
+          "p95": 197.832,
+          "max": 2416.439
+        },
+        "sum_thread_ms": 48.791612
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 104.353779296875,
+          "median": 86.012,
+          "p95": 181.647,
+          "max": 521.974
+        },
+        "sum_thread_ms": 53.429135
+      },
+      "rxm_mr_regattr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 246.346958984375,
+          "median": 196.651,
+          "p95": 374.814,
+          "max": 2841.353
+        },
+        "sum_thread_ms": 126.129643
+      },
+      "rxm_mr_close": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 225.07848828125,
+          "median": 221.1535,
+          "p95": 367.282,
+          "max": 630.399
+        },
+        "sum_thread_ms": 115.240186
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 113.977083984375,
+          "median": 116.61250000000001,
+          "p95": 194.503,
+          "max": 768.119
+        },
+        "sum_thread_ms": 58.356267
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 103.419830078125,
+          "median": 111.1815,
+          "p95": 189.584,
+          "max": 363.437
+        },
+        "sum_thread_ms": 52.950953
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 115.09521875,
+          "median": 126.094,
+          "p95": 195.322,
+          "max": 329.695
+        },
+        "sum_thread_ms": 58.928752
+      },
+      "gdr_pin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 28.92875,
+          "median": 24.9695,
+          "p95": 48.933,
+          "max": 81.731
+        },
+        "sum_thread_ms": 14.81152
+      },
+      "gdr_map": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 22.0525234375,
+          "median": 16.448,
+          "p95": 30.443,
+          "max": 411.85
+        },
+        "sum_thread_ms": 11.290892
+      },
+      "gdr_unmap": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 57.132640625,
+          "median": 56.308,
+          "p95": 63.051,
+          "max": 80.287
+        },
+        "sum_thread_ms": 29.251912
+      },
+      "gdr_unpin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 20.88958984375,
+          "median": 20.003,
+          "p95": 28.031,
+          "max": 45.634
+        },
+        "sum_thread_ms": 10.69547
+      }
+    },
+    "locks": {
+      "scheduler_mutex": {
+        "calls": 1226347,
+        "sum_thread_ms": 2277.498856,
+        "mean_us": 1.8571406429012343,
+        "max_us": 184.413
+      },
+      "cuda_register_spin": {
+        "calls": 512,
+        "sum_thread_ms": 18.581137,
+        "mean_us": 36.291283203125,
+        "max_us": 2130.629
+      },
+      "cuda_unregister_spin": {
+        "calls": 512,
+        "sum_thread_ms": 9.347318,
+        "mean_us": 18.25648046875,
+        "max_us": 431.805
+      }
+    },
+    "parent_register_close_union_ms": 150.979671
+  },
+  {
+    "tag": 20163,
+    "trial": "r0_w16",
+    "phase": "engine",
+    "workers": 16,
+    "measured": true,
+    "wall_ms": 341.225425,
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 87.824466796875,
+          "median": 65.3315,
+          "p95": 182.352,
+          "max": 406.879
+        },
+        "sum_thread_ms": 44.966127
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 111.6894453125,
+          "median": 93.22300000000001,
+          "p95": 188.066,
+          "max": 356.421
+        },
+        "sum_thread_ms": 57.184996
+      },
+      "rxm_mr_regattr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 221.387798828125,
+          "median": 219.957,
+          "p95": 377.113,
+          "max": 665.348
+        },
+        "sum_thread_ms": 113.350553
+      },
+      "rxm_mr_close": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 219.475458984375,
+          "median": 226.8765,
+          "p95": 333.51,
+          "max": 550.743
+        },
+        "sum_thread_ms": 112.371435
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 92.08891796875,
+          "median": 100.255,
+          "p95": 180.608,
+          "max": 321.112
+        },
+        "sum_thread_ms": 47.149526
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 85.803140625,
+          "median": 95.095,
+          "p95": 173.609,
+          "max": 311.721
+        },
+        "sum_thread_ms": 43.931208
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 101.6590390625,
+          "median": 121.643,
+          "p95": 203.052,
+          "max": 279.247
+        },
+        "sum_thread_ms": 52.049428
+      },
+      "gdr_pin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 32.58116015625,
+          "median": 29.808999999999997,
+          "p95": 49.045,
+          "max": 82.032
+        },
+        "sum_thread_ms": 16.681554
+      },
+      "gdr_map": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 24.806453125,
+          "median": 24.0325,
+          "p95": 32.033,
+          "max": 36.276
+        },
+        "sum_thread_ms": 12.700904
+      },
+      "gdr_unmap": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 61.276529296875,
+          "median": 60.9705,
+          "p95": 67.302,
+          "max": 82.736
+        },
+        "sum_thread_ms": 31.373583
+      },
+      "gdr_unpin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 22.185611328125,
+          "median": 20.878999999999998,
+          "p95": 29.903,
+          "max": 241.195
+        },
+        "sum_thread_ms": 11.359033
+      }
+    },
+    "locks": {
+      "scheduler_mutex": {
+        "calls": 1177944,
+        "sum_thread_ms": 2322.087094,
+        "mean_us": 1.971305167308463,
+        "max_us": 69.25
+      },
+      "cuda_register_spin": {
+        "calls": 512,
+        "sum_thread_ms": 11.134616,
+        "mean_us": 21.747296875,
+        "max_us": 331.937
+      },
+      "cuda_unregister_spin": {
+        "calls": 512,
+        "sum_thread_ms": 10.081072,
+        "mean_us": 19.68959375,
+        "max_us": 261.717
+      }
+    },
+    "parent_register_close_union_ms": 151.942514
+  },
+  {
+    "tag": 20164,
+    "trial": "r0_w16",
+    "phase": "native",
+    "workers": 16,
+    "measured": true,
+    "wall_ms": 330.954238,
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 79.633099609375,
+          "median": 54.228,
+          "p95": 181.941,
+          "max": 790.968
+        },
+        "sum_thread_ms": 40.772147
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 114.361564453125,
+          "median": 92.883,
+          "p95": 193.794,
+          "max": 626.312
+        },
+        "sum_thread_ms": 58.553121
+      },
+      "rxm_mr_regattr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 149.73148828125,
+          "median": 107.7065,
+          "p95": 306.216,
+          "max": 1054.252
+        },
+        "sum_thread_ms": 76.662522
+      },
+      "rxm_mr_close": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 168.134197265625,
+          "median": 135.82600000000002,
+          "p95": 290.739,
+          "max": 661.523
+        },
+        "sum_thread_ms": 86.084709
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 38.96328125,
+          "median": 19.9995,
+          "p95": 125.628,
+          "max": 330.376
+        },
+        "sum_thread_ms": 19.9492
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 33.28377734375,
+          "median": 14.669,
+          "p95": 119.394,
+          "max": 324.67
+        },
+        "sum_thread_ms": 17.041294
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 47.923650390625,
+          "median": 31.311,
+          "p95": 151.648,
+          "max": 234.257
+        },
+        "sum_thread_ms": 24.536909
+      },
+      "gdr_pin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 29.392076171875,
+          "median": 25.7945,
+          "p95": 51.106,
+          "max": 309.242
+        },
+        "sum_thread_ms": 15.048743
+      },
+      "gdr_map": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 20.281423828125,
+          "median": 17.421,
+          "p95": 31.144,
+          "max": 311.153
+        },
+        "sum_thread_ms": 10.384089
+      },
+      "gdr_unmap": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 60.2723671875,
+          "median": 59.0685,
+          "p95": 67.977,
+          "max": 81.311
+        },
+        "sum_thread_ms": 30.859452
+      },
+      "gdr_unpin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 23.247060546875,
+          "median": 20.515,
+          "p95": 33.827,
+          "max": 80.798
+        },
+        "sum_thread_ms": 11.902495
+      }
+    },
+    "locks": {
+      "scheduler_mutex": {
+        "calls": 1089364,
+        "sum_thread_ms": 2285.086461,
+        "mean_us": 2.0976335375503505,
+        "max_us": 298.404
+      },
+      "cuda_register_spin": {
+        "calls": 512,
+        "sum_thread_ms": 11.42378,
+        "mean_us": 22.3120703125,
+        "max_us": 617.71
+      },
+      "cuda_unregister_spin": {
+        "calls": 512,
+        "sum_thread_ms": 11.634389,
+        "mean_us": 22.723416015625,
+        "max_us": 540.862
+      }
+    },
+    "parent_register_close_union_ms": 110.524941
+  },
+  {
+    "tag": 20644,
+    "trial": "r0_w64",
+    "phase": "native",
+    "workers": 64,
+    "measured": true,
+    "wall_ms": 269.741985,
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 871.952921875,
+          "median": 104.6305,
+          "p95": 7108.244,
+          "max": 15241.488
+        },
+        "sum_thread_ms": 446.439896
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 292.76672265625,
+          "median": 155.776,
+          "p95": 625.718,
+          "max": 7321.706
+        },
+        "sum_thread_ms": 149.896562
+      },
+      "rxm_mr_regattr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 1063.143484375,
+          "median": 254.333,
+          "p95": 7883.373,
+          "max": 15914.026
+        },
+        "sum_thread_ms": 544.329464
+      },
+      "rxm_mr_close": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 415.426654296875,
+          "median": 295.0135,
+          "p95": 808.107,
+          "max": 7489.168
+        },
+        "sum_thread_ms": 212.698447
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 87.924298828125,
+          "median": 53.979,
+          "p95": 196.238,
+          "max": 396.997
+        },
+        "sum_thread_ms": 45.017241
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 81.014556640625,
+          "median": 44.3065,
+          "p95": 188.785,
+          "max": 385.231
+        },
+        "sum_thread_ms": 41.479453
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 115.66216015625,
+          "median": 130.5335,
+          "p95": 227.975,
+          "max": 335.252
+        },
+        "sum_thread_ms": 59.219026
+      },
+      "gdr_pin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 53.607439453125,
+          "median": 34.888000000000005,
+          "p95": 76.552,
+          "max": 816.04
+        },
+        "sum_thread_ms": 27.447009
+      },
+      "gdr_map": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 28.631330078125,
+          "median": 27.6005,
+          "p95": 42.989,
+          "max": 57.406
+        },
+        "sum_thread_ms": 14.659241
+      },
+      "gdr_unmap": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 88.90181640625,
+          "median": 85.5675,
+          "p95": 112.177,
+          "max": 124.28
+        },
+        "sum_thread_ms": 45.51773
+      },
+      "gdr_unpin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 28.538802734375,
+          "median": 27.194,
+          "p95": 42.537,
+          "max": 71.689
+        },
+        "sum_thread_ms": 14.611867
+      }
+    },
+    "locks": {
+      "scheduler_mutex": {
+        "calls": 776374,
+        "sum_thread_ms": 6539.033372,
+        "mean_us": 8.422530084727207,
+        "max_us": 318.047
+      },
+      "cuda_register_spin": {
+        "calls": 512,
+        "sum_thread_ms": 399.71108,
+        "mean_us": 780.685703125,
+        "max_us": 15120.293
+      },
+      "cuda_unregister_spin": {
+        "calls": 512,
+        "sum_thread_ms": 85.20389,
+        "mean_us": 166.41384765625,
+        "max_us": 7181.203
+      }
+    },
+    "parent_register_close_union_ms": 154.318953
+  },
+  {
+    "tag": 20643,
+    "trial": "r0_w64",
+    "phase": "engine",
+    "workers": 64,
+    "measured": true,
+    "wall_ms": 302.640149,
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 146.08837109375,
+          "median": 106.531,
+          "p95": 315.539,
+          "max": 893.852
+        },
+        "sum_thread_ms": 74.797246
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 191.816708984375,
+          "median": 149.95850000000002,
+          "p95": 391.732,
+          "max": 1031.462
+        },
+        "sum_thread_ms": 98.210155
+      },
+      "rxm_mr_regattr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 310.22394140625,
+          "median": 286.75350000000003,
+          "p95": 555.939,
+          "max": 1169.704
+        },
+        "sum_thread_ms": 158.834658
+      },
+      "rxm_mr_close": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 314.964837890625,
+          "median": 285.8465,
+          "p95": 568.607,
+          "max": 1280.247
+        },
+        "sum_thread_ms": 161.261997
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 102.91117578125,
+          "median": 94.6395,
+          "p95": 251.029,
+          "max": 377.567
+        },
+        "sum_thread_ms": 52.690522
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 94.78728515625,
+          "median": 87.557,
+          "p95": 241.785,
+          "max": 367.589
+        },
+        "sum_thread_ms": 48.53109
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 115.43994140625,
+          "median": 122.3885,
+          "p95": 231.469,
+          "max": 368.139
+        },
+        "sum_thread_ms": 59.10525
+      },
+      "gdr_pin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 44.71046875,
+          "median": 40.171,
+          "p95": 73.983,
+          "max": 286.781
+        },
+        "sum_thread_ms": 22.89176
+      },
+      "gdr_map": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 35.844208984375,
+          "median": 35.812,
+          "p95": 43.452,
+          "max": 51.862
+        },
+        "sum_thread_ms": 18.352235
+      },
+      "gdr_unmap": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 87.001619140625,
+          "median": 83.60249999999999,
+          "p95": 107.497,
+          "max": 981.754
+        },
+        "sum_thread_ms": 44.544829
+      },
+      "gdr_unpin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 28.414431640625,
+          "median": 26.178,
+          "p95": 42.42,
+          "max": 68.763
+        },
+        "sum_thread_ms": 14.548189
+      }
+    },
+    "locks": {
+      "scheduler_mutex": {
+        "calls": 856992,
+        "sum_thread_ms": 3960.854516,
+        "mean_us": 4.62181037395915,
+        "max_us": 335.813
+      },
+      "cuda_register_spin": {
+        "calls": 512,
+        "sum_thread_ms": 28.424696,
+        "mean_us": 55.516984375,
+        "max_us": 806.413
+      },
+      "cuda_unregister_spin": {
+        "calls": 512,
+        "sum_thread_ms": 34.288871,
+        "mean_us": 66.970451171875,
+        "max_us": 605.755
+      }
+    },
+    "parent_register_close_union_ms": 168.021665
+  },
+  {
+    "tag": 30163,
+    "trial": "r1_w16",
+    "phase": "engine",
+    "workers": 16,
+    "measured": true,
+    "wall_ms": 337.976517,
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 82.00690625,
+          "median": 64.584,
+          "p95": 145.882,
+          "max": 460.899
+        },
+        "sum_thread_ms": 41.987536
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 111.395111328125,
+          "median": 92.5815,
+          "p95": 201.631,
+          "max": 441.016
+        },
+        "sum_thread_ms": 57.034297
+      },
+      "rxm_mr_regattr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 186.380419921875,
+          "median": 159.0985,
+          "p95": 324.76,
+          "max": 554.264
+        },
+        "sum_thread_ms": 95.426775
+      },
+      "rxm_mr_close": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 190.147486328125,
+          "median": 155.10750000000002,
+          "p95": 313.454,
+          "max": 551.915
+        },
+        "sum_thread_ms": 97.355513
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 65.2731796875,
+          "median": 32.478,
+          "p95": 170.356,
+          "max": 409.783
+        },
+        "sum_thread_ms": 33.419868
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 58.968146484375,
+          "median": 25.7145,
+          "p95": 165.391,
+          "max": 399.2
+        },
+        "sum_thread_ms": 30.191691
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 72.5660390625,
+          "median": 38.7825,
+          "p95": 187.733,
+          "max": 287.436
+        },
+        "sum_thread_ms": 37.153812
+      },
+      "gdr_pin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 31.6514921875,
+          "median": 29.872,
+          "p95": 47.351,
+          "max": 79.376
+        },
+        "sum_thread_ms": 16.205564
+      },
+      "gdr_map": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 24.806158203125,
+          "median": 24.237000000000002,
+          "p95": 29.984,
+          "max": 37.86
+        },
+        "sum_thread_ms": 12.700753
+      },
+      "gdr_unmap": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 61.15925,
+          "median": 60.6485,
+          "p95": 67.001,
+          "max": 91.638
+        },
+        "sum_thread_ms": 31.313536
+      },
+      "gdr_unpin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 21.1593828125,
+          "median": 20.7805,
+          "p95": 26.612,
+          "max": 54.738
+        },
+        "sum_thread_ms": 10.833604
+      }
+    },
+    "locks": {
+      "scheduler_mutex": {
+        "calls": 1244552,
+        "sum_thread_ms": 2349.062135,
+        "mean_us": 1.8874760837634748,
+        "max_us": 249.28
+      },
+      "cuda_register_spin": {
+        "calls": 512,
+        "sum_thread_ms": 8.610846,
+        "mean_us": 16.81805859375,
+        "max_us": 398.276
+      },
+      "cuda_unregister_spin": {
+        "calls": 512,
+        "sum_thread_ms": 10.455613,
+        "mean_us": 20.421119140625,
+        "max_us": 350.714
+      }
+    },
+    "parent_register_close_union_ms": 137.428259
+  },
+  {
+    "tag": 30164,
+    "trial": "r1_w16",
+    "phase": "native",
+    "workers": 16,
+    "measured": true,
+    "wall_ms": 333.336534,
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 84.573892578125,
+          "median": 52.0775,
+          "p95": 149.913,
+          "max": 2243.658
+        },
+        "sum_thread_ms": 43.301833
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 102.430685546875,
+          "median": 85.8235,
+          "p95": 172.025,
+          "max": 313.14
+        },
+        "sum_thread_ms": 52.444511
+      },
+      "rxm_mr_regattr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 225.560609375,
+          "median": 195.1345,
+          "p95": 322.578,
+          "max": 2638.395
+        },
+        "sum_thread_ms": 115.487032
+      },
+      "rxm_mr_close": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 222.390166015625,
+          "median": 220.707,
+          "p95": 337.209,
+          "max": 495.436
+        },
+        "sum_thread_ms": 113.863765
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 106.572634765625,
+          "median": 117.018,
+          "p95": 181.677,
+          "max": 389.426
+        },
+        "sum_thread_ms": 54.565189
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 101.368345703125,
+          "median": 111.782,
+          "p95": 177.192,
+          "max": 378.235
+        },
+        "sum_thread_ms": 51.900593
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 114.486708984375,
+          "median": 127.277,
+          "p95": 206.483,
+          "max": 259.258
+        },
+        "sum_thread_ms": 58.617195
+      },
+      "gdr_pin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 31.108705078125,
+          "median": 24.637500000000003,
+          "p95": 48.132,
+          "max": 554.129
+        },
+        "sum_thread_ms": 15.927657
+      },
+      "gdr_map": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 17.64903515625,
+          "median": 16.538,
+          "p95": 24.166,
+          "max": 38.226
+        },
+        "sum_thread_ms": 9.036306
+      },
+      "gdr_unmap": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 56.974275390625,
+          "median": 56.13,
+          "p95": 62.183,
+          "max": 84.597
+        },
+        "sum_thread_ms": 29.170829
+      },
+      "gdr_unpin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 20.293388671875,
+          "median": 19.729,
+          "p95": 24.959,
+          "max": 44.494
+        },
+        "sum_thread_ms": 10.390215
+      }
+    },
+    "locks": {
+      "scheduler_mutex": {
+        "calls": 1319136,
+        "sum_thread_ms": 2309.604713,
+        "mean_us": 1.7508465488016398,
+        "max_us": 190.914
+      },
+      "cuda_register_spin": {
+        "calls": 512,
+        "sum_thread_ms": 14.294057,
+        "mean_us": 27.918080078125,
+        "max_us": 2154.561
+      },
+      "cuda_unregister_spin": {
+        "calls": 512,
+        "sum_thread_ms": 8.735082,
+        "mean_us": 17.06070703125,
+        "max_us": 220.807
+      }
+    },
+    "parent_register_close_union_ms": 146.164424
+  },
+  {
+    "tag": 30643,
+    "trial": "r1_w64",
+    "phase": "engine",
+    "workers": 64,
+    "measured": true,
+    "wall_ms": 287.379078,
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 157.0073671875,
+          "median": 114.8365,
+          "p95": 371.668,
+          "max": 695.828
+        },
+        "sum_thread_ms": 80.387772
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 214.230087890625,
+          "median": 158.7335,
+          "p95": 519.399,
+          "max": 988.557
+        },
+        "sum_thread_ms": 109.685805
+      },
+      "rxm_mr_regattr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 329.63403515625,
+          "median": 304.63149999999996,
+          "p95": 605.6,
+          "max": 926.482
+        },
+        "sum_thread_ms": 168.772626
+      },
+      "rxm_mr_close": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 345.99487109375,
+          "median": 309.0815,
+          "p95": 643.315,
+          "max": 1142.796
+        },
+        "sum_thread_ms": 177.149374
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 110.75573828125,
+          "median": 127.124,
+          "p95": 211.666,
+          "max": 412.792
+        },
+        "sum_thread_ms": 56.706938
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 102.535447265625,
+          "median": 119.0265,
+          "p95": 202.304,
+          "max": 399.38
+        },
+        "sum_thread_ms": 52.498149
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 123.649646484375,
+          "median": 136.309,
+          "p95": 228.856,
+          "max": 342.421
+        },
+        "sum_thread_ms": 63.308619
+      },
+      "gdr_pin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 44.62157421875,
+          "median": 40.634,
+          "p95": 73.589,
+          "max": 110.705
+        },
+        "sum_thread_ms": 22.846246
+      },
+      "gdr_map": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 36.98603125,
+          "median": 36.3805,
+          "p95": 43.413,
+          "max": 330.929
+        },
+        "sum_thread_ms": 18.936848
+      },
+      "gdr_unmap": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 89.314849609375,
+          "median": 86.009,
+          "p95": 111.293,
+          "max": 124.729
+        },
+        "sum_thread_ms": 45.729203
+      },
+      "gdr_unpin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 27.928376953125,
+          "median": 25.7185,
+          "p95": 41.54,
+          "max": 66.161
+        },
+        "sum_thread_ms": 14.299329
+      }
+    },
+    "locks": {
+      "scheduler_mutex": {
+        "calls": 866277,
+        "sum_thread_ms": 4651.718495,
+        "mean_us": 5.3697818307539045,
+        "max_us": 237.472
+      },
+      "cuda_register_spin": {
+        "calls": 512,
+        "sum_thread_ms": 32.975778,
+        "mean_us": 64.40581640625,
+        "max_us": 614.636
+      },
+      "cuda_unregister_spin": {
+        "calls": 512,
+        "sum_thread_ms": 44.354361,
+        "mean_us": 86.629611328125,
+        "max_us": 834.885
+      }
+    },
+    "parent_register_close_union_ms": 166.597499
+  },
+  {
+    "tag": 30644,
+    "trial": "r1_w64",
+    "phase": "native",
+    "workers": 64,
+    "measured": true,
+    "wall_ms": 274.150905,
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 879.429599609375,
+          "median": 104.749,
+          "p95": 7083.685,
+          "max": 13887.122
+        },
+        "sum_thread_ms": 450.267955
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 280.8913671875,
+          "median": 157.9665,
+          "p95": 618.816,
+          "max": 5844.086
+        },
+        "sum_thread_ms": 143.81638
+      },
+      "rxm_mr_regattr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 1112.8486796875,
+          "median": 243.277,
+          "p95": 8254.929,
+          "max": 14420.438
+        },
+        "sum_thread_ms": 569.778524
+      },
+      "rxm_mr_close": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 399.4037421875,
+          "median": 296.494,
+          "p95": 791.414,
+          "max": 5906.821
+        },
+        "sum_thread_ms": 204.494716
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 104.706529296875,
+          "median": 76.982,
+          "p95": 330.948,
+          "max": 507.447
+        },
+        "sum_thread_ms": 53.609743
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 97.725861328125,
+          "median": 71.6315,
+          "p95": 321.217,
+          "max": 494.045
+        },
+        "sum_thread_ms": 50.035641
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 111.448171875,
+          "median": 110.4565,
+          "p95": 225.242,
+          "max": 336.563
+        },
+        "sum_thread_ms": 57.061464
+      },
+      "gdr_pin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 51.68629296875,
+          "median": 33.742000000000004,
+          "p95": 69.984,
+          "max": 1098.817
+        },
+        "sum_thread_ms": 26.463382
+      },
+      "gdr_map": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 28.26180859375,
+          "median": 27.1045,
+          "p95": 40.431,
+          "max": 323.029
+        },
+        "sum_thread_ms": 14.470046
+      },
+      "gdr_unmap": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 90.16450390625,
+          "median": 89.1115,
+          "p95": 108.857,
+          "max": 116.301
+        },
+        "sum_thread_ms": 46.164226
+      },
+      "gdr_unpin_buffer": {
+        "calls": 512,
+        "duration_us": {
+          "mean": 27.14948828125,
+          "median": 26.594,
+          "p95": 36.617,
+          "max": 56.356
+        },
+        "sum_thread_ms": 13.900538
+      }
+    },
+    "locks": {
+      "scheduler_mutex": {
+        "calls": 906376,
+        "sum_thread_ms": 6693.899935,
+        "mean_us": 7.3853455243739905,
+        "max_us": 394.272
+      },
+      "cuda_register_spin": {
+        "calls": 512,
+        "sum_thread_ms": 404.168432,
+        "mean_us": 789.39146875,
+        "max_us": 13793.027
+      },
+      "cuda_unregister_spin": {
+        "calls": 512,
+        "sum_thread_ms": 78.749456,
+        "mean_us": 153.80753125,
+        "max_us": 5683.848
+      }
+    },
+    "parent_register_close_union_ms": 149.995949
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "requests": 960,
+  "successful_requests": 960,
+  "gates_passed": 2,
+  "regression_tests_passed": 22,
+  "source_hashes_match": true,
+  "existing_keys_preserved": 56017,
+  "previous_approved_keys_removed": 31668,
+  "experiment_objects_removed": 2,
+  "gpu_idle_after_run": true,
+  "final_gpu_memory_mib": 4,
+  "notes": [
+    "Only orchestration cleanup changed between conditions; revisions archived and recorded in both plans.",
+    "Both conditions use the same final backend, transport, token-position tracking and workload implementation.",
+    "One run per condition; 87/480 actual prompt hashes match, read volume differs by 0.002%.",
+    "Mean TTFT and retrieve improved; overall p95 TTFT increased."
+  ]
+}

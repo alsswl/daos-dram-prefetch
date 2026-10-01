@@ -1,0 +1,28 @@
+{
+  "pool": "f973c142-2353-41da-b154-5079ba6969f2",
+  "container": "a2d875e3-195b-4598-98b4-b381ef49867a",
+  "oid": "281543696187392.1000",
+  "namespaces": [
+    {
+      "namespace": "minji-cold-warm-3eaee44d9c2749a183bb0462979e87a2:",
+      "sources": [
+        "sharegpt_ready_return_d256_s8_20260930_validation/pilot/config.yaml"
+      ],
+      "pool": "discospool",
+      "container": "kvcache",
+      "experiments": [
+        "sharegpt_ready_return_d256_s8_20260930_validation"
+      ]
+    }
+  ],
+  "target_count": 150,
+  "total_count": 54765,
+  "preserved_count": 54615,
+  "per_namespace": {
+    "minji-cold-warm-3eaee44d9c2749a183bb0462979e87a2:": 150
+  },
+  "target_sha256": "7ac9bfd10a69825fd858b02ad447a36e491e3aab8f369be092cb9c81ae37b713",
+  "binding_sha256": "ce38ed41c12390524fab993ea16e436122412b8f81267d77e857629266aaa13b",
+  "library_sha256": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c",
+  "source_sha256": "ff383e783859281626cf1ec9b2a0e52b97fae2c0c21fdd328663bbb9370d4657"
+}

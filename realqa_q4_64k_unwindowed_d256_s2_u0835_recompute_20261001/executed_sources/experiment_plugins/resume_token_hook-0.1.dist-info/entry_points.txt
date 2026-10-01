@@ -1,0 +1,2 @@
+[vllm.general_plugins]
+daos_resume_tokens = lmcache_daos.vllm_resume_patch:install

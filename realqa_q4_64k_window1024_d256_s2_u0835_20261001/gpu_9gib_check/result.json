@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "staging_gib": 2,
+  "requested_tokens": 65536,
+  "window_mib": 1024,
+  "requested_chunks": 512,
+  "requested_gib": 9.0,
+  "lookup_hit_tokens": 65536,
+  "returned_tokens": 65536,
+  "returned_chunks": 512,
+  "returned_gib": 9.0,
+  "capacity_failed_chunks": 0,
+  "successful_tail_discarded_chunks": 0,
+  "peak_staging_gib": 0.984375,
+  "staging_bytes_after": 0,
+  "scatter_calls": [
+    {
+      "chunks": 56,
+      "bytes": 1056964608,
+      "staging_bytes_at_entry": 1056964608,
+      "time_ns": 1790831194380874848
+    },
+    {
+      "chunks": 56,
+      "bytes": 1056964608,
+      "staging_bytes_at_entry": 1056964608,
+      "time_ns": 1790831194426799591
+    },
+    {
+      "chunks": 56,
+      "bytes": 1056964608,
+      "staging_bytes_at_entry": 1056964608,
+      "time_ns": 1790831194477796736
+    },
+    {
+      "chunks": 56,
+      "bytes": 1056964608,
+      "staging_bytes_at_entry": 1056964608,
+      "time_ns": 1790831194524013835
+    },
+    {
+      "chunks": 56,
+      "bytes": 1056964608,
+      "staging_bytes_at_entry": 1056964608,
+      "time_ns": 1790831194573373303
+    },
+    {
+      "chunks": 56,
+      "bytes": 1056964608,
+      "staging_bytes_at_entry": 1056964608,
+      "time_ns": 1790831194621623024
+    },
+    {
+      "chunks": 56,
+      "bytes": 1056964608,
+      "staging_bytes_at_entry": 1056964608,
+      "time_ns": 1790831194678513758
+    },
+    {
+      "chunks": 56,
+      "bytes": 1056964608,
+      "staging_bytes_at_entry": 1056964608,
+      "time_ns": 1790831194729937835
+    },
+    {
+      "chunks": 56,
+      "bytes": 1056964608,
+      "staging_bytes_at_entry": 1056964608,
+      "time_ns": 1790831194779327534
+    },
+    {
+      "chunks": 8,
+      "bytes": 150994944,
+      "staging_bytes_at_entry": 150994944,
+      "time_ns": 1790831194797123522
+    }
+  ],
+  "all_returned_gpu_values_match": true,
+  "unreturned_gpu_region_unchanged": true,
+  "retrieve_ms": 468.011962,
+  "lookup_start_ns": 1790831194320731903,
+  "start_ns": 1790831194330625735,
+  "end_ns": 1790831194798637697
+}

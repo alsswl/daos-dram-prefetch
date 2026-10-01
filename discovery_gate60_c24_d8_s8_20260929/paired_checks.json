@@ -1,0 +1,34 @@
+[
+  {
+    "concurrency": 24,
+    "phase": "cold",
+    "reference": "on",
+    "mode": "off",
+    "same_cached_requests": 240,
+    "same_tier_requests": 239
+  },
+  {
+    "concurrency": 24,
+    "phase": "cold",
+    "reference": "on",
+    "mode": "gate60",
+    "same_cached_requests": 240,
+    "same_tier_requests": 238
+  },
+  {
+    "concurrency": 24,
+    "phase": "warm",
+    "reference": "on",
+    "mode": "off",
+    "same_cached_requests": 255,
+    "same_tier_requests": 244
+  },
+  {
+    "concurrency": 24,
+    "phase": "warm",
+    "reference": "on",
+    "mode": "gate60",
+    "same_cached_requests": 255,
+    "same_tier_requests": 241
+  }
+]

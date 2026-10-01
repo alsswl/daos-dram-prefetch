@@ -1,0 +1,100 @@
+{
+  "status": "completed",
+  "requests": 480,
+  "groups": [
+    {
+      "group": "all",
+      "requests": 480,
+      "ttft_ms": {
+        "n": 480,
+        "mean": 6129.716010922916,
+        "p50": 4465.5387265,
+        "p95": 11395.943304549997,
+        "maximum": 31412.272264
+      },
+      "prompt_tokens": 29822671,
+      "cached_tokens": 5233152,
+      "cached_token_pct": 17.547563060330848,
+      "output_tokens": 121329
+    },
+    {
+      "group": "first_turn",
+      "requests": 80,
+      "ttft_ms": {
+        "n": 80,
+        "mean": 7905.5326817125,
+        "p50": 7726.0945925,
+        "p95": 16123.88604109999,
+        "maximum": 31412.272264
+      },
+      "prompt_tokens": 4916320,
+      "cached_tokens": 229120,
+      "cached_token_pct": 4.660396394050835,
+      "output_tokens": 20480
+    },
+    {
+      "group": "followup",
+      "requests": 400,
+      "ttft_ms": {
+        "n": 400,
+        "mean": 5774.552676765,
+        "p50": 4444.576746000001,
+        "p95": 10850.32266525,
+        "maximum": 15648.649768
+      },
+      "prompt_tokens": 24906351,
+      "cached_tokens": 5004032,
+      "cached_token_pct": 20.09138954156713,
+      "output_tokens": 100849
+    }
+  ],
+  "elapsed_seconds": 2301.128392478,
+  "input_tokens": 29822671,
+  "computed_input_tokens": 24589519,
+  "daos_read_gib": 780.71484375,
+  "daos_write_gib": 565.171875,
+  "daos_put_chunks": 32152,
+  "daos_get_chunks": 44414,
+  "payload_accounting": "Completed fetch outcomes (including discarded tails) and drained successful PUT counter, times full chunk bytes",
+  "peak_staging_gib": 1.986328125,
+  "allocation_failure_events": 155387,
+  "read_allocation_failures": 155212,
+  "discarded_successful_tail_chunks": 3530,
+  "capacity_recomputed_tokens": 20318976,
+  "daos_lookup_available_token_pct": 85.68021288234041,
+  "unattributed_prefix_shortfall_tokens": 0,
+  "attribution_issue_requests": [],
+  "logged_nonempty_store_calls": 4003,
+  "partial_store_calls": 60,
+  "store_capacity_failure_calls": 175,
+  "store_zero_admission_calls": 115,
+  "store_offered_tokens": 24314752,
+  "store_admitted_tokens": 23914496,
+  "store_unadmitted_tokens_logged_nonempty": 400256,
+  "scheduler_recovery_events": 0,
+  "identical_input_hashes": true,
+  "dram_kv_bytes": 0,
+  "staging_final_bytes": 0,
+  "notes": [
+    "Computed input = prompt minus reported cached tokens; not GPU timing or unique tokens.",
+    "Store token totals cover nonempty logged stores only; native zero-admission early returns omit requested token counts.",
+    "Unadmitted store token totals are therefore a lower bound and can include later retried or repeated prefixes.",
+    "Async lookup reports actual loaded prefix before scheduling, so normal prefill need not log recovery.",
+    "C8 HTTP concurrency, original single async serializer, 16 per-chunk IO workers.",
+    "Historical comparison changes both loading and store/drop policy; not a single-variable async comparison."
+  ],
+  "historical_window500_baseline": {
+    "requests": 480,
+    "ttft_ms": {
+      "n": 480,
+      "mean": 1820.6581610666667,
+      "p50": 896.0322424999999,
+      "p95": 6678.455069899977,
+      "maximum": 31754.491277
+    },
+    "elapsed_seconds": 913.463979903,
+    "cached_token_pct": 86.71716896182774,
+    "output_tokens": 121308,
+    "daos_read_gib": 3551.51953125
+  }
+}

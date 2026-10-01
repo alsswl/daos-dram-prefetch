@@ -1,0 +1,1874 @@
+[
+  {
+    "index": 0,
+    "prompt_sha256": "e347b25c8c7dffdc26ba21abaa08ef0a4ffbcbffc3f9461e77f5075d4fe61ac6",
+    "start_ns": 1790611204356004579,
+    "server_request_id": "chatcmpl-8d8b8b93f860f0df",
+    "ttft_ms": 1218.2894852012396,
+    "usage": {
+      "prompt_tokens": 4886,
+      "total_tokens": 4917,
+      "completion_tokens": 31,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 4886,
+    "completion_tokens": 31,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "bfc8a6a152d0bc31dfa2c35aa5efcaeb2a56b100c682946d530daca973c6e0ee",
+    "output": "The consolidated revenue for the Surgical Product segment was $15.5 million, which represents an 8% growth over last year's first quarter.",
+    "end_ns": 1790611208400084693,
+    "elapsed_seconds": 4.0440818117931485,
+    "document_id": "financial_qa:1",
+    "question_index": 0,
+    "expected_prompt_tokens": 4886
+  },
+  {
+    "index": 1,
+    "prompt_sha256": "0aa8cd19725e90c3b8344c7096ac94af12e72c37cba42b0914fab75c68bcb33d",
+    "start_ns": 1790611204356568262,
+    "server_request_id": "chatcmpl-8be4b40b7f262ac9",
+    "ttft_ms": 2213.308415841311,
+    "usage": {
+      "prompt_tokens": 6937,
+      "total_tokens": 7082,
+      "completion_tokens": 145,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 6937,
+    "completion_tokens": 145,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "9b49c60ee36234ab6fb5df0b3d7cd34f809979fa9c814d14aeac03ad7447ed1d",
+    "output": "The contract's initial term is defined as a period of five (5) years from the Reseller's first purchase order for Product issued to Todos. However, the exact date of the initial term's expiration is not explicitly stated in the document, as it depends on when the Reseller issues its first purchase order. This ambiguity regarding the specific expiration date of the initial term is a part of the contract that should be reviewed by a lawyer.\n\nAdditionally, the document mentions that components of the Products have an expiration date, but the specific expiration dates are not provided in the text (see Exhibit A). This lack of clarity regarding the expiration dates of the Products is another part of the contract that should be reviewed by a lawyer.",
+    "end_ns": 1790611210476700200,
+    "elapsed_seconds": 6.120133299846202,
+    "document_id": "legal_contract_qa:5",
+    "question_index": 0,
+    "expected_prompt_tokens": 6937
+  },
+  {
+    "index": 2,
+    "prompt_sha256": "e44346457173b3cca1edc73cb9114ddfaf82fca2d6c1ff1e2c7b17aa89520024",
+    "start_ns": 1790611204357112097,
+    "server_request_id": "chatcmpl-962aa7c16684f962",
+    "ttft_ms": 3286.7338620126247,
+    "usage": {
+      "prompt_tokens": 4784,
+      "total_tokens": 5486,
+      "completion_tokens": 702,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 4784,
+    "completion_tokens": 702,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "dbeea6aef3454b316f71bde95a1a25701f7a7010c0425ac393ba01b155ee2547",
+    "output": "Greg Dougherty, the CEO of Oclaro, highlighted several major actions being undertaken by the company as part of its restructuring plan:\n\n1. **Asset Sales**: The company has closed two major asset sales, including the sale of its Amplifier and Micro-Optics businesses to II-VI, which generated $79.6 million in cash. This provided the necessary funds to restructure the company.\n\n2. **Headcount Reductions**: Oclaro has initiated global headcount reductions, beginning with notifications in the United States, Europe, and Korea. The company plans to reduce its total headcount from approximately 3,000 on July 1, 2013, to around 2,200 by January 1, 2014, and likely down to less than 1,500 by July 1, 2014. Additionally, the executive team and the Board of Directors have agreed to reduce their pay by approximately 15%.\n\n3. **Simplification of Global Footprint and Organization**: The company has taken steps to simplify its global footprint and organization. This includes reducing the number of global sites by four through previously announced divestitures, closing the Korea LCD fab for WSS products, and exiting the wavelength-selectable switch business by the end of the fiscal year. The high bit rate module design team has been consolidated into the San Jose, California location, allowing the closure of the Acton, Massachusetts site. The goal is to reduce the number of major sites from about 20 in June 2013 to 10 by the end of June 2014.\n\n4. **Cost Reduction and Operational Efficiency**: Oclaro has focused on reducing costs and manufacturing overhead, with the anticipated result of an approximately $10 million to $12 million reduction in quarterly spending. The company has also refined its in-house back-end manufacturing strategy, deciding to remain in China for component-level manufacturing and development at its Shenzhen site to speed up the introduction of complex integrated products.\n\n5. **Reorganization into Two Business Divisions**: To simplify the company, establish a more intensive market focus, and increase accountability, Oclaro has reorganized into two business divisions: one for the client side, called Optical Connectivity, and one for the line side, called Integrated Photonics. Each division will be responsible for its own fabs, operations, marketing, and product development, and will contribute approximately half of the company's revenues.\n\n6. **Restructuring of Manufacturing and Supply Chain**: The company has been working on transferring manufacturing from its Shenzhen site to contract manufacturers, Fabrinet and Venture. However, some of these transfers have taken longer than planned, impacting customer deliveries and revenue output. Maintaining component-level activities in Shenzhen while continuing the planned transfers to contract manufacturers is expected to improve customer deliveries and mitigate risks in manufacturing transitions.\n\n7. **Simplification of New Product Introduction Process**: Oclaro has simplified and streamlined its new product introduction process for indium phosphide components coming from the U.K. A new component pilot line is being established in Caswell, co-located with chip development, to improve time to market for innovative complex components, particularly for 100G coherent applications.\n\nThese actions are part of a broader strategy to restructure the company, reduce costs, improve operational efficiency, and position Oclaro for long-term growth and profitability.",
+    "end_ns": 1790611221784780960,
+    "elapsed_seconds": 17.427670313976705,
+    "document_id": "financial_qa:0",
+    "question_index": 0,
+    "expected_prompt_tokens": 4784
+  },
+  {
+    "index": 3,
+    "prompt_sha256": "972d2fde40d03ce6e1b61c149dfb0453f0c0ae62059173aca6d18d9113a8f28b",
+    "start_ns": 1790611204358761703,
+    "server_request_id": "chatcmpl-a557f6ef535dc844",
+    "ttft_ms": 3309.046210255474,
+    "usage": {
+      "prompt_tokens": 4575,
+      "total_tokens": 4698,
+      "completion_tokens": 123,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 4575,
+    "completion_tokens": 123,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "0657c5ca4b3a9b8394bf14dc259b00a3f29c8d4378c64a9db3476f53a06948a5",
+    "output": "The Renewable Energy Group's second quarter financial results in 2019 were disappointing, with an adjusted EBITDA of negative $42.3 million, which was well below expectations. The key issue affecting the performance was the prolonged indecision regarding the reinstatement of the biodiesel mixture excise tax credit (BTC). This uncertainty led to a low margin environment, with customers limiting their BTC exposure, resulting in lower prompt pricing and compressed spreads between heating oil/ULSD and feedstocks. Additionally, the lack of BTC reinstatement created a disconnect in pricing and production volumes, further depressing realized margins.",
+    "end_ns": 1790611209838988620,
+    "elapsed_seconds": 5.480229549109936,
+    "document_id": "financial_qa:4",
+    "question_index": 0,
+    "expected_prompt_tokens": 4575
+  },
+  {
+    "index": 4,
+    "prompt_sha256": "2c1818bf2747844e149123d30efbcafae5d6e0c258a98d2680adb339622d42dd",
+    "start_ns": 1790611204359502852,
+    "server_request_id": "chatcmpl-a5dc29cf8ab4838c",
+    "ttft_ms": 3308.2000678405166,
+    "usage": {
+      "prompt_tokens": 5914,
+      "total_tokens": 5934,
+      "completion_tokens": 20,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 5914,
+    "completion_tokens": 20,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "cd101266a6b767565b570972eabd43d24a6dc222d92c7cdc4e01258cff58ab9b",
+    "output": "The topic covered in the Chinese Facebook data (FBFans dataset) is anti-nuclear power.",
+    "end_ns": 1790611207920233269,
+    "elapsed_seconds": 3.5607326282188296,
+    "document_id": "scientific_qa:8",
+    "question_index": 0,
+    "expected_prompt_tokens": 5914
+  },
+  {
+    "index": 5,
+    "prompt_sha256": "29612051b6d6bd8f98a3961bd008fee8052c9ed6d49a459a1ddf249daaa9c2a8",
+    "start_ns": 1790611204358303701,
+    "server_request_id": "chatcmpl-be7cf9cec4ede889",
+    "ttft_ms": 2780.9748011641204,
+    "usage": {
+      "prompt_tokens": 5918,
+      "total_tokens": 6008,
+      "completion_tokens": 90,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 5918,
+    "completion_tokens": 90,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "e5d63091fabfab448b588532f841b539fa9497ab3ae28a62b409f475e8efcc92",
+    "output": "The \"sensitivity\" quantity denotes the expected number of unique outputs a word recognition system assigns to a set of adversarial perturbations. It is a measure of how many distinct inputs an attacker can induce through perturbations, which in turn affects the robustness of the downstream classifier. A high sensitivity value indicates that the model is more vulnerable to adversarial attacks, as it provides the attacker with more degrees of freedom to manipulate the input.",
+    "end_ns": 1790611209315672951,
+    "elapsed_seconds": 4.957370847929269,
+    "document_id": "scientific_qa:4",
+    "question_index": 0,
+    "expected_prompt_tokens": 5918
+  },
+  {
+    "index": 6,
+    "prompt_sha256": "aa78d5495e5fb0b96f38cf63e6a8c4aee0d5fbd6003d62bbf56bb5fe3ea89f5a",
+    "start_ns": 1790611204357734183,
+    "server_request_id": "chatcmpl-9739ef9942e30364",
+    "ttft_ms": 1796.0992632433772,
+    "usage": {
+      "prompt_tokens": 6950,
+      "total_tokens": 7249,
+      "completion_tokens": 299,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 6950,
+    "completion_tokens": 299,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "a816633e4e40e0741aacdf942ebe59deff5ab2232bcebd88a119b1c7823d7ca2",
+    "output": "The part of the contract related to the \"Renewal Term\" that should be reviewed by a lawyer is as follows:\n\n**11.1 This Agreement shall be effective as of the Effective Date and shall continue in effect for a period of five (5) years from the Reseller's first purchase order for Product issued to Todos (the \"Initial Term\"), unless terminated earlier by one of the parties in accordance with the terms of this Section 11. Upon completion of the Initial Term, provided that the Reseller has achieved the Annual Milestones, the term of the Agreement shall be automatically renewed for an additional five (5) years. Thereafter, at the end of each renewal term, the Agreement shall renew for an additional two (2) years unless one party provides the other party with prior written notice of non-renewal at least sixty (60) days prior to the expiration of the then-current term.**\n\nThis section outlines the automatic renewal of the agreement for an additional five (5) years after the Initial Term, provided the Reseller achieves the Annual Milestones. It also states that after the first renewal, the agreement will automatically renew for an additional two (2) years unless one party provides the other with prior written notice of non-renewal at least sixty (60) days before the expiration of the then-current term. This should be reviewed by a lawyer to understand the implications of automatic renewal and the notice requirements for non-renewal.",
+    "end_ns": 1790611214547531642,
+    "elapsed_seconds": 10.189799825195223,
+    "document_id": "legal_contract_qa:5",
+    "question_index": 1,
+    "expected_prompt_tokens": 6950
+  },
+  {
+    "index": 7,
+    "prompt_sha256": "7e82c7ea8384145ffd61bd81201f64dbf870e4a388cf418877c7b62d5eb43f7b",
+    "start_ns": 1790611204355554730,
+    "server_request_id": "chatcmpl-84be091c08e9e7e5",
+    "ttft_ms": 2214.949769899249,
+    "usage": {
+      "prompt_tokens": 5642,
+      "total_tokens": 5741,
+      "completion_tokens": 99,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 5642,
+    "completion_tokens": 99,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "dc8c5533cde24dee267c7fd5a3977b2fa5cda7c65cf388f160572467b5148eb3",
+    "output": "Their techniques are cheaper to implement because they use simpler data generation schemes, such as copying the target into the source, adding noise, and using Generative Adversarial Networks (GANs) to make pseudo-sources look more like natural data, which are computationally less expensive than the traditional back-translation (BT) method that requires a high-quality MT system for reverse translation. Additionally, these methods do not require the same level of computational resources or high-quality parallel data as conventional BT.",
+    "end_ns": 1790611209443043818,
+    "elapsed_seconds": 5.08749064989388,
+    "document_id": "scientific_qa:9",
+    "question_index": 0,
+    "expected_prompt_tokens": 5642
+  },
+  {
+    "index": 8,
+    "prompt_sha256": "7ffcd90f582927e0199c73d6056920fcb50e3dd1c5aafca866c7dc00d2545193",
+    "start_ns": 1790611207921225311,
+    "server_request_id": "chatcmpl-9b7f1ef4d88cee69",
+    "ttft_ms": 451.60239189863205,
+    "usage": {
+      "prompt_tokens": 5491,
+      "total_tokens": 5632,
+      "completion_tokens": 141,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 5491,
+    "completion_tokens": 141,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "93ea62d07d2820a03708bf8c567f0e5df1f9d3d839143f5ef6a8e6945f131fac",
+    "output": "The results on the constructed dataset show that AutoJudge consistently and significantly outperforms all the baselines, including RC models and other neural text classification models, which shows the effectiveness and robustness of our model. RC models achieve better performance than most text classification models (excluding GRU+Attention), which indicates that reading mechanism is a better way to integrate information from heterogeneous yet complementary inputs. Comparing with conventional RC models, AutoJudge achieves significant improvement with the consideration of additional law articles. It reflects the difference between LRC and conventional RC models. The experiments support the hypothesis that in civil cases, it's important to model the interactions among case materials. Reading mechanism can well perform the matching among them.",
+    "end_ns": 1790611211168080971,
+    "elapsed_seconds": 3.2468564487062395,
+    "document_id": "scientific_qa:11",
+    "question_index": 0,
+    "expected_prompt_tokens": 5491
+  },
+  {
+    "index": 9,
+    "prompt_sha256": "eb8b21280afd4902c7ada35c301934bdacef46116c16d56aef994d51087ff4bd",
+    "start_ns": 1790611208400560254,
+    "server_request_id": "chatcmpl-99dddcd3ea699fdf",
+    "ttft_ms": 95.70078505203128,
+    "usage": {
+      "prompt_tokens": 4889,
+      "total_tokens": 5279,
+      "completion_tokens": 390,
+      "prompt_tokens_details": {
+        "cached_tokens": 4736
+      }
+    },
+    "prompt_tokens": 4889,
+    "completion_tokens": 390,
+    "cached_tokens": 4736,
+    "finish_reason": "stop",
+    "output_sha256": "dc5a04073c4fc739d4dd59f8a516fdc72c1ce6af88ea6099e6caa96f2f9fe776",
+    "output": "In Q1 2012, the Surgical segment of Theragenics showed significant improvement in profitability. The Surgical segment reported operating income of $199,000, which is nearly a $400,000 improvement compared to the operating loss in Q1 of 2011. This improvement was driven by an 8% year-over-year revenue growth and a slight increase in gross profit margin to 35% from 34% in the previous year. However, selling, general, and administrative (SG&A) expenses remained at 27% of revenue, which was the same as the previous year, resulting in an increase in absolute dollar terms due to higher depreciation and other costs related to IT initiatives, including the new ERP system. Despite these costs, the Surgical segment demonstrated a positive trend in profitability, with the company expecting potential economies of scale in SG&A as back-office functions are centralized.\n\nThe Brachytherapy business also showed strong profitability in Q1 2012, delivering $1.4 million in operating income, a 28% increase compared to the previous year. This growth was attributed to the acquisition of the core customer base in February 2012, which contributed incremental sales of $586,000 in the first quarter. Annualizing this number gives a run rate of approximately $5 million. The Brachytherapy business has a large fixed cost component, so incremental sales significantly contribute to profit. Additionally, the business is transitioning to a new iodine-based seed called the AgX100, which is expected to lower production costs and improve gross profit margins to the range of 40% to 45% once fully transitioned. The Brachytherapy business also maintained nearly 99% of the acquired Core customers post-transaction, indicating a successful integration and continued market share retention.",
+    "end_ns": 1790611216846984928,
+    "elapsed_seconds": 8.446425457950681,
+    "document_id": "financial_qa:1",
+    "question_index": 1,
+    "expected_prompt_tokens": 4889
+  },
+  {
+    "index": 10,
+    "prompt_sha256": "5434fb9322be121e3beec3c601b18a6a7acbee373e300808866affc5115df25e",
+    "start_ns": 1790611209316365493,
+    "server_request_id": "chatcmpl-bcc1f0c8d74df494",
+    "ttft_ms": 93.80633290857077,
+    "usage": {
+      "prompt_tokens": 4773,
+      "total_tokens": 5104,
+      "completion_tokens": 331,
+      "prompt_tokens_details": {
+        "cached_tokens": 4736
+      }
+    },
+    "prompt_tokens": 4773,
+    "completion_tokens": 331,
+    "cached_tokens": 4736,
+    "finish_reason": "stop",
+    "output_sha256": "8cb16f42a9c4af3be6eed37aca4eb2ae35f3d448b62d75730741e05deb6b29b7",
+    "output": "Oclaro plans to compete in high growth markets following its restructuring by leveraging its core competencies in indium phosphide and lithium niobate materials, devices, and photonic integration to offer highly differentiated products at both the component and module level for high-speed transmission in both client and line side applications. The company has reorganized into two business divisions: one for the client side, called optical connectivity, and one for the line side, called integrated photonics. Each division will have responsibility for its own fabs, operations, marketing, and product development, and will each contribute approximately half of the company's revenues. In the Integrated Photonics business, Oclaro will target two major growth markets for line side components and transceivers: next generation 100G WDM transmission with coherent detection and 10G medium to long reach regional transmission feeding the core and metro optical network. On the optical connectivity side, Oclaro is targeting two major growth areas: the 40G and 100G local connectivity between high-end packet optical systems and next generation interconnects for enterprise, datacenters, and storage. The company will continue to use its two major contract manufacturers, Fabrinet and Venture, and has refined its in-house back end manufacturing strategy by deciding to remain in China for component level manufacturing and development at its Shenzhen site. Oclaro also plans to simplify and streamline its new product introduction process for indium phosphide components coming from the U.K. by establishing a new component pilot line in Caswell co-located with its chip development to improve time to market for these innovative complex components.",
+    "end_ns": 1790611217298147607,
+    "elapsed_seconds": 7.981783288065344,
+    "document_id": "financial_qa:0",
+    "question_index": 1,
+    "expected_prompt_tokens": 4773
+  },
+  {
+    "index": 11,
+    "prompt_sha256": "92ac1b75915fdaa75f94b70d4de24561beecb40e5f1a950d2d16cf4353371f6a",
+    "start_ns": 1790611209443914647,
+    "server_request_id": "chatcmpl-b023d349202e216d",
+    "ttft_ms": 84.15426407009363,
+    "usage": {
+      "prompt_tokens": 4558,
+      "total_tokens": 4967,
+      "completion_tokens": 409,
+      "prompt_tokens_details": {
+        "cached_tokens": 4480
+      }
+    },
+    "prompt_tokens": 4558,
+    "completion_tokens": 409,
+    "cached_tokens": 4480,
+    "finish_reason": "stop",
+    "output_sha256": "a385b435ee97f1ad622d30ab3e91c34e5165f971cf714c1e5c529e4203c95dc7",
+    "output": "Renewable Energy Group (REG) has several plans and expectations for renewable diesel, as outlined in their second quarter 2019 earnings conference call:\n\n1. **Growth and Demand**: REG is highly confident in the outlook for renewable diesel, citing strong pricing and demand. They also anticipate new potential demand sources such as aviation and other incentivized geographies in the future.\n\n2. **Production Expansion**: Production volumes at the Geismar facility continue to grow organically. REG is also advancing its work with Phillips 66 (P66) on a potential joint venture to further expand their renewable diesel business.\n\n3. **Strategic Partnerships**: The planned joint venture with Phillips 66 is highlighted as an important example of how REG intends to grow its renewable diesel business through strategic partnerships. They expect to make final investment decisions toward the end of 2019, following the completion of scoping design engineering, with a project expected to come online in late 2022.\n\n4. **Capital Investments**: REG is carefully managing its capital investments in response to the market environment, focusing on key projects that are expected to provide high returns and long-term growth. They are continuing to invest in projects that align with their growth strategy in renewable diesel.\n\n5. **Proprietary Blending**: REG is developing a proprietary blend of biodiesel and renewable diesel called REG Ultra Clean, which contains 10% biodiesel. This blend is seen as a differentiator for REG and positions them with scale in both products. They have filed for a patent to protect their proprietary blending knowhow.\n\n6. **Downstream Strategy**: REG is also focusing on downstream efforts to boost biodiesel demand and margins, which they believe will significantly expand their long-term profitability. This includes opening branded cardlock stations and converting customers to higher biodiesel blends.\n\nOverall, REG is focused on leveraging the strong market fundamentals for renewable diesel, expanding production through strategic partnerships, and investing in key projects that support long-term growth and profitability.",
+    "end_ns": 1790611218614344125,
+    "elapsed_seconds": 9.170430482830852,
+    "document_id": "financial_qa:4",
+    "question_index": 1,
+    "expected_prompt_tokens": 4558
+  },
+  {
+    "index": 12,
+    "prompt_sha256": "d8970e3e42d32cfb70e9fdf76586299f6d7047c9b204d67a3c4dd91cdc75bccd",
+    "start_ns": 1790611209839532410,
+    "server_request_id": "chatcmpl-8eccbc3ad5ea6a44",
+    "ttft_ms": 425.81319715827703,
+    "usage": {
+      "prompt_tokens": 5282,
+      "total_tokens": 5352,
+      "completion_tokens": 70,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 5282,
+    "completion_tokens": 70,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "f46a71ea3e4c48e577e3c3b83bd11f1b81b46fcd602db3ba6d461c49bc610a9e",
+    "output": "The baseline model used is the one that assigns a semantic role to a constituent based on its syntactic function, i.e., the dependency relation to its head. If there is a total of INLINEFORM0 clusters, INLINEFORM1 most frequent syntactic functions get a cluster each, and the rest are assigned to the INLINEFORM2 th cluster.",
+    "end_ns": 1790611212018747448,
+    "elapsed_seconds": 2.179216112010181,
+    "document_id": "scientific_qa:5",
+    "question_index": 0,
+    "expected_prompt_tokens": 5282
+  },
+  {
+    "index": 13,
+    "prompt_sha256": "50ae41a77437f0955d9d22e281cbd758a26567dc474444390ec4ca4e1b646260",
+    "start_ns": 1790611210477292692,
+    "server_request_id": "chatcmpl-92ca3b7bc50cd559",
+    "ttft_ms": 437.8259791992605,
+    "usage": {
+      "prompt_tokens": 5748,
+      "total_tokens": 6056,
+      "completion_tokens": 308,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 5748,
+    "completion_tokens": 308,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "119a7904ddc0579617c58d3b99c1d4d04f62794e2f4222aab74f3885b702bd4b",
+    "output": "The main driving factors behind the record double-digit revenue growth for both the quarter and the year for Jones Lang LaSalle Incorporated were:\n\n1. **Broad-based growth in Real Estate Services revenue**: This was a significant contributor to the revenue growth, with particular emphasis on the performance of the capital markets and leasing businesses.\n\n2. **Outstanding performance in capital markets and leasing businesses**: These segments showed strong growth, contributing significantly to the overall revenue increase.\n\n3. **Solid advisory fees and equity earnings from LaSalle**: LaSalle Investment Management contributed to the revenue growth through its advisory fees and equity earnings.\n\n4. **Organic growth in key service lines**: There was substantial organic growth in leasing and capital markets across all geographies, which contributed to the revenue growth.\n\n5. **Strategic acquisitions and integration**: The acquisition of Integral and its integration into JLL's operations contributed to the growth, particularly in the EMEA region.\n\n6. **Strong market conditions in real estate**: The global real estate market experienced growth in transaction volumes and prime asset values, which positively impacted JLL's performance.\n\n7. **Productivity initiatives and cost management**: These initiatives helped improve the company's profitability and contributed to the growth in adjusted EBITDA.\n\n8. **Diversification of services and geographic expansion**: The company's diversified service offerings and expansion into new markets, particularly in Asia-Pacific and EMEA, contributed to the revenue growth.\n\nThese factors collectively contributed to the record double-digit revenue growth for both the quarter and the year.",
+    "end_ns": 1790611217757813037,
+    "elapsed_seconds": 7.280521258246154,
+    "document_id": "financial_qa:3",
+    "question_index": 0,
+    "expected_prompt_tokens": 5748
+  },
+  {
+    "index": 14,
+    "prompt_sha256": "d3d303e694ed1cef4e46127b08067d3cd1665b1ef941cffbdc0e7fcac39a1e98",
+    "start_ns": 1790611211169571522,
+    "server_request_id": "chatcmpl-94215f470cd0f766",
+    "ttft_ms": 459.64944921433926,
+    "usage": {
+      "prompt_tokens": 5721,
+      "total_tokens": 5808,
+      "completion_tokens": 87,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 5721,
+    "completion_tokens": 87,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "f518cd6bbda74201ed28ea1a25865e0d492686af1b0bbe47afde7c9e7debb71c",
+    "output": "They use a joint model that combines visual features learned through Inception V3 with textual features learned through a biLSTM. The visual features are obtained by fine-tuning an Inception V3 model on visual renderings of the documents, while the textual features are obtained using a hierarchical biLSTM model. The two models are then combined into a joint model using a simple feed-forward layer and softmax over the document label set.",
+    "end_ns": 1790611213529954706,
+    "elapsed_seconds": 2.36038457788527,
+    "document_id": "scientific_qa:13",
+    "question_index": 0,
+    "expected_prompt_tokens": 5721
+  },
+  {
+    "index": 15,
+    "prompt_sha256": "45eb5ef1635c483264b470bc58b9622f9ecf9688d4b16a9b403c32f8d260ca70",
+    "start_ns": 1790611212019341645,
+    "server_request_id": "chatcmpl-877079343d08d1c2",
+    "ttft_ms": 397.26225985214114,
+    "usage": {
+      "prompt_tokens": 5016,
+      "total_tokens": 5028,
+      "completion_tokens": 12,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 5016,
+    "completion_tokens": 12,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "d532c6c1565a2883169fb5b433dddde4fe4576e4a89b30450ce9d0d6b414de85",
+    "output": "The baseline method used is the word2vec approach.",
+    "end_ns": 1790611212571681161,
+    "elapsed_seconds": 0.5523405726999044,
+    "document_id": "scientific_qa:7",
+    "question_index": 0,
+    "expected_prompt_tokens": 5016
+  },
+  {
+    "index": 16,
+    "prompt_sha256": "613bdaa266b28e15770d3db222150c5076013e9d414edb8bd4778865e269996c",
+    "start_ns": 1790611212572321417,
+    "server_request_id": "chatcmpl-910918b7e787646a",
+    "ttft_ms": 97.57361328229308,
+    "usage": {
+      "prompt_tokens": 5916,
+      "total_tokens": 5931,
+      "completion_tokens": 15,
+      "prompt_tokens_details": {
+        "cached_tokens": 5888
+      }
+    },
+    "prompt_tokens": 5916,
+    "completion_tokens": 15,
+    "cached_tokens": 5888,
+    "finish_reason": "stop",
+    "output_sha256": "4084b9dcd810562d809064a719d0c34d4b345af3c39f46e8f7bf4a984cdfbf0d",
+    "output": "The end tasks they evaluate on are sentiment analysis and paraphrase detection.",
+    "end_ns": 1790611212853338294,
+    "elapsed_seconds": 0.28101768204942346,
+    "document_id": "scientific_qa:4",
+    "question_index": 1,
+    "expected_prompt_tokens": 5916
+  },
+  {
+    "index": 17,
+    "prompt_sha256": "ec7b46eac95bcf2d4186c15431d055bc32b6ed7c675cb18c10d753acccf74400",
+    "start_ns": 1790611212854242994,
+    "server_request_id": "chatcmpl-bdba5cd0c65d25dd",
+    "ttft_ms": 385.78460086137056,
+    "usage": {
+      "prompt_tokens": 4873,
+      "total_tokens": 4975,
+      "completion_tokens": 102,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 4873,
+    "completion_tokens": 102,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "3ff709799457ea2c86d11f59e9e3b003e8599f88382382674d7a23493380df90",
+    "output": "The FS KKR Capital Corp.'s Fourth Quarter and Full Year 2018 Earnings Conference Call was conducted by FS KKR Capital Corp. (referred to as FSK throughout the call). The purpose of the call was to provide an update on the company's progress over the past year, discuss its current position in the marketplace, and share thoughts on its strategy going forward. Additionally, the call aimed to review the company's investment activity, financial results, and outlook for the future.",
+    "end_ns": 1790611215130789540,
+    "elapsed_seconds": 2.2765474151819944,
+    "document_id": "financial_qa:2",
+    "question_index": 0,
+    "expected_prompt_tokens": 4873
+  },
+  {
+    "index": 18,
+    "prompt_sha256": "a50c70286ce4b3e9e49813438bff24332e904e13ded045792e67632a327091f8",
+    "start_ns": 1790611213531407281,
+    "server_request_id": "chatcmpl-b70fa2e595ade961",
+    "ttft_ms": 469.0742981620133,
+    "usage": {
+      "prompt_tokens": 5858,
+      "total_tokens": 5874,
+      "completion_tokens": 16,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 5858,
+    "completion_tokens": 16,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "dc4ed10b349df6ed149e5d55b982e6329d7b1e8dd55fab9e238949c28be6428d",
+    "output": "The language model is pre-trained on a Chinese general corpus provided by Google.",
+    "end_ns": 1790611214204572744,
+    "elapsed_seconds": 0.673166885972023,
+    "document_id": "scientific_qa:15",
+    "question_index": 0,
+    "expected_prompt_tokens": 5858
+  },
+  {
+    "index": 19,
+    "prompt_sha256": "f79ae4d6b746057bef39d5fdf334c0c59c57cd8381c1e2f953d3979c04fa02a2",
+    "start_ns": 1790611214205864312,
+    "server_request_id": "chatcmpl-a6c96c789c3cd69f",
+    "ttft_ms": 88.90570001676679,
+    "usage": {
+      "prompt_tokens": 5738,
+      "total_tokens": 5902,
+      "completion_tokens": 164,
+      "prompt_tokens_details": {
+        "cached_tokens": 5632
+      }
+    },
+    "prompt_tokens": 5738,
+    "completion_tokens": 164,
+    "cached_tokens": 5632,
+    "finish_reason": "stop",
+    "output_sha256": "511c74678c4b86fb3100d77f70868f9ce4f950e077cd63ab5b7037894359a12a",
+    "output": "Jones Lang LaSalle Incorporated's net debt position has significantly improved over the last year. At the end of 2016, the company had a net debt to adjusted EBITDA ratio of 1.7 times. By December 31, 2017, this ratio had improved to 0.8 times. This improvement was primarily due to strong business performance and improvements in working capital management, which allowed the company to reduce its net debt by $547 million compared to the end of 2016. Additionally, the company's total net debt was $586 million as of December 31, 2017, a decrease of $427 million or 42% from the third quarter of 2017.",
+    "end_ns": 1790611217555354719,
+    "elapsed_seconds": 3.3494918970391154,
+    "document_id": "financial_qa:3",
+    "question_index": 1,
+    "expected_prompt_tokens": 5738
+  },
+  {
+    "index": 20,
+    "prompt_sha256": "e745213ace52236002658313bcba6a0b3adbe098fd6e297a490a2c853b91c0e4",
+    "start_ns": 1790611214548370140,
+    "server_request_id": "chatcmpl-aaa2defc683506b2",
+    "ttft_ms": 91.61263005807996,
+    "usage": {
+      "prompt_tokens": 5488,
+      "total_tokens": 5504,
+      "completion_tokens": 16,
+      "prompt_tokens_details": {
+        "cached_tokens": 5376
+      }
+    },
+    "prompt_tokens": 5488,
+    "completion_tokens": 16,
+    "cached_tokens": 5376,
+    "finish_reason": "stop",
+    "output_sha256": "a1e7646b81d0f5342ba0b6297913f91c2edd88beb4b2a4a362803e130aeef52b",
+    "output": "The evaluation metrics reported are precision, recall, F1, and accuracy.",
+    "end_ns": 1790611214844095170,
+    "elapsed_seconds": 0.295726525131613,
+    "document_id": "scientific_qa:11",
+    "question_index": 1,
+    "expected_prompt_tokens": 5488
+  },
+  {
+    "index": 21,
+    "prompt_sha256": "b86133815a05d6cb1414311ec036eb587ce13ff7531d53387118b63beefee3be",
+    "start_ns": 1790611214844833401,
+    "server_request_id": "chatcmpl-abdd1980fcef9c3c",
+    "ttft_ms": 90.13556223362684,
+    "usage": {
+      "prompt_tokens": 5913,
+      "total_tokens": 6005,
+      "completion_tokens": 92,
+      "prompt_tokens_details": {
+        "cached_tokens": 5888
+      }
+    },
+    "prompt_tokens": 5913,
+    "completion_tokens": 92,
+    "cached_tokens": 5888,
+    "finish_reason": "stop",
+    "output_sha256": "dc4c1ef1c7522aabf7e6f4c7f1ed67f25716c27bf59c0ee50e2b9c078c59bbd2",
+    "output": "The UTCNN model has several layers, including the user matrix embedding layer, user vector embedding layer, topic matrix embedding layer, topic vector embedding layer, comment document composition layer, maximum pooling layer, average pooling layer, and a fully connected network with a softmax layer. However, the exact number of layers is not explicitly stated in the document. The document describes the model's architecture in terms of its components and processes rather than providing a specific count of layers.",
+    "end_ns": 1790611216690551899,
+    "elapsed_seconds": 1.84571933420375,
+    "document_id": "scientific_qa:8",
+    "question_index": 1,
+    "expected_prompt_tokens": 5913
+  },
+  {
+    "index": 22,
+    "prompt_sha256": "02b8009eff797c57ac1a4515d5f7b5b2d3eb400694464565472742996cbc8b3e",
+    "start_ns": 1790611215131753389,
+    "server_request_id": "chatcmpl-8adca007f6449ffc",
+    "ttft_ms": 88.97884795442224,
+    "usage": {
+      "prompt_tokens": 5859,
+      "total_tokens": 5907,
+      "completion_tokens": 48,
+      "prompt_tokens_details": {
+        "cached_tokens": 5760
+      }
+    },
+    "prompt_tokens": 5859,
+    "completion_tokens": 48,
+    "cached_tokens": 5760,
+    "finish_reason": "stop",
+    "output_sha256": "a890350cd210de2ce8958af0d57feb2c58318ac53b3dd97458bdafe7c66bdbd3",
+    "output": "The proposed model is compared against the following baselines:\n\n1. **QANet** - A state-of-the-art question answering model.\n2. **BERT-Base** - A pre-trained language model used for question answering tasks.",
+    "end_ns": 1790611215843545006,
+    "elapsed_seconds": 0.7117925258353353,
+    "document_id": "scientific_qa:15",
+    "question_index": 1,
+    "expected_prompt_tokens": 5859
+  },
+  {
+    "index": 23,
+    "prompt_sha256": "dbafffec355cf4b6b6418917cdb64c3e35db60a99dd5fdb2b1894e9175160f08",
+    "start_ns": 1790611215844480107,
+    "server_request_id": "chatcmpl-9098418651f786d3",
+    "ttft_ms": 570.0046471320093,
+    "usage": {
+      "prompt_tokens": 6953,
+      "total_tokens": 7382,
+      "completion_tokens": 429,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 6953,
+    "completion_tokens": 429,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "6d89bf7af0a246648f362a9cf9e9e65d16fd75e462584d217f21e014493b6b5e",
+    "output": "In the year 2010, QLT Inc. achieved several significant financial milestones:\n\n1. **Adjusted EBITDA**: The company generated almost $16 million in adjusted EBITDA, despite ramping up R&D spending in the second half of the year for both the retinoid and plug programs.\n\n2. **Cash Position**: QLT ended the year with $210 million in cash and no debt. Additionally, the company had $130 million in Contingent Consideration on the balance sheet, representing the value of payments due from the Eligard royalty stream. This gives QLT approximately $340 million in hard assets, not including the value of Visudyne or the rest of its pipeline.\n\n3. **Share Buybacks**: QLT repurchased and retired 2.9 million shares of its stock in 2010, representing more than 5% of its outstanding shares, indicating the company's belief in its undervalued stock.\n\n4. **Visudyne Sales Growth**: The company saw a 13% increase in U.S. Visudyne demand in the fourth quarter of 2010, from 65 vials per day to 73 vials per day, leading to sales of approximately $6 million for the quarter. This marked the first quarter-over-quarter increase in demand for Visudyne in the U.S. in over two years.\n\n5. **Global Visudyne Sales**: Visudyne sales slightly exceeded the revised guidance for the year, with final year sales results of $90.6 million.\n\n6. **Contingent Consideration Earnings**: QLT earned almost $38 million in Contingent Consideration based on 2010 Eligard sales.\n\nThese milestones indicate that QLT Inc. maintained a strong financial position, with significant cash reserves, a growing U.S. Visudyne business, and a robust royalty stream from Eligard. The company also demonstrated confidence in its stock valuation by repurchasing shares, suggesting that it believes its stock is undervalued.",
+    "end_ns": 1790611223522140886,
+    "elapsed_seconds": 7.677661722060293,
+    "document_id": "financial_qa:5",
+    "question_index": 0,
+    "expected_prompt_tokens": 6953
+  },
+  {
+    "index": 24,
+    "prompt_sha256": "5b33ff68ea789998d823cdb0e6e9d5d1823bea2dd561cc5f0564c8e307650abf",
+    "start_ns": 1790611216691573156,
+    "server_request_id": "chatcmpl-b024d4725cb4ead1",
+    "ttft_ms": 110.45757867395878,
+    "usage": {
+      "prompt_tokens": 5641,
+      "total_tokens": 6050,
+      "completion_tokens": 409,
+      "prompt_tokens_details": {
+        "cached_tokens": 5504
+      }
+    },
+    "prompt_tokens": 5641,
+    "completion_tokens": 409,
+    "cached_tokens": 5504,
+    "finish_reason": "stop",
+    "output_sha256": "f892ecbc86e0d478d71109fda0f3ba0360aa0d12910778ab325d70c0df083b36",
+    "output": "The data simulation techniques introduced in the document include:\n\n1. **Back-Translation (BT)**: Generating artificial parallel data by translating monolingual target texts into the source language using an MT system. This technique was evaluated with different levels of quality (backtrans-bad, backtrans-good, backtrans-nmt).\n\n2. **Forward Translation (FT)**: Generating artificial target texts by translating monolingual source texts into the target language using an MT system. This was also evaluated with different levels of quality (fwdtrans-nmt).\n\n3. **Stupid Back-Translation**:\n   - **Copy**: Using the target-side data as the source-side data without any translation. This can lead to out-of-vocabulary (OOV) words, which are handled by decomposing the target words into source-side units.\n   - **Copy-Marked**: Copying the target-side data into the source-side, but marking the copied words with a special language identifier to avoid confusion with the source vocabulary.\n   - **Copy-Dummies**: Replacing each word in the target-side data with \"dummy\" tokens to simulate noisy and uninformative source sentences.\n\n4. **Copy + Noise**: Introducing noise into the copied target-side data by deleting random words and performing small random permutations of the remaining words. This was used to evaluate the impact of training on noisy data.\n\n5. **Generative Adversarial Networks (GANs)**: Using a GAN framework to make pseudo-source sentences look more like natural source sentences. This involved training a generator to fool a discriminator that distinguishes between natural and artificial source sentences.\n\n6. **Target Language Models (LMs)**: Integrating a language model on the target side to improve translation quality. This was done using a deep-fusion technique, where the hidden state of the language model was added as an additional input to the softmax layer of the decoder.\n\nThese techniques were evaluated in the context of domain adaptation and were compared in terms of their impact on translation quality and computational cost.",
+    "end_ns": 1790611223627307371,
+    "elapsed_seconds": 6.935735642910004,
+    "document_id": "scientific_qa:9",
+    "question_index": 1,
+    "expected_prompt_tokens": 5641
+  },
+  {
+    "index": 25,
+    "prompt_sha256": "13382026fdd844078311d8e54f9694a1bcb918e55aa36c24c050c9162e3ecf9e",
+    "start_ns": 1790611216847798356,
+    "server_request_id": "chatcmpl-a0d7b3679fe069f4",
+    "ttft_ms": 450.2626499161124,
+    "usage": {
+      "prompt_tokens": 5713,
+      "total_tokens": 5790,
+      "completion_tokens": 77,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 5713,
+    "completion_tokens": 77,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "f6a752417d41b277d717322e7d335c1b2c3bbdd60c5bc224a4f3ef389e2ac46a",
+    "output": "Yes, they report results only on English data. The document mentions that the BERT model is pre-trained on English Wikipedia and BookCorpus, and the experiments are conducted on English datasets such as those provided by Waseem and Hovey and Davidson et al., which contain tweets in English. There is no mention of any non-English data being used in the experiments.",
+    "end_ns": 1790611218463425412,
+    "elapsed_seconds": 1.6156279728747904,
+    "document_id": "scientific_qa:3",
+    "question_index": 0,
+    "expected_prompt_tokens": 5713
+  },
+  {
+    "index": 26,
+    "prompt_sha256": "1a376951035201799289fa440be8ace2c911e107885c52aa4625e02d2630c062",
+    "start_ns": 1790611217299226584,
+    "server_request_id": "chatcmpl-a26ee944ec702e49",
+    "ttft_ms": 89.61298037320375,
+    "usage": {
+      "prompt_tokens": 4558,
+      "total_tokens": 5033,
+      "completion_tokens": 475,
+      "prompt_tokens_details": {
+        "cached_tokens": 4480
+      }
+    },
+    "prompt_tokens": 4558,
+    "completion_tokens": 475,
+    "cached_tokens": 4480,
+    "finish_reason": "stop",
+    "output_sha256": "567d2015df9f441b0df7162400e66e602e93e0cf58e80efc7058b1daa3d75cbe",
+    "output": "The Renewable Energy Group (REG) has undertaken several measures to improve its performance, as outlined in the conference call:\n\n1. **Operational Efficiency Improvements**: REG has focused on improving production efficiency and maximizing feedstock flexibility. This has allowed them to produce more gallons while maintaining the same level of feedstock usage, which contributes to cost savings and improved margins.\n\n2. **Feedstock Flexibility**: The company has optimized its feedstock usage by switching to cheaper alternatives, such as soybean oil, when appropriate. This flexibility helps in managing costs and improving profitability.\n\n3. **Downstream Strategy Expansion**: REG has made progress in its downstream strategy, which includes opening a REG-branded cardlock station and expanding its fuel distribution business in Iowa. These efforts are aimed at driving higher biodiesel blends and enhancing margins.\n\n4. **Customer Conversion to Higher Biodiesel Blends**: REG has successfully converted several customers from lower blends (B5) to higher blends (B20), as well as converting its own fleet to B100 biodiesel. This helps in increasing demand and margins for biodiesel.\n\n5. **Proprietary Blending Technology**: REG has developed a proprietary blend of biodiesel and renewable diesel called REG Ultra Clean, which contains 10% biodiesel. This blend is a differentiator and provides value uplift for their biodiesel.\n\n6. **Strategic Partnerships and Joint Ventures**: REG is progressing with a potential joint venture with Phillips 66 to grow its renewable diesel business. This strategic partnership is expected to provide long-term growth and high returns.\n\n7. **Capital Investment Management**: The company is carefully managing its capital investments, focusing on key projects that provide high returns and long-term growth. They have slowed down CapEx outlay in response to the market environment and the uncertainty around the BTC.\n\n8. **Environmental and Social Initiatives**: REG has made significant contributions to environmental sustainability by reducing carbon emissions and maintaining a strong safety record. These initiatives align with their Fuel Forward strategy and enhance their corporate image.\n\n9. **Portfolio Optimization**: REG has taken steps to strengthen its portfolio by closing underperforming facilities, such as the New Boston biorefinery, to focus resources on more efficient and profitable operations.\n\nThese measures collectively aim to improve financial performance, enhance operational efficiency, and drive long-term growth for the company.",
+    "end_ns": 1790611225197158555,
+    "elapsed_seconds": 7.89793282514438,
+    "document_id": "financial_qa:4",
+    "question_index": 2,
+    "expected_prompt_tokens": 4558
+  },
+  {
+    "index": 27,
+    "prompt_sha256": "d8bdbd0c4e3fea4b4fc8a0d0f76a718cd69a7a59610f5ee064eb5e248f443a29",
+    "start_ns": 1790611217556773972,
+    "server_request_id": "chatcmpl-b5e86dffb775efff",
+    "ttft_ms": 81.26782719045877,
+    "usage": {
+      "prompt_tokens": 5286,
+      "total_tokens": 5331,
+      "completion_tokens": 45,
+      "prompt_tokens_details": {
+        "cached_tokens": 5248
+      }
+    },
+    "prompt_tokens": 5286,
+    "completion_tokens": 45,
+    "cached_tokens": 5248,
+    "finish_reason": "stop",
+    "output_sha256": "012ff0711b261848c375b8883c95b9be47830325dcc036c542bebe5a14bd253d",
+    "output": "The additional latent variables used in the model are called crosslingual latent variables (CLVs). These variables are used to capture crosslingual semantic role patterns by coupling the monolingual models when training on parallel sentences.",
+    "end_ns": 1790611218285072760,
+    "elapsed_seconds": 0.7283003712072968,
+    "document_id": "scientific_qa:5",
+    "question_index": 1,
+    "expected_prompt_tokens": 5286
+  },
+  {
+    "index": 28,
+    "prompt_sha256": "0b7786a8951cae3240a2c70720c60ee31335db0e30b4c2fed2e4c2adb2e21e72",
+    "start_ns": 1790611217759047950,
+    "server_request_id": "chatcmpl-9db12ccce5f1e234",
+    "ttft_ms": 107.60367475450039,
+    "usage": {
+      "prompt_tokens": 6962,
+      "total_tokens": 7191,
+      "completion_tokens": 229,
+      "prompt_tokens_details": {
+        "cached_tokens": 6912
+      }
+    },
+    "prompt_tokens": 6962,
+    "completion_tokens": 229,
+    "cached_tokens": 6912,
+    "finish_reason": "stop",
+    "output_sha256": "80eb56549febc598f3378c7d110a6031f9f9ac3cde272dc247f8723b843928df",
+    "output": "In the context of the company's expansion efforts, QLT Inc. observed a significant growth in its U.S. Visudyne business, marked by an increase in demand from 65 vials per day in the third quarter to 73 vials per day in the fourth quarter of 2010, representing a 13% increase. This growth led to sales of approximately $6 million for the quarter, marking the first quarter-over-quarter increase in demand for Visudyne in the U.S. in over two years.\n\nThe causes of this growth were attributed to the improved effectiveness of the sales team, particularly their messaging around the persistent activity in patients with wet choroidal neovascularization due to AMD. This enhanced messaging likely contributed to increased physician engagement and patient treatment rates. Additionally, the company had completed an expansion of its field-based team, increasing the number of sales and medical personnel, which further supported the growth in sales. The increased reach and frequency of the larger sales force were expected to lead to incremental sales from existing accounts and reengagement of physicians who had previously walked away from Visudyne.",
+    "end_ns": 1790611221553370818,
+    "elapsed_seconds": 3.7943242439068854,
+    "document_id": "financial_qa:5",
+    "question_index": 1,
+    "expected_prompt_tokens": 6962
+  },
+  {
+    "index": 29,
+    "prompt_sha256": "b44b79228296e18612d9b56a913226148e2c75436f1ab76abc5f7d1ae455dc2c",
+    "start_ns": 1790611218286566605,
+    "server_request_id": "chatcmpl-9b978f7c4870df9b",
+    "ttft_ms": 87.77366392314434,
+    "usage": {
+      "prompt_tokens": 5912,
+      "total_tokens": 5942,
+      "completion_tokens": 30,
+      "prompt_tokens_details": {
+        "cached_tokens": 5888
+      }
+    },
+    "prompt_tokens": 5912,
+    "completion_tokens": 30,
+    "cached_tokens": 5888,
+    "finish_reason": "stop",
+    "output_sha256": "26023cfe38abbbc20b1683104c30bf3c4333bb671890d299277e6ebe83574dac",
+    "output": "The topics included in the debate data are abortion (ABO), gay rights (GAY), Obama (OBA), and marijuana (MAR).",
+    "end_ns": 1790611218815433215,
+    "elapsed_seconds": 0.5288678552024066,
+    "document_id": "scientific_qa:8",
+    "question_index": 2,
+    "expected_prompt_tokens": 5912
+  },
+  {
+    "index": 30,
+    "prompt_sha256": "a75adaa31c384d4d8a9a14fb5bd971c596730b45d43f41b9a4e9e7c836d399f5",
+    "start_ns": 1790611218464246126,
+    "server_request_id": "chatcmpl-b47eed5fd221f2a3",
+    "ttft_ms": 90.71784093976021,
+    "usage": {
+      "prompt_tokens": 4867,
+      "total_tokens": 5146,
+      "completion_tokens": 279,
+      "prompt_tokens_details": {
+        "cached_tokens": 4736
+      }
+    },
+    "prompt_tokens": 4867,
+    "completion_tokens": 279,
+    "cached_tokens": 4736,
+    "finish_reason": "stop",
+    "output_sha256": "1169f957fa51e363028e6e896e544732ed03bb847623d6beab09e3b7efb5cd4c",
+    "output": "Some key accomplishments of FS KKR Capital Corp. in 2018, as mentioned in the call, include:\n\n1. **Receiving shareholder approval for the partnership between FS Investments and KKR**: This partnership leverages combined scale, investment acumen, distribution networks, relationships, and institutional know-how to deliver strong results to shareholders.\n\n2. **Advancing the plan to optimize the company's capital structure**: This included closing a $2.1 billion revolver as part of a $3.4 billion five-year omnibus credit facility, which is the largest revolver ever arranged for a BDC franchise.\n\n3. **Completing the merger between Corporate Capital Trust (CCT) and FSIC**: This merger is an important milestone for the franchise, aiming to run the business more efficiently, reduce risk through greater portfolio diversification, and drive sustained value for shareholders.\n\n4. **Capitalizing on the full benefits of the combined FS Investments and KKR platforms**: This has generated consistent deal flow, driven origination activity, and created a highly collaborative working relationship between the firms.\n\n5. **Initiating a share repurchase program**: The Board authorized a $200 million share repurchase program, reflecting confidence in the partnership, portfolio, and long-term plans. Approximately $40 million in shares were purchased out of the $200 million authorized amount during the period.",
+    "end_ns": 1790611222977006995,
+    "elapsed_seconds": 4.512761734891683,
+    "document_id": "financial_qa:2",
+    "question_index": 1,
+    "expected_prompt_tokens": 4867
+  },
+  {
+    "index": 31,
+    "prompt_sha256": "8241fe6e2eae12485d7ef183b5c1e67a11c387471ac455c9ccaabea7322c650f",
+    "start_ns": 1790611218615298679,
+    "server_request_id": "chatcmpl-a4f3fded1cd03b2a",
+    "ttft_ms": 81.4517717808485,
+    "usage": {
+      "prompt_tokens": 5283,
+      "total_tokens": 5304,
+      "completion_tokens": 21,
+      "prompt_tokens_details": {
+        "cached_tokens": 5248
+      }
+    },
+    "prompt_tokens": 5283,
+    "completion_tokens": 21,
+    "cached_tokens": 5248,
+    "finish_reason": "stop",
+    "output_sha256": "fa0dd785b50dafc7fb78a4939d0240c725a4734e9e7ddb04ccf3fd13f6843e53",
+    "output": "The parallel corpora used in the study are the EN-DE section of the Europarl corpus.",
+    "end_ns": 1790611219002701376,
+    "elapsed_seconds": 0.3874036236666143,
+    "document_id": "scientific_qa:5",
+    "question_index": 2,
+    "expected_prompt_tokens": 5283
+  },
+  {
+    "index": 32,
+    "prompt_sha256": "96b7d667fed4157724a1f8c4d94088a2561a9ebf2226ea507bc9dbd60c65dbab",
+    "start_ns": 1790611218816991466,
+    "server_request_id": "chatcmpl-8a729bd4add1ece6",
+    "ttft_ms": 98.87044131755829,
+    "usage": {
+      "prompt_tokens": 4896,
+      "total_tokens": 4938,
+      "completion_tokens": 42,
+      "prompt_tokens_details": {
+        "cached_tokens": 4736
+      }
+    },
+    "prompt_tokens": 4896,
+    "completion_tokens": 42,
+    "cached_tokens": 4736,
+    "finish_reason": "stop",
+    "output_sha256": "dbf607dae618292bff66ef80f114c02037fa4ec3424359a59f1cb8e7e2449e43",
+    "output": "The expected CapEx spend for the full year was around $1.5 million to $2 million. In Q1, $4.1 million was spent on the acquisition of the Core customer base.",
+    "end_ns": 1790611219512658836,
+    "elapsed_seconds": 0.6956688701175153,
+    "document_id": "financial_qa:1",
+    "question_index": 2,
+    "expected_prompt_tokens": 4896
+  },
+  {
+    "index": 33,
+    "prompt_sha256": "6b240d19106f44886acfa91d243ffc3f4f41e9468bff9e5a9263a553a80ccf84",
+    "start_ns": 1790611219003614161,
+    "server_request_id": "chatcmpl-a618f83f53d7c871",
+    "ttft_ms": 102.17285715043545,
+    "usage": {
+      "prompt_tokens": 4898,
+      "total_tokens": 5266,
+      "completion_tokens": 368,
+      "prompt_tokens_details": {
+        "cached_tokens": 4736
+      }
+    },
+    "prompt_tokens": 4898,
+    "completion_tokens": 368,
+    "cached_tokens": 4736,
+    "finish_reason": "stop",
+    "output_sha256": "5381179be02dc2d9e3ec4f68f63161a105d5e4f2858da6ea6edd35b09038315d",
+    "output": "The performance of the Brachy and Surgical Products segments had a positive impact on the company's earnings and recovery in the first quarter of 2012. \n\nThe Surgical Products segment revenue increased by 8% year-over-year, reaching $15.5 million, which was the highest quarterly revenue for surgical products. This growth was driven by strong orders and demand, as well as the recovery from the previous quarter's challenges. The segment also improved its operating income, reporting $199,000 compared to an operating loss in the same period last year. This improvement was attributed to increased revenue and a slight improvement in gross profit margin, despite higher SG&A expenses due to IT initiatives and ERP system implementation.\n\nThe Brachytherapy business also performed well, with revenue increasing by 6% year-over-year. The acquisition of the Core customer base in February contributed $586,000 in incremental revenue during the first quarter, and the segment reported operating income of $1.4 million, a 28% increase compared to the previous year. The Brachy segment's performance was further enhanced by the transition to the new iodine-based seed, AgX100, which is expected to improve gross profit margins to 40% to 45% once fully ramped up.\n\nTogether, the growth in both segments led to a significant improvement in the company's overall earnings. Net earnings more than doubled year-over-year, and the company reported EPS of $0.03 for the first quarter of 2012, compared to $0.01 in the same period last year. This marked a promising beginning for 2012 and contributed to the company's recovery from the challenges faced in the fourth quarter of 2011.",
+    "end_ns": 1790611225221164767,
+    "elapsed_seconds": 6.217551396228373,
+    "document_id": "financial_qa:1",
+    "question_index": 3,
+    "expected_prompt_tokens": 4898
+  },
+  {
+    "index": 34,
+    "prompt_sha256": "50d79c9c1acf12d9b167890c991ba012c98c7114719f465734924be02770993f",
+    "start_ns": 1790611219514356425,
+    "server_request_id": "chatcmpl-bad46e5a302ed9c8",
+    "ttft_ms": 375.34733302891254,
+    "usage": {
+      "prompt_tokens": 4440,
+      "total_tokens": 4531,
+      "completion_tokens": 91,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 4440,
+    "completion_tokens": 91,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "9306a3d1c06d47eeb76af72c1a2179ec2ce9b5be1f3389962cec63c8d5bf1182",
+    "output": "The document does not specify a fixed number of tags that are looked at in general. However, it does mention that in the evaluation of recommendation accuracy, results are reported for different values of INLINEFORM0, which represents the number of recommended tags. Additionally, in the beyond-accuracy experiment, the full list of recommended tags (i.e., INLINEFORM1) is used. Therefore, the number of tags considered varies depending on the specific evaluation context.",
+    "end_ns": 1790611221160002618,
+    "elapsed_seconds": 1.645647571887821,
+    "document_id": "scientific_qa:6",
+    "question_index": 0,
+    "expected_prompt_tokens": 4440
+  },
+  {
+    "index": 35,
+    "prompt_sha256": "6d188c3a8236f5a217cca0223200e2816ce6da7decc3142b9e954920c4f1a8d9",
+    "start_ns": 1790611221161549696,
+    "server_request_id": "chatcmpl-95ae50bab105dab0",
+    "ttft_ms": 97.53705421462655,
+    "usage": {
+      "prompt_tokens": 4866,
+      "total_tokens": 5316,
+      "completion_tokens": 450,
+      "prompt_tokens_details": {
+        "cached_tokens": 4736
+      }
+    },
+    "prompt_tokens": 4866,
+    "completion_tokens": 450,
+    "cached_tokens": 4736,
+    "finish_reason": "stop",
+    "output_sha256": "3135e792bc95ffdbb3f0b5393ea5c08e15fe63db079ef4dbd0b369f12a51bd04",
+    "output": "The company's perspective on market volatility, as shared in the call, is that it is a factor that can create opportunities for disciplined credit selection and portfolio management. The market volatility in Q4 2018, which led to significant declines in bond and loan prices, was viewed as a technical sell-off rather than a reflection of deteriorating corporate fundamentals. The company believes that the volatility removed some of the froth from the lending environment and created opportunities for selective investing.\n\nIn response to the market volatility, the company has taken several actions:\n\n1. **Disciplined Credit Selection**: The company is focused on being selective in its credit selection, executing transactions where there is an appropriate risk-reward balance. This selectivity is considered a critical competitive advantage in the current credit environment.\n\n2. **Capital Structure Optimization**: The company has optimized its capital structure by closing a $2.1 billion revolver as part of a $3.4 billion five-year omnibus credit facility, which has helped lower the cost of financing and capture projected annual interest expense savings of approximately $10 million.\n\n3. **Share Repurchase Program**: The company initiated a $200 million share repurchase program, reflecting its confidence in the partnership, portfolio, and long-term plans. This action demonstrates alignment with shareholders and the belief that the company's shares were trading at a meaningful discount to NAV.\n\n4. **Portfolio Diversification**: The merger with Corporate Capital Trust (CCT) has increased portfolio diversification, reducing risk and improving the company's ability to manage market volatility. The top 10 largest portfolio companies by fair value decreased to 19% of the portfolio from 36% at the end of Q3, and the average hold position decreased to 0.5% of the portfolio.\n\n5. **Focus on Senior Secured Investments**: The company has focused on senior secured investments, which are considered less risky and more stable, with 74% of the portfolio consisting of senior secured investments and 54% in first lien loans at year-end.\n\nThese actions reflect the company's strategy to navigate market volatility by maintaining a disciplined approach to credit selection, optimizing its capital structure, and enhancing portfolio diversification and stability.",
+    "end_ns": 1790611228490673604,
+    "elapsed_seconds": 7.329124696087092,
+    "document_id": "financial_qa:2",
+    "question_index": 2,
+    "expected_prompt_tokens": 4866
+  },
+  {
+    "index": 36,
+    "prompt_sha256": "0c89c64a29c74143f0b879e8a5e248eae2523c9d8840040a326e7f41dfa27d58",
+    "start_ns": 1790611221554586904,
+    "server_request_id": "chatcmpl-b75d6d6278407884",
+    "ttft_ms": 82.58752198889852,
+    "usage": {
+      "prompt_tokens": 4439,
+      "total_tokens": 4464,
+      "completion_tokens": 25,
+      "prompt_tokens_details": {
+        "cached_tokens": 4352
+      }
+    },
+    "prompt_tokens": 4439,
+    "completion_tokens": 25,
+    "cached_tokens": 4352,
+    "finish_reason": "stop",
+    "output_sha256": "959848f37103fa1cfcc1bdd1a8468c14454bdd41949a7ee97a1b1656a600c6da",
+    "output": "The highest performing algorithm was the hybrid approach that combines the best performing popularity-based approach with the best performing similarity-based approach.",
+    "end_ns": 1790611221988300556,
+    "elapsed_seconds": 0.4337144480086863,
+    "document_id": "scientific_qa:6",
+    "question_index": 1,
+    "expected_prompt_tokens": 4439
+  },
+  {
+    "index": 37,
+    "prompt_sha256": "593f9b7f6817ffd0994a1854b0f2cac3907181a179fc1ad0e7d1a66dff9d6afc",
+    "start_ns": 1790611221785775077,
+    "server_request_id": "chatcmpl-927e090caaf4d006",
+    "ttft_ms": 84.23996577039361,
+    "usage": {
+      "prompt_tokens": 5290,
+      "total_tokens": 5438,
+      "completion_tokens": 148,
+      "prompt_tokens_details": {
+        "cached_tokens": 5248
+      }
+    },
+    "prompt_tokens": 5290,
+    "completion_tokens": 148,
+    "cached_tokens": 5248,
+    "finish_reason": "stop",
+    "output_sha256": "c0da009ba51a78605a2a1cc4069baab737251345ef318d23715efb27f300a49c",
+    "output": "The document suggests that having parallel data does not significantly improve semantic role induction across multiple languages. While the multilingual model incorporating crosslingual latent variables (CLVs) and word alignments was designed to capture cross-lingual patterns, the results showed only non-significant improvements in both English and German compared to monolingual models trained on additional monolingual data. The small percentage of aligned roles (8% for English and 17% for German) likely limits the impact of cross-lingual information. Additionally, the improvements from parallel data were minimal even when some labeled data was available in the source language. Thus, the overall conclusion is that parallel data does not substantially improve semantic role induction across multiple languages in this study.",
+    "end_ns": 1790611224404786885,
+    "elapsed_seconds": 2.6190127129666507,
+    "document_id": "scientific_qa:5",
+    "question_index": 3,
+    "expected_prompt_tokens": 5290
+  },
+  {
+    "index": 38,
+    "prompt_sha256": "099058bfaa27d5d7063c964395bf60189dad22e5f97812684e95ab752414e4eb",
+    "start_ns": 1790611221989955945,
+    "server_request_id": "chatcmpl-b55cef0d141a5863",
+    "ttft_ms": 81.01746160537004,
+    "usage": {
+      "prompt_tokens": 5912,
+      "total_tokens": 6052,
+      "completion_tokens": 140,
+      "prompt_tokens_details": {
+        "cached_tokens": 5888
+      }
+    },
+    "prompt_tokens": 5912,
+    "completion_tokens": 140,
+    "cached_tokens": 5888,
+    "finish_reason": "stop",
+    "output_sha256": "67eb89fa4ffbfe05df2d80e8e85a230e82ff27f3d9c4cab7ffacf508206c9bd8",
+    "output": "The size of the Chinese data, specifically the FBFans dataset, is not explicitly stated in terms of the total number of posts. However, it is mentioned that there are 2,496 authors, 505,137 likers, 33,686 commenters, and 505,412 unique users. The number of posts is not directly provided, but it is noted that about twenty percent of the posts were labeled with a stance, and the number of supportive (Sup) posts was much larger than that of the unsupportive (Uns) ones. The exact number of posts is not given in the text.",
+    "end_ns": 1790611224499170780,
+    "elapsed_seconds": 2.5092157158069313,
+    "document_id": "scientific_qa:8",
+    "question_index": 3,
+    "expected_prompt_tokens": 5912
+  },
+  {
+    "index": 39,
+    "prompt_sha256": "5c31cc1f015568d0abace97d81c6b916cb44af22f6c8e964c91e31757133b6f1",
+    "start_ns": 1790611222978212937,
+    "server_request_id": "chatcmpl-85912d93733d1eb1",
+    "ttft_ms": 80.92156564816833,
+    "usage": {
+      "prompt_tokens": 5019,
+      "total_tokens": 5120,
+      "completion_tokens": 101,
+      "prompt_tokens_details": {
+        "cached_tokens": 4992
+      }
+    },
+    "prompt_tokens": 5019,
+    "completion_tokens": 101,
+    "cached_tokens": 4992,
+    "finish_reason": "stop",
+    "output_sha256": "a4a809e2599964c897fe42bbf42a3c1ccd3d03694896a572741fdf5f17333af0",
+    "output": "The Twitter dataset consists of tweets about Turkish mobile network operators. There are a total of 1,716 tweets, with 973 of them being negative and 743 being positive. These tweets are manually annotated by two humans, and the labels are either positive or negative. The Cohen's Kappa inter-annotator agreement score is measured to be 0.82. If there was a disagreement on the polarity of a tweet, it was removed from the dataset.",
+    "end_ns": 1790611224915161860,
+    "elapsed_seconds": 1.9369499739259481,
+    "document_id": "scientific_qa:7",
+    "question_index": 1,
+    "expected_prompt_tokens": 5019
+  },
+  {
+    "index": 40,
+    "prompt_sha256": "4dce0070359869e8cc9ef2ecd21298544d8ce9c1bba241852a5de114879d3b47",
+    "start_ns": 1790611223523572478,
+    "server_request_id": "chatcmpl-bb4b438cc4a81ff4",
+    "ttft_ms": 92.8143379278481,
+    "usage": {
+      "prompt_tokens": 5859,
+      "total_tokens": 6010,
+      "completion_tokens": 151,
+      "prompt_tokens_details": {
+        "cached_tokens": 5760
+      }
+    },
+    "prompt_tokens": 5859,
+    "completion_tokens": 151,
+    "cached_tokens": 5760,
+    "finish_reason": "stop",
+    "output_sha256": "9a8b6491719fc052207d2a9d769b6a9f7f9c500238581a7ca5a0803023153f57",
+    "output": "The clinical text structuring (CTS) task is defined as extracting or generating a key-value pair from a sequence of paragraph text, where the key $Q$ is typically a query term (e.g., \"proximal resection margin\") and the value $V$ is the result of the query term according to the paragraph text $X$. The goal is to find the answer-related substring $Xs = <X_i, X_i+1, X_i+2, ... X_j> (1 <= i < j <= n)$ from the paragraph text $X$ that corresponds to the query $Q$. This approach unifies the output format of CTS tasks, making the training data shareable and reducing the training data quantity requirement.",
+    "end_ns": 1790611226323417481,
+    "elapsed_seconds": 2.799846475943923,
+    "document_id": "scientific_qa:15",
+    "question_index": 2,
+    "expected_prompt_tokens": 5859
+  },
+  {
+    "index": 41,
+    "prompt_sha256": "f0f501867aeddb0fc05df0c1a609a863785d0312972f254be61799a2b29c6ea0",
+    "start_ns": 1790611223628620108,
+    "server_request_id": "chatcmpl-bdb80d32e02f0848",
+    "ttft_ms": 438.4114081040025,
+    "usage": {
+      "prompt_tokens": 5178,
+      "total_tokens": 5255,
+      "completion_tokens": 77,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "prompt_tokens": 5178,
+    "completion_tokens": 77,
+    "cached_tokens": 0,
+    "finish_reason": "stop",
+    "output_sha256": "55108713943af3b40d8d0156ca04b4c60844d8b4c88e51a3e03776dd6e12f4b7",
+    "output": "The authors propose three multimodal architectures for hate speech detection: a Feature Concatenation Model (FCM), a Spatial Concatenation Model (SCM), and a Textual Kernels Model (TKM). All of these models are CNN+RNN models with three inputs: the tweet image, the tweet text, and the text appearing in the image (if any).",
+    "end_ns": 1790611225245298475,
+    "elapsed_seconds": 1.6166791319847107,
+    "document_id": "scientific_qa:19",
+    "question_index": 0,
+    "expected_prompt_tokens": 5178
+  },
+  {
+    "index": 42,
+    "prompt_sha256": "0d3e1a7dc96751eb333cadfffed5be1c039c165190df44ce3c823cbca0621a3a",
+    "start_ns": 1790611224405807758,
+    "server_request_id": "chatcmpl-aaa56508e62b0618",
+    "ttft_ms": 92.98203187063336,
+    "usage": {
+      "prompt_tokens": 5490,
+      "total_tokens": 5498,
+      "completion_tokens": 8,
+      "prompt_tokens_details": {
+        "cached_tokens": 5376
+      }
+    },
+    "prompt_tokens": 5490,
+    "completion_tokens": 8,
+    "cached_tokens": 5376,
+    "finish_reason": "stop",
+    "output_sha256": "3b78267a43852741d773c030f1446b49b73064e356d1687a2c0616703c9850be",
+    "output": "The dataset is about divorce proceedings.",
+    "end_ns": 1790611224614557954,
+    "elapsed_seconds": 0.20875095389783382,
+    "document_id": "scientific_qa:11",
+    "question_index": 2,
+    "expected_prompt_tokens": 5490
+  },
+  {
+    "index": 43,
+    "prompt_sha256": "fd1b859119471715e8357aa65ad84785334f4669bcbbca51b83e76bda271edda",
+    "start_ns": 1790611224500372894,
+    "server_request_id": "chatcmpl-87ac5fcbc902fb4f",
+    "ttft_ms": 92.91673917323351,
+    "usage": {
+      "prompt_tokens": 4437,
+      "total_tokens": 4543,
+      "completion_tokens": 106,
+      "prompt_tokens_details": {
+        "cached_tokens": 4352
+      }
+    },
+    "prompt_tokens": 4437,
+    "completion_tokens": 106,
+    "cached_tokens": 4352,
+    "finish_reason": "stop",
+    "output_sha256": "48a82d1760f09083e88afb3cb0867423b935ba7258b6117cabf268f8da434706",
+    "output": "Diversity is measured as the average dissimilarity of all pairs of tags in the list of recommended tags. Given a distance function that corresponds to the dissimilarity between two tags in the list of recommended tags, the diversity is calculated as the average dissimilarity of all pairs of tags. In the experiments, the previously trained Doc2Vec model is used to extract the latent representation of a specific tag, and the similarity of two tags is calculated with the Cosine similarity measure using the latent vector representations of respective tags.",
+    "end_ns": 1790611226225343978,
+    "elapsed_seconds": 1.7249722820706666,
+    "document_id": "scientific_qa:6",
+    "question_index": 2,
+    "expected_prompt_tokens": 4437
+  },
+  {
+    "index": 44,
+    "prompt_sha256": "9931454edb08c8dffe2e305f49beafb06ddacffa118a5393bea1e1699cc86ed6",
+    "start_ns": 1790611224615974759,
+    "server_request_id": "chatcmpl-987651a57ef72484",
+    "ttft_ms": 89.2381090670824,
+    "usage": {
+      "prompt_tokens": 5738,
+      "total_tokens": 5987,
+      "completion_tokens": 249,
+      "prompt_tokens_details": {
+        "cached_tokens": 5632
+      }
+    },
+    "prompt_tokens": 5738,
+    "completion_tokens": 249,
+    "cached_tokens": 5632,
+    "finish_reason": "stop",
+    "output_sha256": "089915459b2ac181a6d40c8a70ea485bea3a91d83b2430f1dfc1492866de898d",
+    "output": "M&A activities had a mixed impact on Jones Lang LaSalle Incorporated's performance. On the positive side, M&A contributed to the company's revenue growth. For the full-year 2017, 6% of the 16% consolidated local currency fee revenue growth was attributable to M&A. Specifically, the Integral acquisition significantly contributed to the growth in Property and Facility Management fee revenue, which grew by 25% for the full-year. Additionally, the acquisition helped expand the Corporate Solutions business, which grew by 31% for the year.\n\nHowever, M&A also had some negative impacts on the company's performance. The integration of Integral led to margin pressures, including a 20 basis point impact on the full-year adjusted EBITDA margin due to the additional seven months of Integral operations. Furthermore, the integration process involved technology upgrades and service mix challenges, which temporarily diluted margins. In EMEA, the Integral acquisition's losses and integration costs negatively impacted the region's adjusted EBITDA margin, which declined by 250 basis points compared to 2016.\n\nOverall, while M&A activities contributed to revenue growth and expansion, they also introduced short-term margin pressures and integration challenges.",
+    "end_ns": 1790611228572100367,
+    "elapsed_seconds": 3.9561264207586646,
+    "document_id": "financial_qa:3",
+    "question_index": 2,
+    "expected_prompt_tokens": 5738
+  },
+  {
+    "index": 45,
+    "prompt_sha256": "b685204ddcb82ce8a03a11898260a9a3e4af66ebf5be4c20782a4aff969b024f",
+    "start_ns": 1790611224916273524,
+    "server_request_id": "chatcmpl-a0c14262db9199a0",
+    "ttft_ms": 118.12708573415875,
+    "usage": {
+      "prompt_tokens": 6954,
+      "total_tokens": 7106,
+      "completion_tokens": 152,
+      "prompt_tokens_details": {
+        "cached_tokens": 6784
+      }
+    },
+    "prompt_tokens": 6954,
+    "completion_tokens": 152,
+    "cached_tokens": 6784,
+    "finish_reason": "stop",
+    "output_sha256": "827b50c092a46f9e222d9bfd3c2efe17b7750a674c4b14cfbab377e66ab5c4bc",
+    "output": "The contract does not explicitly include a \"Competitive Restriction Exception\" section. However, there is a relevant clause that may be considered in relation to competitive restrictions:\n\n**Section 4.12:**\n> \"The Reseller shall not market, distribute, or sell any product that competes with Products, nor provide services to any direct competitor of Todos.\"\n\nThis clause imposes a restriction on the Reseller from marketing, distributing, or selling competing products or providing services to direct competitors of Todos. It is a form of competitive restriction. While it does not explicitly include an exception or carve-out, it is a provision that should be reviewed by a lawyer to ensure it aligns with applicable laws and does not unfairly restrict the Reseller's business activities.",
+    "end_ns": 1790611227381751790,
+    "elapsed_seconds": 2.4654792207293212,
+    "document_id": "legal_contract_qa:5",
+    "question_index": 2,
+    "expected_prompt_tokens": 6954
+  },
+  {
+    "index": 46,
+    "prompt_sha256": "237a8478ca9479f5d1370095d6102f56e30e357a9ed834cfd1241b9c2f25fe76",
+    "start_ns": 1790611225198339108,
+    "server_request_id": "chatcmpl-8531bcd510c85ff8",
+    "ttft_ms": 140.08136279881,
+    "usage": {
+      "prompt_tokens": 5020,
+      "total_tokens": 5145,
+      "completion_tokens": 125,
+      "prompt_tokens_details": {
+        "cached_tokens": 4992
+      }
+    },
+    "prompt_tokens": 5020,
+    "completion_tokens": 125,
+    "cached_tokens": 4992,
+    "finish_reason": "stop",
+    "output_sha256": "2c273259baf5db9612531083bb779bcc64fc4a95d6690d08c99133f388b90928",
+    "output": "The movie domain dataset consists of 20,244 reviews collected from a popular website, with an average of 39 words per review. Each review has a star-rating score ranging from 0.5 to 5 in intervals of 0.5, which is used to determine the sentiment. A review is considered negative if the score is equal to or lower than 2.5, and positive if the score is equal to or higher than 4. A total of 7,020 negative and 7,020 positive reviews were randomly selected and processed for the analysis.",
+    "end_ns": 1790611227183004042,
+    "elapsed_seconds": 1.984665875788778,
+    "document_id": "scientific_qa:7",
+    "question_index": 2,
+    "expected_prompt_tokens": 5020
+  },
+  {
+    "index": 47,
+    "prompt_sha256": "ede9aeae3436088203aaa21017fff29f60759fb8f7066ebe5e1c7326f5f0ae2c",
+    "start_ns": 1790611225222508105,
+    "server_request_id": "chatcmpl-a959dba2803df8f9",
+    "ttft_ms": 156.98911296203732,
+    "usage": {
+      "prompt_tokens": 6967,
+      "total_tokens": 7263,
+      "completion_tokens": 296,
+      "prompt_tokens_details": {
+        "cached_tokens": 6912
+      }
+    },
+    "prompt_tokens": 6967,
+    "completion_tokens": 296,
+    "cached_tokens": 6912,
+    "finish_reason": "stop",
+    "output_sha256": "1620c0968a41558d33a82854f9b6f008b28d2a22ce18be94239c4f5fbe6115e5",
+    "output": "QLT Inc. is addressing the challenges related to the clinical development of its synthetic retinoid program, QLT091001, by focusing on working with regulatory agencies to agree on appropriate validated endpoint measures for patients with low vision. The company acknowledges that patients with severe disease and extremely poor vision may not show the same level of improvement in visual acuity tests that have been used historically. Therefore, they are considering other visual function test parameters, such as visual fields and changes in day-to-day functioning for the patient, which are more relevant to the disease condition.\n\nQLT Inc. plans to work closely with expert clinicians and global regulatory agencies to define the most appropriate clinically meaningful outcome measures for future trial designs. This collaboration is a key task for the company in 2011. Additionally, they are preparing to discuss the data from their ongoing trials with clinical advisors and regulatory authorities to ensure that the development of this drug continues in a scientifically sound and regulatory-compliant manner.\n\nThe company is also planning to expand the trial to include more patients and additional study centers, both in the U.S. and Europe, to further evaluate the efficacy and safety of the synthetic retinoid. They are committed to demonstrating the safety and effectiveness of this potential treatment, which holds promise for improving the lives of patients with inherited retinoid diseases such as Leber’s Congenital Amaurosis (LCA) and Retinitis Pigmentosa (RP).",
+    "end_ns": 1790611229906750923,
+    "elapsed_seconds": 4.684244256000966,
+    "document_id": "financial_qa:5",
+    "question_index": 2,
+    "expected_prompt_tokens": 6967
+  },
+  {
+    "index": 48,
+    "prompt_sha256": "d529ba97b61b075247de39ba33c20418885702a06aee800e79896daf66e98512",
+    "start_ns": 1790611225246719552,
+    "server_request_id": "chatcmpl-80c9b2ab03f223c7",
+    "ttft_ms": 144.32814298197627,
+    "usage": {
+      "prompt_tokens": 5723,
+      "total_tokens": 5885,
+      "completion_tokens": 162,
+      "prompt_tokens_details": {
+        "cached_tokens": 5632
+      }
+    },
+    "prompt_tokens": 5723,
+    "completion_tokens": 162,
+    "cached_tokens": 5632,
+    "finish_reason": "stop",
+    "output_sha256": "b2f5e210349be98819527abbaae30081e1e2b152615d915436410faa4f6b1e59",
+    "output": "The authors present evidence that the model can capture some biases in data annotation and collection by analyzing the error patterns in the test datasets. They observe that a significant portion of misclassifications is due to biases in the data collection and annotation processes rather than the classifier itself. For example, they note that certain tweets containing specific language (such as African American Vernacular English) or geographic restrictions (such as tweets from the United States) are oversampled, leading to higher rates of misclassification. Additionally, they mention that annotators often labeled tweets with disrespectful words as hate or offensive without considering the social context, identity, or dialect of the tweeters. The model's ability to detect these biases is highlighted by its performance in distinguishing between hate, offensive, and neutral content, even when the data itself contains biases.",
+    "end_ns": 1790611227807072540,
+    "elapsed_seconds": 2.5603537778370082,
+    "document_id": "scientific_qa:3",
+    "question_index": 1,
+    "expected_prompt_tokens": 5723
+  },
+  {
+    "index": 49,
+    "prompt_sha256": "e8c0e1839c2b30ca5ec6aece4dee7eb76674d88115dbc7807ee84d0412241a17",
+    "start_ns": 1790611226226900384,
+    "server_request_id": "chatcmpl-aa2a1cc9dea1152b",
+    "ttft_ms": 86.91198425367475,
+    "usage": {
+      "prompt_tokens": 5917,
+      "total_tokens": 6186,
+      "completion_tokens": 269,
+      "prompt_tokens_details": {
+        "cached_tokens": 5888
+      }
+    },
+    "prompt_tokens": 5917,
+    "completion_tokens": 269,
+    "cached_tokens": 5888,
+    "finish_reason": "stop",
+    "output_sha256": "aa5209ed593a7c809a0935e374c705d228053b73da6c273396938e789badb366",
+    "output": "A semi-character architecture, specifically the ScRNN (Semi-Character RNN) model, is a type of neural network designed for word recognition tasks, particularly in the context of handling misspelled or adversarially perturbed words. It processes a sentence of words with misspelled characters and predicts the correct words at each step. The input representation for each word is constructed by concatenating three components:\n\n1. A one-hot vector of the first character of the word.\n2. A one-hot vector of the last character of the word.\n3. A bag-of-characters representation of the internal characters of the word (excluding the first and last characters).\n\nThis architecture treats the first and last characters individually and is agnostic to the ordering of the internal characters. The resulting representation is then fed into a BiLSTM (Bidirectional Long Short-Term Memory) cell for processing. The model is trained to predict the correct word at each step using cross-entropy loss, with the training target being the correct corresponding word from the vocabulary.\n\nThe ScRNN model is particularly useful in adversarial settings where character-level perturbations are used to mislead classifiers. It is designed to recognize misspelled words and can be enhanced with backoff strategies to handle rare or unseen words, improving its robustness against adversarial attacks.",
+    "end_ns": 1790611230515179023,
+    "elapsed_seconds": 4.288279492408037,
+    "document_id": "scientific_qa:4",
+    "question_index": 2,
+    "expected_prompt_tokens": 5917
+  },
+  {
+    "index": 50,
+    "prompt_sha256": "65db57d529a2699039f4cae52d7c6455396a4c761418a09220b0a0befde4090b",
+    "start_ns": 1790611226324826559,
+    "server_request_id": "chatcmpl-bcbb20838a8b1db1",
+    "ttft_ms": 97.95361524447799,
+    "usage": {
+      "prompt_tokens": 5723,
+      "total_tokens": 5782,
+      "completion_tokens": 59,
+      "prompt_tokens_details": {
+        "cached_tokens": 5632
+      }
+    },
+    "prompt_tokens": 5723,
+    "completion_tokens": 59,
+    "cached_tokens": 5632,
+    "finish_reason": "stop",
+    "output_sha256": "b678176a715ab206965e36c8169f1cc2ca47cce7edb37898c7f4ecb5b39c2cd3",
+    "output": "Yes, they released their data set of academic papers. The document states, \"All code and data associated with this research will be released on publication.\" This indicates that the dataset, including the academic papers from the arXiv repository, will be made available upon the publication of the research.",
+    "end_ns": 1790611227284178036,
+    "elapsed_seconds": 0.9593524201773107,
+    "document_id": "scientific_qa:13",
+    "question_index": 1,
+    "expected_prompt_tokens": 5723
+  },
+  {
+    "index": 51,
+    "prompt_sha256": "eda0eccc9e0cdac7d9b639430868f50afc8b5b9b8864e4aac346b2be4a1f177c",
+    "start_ns": 1790611227184149721,
+    "server_request_id": "chatcmpl-a4bc0345b8bf3fbd",
+    "ttft_ms": 88.36091496050358,
+    "usage": {
+      "prompt_tokens": 5178,
+      "total_tokens": 5302,
+      "completion_tokens": 124,
+      "prompt_tokens_details": {
+        "cached_tokens": 5120
+      }
+    },
+    "prompt_tokens": 5178,
+    "completion_tokens": 124,
+    "cached_tokens": 5120,
+    "finish_reason": "stop",
+    "output_sha256": "653a5678f5ad88db8def6394134d0ac655bb1b91abc3d52f67015745c49cdc96",
+    "output": "The document does not explicitly state that all tweets in the MMHS150K dataset are in English. However, it is implied that the tweets are in English since the context of the work focuses on hate speech detection in social media platforms like Twitter, which are primarily used in English, and the examples and discussions are in English. Additionally, the use of terms like \"nigga\" and \"dyke\" suggests an English language context. Therefore, it is reasonable to infer that the tweets in the MMHS150K dataset are primarily in English, although the document does not explicitly confirm this.",
+    "end_ns": 1790611229210020189,
+    "elapsed_seconds": 2.0258718472905457,
+    "document_id": "scientific_qa:19",
+    "question_index": 1,
+    "expected_prompt_tokens": 5178
+  },
+  {
+    "index": 52,
+    "prompt_sha256": "83278fd43ebe45cbc1e8cd20af2f4356c175899c0ad5ef70d23c957222bf0f45",
+    "start_ns": 1790611227285456137,
+    "server_request_id": "chatcmpl-91541aabf409cd9a",
+    "ttft_ms": 96.64554102346301,
+    "usage": {
+      "prompt_tokens": 5857,
+      "total_tokens": 5934,
+      "completion_tokens": 77,
+      "prompt_tokens_details": {
+        "cached_tokens": 5760
+      }
+    },
+    "prompt_tokens": 5857,
+    "completion_tokens": 77,
+    "cached_tokens": 5760,
+    "finish_reason": "stop",
+    "output_sha256": "effe30fb23c66e713134f32f10ec853ec443cd4a9ae36741fcd3fdc427ce0cf3",
+    "output": "The specific tasks being unified are different clinical text structuring (CTS) tasks, such as identifying tumor size, proximal resection margin, and distal resection margin. These tasks are unified under the question answering based clinical text structuring (QA-CTS) task, which allows for shared datasets and models, making the training data shareable and improving performance across different tasks.",
+    "end_ns": 1790611228559573631,
+    "elapsed_seconds": 1.2741184029728174,
+    "document_id": "scientific_qa:15",
+    "question_index": 3,
+    "expected_prompt_tokens": 5857
+  },
+  {
+    "index": 53,
+    "prompt_sha256": "b1f169fea84e99c8831039f148ea4fd5c4f90a23f85c42a5e5379b619dab4e2d",
+    "start_ns": 1790611227383537686,
+    "server_request_id": "chatcmpl-bc6ff14bb016ebbb",
+    "ttft_ms": 88.24174432083964,
+    "usage": {
+      "prompt_tokens": 5178,
+      "total_tokens": 5209,
+      "completion_tokens": 31,
+      "prompt_tokens_details": {
+        "cached_tokens": 5120
+      }
+    },
+    "prompt_tokens": 5178,
+    "completion_tokens": 31,
+    "cached_tokens": 5120,
+    "finish_reason": "stop",
+    "output_sha256": "235dc67f84bf740b5ab2961c83700f6ccc9597111f9e04b10f6ad4ff6fc2bbec",
+    "output": "The dataset, called MMHS150K, contains 150,000 tweets, each containing both text and an image.",
+    "end_ns": 1790611227932492926,
+    "elapsed_seconds": 0.5489567462354898,
+    "document_id": "scientific_qa:19",
+    "question_index": 2,
+    "expected_prompt_tokens": 5178
+  },
+  {
+    "index": 54,
+    "prompt_sha256": "4daf686bf1fc0e557144295c31959f694c9639c634c48d5dd3a88e36953be686",
+    "start_ns": 1790611227808270184,
+    "server_request_id": "chatcmpl-a57607236fac08cb",
+    "ttft_ms": 102.74479538202286,
+    "usage": {
+      "prompt_tokens": 6945,
+      "total_tokens": 7113,
+      "completion_tokens": 168,
+      "prompt_tokens_details": {
+        "cached_tokens": 6912
+      }
+    },
+    "prompt_tokens": 6945,
+    "completion_tokens": 168,
+    "cached_tokens": 6912,
+    "finish_reason": "stop",
+    "output_sha256": "6a91a09a4e1b2a754e00f7e1c86b62589806f2834416416aa8532e8ef23c99d3",
+    "output": "COGS (Cost of Goods Sold) for QLT Inc. was high in Q4 2010 due to a $1 million charge related to the amendment of a supply agreement with one of their Visudyne manufacturers. Additionally, in Q4 2009, COGS was high because it included about $4.8 million in obsolescence charges and write-offs, which were split between QLT and Novartis. These one-time charges contributed to the higher COGS in the respective quarters.\n\nLooking forward, QLT expects its COGS expense to be around 10% to 11% of Visudyne sales. However, this percentage can fluctuate significantly from quarter to quarter depending on the timing of Novartis' product purchases from QLT for sale outside the U.S.",
+    "end_ns": 1790611230527369688,
+    "elapsed_seconds": 2.7191003570333123,
+    "document_id": "financial_qa:5",
+    "question_index": 3,
+    "expected_prompt_tokens": 6945
+  },
+  {
+    "index": 55,
+    "prompt_sha256": "5a1924d76ae85415ab72a9a006def6da7cbace2b166819dbe1d6cacf4d1526dc",
+    "start_ns": 1790611227933933939,
+    "server_request_id": "chatcmpl-a8440a1dc45e5531",
+    "ttft_ms": 75.50152996554971,
+    "usage": {
+      "prompt_tokens": 4773,
+      "total_tokens": 5011,
+      "completion_tokens": 238,
+      "prompt_tokens_details": {
+        "cached_tokens": 4736
+      }
+    },
+    "prompt_tokens": 4773,
+    "completion_tokens": 238,
+    "cached_tokens": 4736,
+    "finish_reason": "stop",
+    "output_sha256": "f3504bbfb2f9308cb9bd7df544fae0b384745bd89942d766da6710a3f46f4c34",
+    "output": "Recent product introductions and market conditions have had a mixed influence on Oclaro's performance. On the positive side, there has been robust demand in both the telecom and datacom market segments, despite some uncertainty about the timing of large-scale 100G deployments in China. Oclaro has seen strong demand for its 100 gigabit CFP product lines, 10 gigabit tunable products, and transceivers used in wireless backhaul applications. Additionally, there has been a significant spike in demand for 40 gigabit line side product lines used in North America. Oclaro also successfully demonstrated its 100G coherent integrated laser and Mach-Zehnder modulator on a single chip solution at the ETA Trade Show, which offers promise for pluggable high-end receivers and has received strong support from customers.\n\nHowever, the company's ability to fully capitalize on these opportunities has been hampered by transfer delays in manufacturing processes, which have constrained revenue output and caused capacity limitations in the current quarter. Despite these challenges, Oclaro remains confident that the changes being implemented will lead to improvements in performance and better alignment with market demands.",
+    "end_ns": 1790611231732086096,
+    "elapsed_seconds": 3.798152944073081,
+    "document_id": "financial_qa:0",
+    "question_index": 2,
+    "expected_prompt_tokens": 4773
+  },
+  {
+    "index": 56,
+    "prompt_sha256": "22862d9ef67fe22aecc39385652eaecbbd5d6a94cdb261c3bf3b72e86c8d09f1",
+    "start_ns": 1790611228492717056,
+    "server_request_id": "chatcmpl-b2733e821d91c19c",
+    "ttft_ms": 78.78602761775255,
+    "usage": {
+      "prompt_tokens": 4571,
+      "total_tokens": 4685,
+      "completion_tokens": 114,
+      "prompt_tokens_details": {
+        "cached_tokens": 4480
+      }
+    },
+    "prompt_tokens": 4571,
+    "completion_tokens": 114,
+    "cached_tokens": 4480,
+    "finish_reason": "stop",
+    "output_sha256": "69659143ff097f21a07c01b58914680d1422d8be9786573bd958b3f3152afe94",
+    "output": "The Renewable Energy Group made a significant strategic move by enhancing its feedstock flexibility to manage its feedstock resources in the face of compressing spreads. This involved optimizing the use of different feedstocks, such as soybean oil, distillers corn oil, and choice white grease, based on their relative prices and yield. By switching production to cheaper feedstocks when appropriate, the company was able to maintain efficiency and profitability despite the challenging market conditions. This flexibility allowed them to produce more gallons without increasing feedstock usage, thereby improving operational efficiency and maintaining a competitive edge.",
+    "end_ns": 1790611230347204004,
+    "elapsed_seconds": 1.8544883597642183,
+    "document_id": "financial_qa:4",
+    "question_index": 3,
+    "expected_prompt_tokens": 4571
+  },
+  {
+    "index": 57,
+    "prompt_sha256": "10a5144081f3ad1e50f03ba5552c5b8fac7320af83ac8ee23ba74f5802f1a0ab",
+    "start_ns": 1790611228560974280,
+    "server_request_id": "chatcmpl-9d4415c8dc39a6ae",
+    "ttft_ms": 120.87923241779208,
+    "usage": {
+      "prompt_tokens": 5022,
+      "total_tokens": 5047,
+      "completion_tokens": 25,
+      "prompt_tokens_details": {
+        "cached_tokens": 4992
+      }
+    },
+    "prompt_tokens": 5022,
+    "completion_tokens": 25,
+    "cached_tokens": 4992,
+    "finish_reason": "stop",
+    "output_sha256": "15a2fc40aec37e4a7ff8c2007e5d7904efc2c56ac8e13c7558f139146937b41b",
+    "output": "The hand-crafted features combined with word2vec are the minimum, mean, and maximum polarity scores of the reviews.",
+    "end_ns": 1790611229010511213,
+    "elapsed_seconds": 0.4495384772308171,
+    "document_id": "scientific_qa:7",
+    "question_index": 3,
+    "expected_prompt_tokens": 5022
+  },
+  {
+    "index": 58,
+    "prompt_sha256": "c91846bc6753f3c9ac0223244ecb3b5e33e39840b4a0b087c9c94d254c426002",
+    "start_ns": 1790611228573289739,
+    "server_request_id": "chatcmpl-a03cea81cd2008f2",
+    "ttft_ms": 119.76190190762281,
+    "usage": {
+      "prompt_tokens": 5711,
+      "total_tokens": 5839,
+      "completion_tokens": 128,
+      "prompt_tokens_details": {
+        "cached_tokens": 5632
+      }
+    },
+    "prompt_tokens": 5711,
+    "completion_tokens": 128,
+    "cached_tokens": 5632,
+    "finish_reason": "stop",
+    "output_sha256": "74e51fcc187a3ee927a4b773116820755bff4c26ff0f88fdec7270a6aa597038",
+    "output": "The publicly available datasets used in the study are:\n\n1. The dataset provided by Waseem and Hovey, which contains 16,000 tweets annotated as racism, sexism, or neither, and an additional dataset with 6,900 tweets annotated with both expert and crowdsourcing users as racism, sexism, neither, or both.\n\n2. The dataset provided by Davidson et al., which contains 84.4 million tweets collected using the Twitter API, with 25,000 of them annotated as Hate, Offensive, or Neither by users of the CrowdFlower crowdsourcing platform.",
+    "end_ns": 1790611230692919657,
+    "elapsed_seconds": 2.1196309300139546,
+    "document_id": "scientific_qa:3",
+    "question_index": 2,
+    "expected_prompt_tokens": 5711
+  },
+  {
+    "index": 59,
+    "prompt_sha256": "1a600b5e274f831cf03eff00658cb69d700ab5a43b2efd86b23d4e63b2891e2e",
+    "start_ns": 1790611229012226395,
+    "server_request_id": "chatcmpl-b2ae53aa16b01d14",
+    "ttft_ms": 80.84132801741362,
+    "usage": {
+      "prompt_tokens": 5491,
+      "total_tokens": 5533,
+      "completion_tokens": 42,
+      "prompt_tokens_details": {
+        "cached_tokens": 5376
+      }
+    },
+    "prompt_tokens": 5491,
+    "completion_tokens": 42,
+    "cached_tokens": 5376,
+    "finish_reason": "stop",
+    "output_sha256": "91510b3db66c8dc9df9374dc6e164395e67e05b3fd316f0e6966e7546023d204",
+    "output": "The state-of-the-art models mentioned in the document include r-net and AoA, which are leading models on the SQuAD leaderboard. These models are used as baselines for comparison in the experiments.",
+    "end_ns": 1790611229709854351,
+    "elapsed_seconds": 0.6976286862045527,
+    "document_id": "scientific_qa:11",
+    "question_index": 3,
+    "expected_prompt_tokens": 5491
+  },
+  {
+    "index": 60,
+    "prompt_sha256": "22810c78bc8bf4c4be22ddc6e6ba0b3d80eaf86ca1687a1f8ae78a37ff4d9b7f",
+    "start_ns": 1790611229211340245,
+    "server_request_id": "chatcmpl-aaf24bc9ad2939f1",
+    "ttft_ms": 101.51444701477885,
+    "usage": {
+      "prompt_tokens": 5709,
+      "total_tokens": 5773,
+      "completion_tokens": 64,
+      "prompt_tokens_details": {
+        "cached_tokens": 5632
+      }
+    },
+    "prompt_tokens": 5709,
+    "completion_tokens": 64,
+    "cached_tokens": 5632,
+    "finish_reason": "stop",
+    "output_sha256": "30ff61dc93f12d7298496076bac918dd87716d26b00bdbba6047070eb3a3e386",
+    "output": "The baselines used in the study are the works by Waseem and Hovy BIBREF5, Davidson et al. BIBREF9, and Waseem et al. BIBREF10. These are compared with the different fine-tuning strategies using the pre-trained BERTbase model.",
+    "end_ns": 1790611230250843336,
+    "elapsed_seconds": 1.039503884036094,
+    "document_id": "scientific_qa:3",
+    "question_index": 3,
+    "expected_prompt_tokens": 5709
+  },
+  {
+    "index": 61,
+    "prompt_sha256": "fbf311b4caba93ccca105b91eef22325d863f5dd3f2b2d24a227de7c444083cc",
+    "start_ns": 1790611229711374326,
+    "server_request_id": "chatcmpl-a95524b78ccf181c",
+    "ttft_ms": 89.1894749365747,
+    "usage": {
+      "prompt_tokens": 4870,
+      "total_tokens": 5108,
+      "completion_tokens": 238,
+      "prompt_tokens_details": {
+        "cached_tokens": 4736
+      }
+    },
+    "prompt_tokens": 4870,
+    "completion_tokens": 238,
+    "cached_tokens": 4736,
+    "finish_reason": "stop",
+    "output_sha256": "ea8c37089bd66e6ce78828ccdbfce2a6e36706eae920c83bc1932e9e554aeb18",
+    "output": "The impact of market volatility on FS KKR Capital Corp.'s investment activity during Q4 of 2018 was multifaceted. Global equity and fixed income markets experienced significant volatility, which negatively impacted the leveraged credit markets and investor sentiment. This led to record outflows in high-yield bond and bank loan mutual funds, and bond and loan prices declined to a 2.5-year low by the last week of December. Despite relatively stable corporate fundamentals and near-historic low corporate default rates, the sell-off was primarily technical in nature.\n\nThe market volatility created some opportunities for FS KKR Capital Corp. as it allowed the company to be more selective in its credit choices and remove some of the froth from the lending environment. However, the pullback in January was quicker than expected, and the overall market remained competitive. The company focused on being disciplined in its credit selection and executing transactions with appropriate risk-reward profiles. The volatility also contributed to mark-to-market declines in the portfolio, which were primarily due to changes in market-based valuation metrics. These declines had a negative impact on the company's net realized and unrealized losses on investments during the quarter.",
+    "end_ns": 1790611233298388097,
+    "elapsed_seconds": 3.5870152357965708,
+    "document_id": "financial_qa:2",
+    "question_index": 3,
+    "expected_prompt_tokens": 4870
+  },
+  {
+    "index": 62,
+    "prompt_sha256": "4de6bc0b58832c56ce93476d08f4893737accbff503bcbb15c48012a0ce5f023",
+    "start_ns": 1790611229908203568,
+    "server_request_id": "chatcmpl-9437f8fe338f1c48",
+    "ttft_ms": 92.72726438939571,
+    "usage": {
+      "prompt_tokens": 5728,
+      "total_tokens": 5897,
+      "completion_tokens": 169,
+      "prompt_tokens_details": {
+        "cached_tokens": 5632
+      }
+    },
+    "prompt_tokens": 5728,
+    "completion_tokens": 169,
+    "cached_tokens": 5632,
+    "finish_reason": "stop",
+    "output_sha256": "53be3574cf2b6d132ce42fc49b765d37019b8427e1b1a728e0a0a92982d3f210",
+    "output": "No, the methods that work best on academic papers do not also work best on Wikipedia. According to the experimental results, the Joint model, which combines textual and visual features, achieves the highest accuracy on Wikipedia, outperforming both the textual-only (biLSTM) and visual-only (Inception) models. However, on the arXiv dataset (academic papers), the performance of the Joint model is slightly less impressive. For example, on the arXiv cs.lg subset, the biLSTM model achieves the highest accuracy, while the Joint model only achieves a 0.6% higher accuracy than Inception. This suggests that the effectiveness of the methods varies depending on the type of document being assessed, with the Joint model performing better on Wikipedia and the biLSTM model performing better on certain subsets of academic papers.",
+    "end_ns": 1790611232591061622,
+    "elapsed_seconds": 2.68285873811692,
+    "document_id": "scientific_qa:13",
+    "question_index": 2,
+    "expected_prompt_tokens": 5728
+  },
+  {
+    "index": 63,
+    "prompt_sha256": "3bea7b09f138bf61f9803108966ee8f26a7dd3736c58d22305fb9378be318f0c",
+    "start_ns": 1790611230252692131,
+    "server_request_id": "chatcmpl-bc8111ff0e1d7b78",
+    "ttft_ms": 84.31654796004295,
+    "usage": {
+      "prompt_tokens": 5186,
+      "total_tokens": 5247,
+      "completion_tokens": 61,
+      "prompt_tokens_details": {
+        "cached_tokens": 5120
+      }
+    },
+    "prompt_tokens": 5186,
+    "completion_tokens": 61,
+    "cached_tokens": 5120,
+    "finish_reason": "stop",
+    "output_sha256": "bd59abdbb9875a56fc7a29f9474964fc82213b33b176f5fc4f352c0ab9af15a5",
+    "output": "The results show that the proposed multimodal models do not outperform the unimodal textual models in hate speech detection. Despite the usefulness of images for hate speech detection, the multimodal models end up using almost only the text input for prediction and produce very similar results to those of the textual models.",
+    "end_ns": 1790611231278947431,
+    "elapsed_seconds": 1.0262568038888276,
+    "document_id": "scientific_qa:19",
+    "question_index": 3,
+    "expected_prompt_tokens": 5186
+  },
+  {
+    "index": 64,
+    "prompt_sha256": "4f75d4e1bfff65828cd4961a95d8c26cba937d17f7f17045003da1e06ca71181",
+    "start_ns": 1790611230349549266,
+    "server_request_id": "chatcmpl-baeca5c3e5f4ff74",
+    "ttft_ms": 106.1204201541841,
+    "usage": {
+      "prompt_tokens": 5646,
+      "total_tokens": 5884,
+      "completion_tokens": 238,
+      "prompt_tokens_details": {
+        "cached_tokens": 5504
+      }
+    },
+    "prompt_tokens": 5646,
+    "completion_tokens": 238,
+    "cached_tokens": 5504,
+    "finish_reason": "stop",
+    "output_sha256": "2d9a0788802abe811508ab8d63e2855c8926172c64f0bdc99c5701ffc9bf056b",
+    "output": "The effectiveness of back-translation (BT) is explained by the fact that it provides a way to generate artificial parallel data, which can be used to improve the performance of Neural Machine Translation (NMT) systems. The paper suggests that the monotonicity of the artificial source sentences, which results from the back-translation process, is a facilitating factor for NMT. This means that the simpler and more monotonic structure of the back-translated sentences helps the NMT model to learn more effectively. Additionally, the paper notes that even though artificial sources are less lexically diverse and syntactically complex than real sentences, their monotonicity helps the model. The study also shows that using a high-quality back-translation system leads to better translation performance, and that the quality of the back-translated data is important for the effectiveness of BT. The paper also suggests that BT can act as a form of data augmentation, allowing the model to be exposed to more data, which can help improve its performance, especially in domain adaptation scenarios. However, the paper also notes that BT does not act as a regularizer, as previously thought, and that it may even encourage overfitting.",
+    "end_ns": 1790611233779219203,
+    "elapsed_seconds": 3.429671321064234,
+    "document_id": "scientific_qa:9",
+    "question_index": 2,
+    "expected_prompt_tokens": 5646
+  },
+  {
+    "index": 65,
+    "prompt_sha256": "79501a0a0436db944f52a6808a59bd7114b6b4cf473375e7d87f2a703064d4c0",
+    "start_ns": 1790611230517319678,
+    "server_request_id": "chatcmpl-9e37dcc6dcd2efce",
+    "ttft_ms": 117.51849995926023,
+    "usage": {
+      "prompt_tokens": 4780,
+      "total_tokens": 4827,
+      "completion_tokens": 47,
+      "prompt_tokens_details": {
+        "cached_tokens": 4736
+      }
+    },
+    "prompt_tokens": 4780,
+    "completion_tokens": 47,
+    "cached_tokens": 4736,
+    "finish_reason": "stop",
+    "output_sha256": "2513b332cbd1594524d02ec5ae41d903d5322552f4ae72174a2a1f6acdd2e998",
+    "output": "The primary uses of the $185 million generated by Oclaro from the product line sales were to repay debt and to restructure the company, complete its manufacturing transfers, and fund its operating losses to breakeven.",
+    "end_ns": 1790611231293798661,
+    "elapsed_seconds": 0.7764806016348302,
+    "document_id": "financial_qa:0",
+    "question_index": 3,
+    "expected_prompt_tokens": 4780
+  },
+  {
+    "index": 66,
+    "prompt_sha256": "8675d4e5157f8fab638bac03d3919bcb458588e3226d57fdbce642a649c63a81",
+    "start_ns": 1790611230528823897,
+    "server_request_id": "chatcmpl-a027a58897464020",
+    "ttft_ms": 117.1928490512073,
+    "usage": {
+      "prompt_tokens": 5741,
+      "total_tokens": 5765,
+      "completion_tokens": 24,
+      "prompt_tokens_details": {
+        "cached_tokens": 5632
+      }
+    },
+    "prompt_tokens": 5741,
+    "completion_tokens": 24,
+    "cached_tokens": 5632,
+    "finish_reason": "stop",
+    "output_sha256": "4b3546470967fe547b98d4b507bb5f5294b1341dc8668d517e116f28921ac5ff",
+    "output": "The percentage growth in full-year fee revenue in the Americas for Jones Lang LaSalle Incorporated was 15%.",
+    "end_ns": 1790611230973488003,
+    "elapsed_seconds": 0.44466516515240073,
+    "document_id": "financial_qa:3",
+    "question_index": 3,
+    "expected_prompt_tokens": 5741
+  },
+  {
+    "index": 67,
+    "prompt_sha256": "2aa87dd95f8b5148e8928325bf324a134365aea454baa1e0e97395d625f7b3c1",
+    "start_ns": 1790611230694448885,
+    "server_request_id": "chatcmpl-b966b952bd091fdc",
+    "ttft_ms": 75.86961193010211,
+    "usage": {
+      "prompt_tokens": 4438,
+      "total_tokens": 4507,
+      "completion_tokens": 69,
+      "prompt_tokens_details": {
+        "cached_tokens": 4352
+      }
+    },
+    "prompt_tokens": 4438,
+    "completion_tokens": 69,
+    "cached_tokens": 4352,
+    "finish_reason": "stop",
+    "output_sha256": "e2fc1fa02c8cbc9974a35bd85cb1a2f1c584e555b792d41715fa7988d498e4eb",
+    "output": "The document does not provide a specific number or size for the vocabulary used in the study. It discusses the vocabulary mismatch between editors and users, and the use of user-generated search terms and editor tags, but it does not quantify the total size of the vocabulary. Therefore, the exact size of the vocabulary cannot be determined from the given information.",
+    "end_ns": 1790611231841317673,
+    "elapsed_seconds": 1.1468696119263768,
+    "document_id": "scientific_qa:6",
+    "question_index": 3,
+    "expected_prompt_tokens": 4438
+  },
+  {
+    "index": 68,
+    "prompt_sha256": "5c486876084a2c9c9e40344f35b527a2a6267beacccf2fc10189f1d9e8833217",
+    "start_ns": 1790611230974983481,
+    "server_request_id": "chatcmpl-8d310099848f749c",
+    "ttft_ms": 99.42935034632683,
+    "usage": {
+      "prompt_tokens": 5639,
+      "total_tokens": 5803,
+      "completion_tokens": 164,
+      "prompt_tokens_details": {
+        "cached_tokens": 5504
+      }
+    },
+    "prompt_tokens": 5639,
+    "completion_tokens": 164,
+    "cached_tokens": 5504,
+    "finish_reason": "stop",
+    "output_sha256": "70a89691300d3e3256604a5aaac5694e2e02223c9616b360e305d7cdacf16d51",
+    "output": "The dataset used in the study includes the Europarl corpus for in-domain training data, specifically for two translation directions: English to German and English to French. Additionally, for out-of-domain performance evaluation, the WMT newstest 2014 dataset is used. Other datasets mentioned include News-Commentary-11, Wikipedia from WMT 2014, Multi-UN, EU-Bookshop, and Common-Crawl (WMT 2017) for German. For French, the News-Commentary-11 and Wikipedia from WMT 2014 shared translation task are used. The Europarl tests from 2007 and 2008 are used for evaluation purposes, with the 2006 test reserved for development.",
+    "end_ns": 1790611233358872117,
+    "elapsed_seconds": 2.3838894721120596,
+    "document_id": "scientific_qa:9",
+    "question_index": 3,
+    "expected_prompt_tokens": 5639
+  },
+  {
+    "index": 69,
+    "prompt_sha256": "85241c12a4713fe0b52f7aac194b88c60bea38ca664434dea5a02406c2c44437",
+    "start_ns": 1790611231280683852,
+    "server_request_id": "chatcmpl-b030f68825aec782",
+    "ttft_ms": 115.80470530316234,
+    "usage": {
+      "prompt_tokens": 5936,
+      "total_tokens": 6026,
+      "completion_tokens": 90,
+      "prompt_tokens_details": {
+        "cached_tokens": 5888
+      }
+    },
+    "prompt_tokens": 5936,
+    "completion_tokens": 90,
+    "cached_tokens": 5888,
+    "finish_reason": "stop",
+    "output_sha256": "a75f9e8e204ef1534123779d7a116555dcea6214bb27e261cf351cd701f60086",
+    "output": "The document does not mention experimenting with offering multiple candidate corrections and voting on the model output. Instead, it focuses on using a word recognition model to predict the correct word for each input, with backoff strategies to handle cases where the model predicts UNK. The emphasis is on improving the robustness of the downstream classification model by reducing the sensitivity of the word recognition model and minimizing the error rate, rather than exploring multiple candidate corrections or voting mechanisms.",
+    "end_ns": 1790611232679851611,
+    "elapsed_seconds": 1.399168630130589,
+    "document_id": "scientific_qa:4",
+    "question_index": 3,
+    "expected_prompt_tokens": 5936
+  },
+  {
+    "index": 70,
+    "prompt_sha256": "15be1f54371a64314a9ff5549e78a5a521d93ea997a32644dc8f2663a1c1ce5d",
+    "start_ns": 1790611231295379090,
+    "server_request_id": "chatcmpl-8663345be41cc0a1",
+    "ttft_ms": 112.29251930490136,
+    "usage": {
+      "prompt_tokens": 5721,
+      "total_tokens": 5825,
+      "completion_tokens": 104,
+      "prompt_tokens_details": {
+        "cached_tokens": 5632
+      }
+    },
+    "prompt_tokens": 5721,
+    "completion_tokens": 104,
+    "cached_tokens": 5632,
+    "finish_reason": "stop",
+    "output_sha256": "94e7da3d57766bb64ad69528596a60b0e8525993dc394a904175cb23e2abc11b",
+    "output": "The document does not provide the absolute accuracy of the system. It only provides relative accuracy improvements compared to other models, such as the biLSTM and Inception models. For example, it states that the Joint model achieves an accuracy of 59.4% on Wikipedia, which is 5.3% higher than using textual features alone (biLSTM) and 2.4% higher than using visual features alone (Inception). However, the absolute accuracy of the system is not explicitly mentioned.",
+    "end_ns": 1790611232880105962,
+    "elapsed_seconds": 1.5847276994027197,
+    "document_id": "scientific_qa:13",
+    "question_index": 3,
+    "expected_prompt_tokens": 5721
+  },
+  {
+    "index": 71,
+    "prompt_sha256": "4ee569506d7e8bb234f03a2d48f7c5fa6446dd45a99b62e7ca8d789572d21fe2",
+    "start_ns": 1790611231733726202,
+    "server_request_id": "chatcmpl-9d80f143c5a65275",
+    "ttft_ms": 107.25156171247363,
+    "usage": {
+      "prompt_tokens": 6951,
+      "total_tokens": 7649,
+      "completion_tokens": 698,
+      "prompt_tokens_details": {
+        "cached_tokens": 6784
+      }
+    },
+    "prompt_tokens": 6951,
+    "completion_tokens": 698,
+    "cached_tokens": 6784,
+    "finish_reason": "stop",
+    "output_sha256": "52d17ddfc6a00f047eb0cf04847efc668a69655985fb0c6cf797903351cf939c",
+    "output": "Based on the provided document, there are no explicit provisions related to \"Volume Restriction\" that directly address a fee increase or consent requirement if one party's use of the product/services exceeds certain thresholds. However, there are a few relevant sections that may require legal review in the context of volume-related issues:\n\n1. **Section 1.1 - Grant of Rights**: This section outlines the Reseller's exclusive rights to distribute and sell the Products in the Territory. It also mentions that the Reseller may sub-license or transfer its distribution rights to a subsidiary or affiliate. While this does not directly address volume restrictions, it may be relevant in the context of volume-related sub-licensing or distribution agreements.\n\n2. **Section 2.1 and 2.2 - Exclusivity and Annual Milestones**: These sections establish that the Reseller must achieve certain Annual Milestones to maintain its exclusivity. If the Reseller fails to meet these milestones, Todos may cancel the Reseller's exclusivity or terminate the Agreement. While this is not a volume restriction per se, it could be interpreted as a performance-based restriction that may indirectly relate to volume.\n\n3. **Section 5.1 - Non-Binding Forecasts**: This section requires the Reseller to provide Todos with a non-binding rolling weekly forecast of its estimated Product purchase requirements over the upcoming six months. This could be relevant in the context of volume planning and expectations, but it does not specify any penalties or requirements for exceeding certain thresholds.\n\n4. **Section 5.4 - Lead Time**: This section specifies the lead time for the Lab Kit and Physician Kit based on the Reseller's order not deviating from the applicable Forecast by more than 10%. This could be relevant in the context of volume planning and order fulfillment, but it does not specify any penalties or requirements for exceeding certain thresholds.\n\n5. **Section 5.5 - Delivery**: This section specifies the delivery timeline for the Products based on the Reseller's order not deviating from the applicable Forecast by more than 10%. This could be relevant in the context of volume planning and order fulfillment, but it does not specify any penalties or requirements for exceeding certain thresholds.\n\n6. **Section 5.7 - Payment for Products**: This section specifies that the Reseller must pay for the Products within 30 days of shipment. This could be relevant in the context of volume-related payment terms, but it does not specify any penalties or requirements for exceeding certain thresholds.\n\n7. **Section 6.2 - Quarterly Reports**: This section requires the Reseller to provide Todos with a written report of the quantities of Products distributed, sold, or otherwise transferred. This could be relevant in the context of volume tracking and reporting, but it does not specify any penalties or requirements for exceeding certain thresholds.\n\n8. **Section 6.3 - Audits**: This section grants Todos the right to have an inspection and audit of the Reseller's accounting and sales books and records. This could be relevant in the context of volume-related compliance and reporting, but it does not specify any penalties or requirements for exceeding certain thresholds.\n\nIn summary, while the document does not explicitly address \"Volume Restriction\" with a fee increase or consent requirement, the sections related to exclusivity, performance milestones, forecasts, and reporting may be relevant in the context of volume-related issues and should be reviewed by a lawyer to ensure compliance and understand any potential implications.",
+    "end_ns": 1790611239902411676,
+    "elapsed_seconds": 8.168686318676919,
+    "document_id": "legal_contract_qa:5",
+    "question_index": 3,
+    "expected_prompt_tokens": 6951
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "mode": "baseline",
+    "workers": 1,
+    "samples": 15,
+    "median_ms": 400.125968,
+    "per_seed_median_ms": [
+      395.173426,
+      400.125968,
+      414.218345
+    ],
+    "mean_targets_with_outstanding_client_calls": 0.9967377112718244,
+    "mean_peak_calls_to_one_target": 1
+  },
+  {
+    "mode": "balanced",
+    "workers": 1,
+    "samples": 15,
+    "median_ms": 396.075499,
+    "per_seed_median_ms": [
+      417.614517,
+      395.222803,
+      396.075499
+    ],
+    "mean_targets_with_outstanding_client_calls": 0.997124249677494,
+    "mean_peak_calls_to_one_target": 1
+  },
+  {
+    "mode": "baseline",
+    "workers": 16,
+    "samples": 15,
+    "median_ms": 63.789326,
+    "per_seed_median_ms": [
+      65.882804,
+      62.528971,
+      63.789326
+    ],
+    "mean_targets_with_outstanding_client_calls": 9.453792660729983,
+    "mean_peak_calls_to_one_target": 4.6
+  },
+  {
+    "mode": "balanced",
+    "workers": 16,
+    "samples": 15,
+    "median_ms": 58.145321,
+    "per_seed_median_ms": [
+      58.145321,
+      57.299651,
+      58.59349
+    ],
+    "mean_targets_with_outstanding_client_calls": 12.958316579784132,
+    "mean_peak_calls_to_one_target": 3.1333333333333333
+  }
+]

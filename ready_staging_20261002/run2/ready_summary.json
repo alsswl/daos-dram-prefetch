@@ -1,0 +1,63 @@
+{
+  "run": "run2",
+  "chunks": 512,
+  "windows": 19,
+  "retrieve_ms": 371.079625,
+  "pipeline_ms": 367.83007,
+  "fetch_ms": {
+    "mean": 9.429278642578126,
+    "median": 7.7202855,
+    "p95": 17.162239,
+    "max": 49.037055
+  },
+  "ready_wait_ms": {
+    "mean": 17.578732765625,
+    "median": 16.457366999999998,
+    "p95": 38.91874,
+    "max": 57.06714
+  },
+  "ready_to_free_ms": {
+    "mean": 20.0342951171875,
+    "median": 19.262997,
+    "p95": 40.577801,
+    "max": 58.353567
+  },
+  "mean_ready_wait_components_ms": {
+    "waiting_other_chunks_ms": 15.246352275390626,
+    "window_finalize_ms": 1.2669661484375,
+    "window_schedule_wait_ms": 1.065414341796875
+  },
+  "mean_within_window_wait_components_ms": {
+    "wait_for_last_worker_start_ms": 1.772251703125,
+    "wait_from_last_worker_to_last_fetch_start_ms": 0.362129537109375,
+    "wait_after_last_fetch_start_ms": 13.11197103515625
+  },
+  "time_average_mib": {
+    "used": 743.9941702319226,
+    "ready": 440.43599036913974,
+    "copying": 32.66984707367725,
+    "post_copy": 28.85438511321274
+  },
+  "peak_mib": {
+    "used": 1170.0,
+    "ready": 954.0,
+    "copying": 486.0,
+    "post_copy": 486.0
+  },
+  "ready_fraction_of_allocated_byte_time": 0.5919884966730912,
+  "mean_workers": 14.637838975481259,
+  "mean_payload_fetches": 13.125057081385433,
+  "durations_ms": {
+    "depth_full_with_more_windows": 278.19596,
+    "next_window_exceeds_budget": 270.714539,
+    "depth_full_ready_present": 268.819045,
+    "depth_full_ready_and_no_payload_fetch": 0.0,
+    "depth_full_ready_and_no_worker": 0.0,
+    "depth_full_ready_and_workers_below_16": 7.800571
+  },
+  "windows_completed_before_earlier_release": 1,
+  "max_earlier_window_wait_ms": 2.986468,
+  "all_bytes_correct": true,
+  "cleanup_passed": true,
+  "accounting_validated": true
+}

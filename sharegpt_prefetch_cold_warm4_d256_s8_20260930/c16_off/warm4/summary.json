@@ -1,0 +1,32 @@
+{
+  "case": "c16_off",
+  "phase": "warm4",
+  "requests": 1684,
+  "elapsed_seconds": 404.278405856,
+  "ttft": {
+    "n": 1684,
+    "mean": 120.93948476976603,
+    "p50": 107.18706902116537,
+    "p95": 206.93616098724303,
+    "maximum": 382.4496050365269
+  },
+  "input_tokens": 5867313,
+  "cached_tokens": 5759224,
+  "computed_tokens": 108089,
+  "output_tokens": 315006,
+  "queried_chunks": 44994,
+  "hit_chunks": {
+    "dram": 18018,
+    "daos": 26976
+  },
+  "dram_hit_pct": 40.04533937858381,
+  "daos_hit_pct": 59.95466062141619,
+  "input_reuse_pct": 98.15777682220124,
+  "peak_staging_gib": 4.00390625,
+  "mean_sampled_staging_gib": 0.06830285792395693,
+  "sampled_peak_cpu_gib": 255.99609375,
+  "initial_cpu_gib": 255.99609375,
+  "final_cpu_gib": 255.99609375,
+  "capacity_recomputed_tokens": 0,
+  "prefetch_counter_deltas": {}
+}

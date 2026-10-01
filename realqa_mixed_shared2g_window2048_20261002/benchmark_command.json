@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/root/discos_minji/venv/bin/python",
+    "/root/discos_minji/realqa_q4_cxs.py",
+    "run",
+    "--output",
+    "/root/discos_minji/realqa_mixed_shared2g_window2048_20261002"
+  ],
+  "environment": {
+    "DAOSGDS_TRANSPORT": "object",
+    "DAOS_GDS_MULTI_PREFETCH": "0",
+    "DAOSGDR_TIMING": "0",
+    "HF_HOME": "/home/hf/hf_cache",
+    "VLLM_PLUGINS": "daos_resume_tokens",
+    "PYTHONPATH": "/root/discos_minji/experiment_plugins:/root/discos_minji"
+  }
+}

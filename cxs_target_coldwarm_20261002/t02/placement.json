@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "pool": "discospool",
+  "container": "kvcache",
+  "nonce": 7622442963664906463,
+  "oid": "281543696187392.7622442963664906463",
+  "library": "/root/discos_minji/experiments/chunk_placement/lmcache_transport.so",
+  "layout": {
+    "0": [
+      1,
+      4
+    ],
+    "1": [
+      0,
+      0
+    ],
+    "2": [
+      0,
+      1
+    ],
+    "3": [
+      1,
+      3
+    ],
+    "4": [
+      1,
+      6
+    ],
+    "5": [
+      0,
+      7
+    ],
+    "6": [
+      1,
+      7
+    ],
+    "7": [
+      0,
+      5
+    ],
+    "8": [
+      1,
+      1
+    ],
+    "9": [
+      0,
+      2
+    ],
+    "10": [
+      1,
+      0
+    ],
+    "11": [
+      0,
+      3
+    ],
+    "12": [
+      0,
+      4
+    ],
+    "13": [
+      1,
+      2
+    ],
+    "14": [
+      1,
+      5
+    ],
+    "15": [
+      0,
+      6
+    ]
+  },
+  "addressing": {
+    "mode": "baseline",
+    "placement_keys": [
+      "placement-v1/22",
+      "placement-v1/1",
+      "placement-v1/14",
+      "placement-v1/34",
+      "placement-v1/6",
+      "placement-v1/33",
+      "placement-v1/12",
+      "placement-v1/3",
+      "placement-v1/38",
+      "placement-v1/10",
+      "placement-v1/64",
+      "placement-v1/2",
+      "placement-v1/4",
+      "placement-v1/49",
+      "placement-v1/0",
+      "placement-v1/9"
+    ],
+    "version": 1
+  },
+  "isolated_experiment_object": true,
+  "target_spread_shards": [
+    1,
+    10
+  ],
+  "selected_physical_targets": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ]
+}

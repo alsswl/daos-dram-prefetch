@@ -1,0 +1,242 @@
+{
+  "phases": [
+    {
+      "phase": "cold",
+      "cohorts": {
+        "all": {
+          "requests": 1684,
+          "timings": {
+            "response_lock_acquire_ms": {
+              "n": 1684,
+              "mean": 0.0022937832541567696,
+              "p50": 0.00199,
+              "p95": 0.003141,
+              "maximum": 0.153565
+            },
+            "notify_to_response_recorded_ms": {
+              "n": 1684,
+              "mean": 0.7756124459619953,
+              "p50": 0.594787,
+              "p95": 1.455602299999999,
+              "maximum": 32.011628
+            },
+            "response_recorded_to_scheduler_check_ms": {
+              "n": 1684,
+              "mean": 39.66047896793349,
+              "p50": 17.962047,
+              "p95": 134.56665184999966,
+              "maximum": 1088.11838
+            },
+            "check_to_retrieve_ms": {
+              "n": 1175,
+              "mean": 4.934977247659575,
+              "p50": 2.753555,
+              "p95": 14.291678299999997,
+              "maximum": 73.734627
+            }
+          },
+          "check_operations": {
+            "lookup_cache": 1651,
+            "lookup": 33
+          }
+        },
+        "dram_only": {
+          "requests": 654,
+          "timings": {
+            "response_lock_acquire_ms": {
+              "n": 654,
+              "mean": 0.002069235474006116,
+              "p50": 0.0019364999999999999,
+              "p95": 0.0030287,
+              "maximum": 0.01004
+            },
+            "notify_to_response_recorded_ms": {
+              "n": 654,
+              "mean": 0.8082433042813456,
+              "p50": 0.6826295,
+              "p95": 1.2871314000000007,
+              "maximum": 6.981923
+            },
+            "response_recorded_to_scheduler_check_ms": {
+              "n": 654,
+              "mean": 28.56203132262997,
+              "p50": 16.6632485,
+              "p95": 100.19965435000003,
+              "maximum": 1009.62741
+            },
+            "check_to_retrieve_ms": {
+              "n": 654,
+              "mean": 4.317609596330275,
+              "p50": 3.1425965,
+              "p95": 10.443621500000003,
+              "maximum": 35.153597
+            }
+          },
+          "check_operations": {
+            "lookup_cache": 649,
+            "lookup": 5
+          }
+        },
+        "daos_only": {
+          "requests": 508,
+          "timings": {
+            "response_lock_acquire_ms": {
+              "n": 508,
+              "mean": 0.002202996062992126,
+              "p50": 0.001976,
+              "p95": 0.00310065,
+              "maximum": 0.00765
+            },
+            "notify_to_response_recorded_ms": {
+              "n": 508,
+              "mean": 0.9712667106299213,
+              "p50": 0.648853,
+              "p95": 1.9378427,
+              "maximum": 32.011628
+            },
+            "response_recorded_to_scheduler_check_ms": {
+              "n": 508,
+              "mean": 54.20285554724409,
+              "p50": 42.566406,
+              "p95": 149.33248389999991,
+              "maximum": 399.017764
+            },
+            "check_to_retrieve_ms": {
+              "n": 508,
+              "mean": 5.567711372047244,
+              "p50": 2.2640575,
+              "p95": 21.6149815,
+              "maximum": 51.505954
+            }
+          },
+          "check_operations": {
+            "lookup_cache": 507,
+            "lookup": 1
+          }
+        }
+      }
+    },
+    {
+      "phase": "warm_lock_probe",
+      "cohorts": {
+        "all": {
+          "requests": 256,
+          "timings": {
+            "response_lock_acquire_ms": {
+              "n": 256,
+              "mean": 0.0347521640625,
+              "p50": 0.0019705,
+              "p95": 0.00306375,
+              "maximum": 7.626528
+            },
+            "notify_to_response_recorded_ms": {
+              "n": 256,
+              "mean": 1.3394773828125,
+              "p50": 1.082789,
+              "p95": 2.40274625,
+              "maximum": 8.575534
+            },
+            "response_recorded_to_scheduler_check_ms": {
+              "n": 256,
+              "mean": 30.24606913671875,
+              "p50": 26.9664845,
+              "p95": 65.60946475,
+              "maximum": 96.950963
+            },
+            "check_to_retrieve_ms": {
+              "n": 246,
+              "mean": 6.62057574796748,
+              "p50": 2.3492224999999998,
+              "p95": 23.93911275,
+              "maximum": 51.567487
+            }
+          },
+          "check_operations": {
+            "lookup_cache": 253,
+            "lookup": 3
+          }
+        },
+        "dram_only": {
+          "requests": 4,
+          "timings": {
+            "response_lock_acquire_ms": {
+              "n": 4,
+              "mean": 0.00266975,
+              "p50": 0.0029575,
+              "p95": 0.00302935,
+              "maximum": 0.00304
+            },
+            "notify_to_response_recorded_ms": {
+              "n": 4,
+              "mean": 0.623838,
+              "p50": 0.5644765,
+              "p95": 0.7998623499999999,
+              "maximum": 0.83746
+            },
+            "response_recorded_to_scheduler_check_ms": {
+              "n": 4,
+              "mean": 14.0334305,
+              "p50": 15.244084,
+              "p95": 24.310826449999997,
+              "maximum": 25.328207
+            },
+            "check_to_retrieve_ms": {
+              "n": 4,
+              "mean": 1.716064,
+              "p50": 1.58735,
+              "p95": 2.3304661499999995,
+              "maximum": 2.441937
+            }
+          },
+          "check_operations": {
+            "lookup_cache": 3,
+            "lookup": 1
+          }
+        },
+        "daos_only": {
+          "requests": 60,
+          "timings": {
+            "response_lock_acquire_ms": {
+              "n": 60,
+              "mean": 0.14051428333333335,
+              "p50": 0.001912,
+              "p95": 0.00310525,
+              "maximum": 7.626528
+            },
+            "notify_to_response_recorded_ms": {
+              "n": 60,
+              "mean": 1.41115835,
+              "p50": 0.9104840000000001,
+              "p95": 5.536229699999995,
+              "maximum": 8.575534
+            },
+            "response_recorded_to_scheduler_check_ms": {
+              "n": 60,
+              "mean": 42.1741954,
+              "p50": 33.0808065,
+              "p95": 79.3039292,
+              "maximum": 96.950963
+            },
+            "check_to_retrieve_ms": {
+              "n": 60,
+              "mean": 12.4216137,
+              "p50": 3.0051275,
+              "p95": 49.389201299999996,
+              "maximum": 51.567487
+            }
+          },
+          "check_operations": {
+            "lookup_cache": 59,
+            "lookup": 1
+          }
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Separate instrumented run with ready-return enabled, first64 warm conversations only.",
+    "Response publication timestamp is just before releasing the lookup mutex; includes all worker results (TP1).",
+    "Polling lag can include useful model execution as well as CPU/scheduling delays; not wholly wasted time.",
+    "Publication-to-check time is distinct from mutex acquisition wait."
+  ]
+}

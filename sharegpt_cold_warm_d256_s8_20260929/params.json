@@ -1,0 +1,19 @@
+{
+  "model": "Qwen/Qwen3-14B",
+  "seed": 20260929,
+  "turns": 4,
+  "min_final_input": 4096,
+  "max_input": 8192,
+  "max_output": 256,
+  "target_gib": 340.0,
+  "source": "/root/discos_minji/sharegpt_dataset_20260929/sg_90k_part1_html_cleaned.json",
+  "source_sha256": "183c744455c6be491dba42ffee41afdae06d1d79adbcd86b7fef30d2a3206f86",
+  "extra_sources": [
+    {
+      "path": "/root/discos_minji/sharegpt_dataset_20260929/sg_90k_part2_html_cleaned.json",
+      "sha256": "32c3e772d044e2a6c74b8d3ca6a627da67634b32cc4e7333fd128cb8bfad70e4"
+    }
+  ],
+  "chunk_tokens": 128,
+  "kv_bytes_per_token": 163840
+}

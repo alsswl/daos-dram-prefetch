@@ -1,0 +1,303 @@
+{
+  "results": [
+    {
+      "experiment": "realqa_q4_64k_window1024_d256_s2_u0835_resume_fix_20261001",
+      "staging_gib": 2,
+      "read_window_mib": 1024,
+      "store_window_mib": 0,
+      "gpu_memory_utilization": 0.835,
+      "gpu_kv_gib": 69.22,
+      "requests": 480,
+      "mean_ttft_ms": 2203.43031376875,
+      "p50_ttft_ms": 1152.3103635,
+      "p95_ttft_ms": 8560.693170999999,
+      "duration_s": 1002.580370794,
+      "cached_token_pct": 86.71767323356991,
+      "staging_peak_gib": 1.3359375,
+      "short_store_calls": 0,
+      "store_calls": 1495,
+      "turns": [
+        {
+          "turn": "0",
+          "requests": 80,
+          "cached_token_pct": 20.000650893351125,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 7646.9394477875,
+            "p50": 8163.627793,
+            "p95": 16330.34645889999,
+            "maximum": 31619.08539
+          }
+        },
+        {
+          "turn": "1",
+          "requests": 80,
+          "cached_token_pct": 99.93941063068026,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 1048.2531640375,
+            "p50": 848.4155949999999,
+            "p95": 1701.8651480999995,
+            "maximum": 2059.850121
+          }
+        },
+        {
+          "turn": "2",
+          "requests": 80,
+          "cached_token_pct": 99.91560201409966,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 1018.5502754875,
+            "p50": 875.5745115,
+            "p95": 1552.9931993,
+            "maximum": 1578.883094
+          }
+        },
+        {
+          "turn": "3",
+          "requests": 80,
+          "cached_token_pct": 99.89032214932449,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 1147.97737885,
+            "p50": 1135.4721060000002,
+            "p95": 1553.6402716500002,
+            "maximum": 1594.447149
+          }
+        },
+        {
+          "turn": "4",
+          "requests": 80,
+          "cached_token_pct": 99.86083798639243,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 1124.3157547125,
+            "p50": 1096.819668,
+            "p95": 1558.9551265,
+            "maximum": 1574.061899
+          }
+        },
+        {
+          "turn": "5",
+          "requests": 80,
+          "cached_token_pct": 99.82939374780722,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 1234.5458617375,
+            "p50": 1200.210412,
+            "p95": 1618.43196325,
+            "maximum": 1638.964779
+          }
+        }
+      ]
+    },
+    {
+      "experiment": "realqa_q4_64k_window500_d256_s1_u084574_resume_fix_20261001",
+      "staging_gib": 1,
+      "read_window_mib": 500,
+      "store_window_mib": 0,
+      "gpu_memory_utilization": 0.8457437051881131,
+      "gpu_kv_gib": 70.22,
+      "requests": 480,
+      "mean_ttft_ms": 3258.691492972917,
+      "p50_ttft_ms": 1225.3399475,
+      "p95_ttft_ms": 9184.342375549997,
+      "duration_s": 1274.687279184,
+      "cached_token_pct": 73.1530278025514,
+      "staging_peak_gib": 0.984375,
+      "short_store_calls": 931,
+      "store_calls": 2040,
+      "turns": [
+        {
+          "turn": "0",
+          "requests": 80,
+          "cached_token_pct": 6.751065837862466,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 8455.1714925875,
+            "p50": 8001.337714,
+            "p95": 16264.429428749989,
+            "maximum": 31529.50012
+          }
+        },
+        {
+          "turn": "1",
+          "requests": 80,
+          "cached_token_pct": 44.65080110810504,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 5704.3265140375,
+            "p50": 4938.782273000001,
+            "p95": 12446.762712449998,
+            "maximum": 20305.480952
+          }
+        },
+        {
+          "turn": "2",
+          "requests": 80,
+          "cached_token_pct": 86.54181499917638,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 1960.069402775,
+            "p50": 954.2864045,
+            "p95": 4781.420870099999,
+            "maximum": 8327.52242
+          }
+        },
+        {
+          "turn": "3",
+          "requests": 80,
+          "cached_token_pct": 99.8879557781673,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 958.601110425,
+            "p50": 922.589406,
+            "p95": 1627.5582691,
+            "maximum": 1720.768032
+          }
+        },
+        {
+          "turn": "4",
+          "requests": 80,
+          "cached_token_pct": 99.85600397847975,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 1101.4724698,
+            "p50": 943.808477,
+            "p95": 1985.7009417,
+            "maximum": 2431.918542
+          }
+        },
+        {
+          "turn": "5",
+          "requests": 80,
+          "cached_token_pct": 99.82619092252541,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 1372.5079682125,
+            "p50": 955.1020335000001,
+            "p95": 2462.74780755,
+            "maximum": 2502.89401
+          }
+        }
+      ]
+    },
+    {
+      "experiment": "realqa_q4_64k_read500_store500_d256_s1_20261001",
+      "staging_gib": 1,
+      "read_window_mib": 500,
+      "store_window_mib": 500,
+      "gpu_memory_utilization": 0.8457437051881131,
+      "gpu_kv_gib": 70.22,
+      "requests": 480,
+      "mean_ttft_ms": 2745.68460708125,
+      "p50_ttft_ms": 1576.688629,
+      "p95_ttft_ms": 8825.928008349993,
+      "duration_s": 1027.752583168,
+      "cached_token_pct": 86.71826648017468,
+      "staging_peak_gib": 0.984375,
+      "short_store_calls": 0,
+      "store_calls": 1495,
+      "turns": [
+        {
+          "turn": "0",
+          "requests": 80,
+          "cached_token_pct": 20.000650893351125,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 8015.472056775,
+            "p50": 6921.7761205,
+            "p95": 16661.06753109999,
+            "maximum": 32143.380961
+          }
+        },
+        {
+          "turn": "1",
+          "requests": 80,
+          "cached_token_pct": 99.93941063068026,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 1197.93136245,
+            "p50": 912.9198185,
+            "p95": 1928.5723049499973,
+            "maximum": 2903.628793
+          }
+        },
+        {
+          "turn": "2",
+          "requests": 80,
+          "cached_token_pct": 99.91435304288639,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 1214.617968625,
+            "p50": 1063.267234,
+            "p95": 2123.42226975,
+            "maximum": 2300.68608
+          }
+        },
+        {
+          "turn": "3",
+          "requests": 80,
+          "cached_token_pct": 99.88940249441642,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 2028.3171079625,
+            "p50": 1977.6095375,
+            "p95": 3262.0796852999997,
+            "maximum": 3402.365984
+          }
+        },
+        {
+          "turn": "4",
+          "requests": 80,
+          "cached_token_pct": 99.85978365307258,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 2237.8222309,
+            "p50": 2650.6957995000002,
+            "p95": 3837.1366442,
+            "maximum": 3904.399298
+          }
+        },
+        {
+          "turn": "5",
+          "requests": 80,
+          "cached_token_pct": 99.8347110069415,
+          "ttft_http_ms": {
+            "n": 80,
+            "mean": 1779.946915775,
+            "p50": 1420.7822955000001,
+            "p95": 3130.143016,
+            "maximum": 3181.50971
+          }
+        }
+      ]
+    }
+  ],
+  "same_input_files": true,
+  "vs_read_only_1gib": {
+    "ttft_change_pct": -15.742726397939833,
+    "duration_change_pct": -19.372178576542876
+  },
+  "vs_2gib": {
+    "ttft_change_pct": 24.609550387142832,
+    "duration_change_pct": 2.5107425905480873
+  },
+  "store_validation": {
+    "passed": true,
+    "requests": 1495,
+    "windows": 2455,
+    "store_allocation_failures": 0,
+    "retrieve_allocation_failures": 16,
+    "total_staging_allocation_failures": 16,
+    "effective_window_bytes": 509607936,
+    "capacity_waits": 494,
+    "capacity_wait_ms": 5901.2921918183565
+  },
+  "limitations": [
+    "One run per configuration; actual generated responses/arrival schedules can differ.",
+    "Recovered retrieve allocation retries are reported separately from store failures.",
+    "Storage uses asynchronous DAOS puts; capacity backpressure waits before admitting another store window.",
+    "Post-run validation correction and original runner failure are preserved in validation_correction.json and original_runner_status.json."
+  ]
+}

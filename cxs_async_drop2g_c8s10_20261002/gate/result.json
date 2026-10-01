@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "store_chunks": 113,
+  "store_dropped_chunks": 15,
+  "notices": {
+    "gate-first": 14208,
+    "gate-second": 256
+  },
+  "paged_scatter_verified": true,
+  "untouched_tail_verified": true,
+  "capacity_outcomes": [
+    {
+      "event": "daos_prefetch_outcome",
+      "time_ns": 1790889413453710679,
+      "monotonic_ns": 2574866788591629,
+      "pid": 942535,
+      "used_bytes": 2095054848,
+      "active_objects": 111,
+      "ready_bytes": 0,
+      "request_id": "gate-first",
+      "requested_chunks": 128,
+      "returned_chunks": 111,
+      "capacity_failed_chunks": 15,
+      "other_failed_chunks": 0,
+      "first_failure": "capacity",
+      "successful_tail_discarded_chunks": 2
+    },
+    {
+      "event": "daos_prefetch_outcome",
+      "time_ns": 1790889413512500467,
+      "monotonic_ns": 2574866847381494,
+      "pid": 942535,
+      "used_bytes": 2132803584,
+      "active_objects": 113,
+      "ready_bytes": 2095054848,
+      "request_id": "gate-second",
+      "requested_chunks": 128,
+      "returned_chunks": 2,
+      "capacity_failed_chunks": 126,
+      "other_failed_chunks": 0,
+      "first_failure": "capacity",
+      "successful_tail_discarded_chunks": 0
+    }
+  ],
+  "staging_after_bytes": 0,
+  "own_keys_removed": true,
+  "second_lookup_and_verify_seconds": 0.10539693618193269
+}

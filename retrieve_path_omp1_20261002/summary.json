@@ -1,0 +1,551 @@
+[
+  {
+    "workers": 16,
+    "cold_lookup": {
+      "ms": {
+        "mean": 18.08334633333333,
+        "median": 18.025176,
+        "min": 17.960306,
+        "max": 18.264557
+      },
+      "cpu_core_equivalents": {
+        "mean": 1.8833340354170445,
+        "median": 1.8932843539542394,
+        "min": 1.8575407345507802,
+        "max": 1.899177017746114
+      },
+      "hottest_thread_core_equivalent": {
+        "mean": 0.3680972917870841,
+        "median": 0.547508488708486,
+        "min": 0.0,
+        "max": 0.5567833866527664
+      },
+      "rx_GB_s": {
+        "mean": 0.02006711692398235,
+        "median": 0.02014380831855331,
+        "min": 0.019906963534539437,
+        "max": 0.020150578918854297
+      },
+      "wall_partition_mean_ms": {
+        "payload_without_scatter": 0.0,
+        "payload_with_scatter": 0.0,
+        "scatter_without_payload": 0.0,
+        "metadata_without_payload_or_scatter": 15.186482666666667,
+        "other": 2.8968636666666665
+      },
+      "stage_union_mean_ms": {
+        "payload": 0.0,
+        "metadata": 15.186482666666667,
+        "allocate": 0.0,
+        "scatter": 0.0
+      },
+      "stage_sum_mean_ms": {
+        "payload": 0.0,
+        "metadata": 183.833222,
+        "allocate": 0.0,
+        "scatter": 0.0
+      }
+    },
+    "warm_lookup": {
+      "ms": {
+        "mean": 4.377222333333334,
+        "median": 4.369799,
+        "min": 4.232503,
+        "max": 4.529365
+      },
+      "cpu_core_equivalents": {
+        "mean": 1.4454437923011505,
+        "median": 1.4405696921090876,
+        "min": 1.410352223769862,
+        "max": 1.4854094610245017
+      },
+      "hottest_thread_core_equivalent": {
+        "mean": 0.7628115923257187,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 2.288434776977156
+      },
+      "rx_GB_s": {
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "wall_partition_mean_ms": {
+        "payload_without_scatter": 0.0,
+        "payload_with_scatter": 0.0,
+        "scatter_without_payload": 0.0,
+        "metadata_without_payload_or_scatter": 0.0,
+        "other": 4.377222333333334
+      },
+      "stage_union_mean_ms": {
+        "payload": 0.0,
+        "metadata": 0.0,
+        "allocate": 0.0,
+        "scatter": 0.0
+      },
+      "stage_sum_mean_ms": {
+        "payload": 0.0,
+        "metadata": 0.0,
+        "allocate": 0.0,
+        "scatter": 0.0
+      }
+    },
+    "engine": {
+      "ms": {
+        "mean": 338.664936,
+        "median": 337.866137,
+        "min": 336.761658,
+        "max": 341.367013
+      },
+      "cpu_core_equivalents": {
+        "mean": 14.129951747159009,
+        "median": 14.129779584349123,
+        "min": 14.04066131670367,
+        "max": 14.219414340424235
+      },
+      "hottest_thread_core_equivalent": {
+        "mean": 0.895625633301436,
+        "median": 0.8908377568327567,
+        "min": 0.8879256224485144,
+        "max": 0.9081135206230369
+      },
+      "rx_GB_s": {
+        "mean": 29.631244995377966,
+        "median": 29.707449357673717,
+        "min": 29.394187325230913,
+        "max": 29.792098303229267
+      },
+      "wall_partition_mean_ms": {
+        "payload_without_scatter": 311.175562,
+        "payload_with_scatter": 20.38742566666667,
+        "scatter_without_payload": 0.6673973333333333,
+        "metadata_without_payload_or_scatter": 1.3676323333333333,
+        "other": 5.066918666666667
+      },
+      "stage_union_mean_ms": {
+        "payload": 331.5629876666667,
+        "metadata": 179.40759566666668,
+        "allocate": 59.27910466666667,
+        "scatter": 21.054823
+      },
+      "stage_sum_mean_ms": {
+        "payload": 4700.15291,
+        "metadata": 266.8735046666667,
+        "allocate": 59.27910466666667,
+        "scatter": 21.054823
+      }
+    },
+    "native": {
+      "ms": {
+        "mean": 333.984813,
+        "median": 333.96914,
+        "min": 331.235565,
+        "max": 336.749734
+      },
+      "cpu_core_equivalents": {
+        "mean": 13.60455899089093,
+        "median": 13.6268219273194,
+        "min": 13.472874784809811,
+        "max": 13.713980260543579
+      },
+      "hottest_thread_core_equivalent": {
+        "mean": 0.8982852453800672,
+        "median": 0.8982865901921356,
+        "min": 0.890869300582729,
+        "max": 0.9056998453653369
+      },
+      "rx_GB_s": {
+        "mean": 30.00463544211021,
+        "median": 30.01602746893384,
+        "min": 29.74869025007091,
+        "max": 30.249188607325877
+      },
+      "wall_partition_mean_ms": {
+        "payload_without_scatter": 333.63269033333336,
+        "payload_with_scatter": 0.0,
+        "scatter_without_payload": 0.0,
+        "metadata_without_payload_or_scatter": 0.0,
+        "other": 0.3521226666666667
+      },
+      "stage_union_mean_ms": {
+        "payload": 333.63269033333336,
+        "metadata": 0.0,
+        "allocate": 0.0,
+        "scatter": 0.0
+      },
+      "stage_sum_mean_ms": {
+        "payload": 4849.572760666667,
+        "metadata": 0.0,
+        "allocate": 0.0,
+        "scatter": 0.0
+      }
+    }
+  },
+  {
+    "workers": 32,
+    "cold_lookup": {
+      "ms": {
+        "mean": 18.181567,
+        "median": 18.411202,
+        "min": 17.012509,
+        "max": 19.12099
+      },
+      "cpu_core_equivalents": {
+        "mean": 1.9346891273321178,
+        "median": 1.9255668369719843,
+        "min": 1.8956654440996314,
+        "max": 1.9828351009247378
+      },
+      "hottest_thread_core_equivalent": {
+        "mean": 0.551311946097589,
+        "median": 0.5431475902551067,
+        "min": 0.5229854730325156,
+        "max": 0.5878027750051447
+      },
+      "rx_GB_s": {
+        "mean": 0.019538433634242767,
+        "median": 0.019294366841790367,
+        "min": 0.018775821870376807,
+        "max": 0.020545112190561123
+      },
+      "wall_partition_mean_ms": {
+        "payload_without_scatter": 0.0,
+        "payload_with_scatter": 0.0,
+        "scatter_without_payload": 0.0,
+        "metadata_without_payload_or_scatter": 15.239656333333333,
+        "other": 2.941910666666667
+      },
+      "stage_union_mean_ms": {
+        "payload": 0.0,
+        "metadata": 15.239656333333333,
+        "allocate": 0.0,
+        "scatter": 0.0
+      },
+      "stage_sum_mean_ms": {
+        "payload": 0.0,
+        "metadata": 189.67107066666668,
+        "allocate": 0.0,
+        "scatter": 0.0
+      }
+    },
+    "warm_lookup": {
+      "ms": {
+        "mean": 4.328005,
+        "median": 4.290605,
+        "min": 4.23669,
+        "max": 4.45672
+      },
+      "cpu_core_equivalents": {
+        "mean": 1.5985002745595547,
+        "median": 1.5934815719471782,
+        "min": 1.5726812543778161,
+        "max": 1.6293379973536697
+      },
+      "hottest_thread_core_equivalent": {
+        "mean": 2.311603149353687,
+        "median": 2.330673646257346,
+        "min": 2.2438026171713727,
+        "max": 2.3603331846323425
+      },
+      "rx_GB_s": {
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "wall_partition_mean_ms": {
+        "payload_without_scatter": 0.0,
+        "payload_with_scatter": 0.0,
+        "scatter_without_payload": 0.0,
+        "metadata_without_payload_or_scatter": 0.0,
+        "other": 4.328005
+      },
+      "stage_union_mean_ms": {
+        "payload": 0.0,
+        "metadata": 0.0,
+        "allocate": 0.0,
+        "scatter": 0.0
+      },
+      "stage_sum_mean_ms": {
+        "payload": 0.0,
+        "metadata": 0.0,
+        "allocate": 0.0,
+        "scatter": 0.0
+      }
+    },
+    "engine": {
+      "ms": {
+        "mean": 297.07040433333333,
+        "median": 296.632419,
+        "min": 292.985734,
+        "max": 301.59306
+      },
+      "cpu_core_equivalents": {
+        "mean": 27.229358817258355,
+        "median": 27.30789516300308,
+        "min": 26.84256063451857,
+        "max": 27.537620654253413
+      },
+      "hottest_thread_core_equivalent": {
+        "mean": 0.8637746179114189,
+        "median": 0.8532838667155036,
+        "min": 0.8427939226696592,
+        "max": 0.8952460643490936
+      },
+      "rx_GB_s": {
+        "mean": 33.63661852154263,
+        "median": 33.675783881299786,
+        "min": 33.16375957963665,
+        "max": 34.07031210369146
+      },
+      "wall_partition_mean_ms": {
+        "payload_without_scatter": 245.71250166666667,
+        "payload_with_scatter": 44.52156333333333,
+        "scatter_without_payload": 0.6759476666666666,
+        "metadata_without_payload_or_scatter": 1.252213,
+        "other": 4.908178666666667
+      },
+      "stage_union_mean_ms": {
+        "payload": 290.234065,
+        "metadata": 249.72842,
+        "allocate": 77.22175666666666,
+        "scatter": 45.197511
+      },
+      "stage_sum_mean_ms": {
+        "payload": 7462.301724666667,
+        "metadata": 791.2719663333334,
+        "allocate": 77.22175666666666,
+        "scatter": 45.197511
+      }
+    },
+    "native": {
+      "ms": {
+        "mean": 288.82945466666666,
+        "median": 289.910801,
+        "min": 285.826688,
+        "max": 290.750875
+      },
+      "cpu_core_equivalents": {
+        "mean": 27.276198078398465,
+        "median": 27.25436228228003,
+        "min": 26.854591581194732,
+        "max": 27.719640371720633
+      },
+      "hottest_thread_core_equivalent": {
+        "mean": 0.9580196574659846,
+        "median": 0.9658143092088523,
+        "min": 0.9286300514142907,
+        "max": 0.979614611774811
+      },
+      "rx_GB_s": {
+        "mean": 34.493348654129356,
+        "median": 34.35371368124421,
+        "min": 34.265828950909444,
+        "max": 34.86050333023442
+      },
+      "wall_partition_mean_ms": {
+        "payload_without_scatter": 288.4852906666667,
+        "payload_with_scatter": 0.0,
+        "scatter_without_payload": 0.0,
+        "metadata_without_payload_or_scatter": 0.0,
+        "other": 0.344164
+      },
+      "stage_union_mean_ms": {
+        "payload": 288.4852906666667,
+        "metadata": 0.0,
+        "allocate": 0.0,
+        "scatter": 0.0
+      },
+      "stage_sum_mean_ms": {
+        "payload": 8166.53265,
+        "metadata": 0.0,
+        "allocate": 0.0,
+        "scatter": 0.0
+      }
+    }
+  },
+  {
+    "workers": 64,
+    "cold_lookup": {
+      "ms": {
+        "mean": 18.103737666666667,
+        "median": 17.814064,
+        "min": 17.371447,
+        "max": 19.125702
+      },
+      "cpu_core_equivalents": {
+        "mean": 2.113370560284391,
+        "median": 2.061675958350659,
+        "min": 2.0589534078549243,
+        "max": 2.21948231464759
+      },
+      "hottest_thread_core_equivalent": {
+        "mean": 0.5580570643917538,
+        "median": 0.5228566250796964,
+        "min": 0.0,
+        "max": 1.1513145680955652
+      },
+      "rx_GB_s": {
+        "mean": 0.017815454150654286,
+        "median": 0.017781536164630386,
+        "min": 0.016737345598003696,
+        "max": 0.018927480689328778
+      },
+      "wall_partition_mean_ms": {
+        "payload_without_scatter": 0.0,
+        "payload_with_scatter": 0.0,
+        "scatter_without_payload": 0.0,
+        "metadata_without_payload_or_scatter": 15.068776333333334,
+        "other": 3.0349613333333334
+      },
+      "stage_union_mean_ms": {
+        "payload": 0.0,
+        "metadata": 15.068776333333334,
+        "allocate": 0.0,
+        "scatter": 0.0
+      },
+      "stage_sum_mean_ms": {
+        "payload": 0.0,
+        "metadata": 181.23201633333335,
+        "allocate": 0.0,
+        "scatter": 0.0
+      }
+    },
+    "warm_lookup": {
+      "ms": {
+        "mean": 4.382732666666667,
+        "median": 4.334327,
+        "min": 4.265814,
+        "max": 4.548057
+      },
+      "cpu_core_equivalents": {
+        "mean": 1.8827661489327863,
+        "median": 1.8935558635257643,
+        "min": 1.8385783998306495,
+        "max": 1.916164183441945
+      },
+      "hottest_thread_core_equivalent": {
+        "mean": 2.2833742891910576,
+        "median": 2.307163257409974,
+        "min": 2.198741132751854,
+        "max": 2.3442184774113453
+      },
+      "rx_GB_s": {
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "wall_partition_mean_ms": {
+        "payload_without_scatter": 0.0,
+        "payload_with_scatter": 0.0,
+        "scatter_without_payload": 0.0,
+        "metadata_without_payload_or_scatter": 0.0,
+        "other": 4.382732666666667
+      },
+      "stage_union_mean_ms": {
+        "payload": 0.0,
+        "metadata": 0.0,
+        "allocate": 0.0,
+        "scatter": 0.0
+      },
+      "stage_sum_mean_ms": {
+        "payload": 0.0,
+        "metadata": 0.0,
+        "allocate": 0.0,
+        "scatter": 0.0
+      }
+    },
+    "engine": {
+      "ms": {
+        "mean": 301.4618096666667,
+        "median": 301.027794,
+        "min": 300.517226,
+        "max": 302.840409
+      },
+      "cpu_core_equivalents": {
+        "mean": 34.18059698520277,
+        "median": 34.75636568698466,
+        "min": 32.80666834372111,
+        "max": 34.978756924902534
+      },
+      "hottest_thread_core_equivalent": {
+        "mean": 0.6523868317931527,
+        "median": 0.6604138485363094,
+        "min": 0.5979514303586201,
+        "max": 0.6987952164845286
+      },
+      "rx_GB_s": {
+        "mean": 33.03056205006513,
+        "median": 33.056814448837,
+        "min": 32.866558641584085,
+        "max": 33.16831305977429
+      },
+      "wall_partition_mean_ms": {
+        "payload_without_scatter": 229.37539066666668,
+        "payload_with_scatter": 64.192855,
+        "scatter_without_payload": 1.1350866666666668,
+        "metadata_without_payload_or_scatter": 1.2145503333333334,
+        "other": 5.543927
+      },
+      "stage_union_mean_ms": {
+        "payload": 293.56824566666666,
+        "metadata": 198.21533966666667,
+        "allocate": 105.09953233333333,
+        "scatter": 65.32794166666667
+      },
+      "stage_sum_mean_ms": {
+        "payload": 9274.444276333334,
+        "metadata": 1218.7823556666667,
+        "allocate": 105.09953233333333,
+        "scatter": 65.32794166666667
+      }
+    },
+    "native": {
+      "ms": {
+        "mean": 276.1046156666667,
+        "median": 275.275775,
+        "min": 270.724959,
+        "max": 282.313113
+      },
+      "cpu_core_equivalents": {
+        "mean": 52.55538606302647,
+        "median": 52.37367509000746,
+        "min": 51.67370316234658,
+        "max": 53.61877993672536
+      },
+      "hottest_thread_core_equivalent": {
+        "mean": 0.9293371722717498,
+        "median": 0.9234464414490872,
+        "min": 0.9081801695045632,
+        "max": 0.9563849058615992
+      },
+      "rx_GB_s": {
+        "mean": 35.91499411240117,
+        "median": 36.10993523520915,
+        "min": 35.10437851997146,
+        "max": 36.53066858202289
+      },
+      "wall_partition_mean_ms": {
+        "payload_without_scatter": 275.69093933333335,
+        "payload_with_scatter": 0.0,
+        "scatter_without_payload": 0.0,
+        "metadata_without_payload_or_scatter": 0.0,
+        "other": 0.41367633333333337
+      },
+      "stage_union_mean_ms": {
+        "payload": 275.69093933333335,
+        "metadata": 0.0,
+        "allocate": 0.0,
+        "scatter": 0.0
+      },
+      "stage_sum_mean_ms": {
+        "payload": 14845.369072,
+        "metadata": 0.0,
+        "allocate": 0.0,
+        "scatter": 0.0
+      }
+    }
+  }
+]

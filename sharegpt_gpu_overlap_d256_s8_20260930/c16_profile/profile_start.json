@@ -1,0 +1,15 @@
+{
+  "time_ns": 1790733828179267646,
+  "config": {
+    "profiler": "torch",
+    "torch_profiler_dir": "/root/discos_minji/sharegpt_gpu_overlap_d256_s8_20260930/c16_profile/gpu_trace",
+    "torch_profiler_with_stack": false,
+    "torch_profiler_record_shapes": false,
+    "torch_profiler_with_memory": false,
+    "torch_profiler_with_flops": false,
+    "torch_profiler_use_gzip": true,
+    "torch_profiler_dump_cuda_time_total": false,
+    "ignore_frontend": true,
+    "max_iterations": 512
+  }
+}

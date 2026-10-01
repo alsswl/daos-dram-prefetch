@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "library": "/opt/ofi-cuda/lib64/libfabric.so.1.25.0",
+    "name": "cuda_gdrcopy_dev_register"
+  },
+  {
+    "id": 2,
+    "library": "/opt/ofi-cuda/lib64/libfabric.so.1.25.0",
+    "name": "cuda_gdrcopy_dev_unregister"
+  },
+  {
+    "id": 3,
+    "library": "/opt/ofi-cuda/lib64/libfabric.so.1.25.0",
+    "name": "rxm_mr_regattr"
+  },
+  {
+    "id": 4,
+    "library": "/opt/ofi-cuda/lib64/libfabric.so.1.25.0",
+    "name": "rxm_mr_close"
+  },
+  {
+    "id": 5,
+    "library": "/usr/lib64/libibverbs.so.1",
+    "name": "ibv_reg_dmabuf_mr"
+  },
+  {
+    "id": 6,
+    "library": "/usr/lib64/libibverbs.so.1",
+    "name": "ibv_cmd_reg_dmabuf_mr"
+  },
+  {
+    "id": 7,
+    "library": "/usr/lib64/libibverbs.so.1",
+    "name": "ibv_cmd_reg_mr"
+  },
+  {
+    "id": 8,
+    "library": "/usr/lib64/libibverbs.so.1",
+    "name": "ibv_cmd_reg_mr_ex"
+  },
+  {
+    "id": 9,
+    "library": "/usr/lib64/libibverbs.so.1",
+    "name": "ibv_cmd_dereg_mr"
+  },
+  {
+    "id": 10,
+    "library": "/usr/lib64/libgdrapi.so.2.6",
+    "name": "gdr_pin_buffer"
+  },
+  {
+    "id": 11,
+    "library": "/usr/lib64/libgdrapi.so.2.6",
+    "name": "gdr_map"
+  },
+  {
+    "id": 12,
+    "library": "/usr/lib64/libgdrapi.so.2.6",
+    "name": "gdr_unmap"
+  },
+  {
+    "id": 13,
+    "library": "/usr/lib64/libgdrapi.so.2.6",
+    "name": "gdr_unpin_buffer"
+  }
+]

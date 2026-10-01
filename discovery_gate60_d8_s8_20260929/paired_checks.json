@@ -1,0 +1,66 @@
+[
+  {
+    "concurrency": 8,
+    "phase": "cold",
+    "reference": "on",
+    "mode": "off",
+    "same_cached_requests": 249,
+    "same_tier_requests": 248
+  },
+  {
+    "concurrency": 8,
+    "phase": "cold",
+    "reference": "on",
+    "mode": "gate60",
+    "same_cached_requests": 251,
+    "same_tier_requests": 250
+  },
+  {
+    "concurrency": 8,
+    "phase": "warm",
+    "reference": "on",
+    "mode": "off",
+    "same_cached_requests": 256,
+    "same_tier_requests": 253
+  },
+  {
+    "concurrency": 8,
+    "phase": "warm",
+    "reference": "on",
+    "mode": "gate60",
+    "same_cached_requests": 256,
+    "same_tier_requests": 253
+  },
+  {
+    "concurrency": 16,
+    "phase": "cold",
+    "reference": "on",
+    "mode": "off",
+    "same_cached_requests": 243,
+    "same_tier_requests": 242
+  },
+  {
+    "concurrency": 16,
+    "phase": "cold",
+    "reference": "on",
+    "mode": "gate60",
+    "same_cached_requests": 240,
+    "same_tier_requests": 239
+  },
+  {
+    "concurrency": 16,
+    "phase": "warm",
+    "reference": "on",
+    "mode": "off",
+    "same_cached_requests": 256,
+    "same_tier_requests": 250
+  },
+  {
+    "concurrency": 16,
+    "phase": "warm",
+    "reference": "on",
+    "mode": "gate60",
+    "same_cached_requests": 256,
+    "same_tier_requests": 244
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "phases": {
+    "cold": {
+      "total_requests": 80,
+      "measured_retrieves": 0,
+      "no_retrieve_requests": 80,
+      "notify_to_retrieve_ms": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "maximum": null
+      },
+      "retrieve_api_ms": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "maximum": null
+      },
+      "daos_demand_resolve_ms": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "maximum": null
+      },
+      "time_weighted_mean_staging_gib": 0.11885445008102995
+    },
+    "warm1": {
+      "total_requests": 80,
+      "measured_retrieves": 80,
+      "no_retrieve_requests": 0,
+      "notify_to_retrieve_ms": {
+        "n": 80,
+        "mean": 226.894329225,
+        "p50": 33.118784500000004,
+        "p95": 930.1566418999996,
+        "maximum": 1348.264949
+      },
+      "retrieve_api_ms": {
+        "n": 80,
+        "mean": 205.61956225,
+        "p50": 203.643309,
+        "p95": 225.91810329999998,
+        "maximum": 245.435148
+      },
+      "daos_demand_resolve_ms": {
+        "n": 80,
+        "mean": 186.7163007125,
+        "p50": 184.58684799999997,
+        "p95": 204.0049211,
+        "maximum": 221.298697
+      },
+      "time_weighted_mean_staging_gib": 0.5891887347515236
+    }
+  },
+  "lookup_api_entry_recorded": false,
+  "notes": [
+    "Notify is emitted immediately before sending metadata result, not lookup API start or scheduler receive.",
+    "All latency differences use same-process monotonic timestamps.",
+    "No cache hits and no retrieve calls in cold; no artificial zero gap is assigned.",
+    "100ms occupancy means integrate the last observed allocator state, unlike old sample-count means.",
+    "Only already-recorded allocation/free/occupancy observations are used; no new sampling or rerun."
+  ],
+  "trace_sha256": {
+    "trace.1619954.jsonl": "4eb60b1784b58f9e80aac53bfb13f97964195d5a15a348f0bd9d34c4ce70e7e7"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "label": "window500",
+      "root": "/root/discos_minji/realqa_mixed_capacity2g_20261001_shared",
+      "description": "shared2GiB, effective window486MiB, depth4"
+    },
+    {
+      "label": "window2048",
+      "root": "/root/discos_minji/realqa_mixed_shared2g_window2048_20261002",
+      "description": "shared2GiB, effective window2034MiB, depth1"
+    }
+  ],
+  "delta_key": "window2048_vs_500_change_pct",
+  "chart_title": "Mixed 80-session QA | shared2GiB | effective windows486MiB vs2034MiB"
+}

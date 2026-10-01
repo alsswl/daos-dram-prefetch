@@ -1,0 +1,434 @@
+[
+  {
+    "run": "retrieve_path_profile_20261002",
+    "workers": 1,
+    "phase": "engine",
+    "rx_GB_s_median": 4.757331236814028,
+    "ecn_marked_received_packets": [
+      0,
+      0,
+      0
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile_20261002",
+    "workers": 1,
+    "phase": "native",
+    "rx_GB_s_median": 4.840058257454269,
+    "ecn_marked_received_packets": [
+      0,
+      0,
+      0
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile_20261002",
+    "workers": 2,
+    "phase": "engine",
+    "rx_GB_s_median": 8.551858571122164,
+    "ecn_marked_received_packets": [
+      15519,
+      5777,
+      16414
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile_20261002",
+    "workers": 2,
+    "phase": "native",
+    "rx_GB_s_median": 9.212687803179154,
+    "ecn_marked_received_packets": [
+      1129,
+      1372,
+      0
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile_20261002",
+    "workers": 4,
+    "phase": "engine",
+    "rx_GB_s_median": 13.928504284868579,
+    "ecn_marked_received_packets": [
+      25921,
+      26774,
+      26223
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile_20261002",
+    "workers": 4,
+    "phase": "native",
+    "rx_GB_s_median": 14.645292439645337,
+    "ecn_marked_received_packets": [
+      32492,
+      32884,
+      32500
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile_20261002",
+    "workers": 8,
+    "phase": "engine",
+    "rx_GB_s_median": 21.284192247735607,
+    "ecn_marked_received_packets": [
+      54622,
+      21681,
+      51337
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile_20261002",
+    "workers": 8,
+    "phase": "native",
+    "rx_GB_s_median": 22.12702056095385,
+    "ecn_marked_received_packets": [
+      29257,
+      19966,
+      42459
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile_20261002",
+    "workers": 16,
+    "phase": "engine",
+    "rx_GB_s_median": 27.75609507573263,
+    "ecn_marked_received_packets": [
+      9834,
+      17248,
+      24052
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile_20261002",
+    "workers": 16,
+    "phase": "native",
+    "rx_GB_s_median": 29.37535603855151,
+    "ecn_marked_received_packets": [
+      12037,
+      7128,
+      27505
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile_20261002",
+    "workers": 32,
+    "phase": "engine",
+    "rx_GB_s_median": 28.904957247680404,
+    "ecn_marked_received_packets": [
+      11494,
+      12588,
+      13891
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile_20261002",
+    "workers": 32,
+    "phase": "native",
+    "rx_GB_s_median": 33.49717511762267,
+    "ecn_marked_received_packets": [
+      19933,
+      593,
+      14851
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile64_20261002",
+    "workers": 16,
+    "phase": "engine",
+    "rx_GB_s_median": 28.12017995580836,
+    "ecn_marked_received_packets": [
+      8290,
+      4421,
+      10966
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile64_20261002",
+    "workers": 16,
+    "phase": "native",
+    "rx_GB_s_median": 29.68252418027489,
+    "ecn_marked_received_packets": [
+      3152,
+      17501,
+      26309
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile64_20261002",
+    "workers": 32,
+    "phase": "engine",
+    "rx_GB_s_median": 30.382820124537187,
+    "ecn_marked_received_packets": [
+      19644,
+      6746,
+      19504
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile64_20261002",
+    "workers": 32,
+    "phase": "native",
+    "rx_GB_s_median": 33.70535704989465,
+    "ecn_marked_received_packets": [
+      1721,
+      57,
+      3423
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile64_20261002",
+    "workers": 64,
+    "phase": "engine",
+    "rx_GB_s_median": 27.9750597493736,
+    "ecn_marked_received_packets": [
+      18591,
+      24458,
+      10867
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_profile64_20261002",
+    "workers": 64,
+    "phase": "native",
+    "rx_GB_s_median": 34.86053731073057,
+    "ecn_marked_received_packets": [
+      1744,
+      28975,
+      4907
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_omp1_20261002",
+    "workers": 16,
+    "phase": "engine",
+    "rx_GB_s_median": 29.707449357673717,
+    "ecn_marked_received_packets": [
+      9592,
+      20728,
+      6774
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_omp1_20261002",
+    "workers": 16,
+    "phase": "native",
+    "rx_GB_s_median": 30.01602746893384,
+    "ecn_marked_received_packets": [
+      4450,
+      13391,
+      10975
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_omp1_20261002",
+    "workers": 32,
+    "phase": "engine",
+    "rx_GB_s_median": 33.675783881299786,
+    "ecn_marked_received_packets": [
+      21509,
+      7510,
+      3121
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_omp1_20261002",
+    "workers": 32,
+    "phase": "native",
+    "rx_GB_s_median": 34.35371368124421,
+    "ecn_marked_received_packets": [
+      5546,
+      1288,
+      22261
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_omp1_20261002",
+    "workers": 64,
+    "phase": "engine",
+    "rx_GB_s_median": 33.056814448837,
+    "ecn_marked_received_packets": [
+      11690,
+      3549,
+      13342
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  },
+  {
+    "run": "retrieve_path_omp1_20261002",
+    "workers": 64,
+    "phase": "native",
+    "rx_GB_s_median": 36.10993523520915,
+    "ecn_marked_received_packets": [
+      2482,
+      8372,
+      23863
+    ],
+    "errors_and_retransmissions": {
+      "port_rcv_errors": 0,
+      "port_xmit_discards": 0,
+      "out_of_buffer": 0,
+      "packet_seq_err": 0,
+      "roce_adp_retrans": 0
+    }
+  }
+]

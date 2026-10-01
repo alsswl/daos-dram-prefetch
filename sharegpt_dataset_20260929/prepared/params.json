@@ -1,0 +1,13 @@
+{
+  "model": "Qwen/Qwen3-14B",
+  "seed": 20260929,
+  "turns": 4,
+  "min_final_input": 4096,
+  "max_input": 8192,
+  "max_output": 256,
+  "target_gib": 384,
+  "source": "/root/discos_minji/sharegpt_dataset_20260929/ShareGPT_V3_unfiltered_cleaned_split.json.part",
+  "source_sha256": "35f0e213ce091ed9b9af2a1f0755e9d39f9ccec34ab281cd4ca60d70f6479ba4",
+  "chunk_tokens": 128,
+  "kv_bytes_per_token": 163840
+}

@@ -1,0 +1,22 @@
+{
+  "status": "stopped",
+  "run_id": "1790598929002046627",
+  "finished_ns": 1790603690873502891,
+  "exit_code": -15,
+  "log": "/root/discos_minji/eqbench_matrix_short4_dram8_16_32_20260928/supervision/runner_1790598929002046627.log",
+  "current": "c8_d16_s8_wait",
+  "completed": [
+    "c8_d8_s4_off",
+    "c8_d8_s4_wait",
+    "c8_d8_s4_cancel",
+    "c8_d8_s8_wait",
+    "c8_d8_s8_cancel",
+    "c8_d8_s8_off",
+    "c8_d16_s4_cancel",
+    "c8_d16_s4_off",
+    "c8_d16_s4_wait",
+    "c8_d16_s8_off"
+  ],
+  "stalled": false,
+  "reason": "user_or_service_stop"
+}

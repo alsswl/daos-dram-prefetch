@@ -1,0 +1,155 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "mode": "baseline",
+      "requests": 480,
+      "duration_s": 913.463979903,
+      "ttft_ms": {
+        "count": 480,
+        "mean": 1820.6581610666667,
+        "median": 896.0322424999999,
+        "p95": 6678.455069899977,
+        "max": 31754.491277
+      },
+      "followup_ttft_ms": {
+        "count": 400,
+        "mean": 861.56074738,
+        "median": 851.7889795000001,
+        "p95": 1309.2288448999993,
+        "max": 5037.379969
+      },
+      "new_document_ttft_ms": {
+        "count": 80,
+        "mean": 6616.1452295,
+        "median": 4990.3445665,
+        "p95": 16419.12011489999,
+        "max": 31754.491277
+      },
+      "retrieve_ms": {
+        "count": 418,
+        "mean": 330.7686611937799,
+        "median": 330.4434185,
+        "p95": 347.19160215,
+        "max": 381.576321
+      },
+      "normalized_retrieve_ms_per_gib": {
+        "count": 418,
+        "mean": 40.65370007686892,
+        "median": 38.71778798745662,
+        "p95": 40.7399677636295,
+        "max": 451.1821937777778
+      },
+      "retrieved_gib": 3551.51953125,
+      "restored_chunks": 202042,
+      "daos_puts": 31672,
+      "stored_gib": 556.734375,
+      "input_tokens": 29822671,
+      "output_tokens": 121308,
+      "cached_tokens": 25861376,
+      "matched_retrieve_http_requests": 418,
+      "matched_http_ttft_ms": {
+        "count": 418,
+        "mean": 936.4326778588517,
+        "median": 861.8876285,
+        "p95": 1348.0596313,
+        "max": 8451.721038
+      },
+      "allocation_failed_attempts": 0,
+      "persisted_keys": 31672,
+      "index_modulo_shard_counts": null
+    },
+    {
+      "mode": "balanced",
+      "requests": 480,
+      "duration_s": 898.742502512,
+      "ttft_ms": {
+        "count": 480,
+        "mean": 1643.2721645958334,
+        "median": 554.9036779999999,
+        "p95": 8356.19017165,
+        "max": 31820.755072
+      },
+      "followup_ttft_ms": {
+        "count": 400,
+        "mean": 740.2165894475,
+        "median": 540.9125505,
+        "p95": 1195.9111437499998,
+        "max": 5015.019823
+      },
+      "new_document_ttft_ms": {
+        "count": 80,
+        "mean": 6158.5500403375,
+        "median": 4660.415194,
+        "p95": 16393.91341294999,
+        "max": 31820.755072
+      },
+      "retrieve_ms": {
+        "count": 418,
+        "mean": 299.9635490909091,
+        "median": 299.9143505,
+        "p95": 317.7749012,
+        "max": 339.202836
+      },
+      "normalized_retrieve_ms_per_gib": {
+        "count": 418,
+        "mean": 36.891672213624446,
+        "median": 35.12673072207501,
+        "p95": 37.14934850455027,
+        "max": 370.66450488888887
+      },
+      "retrieved_gib": 3551.44921875,
+      "restored_chunks": 202038,
+      "daos_puts": 31668,
+      "stored_gib": 556.6640625,
+      "input_tokens": 29822065,
+      "output_tokens": 121080,
+      "cached_tokens": 25860864,
+      "matched_retrieve_http_requests": 418,
+      "matched_http_ttft_ms": {
+        "count": 418,
+        "mean": 763.6595338205742,
+        "median": 540.9125505,
+        "p95": 1204.2518459999997,
+        "max": 5015.019823
+      },
+      "allocation_failed_attempts": 0,
+      "persisted_keys": 31668,
+      "index_modulo_shard_counts": {
+        "0": 1997,
+        "1": 2001,
+        "2": 1999,
+        "3": 1999,
+        "4": 2000,
+        "5": 2001,
+        "6": 2000,
+        "7": 2000,
+        "8": 2000,
+        "9": 2000,
+        "10": 1997,
+        "11": 1994,
+        "12": 1920,
+        "13": 1920,
+        "14": 1920,
+        "15": 1920
+      }
+    }
+  ],
+  "identical_actual_prompt_hashes": 87,
+  "actual_prompts_compared": 480,
+  "balanced_change_percent": {
+    "mean_ttft": -9.742960005567902,
+    "p95_ttft": 25.121604984835955,
+    "mean_followup_ttft": -14.084225436396292,
+    "mean_retrieve": -9.313189463503523,
+    "mean_normalized_retrieve": -9.253838780064672,
+    "duration": -1.6116100596066496,
+    "read_volume": -0.0019797863810455674
+  },
+  "limitations": [
+    "One serving run per condition; execution order fixed.",
+    "Same seeded documents/schedule; generated histories and wall arrivals may differ.",
+    "Both placement and dkey/akey hierarchy change; not a pure scheduler experiment.",
+    "Server target service time and network contention are not directly measured."
+  ]
+}

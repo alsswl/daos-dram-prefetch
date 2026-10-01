@@ -1,0 +1,73 @@
+{
+  "name": "c8_gate60",
+  "concurrency": 8,
+  "mode": "gate60",
+  "prefetch": true,
+  "occupancy_stop_ratio": 0.6,
+  "phase": "cold",
+  "requests": 256,
+  "ttft": {
+    "n": 256,
+    "mean": 218.19841600881773,
+    "p50": 146.5769454371184,
+    "p95": 266.48284413386136,
+    "maximum": 2204.014176968485
+  },
+  "elapsed_seconds": 147.143608719,
+  "input_tokens": 1578438,
+  "computed_input_tokens": 154054,
+  "cached_input_pct": 90.24009812232093,
+  "output_tokens": 68167,
+  "dram_hit_pct": 90.26069847515986,
+  "daos_hit_pct": 0.9673717002787342,
+  "capacity_recomputed_tokens": 0,
+  "peak_staging_gib": 3.0078125,
+  "prefetch_counters": {
+    "staged_requests": 251,
+    "staged_bytes": 230896435200,
+    "fallback_requests": 0,
+    "cancelled_requests": 0,
+    "copy_errors": 0,
+    "watermark_rejections": 0,
+    "capacity_rejections": 0,
+    "occupancy_rejections": 0,
+    "occupancy_rejected_bytes": 0,
+    "deferred_pending_batches": 0,
+    "deferred_submitted": 0,
+    "deferred_abort_cancelled": 0,
+    "retrieve_cancelled_queued": 0,
+    "retrieve_ready_gpu": 0,
+    "retrieve_waited_gpu": 0,
+    "retrieve_capacity_cpu": 0
+  },
+  "timings": {
+    "queue_ms": {
+      "n": 251,
+      "mean": 0.43999009163346614,
+      "p50": 0.162722,
+      "p95": 0.4183325,
+      "maximum": 27.499949
+    },
+    "copy_ms": {
+      "n": 251,
+      "mean": 17.04798092828685,
+      "p50": 14.741615,
+      "p95": 36.772343,
+      "maximum": 49.630847
+    },
+    "retrieve_ms": {
+      "n": 251,
+      "mean": 2.444000330677291,
+      "p50": 2.08091,
+      "p95": 4.963680500000001,
+      "maximum": 6.785642
+    },
+    "http_to_retrieve_start_ms": {
+      "n": 251,
+      "mean": 73.28205664940239,
+      "p50": 49.73285,
+      "p95": 96.04407699999999,
+      "maximum": 1516.387995
+    }
+  }
+}

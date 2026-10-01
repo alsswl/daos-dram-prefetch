@@ -1,0 +1,79 @@
+{
+  "trace": "/root/discos_minji/sharegpt_gpu_overlap_d256_s8_20260930/c16_profile/gpu_trace/rank0.1790733849452153386.pt.trace.json.gz",
+  "profiler_window_seconds": 13.726965348632813,
+  "gpu_kernels": 297906,
+  "recognized_compute_kernels": 123662,
+  "recognized_kernel_examples": [
+    [
+      "nvjet_sm90_tst_64x16_64x16_4x1_v_bz_TNT",
+      38400
+    ],
+    [
+      "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128> >, 5, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90> >(flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128> >, 5, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90>::Params)",
+      20440
+    ],
+    [
+      "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, true, true, true, true, false, cutlass::bfloat16_t, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, false, 1>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, false, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, true, true, true, true, false, cutlass::bfloat16_t, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, false, 1>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, false, true> > >::Params)",
+      19280
+    ],
+    [
+      "nvjet_sm90_tst_384x16_64x4_4x1_v_bz_TNT",
+      19200
+    ],
+    [
+      "nvjet_sm90_tst_128x16_64x11_4x1_v_bz_splitK_TNT",
+      19200
+    ],
+    [
+      "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, true, true, true, true, false, cutlass::bfloat16_t, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 256, true, true, true, false, 1>, flash::VarlenDynamicPersistentTileScheduler<128, 128, 256, 128, true, true, true, true, false, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, true, true, true, true, false, cutlass::bfloat16_t, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 256, true, true, true, false, 1>, flash::VarlenDynamicPersistentTileScheduler<128, 128, 256, 128, true, true, true, true, false, true> > >::Params)",
+      1160
+    ],
+    [
+      "void flash::prepare_varlen_num_blocks_kernel<1, false>(int, int, int, int const*, int const*, int const*, int const*, int const*, int const*, int, int, int, int, int, cutlass::FastDivmod, cutlass::FastDivmod, int*, int*, int*, int*, int*, bool, bool, bool, int)",
+      511
+    ],
+    [
+      "nvjet_sm90_tst_384x16_64x4_2x1_v_bz_TNT",
+      507
+    ]
+  ],
+  "dram_h2d_actual_dma": {
+    "intervals": 27,
+    "summed_interval_ms": 10.438828125,
+    "overlap_recognized_compute_ms": 2.5078720703125,
+    "recognized_overlap_pct": 24.024459836697424,
+    "overlap_any_kernel_ms": 2.7866865234375,
+    "any_kernel_overlap_pct": 26.695396169649072,
+    "intervals_with_compute_overlap": 11,
+    "request_batches": 3,
+    "bytes": 566231040,
+    "streams": [
+      41
+    ],
+    "copy_finish_to_retrieve_start": {
+      "requests": 3,
+      "mean_ms": 86.03305403645834,
+      "positive_means_ready_before_retrieve": true,
+      "ready_before_retrieve": 3
+    }
+  },
+  "daos_host_prefetch_intervals": {
+    "intervals": 42,
+    "summed_interval_ms": 1182.754939453125,
+    "overlap_recognized_compute_ms": 41.0695556640625,
+    "recognized_overlap_pct": 3.4723639102324944,
+    "overlap_any_kernel_ms": 47.3267060546875,
+    "any_kernel_overlap_pct": 4.0013957647532745,
+    "intervals_with_compute_overlap": 21
+  },
+  "incomplete_batches": [],
+  "excluded_copies": {},
+  "limitations": [
+    "Diagnostic profiled run, not a speedup benchmark.",
+    "Only completely captured prefetch batches are counted.",
+    "Recognized compute is a conservative subset of model kernels; any-kernel also includes KV transforms.",
+    "DAOS host interval includes submission, allocation, network and completion. Not measured NIC DMA duration.",
+    "Intervals overlap across requests: summed ms are not total wall time.",
+    "Temporal overlap does not establish equal milliseconds of TTFT reduction."
+  ]
+}

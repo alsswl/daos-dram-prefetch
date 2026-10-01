@@ -1,0 +1,38 @@
+chunk_size: 128
+local_cpu: true
+max_local_cpu_size: 256
+cache_policy: LRU
+enable_async_loading: true
+use_layerwise: false
+save_decode_cache: true
+storage_plugins:
+- daosgds
+extra_config:
+  storage_plugin.daosgds.module_path: lmcache_daos.tier_payload_backend
+  storage_plugin.daosgds.class_name: TierPayloadBackend
+  daosgds.pool: discospool
+  daosgds.container: kvcache
+  daosgds.transport: object
+  daosgds.object_namespace: 'minji-cold-warm-9e914358f4a14af5afea382a57b22757:'
+  daosgds.root: /minji-cold-warm-9e914358f4a14af5afea382a57b22757
+  daosgds.object_library: /root/discos_minji/libdaosgdr.so
+  daosgds.gpu_buffer_gb: 8
+  daosgds.io_workers: 16
+  daosgds.meta_workers: 16
+  daosgds.store: true
+  daosgds.store_path: gpu_direct
+  daosgds.async_dram: true
+  daosgds.dram_promote_on_read: true
+  daosgds.dram_mirror_max_pending_gb: 1
+  daosgds.dram_mirror_max_age_ms: 100
+  daosgds.dram_prefetch: true
+  daosgds.dram_prefetch_policy: capacity
+  daosgds.probe_interval_ms: 20
+  daosgds.early_lookup: true
+  daosgds.dram_prefetch_workers: 1
+  daosgds.dram_prefetch_cancel_queued: false
+  daosgds.dram_prefetch_early_ready: false
+  daosgds.dram_prefetch_stop_occupancy_ratio: null
+  lookup_backoff_time: 0.001
+  daosgds.early_daos_prefetch: true
+  daosgds.early_dram_prefetch: true

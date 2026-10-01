@@ -1,26 +1,9 @@
-# Keep credentials and runtime payloads out of later commits.
 venv/
-.venv/
 agent-venv/
 __pycache__/
-.pytest_cache/
 *.pyc
-*.so
-*.o
-*.a
-*.log
-*.jsonl
-*.safetensors
-*.pt
-*.pth
-*.bin
 .env
 .env.*
 *.pem
 *.key
-*.p12
-*.pfx
 **/api_config.json
-credentials.json
-discoverybench/
-eqbench_longform_upstream_20260928/

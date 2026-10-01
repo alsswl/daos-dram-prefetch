@@ -1,0 +1,2 @@
+[vllm.general_plugins]
+daos_recompute_probe = lmcache_daos.recompute_state_probe:install

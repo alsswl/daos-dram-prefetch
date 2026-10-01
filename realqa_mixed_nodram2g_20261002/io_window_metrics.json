@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "condition": "window500",
+      "retrieve_requests": 418,
+      "retrieve_wall_mean_ms": 332.94418316267945,
+      "retrieve_wall_median_ms": 333.09319700000003,
+      "retrieve_wall_total_s": 139.170668562,
+      "retrieve_copy_windows": 7646,
+      "daos_read_batches": 7646,
+      "daos_returned_chunks": 202036,
+      "daos_returned_gib": 3551.4140625,
+      "store_windows": 2441
+    },
+    {
+      "condition": "window2048",
+      "retrieve_requests": 418,
+      "retrieve_wall_mean_ms": 399.34567331100476,
+      "retrieve_wall_median_ms": 398.5073165,
+      "retrieve_wall_total_s": 166.92649144400002,
+      "retrieve_copy_windows": 2082,
+      "daos_read_batches": 2082,
+      "daos_returned_chunks": 202037,
+      "daos_returned_gib": 3551.431640625,
+      "store_windows": 1484
+    }
+  ],
+  "note": "Application retrieve wall times include metadata, orchestration and final scatter; these are not hardware RDMA operation timings. DAOS payload bytes equal all restored bytes in each condition."
+}

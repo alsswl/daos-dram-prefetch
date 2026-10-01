@@ -1,0 +1,23 @@
+{
+  "target_counts": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "execution_order": [
+    1,
+    8,
+    4,
+    16,
+    2
+  ],
+  "requests_per_phase": 48,
+  "phases": [
+    "cold",
+    "warm"
+  ],
+  "total_requests": 480,
+  "reference_histories": "/root/discos_minji/cxs_target_coldwarm_20261002/t01/serving/cold/histories"
+}

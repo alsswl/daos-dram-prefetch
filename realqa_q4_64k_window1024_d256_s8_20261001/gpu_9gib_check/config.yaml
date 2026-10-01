@@ -1,0 +1,32 @@
+cache_policy: LRU
+chunk_size: 128
+enable_async_loading: false
+extra_config:
+  daosgds.async_dram: true
+  daosgds.container: kvcache
+  daosgds.demand_read_only: true
+  daosgds.dram_mirror_max_age_ms: 10000
+  daosgds.dram_mirror_max_pending_gb: 0.0625
+  daosgds.dram_prefetch: false
+  daosgds.dram_promote_on_read: false
+  daosgds.gpu_buffer_gb: 8
+  daosgds.io_workers: 16
+  daosgds.meta_workers: 16
+  daosgds.object_library: /root/discos_minji/libdaosgdr.so
+  daosgds.object_namespace: 'minji-sync-capacity-ee6982855e8b4ca0a647e7dab7dff06a:'
+  daosgds.pool: discospool
+  daosgds.probe_interval_ms: 5
+  daosgds.retrieve_window_mib: 1024
+  daosgds.retrieve_window_timeout_s: 5
+  daosgds.root: /minji-sync-capacity-ee6982855e8b4ca0a647e7dab7dff06a
+  daosgds.store: true
+  daosgds.store_path: gpu_direct
+  daosgds.transport: object
+  storage_plugin.daosgds.class_name: WindowedDemandBackend
+  storage_plugin.daosgds.module_path: lmcache_daos.windowed_demand_backend
+local_cpu: true
+max_local_cpu_size: 0.125
+save_decode_cache: true
+storage_plugins:
+- daosgds
+use_layerwise: false

@@ -1,0 +1,19 @@
+# requirements.txt for Creative Writing Benchmark v3
+
+requests
+python-dotenv
+numpy
+scipy
+tqdm
+nltk
+joblib
+wordfreq
+ftfy
+
+# Note: After installing nltk, you need to download required data:
+# Run python and enter:
+# import nltk
+# nltk.download('punkt')
+# nltk.download('punkt_tab')
+# nltk.download("cmudict")
+# nltk.download("stopwords")

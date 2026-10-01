@@ -1,0 +1,181 @@
+{
+  "before_1ms": {
+    "trace": "/root/discos_minji/sharegpt_backoff_1ms_d256_s8_20260930_profile/c16_profile/gpu_trace/rank0.1790745092569701980.pt.trace.json.gz",
+    "profiler_window_seconds": 13.279656133789063,
+    "gpu_kernels": 297999,
+    "recognized_compute_kernels": 123662,
+    "recognized_kernel_examples": [
+      [
+        "nvjet_sm90_tst_64x16_64x16_4x1_v_bz_TNT",
+        38320
+      ],
+      [
+        "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128> >, 5, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90> >(flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128> >, 5, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90>::Params)",
+        20440
+      ],
+      [
+        "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, true, true, true, true, false, cutlass::bfloat16_t, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, false, 1>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, false, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, true, true, true, true, false, cutlass::bfloat16_t, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, false, 1>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, false, true> > >::Params)",
+        19240
+      ],
+      [
+        "nvjet_sm90_tst_384x16_64x4_4x1_v_bz_TNT",
+        19160
+      ],
+      [
+        "nvjet_sm90_tst_128x16_64x11_4x1_v_bz_splitK_TNT",
+        19160
+      ],
+      [
+        "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, true, true, true, true, false, cutlass::bfloat16_t, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 256, true, true, true, false, 1>, flash::VarlenDynamicPersistentTileScheduler<128, 128, 256, 128, true, true, true, true, false, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, true, true, true, true, false, cutlass::bfloat16_t, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 256, true, true, true, false, 1>, flash::VarlenDynamicPersistentTileScheduler<128, 128, 256, 128, true, true, true, true, false, true> > >::Params)",
+        1200
+      ],
+      [
+        "void flash::prepare_varlen_num_blocks_kernel<1, false>(int, int, int, int const*, int const*, int const*, int const*, int const*, int const*, int, int, int, int, int, cutlass::FastDivmod, cutlass::FastDivmod, int*, int*, int*, int*, int*, bool, bool, bool, int)",
+        511
+      ],
+      [
+        "nvjet_sm90_tst_384x16_64x4_2x1_v_bz_TNT",
+        507
+      ]
+    ],
+    "dram_h2d_actual_dma": {
+      "intervals": 27,
+      "summed_interval_ms": 10.278798828125,
+      "overlap_recognized_compute_ms": 1.4209208984375,
+      "recognized_overlap_pct": 13.823802977343572,
+      "overlap_any_kernel_ms": 1.6138759765625,
+      "any_kernel_overlap_pct": 15.701017244802856,
+      "intervals_with_compute_overlap": 7,
+      "request_batches": 3,
+      "bytes": 566231040,
+      "streams": [
+        41
+      ],
+      "copy_finish_to_retrieve_start": {
+        "requests": 3,
+        "mean_ms": 59.23104817708333,
+        "positive_means_ready_before_retrieve": true,
+        "ready_before_retrieve": 3
+      }
+    },
+    "daos_host_prefetch_intervals": {
+      "intervals": 42,
+      "summed_interval_ms": 1750.1989443359375,
+      "overlap_recognized_compute_ms": 214.65756640625,
+      "recognized_overlap_pct": 12.264752364348821,
+      "overlap_any_kernel_ms": 251.0925556640625,
+      "any_kernel_overlap_pct": 14.34651509056488,
+      "intervals_with_compute_overlap": 38
+    },
+    "recognized_compute_busy_pct": 43.174780086683846,
+    "any_kernel_busy_pct": 47.379175312664124,
+    "first_kernel_delay_ms": 676.4924404296875,
+    "between_kernel_gaps": {
+      "gaps_over_1ms": 911,
+      "total_gaps_over_1ms_ms": 3727.007490234375,
+      "mean_gap_over_1ms_ms": 4.091116893780873,
+      "maximum_gap_ms": 27.7931767578125,
+      "active_window_seconds": 12.595119526367187
+    },
+    "incomplete_batches": [],
+    "excluded_copies": {},
+    "limitations": [
+      "Diagnostic profiled run, not a speedup benchmark.",
+      "Only completely captured prefetch batches are counted.",
+      "Recognized compute is a conservative subset of model kernels; any-kernel also includes KV transforms.",
+      "DAOS host interval includes submission, allocation, network and completion. Not measured NIC DMA duration.",
+      "Intervals overlap across requests: summed ms are not total wall time.",
+      "Temporal overlap does not establish equal milliseconds of TTFT reduction."
+    ]
+  },
+  "after_ready_return": {
+    "trace": "/root/discos_minji/sharegpt_ready_return_d256_s8_20260930_profile/c16_profile/gpu_trace/rank0.1790747852486499100.pt.trace.json.gz",
+    "profiler_window_seconds": 13.287560236328124,
+    "gpu_kernels": 297261,
+    "recognized_compute_kernels": 123420,
+    "recognized_kernel_examples": [
+      [
+        "nvjet_sm90_tst_64x16_64x16_4x1_v_bz_TNT",
+        38320
+      ],
+      [
+        "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128> >, 5, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90> >(flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128> >, 5, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90>::Params)",
+        20400
+      ],
+      [
+        "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, true, true, true, true, false, cutlass::bfloat16_t, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, false, 1>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, false, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, true, true, true, true, false, cutlass::bfloat16_t, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, false, 1>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, false, true> > >::Params)",
+        19160
+      ],
+      [
+        "nvjet_sm90_tst_384x16_64x4_4x1_v_bz_TNT",
+        19160
+      ],
+      [
+        "nvjet_sm90_tst_128x16_64x11_4x1_v_bz_splitK_TNT",
+        19160
+      ],
+      [
+        "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, true, true, true, true, false, cutlass::bfloat16_t, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 256, true, true, true, false, 1>, flash::VarlenDynamicPersistentTileScheduler<128, 128, 256, 128, true, true, true, true, false, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, true, true, true, true, false, cutlass::bfloat16_t, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 256, true, true, true, false, 1>, flash::VarlenDynamicPersistentTileScheduler<128, 128, 256, 128, true, true, true, true, false, true> > >::Params)",
+        1240
+      ],
+      [
+        "void flash::prepare_varlen_num_blocks_kernel<1, false>(int, int, int, int const*, int const*, int const*, int const*, int const*, int const*, int, int, int, int, int, cutlass::FastDivmod, cutlass::FastDivmod, int*, int*, int*, int*, int*, bool, bool, bool, int)",
+        510
+      ],
+      [
+        "nvjet_sm90_tst_384x16_64x4_2x1_v_bz_TNT",
+        507
+      ]
+    ],
+    "dram_h2d_actual_dma": {
+      "intervals": 27,
+      "summed_interval_ms": 10.338421875,
+      "overlap_recognized_compute_ms": 3.331287109375,
+      "recognized_overlap_pct": 32.2223947683021,
+      "overlap_any_kernel_ms": 3.7550078125,
+      "any_kernel_overlap_pct": 36.320899436114374,
+      "intervals_with_compute_overlap": 15,
+      "request_batches": 3,
+      "bytes": 566231040,
+      "streams": [
+        41
+      ],
+      "copy_finish_to_retrieve_start": {
+        "requests": 3,
+        "mean_ms": 46.91179231770833,
+        "positive_means_ready_before_retrieve": true,
+        "ready_before_retrieve": 2
+      }
+    },
+    "daos_host_prefetch_intervals": {
+      "intervals": 42,
+      "summed_interval_ms": 1794.5353896484376,
+      "overlap_recognized_compute_ms": 207.987078125,
+      "recognized_overlap_pct": 11.590023764632816,
+      "overlap_any_kernel_ms": 240.540263671875,
+      "any_kernel_overlap_pct": 13.40404123871854,
+      "intervals_with_compute_overlap": 41
+    },
+    "recognized_compute_busy_pct": 43.130184666329775,
+    "any_kernel_busy_pct": 47.31050773850994,
+    "first_kernel_delay_ms": 701.84601171875,
+    "between_kernel_gaps": {
+      "gaps_over_1ms": 922,
+      "total_gaps_over_1ms_ms": 3790.80473828125,
+      "mean_gap_over_1ms_ms": 4.1115018853375815,
+      "maximum_gap_ms": 29.6950849609375,
+      "active_window_seconds": 12.584985551757812
+    },
+    "incomplete_batches": [],
+    "excluded_copies": {},
+    "limitations": [
+      "Diagnostic profiled run, not a speedup benchmark.",
+      "Only completely captured prefetch batches are counted.",
+      "Recognized compute is a conservative subset of model kernels; any-kernel also includes KV transforms.",
+      "DAOS host interval includes submission, allocation, network and completion. Not measured NIC DMA duration.",
+      "Intervals overlap across requests: summed ms are not total wall time.",
+      "Temporal overlap does not establish equal milliseconds of TTFT reduction."
+    ]
+  },
+  "note": "Separate profiled diagnostic, not TTFT measurement or actual NIC DMA time."
+}

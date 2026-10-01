@@ -1,0 +1,9 @@
+{
+  "partial": true,
+  "error": "AssertionError('Windowed store run must not silently lose KV to staging allocation failure')",
+  "successful_calls": 480,
+  "failed_calls": 0,
+  "allocation_failures": 16,
+  "peak_staging_gib": 0.984375,
+  "note": "Aborted run, not a completed performance result. Time window includes shutdown."
+}

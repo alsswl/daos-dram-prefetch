@@ -1,0 +1,50 @@
+{
+  "status": "failed",
+  "completed_benchmark": false,
+  "expected_requests": 480,
+  "admitted_http_requests": 8,
+  "recorded_requests": 7,
+  "successful_requests": 0,
+  "failed_request_records": 7,
+  "elapsed_to_failure_s": 185.620622674,
+  "request_timeout_s": 180,
+  "first_failure_elapsed_http_s": 180.541558808,
+  "first_failure_had_content": false,
+  "failure_reason": "First request failure occurred after ~180s without content; consistent with configured HTTP read timeout. Upstream only logged str(exception), an empty string, so exception type is not retained. Later failures may result from fail-fast client shutdown.",
+  "direct_store_operations": 46,
+  "direct_fetch_operations": 0,
+  "logged_store_gib": 46.08984375,
+  "logged_store_wall_s": 160.168177,
+  "store_8192_tokens_gib": 1.125,
+  "store_8192_tokens_ms": {
+    "count": 36,
+    "min": 3482.096,
+    "median": 3853.9145,
+    "max": 4835.308
+  },
+  "partial_content_ttft_ms": [
+    41357.677154,
+    74432.424398,
+    105591.102244,
+    140134.762293,
+    170596.231163
+  ],
+  "staging_pool_gib": 0,
+  "comparability": {
+    "same_workload": true,
+    "single_variable_comparison": false,
+    "changed": [
+      "No DRAM tier/promotion (baseline 256GiB)",
+      "Synchronous source-page stores (baseline asynchronous staged stores)",
+      "Byte ARRAY with IOM coverage validation (baseline SINGLE)",
+      "Zero staging; direct destination SGL (baseline 1GiB windows, 2GiB pool)"
+    ]
+  },
+  "limitations": [
+    "Not a completed 480-request performance result.",
+    "No direct fetch exercised by serving workload; standalone GPU/DAOS roundtrip gate passed.",
+    "Logged store durations cover planning, synchronization and DAOS wait, not isolated network latency.",
+    "Direct mode has no DRAM tier and uses synchronous source-page stores.",
+    "Failed records have no final usage, so prompt/completion token counts and upstream TTFT must not be used as performance metrics."
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "results": [
+    {
+      "condition": "shared",
+      "root": "/root/discos_minji/realqa_mixed_capacity2g_20261001_shared",
+      "requests": 480,
+      "duration_s": 892.573471746,
+      "ttft_http_ms": {
+        "all": {
+          "n": 480,
+          "mean": 1692.3834459416667,
+          "p50": 680.93421,
+          "p95": 5225.63357525,
+          "maximum": 31701.759624
+        },
+        "new_document": {
+          "n": 80,
+          "mean": 6169.6578637,
+          "p50": 4678.034506,
+          "p95": 16404.47241599999,
+          "maximum": 31701.759624
+        },
+        "followup": {
+          "n": 400,
+          "mean": 796.92856239,
+          "p50": 530.7053834999999,
+          "p95": 1696.1718728999992,
+          "maximum": 5232.887248
+        },
+        "middle_lane_positions_3_to_50": {
+          "n": 384,
+          "mean": 1128.5356469453125,
+          "p50": 592.618033,
+          "p95": 4696.6274733,
+          "maximum": 8653.73217
+        }
+      },
+      "completion_tokens": 120927,
+      "input_tokens": 29821384,
+      "cached_token_pct": 86.71490229963841,
+      "store_peak_gib": 1.125,
+      "retrieve_peak_gib": 1.8984375,
+      "total_peak_gib": 1.8984375,
+      "simultaneous_occupancy_s": 0.088041267,
+      "simultaneous_occupancy_pct": 0.009863755734055015,
+      "request_mix_by_time_quarter": [
+        {
+          "quarter": 1,
+          "requests": 89,
+          "new_documents": 32,
+          "followups": 57
+        },
+        {
+          "quarter": 2,
+          "requests": 125,
+          "new_documents": 16,
+          "followups": 109
+        },
+        {
+          "quarter": 3,
+          "requests": 134,
+          "new_documents": 16,
+          "followups": 118
+        },
+        {
+          "quarter": 4,
+          "requests": 132,
+          "new_documents": 16,
+          "followups": 116
+        }
+      ],
+      "capacity_validation": {
+        "passed": true,
+        "shared": true,
+        "pipeline_depth": 4,
+        "max_concurrent_loads": 4,
+        "load_copy_overlap_events": 7030,
+        "allocation_failures": 0,
+        "store_peak_gib": 1.125,
+        "retrieve_peak_gib": 1.8984375
+      },
+      "store_validation": {
+        "passed": true,
+        "requests": 1477,
+        "windows": 2437,
+        "store_allocation_failures": 0,
+        "retrieve_allocation_failures": 0,
+        "total_staging_allocation_failures": 0,
+        "effective_window_bytes": 509607936,
+        "capacity_waits": 0,
+        "capacity_wait_ms": 0
+      },
+      "final_mirror": {
+        "admitted": 43496,
+        "copied": 43453,
+        "copied_bytes": 820147912704,
+        "skipped_budget": 2298,
+        "skipped_present": 3104,
+        "skipped_closed": 0,
+        "skipped_expired": 43,
+        "skipped_allocation": 0,
+        "errors": 0,
+        "peak_pending_bytes": 1056964608,
+        "copy_ms": 47944.339401554316,
+        "cpu_hit_chunks": 181899,
+        "write_offered": 31661,
+        "write_admitted": 31659,
+        "write_copied": 31646,
+        "write_copied_bytes": 597298249728,
+        "read_offered": 17237,
+        "read_admitted": 11837,
+        "read_copied": 11807,
+        "read_copied_bytes": 222849662976,
+        "read_submit_errors": 0,
+        "pending_bytes": 0,
+        "pending_chunks": 0
+      }
+    },
+    {
+      "condition": "split",
+      "root": "/root/discos_minji/realqa_mixed_capacity2g_20261001_split",
+      "requests": 480,
+      "duration_s": 914.145887636,
+      "ttft_http_ms": {
+        "all": {
+          "n": 480,
+          "mean": 2056.311434995833,
+          "p50": 751.4624515,
+          "p95": 8647.778907849997,
+          "maximum": 33987.933538
+        },
+        "new_document": {
+          "n": 80,
+          "mean": 7297.7948536125,
+          "p50": 5325.369877,
+          "p95": 17670.59191764999,
+          "maximum": 33987.933538
+        },
+        "followup": {
+          "n": 400,
+          "mean": 1008.0147512725,
+          "p50": 728.739448,
+          "p95": 2153.2855061999994,
+          "maximum": 10346.188405
+        },
+        "middle_lane_positions_3_to_50": {
+          "n": 384,
+          "mean": 1659.1620016041666,
+          "p50": 754.354945,
+          "p95": 5782.423469399994,
+          "maximum": 14108.556455
+        }
+      },
+      "completion_tokens": 121294,
+      "input_tokens": 29822823,
+      "cached_token_pct": 86.71844379051574,
+      "store_peak_gib": 0.4921875,
+      "retrieve_peak_gib": 1.423828125,
+      "total_peak_gib": 1.423828125,
+      "simultaneous_occupancy_s": 0.079705006,
+      "simultaneous_occupancy_pct": 0.008719068485460103,
+      "request_mix_by_time_quarter": [
+        {
+          "quarter": 1,
+          "requests": 89,
+          "new_documents": 32,
+          "followups": 57
+        },
+        {
+          "quarter": 2,
+          "requests": 123,
+          "new_documents": 16,
+          "followups": 107
+        },
+        {
+          "quarter": 3,
+          "requests": 135,
+          "new_documents": 17,
+          "followups": 118
+        },
+        {
+          "quarter": 4,
+          "requests": 133,
+          "new_documents": 15,
+          "followups": 118
+        }
+      ],
+      "capacity_validation": {
+        "passed": true,
+        "shared": false,
+        "pipeline_depth": 3,
+        "max_concurrent_loads": 3,
+        "load_copy_overlap_events": 7188,
+        "allocation_failures": 0,
+        "store_peak_gib": 0.4921875,
+        "retrieve_peak_gib": 1.423828125
+      },
+      "store_validation": {
+        "passed": true,
+        "requests": 1482,
+        "windows": 2442,
+        "store_allocation_failures": 0,
+        "retrieve_allocation_failures": 0,
+        "total_staging_allocation_failures": 0,
+        "effective_window_bytes": 509607936,
+        "capacity_waits": 975,
+        "capacity_wait_ms": 28671.784713398665
+      },
+      "final_mirror": {
+        "admitted": 46009,
+        "copied": 45989,
+        "copied_bytes": 868013309952,
+        "skipped_budget": 631,
+        "skipped_present": 2381,
+        "skipped_closed": 0,
+        "skipped_expired": 20,
+        "skipped_allocation": 0,
+        "errors": 0,
+        "peak_pending_bytes": 1056964608,
+        "copy_ms": 47540.22258752957,
+        "cpu_hit_chunks": 178719,
+        "write_offered": 31667,
+        "write_admitted": 31667,
+        "write_copied": 31667,
+        "write_copied_bytes": 597694611456,
+        "read_offered": 17354,
+        "read_admitted": 14342,
+        "read_copied": 14322,
+        "read_copied_bytes": 270318698496,
+        "read_submit_errors": 0,
+        "pending_bytes": 0,
+        "pending_chunks": 0
+      }
+    }
+  ],
+  "split_vs_shared_change_pct": {
+    "all": 21.503873127976124,
+    "new_document": 18.285243928193218,
+    "followup": 26.487466862707176,
+    "middle_lane_positions_3_to_50": 47.01901584545762,
+    "duration": 2.4168784501068963
+  },
+  "identical_input_and_schedule": true,
+  "actual_prompt_hash_matches": 89,
+  "actual_prompt_hash_compared": 480,
+  "limitations": [
+    "One run per condition; no confidence interval.",
+    "Same planned per-lane sequence, but real generated answers and wall-clock timing vary.",
+    "Concurrent load/copy spans include metadata and worker queueing; not a hardware RDMA timeline.",
+    "Both retain DRAM256GiB and its bounded asynchronous mirror; resulting DRAM hit patterns can differ."
+  ]
+}

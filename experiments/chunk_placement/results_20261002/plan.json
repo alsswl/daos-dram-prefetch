@@ -1,0 +1,34 @@
+{
+  "chunks": 96,
+  "chunk_bytes": 18874368,
+  "gpu_slab_bytes": 2147483648,
+  "workers": [
+    1,
+    16
+  ],
+  "repeats": 5,
+  "layouts": 3,
+  "modes": [
+    "baseline",
+    "balanced"
+  ],
+  "read_bytes": 1811939328,
+  "source_sha256": {
+    "placement.c": "6e643331212ea93c4ae8b49dbd89785f9be3635d4622f0f1a979b8b0bec25635",
+    "placement.so": "e6220d01507ff805c73fb80439f8047c450c3565b91f362047a6e7c69ff2dcc3",
+    "addressing.py": "5cc8408cd14ce48bc0bafb0734ef617cd891a0bd9413fe2422840c39db2dce00",
+    "run.py": "de8496e32307a1d716f2da8273d2d23c2ad863c5a93082150f0edbf4700dad6e"
+  },
+  "notes": [
+    "Native payload-only benchmark matching the earlier 96-chunk grouping experiment.",
+    "One 18 MiB SINGLE/IOD/fetch per chunk in both modes; no batching or target-aware reordering.",
+    "2 GiB GPU buffer; no LMCache allocator/window/scatter, DRAM payload cache or model execution.",
+    "Both modes share a fresh isolated OID per pair, using disjoint key spaces.",
+    "balanced uses absolute chunk index modulo frozen shard count, and full CacheEngineKey as akey.",
+    "Balanced also changes dkey/akey hierarchy; this is not a pure hash-function comparison.",
+    "Warm reads without server cache flush. Timed calls include registration and client progress.",
+    "CPU oracle and full-byte verification outside timed region.",
+    "Interval concurrency measures outstanding CLIENT calls, not server-side service concurrency.",
+    "Only newly created experiment OIDs are punched at exit."
+  ]
+}

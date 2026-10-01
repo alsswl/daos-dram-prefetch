@@ -1,0 +1,11 @@
+[
+  "/root/discos_minji/run_vllm.sh",
+  "/root/discos_minji/venv/bin/python",
+  "/root/discos_minji/tests/direct_scatter_roundtrip.py",
+  "--pool",
+  "discospool",
+  "--container",
+  "kvcache",
+  "--iterations",
+  "5"
+]

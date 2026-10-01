@@ -1,0 +1,14 @@
+{
+  "activity": "User-requested local Git backup while benchmark was running",
+  "observed_condition": "c8_d8_s8_wait",
+  "completed_utc": "2026-09-28T09:03:51Z",
+  "backup_directory": "/root/discos_minji_git_backup_20260928",
+  "cpu_priority": "nice 19 for snapshot and Git integrity check",
+  "io_priority": "ionice idle class for snapshot and Git integrity check",
+  "gpu_or_daos_operations_by_backup": false,
+  "benchmark_process_restarted": false,
+  "source_runtime_configuration_modified": false,
+  "running_experiment_excluded_from_snapshot": true,
+  "performance_impact_measured": false,
+  "note": "Shared CPU/storage activity occurred; do not assume strictly isolated host conditions for this case. No extra GPU benchmark or unit tests were run for this backup."
+}

@@ -1,0 +1,29 @@
+{
+  "pool": "f973c142-2353-41da-b154-5079ba6969f2",
+  "container": "a2d875e3-195b-4598-98b4-b381ef49867a",
+  "oid": "281543696187392.1000",
+  "namespaces": [
+    {
+      "namespace": "minji-cold-warm-d170e5b7a0e443218db2acd27b4475c1:",
+      "model_key_prefix": "/home/hf/hf_cache/hub/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554@",
+      "sources": [
+        "sharegpt_q4_32k_demand_d256_s8_20260930/c8_none/config.yaml"
+      ],
+      "pool": "discospool",
+      "container": "kvcache",
+      "experiments": [
+        "sharegpt_q4_32k_demand_d256_s8_20260930"
+      ]
+    }
+  ],
+  "target_count": 18305,
+  "total_count": 72920,
+  "preserved_count": 54615,
+  "per_namespace": {
+    "minji-cold-warm-d170e5b7a0e443218db2acd27b4475c1:": 18305
+  },
+  "target_sha256": "cf619a19ae6889acccf3fd6febdfaeb0b60752244ec04e72551ce2c3ed661e09",
+  "binding_sha256": "ce38ed41c12390524fab993ea16e436122412b8f81267d77e857629266aaa13b",
+  "library_sha256": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c",
+  "source_sha256": "ff383e783859281626cf1ec9b2a0e52b97fae2c0c21fdd328663bbb9370d4657"
+}

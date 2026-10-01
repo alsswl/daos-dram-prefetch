@@ -1,0 +1,226 @@
+{
+  "baseline": "/root/discos_minji/realqa_q4_64k_window1024_d256_s2_u0835_resume_fix_20261001",
+  "experiment": "/root/discos_minji/realqa_q4_64k_window500_d256_s1_u084574_resume_fix_20261001",
+  "same_input_files": true,
+  "baseline_results": {
+    "requests": 480,
+    "staging_gib": 2,
+    "window_mib": 1024,
+    "gpu_memory_utilization": 0.835,
+    "gpu_kv_gib": 69.22,
+    "duration_s": 1002.580370794,
+    "ttft_http_ms": {
+      "n": 480,
+      "mean": 2203.43031376875,
+      "p50": 1152.3103635,
+      "p95": 8560.693170999999,
+      "maximum": 31619.08539
+    },
+    "cached_token_pct": 86.71767323356991,
+    "staging_peak_gib": 1.3359375,
+    "staging_time_weighted_mean_gib": 0.15356658023176167,
+    "staging_allocation_failed_events": {},
+    "store_calls": 1495,
+    "store_calls_short_of_full_chunks": 0,
+    "store_requests_short_of_full_chunks": 0,
+    "short_store_examples": [],
+    "turns": [
+      {
+        "turn": "0",
+        "requests": 80,
+        "cached_token_pct": 20.000650893351125,
+        "ttft_http_ms": {
+          "n": 80,
+          "mean": 7646.9394477875,
+          "p50": 8163.627793,
+          "p95": 16330.34645889999,
+          "maximum": 31619.08539
+        }
+      },
+      {
+        "turn": "1",
+        "requests": 80,
+        "cached_token_pct": 99.93941063068026,
+        "ttft_http_ms": {
+          "n": 80,
+          "mean": 1048.2531640375,
+          "p50": 848.4155949999999,
+          "p95": 1701.8651480999995,
+          "maximum": 2059.850121
+        }
+      },
+      {
+        "turn": "2",
+        "requests": 80,
+        "cached_token_pct": 99.91560201409966,
+        "ttft_http_ms": {
+          "n": 80,
+          "mean": 1018.5502754875,
+          "p50": 875.5745115,
+          "p95": 1552.9931993,
+          "maximum": 1578.883094
+        }
+      },
+      {
+        "turn": "3",
+        "requests": 80,
+        "cached_token_pct": 99.89032214932449,
+        "ttft_http_ms": {
+          "n": 80,
+          "mean": 1147.97737885,
+          "p50": 1135.4721060000002,
+          "p95": 1553.6402716500002,
+          "maximum": 1594.447149
+        }
+      },
+      {
+        "turn": "4",
+        "requests": 80,
+        "cached_token_pct": 99.86083798639243,
+        "ttft_http_ms": {
+          "n": 80,
+          "mean": 1124.3157547125,
+          "p50": 1096.819668,
+          "p95": 1558.9551265,
+          "maximum": 1574.061899
+        }
+      },
+      {
+        "turn": "5",
+        "requests": 80,
+        "cached_token_pct": 99.82939374780722,
+        "ttft_http_ms": {
+          "n": 80,
+          "mean": 1234.5458617375,
+          "p50": 1200.210412,
+          "p95": 1618.43196325,
+          "maximum": 1638.964779
+        }
+      }
+    ]
+  },
+  "new_results": {
+    "requests": 480,
+    "staging_gib": 1,
+    "window_mib": 500,
+    "gpu_memory_utilization": 0.8457437051881131,
+    "gpu_kv_gib": 70.22,
+    "duration_s": 1274.687279184,
+    "ttft_http_ms": {
+      "n": 480,
+      "mean": 3258.691492972917,
+      "p50": 1225.3399475,
+      "p95": 9184.342375549997,
+      "maximum": 31529.50012
+    },
+    "cached_token_pct": 73.1530278025514,
+    "staging_peak_gib": 0.984375,
+    "staging_time_weighted_mean_gib": 0.07270298863247636,
+    "staging_allocation_failed_events": {
+      "allocate": 954
+    },
+    "store_calls": 2040,
+    "store_calls_short_of_full_chunks": 931,
+    "store_requests_short_of_full_chunks": 145,
+    "short_store_examples": [
+      [
+        "chatcmpl-b2f4655bb0e0cc8a-91142ff6",
+        7168,
+        8192
+      ],
+      [
+        "chatcmpl-b2f4655bb0e0cc8a-91142ff6",
+        7168,
+        8192
+      ],
+      [
+        "chatcmpl-b2f4655bb0e0cc8a-91142ff6",
+        7168,
+        8192
+      ]
+    ],
+    "turns": [
+      {
+        "turn": "0",
+        "requests": 80,
+        "cached_token_pct": 6.751065837862466,
+        "ttft_http_ms": {
+          "n": 80,
+          "mean": 8455.1714925875,
+          "p50": 8001.337714,
+          "p95": 16264.429428749989,
+          "maximum": 31529.50012
+        }
+      },
+      {
+        "turn": "1",
+        "requests": 80,
+        "cached_token_pct": 44.65080110810504,
+        "ttft_http_ms": {
+          "n": 80,
+          "mean": 5704.3265140375,
+          "p50": 4938.782273000001,
+          "p95": 12446.762712449998,
+          "maximum": 20305.480952
+        }
+      },
+      {
+        "turn": "2",
+        "requests": 80,
+        "cached_token_pct": 86.54181499917638,
+        "ttft_http_ms": {
+          "n": 80,
+          "mean": 1960.069402775,
+          "p50": 954.2864045,
+          "p95": 4781.420870099999,
+          "maximum": 8327.52242
+        }
+      },
+      {
+        "turn": "3",
+        "requests": 80,
+        "cached_token_pct": 99.8879557781673,
+        "ttft_http_ms": {
+          "n": 80,
+          "mean": 958.601110425,
+          "p50": 922.589406,
+          "p95": 1627.5582691,
+          "maximum": 1720.768032
+        }
+      },
+      {
+        "turn": "4",
+        "requests": 80,
+        "cached_token_pct": 99.85600397847975,
+        "ttft_http_ms": {
+          "n": 80,
+          "mean": 1101.4724698,
+          "p50": 943.808477,
+          "p95": 1985.7009417,
+          "maximum": 2431.918542
+        }
+      },
+      {
+        "turn": "5",
+        "requests": 80,
+        "cached_token_pct": 99.82619092252541,
+        "ttft_http_ms": {
+          "n": 80,
+          "mean": 1372.5079682125,
+          "p50": 955.1020335000001,
+          "p95": 2462.74780755,
+          "maximum": 2502.89401
+        }
+      }
+    ]
+  },
+  "ttft_change_pct": 47.89174282526989,
+  "duration_change_pct": 27.140657878081463,
+  "cache_reuse_change_percentage_points": -13.564645431018505,
+  "interpretation": "Retrieves stayed within 486MiB effective windows and had zero capacity failures. GPU staging allocation failures occurred during stores; e.g. an 8192-token (1.125GiB) store saved only 7168 tokens in the 1GiB pool. Smaller read windows do not bound store allocations. Lower cache reuse is consistent with missing stored chunks and increases recomputation.",
+  "limitations": [
+    "Single run per configuration; generated histories differ slightly.",
+    "Short store log counts alone may include already-present keys; corroborated by staging allocator failure events and explicit 8192-to-7168 examples.",
+    "Do not attribute all slowdown to window size or smaller staging alone: GPU KV budget also increased by 1GiB."
+  ]
+}

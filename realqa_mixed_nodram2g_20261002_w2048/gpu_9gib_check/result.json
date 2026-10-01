@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "staging_gib": 2,
+  "requested_tokens": 65536,
+  "window_mib": 2048,
+  "store_window_mib": 2048,
+  "requested_chunks": 512,
+  "requested_gib": 9.0,
+  "lookup_hit_tokens": 65536,
+  "returned_tokens": 65536,
+  "returned_chunks": 512,
+  "returned_gib": 9.0,
+  "capacity_failed_chunks": 0,
+  "successful_tail_discarded_chunks": 0,
+  "peak_staging_gib": 1.986328125,
+  "staging_bytes_after": 0,
+  "scatter_calls": [
+    {
+      "chunks": 113,
+      "bytes": 2132803584,
+      "staging_bytes_at_entry": 2132803584,
+      "time_ns": 1790869375928546229
+    },
+    {
+      "chunks": 113,
+      "bytes": 2132803584,
+      "staging_bytes_at_entry": 2132803584,
+      "time_ns": 1790869376015619907
+    },
+    {
+      "chunks": 113,
+      "bytes": 2132803584,
+      "staging_bytes_at_entry": 2132803584,
+      "time_ns": 1790869376109202069
+    },
+    {
+      "chunks": 113,
+      "bytes": 2132803584,
+      "staging_bytes_at_entry": 2132803584,
+      "time_ns": 1790869376197909869
+    },
+    {
+      "chunks": 60,
+      "bytes": 1132462080,
+      "staging_bytes_at_entry": 1132462080,
+      "time_ns": 1790869376253286618
+    }
+  ],
+  "all_returned_gpu_values_match": true,
+  "unreturned_gpu_region_unchanged": true,
+  "retrieve_ms": 413.511276,
+  "lookup_start_ns": 1790869375836955723,
+  "start_ns": 1790869375846270007,
+  "end_ns": 1790869376259781283,
+  "store_windows": 6,
+  "store_allocation_failures": 0,
+  "all_store_keys_present": true,
+  "capacity_validation": {
+    "passed": true,
+    "shared": true,
+    "pipeline_depth": 1,
+    "max_concurrent_loads": 1,
+    "load_copy_overlap_events": 0,
+    "allocation_failures": 0,
+    "store_peak_gib": 1.986328125,
+    "retrieve_peak_gib": 1.986328125
+  },
+  "no_dram_validation": {
+    "passed": true,
+    "cpu_cache_peak_bytes": 0,
+    "dram_copied_bytes": 0,
+    "retrieved_chunks": 512,
+    "daos_returned_chunks": 512,
+    "daos_returned_gib": 9.0
+  }
+}

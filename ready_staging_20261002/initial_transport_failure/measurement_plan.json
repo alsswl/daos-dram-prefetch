@@ -1,0 +1,23 @@
+{
+  "source_sha256": {
+    "bench/measure_ready_staging.py": "afca5393f61475be3390a60d6ea13073b10ead910c1758620997a20c723d7805",
+    "tests/sync_retrieve_capacity.py": "c2fb087cf43f654d9125586f8898c76e9919c611bfb9c03257ea725dd2c2898a",
+    "lmcache_daos/capacity_pipeline.py": "e79a1d056aa402938cbac528ede9240727d79ad7a9dacb961aff20903de03568",
+    "lmcache_daos/capacity_pipeline_backend.py": "d0d1cdffd4d20b28fb016b6d06bc4f69ba40a7dc4de84fbb818d4f09ec28ead7",
+    "lmcache_daos/demand_read_backend.py": "a88cfcc98ebd179fb7bcce9e7b5adc0611ecfea3d251ca299f1a1940598658a6",
+    "lmcache_daos/windowed_demand_backend.py": "a5e5b19f517bdb427a150ef4799935d6ffb3ac04140b51b3e1bd52c78eb77969",
+    "lmcache_daos/gds_backend.py": "6e4214fad0710dcfd861f235aa20f661a800cd38246f3abfcb30b327047b9ae7",
+    "libdaosgdr.c": "ff383e783859281626cf1ec9b2a0e52b97fae2c0c21fdd328663bbb9370d4657",
+    "libdaosgdr.so": "717fc1faed7cc2d0e1020cd7ca2f4043ad65b3507e614c509c0d57ee4b1c032c"
+  },
+  "clock": "time.monotonic_ns",
+  "scheduling_policy_changed": false,
+  "payload_reference_retained_by_probe": false,
+  "notes": [
+    "Native synchronous DAOS fetch completion, real paged GPU scatter.",
+    "Extra events buffered in memory, written after engine shutdown.",
+    "No model compute, concurrent requests, or simultaneous store during retrieve.",
+    "Admission/depth saturation does not imply NIC idle time.",
+    "Fresh 9 GiB patterned dataset; no server cache flush."
+  ]
+}

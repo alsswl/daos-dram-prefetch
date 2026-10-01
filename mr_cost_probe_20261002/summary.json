@@ -1,0 +1,354 @@
+[
+  {
+    "workers": 16,
+    "phase": "engine",
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls_per_read": 512,
+        "mean_us": 84.9156865234375
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls_per_read": 512,
+        "mean_us": 111.5422783203125
+      },
+      "rxm_mr_regattr": {
+        "calls_per_read": 512,
+        "mean_us": 203.88410937499998
+      },
+      "rxm_mr_close": {
+        "calls_per_read": 512,
+        "mean_us": 204.81147265625
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls_per_read": 512,
+        "mean_us": 78.681048828125
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls_per_read": 512,
+        "mean_us": 72.3856435546875
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls_per_read": 512,
+        "mean_us": 87.11253906249999
+      },
+      "gdr_pin_buffer": {
+        "calls_per_read": 512,
+        "mean_us": 32.116326171875
+      },
+      "gdr_map": {
+        "calls_per_read": 512,
+        "mean_us": 24.8063056640625
+      },
+      "gdr_unmap": {
+        "calls_per_read": 512,
+        "mean_us": 61.2178896484375
+      },
+      "gdr_unpin_buffer": {
+        "calls_per_read": 512,
+        "mean_us": 21.6724970703125
+      }
+    },
+    "locks_from_lock_only": {
+      "scheduler_mutex": {
+        "mean_calls_per_read": 1353296,
+        "sum_thread_ms_per_read": 2252.353968,
+        "mean_acquisition_us": 1.6643468745935848
+      },
+      "cuda_register_spin": {
+        "mean_calls_per_read": 512,
+        "sum_thread_ms_per_read": 9.3652025,
+        "mean_acquisition_us": 18.2914111328125
+      },
+      "cuda_unregister_spin": {
+        "mean_calls_per_read": 512,
+        "sum_thread_ms_per_read": 9.0121595,
+        "mean_acquisition_us": 17.6018740234375
+      }
+    },
+    "wall_ms_controls": {
+      "full": {
+        "mean": 339.60097099999996,
+        "median": 339.60097099999996,
+        "p95": 341.225425,
+        "max": 341.225425
+      },
+      "lock_only": {
+        "mean": 332.519692,
+        "median": 332.519692,
+        "p95": 334.429524,
+        "max": 334.429524
+      },
+      "baseline": {
+        "mean": 335.247574,
+        "median": 335.247574,
+        "p95": 337.82247,
+        "max": 337.82247
+      }
+    },
+    "parent_register_close_union_ms": 144.6853865
+  },
+  {
+    "workers": 16,
+    "phase": "native",
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls_per_read": 512,
+        "mean_us": 82.10349609375
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls_per_read": 512,
+        "mean_us": 108.396125
+      },
+      "rxm_mr_regattr": {
+        "calls_per_read": 512,
+        "mean_us": 187.646048828125
+      },
+      "rxm_mr_close": {
+        "calls_per_read": 512,
+        "mean_us": 195.262181640625
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls_per_read": 512,
+        "mean_us": 72.7679580078125
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls_per_read": 512,
+        "mean_us": 67.3260615234375
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls_per_read": 512,
+        "mean_us": 81.20517968749999
+      },
+      "gdr_pin_buffer": {
+        "calls_per_read": 512,
+        "mean_us": 30.250390625
+      },
+      "gdr_map": {
+        "calls_per_read": 512,
+        "mean_us": 18.9652294921875
+      },
+      "gdr_unmap": {
+        "calls_per_read": 512,
+        "mean_us": 58.6233212890625
+      },
+      "gdr_unpin_buffer": {
+        "calls_per_read": 512,
+        "mean_us": 21.770224609375
+      }
+    },
+    "locks_from_lock_only": {
+      "scheduler_mutex": {
+        "mean_calls_per_read": 1242581,
+        "sum_thread_ms_per_read": 2297.565252,
+        "mean_acquisition_us": 1.8490265439436142
+      },
+      "cuda_register_spin": {
+        "mean_calls_per_read": 512,
+        "sum_thread_ms_per_read": 13.089536,
+        "mean_acquisition_us": 25.5655
+      },
+      "cuda_unregister_spin": {
+        "mean_calls_per_read": 512,
+        "sum_thread_ms_per_read": 8.147474,
+        "mean_acquisition_us": 15.91303515625
+      }
+    },
+    "wall_ms_controls": {
+      "full": {
+        "mean": 332.145386,
+        "median": 332.145386,
+        "p95": 333.336534,
+        "max": 333.336534
+      },
+      "lock_only": {
+        "mean": 342.99720449999995,
+        "median": 342.99720449999995,
+        "p95": 349.056201,
+        "max": 349.056201
+      },
+      "baseline": {
+        "mean": 327.19135100000005,
+        "median": 327.19135100000005,
+        "p95": 328.627826,
+        "max": 328.627826
+      }
+    },
+    "parent_register_close_union_ms": 128.3446825
+  },
+  {
+    "workers": 64,
+    "phase": "engine",
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls_per_read": 512,
+        "mean_us": 151.54786914062498
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls_per_read": 512,
+        "mean_us": 203.0233984375
+      },
+      "rxm_mr_regattr": {
+        "calls_per_read": 512,
+        "mean_us": 319.92898828125
+      },
+      "rxm_mr_close": {
+        "calls_per_read": 512,
+        "mean_us": 330.47985449218754
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls_per_read": 512,
+        "mean_us": 106.83345703124999
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls_per_read": 512,
+        "mean_us": 98.6613662109375
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls_per_read": 512,
+        "mean_us": 119.5447939453125
+      },
+      "gdr_pin_buffer": {
+        "calls_per_read": 512,
+        "mean_us": 44.666021484374994
+      },
+      "gdr_map": {
+        "calls_per_read": 512,
+        "mean_us": 36.4151201171875
+      },
+      "gdr_unmap": {
+        "calls_per_read": 512,
+        "mean_us": 88.158234375
+      },
+      "gdr_unpin_buffer": {
+        "calls_per_read": 512,
+        "mean_us": 28.171404296875
+      }
+    },
+    "locks_from_lock_only": {
+      "scheduler_mutex": {
+        "mean_calls_per_read": 840194,
+        "sum_thread_ms_per_read": 4156.854378,
+        "mean_acquisition_us": 4.947493528875474
+      },
+      "cuda_register_spin": {
+        "mean_calls_per_read": 512,
+        "sum_thread_ms_per_read": 23.2843375,
+        "mean_acquisition_us": 45.4772216796875
+      },
+      "cuda_unregister_spin": {
+        "mean_calls_per_read": 512,
+        "sum_thread_ms_per_read": 40.428777,
+        "mean_acquisition_us": 78.962455078125
+      }
+    },
+    "wall_ms_controls": {
+      "full": {
+        "mean": 295.0096135,
+        "median": 295.0096135,
+        "p95": 302.640149,
+        "max": 302.640149
+      },
+      "lock_only": {
+        "mean": 298.706079,
+        "median": 298.706079,
+        "p95": 299.6671,
+        "max": 299.6671
+      },
+      "baseline": {
+        "mean": 310.9856935,
+        "median": 310.9856935,
+        "p95": 312.305182,
+        "max": 312.305182
+      }
+    },
+    "parent_register_close_union_ms": 167.309582
+  },
+  {
+    "workers": 64,
+    "phase": "native",
+    "functions": {
+      "cuda_gdrcopy_dev_register": {
+        "calls_per_read": 512,
+        "mean_us": 875.6912607421875
+      },
+      "cuda_gdrcopy_dev_unregister": {
+        "calls_per_read": 512,
+        "mean_us": 286.82904492187504
+      },
+      "rxm_mr_regattr": {
+        "calls_per_read": 512,
+        "mean_us": 1087.99608203125
+      },
+      "rxm_mr_close": {
+        "calls_per_read": 512,
+        "mean_us": 407.41519824218744
+      },
+      "ibv_reg_dmabuf_mr": {
+        "calls_per_read": 512,
+        "mean_us": 96.3154140625
+      },
+      "ibv_cmd_reg_dmabuf_mr": {
+        "calls_per_read": 512,
+        "mean_us": 89.37020898437501
+      },
+      "ibv_cmd_dereg_mr": {
+        "calls_per_read": 512,
+        "mean_us": 113.55516601562499
+      },
+      "gdr_pin_buffer": {
+        "calls_per_read": 512,
+        "mean_us": 52.6468662109375
+      },
+      "gdr_map": {
+        "calls_per_read": 512,
+        "mean_us": 28.4465693359375
+      },
+      "gdr_unmap": {
+        "calls_per_read": 512,
+        "mean_us": 89.53316015625
+      },
+      "gdr_unpin_buffer": {
+        "calls_per_read": 512,
+        "mean_us": 27.8441455078125
+      }
+    },
+    "locks_from_lock_only": {
+      "scheduler_mutex": {
+        "mean_calls_per_read": 766165.5,
+        "sum_thread_ms_per_read": 6682.1345005,
+        "mean_acquisition_us": 8.721528834827463
+      },
+      "cuda_register_spin": {
+        "mean_calls_per_read": 512,
+        "sum_thread_ms_per_read": 304.5064405,
+        "mean_acquisition_us": 594.7391416015626
+      },
+      "cuda_unregister_spin": {
+        "mean_calls_per_read": 512,
+        "sum_thread_ms_per_read": 74.5330675,
+        "mean_acquisition_us": 145.5723974609375
+      }
+    },
+    "wall_ms_controls": {
+      "full": {
+        "mean": 271.94644500000004,
+        "median": 271.94644500000004,
+        "p95": 274.150905,
+        "max": 274.150905
+      },
+      "lock_only": {
+        "mean": 270.3849675,
+        "median": 270.3849675,
+        "p95": 272.196054,
+        "max": 272.196054
+      },
+      "baseline": {
+        "mean": 275.2587375,
+        "median": 275.2587375,
+        "p95": 279.028959,
+        "max": 279.028959
+      }
+    },
+    "parent_register_close_union_ms": 152.15745099999998
+  }
+]

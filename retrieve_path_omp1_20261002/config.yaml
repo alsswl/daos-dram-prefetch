@@ -1,0 +1,34 @@
+cache_policy: LRU
+chunk_size: 128
+enable_async_loading: false
+extra_config:
+  daosgds.async_dram: false
+  daosgds.container: kvcache
+  daosgds.demand_read_only: true
+  daosgds.dram_disabled: true
+  daosgds.dram_mirror_max_age_ms: 100
+  daosgds.dram_mirror_max_pending_gb: 1
+  daosgds.dram_prefetch: false
+  daosgds.dram_promote_on_read: false
+  daosgds.gpu_buffer_gb: 2
+  daosgds.io_workers: 16
+  daosgds.meta_workers: 16
+  daosgds.object_library: /root/discos_minji/libdaosgdr.so
+  daosgds.object_namespace: 'minji-path-profile-c4a1b282ff354a0b8041c0e27f143b35:'
+  daosgds.pool: discospool
+  daosgds.probe_interval_ms: 10
+  daosgds.retrieve_window_mib: 500
+  daosgds.root: /minji-path-profile-c4a1b282ff354a0b8041c0e27f143b35
+  daosgds.store: true
+  daosgds.store_path: gpu_direct
+  daosgds.store_staging_gib: 0
+  daosgds.store_window_mib: 500
+  daosgds.transport: object
+  storage_plugin.daosgds.class_name: CapacityPipelineBackend
+  storage_plugin.daosgds.module_path: lmcache_daos.capacity_pipeline_backend
+local_cpu: false
+max_local_cpu_size: 0
+save_decode_cache: true
+storage_plugins:
+- daosgds
+use_layerwise: false

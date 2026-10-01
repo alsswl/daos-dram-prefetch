@@ -1,0 +1,29 @@
+chunk_size: 128
+local_cpu: false
+max_local_cpu_size: 0
+enable_async_loading: true
+use_layerwise: false
+use_gpu_connector_v3: false
+save_decode_cache: true
+storage_plugins:
+- daosgds
+extra_config:
+  storage_plugin.daosgds.module_path: lmcache_daos.async_drop_backend
+  storage_plugin.daosgds.class_name: AsyncDropBackend
+  daosgds.dram_prefetch: false
+  daosgds.pool: discospool
+  daosgds.container: kvcache
+  daosgds.object_namespace: 'minji-async-drop-a937772e1e7b4e8c8979bcc31f2c4743:'
+  daosgds.root: /minji-async-drop-a937772e1e7b4e8c8979bcc31f2c4743
+  daosgds.transport: object
+  daosgds.object_library: /root/discos_minji/libdaosgdr.so
+  daosgds.gpu_buffer_gb: 2
+  daosgds.io_workers: 16
+  daosgds.meta_workers: 16
+  daosgds.store: true
+  daosgds.store_path: gpu_direct
+  daosgds.async_dram: false
+  daosgds.dram_promote_on_read: false
+  daosgds.probe_interval_ms: 20
+  daosgds.dram_disabled: true
+  daosgds.placement_manifest: /root/discos_minji/cxs_async_drop2g_c8s10_20261002/placement.json
